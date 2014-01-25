@@ -37,7 +37,8 @@ folgenden Einschränkungen:
   oder [IRC](https://github.com/juthilo/bootstrap-german/blob/master/README.md#community)
   sind bessere Orte, um Hilfe zu erhalten.
 
-* **Beachte und respektiere** Andere in Diskussionen zu Issues und **vermeide** einen unhöflichen Umgangston sowie Abschweifungen vom Thema.
+* **Beachte und respektiere** Andere in Diskussionen zu Issues und **vermeide**
+  einen unhöflichen Umgangston sowie Abschweifungen vom Thema.
 
 * Bitte öffne **keine** Meldungen oder Pull Requests, die sich auf Code in
   [`Normalize`](https://github.com/necolas/normalize.css) beziehen (reiche diese
@@ -46,9 +47,12 @@ folgenden Einschränkungen:
 
 ## Fehlermeldungen
 
-Ein Fehler ist ein _Problem, welches man reproduzieren kann_, das heißt, dass das Problem durch den Code **von Bootstrap** verursacht wird und Anderen dieses unter ähnlichen Umständen ebenfalls widerfährt. Gute Fehlermeldungen sind sehr hilfreich, also vielen Dank an dieser Stelle!
+Ein Fehler ist ein _Problem, welches man reproduzieren kann_, das heißt, dass
+das Problem durch den Code **von Bootstrap** verursacht wird und Anderen dieses
+unter ähnlichen Umständen ebenfalls widerfährt. Gute Fehlermeldungen sind sehr
+hilfreich, also vielen Dank an dieser Stelle!
 
-#### Richtlinien für Fehlermeldungen:
+### Richtlinien für Fehlermeldungen:
 
 1. **Verwende die Suche auf GitHub** &mdash; sieh nach, ob der Fehler schon
    gemeldet wurde.
@@ -63,8 +67,8 @@ Ein Fehler ist ein _Problem, welches man reproduzieren kann_, das heißt, dass d
 
 
 Eine gute Fehlermeldung sollte nicht dazu führen, dass Andere nach mehr
-Informationen suchen müssen. Bitte versuche in deinem Bericht so genau wie möglich zu
-sein:
+Informationen suchen müssen. Bitte versuche in deinem Bericht so genau wie
+möglich zu sein:
 
 - Welche Umgebung verwendest du?
 - Welche Schritte führen zum Wiederauftreten des Problems?
@@ -74,7 +78,7 @@ sein:
 
 All diese Informationen helfen Anderen dabei, potentielle Fehler im Code zu beseitigen.
 
-#### Beispiel:
+### Beispiel:
 
 > Kurzer, erklärender Titel einer Beispiel-Fehlermeldung
 
@@ -99,8 +103,8 @@ All diese Informationen helfen Anderen dabei, potentielle Fehler im Code zu bese
 Wir freuen uns, wenn du neue Funktionen vorschlägst. Nimm dir aber bitte einen
 Moment Zeit, um herauszufinden, ob deine Idee zu dem Umfang und den Zielen des
 Projekts passt. Es liegt ganz an *dir*, die Entwickler des Projekt mit guten
-Thesen von deiner vorgeschlagenen Funktion zu überzeugen. Bitte stelle so viele Details wie
-möglich zur Verfügung und erkläre Zusammenhänge.
+Thesen von deiner vorgeschlagenen Funktion zu überzeugen. Bitte stelle so viele
+Details wie möglich zur Verfügung und erkläre Zusammenhänge.
 
 
 ## Pull Requests
@@ -168,7 +172,8 @@ folgenden Prozess zu folgen:
    mit einem eindeutigen Titel und Beschreibung, für den `master`-Branch.
 
 **WICHTIG**: Wenn du eine Korrektur einreichst, erlaubst du den
-Projekteigentümern, deine Arbeit unter den Bedingungen der [MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE) weiterzuverbreiten.
+Projekteigentümern, deine Arbeit unter den Bedingungen der
+[MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE) weiterzuverbreiten.
 
 ## Code-Richtlinien
 
@@ -178,20 +183,31 @@ Projekteigentümern, deine Arbeit unter den Bedingungen der [MIT-Lizenz](https:/
 - Immer doppelte Anführungszeichen (`"`), niemals einzelne (`'`).
 - Verwende immer vernünftige Einrückung.
 - Verwende Tags und Elemente für einen HTML5-Doctype (z.B. selbst-schließende Tags)
-- Nutze CDNs und HTTPS für JS von Dritten, wenn möglich. Wir nutzen keine protokoll-unabhängigen URLs in diesem Fall, da diese nicht funktionieren, wenn die Seite lokal über `file://` angezeigt wird.
+- Nutze CDNs und HTTPS für JS von Dritten, wenn möglich. Wir nutzen keine
+  protokoll-unabhängigen URLs in diesem Fall, da diese nicht funktionieren,
+  wenn die Seite lokal über `file://` angezeigt wird.
 
 ### CSS
 
-- CSS-Änderungen müssen zuerst in den `.less`-Dateien gemacht werden, nie einfach nur in den kompilierten `.css`-Dateien.
+- CSS-Änderungen müssen zuerst in den `.less`-Dateien gemacht werden,
+  nie einfach nur in den kompilierten `.css`-Dateien.
 - Befolge die [CSS-Eigenschaften-Reihenfolge](http://markdotto.com/2011/11/29/css-property-order/).
 - Immer nur eine Eigenschaft und ein Wert pro Zeile.
 - Immer ein Leerzeichen nach dem Doppelpunkt einer Eigenschaft (z.B. `display: block;` und nicht `display:block;`).
 - Beende alle Zeilen mit einem Semikolon.
 - Für mehrere, durch Kommas getrennte Selektoren, platziere jeden Selektor auf einer neuen Zeile.
-- Attribut-Selektoren, wie `input[type="text"]`, sollten den Wert des Attributs immer in doppelten Anführungszeichen verpacken, der Einheitlichkeit und Sicherheit wegen (siehe diesen [Blogpost über unverpackte Attribut-Werte](http://mathiasbynens.be/notes/unquoted-attribute-values), die zu XSS-Angriffen führen können).
-- Attribut-Selektoren sollten nur in Fällen ohne gute Alternative verwendet werden (z.B. Formularfelder) und bei eigenen Komponenten aus Gründen der Performance und Genauigkeit vermieden werden.
-- Eine Reihe von Klassen für eine Komponente sollte eine Grundklasse (z.B. `.component`) enthalten und die Grundklasse als Präfix für Änderungsklassen und Unterkomponenten verwenden (z.B. `.component-lg`).
-- Vermeide Vererbung und zu viele Verschachtelungen—verwende einzelne, explizite Klassen, wann immer möglich.
+- Attribut-Selektoren, wie `input[type="text"]`, sollten den Wert des Attributs
+  immer in doppelten Anführungszeichen verpacken, der Einheitlichkeit und
+  Sicherheit wegen
+  (siehe diesen [Blogpost über unverpackte Attribut-Werte](http://mathiasbynens.be/notes/unquoted-attribute-values), die zu XSS-Angriffen führen können).
+- Attribut-Selektoren sollten nur in Fällen ohne gute Alternative verwendet
+  werden (z.B. Formularfelder) und bei eigenen Komponenten aus Gründen der
+  Performance und Genauigkeit vermieden werden.
+- Eine Reihe von Klassen für eine Komponente sollte eine Grundklasse
+  (z.B. `.component`) enthalten und die Grundklasse als Präfix für
+  Änderungsklassen und Unterkomponenten verwenden (z.B. `.component-lg`).
+- Vermeide Vererbung und zu viele Verschachtelungen—verwende einzelne,
+  explizite Klassen, wann immer möglich.
 
 ### JS
 
@@ -204,6 +220,7 @@ Projekteigentümern, deine Arbeit unter den Bedingungen der [MIT-Lizenz](https:/
 
 ## Lizenz
 
-Durch die Einreichung deiner Code-Beiträge stimmst du zu, deinen Beitrag unter der [MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE) zu lizenzieren.
+Durch die Einreichung deiner Code-Beiträge stimmst du zu, deinen Beitrag unter
+der [MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE) zu lizenzieren.
 
 Vor v3.1.0 war Bootstrap unter der Apache-Lizenz v2.0 freigegeben.

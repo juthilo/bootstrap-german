@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>Raster-Vorlage für Bootstrap</title>
+
+    <!-- Bootstrap-CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Besondere Stile für diese Vorlage -->
+    <link href="grid.css" rel="stylesheet">
+
+    <!-- Nur für Testzwecke. Kopiere diese Zeile nicht in echte Projekte! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- Unterstützung für Media Queries und HTML5-Elemente im Internet Explorer über HTML5 shim und Respond.js -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="page-header">
+        <h1>Bootstrap-Raster-Beispiele</h1>
+        <p class="lead">Einfache Raster-Layouts zeigen dir und gewöhnen dich an das Bootstrap-Rastersystem.</p>
+      </div>
+
+      <h3>Drei gleiche Spalten</h3>
+      <p>Erstelle drei Spalten mit gleichen Breiten, die <strong>auf normalen und großen Desktop-PCs nebeneinander sind</strong>. Auf mobilen Geräten (Tablets und kleiner) sind die Spalten automatisch gestapelt.</p>
+      <div class="row">
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-4">.col-md-4</div>
+      </div>
+
+      <h3>Drei ungleiche Spalten</h3>
+      <p>Erstelle drei Spalten mit ungleichen Breiten, die <strong>auf normalen und großen Desktop-PCs nebeneinander sind</strong>. Denk daran, dass Rasterspalten für einen einzelnen horizontalen Block insgesamt 12 sein sollten. Wenn es mehr sind werden sie unabhängig vom Ansichtsfenster untereinander angeordnet.</p>
+      <div class="row">
+        <div class="col-md-3">.col-md-3</div>
+        <div class="col-md-6">.col-md-6</div>
+        <div class="col-md-3">.col-md-3</div>
+      </div>
+
+      <h3>Zwei Spalten</h3>
+      <p>Erstelle zwei Spalten, die <strong>auf normalen und großen Desktop-PCs nebeneinander sind</strong>.</p>
+      <div class="row">
+        <div class="col-md-8">.col-md-8</div>
+        <div class="col-md-4">.col-md-4</div>
+      </div>
+
+      <h3>Eine Spalte über die ganze Breite</h3>
+      <p class="text-warning">Für Elemente, die auf der gesamten Breite der Seite erscheinen sollen, sind keine Rasterklassen notwendig.</p>
+
+      <hr>
+
+      <h3>Zwei Spalten mit zwei verschachtelten Spalten</h3>
+      <p>Folge der Dokumentation und Verschachtelung ist ganz einfach. Füge einfach eine Zeile mit Spalten innerhalb von einer bestehenden Spalte ein und du erhältst zwei Spalten, die <strong>auf normalen und großen Desktop-PCs nebeneinander sind</strong>, plus zwei (gleich breite) Spalten in der größeren Spalte.</p>
+      <p>Auf kleineren Bildschirmen (Tablets und kleiner) werden diese Spalten, auch die verschachtelten, übereinander gestapelt.</p>
+      <div class="row">
+        <div class="col-md-8">
+          .col-md-8
+          <div class="row">
+            <div class="col-md-6">.col-md-6</div>
+            <div class="col-md-6">.col-md-6</div>
+          </div>
+        </div>
+        <div class="col-md-4">.col-md-4</div>
+      </div>
+
+      <hr>
+
+      <h3>Gemischt: Smartphones und Desktop-PCs</h3>
+      <p>Das Rastersystem in Bootstrap 3 hat vier Glieder: xs (Smartphones), sm (Tablets), md (Desktop-PCs) und lg (größere Desktop-PCs). Du kannst fast jede Kombination dieser Klassen verwenden, um dynamische und flexible Layouts zu erstellen.</p>
+      <p>Jede Gruppe von Klassen skaliert sich auf alle Gruppen darüber, solange es keine Angabe darüber für größere Bildschirme gibt. Das bedeutet, dass du z.B. für xs und sm nur xs angeben musst.</p>
+      <div class="row">
+        <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+        <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">.col-xs-6</div>
+        <div class="col-xs-6">.col-xs-6</div>
+      </div>
+
+      <hr>
+
+      <h3>Gemischt: Smartphones, Tablets und Desktop-PCs</h3>
+      <p></p>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-lg-8">.col-xs-12 .col-sm-6 .col-lg-8</div>
+        <div class="col-xs-6 col-lg-4">.col-xs-6 .col-lg-4</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+        <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+        <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+      </div>
+
+      <hr>
+
+      <h3>Spalten zurücksetzen</h3>
+      <p><a href="http://holdirbootstrap.de/css/#grid-responsive-resets">Entferne Floats</a> bei bestimmten Bildschirmgrößen, um komische Umbrüche bei ungleichmäßigem Inhalt zu vermeiden.</p>
+      <div class="row">
+        <div class="col-xs-6 col-sm-3">
+          .col-xs-6 .col-sm-3
+          <br>
+          Verändere die Größe deines Browser-Fensters oder öffne die Seite auf deinem Smartphone für ein Beispiel.
+        </div>
+        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+
+        <!-- Füge das Extra-Clearfix nur für die benötigte Bildschirmgröße hinzu -->
+        <div class="clearfix visible-xs"></div>
+
+        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+        <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+      </div>
+
+      <hr>
+
+      <h3>Versatz, Push und Pull zurücksetzen</h3>
+      <p>Setze Absetzungen, Pushes und Pulls an bestimmten Umbruchpunkten zurück.</p>
+      <div class="row">
+        <div class="col-sm-5 col-md-6">.col-sm-5 .col-md-6</div>
+        <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">.col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0</div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-5 col-lg-6">.col-sm-6 .col-md-5 .col-lg-6</div>
+        <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0">.col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-6 .col-lg-offset-0</div>
+      </div>
+
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap-JavaScript
+    ================================================== -->
+    <!-- Am Ende des Dokuments platziert, damit Seiten schneller laden -->
+  </body>
+</html>

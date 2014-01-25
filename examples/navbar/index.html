@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>Navbar-Vorlage für Bootstrap</title>
+
+    <!-- Bootstrap-CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Besondere Stile für diese Vorlage -->
+    <link href="navbar.css" rel="stylesheet">
+
+    <!-- Nur für Testzwecke. Kopiere diese Zeile nicht in echte Projekte! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- Unterstützung für Media Queries und HTML5-Elemente im Internet Explorer über HTML5 shim und Respond.js -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Standard-Navbar -->
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Navigation ein-/ausblenden</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Projekt-Titel</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown-Menü <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Aktion</a></li>
+                  <li><a href="#">Andere Aktion</a></li>
+                  <li><a href="#">Irgendwas anderes</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav-Überschrift</li>
+                  <li><a href="#">Abgetrennter Link</a></li>
+                  <li><a href="#">Noch ein abgetrennter Link</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="./">Standard</a></li>
+              <li><a href="../navbar-static-top/">Static top</a></li>
+              <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
+
+      <!-- Hauptkomponente für eine primäre Marketing-Botschaft oder einen Aufruf zu einer Aktion -->
+      <div class="jumbotron">
+        <h1>Navbar-Beispiel</h1>
+        <p>Dieses Beispiel ist eine schnelle Übung, um zu zeigen, wie die Standard-Navbar, die statische und die oben fixierte Navbar funktionieren. Es enthält responsives CSS und HTML, passt sich also der Breite deines Bildschirms oder Browser-Fensters an.</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Sieh dir die Dokumentation für Navbars an &raquo;</a>
+        </p>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap-JavaScript
+    ================================================== -->
+    <!-- Am Ende des Dokuments platziert, damit Seiten schneller laden -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

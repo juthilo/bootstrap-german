@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Beachte, dass es hier kein Meta-Tag für Responsivität gibt -->
+
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>Nicht-responsive Vorlage für Bootstrap</title>
+
+    <!-- Bootstrap-CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Besondere Stile für diese Vorlage -->
+    <link href="non-responsive.css" rel="stylesheet">
+
+    <!-- Nur für Testzwecke. Kopiere diese Zeile nicht in echte Projekte! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- Unterstützung für Media Queries und HTML5-Elemente im Internet Explorer über HTML5 shim und Respond.js -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Fixierte Navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Navigation ein-/ausblenden</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Projekt-Titel</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Start</a></li>
+            <li><a href="#ueber">Über</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown-Menü <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Aktion</a></li>
+                <li><a href="#">Andere Aktion</a></li>
+                <li><a href="#">Irgendwas anderes</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav-Überschrift</li>
+                <li><a href="#">Abgetrennter Link</a></li>
+                <li><a href="#">Noch ein abgetrennter Link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="page-header">
+        <h1>Nicht-responsives Bootstrap</h1>
+        <p class="lead">Deaktiviere die Responsivität von Bootstrap, indem du die Breite des Containers fixierst und für alles die untersten Rasterklassen verwendest.</p>
+      </div>
+
+      <h3>Was sich ändert</h3>
+      <p>Beachte, dass es kein <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code> gibt, was das Anpassen der Seite auf mobilen Geräten deaktiviert. Außerdem setzen wir die Breite von unserem Container zurück und sind damit schon quasi fertig.</p>
+
+      <h3>Navbars</h3>
+      <p>Ein kleiner Hinweis: die Navbar-Komponente ist in diesem Zusammenhang eher schwierig zu handhaben, da die Stile für ihre Anzeige eher spezifisch und detailliert sind. Überschreibungen dieser Stile für eine Desktop-PC-artige Anzeige sind nicht so schlank oder leicht zu berechnen, wie man es sich vielleicht wünscht. Denk einfach daran, dass es hier eine größere Gefahr für Probleme gibt, wenn du das Beispiel erweiterst.</p>
+
+      <h3>Browser, Scrolling und fixierte Elemente</h3>
+      <p>Nicht-responsive Layouts zeigen ein wichtiges Problem mit fixierten Elementen auf. <strong class="text-danger">Jede fixierte Komponente, wie z.B. eine fixierte Navbar, wird nicht scrollbar sein, wenn das Ansichtsfenster kleiner als der Seiteninhalt wird.</strong> Anders gesagt, da der nicht-responsive Container eine Breite von 970px hat, wirst du z.B. 170px Inhalt verbergen, wenn ein Ansichtsfenster 800px breit ist.</p>
+      <p>Es handelt sich dabei um Standard-Browser-Verhalten, deshalb gibt es keinen Weg drumherum. Die einzige Lösung ist die Verwendung eines responsiven Layouts oder eines nicht fixierten Elements.</p>
+
+      <h3>Nicht-responsives Raster-System</h3>
+      <div class="row">
+        <div class="col-xs-4">Ein Drittel</div>
+        <div class="col-xs-4">Ein Drittel</div>
+        <div class="col-xs-4">Ein Drittel</div>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap-JavaScript
+    ================================================== -->
+    <!-- Am Ende des Dokuments platziert, damit Seiten schneller laden -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

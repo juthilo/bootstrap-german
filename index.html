@@ -1,0 +1,72 @@
+---
+layout: home
+title: Bootstrap
+---
+
+<main class="bs-masthead" id="content" role="main">
+  <div class="container">
+    <span class="bs-booticon bs-booticon-lg bs-booticon-outline">B</span>
+    <!-- <h1>Bootstrap</h1> -->
+    <p class="lead">Das beliebteste Front-End-Framework für die Entwicklung von anpassungsfähigen Projekten für das moderne Web.</p>
+    <p class="lead">
+      <a href="getting-started#download" class="btn btn-outline-inverse btn-lg" onclick="_gaq.push(['_trackEvent', 'Jumbotron actions', 'Download', 'Download {{ site.current_version }}']);">Bootstrap herunterladen</a>
+    </p>
+    {% include ads.html %}
+  </div>
+</main>
+
+<div class="bs-featurette">
+  <div class="container">
+    <h2 class="bs-featurette-title">Für alle, überall.</h2>
+    <p class="lead">Bootstrap ist ein anpassungsfähiges und zuerst für mobile Geräte entwickeltes Framework. Egal, wie gut du dich auskennst, kannst du damit einfacher und schneller kleine wie große Projekte entwickeln, die auf Geräten in allen erdenklichen Formen funktionieren.</p>
+
+    <hr class="half-rule">
+
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="assets/img/sass-less.png" alt="Unterstützung für Sass und Less" class="img-responsive">
+        <h3>Präprozessoren</h3>
+        <p>Bootstrap bietet dir nicht nur pures CSS, sondern auch Unterstützung für die zwei berühmtesten CSS-Präprozessoren, <a href="../css/#less">Less</a> und <a href="../css/#sass">Sass</a>.</p>
+      </div>
+      <div class="col-sm-4">
+        <img src="assets/img/devices.png" alt="Anpassungsfähig auf allen Geräten" class="img-responsive">
+        <h3>Ein Framework, alle Geräte.</h3>
+        <p>Bootstrap passt sich ohne doppelten Code jedem Gerät an&mdash;von Smartphones über Tablets bis hin zu Desktop-PCs.</p>
+      </div>
+      <div class="col-sm-4">
+        <img src="assets/img/components.png" alt="Komponenten" class="img-responsive">
+        <h3>Umfangreiche Doku</h3>
+        <p>Mit Bootstrap liefern wir dir eine umfangreiche und ansehnliche Dokumentation mit Hunderten von Beispielen, Code-Schnipseln und mehr.</p>
+      </div>
+    </div>
+
+    <hr class="half-rule">
+
+    <p class="lead">Bootstrap ist Open Source.<br>Es wird auf GitHub gehostet, entwickelt und gepflegt und alle können dabei zusehen und mitmachen.</p>
+    <a href="{{ site.repo }}" class="btn btn-outline btn-lg">GitHub-Projekt ansehen</a>
+  </div>
+</div>
+
+<div class="bs-featurette">
+  <div class="container">
+    <h2 class="bs-featurette-title">Gemacht mit Bootstrap.</h2>
+    <p class="lead">Es gibt Millionen von großartigen Seiten online, die mit Bootstrap gemacht wurden. Lass dich von unserer wachsenden <a href="../getting-started/#examples">Beispiel-Sammlung</a> oder einigen unserer persönlichen Favoriten inspirieren und leg dann selbst los.</p>
+
+    <hr class="half-rule">
+
+    <div class="row bs-featured-sites">
+    {% for showcase in site.data.showcase %}
+      <div class="col-sm-3">
+        <a href="{{ showcase.expo_url }}" target="_blank" title="{{ showcase.name }}">
+          <img src="{{ showcase.img }}" alt="{{ showcase.name }}" class="img-responsive">
+        </a>
+      </div>
+    {% endfor %}
+    </div>
+
+    <hr class="half-rule">
+
+    <p class="lead">Schau in der Bootstrap Expo vorbei und sieh dir inspirierende Projekte an, die mit Bootstrap entwickelt wurden.</p>
+    <a href="{{ site.expo }}" class="btn btn-outline btn-lg">Sieh dir die Gallerie an</a>
+  </div>
+</div>

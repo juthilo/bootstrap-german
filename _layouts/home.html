@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <!-- Meta-Informationen, Seitentitel, CSS, Favicons, usw. -->
+    {% include header.html %}
+  </head>
+  <body class="bs-docs-home">
+    <a class="sr-only" href="#content">Zum Hauptinhalt springen</a>
+
+    <!-- Hauptnavigation -->
+    {% include nav-main.html %}
+
+    <!-- Seiteninhalt -->
+    {{ content }}
+
+    {% include footer.html %}
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!-- Footer
+================================================== -->
+<footer class="bs-footer" role="contentinfo">
+  <div class="container">
+    {% include social-buttons.html %}
+
+    <p>Entworfen und entwickelt mit unendlicher Liebe von <a href="http://twitter.com/mdo" target="_blank">@mdo</a> und <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+    <p>Gepflegt vom <a href="https://github.com/twbs?tab=members">Hauptteam</a> mit der Unterstützung <a href="https://github.com/twbs/bootstrap/graphs/contributors">unserer Beitragenden</a>.</p>
+    <p>Code unter der <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank">MIT-Lizenz</a>, Dokumentation unter <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+    <br>
+    <p>Dokumentation mit Liebe und Sorgfalt übersetzt von <a href="http://twitter.com/juthilo" target="_blank">@juthilo</a>.</p>
+    <p>Für die aktuellsten, zuverlässigsten Informationen solltest du im Zweifelsfall die <a href="http://getbootstrap.com" target="_blank">offizielle Dokumentation auf Englisch</a> lesen.</p>
+    <ul class="footer-links muted">
+      <li>Aktuell v{{ site.current_version }}</li>
+      <li>&middot;</li>
+      <li>Stand Übersetzung v3.0.3</li>
+      <li>&middot;</li>
+      <li><a href="{{ site.repo }}">GitHub-Projekt</a></li>
+      <li>&middot;</li>
+      <li><a href="../getting-started/#examples">Beispiele</a></li>
+      <li>&middot;</li>
+      <li><a href="http://getbootstrap.com/2.3.2/">Dokumentation für v2.3.2</a></li>
+      <li>&middot;</li>
+      <li><a href="../about/">Über Bootstrap</a></li>
+      <li>&middot;</li>
+      <li><a href="{{ site.expo }}">Gallerie</a></li>
+      <li>&middot;</li>
+      <li><a href="{{ site.blog }}">Blog</a></li>
+      <li>&middot;</li>
+      <li><a href="{{ site.repo }}/issues?state=open">Fehlermeldungen</a></li>
+      <li>&middot;</li>
+      <li><a href="{{ site.repo }}/releases">Versionen</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- Bootstrap JavaScript
+================================================== -->
+<!-- Am Ende des Dokuments platziert, damit Seiten schneller laden -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../dist/js/bootstrap.min.js"></script>
+<script src="../assets/js/docs.min.js"></script>
+{% if page.slug == "customize" %}
+<script src="../assets/js/customize.min.js"></script>
+{% endif %}
+
+{% comment %}
+  Twitter-Widgets asynchron einbinden. Code von Twitters
+  JS-Interface-Seite: https://dev.twitter.com/docs/tfw-javascript
+
+  * "js.async=1;" wurde hinzugefügt, damit das script-Tag ein async-Attribut erhält
+{% endcomment %}
+<script>
+  window.twttr = (function (d,s,id) {
+    var t, js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return; js=d.createElement(s); js.id=id; js.async=1;
+    js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+    return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+  }(document, "script", "twitter-wjs"));
+</script>

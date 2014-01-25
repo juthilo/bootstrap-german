@@ -74,7 +74,7 @@ Erfahre mehr über den Umgang mit Jekyll, indem du dessen [Dokumentation](http:/
 
 ### Dokumentation für alte Versionen
 
-Die englische Dokumentation für v2.3.2 ist für's Erste unter <http://getbootstrap.com/2.3.2/> verfügbar, solange einige noch zu Bootstrap 3 wechseln müssen.
+Die englische Dokumentation für v2.3.2 ist fürs Erste unter <http://getbootstrap.com/2.3.2/> verfügbar, solange einige noch zu Bootstrap 3 wechseln müssen.
 
 [Frühere Versionen](https://github.com/twbs/bootstrap/releases) und ihre zugehörigen Dokumentationen (auf Englisch) sind auch noch zum Herunterladen verfügbar.
 
@@ -93,7 +93,7 @@ In der Befehlszeile:
 
 Wenn das abgeschlossen ist, kannst du die verschiedenen Grunt-Befehle über die Befehlszeile ausführen.
 
-**Du kennst dich mit `npm` nicht aus? Du hast node nicht installiert?** Überhaupt kein Problem. npm steht für [node packaged modules](http://npmjs.org/) und dient dazu, benötigte Pakete für die Entwicklung über node.js zu verwalten. [Lade node.js herunter und installiere es](http://nodejs.org/download/) bevor du die anderen Schritt durchführst.
+**Du kennst dich mit `npm` nicht aus? Du hast node nicht installiert?** Überhaupt kein Problem. npm steht für [node packaged modules](http://npmjs.org/) und dient dazu benötigte Pakete für die Entwicklung über node.js zu verwalten. [Lade node.js herunter und installiere es](http://nodejs.org/download/), bevor du die anderen Schritt durchführst.
 
 ### Verfügbare Grunt-Befehle
 
@@ -119,7 +119,7 @@ Wenn es ein Problem mit den installierten Paketen oder beim Ausführen von Grunt
 
 Bitte lies dir unsere Richtlinien für Beiträge ([Übersetzung](https://github.com/juthilo/bootstrap-german/blob/master/CONTRIBUTING.md) / [Original](https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md)) durch. Darin findest du Anleitungen zum Erstellen von Fehlerberichten, Programmier-Standards und Hinweise zur Entwicklung.
 
-Außerdem denke bitte daran, relevante Unit Tests beizufügen, wenn die Beiträge, die du über einen Pull Request einreichst, JavaScript-verbesserungen oder -Funktionen enthält. HTML und CSS sollte immer dem [Code Guide](http://github.com/mdo/code-guide) von [Mark Otto](http://github.com/mdo) folgen.
+Außerdem denke bitte daran relevante Unit Tests beizufügen, wenn die Beiträge, die du über einen Pull Request einreichst, JavaScript-Verbesserungen oder -Funktionen enthalten. HTML und CSS sollte immer dem [Code Guide](http://github.com/mdo/code-guide) von [Mark Otto](http://github.com/mdo) folgen.
 
 Voreinstellungen für Editoren / Textbearbeitungsprogramme sind in der Datei [.editorconfig](https://github.com/twbs/bootstrap/blob/master/.editorconfig) angegeben, damit du ganz einfach in gängigen Text-Editoren loslegen kannst. Lies mehr darüber und lade passende Plugins für Editoren auf <http://editorconfig.org> herunter.
 
@@ -139,7 +139,7 @@ Bleib auf dem Laufenden, was die Entwicklung und Neuigkeiten aus der Community a
 
 ## Versionen
 
-Damit unsere Veröffentlichungen durchsichtig bleiben und da wir Rückwärtskompatibilität erfüllen möchten, wird Bootstrap unter den Richtlinien des Semntic Versioning entwickelt. Manchmal unterläuft uns was das angeht ein Fehler, aber wir werden diese Regeln einhalten, wann immer es geht.
+Um unsere Veröffentlichungen so klar wie möglich zu halten und Rückwärtskompatibilität zu gewährleisten, wird Bootstrap unter den Richtlinien des Semantic Versioning entwickelt. Wir versuchen diese Regeln so gut wie möglich einzuhalten, doch manchmal kann uns dabei ein Fehler unterlaufen.
 
 Versionen werden in diesem Format nummeriert:
 

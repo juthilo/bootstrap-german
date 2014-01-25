@@ -29,16 +29,15 @@ Korrekturen und Funktionen beurteilen.
 
 Der [Issue Tracker](https://github.com/twbs/bootstrap/issues) ist der bevorzugte
 Kanal für [Fehlermeldungen](#fehlermeldungen), [Funktionsvorschläge](#funktionsvorschl%C3%A4ge)
-und [das Einreichen von Pull Requests](#pull-requests) aber beachte bitte die
+und [das Einreichen von Pull Requests](#pull-requests). Beachte allerdings bitte die
 folgenden Einschränkungen:
 
-* Bitte nutzen den Issue Tracker **nicht** für persönliche Hilfe-Anfragen. Stack
+* Der Issue Tracker ist **nicht** für persönliche Hilfe-Anfragen geeignet. Stack
   Overflow ([`twitter-boostrap-3`](http://stackoverflow.com/questions/tagged/twitter-bootstrap-3)-Label)
   oder [IRC](https://github.com/juthilo/bootstrap-german/blob/master/README.md#community)
   sind bessere Orte, um Hilfe zu erhalten.
 
-* Bitte **vermeide** es, die Diskussion bei Issues entgleisen zu lassen oder
-  andere zu nerven. Bleib beim Thema und respektiere die Meinungen von Anderen.
+* **Beachte und respektiere** Andere in Diskussionen zu Issues und **vermeide** einen unhöflichen Umgangston sowie Abschweifungen vom Thema.
 
 * Bitte öffne **keine** Meldungen oder Pull Requests, die sich auf Code in
   [`Normalize`](https://github.com/necolas/normalize.css) beziehen (reiche diese
@@ -47,11 +46,9 @@ folgenden Einschränkungen:
 
 ## Fehlermeldungen
 
-Ein Fehler ist ein _Problem, das man demonstrieren kann_, das von Code im
-Repository verursacht wird. Gute Fehlermeldungen sind sehr hilfreich, also
-vielen Dank an dieser Stelle!
+Ein Fehler ist ein _Problem, welches man reproduzieren kann_, das heißt, dass das Problem durch den Code **von Bootstrap** verursacht wird und Anderen dieses unter ähnlichen Umständen ebenfalls widerfährt. Gute Fehlermeldungen sind sehr hilfreich, also vielen Dank an dieser Stelle!
 
-Richtlinien für Fehlermeldungen:
+#### Richtlinien für Fehlermeldungen:
 
 1. **Verwende die Suche auf GitHub** &mdash; sieh nach, ob der Fehler schon
    gemeldet wurde.
@@ -66,14 +63,18 @@ Richtlinien für Fehlermeldungen:
 
 
 Eine gute Fehlermeldung sollte nicht dazu führen, dass Andere nach mehr
-Informationen suchen. Bitte versuche, in deinem Bericht so genau wie möglich zu
-sein. Welche Umgebung verwendest du? Welche Schritte führen zum Wiederauftreten
-des Problems? Mit welchem/n Browser(n) und welchem/n Betriebssystem(en) siehst
-du diesen Fehler? Zeigen andere Browser den Fehler anders an? Wie sollte es
-eigentlich sein? All diese Informationen helfen Anderen dabei, potentielle
-Fehler im Code zu beseitigen.
+Informationen suchen müssen. Bitte versuche in deinem Bericht so genau wie möglich zu
+sein:
 
-Beispiel:
+- Welche Umgebung verwendest du?
+- Welche Schritte führen zum Wiederauftreten des Problems?
+- Mit welchem/n Browser(n) und welchem/n Betriebssystem(en) siehst du diesen Fehler?
+- Zeigen andere Browser den Fehler anders an?
+- Wie sollte es eigentlich sein?
+
+All diese Informationen helfen Anderen dabei, potentielle Fehler im Code zu beseitigen.
+
+#### Beispiel:
 
 > Kurzer, erklärender Titel einer Beispiel-Fehlermeldung
 
@@ -98,7 +99,7 @@ Beispiel:
 Wir freuen uns, wenn du neue Funktionen vorschlägst. Nimm dir aber bitte einen
 Moment Zeit, um herauszufinden, ob deine Idee zu dem Umfang und den Zielen des
 Projekts passt. Es liegt ganz an *dir*, die Entwickler des Projekt mit guten
-Thesen von dieser Funktion zu überzeugen. Bitte stelle so viele Details wie
+Thesen von deiner vorgeschlagenen Funktion zu überzeugen. Bitte stelle so viele Details wie
 möglich zur Verfügung und erkläre Zusammenhänge.
 
 
@@ -114,7 +115,7 @@ willst). Andernfalls wirst du viel Zeit mit etwas verbringen, das die Entwickler
 des Projekts vielleicht gar nicht einfügen wollen.
 
 Bitte halte dich an die [Code-Richtlinien](#code-richtlinien) dieses Projekt
-(Einrückung, Kommentare, usw.) und andere Anforderungen (z.B. Tests).
+(Einrückung, Kommentare, usw.) und andere Anforderungen (z.B. Unit-Tests).
 
 Der beste Weg, um deine Arbeit in das Projekt integriert zu bekommen, ist dem
 folgenden Prozess zu folgen:
@@ -131,7 +132,7 @@ folgenden Prozess zu folgen:
    git remote add upstream https://github.com/twbs/bootstrap.git
    ```
 
-2. Falls es seit dem Klonen eine Weile her ist, hol dir die neuesten Änderungen:
+2. Falls es seit dem Klonen eine Weile her ist, hol' dir die neuesten Änderungen:
 
    ```bash
    git checkout master
@@ -167,16 +168,14 @@ folgenden Prozess zu folgen:
    mit einem eindeutigen Titel und Beschreibung, für den `master`-Branch.
 
 **WICHTIG**: Wenn du eine Korrektur einreichst, erlaubst du den
-Projekteigentümern, deine Arbeit unter den Bedingungen der [MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE)
-weiterzuverbreiten.
-
+Projekteigentümern, deine Arbeit unter den Bedingungen der [MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE) weiterzuverbreiten.
 
 ## Code-Richtlinien
 
 ### HTML
 
 - Zwei Leerzeichen für Einrückung, niemals Tabs.
-- Immer doppelte Anführungszeichen, niemals einzelne.
+- Immer doppelte Anführungszeichen (`"`), niemals einzelne (`'`).
 - Verwende immer vernünftige Einrückung.
 - Verwende Tags und Elemente für einen HTML5-Doctype (z.B. selbst-schließende Tags)
 - Nutze CDNs und HTTPS für JS von Dritten, wenn möglich. Wir nutzen keine protokoll-unabhängigen URLs in diesem Fall, da diese nicht funktionieren, wenn die Seite lokal über `file://` angezeigt wird.
@@ -189,17 +188,17 @@ weiterzuverbreiten.
 - Immer ein Leerzeichen nach dem Doppelpunkt einer Eigenschaft (z.B. `display: block;` und nicht `display:block;`).
 - Beende alle Zeilen mit einem Semikolon.
 - Für mehrere, durch Kommas getrennte Selektoren, platziere jeden Selektor auf einer neuen Zeile.
-- Attribut-Selektoren, wie `input[type="text"]`, sollten den Wert des Attributs immer in doppelten Anführungszeichen verpacken, für Einheitlichkeit und Sicherheit (siehe diesen [Blogpost über unverpackte Attribut-Werte](http://mathiasbynens.be/notes/unquoted-attribute-values), die zu XSS-Angriffen führen können).
-- Attribut-Selektoren sollten nur wo unbedingt nötig verwendet werden (z.B. Formularfelder) und bei eigenen Komponenten aus Gründen der Performance und Genauigkeit vermieden werden.
+- Attribut-Selektoren, wie `input[type="text"]`, sollten den Wert des Attributs immer in doppelten Anführungszeichen verpacken, der Einheitlichkeit und Sicherheit wegen (siehe diesen [Blogpost über unverpackte Attribut-Werte](http://mathiasbynens.be/notes/unquoted-attribute-values), die zu XSS-Angriffen führen können).
+- Attribut-Selektoren sollten nur in Fällen ohne gute Alternative verwendet werden (z.B. Formularfelder) und bei eigenen Komponenten aus Gründen der Performance und Genauigkeit vermieden werden.
 - Eine Reihe von Klassen für eine Komponente sollte eine Grundklasse (z.B. `.component`) enthalten und die Grundklasse als Präfix für Änderungsklassen und Unterkomponenten verwenden (z.B. `.component-lg`).
-- Vermeide Vererbung und zu viel Verschachtelung—verwende einzelne, explizite Klassen wann immer möglich.
+- Vermeide Vererbung und zu viele Verschachtelungen—verwende einzelne, explizite Klassen, wann immer möglich.
 
 ### JS
 
 - Keine Semikolons
 - Komma zuerst
 - 2 Leerzeichen (keine Tabs)
-- strict mode
+- [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode)
 - "Attraktiv"
 
 
@@ -208,4 +207,3 @@ weiterzuverbreiten.
 Durch die Einreichung deiner Code-Beiträge stimmst du zu, deinen Beitrag unter der [MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE) zu lizenzieren.
 
 Vor v3.1.0 war Bootstrap unter der Apache-Lizenz v2.0 freigegeben.
-

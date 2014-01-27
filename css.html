@@ -2989,7 +2989,8 @@ a {
 {% endhighlight %}
 
   <h3 id="less-mixins-box-shadow">Box (Drop) shadows</h3>
-  <p>Falls deine Zielgruppe bzw. dein Publikum die neuesten und besten Browser und Geräte verwendet, reicht es, einfach die Eigenschaft <code>box-shadow</code> ohne Präfixe zu verwenden. Falls du allerdings ältere Android- (vor v4) und iOS-Geräte (vor iOS 5) unterstützen willst, verwende dieses Mixin, um das benötigte <code>-webkit</code>-Präfix hinzuzufügen.</p>
+  <p>Falls deine Zielgruppe bzw. dein Publikum die neuesten und besten Browser und Geräte verwendet, reicht es, einfach die Eigenschaft <code>box-shadow</code> ohne Präfixe zu verwenden. Falls du allerdings ältere Android- (vor v4) und iOS-Geräte (vor iOS 5) unterstützen willst, kannst du dieses <strong>als veraltet markierte</strong> Mixin verwenden, um das benötigte <code>-webkit</code>-Präfix hinzuzufügen.</p>
+  <p>Das Mixin ist seit v3.1.0 <strong>als veraltet markiert</strong>, da Bootstrap die älteren Plattformen ohne Unterstützung für die Standard-Eigenschaft ohne Präfix nicht unterstützt. Um Rückwärtskompatibilität beizubehalten, wird das Mixin bis Bootstrap v4 weiterhin verfügbar sein und genutzt werden.</p>
   <p>Am besten verwendest du <code>rgba()</code>-Farben in deinen Box-Shadows, damit diese so nahtlos wie möglich in deine Hintergründe übergehen.</p>
 {% highlight css %}
 .box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {

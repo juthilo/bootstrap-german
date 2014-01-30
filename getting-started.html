@@ -17,17 +17,17 @@ lead: "Ein Überblick über Bootstrap, wie du es herunterlädst und verwendest, 
     <div class="col-sm-4">
       <h3 id="download-bootstrap">Bootstrap</h3>
       <p>Kompilierte und minimierte CSS-, JavaScript und Schrift-Dateien. Keine Doku oder Quelldateien dabei.</p>
-      <a href="{{ site.download.dist }}" class="btn btn-lg btn-outline" role="button">Bootstrap herunterladen</a>
+      <a href="{{ site.download.dist }}" class="btn btn-lg btn-outline" role="button" onclick="ga('send', 'event', 'Download', 'click', 'dist')">Bootstrap herunterladen</a>
     </div>
     <div class="col-sm-4">
       <h3 id="download-source">Quelltext</h3>
       <p>Less-, JavaScript- und Schrift-Quelldateien, zusammen mit unserer Doku. <strong>Less-Compiler und <a href="{{ site.repo }}#compiling-css-and-javascript">Konfiguration</a> erforderlich.</strong></p>
-      <a href="{{ site.download.source }}" class="btn btn-lg btn-outline" role="button">Quelle herunterladen</a>
+      <a href="{{ site.download.source }}" class="btn btn-lg btn-outline" role="button" onclick="ga('send', 'event', 'Download', 'click', 'source')">Quelle herunterladen</a>
     </div>
     <div class="col-sm-4">
       <h3 id="download-sass">Sass</h3>
       <p><a href="{{ site.sass_repo }}">Bootstrap von Less nach Sass portiert</a> für einfache Verwendung in Rails-, Compass- oder puren Sass-Projekten.</p>
-      <a href="{{ site.download.sass }}" class="btn btn-lg btn-outline" role="button">Sass herunterladen</a>
+      <a href="{{ site.download.sass }}" class="btn btn-lg btn-outline" role="button" onclick="ga('send', 'event', 'Download', 'click', 'sass')">Sass herunterladen</a>
     </div>
   </div>
 

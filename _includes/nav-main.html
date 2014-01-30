@@ -28,8 +28,8 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{ site.expo }}">Expo</a></li>
-        <li><a href="{{ site.blog }}">Blog</a></li>
+        <li><a href="{{ site.expo }}" onclick="ga('send', 'event', 'Navbar', 'click', 'Expo')">Expo</a></li>
+        <li><a href="{{ site.blog }}" onclick="ga('send', 'event', 'Navbar', 'click', 'Blog')">Blog</a></li>
       </ul>
     </nav>
   </div>

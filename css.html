@@ -89,7 +89,7 @@ lead: "Globale CSS-Stile, grundlegende HTML-Elemente mit erweiterbaren Klassen g
 
   <h3 id="grid-media-queries">Media-Queries</h3>
   <p>Wir verwenden die folgenden Media-Queries in unseren Less-Dateien, um die grundlegenden Umbruchpunkte in unserem Rastersystem zu erstellen.</p>
-{% highlight css %}
+{% highlight scss %}
 /* Extra-kleine Geräte (Smartphones, weniger als 768px) */
 /* Kein Media-Query, weil dies der Standard in Bootstrap ist */
 
@@ -103,7 +103,7 @@ lead: "Globale CSS-Stile, grundlegende HTML-Elemente mit erweiterbaren Klassen g
 @media (min-width: @screen-lg-min) { ... }
 {% endhighlight %}
   <p>Manchmal, wenn bestimmte Stile nur auf einigen Geräten Sinn machen, erweitern wir diese Media-Queries mit einer <code>max-width</code>.</p>
-{% highlight css %}
+{% highlight scss %}
 @media (max-width: @screen-xs-max) { ... }
 @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { ... }
 @media (min-width: @screen-md-min) and (max-width: @screen-md-max) { ... }
@@ -449,7 +449,7 @@ lead: "Globale CSS-Stile, grundlegende HTML-Elemente mit erweiterbaren Klassen g
 
   <h4>Variablen</h4>
   <p>Variablen bestimmen die Anzahl der Spalten, die Breite des Abstands zwischen Spalten und den Punkt, an dem die Spalten anfangen, zu floaten und so horizontal werden. Wir verwenden diese, um die vordefinierten Rasterklassen oben zu erstellen, sowie für die unten beschriebenen Mixins.</p>
-{% highlight css %}
+{% highlight scss %}
 @grid-columns:              12;
 @grid-gutter-width:         30px;
 @grid-float-breakpoint:     768px;
@@ -457,7 +457,7 @@ lead: "Globale CSS-Stile, grundlegende HTML-Elemente mit erweiterbaren Klassen g
 
   <h4>Mixins</h4>
   <p>Mixins helfen dir zusammen mit den Raster-Variablen dabei, semantisches CSS für individuelle Raster-Spalten zu erstellen.</p>
-{% highlight css %}
+{% highlight scss %}
 // Generiert einen Wrapper für eine Reihe von Spalten
 .make-row(@gutter: @grid-gutter-width) {
   // Floats der Spalten zurücksetzen
@@ -593,7 +593,7 @@ lead: "Globale CSS-Stile, grundlegende HTML-Elemente mit erweiterbaren Klassen g
 
   <h4>Beispiel-Verwendung</h4>
   <p>Du kannst Variablen mit deinen eigenen Werten anpassen oder die Mixins einfach mit den Standard-Werten verwenden. Hier siehst du ein Beispiel für die Erstellung einer zweispaltigen Layouts mit einer Lücke zwischen den Spalten.</p>
-{% highlight css %}
+{% highlight scss %}
 .wrapper {
   .make-row();
 }
@@ -2433,7 +2433,7 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
 <div class="pull-left">...</div>
 <div class="pull-right">...</div>
 {% endhighlight %}
-{% highlight css %}
+{% highlight scss %}
 // Klassen
 .pull-left {
   float: left !important;
@@ -2462,7 +2462,7 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
 {% highlight html %}
 <div class="center-block">...</div>
 {% endhighlight %}
-{% highlight css %}
+{% highlight scss %}
 // Klasse
 .center-block {
   display: block;
@@ -2483,7 +2483,7 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
 <!-- Verwendung als Klasse -->
 <div class="clearfix">...</div>
 {% endhighlight %}
-{% highlight css %}
+{% highlight scss %}
 // Mixin selbst
 .clearfix() {
   &:before,
@@ -2511,7 +2511,7 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
 <div class="show">...</div>
 <div class="hidden">...</div>
 {% endhighlight %}
-{% highlight css %}
+{% highlight scss %}
 // Klassen
 .show {
   display: block !important;
@@ -2539,7 +2539,7 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
 {% highlight html %}
 <a class="sr-only" href="#content">Zum Hauptinhalt springen</a>
 {% endhighlight %}
-{% highlight css %}
+{% highlight scss %}
 // Verwendung als Mixin
 .skip-navigation {
   .sr-only();
@@ -2552,7 +2552,7 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
 {% highlight html %}
 <h1 class="text-hide">Beispiel-Überschrift</h1>
 {% endhighlight %}
-  {% highlight css %}
+  {% highlight scss %}
 // Verwendung als Mixin
 .heading {
   .text-hide();
@@ -2821,7 +2821,7 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
       <div class="color-swatch gray-lighter"></div>
     </div>
   </div>
-{% highlight css %}
+{% highlight scss %}
 @gray-darker:  lighten(#000, 13.5%); // #222
 @gray-dark:    lighten(#000, 20%);   // #333
 @gray:         lighten(#000, 33.5%); // #555
@@ -2838,7 +2838,7 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
       <div class="color-swatch brand-danger"></div>
     </div>
   </div>
-{% highlight css %}
+{% highlight scss %}
 @brand-primary: #428bca;
 @brand-success: #5cb85c;
 @brand-info:    #5bc0de;
@@ -2847,7 +2847,7 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
 {% endhighlight %}
 
   <p>Verwende diese Farbvariablen so wie sie sind oder weise sie wiederum anderen, bedeutsameren Variablen in deinem Projekt zu.</p>
-{% highlight css %}
+{% highlight scss %}
 // Verwendung wie sie sind
 .masthead {
   background-color: @brand-primary;
@@ -2862,7 +2862,7 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
 
   <h3 id="less-variables-scaffolding">Grundgerüst</h3>
   <p>Eine Reihe von Variablen, um schnell wichtige Elemente im Aufbau deiner Seite zu verändern.</p>
-{% highlight css %}
+{% highlight scss %}
 // Grundgerüst
 @body-bg:    #fff; // Seitenhintergrund
 @text-color: @black-50; // Fließtextfarbe
@@ -2870,7 +2870,7 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
 
   <h3 id="less-variables-links">Links</h3>
   <p>Gestalte die Farbe deiner Links um, indem du nur einen Wert veränderst.</p>
-{% highlight css %}
+{% highlight scss %}
 // Variablen
 @link-color:       @brand-primary;
 @link-color-hover: darken(@link-color, 15%);
@@ -2890,7 +2890,7 @@ a {
 
   <h3 id="less-variables-typography">Typografie</h3>
   <p>Lege ganz einfach Schriftart, Textgröße, Durchschuss und vieles mehr mit einigen wenigen Variablen fest. Bootstrap verwendet diese ebenfalls, um einfache typografische Mixins bereitzustellen.</p>
-{% highlight css %}
+{% highlight scss %}
 @font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -2918,14 +2918,14 @@ a {
 
   <h3 id="less-variables-icons">Icons</h3>
   <p>Zwei Variablen entscheiden, wo deine Icons sich befinden und wie ihre Dateien heißen.</p>
-{% highlight css %}
+{% highlight scss %}
 @icon-font-path:          "../fonts/";
 @icon-font-name:          "glyphicons-halflings-regular";
 {% endhighlight %}
 
   <h3 id="less-variables-components">Komponenten</h3>
   <p>Komponenten überall in Bootstrap verwenden diese Standard-Variablen, um einige übliche Werte festzulegen. Hier sind einige der am häufigsten genutzten.</p>
-{% highlight css %}
+{% highlight scss %}
 @padding-base-vertical:          6px;
 @padding-base-horizontal:        12px;
 
@@ -2959,7 +2959,7 @@ a {
 
   <h3 id="less-mixins-box-sizing">Box-sizing</h3>
   <p>Definiere das box model deiner Site oder Anwendung mit einem einzigen Mixin. Mehr Informationen findest du in <a href="https://developer.mozilla.org/en-US/docs/CSS/box-sizing" target="_blank">diesem hilfreichen Artikel von Mozilla</a>.</p>
-{% highlight css %}
+{% highlight scss %}
 .box-sizing(@box-model) {
   -webkit-box-sizing: @box-model; // Safari <= 5
      -moz-box-sizing: @box-model; // Firefox <= 19
@@ -2969,7 +2969,7 @@ a {
 
   <h3 id="less-mixins-rounded-corners">Abgerundete Ecken</h3>
   <p>Inzwischen unterstütztn alle modernen Browser die <code>border-radius</code>-Eigenschaft ohne besondere Präfixe. Es gibt daher kein <code>.border-radius()</code>-Mixin aber Bootstrap bietet dir einige Hilfs-Mixins, mit denen du schnell und einfach zwei Ecken auf einer Seite eines Objekts abrunden kannst.</p>
-{% highlight css %}
+{% highlight scss %}
 .border-top-radius(@radius) {
   border-top-right-radius: @radius;
    border-top-left-radius: @radius;
@@ -2992,7 +2992,7 @@ a {
   <p>Falls deine Zielgruppe bzw. dein Publikum die neuesten und besten Browser und Geräte verwendet, reicht es, einfach die Eigenschaft <code>box-shadow</code> ohne Präfixe zu verwenden. Falls du allerdings ältere Android- (vor v4) und iOS-Geräte (vor iOS 5) unterstützen willst, kannst du dieses <strong>als veraltet markierte</strong> Mixin verwenden, um das benötigte <code>-webkit</code>-Präfix hinzuzufügen.</p>
   <p>Das Mixin ist seit v3.1.0 <strong>als veraltet markiert</strong>, da Bootstrap die älteren Plattformen ohne Unterstützung für die Standard-Eigenschaft ohne Präfix nicht unterstützt. Um Rückwärtskompatibilität beizubehalten, wird das Mixin bis Bootstrap v4 weiterhin verfügbar sein und genutzt werden.</p>
   <p>Am besten verwendest du <code>rgba()</code>-Farben in deinen Box-Shadows, damit diese so nahtlos wie möglich in deine Hintergründe übergehen.</p>
-{% highlight css %}
+{% highlight scss %}
 .box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
   -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
           box-shadow: @shadow;
@@ -3001,7 +3001,7 @@ a {
 
   <h3 id="less-mixins-transitions">Übergänge</h3>
   <p>Drei Mixins für Flexibilität. Leg alle Übergangsdetails mit einem fest oder definiere eine separate Verzögerung und Länge, wie es für dich am besten passt.</p>
-{% highlight css %}
+{% highlight scss %}
 .transition(@transition) {
   -webkit-transition: @transition;
           transition: @transition;
@@ -3028,7 +3028,7 @@ a {
 
   <h3 id="less-mixins-transformations">Transformationen</h3>
   <p>Drehe, skaliere, bewege oder kippe irgendein object.</p>
-{% highlight css %}
+{% highlight scss %}
 .rotate(@degrees) {
   -webkit-transform: rotate(@degrees);
       -ms-transform: rotate(@degrees); // nur IE9
@@ -3084,7 +3084,7 @@ a {
 
   <h3 id="less-mixins-animations">Animationen</h3>
   <p>Ein einzelnes Mixin für alle CSS3-Animations-Eigenschaften in einem CSS-Block und weitere Mixins für einzelne Eigenschaften.</p>
-{% highlight css %}
+{% highlight scss %}
 .animation(@animation) {
   -webkit-animation: @animation;
           animation: @animation;
@@ -3117,7 +3117,7 @@ a {
 
   <h3 id="less-mixins-opacity">Undurchsichtigkeit / Trübung</h3>
   <p>Lege die Trübung fpr alle Browser fest und stelle eine <code>filter</code>-Notlösung für IE8 bereit.</p>
-{% highlight css %}
+{% highlight scss %}
 .opacity(@opacity) {
   opacity: @opacity;
   // IE8-filter
@@ -3128,7 +3128,7 @@ a {
 
   <h3 id="less-mixins-placeholder">Platzhalter-Text</h3>
   <p>Versehe Formularfelder mit Kontext in jedem Feld.</p>
-{% highlight css %}
+{% highlight scss %}
 .placeholder(@color: @input-color-placeholder) {
   &:-moz-placeholder            { color: @color; } // Firefox 4-18
   &::-moz-placeholder           { color: @color; } // Firefox 19+
@@ -3139,7 +3139,7 @@ a {
 
   <h3 id="less-mixins-columns">Spalten</h3>
   <p>Generiere Spalten über CSS in einem einzigen Element.</p>
-{% highlight css %}
+{% highlight scss %}
 .content-columns(@width; @count; @gap) {
   -webkit-column-width: @width;
      -moz-column-width: @width;
@@ -3155,21 +3155,21 @@ a {
 
   <h3 id="less-mixins-gradients">Verlaufsfarben</h3>
   <p>Verwandel zwei Farben ohne Probleme in einen Hintergrundverlauf. Geh einen Schritt weiter und lege eine Richtung, drei Farben oder einen radialen Verlauf fest. Mit einem einzelnen Mixin kriegst du alle Eigenschaften mit Präfix, die du brauchst.</p>
-{% highlight css %}
+{% highlight scss %}
 #gradient > .vertical(#333; #000);
 #gradient > .horizontal(#333; #000);
 #gradient > .radial(#333; #000);
 {% endhighlight %}
   <p>Du kannst auch den Winkel eines normalen, linearen Zweifarbverlaufs festlegen:</p>
-{% highlight css %}
+{% highlight scss %}
 #gradient > .directional(#333; #000; 45deg);
 {% endhighlight %}
   <p>Fallst du einen Verlauf mit Streifen brauchst, ist das auch kein Problem. Leg einfach eine einzelne Farbe fest und wir legen einen durchscheinenden weißen Streifen darüber.</p>
-{% highlight css %}
+{% highlight scss %}
 #gradient > .striped(#333; #000; 45deg);
 {% endhighlight %}
   <p>Lass die Korken knallen und nimm stattdessen drei Farben. Lege die erste Farbe, die zweite Farbe, den Farbstopp der zweiten Farbe (ein Dezimalwert wie 0.25) und die dritte Farbe mit diesen Mixins fest:</p>
-{% highlight css %}
+{% highlight scss %}
 #gradient > .vertical-three-colors(#777; #333; .25; #000);
 #gradient > .horizontal-three-colors(#777; #333; .25; #000);
 {% endhighlight %}
@@ -3181,7 +3181,7 @@ a {
 
   <h3 id="less-mixins-clearfix">Clearfix</h3>
   <p>Ergänze nicht jedes Mal <code>class="clearfix"</code> bei einem Element und füge stattdessen das <code>.clearfix()</code>-Mixin da ein, wo es angebracht ist. Verwendet das <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank">Micro-Clearfix</a> von <a href="http://twitter.com/necolas" target="_blank">Nicolas Gallager</a>.</p>
-{% highlight css %}
+{% highlight scss %}
 // Mixin
 .clearfix() {
   &:before,
@@ -3202,7 +3202,7 @@ a {
 
   <h3 id="less-mixins-centering">Horizontale Zentrierung</h3>
   <p>Zentriere ein Element ohne Umstände in seinem übergeordneten Element. <strong>Die (maximale) Breite (<code>width</code> oder <code>max-width</code>) des Elements muss festgelegt sein.</strong></p>
-{% highlight css %}
+{% highlight scss %}
 // Mixin
 .center-block() {
   display: block;
@@ -3219,7 +3219,7 @@ a {
 
   <h3 id="less-mixins-sizing">Größen-Helferchen</h3>
   <p>Definiere die Dimensionen eines Objekt auf eine einfachere Weise.</p>
-{% highlight css %}
+{% highlight scss %}
 // Mixins
 .size(@width; @height) {
   width: @width;
@@ -3236,7 +3236,7 @@ a {
 
   <h3 id="less-mixins-resizable">Textfläche mit veränderbarer Größe</h3>
   <p>Konfiguriere die Optionen zur Größenveränderung einer Textfläche oder eines anderen Elements. Der Standard ist das normale Browser-Verhalten (<code>both</code>).</p>
-{% highlight css %}
+{% highlight scss %}
 .resizable(@direction: both) {
   // Optionen: horizontal, vertical, both
   resize: @direction;
@@ -3247,7 +3247,7 @@ a {
 
   <h3 id="less-mixins-truncating">Text kürzen</h3>
   <p>Text kannst du ganz leicht mit Auslassungspunkten und einem einzigen Mixin kürzen lassen. <strong>Das Element muss dazu <code>block</code> oder <code>inline-block</code> sein.</strong></p>
-{% highlight css %}
+{% highlight scss %}
 // Mixin
 .text-truncate() {
   overflow: hidden;
@@ -3265,7 +3265,7 @@ a {
 
   <h3 id="less-mixins-retina-images">Retina-Bilder</h3>
   <p>Lege zwei Pfade zu Bildern und die @1x-Bild-Dimensionen fest und Bootstrap fügt einen @2x-Media-Query hinzu. <strong>Falls du sehr viele Bilder auf diese Weise anzeigen willst, überleg dir, dein CSS für Retina-Bilder lieber manuell in einen einzelnen großen Media-Query zu schreiben.</strong></p>
-{% highlight css %}
+{% highlight scss %}
 .img-retina(@file-1x; @file-2x; @width-1x; @height-1x) {
   background-image: url("@{file-1x}");
 

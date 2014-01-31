@@ -481,11 +481,11 @@ bootstrap/
 
   <h3 id="support-ie10-width">Internet Explorer 10 auf Windows 8 und Windows Phone 8</h3>
   <p>Internet Explorer 10 unterscheidet nicht zwischen <strong>Gerätebreite</strong> und <strong>Breite der tatsächlichen Anzeige</strong> und wendet Media-Queries aus Bootstraps CSS daher nicht korrekt an. Normalerweise würdest du einfach diesen CSS-Block einfügen, um das zu beheben:</p>
-{% highlight css %}
+{% highlight scss %}
 @-ms-viewport       { width: device-width; }
 {% endhighlight %}
   <p>Leider funktioniert das nicht, da auf Windows Phone 8-Geräten dann eine eher Desktop-mäßige Ansicht statt der schmalen "Smartphone"-Ansicht generiert wird. Um das zu umgehen musst du <strong>das folgende CSS und JavaScript verwenden, bis Microsoft dieses Problem behebt</strong>.</p>
-{% highlight css %}
+{% highlight scss %}
 @-webkit-viewport   { width: device-width; }
 @-moz-viewport      { width: device-width; }
 @-ms-viewport       { width: device-width; }
@@ -561,7 +561,7 @@ if (isAndroid) {
   <h3 id="third-box-sizing">Box-sizing</h3>
   <p>Einige Drittanbieter-Software, inklusive Google Maps und Google Custom Search Engine, sind nicht mit Bootstrap kompatibel, da wir <code>* { box-sizing: border-box; }</code> verwenden, eine Regel, die dafür sorgt, dass <code>padding</code> sich nicht auf die schlussendlich generierte Breite eines ELements auswirkt. Lerne mehr über das <a href="http://css-tricks.com/box-sizing/">Box-Model und box-sizing bei CSS Tricks</a>.</p>
   <p>Abhängig vom Zusammenhang musst du diese Regel nach Bedarf überschreiben (Option 1) oder box-sizing für einen gesamten Bereich zurücksetzen (Option 2).</p>
-{% highlight css %}
+{% highlight scss %}
 /* Box-sizing zurücksetzen
  *
  * Individuelle Elemente oder ganze Bereiche zurücksetzen, damit Konflikte wegen
@@ -702,7 +702,7 @@ if (isAndroid) {
 
   <p>Um dies umzusetzen, in unserem eigenen Stylesheet, fügen wir das folgende CSS hinzu:</p>
 
-{% highlight css %}
+{% highlight scss %}
 /* Eigener Button
 -------------------------------------------------- */
 

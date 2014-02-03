@@ -106,14 +106,6 @@ lead: "Wegweiser für den Wechsel von Bootstrap v2.x nach v3.x mit Infos zu wich
           <td>Aufgeteilt in <code>.hidden-md .hidden-lg</code></td>
         </tr>
         <tr>
-          <td><code>.input-small</code></td>
-          <td><code>.input-sm</code></td>
-        </tr>
-        <tr>
-          <td><code>.input-large</code></td>
-          <td><code>.input-lg</code></td>
-        </tr>
-        <tr>
           <td><code>.input-block-level</code></td>
           <td><code>.form-control</code></td>
         </tr>
@@ -261,6 +253,10 @@ lead: "Wegweiser für den Wechsel von Bootstrap v2.x nach v3.x mit Infos zu wich
           <td><code>.col-sm-pull-*</code> <code>.col-md-pull-*</code> <code>.col-lg-pull-*</code></td>
         </tr>
         <tr>
+          <td>Verschiedene Input-Höhen</td>
+          <td><code>.input-sm</code> <code>.input-lg</code></td>
+        </tr>
+        <tr>
           <td>Input-Gruppen</td>
           <td><code>.input-group</code> <code>.input-group-addon</code> <code>.input-group-btn</code></td>
         </tr>
@@ -345,9 +341,19 @@ lead: "Wegweiser für den Wechsel von Bootstrap v2.x nach v3.x mit Infos zu wich
           <td class="text-muted">N/A</td>
         </tr>
         <tr>
+          <td>Inputs mit fester Breite</td>
+          <td><code>.input-mini</code> <code>.input-small</code> <code>.input-medium</code> <code>.input-large</code> <code>.input-xlarge</code> <code>.input-xxlarge</code></td>
+          <td>Verwende stattdessen <a href="../css/#forms-controls"><code>.form-control</code></a> und das <a href="../css/#grid">Raster-System</a>.</td>
+        </tr>
+        <tr>
           <td>Block-Formularelement</td>
           <td><code>.input-block-level</code></td>
           <td>Kein direktes Pendant, aber <a href="../css/#forms-controls">Formularfelder</a> sind ähnlich.</td>
+        </tr>
+        <tr>
+          <td>Invertierte Buttons</td>
+          <td><code>.btn-inverse</code></td>
+          <td class="text-muted">N/A</td>
         </tr>
         <tr>
           <td>Fließende Rasterzeile</td>
@@ -399,6 +405,11 @@ lead: "Wegweiser für den Wechsel von Bootstrap v2.x nach v3.x mit Infos zu wich
           <td><code>.nav-list</code> <code>.nav-header</code></td>
           <td>Kein direktes Pendant, aber <a href="../components/#list-group">Listengruppen</a> und <a href="../javascript/#collapse"><code>.panel-group</code>s</a> sind ähnlich.</td>
         </tr>
+        <tr>
+          <td>Inline-Hilfetext für Formulare</td>
+          <td><code>.help-inline</code></td>
+          <td>Kein direktes Pendant, aber <code>.help-block</code> ist ähnlich.</td>
+        </tr>
       </tbody>
     </table>
   </div><!-- /.table-responsive -->
@@ -415,7 +426,7 @@ lead: "Wegweiser für den Wechsel von Bootstrap v2.x nach v3.x mit Infos zu wich
     <li>Bilder sind nicht mehr standardmäßig responsiv. Verwende <code>.img-responsive</code> für eine sich anpassende <code>&lt;img&gt;</code>-Größe.</li>
     <li>Die Icons, jetzt <code>.glyphicon</code>s, sind jetzt Schriften-basiert. Icons benötigen auch eine Grundklasse und eine Icon-Klasse (z.B. <code>.glyphicon .glyphicon-asterisk</code>).</li>
     <li>Typeahead gibt es nicht mehr, verwende stattdessen <a href="http://twitter.github.io/typeahead.js/">Twitter Typeahead</a>.</li>
-    <li>Modal-Markup wurde erheblich verändert. Die <code>.modal-header</code>, <code>.modal-body</code> und <code>.modal-footer</code> Bereiche sind jetzt innerhalb von <code>.modal-content</code> und <code>.modal-dialog</code> für bessere Stile und besseres Verhalten auf mobilen Geräten.</li>
+    <li>Modal-Markup wurde erheblich verändert. Die <code>.modal-header</code>, <code>.modal-body</code> und <code>.modal-footer</code> Bereiche sind jetzt innerhalb von <code>.modal-content</code> und <code>.modal-dialog</code> für bessere Stile und besseres Verhalten auf mobilen Geräten. Du solltest außerdem in deinem Markup nicht mehr <code>.hide</code> auf <code>.modal</code> anwenden.</li>
     <li>Das HTML wird jetzt von der <code>remote</code>-Option des Modals in <code>.modal</code> statt in den <code>.modal-body</code> geladen. Das erlaubt es dir, auch den Header und Footer des Modals zu verändern und nicht nur den Body.</li>
     <li>JavaScript-Ereignisse sind jetzt namespaced. Zum Beispiel solltest du für das "show"-Ereignis des Modals <code>'show.bs.modal'</code> verwenden. Für das "shown"-Ereignis bei Tabs verwende <code>'shown.bs.tab'</code>, usw.</li>
   </ul>

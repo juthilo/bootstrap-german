@@ -342,7 +342,7 @@ $('#meinModal').on('show.bs.modal', function (e) {
          <td>remote</td>
          <td>Pfad</td>
          <td>false</td>
-         <td><p>Falls eine Remote-URL angegeben wird, wird über jQuerys <code>load</code>-Methode <strong>Inhalt von dort einmal geladen</strong> und an der obersten Stelle des Modals injiziert. Falls du die Data-API verwendest, kannst du auch das Attribut <code>href</code> nutzen, um die Remote-Quelle anzugeben. Hier ein Beispiel:</p>
+         <td><p>Falls eine Remote-URL angegeben wird, wird über jQuerys <code>load</code>-Methode <strong>Inhalt von dort einmal geladen</strong> und in den div-Container <code>.modal-content</code> injiziert. Falls du die Data-API verwendest, kannst du auch das Attribut <code>href</code> nutzen, um die Remote-Quelle anzugeben. Hier ein Beispiel:</p>
 {% highlight html %}
 <a data-toggle="modal" href="remote.html" data-target="#modal">Klick mich an</a>
 {% endhighlight %}
@@ -548,6 +548,10 @@ $('#meinModal').on('hidden.bs.modal', function (e) {
 {% highlight js %}
 $('.dropdown-toggle').dropdown()
 {% endhighlight %}
+  <div class="bs-callout bs-callout-info">
+    <h4><code>data-toggle="dropdown"</code> weiterhin notwendig</h4>
+    <p>Unabhängig davon, ob du dein Dropdown-Menü über JavaScript oder die Data-API aufrufst, musst du das auslösende Element (den Schalter) immer mit <code>data-toggle="dropdown"</code> kennzeichnen.</p>
+  </div>
 
   <h3>Optionen</h3>
   <p><em>Keine</em></p>

@@ -427,7 +427,7 @@ lead: "Wegweiser für den Wechsel von Bootstrap v2.x nach v3.x mit Infos zu wich
     <li>Die Icons, jetzt <code>.glyphicon</code>s, sind jetzt Schriften-basiert. Icons benötigen auch eine Grundklasse und eine Icon-Klasse (z.B. <code>.glyphicon .glyphicon-asterisk</code>).</li>
     <li>Typeahead gibt es nicht mehr, verwende stattdessen <a href="http://twitter.github.io/typeahead.js/">Twitter Typeahead</a>.</li>
     <li>Modal-Markup wurde erheblich verändert. Die <code>.modal-header</code>, <code>.modal-body</code> und <code>.modal-footer</code> Bereiche sind jetzt innerhalb von <code>.modal-content</code> und <code>.modal-dialog</code> für bessere Stile und besseres Verhalten auf mobilen Geräten. Du solltest außerdem in deinem Markup nicht mehr <code>.hide</code> auf <code>.modal</code> anwenden.</li>
-    <li>Das HTML wird jetzt von der <code>remote</code>-Option des Modals in <code>.modal</code> statt in den <code>.modal-body</code> geladen. Das erlaubt es dir, auch den Header und Footer des Modals zu verändern und nicht nur den Body.</li>
+    <li>Ab v3.1.0 wird das HTML von der <code>remote</code>-Option des Modals in <code>.modal-content</code> statt in den <code>.modal-body</code> geladen (von v3.0.0 bis v3.0.3 in <code>.modal</code>). Das erlaubt es dir, auch den Header und Footer des Modals zu verändern und nicht nur den Body.</li>
     <li>JavaScript-Ereignisse sind jetzt namespaced. Zum Beispiel solltest du für das "show"-Ereignis des Modals <code>'show.bs.modal'</code> verwenden. Für das "shown"-Ereignis bei Tabs verwende <code>'shown.bs.tab'</code>, usw.</li>
   </ul>
   <p>Für mehr Informationen über das Upgrade auf v3.0 und Code-Schnipsel aus der Community kannst du bei <a href="http://bootply.com/">Bootply</a> vorbeischauen.</p>

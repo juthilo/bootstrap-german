@@ -208,11 +208,11 @@ Projekteigentümern, deine Arbeit unter den Bedingungen der
   Änderungsklassen und Unterkomponenten verwenden (z.B. `.component-lg`).
 - Vermeide Vererbung und zu viele Verschachtelungen—verwende einzelne,
   explizite Klassen, wann immer möglich.
+- Abgesehen von seltenen Einzelfällen, solltest du die Standard-Stile für `:focus` (also z.B. `outline: none;`) nicht entfernen ohne sinnvolle Alternativen bereitzustellen. Lies [diesen Artikel des A11Y Projects](http://a11yproject.com/posts/never-remove-css-outlines/) für mehr Informationen.
 
 ### JS
 
 - Keine Semikolons
-- Komma zuerst
 - 2 Leerzeichen (keine Tabs)
 - [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode)
 - "Attraktiv"

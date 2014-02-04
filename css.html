@@ -33,12 +33,6 @@ lead: "Globale CSS-Stile, grundlegende HTML-Elemente mit erweiterbaren Klassen g
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 {% endhighlight %}
 
-  <h3 id="overview-responsive-images">Responsive Bilder</h3>
-  <p>Bilder in Bootstrap 3 können sich automatisch dem Bildschirm anpassen, wenn du die Klasse <code>.img-responsive</code> hinzufügst. Diese wendet <code>max-width: 100%;</code> und <code>height: auto;</code> auf das Bild an, so dass es sich wunderbar dem übergeordneten Element anpasst.</p>
-{% highlight html %}
-<img src="..." class="img-responsive" alt="Responsives Bild">
-{% endhighlight %}
-
   <h3 id="overview-type-links">Typografie und Links</h3>
   <p>Bootstrap legt globale Grundregeln für die Anzeige von Elementen, Typografie und Links fest. Ganz genau:</p>
   <ul>
@@ -2337,6 +2331,13 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
 <div class="bs-docs-section">
   <h1 id="images" class="page-header">Bilder</h1>
 
+  <h2 id="images-responsive">Responsive Bilder</h3>
+  <p>Bilder in Bootstrap 3 können sich automatisch dem Bildschirm anpassen, wenn du die Klasse <code>.img-responsive</code> hinzufügst. Diese wendet <code>max-width: 100%;</code> und <code>height: auto;</code> auf das Bild an, so dass es sich wunderbar dem übergeordneten Element anpasst.</p>
+{% highlight html %}
+<img src="..." class="img-responsive" alt="Responsives Bild">
+{% endhighlight %}
+
+  <h2 id="images-shapes">Bilder-Konturen</h2>
   <p>Füge Klassen zu <code>&lt;img&gt;</code>-Elementen hinzu, um Bilder in jedem Projekt ganz einfach zu gestalten.</p>
   <div class="bs-callout bs-callout-danger">
     <h4>Browser-Kompatibilität</h4>
@@ -2352,11 +2353,6 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
 <img src="..." alt="..." class="img-circle">
 <img src="..." alt="..." class="img-thumbnail">
 {% endhighlight %}
-
-  <div class="bs-callout bs-callout-info">
-    <h4>Responsive Bilder</h4>
-    <p>Du möchtest deine Bilder gerne responsiv machen, so dass sie sich der Bildschirmbreite anpassen? <a href="#overview-responsive-images">Lies den Abschnitt über responsive Bilder</a> weiter oben.</p>
-  </div>
 </div>
 
 

@@ -217,6 +217,10 @@ Projekteigentümern, deine Arbeit unter den Bedingungen der
 - [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode)
 - "Attraktiv"
 
+### Code-Stil überprüfen
+
+Du solltest `grunt test` ausführen, bevor du einen Commit erstellst, um sicherzugehen, dass deine Änderungen unseren Code-Richtlinien folgen.
+
 
 ## Lizenz
 

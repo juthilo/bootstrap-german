@@ -76,11 +76,6 @@ lead: "Globale CSS-Stile, grundlegende HTML-Elemente mit erweiterbaren Klassen g
   </ul>
   <p>Sieh dir die Beispiele an, um diese Prinzipien in deinen Code einzubauen.</p>
 
-  <div class="bs-callout bs-callout-info">
-    <h4>Raster und Layouts über die gesamte Breite</h4>
-    <p>Wer fließende Layouts vom linken bis zum rechten Seitenrand erstellen möchte, muss sein Raster in ein äußeres Element mit <code>padding: 0 15px;</code> packen, um die <code>margin: 0 -15px;</code> der <code>.row</code>s auszugleichen.</p>
-  </div>
-
   <h3 id="grid-media-queries">Media-Queries</h3>
   <p>Wir verwenden die folgenden Media-Queries in unseren Less-Dateien, um die grundlegenden Umbruchpunkte in unserem Rastersystem zu erstellen.</p>
 {% highlight scss %}
@@ -3245,7 +3240,7 @@ a {
   <p>Text kannst du ganz leicht mit Auslassungspunkten und einem einzigen Mixin kürzen lassen. <strong>Das Element muss dazu <code>block</code> oder <code>inline-block</code> sein.</strong></p>
 {% highlight scss %}
 // Mixin
-.text-truncate() {
+.text-overflow() {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -3255,7 +3250,7 @@ a {
 .branch-name {
   display: inline-block;
   max-width: 200px;
-  .text-truncate();
+  .text-overflow();
 }
 {% endhighlight %}
 

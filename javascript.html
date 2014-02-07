@@ -15,8 +15,13 @@ lead: "Erwecke Bootstrap mit zahlreichen jQuery-Plugins zum Leben. Verwende alle
   <p>Plugins können einzeln (über Bootstraps separate <code>*.js</code>-Dateien) oder alle auf einmal (über <code>bootstrap.js</code> oder das minimierte <code>bootstrap.min.js</code>) eingebunden werden.</p>
 
   <div class="bs-callout bs-callout-danger">
-    <h4>Verwende niemals beide Optionen gleichzeitig.</h4>
-    <p>Sowohl <code>bootstrap.js</code> als auch <code>bootstrap.min.js</code> enhalten alle Plugins in einer einzigen Datei.</p>
+    <h4>Umgang mit dem kompilierten JavaScript</h4>
+    <p>Sowohl <code>bootstrap.js</code> als auch <code>bootstrap.min.js</code> enhalten alle Plugins in einer einzigen Datei. Binde immer nur eine von beiden in deine Dokumente ein.</p>
+  </div>
+
+  <div class="bs-callout bs-callout-danger">
+    <h4>Data-Attribute bei Komponenten</h4>
+    <p>Du solltest Data-Attribute von verschiedenen Plugins nicht zusammen an einer Komponente verwenden. Zum Beispiel kann ein Button nicht gleichzeitig einen Tooltip anzeigen und ein Modal öffnen. Verwende ein umschließendes Element, um dies umzusetzen.</p>
   </div>
 
   <div class="bs-callout bs-callout-danger">
@@ -561,6 +566,7 @@ $('.dropdown-toggle').dropdown()
   <p>Blendet das Dropdown-Menü einer angegebenen Navbar oder Tabs-Navigation ein/aus.</p>
 
   <h3>Ereignisse</h3>
+  <p>Alle Dropdown-Ereignisse werden am übergeordneten Element von <code>.dropdown-menu</code> ausgelöst.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
       <thead>

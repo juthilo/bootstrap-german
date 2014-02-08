@@ -11,7 +11,9 @@ destination:      ./_gh_pages
 port:             10006
 encoding:         UTF-8
 
-exclude:          ["vendor"]
+exclude:
+  - "jade"
+  - "vendor"
 
 # Custom vars
 current_version:  3.1.0

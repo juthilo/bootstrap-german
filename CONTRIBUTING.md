@@ -212,7 +212,7 @@ Projekteigentümern, deine Arbeit unter den Bedingungen der
 
 ### JS
 
-- Keine Semikolons
+- Keine Semikolons (in JS für Endgeräte)
 - 2 Leerzeichen (keine Tabs)
 - [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode)
 - "Attraktiv"

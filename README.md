@@ -22,11 +22,11 @@ Um direkt loszulegen, geh auf <http://holdirbootstrap.de>!
 
 Es sind drei Optionen verfügbar, um direkt loszulegen:
 
-- [Neueste Version herunterladen](https://github.com/twbs/bootstrap/archive/v3.1.0.zip).
+- [Neueste Version herunterladen](https://github.com/twbs/bootstrap/archive/v3.1.1.zip).
 - Repository klonen: `git clone https://github.com/twbs/bootstrap.git`.
 - Mit [Bower](http://bower.io) installieren: `bower install bootstrap`.
 
-Lies die Seite [Los geht's](http://holdirbootstrap.de/getting-started/) für Informationen über die Inhalte des Frameworks, Vorlagen und Beispiele und mehr.
+Lies die Seite [Los geht's](http://holdirbootstrap.de/los-gehts/) für Informationen über die Inhalte des Frameworks, Vorlagen und Beispiele und mehr.
 
 ### Was zur Verfügung steht
 

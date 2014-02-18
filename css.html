@@ -1886,8 +1886,8 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
   <p>Füge das Attribut <code>disabled</code> zu einem <code>&lt;fieldset&gt;</code> hinzu, um alle Felder darin auf einmal zu deaktivieren.</p>
 
   <div class="bs-callout bs-callout-warning">
-    <h4>Link-Funktionalität von <code>&lt;a&gt;</code> nicht beeinträchtigt</h4>
-    <p>Diese Klasse wird nur das Aussehen von <code>&lt;a class="btn btn-default"&gt;</code>-Buttons, nicht aber ihre Funktionalität verändern. Verwende eigenes JavaScript, um Links hier vollständig zu deaktivieren.</p>
+    <h4>Besonderheiten der Link-Funktionalität von <code>&lt;a&gt;</code></h4>
+    <p>Unsere Stile verwenden in diesem Fall <code>pointer-events: none</code>, um zu versuchen, die Link-Funktionalität von <code>&lt;a class="btn btn-*"&gt;</code>-Buttons zu deaktivieren. Diese Eigenschaft ist noch nicht standardisiert und wird von Opera 18 und älter sowie Internet Explorer 11 nicht rundum unterstützt. Um wirklich sicherzugehen, solltest du in diesem Fall JavaScript verwenden, um Links zu deaktivieren.</p>
   </div>
 
   <div class="bs-callout bs-callout-danger">
@@ -2292,8 +2292,8 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
     Wir verwenden <code>.disabled</code> hier als eine Hilfsklasse, so ähnlich wie die weit verbreitete <code>.active</code>-Klasse, deshalb gibt es hier kein Präfix.
   </p>
   <div class="bs-callout bs-callout-warning">
-    <h4>Link-Funktionalität nicht beeinträchtigt</h4>
-    <p>Diese Klasse wird nur das Aussehen von <code>&lt;a&gt;</code>-Buttons, nicht aber ihre Funktionalität verändern. Verwende eigenes JavaScript, um Links hier vollständig zu deaktivieren.</p>
+    <h4>Probleme mit Link-Funktionalität</h4>
+    <p>Diese Klasse verwendet <code>pointer-events: none</code>, um zu versuchen, die Link-Funktionalität von <code>&lt;a&gt;</code>-Buttons zu deaktivieren, diese Eigenschaft ist allerdings noch nicht standardisiert und wird von Opera 18 und älter sowie Internet Explorer 11 nicht rundum unterstützt. Um wirklich sicherzugehen, solltest du in diesem Fall JavaScript verwenden, um Links zu deaktivieren.</p>
   </div>
   <div class="bs-callout bs-callout-warning">
     <h4>Kontext-spezifische Verwendung</h4>

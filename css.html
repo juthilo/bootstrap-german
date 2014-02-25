@@ -46,10 +46,17 @@ lead: "Globale CSS-Stile, grundlegende HTML-Elemente mit erweiterbaren Klassen g
   <p>Damit deine Seite in allen Browsern möglichst gleich aussieht, verwenden wir <a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a>, ein Projekt von <a href="http://twitter.com/necolas" target="_blank">Nicolas Gallagher</a> und <a href="http://twitter.com/jon_neal" target="_blank">Jonathan Neal</a>.</p>
 
   <h3 id="overview-container">Container</h3>
-  <p>Wenn du Inhalte auf deiner Seite in <code>.container</code> packst, werden diese ganz einfach zentriert. Container legen die <code>width</code> für verschiedene Media-Query-Umbruchspunkte fest, um gut zu unserem Rastersystem zu passen.</p>
-  <p>Beachte, dass Container wegen <code>padding</code> und festen Breiten normalerweise nicht verschachtelbar sind.</p>
+  <p>Bootstrap benötigt ein Element, in dem Seiteninhalte und unser Raster-System verpackt sind. Du kannst dir einen von zwei Containern zur Verwendung in deinem Projekt aussuchen. Beachte, dass aufgrund von <code>padding</code> und mehr keiner der beiden Container verschachtelbar ist.</p>
+  <p>Verwende <code>.container</code> für einen sich anpassenden Container mit einer festen Breite.</p>
 {% highlight html %}
 <div class="container">
+  ...
+</div>
+{% endhighlight %}
+</div>
+  <p>Verwende <code>.container-fluid</code> für einen Container, der die gesamte Breite deines Anzeigefensters einnimmt.</p>
+{% highlight html %}
+<div class="container-fluid">
   ...
 </div>
 {% endhighlight %}
@@ -73,6 +80,7 @@ lead: "Globale CSS-Stile, grundlegende HTML-Elemente mit erweiterbaren Klassen g
     <li>Vordefinierte Raster-Klassen wie <code>.row</code> und <code>.col-xs-4</code> sind verfügbar für die schnelle Erstellung von Layouts. Außerdem kannst du Less-Mixins verwenden, um deinem Layout mehr Semantik zu verleihen.</li>
     <li>Spalten erzeugen "Furchen" (Lücken zwischen Spalten-Inhalt) über <code>padding</code>. Dieser Innenabstand wird in Zeilen von der ersten und letzten Spalte über negativen Außenabstand wieder abgezogen.</li>
     <li>Raster-Spalten werden definiert, indem du die Anzahl von zwölf verfügbaren Spalten angibst, über die die Raster-Spalte gelegt werden soll. Zum Beispiel kannst du drei gleich große Spalten mit drei <code>.col-xs-4</code> erstellen.</li>
+    <li>Rasterklassen beziehen sich auf Geräte mit Bildschirmbreiten, die genau so groß oder größer als die Umbruchpunkt-Größen sind. Sie überschreiben Rasterklassen, die sich auf kleinere Geräte beziehen. Wenn du eine <code>.col-md-</code>-Klasse auf ein Element anwendest, wird sich dies daher nicht nur auf die Stile auf mittleren Geräten auswirken, sondern auch auf diejenigen auf großen Geräten, es sei denn es gibt außerdem eine <code>.col-lg-</code>-Klasse.</li>
   </ul>
   <p>Sieh dir die Beispiele an, um diese Prinzipien in deinen Code einzubauen.</p>
 
@@ -151,9 +159,9 @@ lead: "Globale CSS-Stile, grundlegende HTML-Elemente mit erweiterbaren Klassen g
         <tr>
           <th>Spaltenbreite</th>
           <td class="text-muted">Auto</td>
-          <td>60px</td>
-          <td>78px</td>
-          <td>95px</td>
+          <td>~62px</td>
+          <td>~81px</td>
+          <td>~97px</td>
         </tr>
         <tr>
           <th>Abstandsbreite</th>
@@ -174,7 +182,6 @@ lead: "Globale CSS-Stile, grundlegende HTML-Elemente mit erweiterbaren Klassen g
       </tbody>
     </table>
   </div>
-  <p>Rasterklassen beziehen sich auf Geräte mit Bildschirmbreiten, die genau so groß oder größer als die Umbruchpunkt-Größen sind. Sie überschreiben Rasterklassen, die sich auf kleinere Geräte beziehen. Wenn du eine <code>.col-md-</code>-Klasse auf ein Element anwendest, wird sich dies daher nicht nur auf die Stile auf mittleren Geräten auswirken, sondern auch auf diejenigen auf großen Geräten, es sei denn es gibt außerdem eine <code>.col-lg-</code>-Klasse.</p>
 
   <h3 id="grid-example-basic">Beispiel: Übereinander, nebeneinander</h3>
   <p>Du brauchst nur ein paar <code>.col-md-*</code>-Klassen, um ein grundlegendes Raster zu erstellen, dessen Spalten auf Smartphones und Tablets (extra-klein bis klein) übereinander und dann ab mittleren Bildschirmgrößen auf Desktop-PCs nebeneinander angeordnet sind. Platziere die Rasterspalten einfach in irgendeiner <code>.row</code>.</p>
@@ -1976,7 +1983,7 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
 {% endhighlight %}
 
   <h3>Mit optionalen Icons</h3>
-  <p>Du kannst optional außerdem passende Icons hinzufügen, indem du noch eine Klasse und das richtige Icon ergänzt.</p>
+  <p>Du kannst optional außerdem passende Icons hinzufügen, indem du die Klasse <code>.has-feedback</code> und das richtige Icon ergänzt.</p>
   <div class="bs-callout bs-callout-warning">
     <h4>Icons und Input-Gruppen</h4>
     <p>Wenn du die Feedback-Icons verwendest, musst du eventuell bei <a href="../komponenten#input-groups">Input-Gruppen</a> mit einem Add-on auf der rechten Seite die Icons manuell positionieren. Ändere den Standard <code>right: 0;</code> zu einem sinnvollen Pixel-Wert, abhängig von der Breite deines Add-ons.</p>

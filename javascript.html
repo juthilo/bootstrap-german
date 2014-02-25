@@ -298,6 +298,13 @@ $('#meinModal').on('show.bs.modal', function (e) {
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
 
+  <h2 id="modals-remove-animation">Animation entfernen</h2>
+  <p>Entferne die Klasse <code>.fade</code> von deinem Modal-Markup, wenn du lieber möchtest, dass das Modal einfach erscheint und nicht von oben eingeflogen wird.</p>
+{% highlight html %}
+<div class="modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+  ...
+</div>
+{% endhighlight %}
 
   <h2 id="modals-usage">Verwendung</h2>
   <p>Das Modal-Plugin blendet über Data-Attribute oder JavaScript verborgenen Inhalt bei Bedarf ein und wieder aus. Es fügt außerdem die Klasse <code>.modal-open</code> zum <code>&lt;body&gt;</code>hinzu, um standardmäßiges Scroll-Verhalten zu überschreiben und generiert ein <code>.modal-backdrop</code>-Element, damit Modals durch einen Klick außerhalb des Modals geschlossen werden können.</p>

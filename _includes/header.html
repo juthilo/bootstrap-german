@@ -7,6 +7,9 @@
 <meta name="description" content="Bootstrap, ein umfangreiches und dennoch schlankes Mobile-First Frond-End-Framework für einfachere und schnellere Entwicklung im Web.">
 <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, bootstrap, bootstrap deutsch, dokumentation, übersetzung">
 <meta name="author" content="Mark Otto, Jacob Thornton und Bootstrap-Beitragende">
+{% if page.redirect == true %}
+<meta name="robots" content="noindex">
+{% endif %}
 
 <title>
   {% if page.title == "Bootstrap" %}
@@ -15,9 +18,7 @@
     {{ page.title }} &middot; Bootstrap (deutsch)
   {% endif %}
 </title>
-{% if page.redirect == true %}
-<link rel="canonical" href="http://holdirbootstrap.de/{{ page.redirect_to }}/">
-{% endif %}
+
 <!-- Bootstrap CSS -->
 <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
 

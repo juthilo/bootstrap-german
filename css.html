@@ -1879,7 +1879,7 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
 
 
   <h2 id="forms-control-disabled">Deaktivierte Ansicht</h2>
-  <p>Füge das Attribut <code>disabled</code> zu einem Feld hinzu, um Benutzereingaben abzuschalten und einen etwas anderen Look anzuwenden.</p>
+  <p>Füge das Boolean-Attribut <code>disabled</code> zu einem Feld hinzu, um Benutzereingaben abzuschalten und einen etwas anderen Look anzuwenden.</p>
   <div class="bs-example">
     <form role="form">
       <input class="form-control" id="deaktiviertesFeld" type="text" placeholder="Deaktivierter Platzhalter-Text." disabled>
@@ -1948,7 +1948,19 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
 {% endhighlight %}
 
 
-  <h2 id="forms-control-validation">Formular-Überprüfung</h2>
+  <h2 id="forms-control-readonly">Nur-Lesen-Ansicht</h2>
+  <p>Füge das Boolean-Attribut <code>readonly</code> zu einem Formularfeld hinzu, um Benutzereingaben zu verhindern und das Feld deaktiviert aussehen zu lassen.</p>
+  <div class="bs-example">
+    <form role="form">
+      <input class="form-control" type="text" placeholder="Mich bitte nur lesen…" readonly>
+    </form>
+  </div><!-- /.bs-example -->
+{% highlight html %}
+<input class="form-control" type="text" placeholder="Mich bitte nur lesen…" readonly>
+{% endhighlight %}
+
+
+    <h2 id="forms-control-validation">Formular-Überprüfung</h2>
   <p>Bootstrap beinhaltet Stile für Fehler-, Warnung- und Erfolg-Rückmeldungen bei Formularfeldern. Um sie zu verwenden, füge <code>.has-warning</code>, <code>.has-error</code> oder <code>.has-success</code> zum übergeordneten Element hinzu. Alle <code>.control-label</code>, <code>.form-control</code> und <code>.help-block</code> in diesem Element werden dann die Rückmeldungs-Stile erhalten.</p>
 
   <div class="bs-example">
@@ -1985,8 +1997,8 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
   <h3>Mit optionalen Icons</h3>
   <p>Du kannst optional außerdem passende Icons hinzufügen, indem du die Klasse <code>.has-feedback</code> und das richtige Icon ergänzt.</p>
   <div class="bs-callout bs-callout-warning">
-    <h4>Icons und Input-Gruppen</h4>
-    <p>Wenn du die Feedback-Icons verwendest, musst du eventuell bei <a href="../komponenten#input-groups">Input-Gruppen</a> mit einem Add-on auf der rechten Seite die Icons manuell positionieren. Ändere den Standard <code>right: 0;</code> zu einem sinnvollen Pixel-Wert, abhängig von der Breite deines Add-ons.</p>
+    <h4>Icons, Labels und Input-Gruppen</h4>
+    <p>Die Feedback-Icons müssen manuell positioniert werden, wenn du sie mit <a href="../komponenten#input-groups">Input-Gruppen</a> mit einem Add-on auf der rechten Seite oder mit Feldern ohne Label verwendest. Ändere bei Input-Grupen den Standard <code>right: 0;</code> zu einem sinnvollen Pixel-Wert, abhängig von der Breite deines Add-ons. Bei nicht vorhandenen Labels musst du den Wert für <code>top</code> anpassen.</p>
   </div>
   <div class="bs-example">
     <form role="form">
@@ -3345,4 +3357,29 @@ a {
   <p>
     <a class="btn btn-lg btn-outline" href="{{ site.sass_repo }}">Bootstrap für Sass</a>
   </p>
+</div>
+
+
+
+<!-- RTL
+================================================== -->
+<div class="bs-docs-section">
+  <h1 id="rtl" class="page-header">RTL</h1>
+  <p class="lead">Ab Bootstrap 3.2 beinhaltet das Projekt eine von-rechts-nach-links-Version der Stile. Diese wird von unserem Gruntfile mit der Hilfe von Twitters <a href="https://github.com/twitter/css-flip">Projekt CSS Flip</a> generiert.</p>
+
+  <h2 id="rtl-how-to">Verwendung</h2>
+  <p>Bootstrap ist standardmäßig ein von-links-nach-rechts-Projekt. Für von-rechts-nach-links-Projekt musst du deine Sprache festlegen und das Standard-Bootstrap-CSS mit einer RTL-Version ersetzen. Leg zuerst deine Sprache und Schreibrichtung fest:</p>
+{% highlight html %}
+<!-- Beispiel: Arabische Sprache und Textrichtung auf RTL festgelegt -->
+<html lang="ar" dir="rtl">
+{% endhighlight %}
+  <p>Ersetze dann das Standard-Bootstrap-CSS durch die von-rechts-nach-links-CSS-Datei:</p>
+{% highlight html %}
+<!-- Bootstrap-RTL -->
+<link rel="stylesheet" href="bootstrap-rtl.css">
+{% endhighlight %}
+  <p>Alternativ kannst du die komprimierte Version der RTL-Datei verwenden, <code>bootstrap-rtl.min.css</code>.</p>
+
+  <h2 id="rtl-css-flip">CSS Flip</h2>
+  <p><a href="https://github.com/twitter/css-flip">CSS Flip</a> ist ein Projekt zur Konvertierung von links-nach-rechts-CSS-Dateien in rechts-nach-links-CSS-Dateien. Wir verwenden es in unserem Gruntfile, um die Generierung von Bootstraps RTL-CSS-Dateien zu automatisieren.</p>
 </div>

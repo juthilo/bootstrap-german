@@ -2281,6 +2281,34 @@ body { padding-bottom: 70px; }
 </div>
 {% endhighlight %}
 
+  <h3 id="progress-low-percentages">Niedrige Prozentwerte</h3>
+  <p>Verlaufsleisten, die für niedrige Prozentwerte mit nur einer Ziffer stehen, inkl. 0%, erhalten für bessere Lesbarkeit <code>min-width: 20px;</code>.</p>
+  <div class="bs-example">
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        0%
+      </div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
+        2%
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+    0%
+  </div>
+</div>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
+    2%
+  </div>
+</div>
+{% endhighlight %}
+
+
   <h3 id="progress-alternatives">Kontext-Varianten</h3>
   <p>Verlaufsanzeigen nutzen ähnlich wie Buttons und Warnhinweise zusätzliche Klassen, um einige Kontext-Farben hinzuzufügen.</p>
   <div class="bs-example">

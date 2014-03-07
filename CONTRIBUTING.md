@@ -196,6 +196,7 @@ Projekteigentümern, deine Arbeit unter den Bedingungen der
 - Immer ein Leerzeichen nach dem Doppelpunkt einer Eigenschaft (z.B. `display: block;` und nicht `display:block;`).
 - Beende alle Zeilen mit einem Semikolon.
 - Für mehrere, durch Kommas getrennte Selektoren, platziere jeden Selektor auf einer neuen Zeile.
+- Füge keine Vendor-Präfix-Eigenschaften zu ihren Gegenstücken ohne Präfix hinzu (z.B. nur `box-sizing` und nicht zusätzlich `-webkit-box-sizing`), da diese automatisch generiert werden.
 - Attribut-Selektoren, wie `input[type="text"]`, sollten den Wert des Attributs
   immer in doppelten Anführungszeichen verpacken, der Einheitlichkeit und
   Sicherheit wegen

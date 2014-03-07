@@ -719,9 +719,53 @@ lead: "Globale CSS-Stile, grundlegende HTML-Elemente mit erweiterbaren Klassen g
   <h3>Gemacht mit Less</h3>
   <p>Die typografischen Größen werden mit Hilfe von zwei Less-Variablen in <strong>variables.less</strong> berechnet: <code>@font-size-base</code> und <code>@line-height-base</code>. Die erste ist die grundlegende Schriftgröße und die zweite die grundlegende Zeilenhöhe. Wir verwenden diese Variablen und ein bisschen Mathematik, um Außen- und Innenabstände, Zeilenhöhen für alle unsere Textbausteine und mehr zu generieren. Ändere diese grundlegenden Variablen und Bootstrap wird sich automatisch durchgehend anpassen.</p>
 
+  <!-- Inline text elements -->
+  <h2 id="type-inline-text">Inline-Text-Elemente</h2>
+  <h3>Markierter Text</h3>
+  <p>Verwende das Tag <code>&lt;mark&gt;</code>, um Textblöcke als markiert hervorzuheben.</p>
+  <div class="bs-example">
+    <p>Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.</p>
+  </div>
+{% highlight html %}
+Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
+{% endhighlight %}
 
-  <!-- Emphasis -->
-  <h2 id="type-emphasis">Gewichtung</h2>
+  <h3>Gelöschter Text</h3>
+  <p>Um gelöschte Textblöcke anzuzeigen kannst du das Tag <code>&lt;del&gt;</code> verwenden.</p>
+  <div class="bs-example">
+    <p><del>Diese Textzeile soll als gelöschter Text angezeigt werden.</del></p>
+  </div>
+{% highlight html %}
+<del>Diese Textzeile soll als gelöschter Text angezeigt werden.</del>
+{% endhighlight %}
+
+  <h3>Durchgestrichener Text</h3>
+  <p>Um nicht mehr relevante Textblöcke anzuzeigen, kannst du das Tag <code>&lt;s&gt;</code> verwenden.</p>
+  <div class="bs-example">
+    <p><s>Diese Textzeile soll als nicht mehr korrekt behandelt werden.</s></p>
+  </div>
+{% highlight html %}
+<s>Diese Textzeile soll als nicht mehr korrekt behandelt werden.</s>
+{% endhighlight %}
+
+  <h3>Eingefügter Text</h3>
+  <p>Um Ergänzungen zum Dokument zu markieren kannst du das Tag <code>&lt;ins&gt;</code> verwenden.</p>
+  <div class="bs-example">
+    <p><ins>Diese Textzeile soll als Ergänzung zum Dokument behandelt werden.</ins></p>
+  </div>
+{% highlight html %}
+<ins>Diese Textzeile soll als Ergänzung zum Dokument behandelt werden.</ins>
+{% endhighlight %}
+
+  <h3>Unterstrichener Text</h3>
+  <p>Um Text zu unterstreichen kannst du das Tag <code>&lt;u&gt;</code> verwenden.</p>
+  <div class="bs-example">
+    <p><u>Diese Textzeile wird unterstrichen angezeigt</u>.</p>
+  </div>
+{% highlight html %}
+<u>Diese Textzeile wird unterstrichen angezeigt</u>
+{% endhighlight %}
+
   <p>Verwende die Standard-HTML-Tags zur unterschiedlichen Gewichtung von Text mit leichten Stilen.</p>
 
   <h3>Kleiner Text</h3>
@@ -758,7 +802,7 @@ lead: "Globale CSS-Stile, grundlegende HTML-Elemente mit erweiterbaren Klassen g
     <p>Du kannst gerne die Elemente <code>&lt;b&gt;</code> und <code>&lt;i&gt;</code> in HTML5 verwenden. <code>&lt;b&gt;</code> ist dazu gedacht, Wörter hervorzuheben ohne ihre Bedeutung zu vergrößern während <code>&lt;i&gt;</code> hauptsächlich für Gesprochenes, technische Begriffe, usw. verwendet wird.</p>
   </div>
 
-  <h3>Ausrichtungsklassen</h3>
+  <h2 id="type-alignment">Ausrichtungsklassen</h2>
   <p>Richte Text ganz einfach mit den folgenden Klassen neu aus.</p>
   <div class="bs-example">
     <p class="text-left">Links ausgerichteter Text.</p>
@@ -1052,6 +1096,24 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
 {% endhighlight %}
 
   <p>Du kannst außerdem optional die Klasse <code>.pre-scrollable</code> hinzufügen, die eine maximale Höhe (max-height) von 350px festlegen und eine Scrollleiste für die y-Achse einblenden wird.</p>
+
+  <h2 id="code-variables">Variablen</h2>
+  <p>Verwende das Tag <code>&lt;var&gt;</code>, um Variablen zu markieren.</p>
+  <div class="bs-example">
+    <p><var>y</var> = <var>m</var><var>x</var> + <var>b</var></p>
+  </div>
+{% highlight html %}
+<var>y</var> = <var>m</var><var>x</var> + <var>b</var>
+{% endhighlight %}
+
+  <h2 id="code-sample-output">Beispiel-Ausgabe</h2>
+  <p>Um Text als Beispiel-Ausgabe eines Programms zu markieren, verwende das Tag <code>&lt;samp&gt;</code>.</p>
+  <div class="bs-example">
+    <p><samp>Dieser Text soll als Beispiel-Ausgabe eines Computer-Programms behandelt werden.</samp></p>
+  </div>
+{% highlight html %}
+<samp>Dieser Text soll als Beispiel-Ausgabe eines Computer-Programms behandelt werden.</samp>
+{% endhighlight %}
 </div>
 
 
@@ -2973,6 +3035,7 @@ a {
 
   <h3 id="less-mixins-box-sizing">Box-sizing</h3>
   <p>Definiere das box model deiner Site oder Anwendung mit einem einzigen Mixin. Mehr Informationen findest du in <a href="https://developer.mozilla.org/en-US/docs/CSS/box-sizing" target="_blank">diesem hilfreichen Artikel von Mozilla</a>.</p>
+  <p>Dieses Mixin ist ab v3.2.0 als veraltet markiert und wurde durch autoprefixer ersetzt. Um Rückwärtskompatibilität zu bewahren, wird Bootstrap das Mixin bis Bootstrap v4 weiterhin intern verwenden.</p>
 {% highlight scss %}
 .box-sizing(@box-model) {
   -webkit-box-sizing: @box-model; // Safari <= 5
@@ -3015,6 +3078,7 @@ a {
 
   <h3 id="less-mixins-transitions">Übergänge</h3>
   <p>Drei Mixins für Flexibilität. Leg alle Übergangsdetails mit einem fest oder definiere eine separate Verzögerung und Länge, wie es für dich am besten passt.</p>
+  <p>Dieses Mixin ist ab v3.2.0 als veraltet markiert und wurde durch autoprefixer ersetzt. Um Rückwärtskompatibilität zu bewahren, wird Bootstrap das Mixin bis Bootstrap v4 weiterhin intern verwenden.</p>
 {% highlight scss %}
 .transition(@transition) {
   -webkit-transition: @transition;
@@ -3042,6 +3106,7 @@ a {
 
   <h3 id="less-mixins-transformations">Transformationen</h3>
   <p>Drehe, skaliere, bewege oder kippe irgendein object.</p>
+  <p>Dieses Mixin ist ab v3.2.0 als veraltet markiert und wurde durch autoprefixer ersetzt. Um Rückwärtskompatibilität zu bewahren, wird Bootstrap das Mixin bis Bootstrap v4 weiterhin intern verwenden.</p>
 {% highlight scss %}
 .rotate(@degrees) {
   -webkit-transform: rotate(@degrees);
@@ -3098,6 +3163,7 @@ a {
 
   <h3 id="less-mixins-animations">Animationen</h3>
   <p>Ein einzelnes Mixin für alle CSS3-Animations-Eigenschaften in einem CSS-Block und weitere Mixins für einzelne Eigenschaften.</p>
+  <p>Dieses Mixin ist ab v3.2.0 als veraltet markiert und wurde durch autoprefixer ersetzt. Um Rückwärtskompatibilität zu bewahren, wird Bootstrap das Mixin bis Bootstrap v4 weiterhin intern verwenden.</p>
 {% highlight scss %}
 .animation(@animation) {
   -webkit-animation: @animation;
@@ -3144,8 +3210,7 @@ a {
   <p>Versehe Formularfelder mit Kontext in jedem Feld.</p>
 {% highlight scss %}
 .placeholder(@color: @input-color-placeholder) {
-  &:-moz-placeholder            { color: @color; } // Firefox 4-18
-  &::-moz-placeholder           { color: @color; } // Firefox 19+
+  &::-moz-placeholder           { color: @color; } // Firefox
   &:-ms-input-placeholder       { color: @color; } // Internet Explorer 10+
   &::-webkit-input-placeholder  { color: @color; } // Safari und Chrome
 }
@@ -3180,7 +3245,7 @@ a {
 {% endhighlight %}
   <p>Fallst du einen Verlauf mit Streifen brauchst, ist das auch kein Problem. Leg einfach eine einzelne Farbe fest und wir legen einen durchscheinenden weißen Streifen darüber.</p>
 {% highlight scss %}
-#gradient > .striped(#333; #000; 45deg);
+#gradient > .striped(#333; 45deg);
 {% endhighlight %}
   <p>Lass die Korken knallen und nimm stattdessen drei Farben. Lege die erste Farbe, die zweite Farbe, den Farbstopp der zweiten Farbe (ein Dezimalwert wie 0.25) und die dritte Farbe mit diesen Mixins fest:</p>
 {% highlight scss %}

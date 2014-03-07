@@ -2653,6 +2653,31 @@ body { padding-bottom: 70px; }
 </div>
 {% endhighlight %}
 
+  <h3 id="list-group-disabled">Deaktivierte Einträge</h3>
+  <p>Füge <code>.disabled</code> zu einem <code>.list-group-item</code> hinzu, um durch Grautöne einen Eintrag deaktiviert aussehen zu lassen.</p>
+  <div class="bs-example">
+    <div class="list-group">
+      <a href="#" class="list-group-item disabled">
+        Cras justo odio
+      </a>
+      <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+      <a href="#" class="list-group-item">Morbi leo risus</a>
+      <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+      <a href="#" class="list-group-item">Vestibulum at eros</a>
+    </div>
+  </div>
+{% highlight html %}
+<div class="list-group">
+  <a href="#" class="list-group-item disabled">
+    Cras justo odio
+  </a>
+  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+  <a href="#" class="list-group-item">Morbi leo risus</a>
+  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+  <a href="#" class="list-group-item">Vestibulum at eros</a>
+</div>
+{% endhighlight %}
+
   <h3 id="list-group-contextual-classes">Kontext-Varianten</h3>
   <p>Verwende Kontextklassen, um Listen-Einträge zu gestalten (unabhängig davon, ob du Standard- oder verlinkte Listen-Einträge verwendest). Außerdem gibt es <code>.active</code> für eine Darstellung als aktives Element.</p>
   <div class="bs-example">
@@ -2997,6 +3022,34 @@ body { padding-bottom: 70px; }
     <li class="list-group-item">Porta ac consectetur ac</li>
     <li class="list-group-item">Vestibulum at eros</li>
   </ul>
+</div>
+{% endhighlight %}
+</div>
+
+
+
+<!-- Responsive embeds
+================================================== -->
+<div class="bs-docs-section">
+  <h1 id="responsive-embed" class="page-header">Responsive Embeds</h1>
+
+  <p>Ermögliche es Browsern, die Abmessungen von Videos oder Präsentationen abhängig von der Breite des übergeordneten Blocks zu ermitteln, indem du ein grundlegendes Verhältnis festlegst, das sich jedem Gerät anpasst.</p>
+  <p>Die Regeln werden direkt auf die Elemente <code>&lt;iframe&gt;</code>, <code>&lt;embed&gt;</code> und <code>&lt;object&gt;</code> angewandt. Du kannst optional die Klasse <code>.embed-responsive-item</code> verwenden, wenn du die Stile bei anderen Attributen gleichsetzen willst.</p>
+  <p><strong>Pro-Tip!</strong> Du musst für deine <code>&lt;iframe&gt;</code>s nicht mehr <code>frameborder="0"</code> festlegen, da wir dies bereits für dich überschreiben.</p>
+  <div class="bs-example">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+    </div>
+  </div>
+{% highlight html %}
+<!-- 16:9-Seitenverhältnis -->
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="…"></iframe>
+</div>
+
+<!-- 4:3-Seitenverhältnis -->
+<div class="embed-responsive embed-responsive-4by3">
+  <iframe class="embed-responsive-item" src="…"></iframe>
 </div>
 {% endhighlight %}
 </div>

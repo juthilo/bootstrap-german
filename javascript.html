@@ -1101,6 +1101,8 @@ $('#meinTooltip').on('hidden.bs.tooltip', function () {
 {% endhighlight %}
 </div>
 
+
+
 <!-- Popovers
 ================================================== -->
 <div class="bs-docs-section">
@@ -1167,8 +1169,11 @@ $('#meinTooltip').on('hidden.bs.tooltip', function () {
 
   <h3>Live-Ansicht</h3>
   <div class="bs-example" style="padding-bottom: 24px;">
-    <a href="#" class="btn btn-lg btn-danger" data-toggle="popover" title="Ein Titel" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?" role="button">Popover anzeigen</a>
+    <button type="button" class="btn btn-lg btn-danger bs-docs-popover" data-toggle="popover" title="Popover-Titel" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?">Popover anzeigen</a>
   </div>
+{% highlight html %}
+<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover-Titel" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?">Popover anzeigen</button>
+{% endhighlight %}
 
   <h4>Vier Richtungen</h4>
   <div class="bs-example tooltip-demo">
@@ -1203,6 +1208,20 @@ $('#meinTooltip').on('hidden.bs.tooltip', function () {
 <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
   Popover rechts
 </button>
+{% endhighlight %}
+
+  <h4>Beim nächsten Klick schließen</h4>
+  <p>Verwende den Auslöser <code>focus</code>, um Popover beim nächsten Klick zu schließen.</p>
+  <div class="bs-example" style="padding-bottom: 24px;">
+    <button type="button" class="btn btn-lg btn-danger bs-docs-popover-dismiss" data-toggle="popover" title="Schließbares Popover" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?">Schließbares Popover</button>
+  </div>
+{% highlight html %}
+<button type="button" class="btn btn-lg btn-danger popover-dismiss" data-toggle="popover" title="Schließbares Popover" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?">Schließbares Popover</button>
+{% endhighlight %}
+{% highlight js %}
+$('.popover-dismiss').popover({
+  trigger: 'focus'
+})
 {% endhighlight %}
 
   <div class="bs-callout bs-callout-warning">

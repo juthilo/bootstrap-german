@@ -1,0 +1,113 @@
+---
+layout: default
+title: Pinnwand für Browser-Bugs
+slug: browser-bugs
+lead: "Eine Liste der Browser-Bugs, mit denen Bootstrap zurzeit zu kämpfen hat."
+---
+
+
+<div class="bs-docs-section">
+  <h1 id="browser-bugs" class="page-header">Browser-Bugs</h1>
+
+  <p>Um ein einheitliches und nutzbares Erlebnis in allen Browsern zu ermöglichen, muss Bootstrap zurzeit um einige noch nicht behobene Bugs in größeren Browsern herumarbeiten. Und in einigen Fällen können wir für bestimmte Bugs überhaupt keine temporäre Lösung anbieten und müssen diese stattdessen für unsere Nutzer dokumentieren oder ein weniger gutes Endergebnis in Kauf nehmen. Wir veröffentlichen hier eine Liste von Browser-Bugs, die uns beeinträchtigen, in der Hoffnung deren Behebung zu beschleunigen. Sieh dir für Informationen zu Bootstraps Browser-Kompatiblität <a href="../los-gehts/#support">unsere Browser-Kompatibilität-Dokumentation</a> an.</p>
+
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Browser</th>
+          <th>Bug-Zusammenfassung</th>
+          <th>Upstream-Berichte</th>
+          <th>Downstream-Berichte</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Firefox</td>
+          <td>Verwendung von line-height für <code>&lt;input&gt;</code> zulassen</td>
+          <td><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=697451">Mozilla Bug #697451</a></td>
+          <td><a href="https://github.com/twbs/bootstrap/issues/2985">Bootstrap Issue #2985</a></td>
+        </tr>
+        <tr>
+          <td>Firefox</td>
+          <td>Ungewöhnliche Standards für Formularfelder auf Android</td>
+          <td><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=900871">Geschlossener Mozilla Bug #900871</a>, <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=763671">Offener Mozilla Bug #763671</a></td>
+          <td><a href="https://github.com/twbs/bootstrap/issues/8702">Bootstrap Issue #8702</a></td>
+        </tr>
+        <tr>
+          <td>Firefox</td>
+          <td><code>max-width: 100%;</code> funktioniert nicht innerhalb von Tabellen</td>
+          <td><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=975632">Mozilla Bug #975632</a></td>
+          <td><a href="https://github.com/twbs/bootstrap/issues/10690">Bootstrap Issue #10690</a></td>
+        </tr>
+        <tr>
+          <td>Chrome</td>
+          <td>(Weitere Untersuchung notwendig&hellip;)</td>
+          <td>Noch keine</td>
+          <td><a href="https://github.com/twbs/bootstrap/issues/1969">Bootstrap Issue #1969</a></td>
+        </tr>
+        <tr>
+          <td>Chrome</td>
+          <td>Seltsames Button-Verhalten bei einigen numerischen Eingabefeldern</td>
+          <td><a href="https://code.google.com/p/chromium/issues/detail?id=337668">Chromium Issue #337668</a></td>
+          <td><a href="https://github.com/twbs/bootstrap/issues/8350">Bootstrap Issue #8350</a>, <a href="https://github.com/necolas/normalize.css/issues/283">Normalize.css Issue #283</a></td>
+        </tr>
+        <tr>
+          <td>Chrome</td>
+          <td>Navbar-Rendering-problem auf Windows nach einigen Klicks</td>
+          <td><a href="https://code.google.com/p/chromium/issues/detail?id=272750">Chromium Issue #272750</a>, <a href="https://bugs.webkit.org/show_bug.cgi?id=119793">WebKit Bug #119793</a></td>
+          <td><a href="https://github.com/twbs/bootstrap/issues/9226">Bootstrap Bug #9226</a></td>
+        </tr>
+        <tr>
+          <td>Chrome</td>
+          <td><code>display: table;</code> innerhalb von <code>display: block;</code> schiebt andere Inhalte in neue Zeile</td>
+          <td><a href="https://code.google.com/p/chromium/issues/detail?id=309483">Chromium Issue #309483</a></td>
+          <td><a href="https://github.com/twbs/bootstrap/issues/9950">Bootstrap Issue #9950</a></td>
+        </tr>
+        <tr>
+          <td>Chrome</td>
+          <td>Unerwünschte vertikale Linien bei Druck von gestalteten <code>&lt;select&gt;</code>s auf OS X</td>
+          <td><a href="https://code.google.com/p/chromium/issues/detail?id=282918">Chromium Issue #282918</a></td>
+          <td><a href="https://github.com/twbs/bootstrap/issues/11245">Bootstrap Issue #11245</a></td>
+        </tr>
+        <tr>
+          <td>Chrome</td>
+          <td>inline-block-Element lässt Weißraum auf Windows verschwinden</td>
+          <td><a href="https://code.google.com/p/chromium/issues/detail?id=329574">Chromium Issue #329574</a></td>
+          <td><a href="https://github.com/twbs/bootstrap/issues/11885">Bootstrap Issue #11885</a></td>
+        </tr>
+        <tr>
+          <td>Chrome</td>
+          <td>Falsche Anzeigefenster-Größe für Media-Queries beim Druck verwendet</td>
+          <td><a href="https://code.google.com/p/chromium/issues/detail?id=273306">Chromium Issue #273306</a></td>
+          <td><a href="https://github.com/twbs/bootstrap/issues/12078">Bootstrap Issue #12078</a></td>
+        </tr>
+        <tr>
+          <td>Chrome &amp; Safari</td>
+          <td>OS X-Scroll-Leiste in <code>select[multiple]</code> mit Innenabstand verdeckt</td>
+          <td><a href="https://code.google.com/p/chromium/issues/detail?id=342208">Chromium Issue #342208</a>, <a href="https://bugs.webkit.org/show_bug.cgi?id=128489">WebKit Bug #128489</a></td>
+          <td><a href="https://github.com/twbs/bootstrap/issues/12536">Bootstrap Issue #12536</a></td>
+        </tr>
+        <tr>
+          <td>Chrome</td>
+          <td><code>display: table-cell; width: 100%;</code> funktioniert nicht richtig bei Datumsfeldern</td>
+          <td><a href="https://code.google.com/p/chromium/issues/detail?id=346051">Chromium Issue #346051</a></td>
+          <td><a href="https://github.com/twbs/bootstrap/issues/12548">Bootstrap Issue #12548</a></td>
+        </tr>
+        <tr>
+          <td>Safari</td>
+          <td>Schlechte Präzision bei CSS-Prozentwerten</td>
+          <td>(Keine öffentlichen Fehlerberichte)</td>
+          <td><a href="https://github.com/twbs/bootstrap/issues/9282">Bootstrap Issue #9282</a></td>
+        </tr>
+        <tr>
+          <td>Safari</td>
+          <td>Rendering-Bug bei gleichmäßigen Navs</td>
+          <td>(Keine öffentlichen Fehlerberichte)</td>
+          <td><a href="https://github.com/twbs/bootstrap/issues/9774">Bootstrap Issue #9774</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

@@ -2610,15 +2610,16 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
 {% endhighlight %}
 
 
-  <h3 id="helper-classes-screen-readers">Inhalte für Screenreader</h3>
-  <p>Verberge ein Element vor allen Geräten <strong>außer Screenreadern</strong> mit <code>.sr-only</code>. Notwendig, um den <a href="../los-gehts/#accessibility">optimalen Vorgehensweisen für Barrierefreiheit</a> Folge zu leisten. Kann auch als Mixin verwendet werden.</p>
+  <h3 id="helper-classes-screen-readers">Inhalte für Screenreader und Navigation über Tastatur</h3>
+  <p>Verberge ein Element vor allen Geräten <strong>außer Screenreadern</strong> mit <code>.sr-only</code>. Kombiniere <code>.sr-only</code> mit <code>.sr-only-focusable</code>, um das Element anzuzeigen, wenn es fokussiert wird (z.B. für einen Benutzer, der nur eine Tastatur verwendet). Notwendig, um den <a href="../los-gehts/#accessibility">optimalen Vorgehensweisen für Barrierefreiheit</a> Folge zu leisten. Kann auch als Mixin verwendet werden.</p>
 {% highlight html %}
-<a class="sr-only" href="#content">Zum Hauptinhalt springen</a>
+<a class="sr-only sr-only-focusable" href="#content">Zum Hauptinhalt springen</a>
 {% endhighlight %}
 {% highlight scss %}
 // Verwendung als Mixin
 .skip-navigation {
   .sr-only();
+  .sr-only-focusable();
 }
 {% endhighlight %}
 
@@ -3077,7 +3078,7 @@ a {
 {% endhighlight %}
 
   <h3 id="less-mixins-transitions">Übergänge</h3>
-  <p>Drei Mixins für Flexibilität. Leg alle Übergangsdetails mit einem fest oder definiere eine separate Verzögerung und Länge, wie es für dich am besten passt.</p>
+  <p>Mehrere Mixins für Flexibilität. Leg alle Übergangsdetails mit einem fest oder definiere eine separate Verzögerung und Länge, wie es für dich am besten passt.</p>
   <p>Dieses Mixin ist ab v3.2.0 als veraltet markiert und wurde durch autoprefixer ersetzt. Um Rückwärtskompatibilität zu bewahren, wird Bootstrap das Mixin bis Bootstrap v4 weiterhin intern verwenden.</p>
 {% highlight scss %}
 .transition(@transition) {
@@ -3095,6 +3096,10 @@ a {
 .transition-duration(@transition-duration) {
   -webkit-transition-duration: @transition-duration;
           transition-duration: @transition-duration;
+}
+.transition-timing-function(@timing-function) {
+  -webkit-transition-timing-function: @timing-function;
+          transition-timing-function: @timing-function;
 }
 .transition-transform(@transition) {
   -webkit-transition: -webkit-transform @transition;

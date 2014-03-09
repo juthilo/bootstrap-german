@@ -619,7 +619,7 @@ if (isAndroid) {
   <p>Falls deine Navigation viele Links enthält und im DOM vor dem Hauptinhalt kommt, kannst du einen <code>Zum Hauptinhalt springen</code>-Link direkt nach dem öffnenden <code>&lt;body&gt;</code>-Tag einfügen. <a href="http://a11yproject.com/posts/skip-nav-links/">(lies warum)</a></p>
 {% highlight html %}
 <body>
-  <a href="#content" class="sr-only">Zum Hauptinhalt springen</a>
+  <a href="#content" class="sr-only sr-only-focusable">Zum Hauptinhalt springen</a>
   <div class="container" id="content">
     Der Hauptinhalt der Seite.
   </div>

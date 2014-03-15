@@ -370,6 +370,11 @@ lead: "Mehr als ein Dutzend Komponenten für Symbole, Menüs, Input-Gruppen, Nav
     <h4>Umgang mit Rahmen</h4>
     <p>Aufgrund von sehr spezifischem HTML und CSS zur gleichmäßigen Verteilung der Buttons (vor allem <code>display: table-cell</code>) verdoppelt sich die Rahmengrenze zwischen den Buttons. In normalen Button-Gruppen wird dies mit <code>margin-left: -1px</code> behoben. Leider funktioniert <code>margin</code> nicht mit <code>display: table-cell</code>. Abhängig davon, wie sehr du Bootstrap angepasst hast, solltest du daher eventuell die Rahmenlinien an dieser Stelle entfernen oder ihnen eine andere Farbe geben.</p>
   </div>
+  <div class="bs-callout bs-callout-warning">
+    <h4>IE8 und Rahmengrenzen</h4>
+    <p>Internet Explorer 8 rendert keine Rahmen bei Buttons in gleichmäßigen Button-Gruppen, unabhängig vom verwendeten Element. Um das zu umgehen,  verpacke jeden Button in einer Extra-Gruppe.</p>
+    <p>Siehe <a href="https://github.com/twbs/bootstrap/issues/12476">#12476</a> für mehr Informationen.</p>
+  </div>
 
   <h4>Mit <code>&lt;a&gt;</code>-Elementen</h4>
   <p>Verpacke eine Reihe von <code>.btn</code>s einfach in <code>.btn-group.btn-group-justified</code>.</p>
@@ -735,7 +740,7 @@ lead: "Mehr als ein Dutzend Komponenten für Symbole, Menüs, Input-Gruppen, Nav
           <span class="caret"></span>
           <span class="sr-only">Menü ein-/ausblenden</span>
         </button>
-        <ul class="dropdown-menu pull-right" role="menu">
+        <ul class="dropdown-menu dropdown-menu-right" role="menu">
           <li><a href="#">Aktion</a></li>
           <li><a href="#">Andere Aktion</a></li>
           <li><a href="#">Irgendwas anderes</a></li>
@@ -968,7 +973,7 @@ lead: "Mehr als ein Dutzend Komponenten für Symbole, Menüs, Input-Gruppen, Nav
           <input type="text" class="form-control">
           <div class="input-group-btn">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Aktion <span class="caret"></span></button>
-            <ul class="dropdown-menu pull-right" role="menu">
+            <ul class="dropdown-menu dropdown-menu-right" role="menu">
               <li><a href="#">Aktion</a></li>
               <li><a href="#">Andere Aktion</a></li>
               <li><a href="#">Irgendwas anderes</a></li>
@@ -1002,7 +1007,7 @@ lead: "Mehr als ein Dutzend Komponenten für Symbole, Menüs, Input-Gruppen, Nav
       <input type="text" class="form-control">
       <div class="input-group-btn">
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Aktion <span class="caret"></span></button>
-        <ul class="dropdown-menu pull-right">
+        <ul class="dropdown-menu dropdown-menu-right">
           <li><a href="#">Aktion</a></li>
           <li><a href="#">Andere Aktion</a></li>
           <li><a href="#">Irgendwas anderes</a></li>
@@ -1046,7 +1051,7 @@ lead: "Mehr als ein Dutzend Komponenten für Symbole, Menüs, Input-Gruppen, Nav
               <span class="caret"></span>
               <span class="sr-only">Menü ein-/ausblenden</span>
             </button>
-            <ul class="dropdown-menu pull-right" role="menu">
+            <ul class="dropdown-menu dropdown-menu-right" role="menu">
               <li><a href="#">Aktion</a></li>
               <li><a href="#">Andere Aktion</a></li>
               <li><a href="#">Irgendwas anderes</a></li>
@@ -1535,6 +1540,11 @@ lead: "Mehr als ein Dutzend Komponenten für Symbole, Menüs, Input-Gruppen, Nav
   <h2 id="navbar-component-alignment">Ausrichtung</h2>
   <p>Du kannst Navigationslinks, Formulare, Buttons oder Text mit Hilfe der Hilfsklassen <code>.navbar-left</code> oder <code>.navbar-right</code> ausrichten. Beide Klassen legen einen CSS-Float in die angegebene Richtung fest. Als Beispiel, um Navigationslinks auszurichten, platziere diese in einer separaten <code>&lt;ul&gt;</code>, auf die die jeweilige Klasse angewendet ist.</p>
   <p>Diese Klassen werden über ein Mixin von <code>.pull-left</code> und <code>.pull-right</code> erzeugt, sind aber an Media Queries gebunden, damit die Ausrichtung auf verschiedenen Geräten stimmig bleibt.</p>
+  <div class="bs-callout bs-callout-warning">
+    <h4>Mehrere Komponenten rechts ausrichten</h4>
+    <p>Navbars sind zurzeit eingeschränkt, was mehrere <code>.navbar-right</code>-Klassen angeht. Um für richtigen Abstand zwischen Inhalten zu sorgen, verwenden wir beim letzten <code>.navbar-right</code>-Element negativen Außenabstand. Wenn mehrere Elemente diese Klasse verwenden, funktionieren die Abstände nicht wie gedacht.</p>
+    <p>Wir werden dies neu überdenken, wenn wir die Komponente in v4 neu schreiben können.</p>
+  </div>
 
 
   <h2 id="navbar-fixed-top">Oben fixierte Variante</h2>
@@ -2159,30 +2169,30 @@ body { padding-bottom: 70px; }
   </div>
 
   <div class="bs-example">
-    <div class="alert alert-success">
+    <div class="alert alert-success" role="alert">
       <strong>Sehr gut!</strong> Du hast erfolgreich diesen wichtigen Warnhinweis gelesen.
     </div>
-    <div class="alert alert-info">
+    <div class="alert alert-info" role="alert">
       <strong>Hinweis!</strong> Hier ist deine Aufmerksamkeit gefragt, aber es ist nicht ganz so wichtig.
     </div>
-    <div class="alert alert-warning">
+    <div class="alert alert-warning" role="alert">
       <strong>Warnung!</strong> Du siehst ganz blass aus, ist alles in Ordnung?
     </div>
-    <div class="alert alert-danger">
+    <div class="alert alert-danger" role="alert">
       <strong>Oh nein!</strong> Kontrolliere deine Eingaben und versuch es dann noch einmal.
     </div>
   </div>
 {% highlight html %}
-<div class="alert alert-success">...</div>
-<div class="alert alert-info">...</div>
-<div class="alert alert-warning">...</div>
-<div class="alert alert-danger">...</div>
+<div class="alert alert-success" role="alert">...</div>
+<div class="alert alert-info" role="alert">...</div>
+<div class="alert alert-warning" role="alert">...</div>
+<div class="alert alert-danger" role="alert">...</div>
 {% endhighlight %}
 
   <h2 id="alerts-dismissable">Ausblendbare Variante</h2>
   <p>Baue einen Warnhinweis aus, indem du optional <code>.alert-dismissable</code> und einen Schließen-Button hinzufügst.</p>
   <div class="bs-example">
-    <div class="alert alert-warning alert-dismissable">
+    <div class="alert alert-warning alert-dismissable" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <strong>Warnung!</strong> Du siehst ganz blass aus, ist alles in Ordnung?
     </div>
@@ -2202,30 +2212,30 @@ body { padding-bottom: 70px; }
   <h2 id="alerts-links">Links in Warnungen</h2>
   <p>Verwende die Hilfsklasse <code>.alert-link</code>, um ganz leicht passende Farben zu Links in irgendeinem Warnhinweis hinzuzufügen.</p>
   <div class="bs-example">
-    <div class="alert alert-success">
+    <div class="alert alert-success" role="alert">
       <strong>Sehr gut!</strong> Du hast erfolgreich <a href="#" class="alert-link">diesen wichtigen Warnhinweis</a> gelesen.
     </div>
-    <div class="alert alert-info">
+    <div class="alert alert-info" role="alert">
       <strong>Hinweis!</strong> Hier ist <a href="#" class="alert-link">deine Aufmerksamkeit gefragt</a>, aber es ist nicht ganz so wichtig.
     </div>
-    <div class="alert alert-warning">
+    <div class="alert alert-warning" role="alert">
       <strong>Warnung!</strong> Du siehst ganz blass aus, ist <a href="#" class="alert-link">alles in Ordnung</a>?
     </div>
-    <div class="alert alert-danger">
+    <div class="alert alert-danger" role="alert">
       <strong>Oh nein!</strong> <a href="#" class="alert-link">Kontrolliere deine Eingaben</a> und versuch es dann noch einmal.
     </div>
   </div>
 {% highlight html %}
-<div class="alert alert-success">
+<div class="alert alert-success" role="alert">
   <a href="#" class="alert-link">...</a>
 </div>
-<div class="alert alert-info">
+<div class="alert alert-info" role="alert">
   <a href="#" class="alert-link">...</a>
 </div>
-<div class="alert alert-warning">
+<div class="alert alert-warning" role="alert">
   <a href="#" class="alert-link">...</a>
 </div>
-<div class="alert alert-danger">
+<div class="alert alert-danger" role="alert">
   <a href="#" class="alert-link">...</a>
 </div>
 {% endhighlight %}

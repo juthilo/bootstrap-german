@@ -303,7 +303,7 @@ lead: "Globale CSS-Stile, grundlegende HTML-Elemente mit erweiterbaren Klassen g
       <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
       <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
       <!-- Optional: Setze die Floats der XS-Spalten zurück, falls ihr Inhalt nicht gleich hoch ist -->
-      <div class="clearfix visible-xs"></div>
+      <div class="clearfix visible-xs-block"></div>
       <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
     </div>
   </div>
@@ -316,7 +316,7 @@ lead: "Globale CSS-Stile, grundlegende HTML-Elemente mit erweiterbaren Klassen g
   <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
   <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
   <!-- Optional: Setze die Floats der XS-Spalten zurück, falls ihr Inhalt nicht gleich hoch ist -->
-  <div class="clearfix visible-xs"></div>
+  <div class="clearfix visible-xs-block"></div>
   <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
 </div>
 {% endhighlight %}
@@ -333,7 +333,7 @@ lead: "Globale CSS-Stile, grundlegende HTML-Elemente mit erweiterbaren Klassen g
       <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
 
       <!-- Der clearfix wird nur für die benötigte Breite des Ansichtsfensters hinzugefügt -->
-      <div class="clearfix visible-xs"></div>
+      <div class="clearfix visible-xs-block"></div>
 
       <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
       <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
@@ -345,7 +345,7 @@ lead: "Globale CSS-Stile, grundlegende HTML-Elemente mit erweiterbaren Klassen g
   <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
 
   <!-- Der clearfix wird nur für die benötigte Breite des Ansichtsfensters hinzugefügt -->
-  <div class="clearfix visible-xs"></div>
+  <div class="clearfix visible-xs-block"></div>
 
   <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
   <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
@@ -1649,6 +1649,12 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
         <input type="email" class="form-control" id="beispielFeldEmail2" placeholder="Email-Adresse">
       </div>
       <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">@</div>
+          <input class="form-control" type="email" placeholder="Email-Adresse">
+        </div>
+      </div>
+      <div class="form-group">
         <label class="sr-only" for="beispielFeldPasswort2">Passwort</label>
         <input type="password" class="form-control" id="beispielFeldPasswort2" placeholder="Passwort">
       </div>
@@ -2060,7 +2066,7 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
   <p>Du kannst optional außerdem passende Icons hinzufügen, indem du die Klasse <code>.has-feedback</code> und das richtige Icon ergänzt.</p>
   <div class="bs-callout bs-callout-warning">
     <h4>Icons, Labels und Input-Gruppen</h4>
-    <p>Die Feedback-Icons müssen manuell positioniert werden, wenn du sie mit <a href="../komponenten#input-groups">Input-Gruppen</a> mit einem Add-on auf der rechten Seite oder mit Feldern ohne Label verwendest. Ändere bei Input-Grupen den Standard <code>right: 0;</code> zu einem sinnvollen Pixel-Wert, abhängig von der Breite deines Add-ons. Bei nicht vorhandenen Labels musst du den Wert für <code>top</code> anpassen.</p>
+    <p>Die Feedback-Icons müssen manuell positioniert werden, wenn du sie mit Feldern ohne Label oder mit <a href="../komponenten#input-groups">Input-Gruppen</a> mit einem Add-on auf der rechten Seite verwendest. Bei nicht vorhandenen Labels musst du den Wert für <code>top</code> anpassen. Ändere bei Input-Grupen den Standard <code>right: 0;</code> zu einem sinnvollen Pixel-Wert, abhängig von der Breite deines Add-ons.</p>
   </div>
   <div class="bs-example">
     <form role="form">
@@ -2645,7 +2651,7 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
   <h1 id="responsive-utilities" class="page-header">Responsive Hilfsmittel</h1>
 
   <p class="lead">Für schnellere Entwicklung von Seiten, die gut auf mobilen Geräten aussehen, gibt es diese Hilfsklassen, mit denen du über Media-Queries Inhalte pro Gerät ein- und ausblenden kannst. Außerdem gibt es Hilfsklassen für das Ein- und Ausblenden von Inhalt für den Druck eines Dokuments.</p>
-  <p>Versuche, diese Klassen nur eingeschränkt zu verwenden und vermeide es, damit ganz verschiedene Versionen der gleichen Seite zu erstellen. Verwende sie stattdessen, um die Anzeige auf jedem Gerät stimmig zu machen. <strong>Responsive Hilfsklassen stehen zurzeit nur für Block- und Tabellen-Elemente zur Verfügung.</strong> Die Verwendung mit Inline-Elementen wird nicht unterstützt.</p>
+  <p>Versuche, diese Klassen nur eingeschränkt zu verwenden und vermeide es, damit ganz verschiedene Versionen der gleichen Seite zu erstellen. Verwende sie stattdessen, um die Anzeige auf jedem Gerät stimmig zu machen.</p>
 
 
   <h2 id="responsive-utilities-classes">Verfügbare Klassen</h2>
@@ -2675,28 +2681,28 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
       </thead>
       <tbody>
         <tr>
-          <th><code>.visible-xs</code></th>
+          <th><code>.visible-xs-*</code></th>
           <td class="is-visible">Sichtbar</td>
           <td class="is-hidden">Verborgen</td>
           <td class="is-hidden">Verborgen</td>
           <td class="is-hidden">Verborgen</td>
         </tr>
         <tr>
-          <th><code>.visible-sm</code></th>
+          <th><code>.visible-sm-*</code></th>
           <td class="is-hidden">Verborgen</td>
           <td class="is-visible">Sichtbar</td>
           <td class="is-hidden">Verborgen</td>
           <td class="is-hidden">Verborgen</td>
         </tr>
         <tr>
-          <th><code>.visible-md</code></th>
+          <th><code>.visible-md-*</code></th>
           <td class="is-hidden">Verborgen</td>
           <td class="is-hidden">Verborgen</td>
           <td class="is-visible">Sichtbar</td>
           <td class="is-hidden">Verborgen</td>
         </tr>
         <tr>
-          <th><code>.visible-lg</code></th>
+          <th><code>.visible-lg-*</code></th>
           <td class="is-hidden">Verborgen</td>
           <td class="is-hidden">Verborgen</td>
           <td class="is-hidden">Verborgen</td>
@@ -2736,6 +2742,33 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
     </table>
   </div>
 
+  <p>Ab v3.2 gibt es <code>.visible-*-*</code>-Klassen für jeden Umbruchpunkt in drei Variationen, eine für jeden der unten aufgeführten Werte der CSS-Eigenschaft <code>display</code>.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Gruppe von Klassen</th>
+          <th>CSS <code>display</code></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.visible-*-block</code></td>
+          <td><code>display: block;</code></td>
+        </tr>
+        <tr>
+          <td><code>.visible-*-inline</code></td>
+          <td><code>display: inline;</code></td>
+        </tr>
+        <tr>
+          <td><code>.visible-*-inline-block</code></td>
+          <td><code>display: inline-block;</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Die verfügbaren <code>.visible-*-*</code>-Klassen für sehr kleine (<code>xs</code>) Bilschirme sind also zum Beispiel: <code>.visible-xs-block</code>, <code>.visible-xs-inline</code> und <code>.visible-xs-inline-block</code>.</p>
+  <p>Die Klassen <code>.visible-xs</code>, <code>.visible-sm</code>, <code>.visible-md</code> und <code>.visible-lg</code> bleiben weiterhin bestehen, sind aber <strong>ab v3.2 als veraltet markiert</strong>. Sie entsprechen in etwa <code>.visible-*-block</code>, abgesehen von besonderen Ergänzungen für Elemente rund um <code>&lt;table&gt;</code>.</p>
 
   <h2 id="responsive-utilities-print">Klassen für den Druck</h2>
   <p>So ähnlich wie die normalen responsiven Klassen gibt es auch noch Klassen für das Ein- und Ausblenden beim Druck.</p>
@@ -2743,14 +2776,18 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
     <table class="table table-bordered table-striped responsive-utilities">
       <thead>
         <tr>
-          <th>Klasse</th>
+          <th>Klassen</th>
           <th>Browser</th>
           <th>Druck</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th><code>.visible-print</code></th>
+          <th>
+            <code>.visible-print-block</code>
+            <code>.visible-print-inline</code>
+            <code>.visible-print-inline-block</code>
+          </th>
           <td class="is-hidden">Verborgen</td>
           <td class="is-visible">Sichtbar</td>
         </tr>
@@ -2762,6 +2799,7 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
       </tbody>
     </table>
   </div>
+  <p>Die Klasse <code>.visible-print</code> bleibt weiterhin bestehen, ist aber <strong>ab v3.2 als veraltet markiert</strong>. Sie entspricht in etwa <code>.visible-print-block</code>, abgesehen von besonderen Ergänzungen für Elemente rund um <code>&lt;table&gt;</code>.</p>
 
 
   <h2 id="responsive-utilities-tests">Test-Ansicht</h2>
@@ -2772,48 +2810,48 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
   <div class="row responsive-utilities-test visible-on">
     <div class="col-xs-6 col-sm-3">
       <span class="hidden-xs">Extra-klein</span>
-      <span class="visible-xs">&#10004; Sichtbar auf X-klein</span>
+      <span class="visible-xs-block">&#10004; Sichtbar auf X-klein</span>
     </div>
     <div class="col-xs-6 col-sm-3">
       <span class="hidden-sm">Klein</span>
-      <span class="visible-sm">&#10004; Sichtbar auf Klein</span>
+      <span class="visible-sm-block">&#10004; Sichtbar auf Klein</span>
     </div>
-    <div class="clearfix visible-xs"></div>
+    <div class="clearfix visible-xs-block"></div>
     <div class="col-xs-6 col-sm-3">
       <span class="hidden-md">Mittel</span>
-      <span class="visible-md">&#10004; Sichtbar auf Mittel</span>
+      <span class="visible-md-block">&#10004; Sichtbar auf Mittel</span>
     </div>
     <div class="col-xs-6 col-sm-3">
       <span class="hidden-lg">Groß</span>
-      <span class="visible-lg">&#10004; Sichtbar auf Groß</span>
+      <span class="visible-lg-block">&#10004; Sichtbar auf Groß</span>
     </div>
   </div>
   <div class="row responsive-utilities-test visible-on">
     <div class="col-xs-6 col-sm-6">
       <span class="hidden-xs hidden-sm">Extra-klein und klein</span>
-      <span class="visible-xs visible-sm">&#10004; Sichtbar auf X-klein und Klein</span>
+      <span class="visible-xs-block visible-sm-block">&#10004; Sichtbar auf X-klein und Klein</span>
     </div>
     <div class="col-xs-6 col-sm-6">
       <span class="hidden-md hidden-lg">Mittel und groß</span>
-      <span class="visible-md visible-lg">&#10004; Sichtbar auf Mittel und Groß</span>
+      <span class="visible-md-block visible-lg-block">&#10004; Sichtbar auf Mittel und Groß</span>
     </div>
-    <div class="clearfix visible-xs"></div>
+    <div class="clearfix visible-xs-block"></div>
     <div class="col-xs-6 col-sm-6">
       <span class="hidden-xs hidden-md">Extra-klein und mittel</span>
-      <span class="visible-xs visible-md">&#10004; Sichtbar auf X-klein und Mittel</span>
+      <span class="visible-xs-block visible-md-block">&#10004; Sichtbar auf X-klein und Mittel</span>
     </div>
     <div class="col-xs-6 col-sm-6">
       <span class="hidden-sm hidden-lg">Klein und groß</span>
-      <span class="visible-sm visible-lg">&#10004; Sichtbar auf Klein und Groß</span>
+      <span class="visible-sm-block visible-lg-block">&#10004; Sichtbar auf Klein und Groß</span>
     </div>
-    <div class="clearfix visible-xs"></div>
+    <div class="clearfix visible-xs-block"></div>
     <div class="col-xs-6 col-sm-6">
       <span class="hidden-xs hidden-lg">Extra-klein und groß</span>
-      <span class="visible-xs visible-lg">&#10004; Sichtbar auf X-klein und Groß</span>
+      <span class="visible-xs-block visible-lg-block">&#10004; Sichtbar auf X-klein und Groß</span>
     </div>
     <div class="col-xs-6 col-sm-6">
       <span class="hidden-sm hidden-md">Klein und mittel</span>
-      <span class="visible-sm visible-md">&#10004; Sichtbar auf Klein und Mittel</span>
+      <span class="visible-sm-block visible-md-block">&#10004; Sichtbar auf Klein und Mittel</span>
     </div>
   </div>
 
@@ -2822,48 +2860,48 @@ Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verze
   <div class="row responsive-utilities-test hidden-on">
     <div class="col-xs-6 col-sm-3">
       <span class="hidden-xs">Extra-klein</span>
-      <span class="visible-xs">&#10004; Verborgen auf X-klein</span>
+      <span class="visible-xs-block">&#10004; Verborgen auf X-klein</span>
     </div>
     <div class="col-xs-6 col-sm-3">
       <span class="hidden-sm">Klein</span>
-      <span class="visible-sm">&#10004; Verborgen auf Klein</span>
+      <span class="visible-sm-block">&#10004; Verborgen auf Klein</span>
     </div>
-    <div class="clearfix visible-xs"></div>
+    <div class="clearfix visible-xs-block"></div>
     <div class="col-xs-6 col-sm-3">
       <span class="hidden-md">Mittel</span>
-      <span class="visible-md">&#10004; Verborgen auf Mittel</span>
+      <span class="visible-md-block">&#10004; Verborgen auf Mittel</span>
     </div>
     <div class="col-xs-6 col-sm-3">
       <span class="hidden-lg">Groß</span>
-      <span class="visible-lg">&#10004; Verborgen auf Groß</span>
+      <span class="visible-lg-block">&#10004; Verborgen auf Groß</span>
     </div>
   </div>
   <div class="row responsive-utilities-test hidden-on">
     <div class="col-xs-6 col-sm-6">
       <span class="hidden-xs hidden-sm">Extra-klein und klein</span>
-      <span class="visible-xs visible-sm">&#10004; Verborgen auf X-klein und Klein</span>
+      <span class="visible-xs-block visible-sm-block">&#10004; Verborgen auf X-klein und Klein</span>
     </div>
     <div class="col-xs-6 col-sm-6">
       <span class="hidden-md hidden-lg">Mittel und groß</span>
-      <span class="visible-md visible-lg">&#10004; Verborgen auf Mittel und Groß</span>
+      <span class="visible-md-block visible-lg-block">&#10004; Verborgen auf Mittel und Groß</span>
     </div>
     <div class="clearfix visible-xs"></div>
     <div class="col-xs-6 col-sm-6">
       <span class="hidden-xs hidden-md">Extra-klein und mittel</span>
-      <span class="visible-xs visible-md">&#10004; Verborgen auf X-klein und Mittel</span>
+      <span class="visible-xs-block visible-md-block">&#10004; Verborgen auf X-klein und Mittel</span>
     </div>
     <div class="col-xs-6 col-sm-6">
       <span class="hidden-sm hidden-lg">Klein und groß</span>
-      <span class="visible-sm visible-lg">&#10004; Verborgen auf Klein und Groß</span>
+      <span class="visible-sm-block visible-lg-block">&#10004; Verborgen auf Klein und Groß</span>
     </div>
-    <div class="clearfix visible-xs"></div>
+    <div class="clearfix visible-xs-block"></div>
     <div class="col-xs-6 col-sm-6">
       <span class="hidden-xs hidden-lg">Extra-klein und groß</span>
-      <span class="visible-xs visible-lg">&#10004; Verborgen auf X-klein und Groß</span>
+      <span class="visible-xs-block visible-lg-block">&#10004; Verborgen auf X-klein und Groß</span>
     </div>
     <div class="col-xs-6 col-sm-6">
       <span class="hidden-sm hidden-md">Klein und mittel</span>
-      <span class="visible-sm visible-md">&#10004; Verborgen auf Klein und Mittel</span>
+      <span class="visible-sm-block visible-md-block">&#10004; Verborgen auf Klein und Mittel</span>
     </div>
   </div>
 </div>

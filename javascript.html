@@ -231,11 +231,15 @@ $('#meinModal').on('show.bs.modal', function (e) {
 </div>
 {% endhighlight %}
 
-
   <div class="bs-callout bs-callout-warning">
     <h4>Modals barrierefrei machen</h4>
     <p>Füge einige Attribute zum <code>.modal</code> hinzu (<code>role="dialog"</code>, <code>aria-labelledby="meinModalLabel"</code> und <code>aria-hidden="true"</code>), um assistiven Technologien mitzuteilen (in der Reihenfolge), worum es sich bei dem Modal handelt, welches Element der Titel ist und dass die Elemente des Modals im DOM übersprungen werden sollen.</p>
     <p>Außerdem kannst du eine Beschreibung des Modals mit <code>aria-describedby</code> am <code>.modal</code> markieren.</p>
+  </div>
+
+  <div class="bs-callout bs-callout-info">
+    <h4>YouTube-Videos einbetten</h4>
+    <p>Zur Einbettung von YouTube-Videos in Modals wird zusätzliches JavaScript benötigt, das nicht in Bootstrap enthalten ist, um die Wiedergabe automatisch zu beenden und mehr. <a href="http://stackoverflow.com/questions/18622508/bootstrap-3-and-youtube-in-modal">Lies diesen hilfreichen Artikel auf StackOverflow</a> für mehr Informationen.</p>
   </div>
 
   <h2 id="modals-sizes">Größen</h2>
@@ -665,8 +669,16 @@ $('#meinDropdown').on('show.bs.dropdown', function () {
 
   <h2 id="scrollspy-usage">Verwendung</h2>
 
+  <h3>Relative Positionierung notwendig</h3>
+  <p>Unabhängig von der Umsetzung, erfordert ScrollSpy <code>position: absolute;</code> beim Element, das beobachtet wird. In den meisten Fällen ist das der <code>&lt;body&gt;</code>.</p>
+
   <h3>Über Data-Attribute</h3>
   <p>Um zu deiner Hauptnavigation ganz leicht ScrollSpy-Funktionen hinzuzufügen, füge <code>data-spy="scroll"</code> zu dem Element hinzu, bei dem du die Scroll-Position beobachten willst (üblicherweise der <code>&lt;body&gt;</code>). Dann fügst du das Attribut <code>data-target</code> mit einer ID oder Klasse des übergeordneten Elements einer Bootstrap-<code>.nav</code>-Komponente hinzu.</p>
+{% highlight css %}
+body {
+  position: relative;
+}
+{% endhighlight %}
 {% highlight html %}
 <body data-spy="scroll" data-target=".navbar-example">
   ...
@@ -680,7 +692,7 @@ $('#meinDropdown').on('show.bs.dropdown', function () {
 {% endhighlight %}
 
   <h3>Über JavaScript</h3>
-  <p>Ruf den Scroll-Beobachter über JavaScript auf:</p>
+  <p>Ruf den Scroll-Beobachter über JavaScript auf, nachdem du <code>position: relative;</code> in deinem CSS hinzugefügt hast:</p>
 {% highlight js %}
 $('body').scrollspy({ target: '.navbar-example' })
 {% endhighlight %}
@@ -1380,14 +1392,14 @@ $('#meinPopover').on('hidden.bs.popover', function () {
   <h2 id="alerts-examples">Beispiel-Warnungen</h2>
   <p>Ermögliche mit diesem Plugin das Schließen von allen Warnhinweisen.</p>
   <div class="bs-example">
-    <div class="alert alert-warning fade in">
+    <div class="alert alert-warning fade in" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <strong>Du siehst ein bisschen blass aus!</strong> Ist alles in Ordnung?
     </div>
   </div><!-- /example -->
 
   <div class="bs-example">
-    <div class="alert alert-danger fade in">
+    <div class="alert alert-danger fade in" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <h4>Oh nein! Es ist ein Fehler aufgetreten!</h4>
       <p>Verändere dies und das und versuche es dann erneut. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>

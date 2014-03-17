@@ -1,0 +1,53 @@
+<div class="bs-docs-section">
+  <h1 id="overview" class="page-header">Überblick</h1>
+
+  <p class="lead">Hol dir die harten Fakten über die wichtigsten Teile von Bootstraps Infrastruktur, inklusive unserem Ansatz für bessere, schnellere, stabilere Web-Entwicklung.</p>
+
+  <h3 id="overview-doctype">HTML5-Doctype</h3>
+  <p>Bootstrap benutzt bestimmte HTML-Elemente und CSS-Eigenschaften, die die Verwendung des HTML5-Doctypes erforderlich machen. Füge diesen am Anfang von all deinen Projekten ein.</p>
+{% highlight html %}
+<!DOCTYPE html>
+<html lang="de">
+  ...
+</html>
+{% endhighlight %}
+
+  <h3 id="overview-mobile">Mobile-First-Ansatz</h3>
+  <p>Mit Bootstrap 2 haben wir optionale Stile für die wichtigsten Aspekte des Frameworks hinzugefügt, die Projekte für mobile Geräte bereit machten. Mit Bootstrap 3 haben wir das gesamte Projekt umgeschrieben, damit es sich von Anfang an gut mit mobilen Geräten versteht. Anstatt optionale mobile Stile zusätzlich hinzuzufügen, sind diese einfach direkt eingebaut. Genauer gesagt: <strong>Bootstrap ist ein Mobile-First-Projekt</strong>. Stile, die zunächst für kleine Bildschirme geschrieben wurden und sich dann den größeren anpassen, findest du in der gesamten Bibliothek immer wieder, anstatt in separaten Dateien.</p>
+  <p>Damit deine Seite auf mobilen Geräten vernünftig angezeigt wird und gezoomt werden kann, <strong>ergänze das Viewport-Meta-Tag</strong> in deinem <code>&lt;head&gt;</code>.</p>
+{% highlight html %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% endhighlight %}
+  <p>Du kannst Zooming auf mobilen Geräten deaktivieren, indem du <code>user-scalable=no</code> zu diesem Viewport-Meta-Tag hinzufügst. Dies deaktiviert Zooming, was bedeutet, dass Benutzer nur scrollen können und die Seite sich etwas mehr anfühlt wie eine native Anwendung. Alles in allem empfehlen wir dies nicht auf jeder Seite, also sei vorsichtig!</p>
+{% highlight html %}
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+{% endhighlight %}
+
+  <h3 id="overview-type-links">Typografie und Links</h3>
+  <p>Bootstrap legt globale Grundregeln für die Anzeige von Elementen, Typografie und Links fest. Ganz genau:</p>
+  <ul>
+    <li>Wir setzen <code>background-color: #fff;</code> beim <code>body</code> und machen so den Seitenhintergrund weiß.</li>
+    <li>Wir verwenden die Variablen <code>@font-family-base</code>, <code>@font-size-base</code> und <code>@line-height-base</code> als Basis für die Typografie.</li>
+    <li>Wir färben die Links global über <code>@link-color</code> und dekorieren sie nur bei <code>:hover</code> mit einer Unterstreichung.</li>
+  </ul>
+  <p>Diese Stile findest du in der Datei <code>scaffolding.less</code>.</p>
+
+  <h3 id="overview-normalize">Normalize.css</h3>
+  <p>Damit deine Seite in allen Browsern möglichst gleich aussieht, verwenden wir <a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a>, ein Projekt von <a href="http://twitter.com/necolas" target="_blank">Nicolas Gallagher</a> und <a href="http://twitter.com/jon_neal" target="_blank">Jonathan Neal</a>.</p>
+
+  <h3 id="overview-container">Container</h3>
+  <p>Bootstrap benötigt ein Element, in dem Seiteninhalte und unser Raster-System verpackt sind. Du kannst dir einen von zwei Containern zur Verwendung in deinem Projekt aussuchen. Beachte, dass aufgrund von <code>padding</code> und mehr keiner der beiden Container verschachtelbar ist.</p>
+  <p>Verwende <code>.container</code> für einen sich anpassenden Container mit einer festen Breite.</p>
+{% highlight html %}
+<div class="container">
+  ...
+</div>
+{% endhighlight %}
+</div>
+  <p>Verwende <code>.container-fluid</code> für einen Container, der die gesamte Breite deines Anzeigefensters einnimmt.</p>
+{% highlight html %}
+<div class="container-fluid">
+  ...
+</div>
+{% endhighlight %}
+</div>

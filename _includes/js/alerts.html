@@ -1,0 +1,71 @@
+<div class="bs-docs-section">
+  <h1 id="alerts" class="page-header">Warnhinweise <small>alert.js</small></h1>
+
+  <h2 id="alerts-examples">Beispiel-Warnungen</h2>
+  <p>Ermögliche mit diesem Plugin das Schließen von allen Warnhinweisen.</p>
+  <div class="bs-example">
+    <div class="alert alert-warning fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <strong>Du siehst ein bisschen blass aus!</strong> Ist alles in Ordnung?
+    </div>
+  </div><!-- /example -->
+
+  <div class="bs-example">
+    <div class="alert alert-danger fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <h4>Oh nein! Es ist ein Fehler aufgetreten!</h4>
+      <p>Verändere dies und das und versuche es dann erneut. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+      <p>
+        <button type="button" class="btn btn-danger">Diese Aktion durchführen</button>
+        <button type="button" class="btn btn-default">Oder das hier tun</button>
+      </p>
+    </div>
+  </div><!-- /example -->
+
+
+  <h2 id="alerts-usage">Verwendung</h2>
+  <p>Ermögliche das Schließen eines Warnhinweises über JavaScript:</p>
+  {% highlight js %}$(".alert").alert(){% endhighlight %}
+
+  <h3>Markup</h3>
+  <p>Füge einfach <code>data-dismiss="alert"</code> zu deinem Schließen-Button hinzu, um einem Warnhinweis Schließen-Funktionalität hinzuzufügen.</p>
+  {% highlight html %}<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>{% endhighlight %}
+
+  <h3>Methoden</h3>
+
+  <h4>$().alert()</h4>
+  <p>Verpackt alle Warnhinweise mit Schließen-Funktionalität. Damit sie beim Schließen langsam ausblenden, gib ihnen vorher die Klassen <code>.fade</code> und <code>.in</code>.</p>
+
+  <h4>.alert('close')</h4>
+  <p>Schließt einen Warnhinweis.</p>
+  {% highlight js %}$(".alert").alert('close'){% endhighlight %}
+
+
+  <h3>Ereignisse</h3>
+  <p>Bootstraps Warnhinweis-Klassen legen einige Ereignisse offen, mit denen du dich in die Warnhinweise-Funktionen einklinken kannst.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th style="width: 150px;">Ereignistyp</th>
+          <th>Beschreibung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>close.bs.alert</td>
+          <td>Dieses Ereignis wird sofort ausgelöst, wenn die Methode <code>close</code> aufgerufen wird.</td>
+        </tr>
+        <tr>
+          <td>closed.bs.alert</td>
+          <td>Dieses Element wird ausgelöst, wenn der Warnhinweis vollständig geschlossen wurde (wartet auf CSS-Übergänge).</td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
+{% highlight js %}
+$('#mein-alert').bind('closed.bs.alert', function () {
+  // etwas ausführen...
+})
+{% endhighlight %}
+</div>

@@ -1,0 +1,27 @@
+<div class="bs-docs-section">
+  <h1 id="jumbotron" class="page-header">Jumbotron</h1>
+
+  <p>Eine leichte, flexible Komponente, die optional die gesamte Breite der Seite einnehmen kann, um wichtige Inhalte auf deiner Seite besonders zu präsentieren.</p>
+  <div class="bs-example">
+    <div class="jumbotron">
+      <h1>Hallo Welt!</h1>
+      <p>Dies ist ein einfaches Jumbotron, eine simple Komponente im Stil von Großbilschirmen, die du verwenden kannst, um Aufmerksamkeit auf exklusiv vorgestellte Inhalte oder Informationen zu lenken.</p>
+      <p><a class="btn btn-primary btn-lg" role="button">Mehr erfahren</a></p>
+    </div>
+  </div>
+{% highlight html %}
+<div class="jumbotron">
+  <h1>Hallo Welt!</h1>
+  <p>...</p>
+  <p><a class="btn btn-primary btn-lg" role="button">Mehr erfahren</a></p>
+</div>
+{% endhighlight %}
+  <p>Damit das Jumbotron die ganze Breite einnimmt und keine abgerundeten Ecken mehr hat, platziere es außerhalb von jeglichen <code>.container</code>n und füge stattdessen einen <code>.container</code> im Jumbotron hinzu.</p>
+{% highlight html %}
+<div class="jumbotron">
+  <div class="container">
+    ...
+  </div>
+</div>
+{% endhighlight %}
+</div>

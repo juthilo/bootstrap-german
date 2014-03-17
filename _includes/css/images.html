@@ -1,0 +1,26 @@
+<div class="bs-docs-section">
+  <h1 id="images" class="page-header">Bilder</h1>
+
+  <h2 id="images-responsive">Responsive Bilder</h3>
+  <p>Bilder in Bootstrap 3 können sich automatisch dem Bildschirm anpassen, wenn du die Klasse <code>.img-responsive</code> hinzufügst. Diese wendet <code>max-width: 100%;</code> und <code>height: auto;</code> auf das Bild an, so dass es sich wunderbar dem übergeordneten Element anpasst.</p>
+{% highlight html %}
+<img src="..." class="img-responsive" alt="Responsives Bild">
+{% endhighlight %}
+
+  <h2 id="images-shapes">Bilder-Konturen</h2>
+  <p>Füge Klassen zu <code>&lt;img&gt;</code>-Elementen hinzu, um Bilder in jedem Projekt ganz einfach zu gestalten.</p>
+  <div class="bs-callout bs-callout-danger">
+    <h4>Browser-Kompatibilität</h4>
+    <p>Denk daran, dass es im Internet Explorer 8 keine Unterstützung von abgerundeten Ecken gibt.</p>
+  </div>
+  <div class="bs-example bs-example-images">
+    <img data-src="holder.js/140x140" class="img-rounded" alt="Ein generisches quadratisches Platzhalter-Bild mit runden Ecken">
+    <img data-src="holder.js/140x140" class="img-circle" alt="Ein generisches quadratisches Platzhalter-Bild, bei dem von eben diesem Quadrat nur ein kreisförmiger Teil zu sehen ist">
+    <img data-src="holder.js/140x140" class="img-thumbnail" alt="Ein generisches quadratisches Platzhalter-Bild mit einem weißen Rahmen, das es aussehen lässt, als wäre das Bild mit einer alten Sofortbildkamera gemacht worden">
+  </div>
+{% highlight html %}
+<img src="..." alt="..." class="img-rounded">
+<img src="..." alt="..." class="img-circle">
+<img src="..." alt="..." class="img-thumbnail">
+{% endhighlight %}
+</div>

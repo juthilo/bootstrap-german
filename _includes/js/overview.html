@@ -1,0 +1,71 @@
+<div class="bs-docs-section">
+  <h1 id="js-overview" class="page-header">Überblick</h1>
+
+  <h3 id="js-individual-compiled">Einzeln oder kompiliert</h3>
+  <p>Plugins können einzeln (über Bootstraps separate <code>*.js</code>-Dateien) oder alle auf einmal (über <code>bootstrap.js</code> oder das minimierte <code>bootstrap.min.js</code>) eingebunden werden.</p>
+
+  <div class="bs-callout bs-callout-danger">
+    <h4>Umgang mit dem kompilierten JavaScript</h4>
+    <p>Sowohl <code>bootstrap.js</code> als auch <code>bootstrap.min.js</code> enhalten alle Plugins in einer einzigen Datei. Binde immer nur eine von beiden in deine Dokumente ein.</p>
+  </div>
+
+  <div class="bs-callout bs-callout-danger">
+    <h4>Data-Attribute bei Komponenten</h4>
+    <p>Du solltest Data-Attribute von verschiedenen Plugins nicht zusammen an einer Komponente verwenden. Zum Beispiel kann ein Button nicht gleichzeitig einen Tooltip anzeigen und ein Modal öffnen. Verwende ein umschließendes Element, um dies umzusetzen.</p>
+  </div>
+
+  <div class="bs-callout bs-callout-danger">
+    <h4>Plugin-Abhängigkeiten</h4>
+    <p>Einige Plugins und CSS-Komponenten sind von anderen Plugins abhängig. Falls du Plugins einzeln einbindest, musst du mit Hilfe der Dokumentation überprüfen, ob diese Abhängigkeiten erfüllt werden. Beachte außerdem, dass alle Plugins jQuery benötigen (das bedeutet, dass jQuery <strong>vor</strong> den Plugin-Dateien eingebunden werden muss). <a href="{{ site.repo }}/blob/v{{ site.current_version }}/bower.json">Lies unsere <code>bower.json</code></a>, um herauszufinden, welche Versionen von jQuery unterstützt werden.</p>
+  </div>
+
+  <h3 id="js-data-attrs">Data-Attribute</h3>
+  <p>Du kannst alle Bootstrap-Plugins vollkommen über die Markup-API verwenden, ohne eine einzige Zeile JavaScript zu schreiben. Diese erstklassige API sollte immer deine erste Wahl bei der Verwendung eines Plugins sein.</p>
+
+  <p>Es kann allerdings manchmal wünschenswert sein, diese Funktionalität abzuschalten. Daher bieten wir dir die Möglichkeit, die Data-Attribut-API zu deaktivieren, indem alle Ereignisse des Dokuments im Namespace <code>data-api</code> losgebunden werden. Das sieht dann so aus:</p>
+{% highlight js %}
+$(document).off('.data-api')
+{% endhighlight %}
+
+  <p>Alternativ kannst du ein bestimmtes Plugin anvisieren. Füge einfach den Namen des Plugins zur Namespace-Angabe hinzu, so wie hier:</p>
+{% highlight js %}
+$(document).off('.alert.data-api')
+{% endhighlight %}
+
+  <h3 id="js-programmatic-api">Programmatische API</h3>
+  <p>Wir denken, dass du Bootstraps Plugins auch über eine pure JavaScript-API verwenden können solltest. Alle öffentlichen APIs sind einzelne Methoden, die du aneinander reihen kannst und die die Sammlung zurückgeben, mit der sie gerade interagieren.</p>
+{% highlight js %}
+$('.btn.danger').button('toggle').addClass('fat')
+{% endhighlight %}
+
+  <p>Alle Methoden sollten ein optionales Objekt mit Optionen annehmen, ein String, der eine bestimmte Methode anvisiert oder einfach nichts (was dazu führt, dass ein Plugin mit Standard-Verhalten initiiert wird:</p>
+{% highlight js %}
+$('#meinModal').modal()                      // mit Standards initiieren
+$('#meinModal').modal({ keyboard: false })   // ohne Tastatur initiieren
+$('#meinModal').modal('show')                // initiieren und direkt 'show' aufrufen
+{% endhighlight %}
+
+  <p>Jedes Plugin legt seinen rohen Konstruktor in der <code>Constructor</code>-Eigenschaft offen: <code>$.fn.popover.Constructor</code>. Falls du eine bestimmte Instanz eines Plugins brauchst, ruf sie direkt von einem Element auf: <code>$('[rel=popover]').data('popover')</code>.</p>
+
+  <h3 id="js-noconflict">No conflict</h3>
+  <p>Unter Umständen musst du Bootstraps Plugins Seite an Seite mit anderen UI-Frameworks verwenden. In diesen Fällen kann es manchmal dazu kommen, dass sich Namespaces überschneiden. Falls das passiert, rufe <code>.noConflict</code> an einem Plugin auf, um dessen Wert zurückzusetzen.</p>
+{% highlight js %}
+var bootstrapButton = $.fn.button.noConflict() // setze $.fn.button auf den zuvor zugewiesenen Wert zurück
+$.fn.bootstrapBtn = bootstrapButton            // gib $().bootstrapBtn die Bootstrap-Funktionalität
+{% endhighlight %}
+
+  <h3 id="js-events">Ereignisse</h3>
+  <p>Bootstrap stellt eigene Ereignisse für die meisten der einmaligen Plugin-Aktionen zur Verfügung. In der Regel sind diese Kombinationen aus Infinitiv und Partizip. Der Infinitiv davon (z.B. <code>show</code>) wird beim Start eines Ereignisses ausgelöst und die Partizip-Form (z.B. <code>shown</code>) wird ausgelöst wenn die Aktion abgeschlossen ist.</p>
+  <p>Seit v3.0.0 sind alle Bootstrap-Ereignisse in einem eigenen Namespace.</p>
+  <p>Alle Infinitiv-Ereignisse kommen mit <code>preventDefault</code>-Funktionalität. Diese ermöglicht es, die Ausführung einer Aktion zu verhindern, bevor sie anfängt.</p>
+{% highlight js %}
+$('#meinModal').on('show.bs.modal', function (e) {
+  if (!data) return e.preventDefault() // verhindert, dass das Modal angezeigt wird
+})
+{% endhighlight %}
+
+  <div class="bs-callout bs-callout-warning" id="callout-third-party-libs">
+    <h4>Drittanbieter-Bibliotheken</h4>
+    <p><strong>Bootstrap unterstützt offiziell keine dritten JavaScript-Bibliotheken</strong> wie Prototype oder jQuery UI. Trotz <code>.noConflict</code> und Ereignissen mit Namespace kann es zu Kompatibilitätsproblemen kommen, die du alleine beheben musst.</p>
+  </div>
+</div>

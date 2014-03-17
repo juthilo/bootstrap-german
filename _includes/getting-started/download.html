@@ -1,0 +1,47 @@
+<div class="bs-docs-section">
+  <h1 id="download" class="page-header">Herunterladen</h1>
+
+  <p class="lead">Bootstrap (zurzeit v{{ site.current_version }}) bietet einige einfache Wege, um schnell loszulegen. Jeder davon passt zu anderen Kenntnissen und Anwendungen. Lies weiter, um herauszufinden, was zu dir passt.</p>
+
+  <div class="row bs-downloads">
+    <div class="col-sm-4">
+      <h3 id="download-bootstrap">Bootstrap</h3>
+      <p>Kompilierte und minimierte CSS-, JavaScript und Schrift-Dateien. Keine Doku oder Quelldateien dabei.</p>
+      <p>
+        <a href="{{ site.download.dist }}" class="btn btn-lg btn-outline" role="button" onclick="ga('send', 'event', 'Download', 'click', 'dist')">Bootstrap herunterladen</a>
+      </p>
+    </div>
+    <div class="col-sm-4">
+      <h3 id="download-source">Quelltext</h3>
+      <p>Less-, JavaScript- und Schrift-Quelldateien, zusammen mit unserer Doku. <strong>Less-Compiler und <a href="{{ site.repo }}#compiling-css-and-javascript">Konfiguration</a> erforderlich.</strong></p>
+      <p>
+        <a href="{{ site.download.source }}" class="btn btn-lg btn-outline" role="button" onclick="ga('send', 'event', 'Download', 'click', 'source')">Quelle herunterladen</a>
+      </p>
+    </div>
+    <div class="col-sm-4">
+      <h3 id="download-sass">Sass</h3>
+      <p><a href="{{ site.sass_repo }}">Bootstrap von Less nach Sass portiert</a> für einfache Verwendung in Rails-, Compass- oder puren Sass-Projekten.</p>
+      <p>
+        <a href="{{ site.download.sass }}" class="btn btn-lg btn-outline" role="button" onclick="ga('send', 'event', 'Download', 'click', 'sass')">Sass herunterladen</a>
+      </p>
+    </div>
+  </div>
+  <p class="muted">Aktuell v{{ site.current_version }}.</p>
+
+  <h3 id="download-cdn">Bootstrap-CDN</h3>
+  <p>Unsere Freunde bei <a href="http://www.maxcdn.com/">MaxCDN</a> haben großzügigerweise CDN-Unterstützung für Bootstraps CSS und JavaScript zur Verfügung gestellt. Verwende einfach diese Links zum <a href="http://www.bootstrapcdn.com/">Bootstrap CDN</a>.</p>
+{% highlight html %}
+<!-- Das neueste kompilierte und minimierte CSS -->
+<link rel="stylesheet" href="{{ site.cdn.css }}">
+
+<!-- Optionales Theme -->
+<link rel="stylesheet" href="{{ site.cdn.css_theme }}">
+
+<!-- Das neueste kompilierte und minimierte JavaScript -->
+<script src="{{ site.cdn.js }}"></script>
+{% endhighlight %}
+
+  <h3 id="download-bower">Mit Bower installieren</h3>
+  <p>Du kannst Bootstraps Less, CSS, JavaScript und Schriften auch mit Hilfe von <a href="http://bower.io">Bower</a> installieren und verwalten.</p>
+  {% highlight bash %}$ bower install bootstrap{% endhighlight %}
+</div>

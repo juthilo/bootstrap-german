@@ -1,0 +1,225 @@
+<div class="bs-docs-section">
+  <h1 id="carousel" class="page-header">Karussell <small>carousel.js</small></h1>
+
+  <h2 id="carousel-examples">Beispiele</h2>
+  <p>Die Galerie unten zeigt ein generisches Plugin und eine passende Komponente, mit denen du Elemente wie in einem Karussell durchlaufen lassen kannst.</p>
+  <div class="bs-example">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img data-src="holder.js/900x500/auto/#777:#555/text:Erste Folie" alt="First Folie">
+        </div>
+        <div class="item">
+          <img data-src="holder.js/900x500/auto/#666:#444/text:Zweite Folie" alt="Zweite Folie">
+        </div>
+        <div class="item">
+          <img data-src="holder.js/900x500/auto/#555:#333/text:Dritte Folie" alt="Dritte Folie">
+        </div>
+      </div>
+      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
+  </div><!-- /example -->
+{% highlight html %}
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Positionsanzeiger -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Verpackung für die Elemente -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="..." alt="...">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    ...
+  </div>
+
+  <!-- Schalter -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+{% endhighlight %}
+
+  <div class="bs-callout bs-callout-warning" id="callout-carousel-transitions">
+    <h4>Übergangs-Animationen in Internet Explorer 8 &amp; 9 nicht unterstützt</h4>
+    <p>Bootstrap nutzt ausschließlich CSS3 für seine Animationen, aber Internet Explorer 8 &amp; 9 unterstützen die notwendigen CSS-Eigenschaften nicht. Daher gibt es keine Gleit-Animation im Karussell in diesen Browsern. Wir haben uns bewusst dafür entschieden, jQuery-basierte Alternativen für die Übergänge nicht einzusetzen.</p>
+  </div>
+
+  <h3>Optionale Untertitel</h3>
+  <p>Füge Untertitel zu deinen Folien ganz einfach mit <code>.carousel-caption</code> zu jedem <code>.item</code> hinzu. Darin kannst du fast alle optionalen HTML-Inhalte einfügen und alles wird automatisch ausgerichtet und formatiert.</p>
+  <div class="bs-example">
+    <div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-captions" data-slide-to="1"></li>
+        <li data-target="#carousel-example-captions" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img data-src="holder.js/900x500/auto/#777:#777" alt="Bild für erste Folie">
+          <div class="carousel-caption">
+            <h3>Titel für erste Folie</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </div>
+        </div>
+        <div class="item">
+          <img data-src="holder.js/900x500/auto/#666:#666" alt="Bild für zweite Folie">
+          <div class="carousel-caption">
+            <h3>Titel für zweite Folie</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="item">
+          <img data-src="holder.js/900x500/auto/#555:#5555" alt="Bild für dritte Folie">
+          <div class="carousel-caption">
+            <h3>Titel für dritte Folie</h3>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#carousel-example-captions" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-captions" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
+  </div><!-- /example -->
+{% highlight html %}
+<div class="item active">
+  <img src="..." alt="...">
+  <div class="carousel-caption">
+    <h3>...</h3>
+    <p>...</p>
+  </div>
+</div>
+{% endhighlight %}
+
+  <div class="bs-callout bs-callout-danger">
+    <h4>Barrierefreiheit</h4>
+    <p>Die Karussell-Komponente erfüllt generell keine Standards für Barrierefreiheit. Falls du diese einhalten musst, solltest du andere Optionen für die Präsentation dieser Inhalte in Betracht ziehen.</p>
+  </div>
+
+  <h2 id="carousel-usage">Verwendung</h2>
+
+  <h3>Mehrere Karussells</h3>
+  <p>Damit die Steuerung von Karussells richtig funktioniert, musst du eine einzigartige <code>id</code> zum äußersten Container, <code>.carousel</code>, hinzufügen. Wenn du mehr als ein Karussell auf einer Seite verwendest oder die <code>id</code> eines Karussells aus einem anderen Grund veränderst, denk daran, auch die Steuerungselemente anzupassen.</p>
+
+  <h3>Über Data-Attribute</h3>
+  <p>Verwende Data-Attribute, um die Position des Karussells auf einfache Weise zu kontrollieren. <code>data-slide</code> akzeptiert die Schlüsselwörter <code>prev</code> or <code>next</code>, die die Position der Folien abhängig von der aktuellen Position verändern. Alternativ kannst du <code>data-slide-to</code> verwenden, um die Folie mit einer bestimmten Nummer aufzurufen. <code>data-slide-to="2"</code> ruft die dritte Folie im Karussell auf, da die automatische Nummerierung mit <code>0</code> beginnt.</p>
+  <p>Das Attribut <code>data-ride="carousel"</code> wird verwendet, um ein Karussell automatisch zu animieren, sobald die Seite fertig geladen ist.</p>
+
+  <h3>Über JavaScript</h3>
+  <p>Ruf die Karussell-Funktionen manuell auf:</p>
+{% highlight js %}
+$('.karussell').carousel()
+{% endhighlight %}
+
+  <h3>Optionen</h3>
+  <p>Optionen können über Data-Attribute oder JavaScript angegeben werden. Für Data-Attribute hängst du den Namen der Option einfach an <code>data-</code>, z.B. <code>data-interval=""</code>.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+       <tr>
+         <th style="width: 100px;">Name</th>
+         <th style="width: 50px;">Typ</th>
+         <th style="width: 50px;">Standard</th>
+         <th>Beschreibung</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+         <td>interval</td>
+         <td>Nummer |false</td>
+         <td>5000</td>
+         <td>Die Zeit in ms, die vergehen soll, bevor das nächste Objekt aufgerufen wird. Falls false angegeben wird, bewegt sich das Karussell nicht automatisch.</td>
+       </tr>
+       <tr>
+         <td>pause</td>
+         <td>String</td>
+         <td>"hover"</td>
+         <td>Pausiert die Drehung des Karussells bei mouseenter und setzt sie bei mouseleave fort.</td>
+       </tr>
+       <tr>
+         <td>wrap</td>
+         <td>Boolean</td>
+         <td>true</td>
+         <td>Bestimmt, ob das Karussell sich immer weiterdrehen oder feste Stopps machen soll.</td>
+       </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
+
+  <h3>Methoden</h3>
+
+  <h4>.carousel(Optionen)</h4>
+  <p>Initialisiert das Karussell mit einem optionalen <code>object</code> mit Optionen und beginnt, zwischen den verschiedenen Folien zu wechseln.</p>
+{% highlight js %}
+$('.karussell').carousel({
+  interval: 2000
+})
+{% endhighlight %}
+
+  <h4>.carousel('cycle')</h4>
+  <p>Wechselt zwischen den Karussell-Einträgen von links nach rechts.</p>
+
+  <h4>.carousel('pause')</h4>
+  <p>Pausiert die Drehung des Karussells.</p>
+
+
+  <h4>.carousel(number)</h4>
+  <p>Bewegt das Karussell zu einem bestimmten Eintrag (basiert auf 0, wie ein Array).</p>
+
+  <h4>.carousel('prev')</h4>
+  <p>Bewegt das Karussell zum vorherigen Eintrag.</p>
+
+  <h4>.carousel('next')</h4>
+  <p>Bewegt das Karussell zum nächsten Eintrag.</p>
+
+  <h3>Ereignisse</h3>
+  <p>Bootstraps Karussell-Klassen legen zwei Ereignisse offen, mit denen du dich in Karussell-Funktionen einklinken kannst.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+       <tr>
+         <th style="width: 150px;">Ereignistyp</th>
+         <th>Beschreibung</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+         <td>slide.bs.carousel</td>
+         <td>Dieses Ereignis wird sofort ausgelöst, wenn die Methode <code>slide</code> aufgerufen wird.</td>
+       </tr>
+       <tr>
+         <td>slid.bs.carousel</td>
+         <td>Dieses Element wird ausgelöst, wenn das Karussell eine Bewegung zu Ende geführt hat.</td>
+       </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
+{% highlight js %}
+$('#meinKarussell').on('slide.bs.carousel', function () {
+  // etwas ausführen...
+})
+{% endhighlight %}
+</div>

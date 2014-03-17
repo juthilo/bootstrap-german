@@ -1,0 +1,499 @@
+<div class="bs-docs-section">
+  <h1 id="less" class="page-header">Less verwenden</h1>
+
+  <p class="lead">Bootstraps CSS wird mit Less gemacht, einem Präprozessor mit zusätzlichen Funktionen wie Variablen, Mixins und Funktionen für das Kompilieren von CSS. Wer statt unseren kompilierten CSS-Dateien lieber die Quell-Less-Dateien verwendet, kann die zahlreichen Variablen und Mixins nutzen, die wir im gesamten Framework einsetzen.</p>
+
+  <p>Raster-Variablen und -Mixins sind im <a href="#grid-less">Abschnitt über das Rastersystem</a> beschrieben.</p>
+
+
+  <h2 id="less-bootstrap">Bootstrap kompilieren</h2>
+  <p>Bootstrap kann auf mindestens zwei Arten genutzt werden: mit dem kompilierten CSS oder mit den ursprünglichen Less-Dateien. Um die Less-Dateien zu kompilieren, <a href="https://github.com/twbs/bootstrap#compiling-css-and-javascript">lies in unserem README</a> nach, wie du deine Entwicklungsumgebung für die notwendigen Befehle einrichten kannst.</p>
+  <p>Andere, dritte Kompilierer funktionieren vielleicht mit Bootstrap, werden aber von unserem Hauptteam nicht unterstützt.</p>
+
+  <h2 id="less-variables">Variablen</h2>
+  <p>Variablen werden im gesamten Projekt immer wieder verwendet, um häufig verwendete Werte wie Farben, Abstände, Größen oder Schriften zu zentralisieren und zu teilen. Eine gesamte Übersicht über alle Variablen und ihre Funktionen findest du in der englischsprachigen Dokumentation im <a href="http://getbootstrap.com/customize/#less-variables-section">Customizer</a>.</p>
+
+  <h3 id="less-variables-colors">Farben</h3>
+  <p>Benutze ganz einfach zwei Farbschemas: Graustufen und Semantik. Graustufen bieten einfachen Zugriff auf häufig verwendete Abstufungen von schwarz, während die Semantik verschiedene Farben mit bedeutsamem Kontextbezug enthält.</p>
+  <div class="bs-example">
+    <div class="color-swatches">
+      <div class="color-swatch gray-darker"></div>
+      <div class="color-swatch gray-dark"></div>
+      <div class="color-swatch gray"></div>
+      <div class="color-swatch gray-light"></div>
+      <div class="color-swatch gray-lighter"></div>
+    </div>
+  </div>
+{% highlight scss %}
+@gray-darker:  lighten(#000, 13.5%); // #222
+@gray-dark:    lighten(#000, 20%);   // #333
+@gray:         lighten(#000, 33.5%); // #555
+@gray-light:   lighten(#000, 60%);   // #999
+@gray-lighter: lighten(#000, 93.5%); // #eee
+{% endhighlight %}
+
+  <div class="bs-example">
+    <div class="color-swatches">
+      <div class="color-swatch brand-primary"></div>
+      <div class="color-swatch brand-success"></div>
+      <div class="color-swatch brand-info"></div>
+      <div class="color-swatch brand-warning"></div>
+      <div class="color-swatch brand-danger"></div>
+    </div>
+  </div>
+{% highlight scss %}
+@brand-primary: #428bca;
+@brand-success: #5cb85c;
+@brand-info:    #5bc0de;
+@brand-warning: #f0ad4e;
+@brand-danger:  #d9534f;
+{% endhighlight %}
+
+  <p>Verwende diese Farbvariablen so wie sie sind oder weise sie wiederum anderen, bedeutsameren Variablen in deinem Projekt zu.</p>
+{% highlight scss %}
+// Verwendung wie sie sind
+.masthead {
+  background-color: @brand-primary;
+}
+
+// Variablen neu zuweisen in Less
+@alert-message-background: @brand-info;
+.alert {
+  background-color: @alert-message-background;
+}
+{% endhighlight %}
+
+  <h3 id="less-variables-scaffolding">Grundgerüst</h3>
+  <p>Eine Reihe von Variablen, um schnell wichtige Elemente im Aufbau deiner Seite zu verändern.</p>
+{% highlight scss %}
+// Grundgerüst
+@body-bg:    #fff; // Seitenhintergrund
+@text-color: @black-50; // Fließtextfarbe
+{% endhighlight %}
+
+  <h3 id="less-variables-links">Links</h3>
+  <p>Gestalte die Farbe deiner Links um, indem du nur einen Wert veränderst.</p>
+{% highlight scss %}
+// Variablen
+@link-color:       @brand-primary;
+@link-color-hover: darken(@link-color, 15%);
+
+// Verwendung
+a {
+  color: @link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: @link-color-hover;
+    text-decoration: underline;
+  }
+}
+{% endhighlight %}
+  <p>Beachte, dass <code>@link-color-hover</code> eine Funktion verwendet (ein anderes tolles Werkzeug in Less), die automagisch die richtige Hover-Farbe für Links generiert. Du kannst <code>darken</code>, <code>lighten</code>, <code>saturate</code> und <code>desaturate</code> verwenden.</p>
+
+  <h3 id="less-variables-typography">Typografie</h3>
+  <p>Lege ganz einfach Schriftart, Textgröße, Durchschuss und vieles mehr mit einigen wenigen Variablen fest. Bootstrap verwendet diese ebenfalls, um einfache typografische Mixins bereitzustellen.</p>
+{% highlight scss %}
+@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
+
+@font-size-base:          14px;
+@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
+@font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
+
+@font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
+@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
+@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
+@font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
+@font-size-h5:            @font-size-base;
+@font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
+
+@line-height-base:        1.428571429; // 20/14
+@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
+
+@headings-font-family:    inherit;
+@headings-font-weight:    500;
+@headings-line-height:    1.1;
+@headings-color:          inherit;
+{% endhighlight %}
+
+  <h3 id="less-variables-icons">Icons</h3>
+  <p>Zwei Variablen entscheiden, wo deine Icons sich befinden und wie ihre Dateien heißen.</p>
+{% highlight scss %}
+@icon-font-path:          "../fonts/";
+@icon-font-name:          "glyphicons-halflings-regular";
+{% endhighlight %}
+
+  <h3 id="less-variables-components">Komponenten</h3>
+  <p>Komponenten überall in Bootstrap verwenden diese Standard-Variablen, um einige übliche Werte festzulegen. Hier sind einige der am häufigsten genutzten.</p>
+{% highlight scss %}
+@padding-base-vertical:          6px;
+@padding-base-horizontal:        12px;
+
+@padding-large-vertical:         10px;
+@padding-large-horizontal:       16px;
+
+@padding-small-vertical:         5px;
+@padding-small-horizontal:       10px;
+
+@padding-xs-vertical:            1px;
+@padding-xs-horizontal:          5px;
+
+@line-height-large:              1.33;
+@line-height-small:              1.5;
+
+@border-radius-base:             4px;
+@border-radius-large:            6px;
+@border-radius-small:            3px;
+
+@component-active-color:         #fff;
+@component-active-bg:            @brand-primary;
+
+@caret-width-base:               4px;
+@caret-width-large:              5px;
+{% endhighlight %}
+
+
+  <h2 id="less-mixins-vendor">Hersteller-Mixins</h2>
+  <p>Hersteller-Mixins helfen dir dabei, bestimmte CSS-Eigenschaften umzusetzen, bei denen für einige Browser herstellereigene Präfixe erforderlich sind.</p>
+
+
+  <h3 id="less-mixins-box-sizing">Box-sizing</h3>
+  <p>Definiere das box model deiner Site oder Anwendung mit einem einzigen Mixin. Mehr Informationen findest du in <a href="https://developer.mozilla.org/en-US/docs/CSS/box-sizing" target="_blank">diesem hilfreichen Artikel von Mozilla</a>.</p>
+  <p>Dieses Mixin ist ab v3.2.0 als veraltet markiert und wurde durch autoprefixer ersetzt. Um Rückwärtskompatibilität zu bewahren, wird Bootstrap das Mixin bis Bootstrap v4 weiterhin intern verwenden.</p>
+{% highlight scss %}
+.box-sizing(@box-model) {
+  -webkit-box-sizing: @box-model; // Safari <= 5
+     -moz-box-sizing: @box-model; // Firefox <= 19
+          box-sizing: @box-model;
+}
+{% endhighlight %}
+
+  <h3 id="less-mixins-rounded-corners">Abgerundete Ecken</h3>
+  <p>Inzwischen unterstütztn alle modernen Browser die <code>border-radius</code>-Eigenschaft ohne besondere Präfixe. Es gibt daher kein <code>.border-radius()</code>-Mixin aber Bootstrap bietet dir einige Hilfs-Mixins, mit denen du schnell und einfach zwei Ecken auf einer Seite eines Objekts abrunden kannst.</p>
+{% highlight scss %}
+.border-top-radius(@radius) {
+  border-top-right-radius: @radius;
+   border-top-left-radius: @radius;
+}
+.border-right-radius(@radius) {
+  border-bottom-right-radius: @radius;
+     border-top-right-radius: @radius;
+}
+.border-bottom-radius(@radius) {
+  border-bottom-right-radius: @radius;
+   border-bottom-left-radius: @radius;
+}
+.border-left-radius(@radius) {
+  border-bottom-left-radius: @radius;
+     border-top-left-radius: @radius;
+}
+{% endhighlight %}
+
+  <h3 id="less-mixins-box-shadow">Box (Drop) shadows</h3>
+  <p>Falls deine Zielgruppe bzw. dein Publikum die neuesten und besten Browser und Geräte verwendet, reicht es, einfach die Eigenschaft <code>box-shadow</code> ohne Präfixe zu verwenden. Falls du allerdings ältere Android- (vor v4) und iOS-Geräte (vor iOS 5) unterstützen willst, kannst du dieses <strong>als veraltet markierte</strong> Mixin verwenden, um das benötigte <code>-webkit</code>-Präfix hinzuzufügen.</p>
+  <p>Das Mixin ist seit v3.1.0 <strong>als veraltet markiert</strong>, da Bootstrap die älteren Plattformen ohne Unterstützung für die Standard-Eigenschaft ohne Präfix nicht unterstützt. Um Rückwärtskompatibilität beizubehalten, wird das Mixin bis Bootstrap v4 weiterhin verfügbar sein und genutzt werden.</p>
+  <p>Am besten verwendest du <code>rgba()</code>-Farben in deinen Box-Shadows, damit diese so nahtlos wie möglich in deine Hintergründe übergehen.</p>
+{% highlight scss %}
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+          box-shadow: @shadow;
+}
+{% endhighlight %}
+
+  <h3 id="less-mixins-transitions">Übergänge</h3>
+  <p>Mehrere Mixins für Flexibilität. Leg alle Übergangsdetails mit einem fest oder definiere eine separate Verzögerung und Länge, wie es für dich am besten passt.</p>
+  <p>Dieses Mixin ist ab v3.2.0 als veraltet markiert und wurde durch autoprefixer ersetzt. Um Rückwärtskompatibilität zu bewahren, wird Bootstrap das Mixin bis Bootstrap v4 weiterhin intern verwenden.</p>
+{% highlight scss %}
+.transition(@transition) {
+  -webkit-transition: @transition;
+          transition: @transition;
+}
+.transition-property(@transition-property) {
+  -webkit-transition-property: @transition-property;
+          transition-property: @transition-property;
+}
+.transition-delay(@transition-delay) {
+  -webkit-transition-delay: @transition-delay;
+          transition-delay: @transition-delay;
+}
+.transition-duration(@transition-duration) {
+  -webkit-transition-duration: @transition-duration;
+          transition-duration: @transition-duration;
+}
+.transition-timing-function(@timing-function) {
+  -webkit-transition-timing-function: @timing-function;
+          transition-timing-function: @timing-function;
+}
+.transition-transform(@transition) {
+  -webkit-transition: -webkit-transform @transition;
+     -moz-transition: -moz-transform @transition;
+       -o-transition: -o-transform @transition;
+          transition: transform @transition;
+}
+{% endhighlight %}
+
+  <h3 id="less-mixins-transformations">Transformationen</h3>
+  <p>Drehe, skaliere, bewege oder kippe irgendein object.</p>
+  <p>Dieses Mixin ist ab v3.2.0 als veraltet markiert und wurde durch autoprefixer ersetzt. Um Rückwärtskompatibilität zu bewahren, wird Bootstrap das Mixin bis Bootstrap v4 weiterhin intern verwenden.</p>
+{% highlight scss %}
+.rotate(@degrees) {
+  -webkit-transform: rotate(@degrees);
+      -ms-transform: rotate(@degrees); // nur IE9
+          transform: rotate(@degrees);
+}
+.scale(@ratio; @ratio-y...) {
+  -webkit-transform: scale(@ratio, @ratio-y);
+      -ms-transform: scale(@ratio, @ratio-y); // nur IE9
+          transform: scale(@ratio, @ratio-y);
+}
+.translate(@x; @y) {
+  -webkit-transform: translate(@x, @y);
+      -ms-transform: translate(@x, @y); // nur IE9
+          transform: translate(@x, @y);
+}
+.skew(@x; @y) {
+  -webkit-transform: skew(@x, @y);
+      -ms-transform: skewX(@x) skewY(@y); // Siehe https://github.com/twbs/bootstrap/issues/4885; IE9+
+          transform: skew(@x, @y);
+}
+.translate3d(@x; @y; @z) {
+  -webkit-transform: translate3d(@x, @y, @z);
+          transform: translate3d(@x, @y, @z);
+}
+
+.rotateX(@degrees) {
+  -webkit-transform: rotateX(@degrees);
+      -ms-transform: rotateX(@degrees); // nur IE9
+          transform: rotateX(@degrees);
+}
+.rotateY(@degrees) {
+  -webkit-transform: rotateY(@degrees);
+      -ms-transform: rotateY(@degrees); // nur IE9
+          transform: rotateY(@degrees);
+}
+.perspective(@perspective) {
+  -webkit-perspective: @perspective;
+     -moz-perspective: @perspective;
+          perspective: @perspective;
+}
+.perspective-origin(@perspective) {
+  -webkit-perspective-origin: @perspective;
+     -moz-perspective-origin: @perspective;
+          perspective-origin: @perspective;
+}
+.transform-origin(@origin) {
+  -webkit-transform-origin: @origin;
+     -moz-transform-origin: @origin;
+      -ms-transform-origin: @origin; // nur IE9
+          transform-origin: @origin;
+}
+{% endhighlight %}
+
+  <h3 id="less-mixins-animations">Animationen</h3>
+  <p>Ein einzelnes Mixin für alle CSS3-Animations-Eigenschaften in einem CSS-Block und weitere Mixins für einzelne Eigenschaften.</p>
+  <p>Dieses Mixin ist ab v3.2.0 als veraltet markiert und wurde durch autoprefixer ersetzt. Um Rückwärtskompatibilität zu bewahren, wird Bootstrap das Mixin bis Bootstrap v4 weiterhin intern verwenden.</p>
+{% highlight scss %}
+.animation(@animation) {
+  -webkit-animation: @animation;
+          animation: @animation;
+}
+.animation-name(@name) {
+  -webkit-animation-name: @name;
+          animation-name: @name;
+}
+.animation-duration(@duration) {
+  -webkit-animation-duration: @duration;
+          animation-duration: @duration;
+}
+.animation-timing-function(@timing-function) {
+  -webkit-animation-timing-function: @timing-function;
+          animation-timing-function: @timing-function;
+}
+.animation-delay(@delay) {
+  -webkit-animation-delay: @delay;
+          animation-delay: @delay;
+}
+.animation-iteration-count(@iteration-count) {
+  -webkit-animation-iteration-count: @iteration-count;
+          animation-iteration-count: @iteration-count;
+}
+.animation-direction(@direction) {
+  -webkit-animation-direction: @direction;
+          animation-direction: @direction;
+}
+{% endhighlight %}
+
+  <h3 id="less-mixins-opacity">Undurchsichtigkeit / Trübung</h3>
+  <p>Lege die Trübung fpr alle Browser fest und stelle eine <code>filter</code>-Notlösung für IE8 bereit.</p>
+{% highlight scss %}
+.opacity(@opacity) {
+  opacity: @opacity;
+  // IE8-filter
+  @opacity-ie: (@opacity * 100);
+  filter: ~"alpha(opacity=@{opacity-ie})";
+}
+{% endhighlight %}
+
+  <h3 id="less-mixins-placeholder">Platzhalter-Text</h3>
+  <p>Versehe Formularfelder mit Kontext in jedem Feld.</p>
+{% highlight scss %}
+.placeholder(@color: @input-color-placeholder) {
+  &::-moz-placeholder           { color: @color; } // Firefox
+  &:-ms-input-placeholder       { color: @color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: @color; } // Safari und Chrome
+}
+{% endhighlight %}
+
+  <h3 id="less-mixins-columns">Spalten</h3>
+  <p>Generiere Spalten über CSS in einem einzigen Element.</p>
+{% highlight scss %}
+.content-columns(@width; @count; @gap) {
+  -webkit-column-width: @width;
+     -moz-column-width: @width;
+          column-width: @width;
+  -webkit-column-count: @count;
+     -moz-column-count: @count;
+          column-count: @count;
+  -webkit-column-gap: @gap;
+     -moz-column-gap: @gap;
+          column-gap: @gap;
+}
+{% endhighlight %}
+
+  <h3 id="less-mixins-gradients">Verlaufsfarben</h3>
+  <p>Verwandel zwei Farben ohne Probleme in einen Hintergrundverlauf. Geh einen Schritt weiter und lege eine Richtung, drei Farben oder einen radialen Verlauf fest. Mit einem einzelnen Mixin kriegst du alle Eigenschaften mit Präfix, die du brauchst.</p>
+{% highlight scss %}
+#gradient > .vertical(#333; #000);
+#gradient > .horizontal(#333; #000);
+#gradient > .radial(#333; #000);
+{% endhighlight %}
+  <p>Du kannst auch den Winkel eines normalen, linearen Zweifarbverlaufs festlegen:</p>
+{% highlight scss %}
+#gradient > .directional(#333; #000; 45deg);
+{% endhighlight %}
+  <p>Fallst du einen Verlauf mit Streifen brauchst, ist das auch kein Problem. Leg einfach eine einzelne Farbe fest und wir legen einen durchscheinenden weißen Streifen darüber.</p>
+{% highlight scss %}
+#gradient > .striped(#333; 45deg);
+{% endhighlight %}
+  <p>Lass die Korken knallen und nimm stattdessen drei Farben. Lege die erste Farbe, die zweite Farbe, den Farbstopp der zweiten Farbe (ein Dezimalwert wie 0.25) und die dritte Farbe mit diesen Mixins fest:</p>
+{% highlight scss %}
+#gradient > .vertical-three-colors(#777; #333; .25; #000);
+#gradient > .horizontal-three-colors(#777; #333; .25; #000);
+{% endhighlight %}
+  <p><strong>Aufgepasst!</strong> Wenn du einen Farbverlauf einmal entfernen musst, denk daran IE-spezifische <code>filter</code> zu entfernen, die du evtl. hinzugefügt hast. Du kannst das mit dem <code>.reset-filter()</code>-Mixin zusammen mit <code>background-image: none;</code> bewerkstelligen.</p>
+
+
+  <h2 id="less-mixins-utility">Hilfsmittel-Mixins</h2>
+  <p>Hilfsmittel-Mixins sind Mixins, die verschiedene CSS-Eigenschaften ohne eigentlichen Bezug kombinieren, um einen bestimmten Effekt oder ein bestimmtes Ziel zu erreichen.</p>
+
+  <h3 id="less-mixins-clearfix">Clearfix</h3>
+  <p>Ergänze nicht jedes Mal <code>class="clearfix"</code> bei einem Element und füge stattdessen das <code>.clearfix()</code>-Mixin da ein, wo es angebracht ist. Verwendet das <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank">Micro-Clearfix</a> von <a href="http://twitter.com/necolas" target="_blank">Nicolas Gallager</a>.</p>
+{% highlight scss %}
+// Mixin
+.clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Verwendung
+.container {
+  .clearfix();
+}
+{% endhighlight %}
+
+  <h3 id="less-mixins-centering">Horizontale Zentrierung</h3>
+  <p>Zentriere ein Element ohne Umstände in seinem übergeordneten Element. <strong>Die (maximale) Breite (<code>width</code> oder <code>max-width</code>) des Elements muss festgelegt sein.</strong></p>
+{% highlight scss %}
+// Mixin
+.center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Verwendung
+.container {
+  width: 940px;
+  .center-block();
+}
+{% endhighlight %}
+
+  <h3 id="less-mixins-sizing">Größen-Helferchen</h3>
+  <p>Definiere die Dimensionen eines Objekt auf eine einfachere Weise.</p>
+{% highlight scss %}
+// Mixins
+.size(@width; @height) {
+  width: @width;
+  height: @height;
+}
+.square(@size) {
+  .size(@size; @size);
+}
+
+// Verwendung
+.image { .size(400px; 300px); }
+.avatar { .square(48px); }
+{% endhighlight %}
+
+  <h3 id="less-mixins-resizable">Textfläche mit veränderbarer Größe</h3>
+  <p>Konfiguriere die Optionen zur Größenveränderung einer Textfläche oder eines anderen Elements. Der Standard ist das normale Browser-Verhalten (<code>both</code>).</p>
+{% highlight scss %}
+.resizable(@direction: both) {
+  // Optionen: horizontal, vertical, both
+  resize: @direction;
+  // Safari-Fix
+  overflow: auto;
+}
+{% endhighlight %}
+
+  <h3 id="less-mixins-truncating">Text kürzen</h3>
+  <p>Text kannst du ganz leicht mit Auslassungspunkten und einem einzigen Mixin kürzen lassen. <strong>Das Element muss dazu <code>block</code> oder <code>inline-block</code> sein.</strong></p>
+{% highlight scss %}
+// Mixin
+.text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Verwendung
+.branch-name {
+  display: inline-block;
+  max-width: 200px;
+  .text-overflow();
+}
+{% endhighlight %}
+
+  <h3 id="less-mixins-retina-images">Retina-Bilder</h3>
+  <p>Lege zwei Pfade zu Bildern und die @1x-Bild-Dimensionen fest und Bootstrap fügt einen @2x-Media-Query hinzu. <strong>Falls du sehr viele Bilder auf diese Weise anzeigen willst, überleg dir, dein CSS für Retina-Bilder lieber manuell in einen einzelnen großen Media-Query zu schreiben.</strong></p>
+{% highlight scss %}
+.img-retina(@file-1x; @file-2x; @width-1x; @height-1x) {
+  background-image: url("@{file-1x}");
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: url("@{file-2x}");
+    background-size: @width-1x @height-1x;
+  }
+}
+
+// Verwendung
+.jumbotron {
+  .img-retina("/img/bg-1x.png", "/img/bg-2x.png", 100px, 100px);
+}
+{% endhighlight %}
+</div>

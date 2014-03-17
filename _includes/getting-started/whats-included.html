@@ -1,0 +1,49 @@
+<div class="bs-docs-section">
+  <h1 id="whats-included" class="page-header">Was zur Verfügung steht</h1>
+
+  <p class="lead">Bootstrap kann in zwei Arten von Paketen heruntergeladen werden. Darin findest du jeweils die folgenden Verzeichnisse und Dateien, die nützliche Ressourcen logisch gruppieren und sowohl kompilierte als auch zusätzlich minimierte Varianten bereitstellen.</p>
+
+  <div class="bs-callout bs-callout-warning" id="jquery-required">
+    <h4>jQuery benötigt</h4>
+    <p>Bitte beachte, dass <strong>alle JavaScript-Plugins jQuery benötigen</strong>, um zu funktionieren, wie es in der <a href="#template">Basis-Vorlage</a> gezeigt wird. <a href="{{ site.repo }}/blob/v{{ site.current_version }}/bower.json">Sieh dir unser <code>bower.json</code> an</a>, um zu erfahren, welche Versionen von jQuery unterstützt werden.</p>
+  </div>
+
+  <h2 id="whats-included-precompiled">Bootstrap, vorkompiliert</h2>
+  <p>Sobald du es heruntergeladen hast, öffne das komprimierte Verzeichnis, um die Struktur des (kompilierten) Bootstraps zu sehen. Du wirst etwas in dieser Art vorfinden:</p>
+<!-- NOTE: This info is intentionally duplicated in the README.
+Copy any changes made here over to the README too. -->
+{% highlight bash %}
+bootstrap/
+├── css/
+│   ├── bootstrap.css
+│   ├── bootstrap.min.css
+│   ├── bootstrap-theme.css
+│   └── bootstrap-theme.min.css
+├── js/
+│   ├── bootstrap.js
+│   └── bootstrap.min.js
+└── fonts/
+    ├── glyphicons-halflings-regular.eot
+    ├── glyphicons-halflings-regular.svg
+    ├── glyphicons-halflings-regular.ttf
+    └── glyphicons-halflings-regular.woff
+{% endhighlight %}
+
+  <p>Dies ist die einfachste Form von Bootstrap: vorkompilierte Dateien, die du einfach in fast jedem Web-Projekt einbauen kannst. Wir stellen sowohl kompiliertes CSS und JS (<code>bootstrap.*</code>), als auch kompiliertes und dann zusätzlich minimiertes CSS und JS (<code>bootstrap.min.*</code>) zur Verfügung. Schriften von Glyphicons sind auch dabei, sowie das optionale Bootstrap-Theme.</p>
+
+  <h2 id="whats-included-source">Bootstrap-Quelltext</h2>
+  <p>Wenn du den Bootstrap-Quelltext herunterlädst, erhältst du vorkompiliertes CSS, JavaScript und Schriftdateien, zusammen mit Less-, JavaScript- und Dokumentations-Quelldateien. Etwas genauer enthält es die folgende Dateistruktur und noch einiges mehr:</p>
+{% highlight bash %}
+bootstrap/
+├── less/
+├── js/
+├── fonts/
+├── dist/
+│   ├── css/
+│   ├── js/
+│   └── fonts/
+└── docs/
+    └── examples/
+{% endhighlight %}
+  <p>Die Ordner <code>less/</code>, <code>js/</code> und <code>fonts/</code> enthalten jeweils den Quelltext für unser CSS, JS und unsere Icon-Schriftarten. Der Ordner <code>dist/</code> enthält alles, was du auch in der Liste der vorkompilierten Dateien oben findest. Der Ordner <code>docs/</code> enthält den Quelltext für unsere Dokumentation (auf Englisch), sowie Beispiele für die Verwendung von Bootstrap in <code>examples/</code>. Alle anderen enthaltenen Dateien haben mit Paketen, Lizenzen oder Entwicklungsumgebungen zu tun.</p>
+</div>

@@ -1,0 +1,85 @@
+<div class="bs-docs-section">
+  <h1 id="alerts" class="page-header">Warnhinweise</h1>
+
+  <p class="lead">Stelle mit den verschiedenen flexiblen Warnhinweisen Rückmeldungen mit Kontext für typische Benutzeraktionen zur Verfügung. Um sie an Ort und Stelle wegklicken zu lassen, brauchst du das <a href="../javascript/#alerts">Warnhinweise-jQuery-Plugin</a>.</p>
+
+  <h2 id="alerts-examples">Beispiele</h2>
+  <p>Verpacke Text und einen optionalen Schließen-Button in <code>.alert</code> und einer der vier Kontext-Klassen (z.B. <code>.alert-success</code>) für ganz einfache Warnhinweise.</p>
+
+  <div class="bs-callout bs-callout-info">
+    <h4>Keine Standard-Klasse</h4>
+    <p>Warnhinweise verfügen nicht über eine Standard-Klasse, sondern nur über die grundlegende und weitere zusätzliche Kontextklassen. Ein grauer Standard-Hinweis würde nicht zu viel Sinn machen, daher musst du einen Typ über die Kontextklasse angeben. Wähle aus success, info, warning oder danger.</p>
+  </div>
+
+  <div class="bs-example">
+    <div class="alert alert-success" role="alert">
+      <strong>Sehr gut!</strong> Du hast erfolgreich diesen wichtigen Warnhinweis gelesen.
+    </div>
+    <div class="alert alert-info" role="alert">
+      <strong>Hinweis!</strong> Hier ist deine Aufmerksamkeit gefragt, aber es ist nicht ganz so wichtig.
+    </div>
+    <div class="alert alert-warning" role="alert">
+      <strong>Warnung!</strong> Du siehst ganz blass aus, ist alles in Ordnung?
+    </div>
+    <div class="alert alert-danger" role="alert">
+      <strong>Oh nein!</strong> Kontrolliere deine Eingaben und versuch es dann noch einmal.
+    </div>
+  </div>
+{% highlight html %}
+<div class="alert alert-success" role="alert">...</div>
+<div class="alert alert-info" role="alert">...</div>
+<div class="alert alert-warning" role="alert">...</div>
+<div class="alert alert-danger" role="alert">...</div>
+{% endhighlight %}
+
+  <h2 id="alerts-dismissable">Ausblendbare Variante</h2>
+  <p>Baue einen Warnhinweis aus, indem du optional <code>.alert-dismissable</code> und einen Schließen-Button hinzufügst.</p>
+  <div class="bs-example">
+    <div class="alert alert-warning alert-dismissable" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <strong>Warnung!</strong> Du siehst ganz blass aus, ist alles in Ordnung?
+    </div>
+  </div>
+{% highlight html %}
+<div class="alert alert-warning alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <strong>Warnung!</strong> Du siehst ganz blass aus, ist alles in Ordnung?
+</div>
+{% endhighlight %}
+
+  <div class="bs-callout bs-callout-warning">
+    <h4>Sorge für richtiges Verhalten auf allen Geräten</h4>
+    <p>Du solltest immer das <code>&lt;button&gt;</code>-Element mit dem <code>data-dismiss="alert"</code>-data-Attribut verwenden.</p>
+  </div>
+
+  <h2 id="alerts-links">Links in Warnungen</h2>
+  <p>Verwende die Hilfsklasse <code>.alert-link</code>, um ganz leicht passende Farben zu Links in irgendeinem Warnhinweis hinzuzufügen.</p>
+  <div class="bs-example">
+    <div class="alert alert-success" role="alert">
+      <strong>Sehr gut!</strong> Du hast erfolgreich <a href="#" class="alert-link">diesen wichtigen Warnhinweis</a> gelesen.
+    </div>
+    <div class="alert alert-info" role="alert">
+      <strong>Hinweis!</strong> Hier ist <a href="#" class="alert-link">deine Aufmerksamkeit gefragt</a>, aber es ist nicht ganz so wichtig.
+    </div>
+    <div class="alert alert-warning" role="alert">
+      <strong>Warnung!</strong> Du siehst ganz blass aus, ist <a href="#" class="alert-link">alles in Ordnung</a>?
+    </div>
+    <div class="alert alert-danger" role="alert">
+      <strong>Oh nein!</strong> <a href="#" class="alert-link">Kontrolliere deine Eingaben</a> und versuch es dann noch einmal.
+    </div>
+  </div>
+{% highlight html %}
+<div class="alert alert-success" role="alert">
+  <a href="#" class="alert-link">...</a>
+</div>
+<div class="alert alert-info" role="alert">
+  <a href="#" class="alert-link">...</a>
+</div>
+<div class="alert alert-warning" role="alert">
+  <a href="#" class="alert-link">...</a>
+</div>
+<div class="alert alert-danger" role="alert">
+  <a href="#" class="alert-link">...</a>
+</div>
+{% endhighlight %}
+</div>

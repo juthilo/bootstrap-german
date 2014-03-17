@@ -1,0 +1,212 @@
+<div class="bs-docs-section">
+  <h1 id="progress" class="page-header">Verlaufsanzeige</h1>
+
+  <p class="lead">Präsentiere aktuelle Informationen über den Fortschritt eines Vorgangs oder einer Aktion mit diesen simplen und dennoch flexiblen Verlaufsleisten.</p>
+
+  <div class="bs-callout bs-callout-danger">
+    <h4>Browser-Kompatibilität</h4>
+    <p>Verlaufsleisten verwenden CSS3-Übergänge und -Animationen, um einige ihrer Effekte umzusetzen. Diese Funktionen sind in Internet Explorer 9 und älter und in einigen älteren Versionen von Firefox nicht vorhanden. Opera 12 bietet keine Unterstützung für Animationen.</p>
+  </div>
+
+  <h3 id="progress-basic">Einfaches Beispiel</h3>
+  <p>Standard-Verlaufsleiste.</p>
+  <div class="bs-example">
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+        <span class="sr-only">60% abgeschlossen</span>
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+    <span class="sr-only">60% abgeschlossen</span>
+  </div>
+</div>
+{% endhighlight %}
+
+  <h3 id="progress-label">Mit Label</h3>
+  <p>Entferne die Klasse <code>.sr-only</code> innerhalb des Fortschrittbalkens, um eine Prozentzahl sichtbar zu machen. Bei niedrigen Prozenten ist es unter Umständen sinnvoll, eine <code>min-width</code> hinzuzufügen, damit der Label-Text vollständig sichtbar ist.</p>
+  <div class="bs-example">
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+        60%
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+    60%
+  </div>
+</div>
+{% endhighlight %}
+
+  <h3 id="progress-low-percentages">Niedrige Prozentwerte</h3>
+  <p>Verlaufsleisten, die für niedrige Prozentwerte mit nur einer Ziffer stehen, inkl. 0%, erhalten für bessere Lesbarkeit <code>min-width: 20px;</code>.</p>
+  <div class="bs-example">
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        0%
+      </div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
+        2%
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+    0%
+  </div>
+</div>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
+    2%
+  </div>
+</div>
+{% endhighlight %}
+
+
+  <h3 id="progress-alternatives">Kontext-Varianten</h3>
+  <p>Verlaufsanzeigen nutzen ähnlich wie Buttons und Warnhinweise zusätzliche Klassen, um einige Kontext-Farben hinzuzufügen.</p>
+  <div class="bs-example">
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+        <span class="sr-only">40% abgeschlossen (Erfolg)</span>
+      </div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+        <span class="sr-only">20% abgeschlossen</span>
+      </div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+        <span class="sr-only">60% abgeschlossen (Warnung)</span>
+      </div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+        <span class="sr-only">80% abgeschlossen (Gefahr/Fehler)</span>
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="progress">
+  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+    <span class="sr-only">40% abgeschlossen (Erfolg)</span>
+  </div>
+</div>
+<div class="progress">
+  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+    <span class="sr-only">20% abgeschlossen</span>
+  </div>
+</div>
+<div class="progress">
+  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+    <span class="sr-only">60% abgeschlossen (Warnung)</span>
+  </div>
+</div>
+<div class="progress">
+  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+    <span class="sr-only">80% abgeschlossen (Gefahr/Fehler)</span>
+  </div>
+</div>
+{% endhighlight %}
+
+  <h3 id="progress-striped">Gestreifte Variante</h3>
+  <p>Mit einem Farbverlauf wird ein gestreifter Effekt hinzugefügt. Nicht verfügbar in IE8.</p>
+  <div class="bs-example">
+    <div class="progress progress-striped" >
+      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+        <span class="sr-only">40% abgeschlossen (Erfolg)</span>
+      </div>
+    </div>
+    <div class="progress progress-striped">
+      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+        <span class="sr-only">20% abgeschlossen</span>
+      </div>
+    </div>
+    <div class="progress progress-striped">
+      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+        <span class="sr-only">60% abgeschlossen (Warnung)</span>
+      </div>
+    </div>
+    <div class="progress progress-striped">
+      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+        <span class="sr-only">80% abgeschlossen (Gefahr/Fehler)</span>
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="progress progress-striped">
+  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+    <span class="sr-only">40% abgeschlossen (Erfolg)</span>
+  </div>
+</div>
+<div class="progress progress-striped">
+  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+    <span class="sr-only">20% abgeschlossen</span>
+  </div>
+</div>
+<div class="progress progress-striped">
+  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+    <span class="sr-only">60% abgeschlossen (Warnung)</span>
+  </div>
+</div>
+<div class="progress progress-striped">
+  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+    <span class="sr-only">80% abgeschlossen (Gefahr/Fehler)</span>
+  </div>
+</div>
+{% endhighlight %}
+
+  <h3 id="progress-animated">Animierte Variante</h3>
+  <p>Füge <code>.active</code> zu <code>.progress-striped</code> hinzu, um die Streifen von rechts nach links zu animieren. Nicht verfügbar in IE9 und älteren Versionen.</p>
+  <div class="bs-example">
+    <div class="progress progress-striped active">
+      <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+        <span class="sr-only">45% abgeschlossen</span>
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="progress progress-striped active">
+  <div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+    <span class="sr-only">45% abgeschlossen</span>
+  </div>
+</div>
+{% endhighlight %}
+
+  <h3 id="progress-stacked">Reihung</h3>
+  <p>Platziere mehrere Leisten im selben <code>.progress</code>, um sie aneinanderzureihen.</p>
+  <div class="bs-example">
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" style="width: 35%">
+        <span class="sr-only">35% abgeschlossen (Erfolg)</span>
+      </div>
+      <div class="progress-bar progress-bar-warning" style="width: 20%">
+        <span class="sr-only">20% abgeschlossen (Warnung)</span>
+      </div>
+      <div class="progress-bar progress-bar-danger" style="width: 10%">
+        <span class="sr-only">10% abgeschlossen (Gefahr/Fehler)</span>
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="progress">
+  <div class="progress-bar progress-bar-success" style="width: 35%">
+    <span class="sr-only">35% abgeschlossen (Erfolg)</span>
+  </div>
+  <div class="progress-bar progress-bar-warning" style="width: 20%">
+    <span class="sr-only">20% abgeschlossen (Warnung)</span>
+  </div>
+  <div class="progress-bar progress-bar-danger" style="width: 10%">
+    <span class="sr-only">10% abgeschlossen (Gefahr/Fehler)</span>
+  </div>
+</div>
+{% endhighlight %}
+</div>

@@ -1,0 +1,52 @@
+<div class="bs-docs-section">
+  <h1 id="sass" class="page-header">Sass verwenden</h1>
+  <p class="lead">Während Bootstrap auf Less-Basis erstellt wurde, hat es auch einen <a href="{{ site.sass_repo }}">offiziellen Sass-Port</a>. Wir verwalten diesen in einem separaten GitHub-Repository und regeln Updates über ein Konversionsskript.</p>
+
+  <h2 id="sass-contents">Was zur Verfügung steht</h2>
+  <p>Da der Sass-Port ein separates Repo hat und auf ein etwas anderes Publikum zugeschnitten ist, enthält das Projekt sehr viele andere Dateien als das Haupt-Bootstrap-Projekt. Das stellt sicher, dass der Sass-Port kompatibel mit so vielen Sass-basierten Systemen wie möglich ist.</p>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Pfad</th>
+          <th>Beschreibung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th><code>lib/</code></th>
+          <td>Code für Ruby-Gem (Sass-Konfiguration, Rails- und Compass-Integrationen)</td>
+        </tr>
+        <tr>
+          <th><code>tasks/</code></th>
+          <td>Konversionsskripte (verwandeln unser Less in Sass)</td>
+        </tr>
+        <tr>
+          <th><code>test/</code></th>
+          <td>Kompilierungstests</td>
+        </tr>
+        <tr>
+          <th><code>templates/</code></th>
+          <td>Compass-Paket-Manifest</td>
+        </tr>
+        <tr>
+          <th><code>vendor/assets/</code></th>
+          <td>Sass-, JavaScript- und Schrift-Dateien</td>
+        </tr>
+        <tr>
+          <th><code>Rakefile</code></th>
+          <td>Interne Aufgaben wie rake und convert</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Schau im <a href="{{ site.sass_repo }}">GitHub-Repository des Sass-Ports</a> vorbei, um diese Dateien in Aktion zu sehen.</p>
+
+
+  <h2 id="sass-installation">Installation</h2>
+  <p>Für Informationen über die Installation und Verwendung von Bootstrap für Sass solltest du die README-Datei im <a href="{{ site.sass_repo }}">GitHub-Repository</a> lesen. Diese ist die aktuellste Quelle und beinhaltet Informationen für die Verwendung mit Rails, Compass und normalen Sass-Projekten.</p>
+  <p>
+    <a class="btn btn-lg btn-outline" href="{{ site.sass_repo }}">Bootstrap für Sass</a>
+  </p>
+</div>

@@ -1,0 +1,450 @@
+<div class="bs-docs-section">
+  <h1 id="tables" class="page-header">Tabellen</h1>
+
+  <h2 id="tables-example">Einfaches Beispiel</h2>
+  <p>Für ein paar grundlegende Stile&mdash;leichte Abstände und nur horizontale Unterteilungen&mdash;füge einfach die Grundklasse <code>.table</code> zu einer <code>&lt;table&gt;</code> hinzu. Das mag überflüssig erscheinen, aber da viele Plugins wie Kalender und Datum-Auswählfelder Tabellen zur Formatierung verwenden, haben wir uns entschieden unsere eigenen Tabellen-Stile so zu isolieren.</p>
+  <div class="bs-example">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Vorname</th>
+          <th>Nachname</th>
+          <th>Benutzername</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- /example -->
+{% highlight html %}
+<table class="table">
+  ...
+</table>
+{% endhighlight %}
+
+
+  <h2 id="tables-striped">Gestreifte Zeilen</h2>
+  <p>Verwende <code>.table-striped</code>, um Streifen in Zebra-Art zu allen Tabellen-Zeilen im <code>&lt;tbody&gt;</code> hinzuzufügen.</p>
+  <div class="bs-callout bs-callout-danger">
+    <h4>Browser-Kompatibilität</h4>
+    <p>Gestreifte Tabellen werden mit dem CSS-Selektor <code>:nth-child</code> umgesetzt, der im Internet Explorer 8 nicht verfügbar ist.</p>
+  </div>
+  <div class="bs-example">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Vorname</th>
+          <th>Nachname</th>
+          <th>Benutzername</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- /example -->
+{% highlight html %}
+<table class="table table-striped">
+  ...
+</table>
+{% endhighlight %}
+
+
+  <h2 id="tables-bordered">Tabelle mit Rahmen</h2>
+  <p>Ergänze <code>.table-bordered</code> für Rahmengrenzen auf allen Seiten der Tabelle und ihren Zellen.</p>
+  <div class="bs-example">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Vorname</th>
+          <th>Nachname</th>
+          <th>Benutzername</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">1</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@TwBootstrap</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td colspan="2">Larry the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- /example -->
+{% highlight html %}
+<table class="table table-bordered">
+  ...
+</table>
+{% endhighlight %}
+
+
+  <h2 id="tables-hover-rows">Hover-Zeilen</h2>
+  <p>Ergänze <code>.table-hover</code>, um Zeilen im <code>&lt;tbody&gt;</code> der Tabelle hervorzuheben, wenn sich der Mauszeiger darüber befindet (hover).</p>
+  <div class="bs-example">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Vorname</th>
+          <th>Nachname</th>
+          <th>Benutzername</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td colspan="2">Larry the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- /example -->
+{% highlight html %}
+<table class="table table-hover">
+  ...
+</table>
+{% endhighlight %}
+
+
+  <h2 id="tables-condensed">Komprimierte Tabelle</h2>
+  <p>Ergänze <code>.table-condensed</code>, um die Innenabstände in Tabellen zu halbieren und sie so schmaler zu machen.</p>
+  <div class="bs-example">
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Vorname</th>
+          <th>Nachname</th>
+          <th>Benutzername</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td colspan="2">Larry the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- /example -->
+{% highlight html %}
+<table class="table table-condensed">
+  ...
+</table>
+{% endhighlight %}
+
+
+  <h2 id="tables-contextual-classes">Kontext-Varianten</h2>
+  <p>Verwende Kontext-Klassen, um Zeilen oder einzelne Zellen einer Tabelle farbig zu markieren.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <colgroup>
+        <col class="col-xs-1">
+        <col class="col-xs-7">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Klasse</th>
+          <th>Beschreibung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <code>.active</code>
+          </td>
+          <td>Wendet die Stile der Hover-Zeilen fest auf eine bestimmte Zeile oder Zelle an</td>
+        </tr>
+        <tr>
+          <td>
+            <code>.success</code>
+          </td>
+          <td>Zeigt eine erfolgreiche oder positive Aktion an</td>
+        </tr>
+        <tr>
+          <td>
+            <code>.info</code>
+          </td>
+          <td>Zeigt eine neutrale Veränderung oder Aktion an</td>
+        </tr>
+        <tr>
+          <td>
+            <code>.warning</code>
+          </td>
+          <td>Zeigt eine Warnung an, die evtl. Aufmerksamkeit erfordert</td>
+        </tr>
+        <tr>
+          <td>
+            <code>.danger</code>
+          </td>
+          <td>Zeigt eine gefährliche oder evtl. negative Aktion an</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="bs-example">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Spalten-Überschrift</th>
+          <th>Spalten-Überschrift</th>
+          <th>Spalten-Überschrift</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="active">
+          <td>1</td>
+          <td>Spalten-Inhalt</td>
+          <td>Spalten-Inhalt</td>
+          <td>Spalten-Inhalt</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Spalten-Inhalt</td>
+          <td>Spalten-Inhalt</td>
+          <td>Spalten-Inhalt</td>
+        </tr>
+        <tr class="success">
+          <td>3</td>
+          <td>Spalten-Inhalt</td>
+          <td>Spalten-Inhalt</td>
+          <td>Spalten-Inhalt</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Spalten-Inhalt</td>
+          <td>Spalten-Inhalt</td>
+          <td>Spalten-Inhalt</td>
+        </tr>
+        <tr class="info">
+          <td>5</td>
+          <td>Spalten-Inhalt</td>
+          <td>Spalten-Inhalt</td>
+          <td>Spalten-Inhalt</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Spalten-Inhalt</td>
+          <td>Spalten-Inhalt</td>
+          <td>Spalten-Inhalt</td>
+        </tr>
+        <tr class="warning">
+          <td>7</td>
+          <td>Spalten-Inhalt</td>
+          <td>Spalten-Inhalt</td>
+          <td>Spalten-Inhalt</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Spalten-Inhalt</td>
+          <td>Spalten-Inhalt</td>
+          <td>Spalten-Inhalt</td>
+        </tr>
+        <tr class="danger">
+          <td>9</td>
+          <td>Spalten-Inhalt</td>
+          <td>Spalten-Inhalt</td>
+          <td>Spalten-Inhalt</td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- /example -->
+{% highlight html %}
+<!-- On rows -->
+<tr class="active">...</tr>
+<tr class="success">...</tr>
+<tr class="warning">...</tr>
+<tr class="danger">...</tr>
+<tr class="info">...</tr>
+
+<!-- On cells (`td` or `th`) -->
+<tr>
+  <td class="active">...</td>
+  <td class="success">...</td>
+  <td class="warning">...</td>
+  <td class="danger">...</td>
+  <td class="info">...</td>
+</tr>
+{% endhighlight %}
+
+
+  <h2 id="tables-responsive">Responsive Tabellen</h2>
+  <p>Erstelle anpassungsfähige Tabellen, indem du eine <code>.table</code> in <code>.table-responsive</code> verpackst. Auf allen Geräten mit weniger als 768px Breite kann man dann in der Tabelle horizontal scrollen. Auf größeren Geräten wirst du keinen Unterschied zwischen dieser und ganz normalen Tabellen feststellen.</p>
+  <div class="bs-example">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Tabellen-Überschrift</th>
+            <th>Tabellen-Überschrift</th>
+            <th>Tabellen-Überschrift</th>
+            <th>Tabellen-Überschrift</th>
+            <th>Tabellen-Überschrift</th>
+            <th>Tabellen-Überschrift</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- /.table-responsive -->
+
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Tabellen-Überschrift</th>
+            <th>Tabellen-Überschrift</th>
+            <th>Tabellen-Überschrift</th>
+            <th>Tabellen-Überschrift</th>
+            <th>Tabellen-Überschrift</th>
+            <th>Tabellen-Überschrift</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+            <td>Tabellen-Zelle</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!-- /.table-responsive -->
+  </div><!-- /example -->
+{% highlight html %}
+<div class="table-responsive">
+  <table class="table">
+    ...
+  </table>
+</div>
+{% endhighlight %}
+</div>

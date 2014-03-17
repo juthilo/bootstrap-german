@@ -1,0 +1,197 @@
+<div class="bs-docs-section">
+  <h1 id="helper-classes" class="page-header">Hilfsklassen</h1>
+
+  <h3 id="helper-classes-colors">Kontext-Farben</h3>
+  <p>Versehe jeden Text mit mehr Bedeutung, indem du die Hilfsklassen für Kontextfarben verwendest. Wenn sie direkt oder indirekt auf einen Link angewendet werden, wird die Farbe verdunkelt, wenn sich der Mauszeiger darüber befindet (hover), genau wie bei normalen Links.</p>
+  <div class="bs-example">
+    <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+    <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+    <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+    <p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+    <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+  </div>
+{% highlight html %}
+<p class="text-muted">...</p>
+<p class="text-primary">...</p>
+<p class="text-success">...</p>
+<p class="text-info">...</p>
+<p class="text-warning">...</p>
+<p class="text-danger">...</p>
+{% endhighlight %}
+  <div class="bs-callout bs-callout-info">
+    <h4>Probleme mit Spezifität</h4>
+    <p>Diese Klassen funktionieren manchmal nicht, weil die Genauigkeit eines anderen Selektors größer ist. Meistens reicht es in diesen Fällen, deinen Text in einem <code>&lt;span&gt;</code> mit der jeweiligen Klasse zu verpacken.</p>
+  </div>
+
+  <h3 id="helper-classes-backgrounds">Kontext-Hintergründe</h3>
+  <p>Ähnlich wie die Kontext-Farben für Text, gibt es auch Kontext-Hintergründe. Link-Farben werden auch hier wieder etwas angepasst, um zu den Hintergründen zu passen.</p>
+  <div class="bs-example bs-example-bg-classes">
+    <p class="bg-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+    <p class="bg-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+    <p class="bg-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+    <p class="bg-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+    <p class="bg-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+  </div>
+{% highlight html %}
+<p class="bg-primary">...</p>
+<p class="bg-success">...</p>
+<p class="bg-info">...</p>
+<p class="bg-warning">...</p>
+<p class="bg-danger">...</p>
+{% endhighlight %}
+
+
+  <h3 id="helper-classes-close">Schließen-Symbol</h3>
+  <p>Verwende das generische Schließen-Symbol für das Schließen von Inhalten wie Modals oder Warnhinweisen.</p>
+  <div class="bs-example">
+    <p><button type="button" class="close" aria-hidden="true">&times;</button></p>
+  </div>
+{% highlight html %}
+<button type="button" class="close" aria-hidden="true">&times;</button>
+{% endhighlight %}
+
+
+  <h3 id="helper-classes-carets">Carets</h3>
+  <p>Verwende Carets (kleine Pfeile ohne Strich), um die Funktionalität und Richtung von Dropdown-Menüs und ähnlichen Komponenten anzuzeigen. Beachte, dass das Caret in <a href="../komponenten/#btn-dropdowns-dropup">Dropup-Menüs</a> automatisch umgedreht wird.</p>
+  <div class="bs-example">
+    <span class="caret"></span>
+  </div>
+{% highlight html %}
+<span class="caret"></span>
+{% endhighlight %}
+
+
+  <h3 id="helper-classes-floats">Einfache Floats</h3>
+  <p>Füge mit einer Klasse einen CSS-Float zu einem Element hinzu. Damit Spezifität keine Probleme macht, wird hier <code>!important</code> verwendet. Die Klassen können auch als Mixins verwendet werden.</p>
+{% highlight html %}
+<div class="pull-left">...</div>
+<div class="pull-right">...</div>
+{% endhighlight %}
+{% highlight scss %}
+// Klassen
+.pull-left {
+  float: left !important;
+}
+.pull-right {
+  float: right !important;
+}
+
+// Verwendung als Mixins
+.element {
+  .pull-left();
+}
+.anderes-element {
+  .pull-right();
+}
+{% endhighlight %}
+
+  <div class="bs-callout bs-callout-warning">
+    <h4>Nicht für Navbars geeignet</h4>
+    <p>Um Komponenten in Navbars mit Hilfsklassen auszurichten, verwende stattdessen <code>.navbar-left</code> oder <code>.navbar-right</code>. <a href="../komponenten/#navbar-component-alignment">Lies die Navbar-Dokumentation</a> für Details.</p>
+  </div>
+
+
+  <h3 id="helper-classes-center">Blockzentrierung</h3>
+  <p>Setze ein Element auf <code>display: block</code> und zentriere es über <code>margin</code>. Verfügbar als Mixin und Klasse.</p>
+{% highlight html %}
+<div class="center-block">...</div>
+{% endhighlight %}
+{% highlight scss %}
+// Klasse
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Verwendung als Mixin
+.element {
+  .center-block();
+}
+{% endhighlight %}
+
+
+  <h3 id="helper-classes-clearfix">Clearfix</h3>
+  <p>Setze <code>float</code> bei einem Element mit der <code>.clearfix</code>-Klasse zurück. Verwendet <a href="http://nicolasgallagher.com/micro-clearfix-hack/">das Micro-Clearfix</a>, bekannt gemacht von Nicolas Gallagher. Kann auch als Mixin verwendet werden.</p>
+{% highlight html %}
+<!-- Verwendung als Klasse -->
+<div class="clearfix">...</div>
+{% endhighlight %}
+{% highlight scss %}
+// Mixin selbst
+.clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Verwendung als Mixin
+.element {
+  .clearfix();
+}
+{% endhighlight %}
+
+
+  <h3 id="helper-classes-show-hide">Inhalte anzeigen/verbergen</h3>
+  <p>Erzwinge, dass ein Element gezeigt oder ausgeblendet wird (<strong>Screenreader inbegriffen</strong>) mit Hilfe der Klassen <code>.show</code> und <code>.hidden</code>. Diese Klassen verwenden <code>!important</code>, um Probleme mit Spezifität zu vermeiden, genau so wie die <a href="#helper-classes-floats">einfachen Floats</a>. Sie sind nur für das ein- und ausblenden von Block-Elementen verfügbar. Sie können auch als Mixin verwendet werden.</p>
+  <p><code>.hide</code> ist verfügbar, wirkt sich aber nicht immer auf Screenreader aus und wurde mit v3.0.1 als <strong>veraltet</strong> markiert. Verwende stattdessen <code>.hidden</code> oder <code>.sr-only</code>.</p>
+  <p>Außerdem kannst du <code>.invisible</code> verwenden, um die Sichtbarkeit eines Elements zu verändern, ohne dass das Element wirklich aus dem Fluss des Dokuments verschwindet (display wird nicht verändert).</p>
+{% highlight html %}
+<div class="show">...</div>
+<div class="hidden">...</div>
+{% endhighlight %}
+{% highlight scss %}
+// Klassen
+.show {
+  display: block !important;
+}
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+.invisible {
+  visibility: hidden;
+}
+
+// Verwendung als Mixins
+.element {
+  .show();
+}
+.anderes-element {
+  .hidden();
+}
+{% endhighlight %}
+
+
+  <h3 id="helper-classes-screen-readers">Inhalte für Screenreader und Navigation über Tastatur</h3>
+  <p>Verberge ein Element vor allen Geräten <strong>außer Screenreadern</strong> mit <code>.sr-only</code>. Kombiniere <code>.sr-only</code> mit <code>.sr-only-focusable</code>, um das Element anzuzeigen, wenn es fokussiert wird (z.B. für einen Benutzer, der nur eine Tastatur verwendet). Notwendig, um den <a href="../los-gehts/#accessibility">optimalen Vorgehensweisen für Barrierefreiheit</a> Folge zu leisten. Kann auch als Mixin verwendet werden.</p>
+{% highlight html %}
+<a class="sr-only sr-only-focusable" href="#content">Zum Hauptinhalt springen</a>
+{% endhighlight %}
+{% highlight scss %}
+// Verwendung als Mixin
+.skip-navigation {
+  .sr-only();
+  .sr-only-focusable();
+}
+{% endhighlight %}
+
+
+  <h3 id="helper-classes-image-replacement">Bildersetzung</h3>
+  <p>Verwende die Klasse <code>.text-hide</code>, um dabei zu helfen, den Text eines Elements mit einem Hintergrundbild zu ersetzen.</p>
+{% highlight html %}
+<h1 class="text-hide">Beispiel-Überschrift</h1>
+{% endhighlight %}
+  {% highlight scss %}
+// Verwendung als Mixin
+.heading {
+  .text-hide();
+}
+{% endhighlight %}
+</div>

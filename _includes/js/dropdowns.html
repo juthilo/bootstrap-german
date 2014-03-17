@@ -1,0 +1,177 @@
+<div class="bs-docs-section">
+  <h1 id="dropdowns" class="page-header">Dropdown-Menüs <small>dropdown.js</small></h1>
+
+  <h2 id="dropdowns-examples">Beispiele</h2>
+  <p>Füge Dropdown-Menüs zu fast allem, z.B. Navbars, Tabs oder Pills-Navs, mit diesem einfachen Plugin hinzu.</p>
+
+  <h3>In einer Navbar</h3>
+  <div class="bs-example">
+    <nav id="navbar-example" class="navbar navbar-default navbar-static" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-collapse">
+            <span class="sr-only">Navigation ein-/ausblenden</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project-Titel</a>
+        </div>
+        <div class="collapse navbar-collapse bs-example-js-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Dropdown-Menü <b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Aktion</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Andere Aktion</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Irgendwas anderes</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Abgetrennter Link</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" id="drop2" role="button" class="dropdown-toggle" data-toggle="dropdown">Dropdown-Menü 2 <b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Aktion</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Andere Aktion</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Irgendwas anderes</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Abgetrennter Link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li id="fat-menu" class="dropdown">
+              <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Dropdown-Menü 3 <b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Aktion</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Andere Aktion</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Irgendwas anderes</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Abgetrennter Link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav> <!-- /navbar-example -->
+  </div> <!-- /example -->
+
+  <h3>In Pills-Navs</h3>
+  <div class="bs-example">
+    <ul class="nav nav-pills">
+      <li class="active"><a href="#">Regulärer Link</a></li>
+      <li class="dropdown">
+        <a id="drop4" role="button" data-toggle="dropdown" href="#">Dropdown-Menü <b class="caret"></b></a>
+        <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Aktion</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Andere Aktion</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Irgendwas anderes</a></li>
+          <li role="presentation" class="divider"></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Abgetrennter Link</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a id="drop5" role="button" data-toggle="dropdown" href="#">Dropdown-Menü 2 <b class="caret"></b></a>
+        <ul id="menu2" class="dropdown-menu" role="menu" aria-labelledby="drop5">
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Aktion</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Andere Aktion</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Irgendwas anderes</a></li>
+          <li role="presentation" class="divider"></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Abgetrennter Link</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a id="drop6" role="button" data-toggle="dropdown" href="#">Dropdown-Menü 3 <b class="caret"></b></a>
+        <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Aktion</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Andere Aktion</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Irgendwas anderes</a></li>
+          <li role="presentation" class="divider"></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Abgetrennter Link</a></li>
+        </ul>
+      </li>
+    </ul> <!-- /pills -->
+  </div> <!-- /example -->
+
+
+  <h2 id="dropdowns-usage">Verwendung</h2>
+  <p>Das Dropdown-Plugin, kontrolliert über Data-Attribute oder JavaScript, zeigt verborgenen Inhalt (Dropdown-Menüs) an, indem es die Klasse <code>.open</code> beim übergeordneten Listen-Element hinzufügt. Wenn es geöffnet ist, fügt das Plugin außerdem eine Klickfläche (<code>.dropdown-backdrop</code>) hinzu, um das Menü durch einen Klick irgendwo außerhalb zu schließen. Hinweis: Das Attribut <code>data-toggle=dropdown</code> wird auf der Anwendungsebene gebraucht, um die Dropdown-Menüs zu schließen, deshalb ist es immer eine gute Idee, es zu verwenden.</p>
+
+  <h3>Über Data-Attribute</h3>
+  <p>Füge <code>data-toggle="dropdown"</code> zu einem Link oder Button hinzu, um ein Dropdown-Menü zu kontrollieren.</p>
+{% highlight html %}
+<div class="dropdown">
+  <a data-toggle="dropdown" href="#">Dropdown-Auslöser</a>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+    ...
+  </ul>
+</div>
+{% endhighlight %}
+  <p>Um URLs nicht zu beeinträchtigen, kannst du das Attribut <code>data-target</code> statt <code>href="#"</code> verwenden.</p>
+{% highlight html %}
+<div class="dropdown">
+  <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/seite.html">
+    Dropdown-Menü <span class="caret"></span>
+  </a>
+
+
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+    ...
+  </ul>
+</div>
+{% endhighlight %}
+
+  <h3>Über JavaScript</h3>
+  <p>Ruf Dropdowns über JavaScript auf:</p>
+{% highlight js %}
+$('.dropdown-toggle').dropdown()
+{% endhighlight %}
+  <div class="bs-callout bs-callout-info">
+    <h4><code>data-toggle="dropdown"</code> weiterhin notwendig</h4>
+    <p>Unabhängig davon, ob du dein Dropdown-Menü über JavaScript oder die Data-API aufrufst, musst du das auslösende Element (den Schalter) immer mit <code>data-toggle="dropdown"</code> kennzeichnen.</p>
+  </div>
+
+  <h3>Optionen</h3>
+  <p><em>Keine</em></p>
+
+  <h3>Methoden</h3>
+  <h4>$().dropdown('toggle')</h4>
+  <p>Blendet das Dropdown-Menü einer angegebenen Navbar oder Tabs-Navigation ein/aus.</p>
+
+  <h3>Ereignisse</h3>
+  <p>Alle Dropdown-Ereignisse werden am übergeordneten Element von <code>.dropdown-menu</code> ausgelöst.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th style="width: 150px;">Ereignistyp</th>
+          <th>Beschreibung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>show.bs.dropdown</td>
+          <td>Dieses Ereignis wird sofort ausgelöst, wenn die Methode show aufgerufen wird. Das Element, das zum Umschalten verwendet wurde, ist über die <code>relatedTarget</code>-Eigenschaft des Ereignisses verfügbar.</td>
+        </tr>
+        <tr>
+          <td>shown.bs.dropdown</td>
+          <td>Dieses Ereignis wird ausgelöst, wenn das Dropdown-Menü dem Nutzer vollständig angezeigt wurde (wartet auf CSS-Übergänge). Das Element, das zum Umschalten verwendet wurde, ist über die <code>relatedTarget</code>-Eigenschaft des Ereignisses verfügbar.</td>
+        </tr>
+        <tr>
+          <td>hide.bs.dropdown</td>
+          <td>Dieses Ereignis wird ausgelöst, wenn die Methode hide aufgerufen wird. Das Element, das zum Umschalten verwendet wurde, ist über die <code>relatedTarget</code>-Eigenschaft des Ereignisses verfügbar.</td>
+        </tr>
+        <tr>
+          <td>hidden.bs.dropdown</td>
+          <td>Dieses Ereignis wird ausgelöst, wenn das Dropdown-Menü vor dem Nutzer vollständig verborgen wurde (wartet auf CSS-Übergänge). Das Element, das zum Umschalten verwendet wurde, ist über die <code>relatedTarget</code>-Eigenschaft des Ereignisses verfügbar.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- ./bs-table-responsive -->
+{% highlight js %}
+$('#meinDropdown').on('show.bs.dropdown', function () {
+  // etwas ausführen...
+})
+{% endhighlight %}
+</div>

@@ -1,0 +1,187 @@
+<div class="bs-docs-section">
+  <h1 id="support" class="page-header">Browser- und Geräte-Support</h1>
+  <p class="lead">Bootstrap ist so gebaut, dass es mit den neuesten Desktop- und mobilen Browsern funktioniert. Das bedeutet, dass ältere Browser unter Umständen anders gestaltete Komponenten anzeigen, die aber trotzdem voll funktionsfähig sind.</p>
+
+  <h3 id="support-browsers">Unterstützte Browser</h3>
+  <p>Explizit unterstützen wir die <strong>neuesten Versionen</strong> der folgenden Browser und Plattformen. Auf Windows <strong>unterstützen wir Internet Explorer 8-11</strong>. Genauere Angaben findest du in der Tabelle unten.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <td></td>
+          <th>Chrome</th>
+          <th>Firefox</th>
+          <th>Internet Explorer</th>
+          <th>Opera</th>
+          <th>Safari</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Android</th>
+          <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Unterstützt</span></td>
+          <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> <span class="sr-only">Nicht Unterstützt</span></td>
+          <td class="text-muted" rowspan="3" style="vertical-align: middle;">k.A.</td>
+          <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> <span class="sr-only">Nicht Unterstützt</span></td>
+          <td class="text-muted">k.A.</td>
+        </tr>
+        <tr>
+          <th>iOS</th>
+          <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Unterstützt</span></td>
+          <td class="text-muted">k.A.</td>
+          <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> <span class="sr-only">Nicht Unterstützt</span></td>
+          <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Unterstützt</span></td>
+        </tr>
+        <tr>
+          <th>Mac OS X</th>
+          <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Unterstützt</span></td>
+          <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Unterstützt</span></td>
+          <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Unterstützt</span></td>
+          <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Unterstützt</span></td>
+        </tr>
+        <tr>
+          <th>Windows</th>
+          <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Unterstützt</span></td>
+          <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Unterstützt</span></td>
+          <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Unterstützt</span></td>
+          <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Unterstützt</span></td>
+          <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> <span class="sr-only">Nicht Unterstützt</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Inoffiziell sollte Bootstrap in Chromium und Chrome für Linux, Firefox für Linux und Internet Explorer 7 in Ordnung aussehen und funktionieren, aber wir unterstützen diese Browser nicht offiziell.</p>
+  <p>Auf unserer <a href="../browser-bugs/">Pinnwand für Browser-Bugs</a> findest du einige der Browser-Bugs, mit denen Bootstrap zu kämpfen hat.</p>
+
+  <h3 id="support-ie8-ie9">Internet Explorer 8 und 9</h3>
+  <p>Internet Explorer 8 und 9 werden auch unterstützt, aber denk bitte daran, dass einige CSS3-Eigenschaften und HTML5-Elemente in diesen Browsern nicht vollständig unterstützt werden. Außerdem <strong>benötigt Internet Explorer 8 <a href="https://github.com/scottjehl/Respond">Respond.js</a>, um Media-Queries zu verarbeiten.</strong></p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th scope="col" class="col-xs-4">Funktion</th>
+          <th scope="col" class="col-xs-4">Internet Explorer 8</th>
+          <th scope="col" class="col-xs-4">Internet Explorer 9</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"><code>border-radius</code></th>
+          <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> Nicht unterstützt</td>
+          <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Unterstützt</td>
+        </tr>
+        <tr>
+          <th scope="row"><code>box-shadow</code></th>
+          <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> Nicht unterstützt</td>
+          <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Unterstützt</td>
+        </tr>
+        <tr>
+          <th scope="row"><code>transform</code></th>
+          <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> Nicht unterstützt</td>
+          <td class="text-success"><span class="glyphicon glyphicon-ok"></span> Unterstützt, mit <code>-ms</code>-Präfix</td>
+        </tr>
+        <tr>
+          <th scope="row"><code>transition</code></th>
+          <td colspan="2" class="text-danger"><span class="glyphicon glyphicon-remove"></span> Nicht unterstützt</td>
+        </tr>
+        <tr>
+          <th scope="row"><code>placeholder</code></th>
+          <td colspan="2" class="text-danger"><span class="glyphicon glyphicon-remove"></span> Nicht unterstützt</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Besuche <a href="http://caniuse.com/">Can I use...</a> für Details zum Browser-Support für CSS3- und HTML5-Funktionen.</p>
+
+  <h3 id="support-ie8-respondjs">Internet Explorer 8 und Respond.js</h3>
+  <p>Pass auf die folgenden Tücken auf, wenn du Respond.js in deinen Entwicklungs- und Produktions-Umgebungen für Internet Explorer 8 verwendest.</p>
+  <h4 id="respond-js-x-domain">Respond.js und domainübergreifendes CSS</h4>
+  <p>Die Verwendung von Respond.js mit CSS auf anderen (Sub-)Domains (z.B. einem CDN) erfordert zusätzliche Konfiguration. <a href="https://github.com/scottjehl/Respond/blob/master/README.md#cdnx-domain-setup">Lies die Respond.js-Doku</a> für Details dazu.</p>
+  <h4 id="respond-file-proto">Respond.js und <code>file://</code></h4>
+  <p>Wegen Browser-Sicherheitsregeln funktioniert Respond.js nicht mit Seiten, die über das Protokoll <code>file://</code> aufgerufen werden (z.B. wenn du eine lokale HTML-Datei öffnest). Um responsive Funktionen im IE8 zu testen, zeig deine Seiten über HTTP(S) an. <a href="https://github.com/scottjehl/Respond/blob/master/README.md#support--caveats">Lies die Respond.js-Doku</a> für Details dazu.</p>
+  <h4 id="respond-import">Respond.js und <code>@import</code></h4>
+  <p>Respond.js funktioniert nicht mit CSS, dass über <code>@import</code> eingebunden wird. Drupal-Konfigurationen sind insbesondere dafür bekannt, <code>@import</code> zu verwenden. <a href="https://github.com/scottjehl/Respond/blob/master/README.md#support--caveats">Lies die Respond.js-Doku</a> für Details dazu.</p>
+
+  <h3 id="support-ie8-box-sizing">Internet Explorer 8 und box-sizing</h3>
+  <p>IE8 bietet keine vollständige Untestützung für <code>box-sizing: border-box;</code> wenn es mit <code>min-width</code>, <code>max-width</code>, <code>min-height</code> oder <code>max-height</code> kombiniert wird. Seit v3.0.1 verwenden wir daher keine <code>max-width</code> bei <code>.container</code>n mehr.</p>
+
+  <h3 id="support-ie-compatibility-modes">IE Compatibility View</h3>
+  <p>Bootstrap wird in den alten Internet Explorer Compatibility Views nicht unterstützt. Um sicherzugehen, dass du den neuesten Anzeigemodus für IE verwendest, denk darüber nach, das passende <code>&lt;meta&gt;</code>-Tag auf deinen Seiten anzugeben:</p>
+{% highlight html %}
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+{% endhighlight %}
+  <p>Sieh nach, welchen Dokumentenmodus dein IE verwendet, indem du die Entwicklerhilfen öffnest: drücke <kbd>F12</kbd> und sieh dann nach dem "Dokumentenmodus".</p>
+  <p>Dieses Tag ist überall in Bootstraps Dokumentation und Beispielen eingebunden, damit die bestmögliche Anzeige in jeder unterstützten Version von Internet Explorer erreicht wird.</p>
+  <p>Sieh dir <a href="http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge">diese StackOverflow-Frage</a> für mehr Informationen an.</p>
+
+  <h3 id="support-ie10-width">Internet Explorer 10 auf Windows 8 und Windows Phone 8</h3>
+  <p>Internet Explorer 10 unterscheidet nicht zwischen <strong>Gerätebreite</strong> und <strong>Breite der tatsächlichen Anzeige</strong> und wendet Media-Queries aus Bootstraps CSS daher nicht korrekt an. Normalerweise würdest du einfach diesen CSS-Block einfügen, um das zu beheben:</p>
+{% highlight scss %}
+@-ms-viewport       { width: device-width; }
+{% endhighlight %}
+  <p>Leider funktioniert das nicht, da auf Windows Phone 8-Geräten dann eine eher Desktop-mäßige Ansicht statt der schmalen "Smartphone"-Ansicht generiert wird. Um das zu umgehen musst du <strong>das folgende CSS und JavaScript verwenden, bis Microsoft dieses Problem behebt</strong>.</p>
+{% highlight scss %}
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
+{% endhighlight %}
+
+{% highlight js %}
+if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+  var msViewportStyle = document.createElement('style')
+  msViewportStyle.appendChild(
+    document.createTextNode(
+      '@-ms-viewport{width:auto!important}'
+    )
+  )
+  document.querySelector('head').appendChild(msViewportStyle)
+}
+{% endhighlight %}
+  <p>Für mehr Informationen und Hilfe bei der Umsetzung, lies <a href="http://timkadlec.com/2013/01/windows-phone-8-and-device-width/">Windows Phone 8 and Device-Width</a>.</p>
+  <p>Hinweis: wir verwenden diese Technik in der Bootstrap-Dokumentation als Beispiel.</p>
+
+  <h3 id="support-safari-percentages">Safari-Prozent-Rundung</h3>
+  <p>Ausgehend von Safari v7.0.1 für OS X und Safari für iOS v7.0.1 hat Safaris Rendering-Engine Probleme mit der Anzahl der Dezimalstellen in unseren <code>.col-*-1</code>-Rasterklassen. Falls du also 12 einzelne Rasterspalten hast, wirst du bemerken, dass diese weniger breit als andere Spaltenreihen erscheinen. Wir können hier nicht viel tun (<a href="https://github.com/twbs/bootstrap/issues/9282">siehe #9282</a>), aber du hast einige Möglichkeiten:</p>
+  <ul>
+    <li>Füge <code>.pull-right</code> zur letzten Spalte hinzu, um diese hart rechts auszurichten</li>
+    <li>Verändere deine Prozentwerte manuell, um die Abrundungen in Safari perfekt auszubalancieren (schwieriger als die erste Option)</li>
+  </ul>
+  <p>Wir behalten dies allerdings im Auge und werden unseren Code anpassen, falls wir eine einfache Lösung finden.</p>
+
+  <h3 id="support-fixed-position-keyboards">Modals, Navbars und virtuelle Tastaturen</h3>
+  <h4>Overflow und Scrolling</h4>
+  <p>Unterstützung für <code>overflow: hidden</code> beim <code>&lt;body&gt;</code> ist eher limitiert auf iOS und Android. Aufgrund dessen wird der <code>&lt;body&gt;</code> anfangen zu scrollen, wenn du über den Anfang oder das Ende eines Modals in einem Browser auf diesen Geräten hinausscrollst.</p>
+  <h4>Virtuelle Tastaturen</h4>
+  <p>Wenn du Eingabefelder in deinem Modal oder deiner Navbar verwendest, solltest du beachten, dass iOS einen Anzeigefehler hat, wegen dem die Position von fixierten Elementen nicht aktualisiert wird, wenn sich die virtuelle Tastatur öffnet. Dies kannst du z.B. umgehen, indem du deine Elemente zu <code>position: absolute</code> änderst oder einen Timer auslöst, wenn ein Feld fokussiert wird, um die Position manuell zu korrigieren. Dies wird nicht von Bootstrap geregelt, sondern du musst selbst entscheiden, welche Lösung die beste für deine Anwendung ist.</p>
+  <h4>Navbar-Dropdown-Menüs</h4>
+  <p>Das <code>.dropdown-backdrop</code>-Element wird auf iOS im Nav nicht verwendet, da z-indexing zu komplex ist. Um Dropdowns in Navbars zu schließen, musst du daher direkt auf das Dropdown-Element (oder ein anderes Element, das ein click-Ereignis in iOS auslöst) klicken.</p>
+
+  <h3 id="support-browser-zooming">Browser-Zooming</h3>
+  <p>Zoomen auf Seiten kann in manchen Komponenten Anzeigefehler hervorbringen und das in Bootstrap genau so wie im restlichen Web. Abhängig vom Problem können wir es vielleicht beheben (suche zunächst und öffne dann ggf. einen Fehlerbericht auf GitHub). Im Zweifelsfall ignorieren wir diese Fehler aber häufig, weil sie oft keine einfache Lösung haben, sondern nur mit umständlichen Workarounds zu beheben sind.</p>
+
+  <h3 id="support-printing">Drucker-Ansichtsfenster</h3>
+  <p>Auch in einigen modernen Browsern kann Drucken manchmal problematisch sein. Zum Beispiel verwendet Chrome zumindest in v32 und unabhängig von Randabstandseinstellungen ein Ansichtsfenster, das sehr viel schmaler als die reale Papierbreite ist, wenn die Media-Queries beim Drucken einer Webseite verarbeitet werden. Das kann dazu führen, dass unerwartet beim Drucken Bootstraps XS-Raster zum Einsatz kommt. <a href="https://github.com/twbs/bootstrap/issues/12078">Siehe #12078 für einige Details.</a> Vorschläge, um das Problem zu umgehen:</p>
+  <ul>
+    <li>Lass dich auf das XS-Raster ein und stelle sicher, dass deine Seite darauf in Ordnung aussieht.</li>
+    <li>Verändere die Werte der <code>@screen-*</code>-Less-Variablen, damit dein Druckerpapier größer als extra-klein eingeschätzt wird.</li>
+    <li>Füge eigene Media-Queries hinzu, die die Umbruchpunkte des Rasters nur für den Druck verändern.</li>
+  </ul>
+
+  <h3 id="support-android-stock-browser">Android Stock Browser</h3>
+  <p>Statt Chrome zu verwenden, kommt bis Android 4.1 (und anscheinend auch bei einigen neueren Versionen) die sogenannte Internet-App als Standard-Browser auf Android-Geräten. Leider ist dieser Browser von Fehlern und Unstimmigkeiten in Bezug auf CSS allgemein behaftet.</p>
+  <h4>Auswahlmenüs</h4>
+  <p>Der Android Stock Browser wird bei <code>&lt;select&gt;</code>-Elementen die Symbole an der Seite nicht richtig anzeigen, wenn ein <code>border-radius</code> und/oder <code>border</code> vorhanden ist. Verwende den Code-Schnipsel unten, um diese CSS-Eigenschaften im Android Stock Browser zu entfernen und das <code>&lt;select&gt;</code>-Element ohne Stile darzustellen. Der Code analysiert den User Agent, damit Chrome, Safari und Mozilla-Browser nicht beeinträchtigt werden.</p>
+{% highlight html %}
+<script>
+var nua = navigator.userAgent
+var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
+if (isAndroid) {
+  $('select.form-control').removeClass('form-control').css('width', '100%')
+}
+</script>
+{% endhighlight %}
+  <p>Willst du ein Beispiel sehen? <a href="http://jsbin.com/OyaqoDO/2">Sieh dir diese Demonstration in einem JS Bin an.</a></p>
+</div>

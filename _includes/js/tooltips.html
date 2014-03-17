@@ -1,0 +1,200 @@
+<div class="bs-docs-section">
+  <h1 id="tooltips" class="page-header">Tooltips <small>tooltip.js</small></h1>
+
+  <h2 id="tooltips-examples">Beispiele</h2>
+  <p>Inspiriert vom hevorragenden Plugin jQuery.tipsy von Jason Frame, bieten Tooltips eine aktualisierte Version, die nicht auf Bildern basiert, CSS3 für Animationen verwendet und Data-Attribute für die Speicherung von Inhalt nutzt.</p>
+  <p>Bewege den Mauszeiger über (hover) die Links unten, um Tooltips zu sehen:</p>
+  <div class="bs-example tooltip-demo">
+    <p class="muted" style="margin-bottom: 0;">Tight pants next level keffiyeh <a href="#" data-toggle="tooltip" title="Standard-Tooltip">you probably</a> haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel <a href="#" data-toggle="tooltip" title="Ein anderer Tooltip">have a</a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney's cleanse vegan chambray. A really ironic artisan <a href="#" data-toggle="tooltip" title="Und hier noch einer">whatever keytar</a>, scenester farm-to-table banksy Austin <a href="#" data-toggle="tooltip" title="Der letzte Tipp!">twitter handle</a> freegan cred raw denim single-origin coffee viral.
+    </p>
+  </div><!-- /example -->
+
+  <h3>Vier Richtungen</h3>
+  <div class="bs-example tooltip-demo">
+    <div class="bs-example-tooltips">
+      <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip links">Tooltip links</button>
+      <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip oben">Tooltip oben</button>
+      <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip unten">Tooltip unten</button>
+      <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip rechts">Tooltip rechts</button>
+    </div>
+  </div><!-- /example -->
+{% highlight html %}
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip links">Tooltip links</button>
+
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip oben">Tooltip oben</button>
+
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip unten">Tooltip unten</button>
+
+<button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip rechts">Tooltip rechts</button>
+{% endhighlight %}
+
+  <div class="bs-callout bs-callout-danger">
+    <h4>Opt-in-Funktionalität</h4>
+    <p>Aus Gründen der Performance musst du die Data-APIs von Tooltips und Popovers <strong>manuell initialisieren</strong> bevor du sie verwenden kannst.</p>
+  </div>
+  <div class="bs-callout bs-callout-warning">
+    <h4>Tooltips &amp; Popovers in Button-Gruppen und Input-Gruppen benötigen besondere Einstellung</h4>
+    <p>Wenn du Tooltips oder Popovers an Elementen in einer <code>.btn-group</code> oder <code>.input-group</code> verwendest, musst du die Option <code>container: 'body'</code> festlegen, um unerwünschte Nebeneffekte zu vermeiden (das Element könnte z.B. breiter werden und/oder seine abgerundeten Ecken verlieren, wenn der Tooltip oder das Popover ausgelöst wird).</p>
+  </div>
+  <div class="bs-callout bs-callout-info">
+    <h4>Tooltips an deaktivierten Elementen benötigen ein umschließendes Element</h4>
+    <p>Um einen Tooltip zu einem deaktivierten Element mit <code>disabled</code> oder <code>.disabled</code> hinzuzufügen, musst du das Element in einem <code>&lt;div&gt;</code> platzieren und den Tooltip stattdessen darauf anwenden.</p>
+  </div>
+
+  <h2 id="tooltips-usage">Verwendung</h2>
+  <p>Das Tooltip-Plugin generiert Inhalt und Markup bei Bedarf und platziert diese standardmäßig hinter dem Element, das einen Tooltip auslöst.</p>
+  <p>Löse den Tooltip über JavaScript aus:</p>
+{% highlight js %}
+$('#beispiel').tooltip(Optionen)
+{% endhighlight %}
+
+  <h3>Markup</h3>
+  <p>Das benötigte Markup für einen tooltip ist nur ein <code>data</code>-Attribut und ein <code>title</code> auf dem HTML-Element, das mit einem Tooltip versehen werden soll. Das generierte Markup eines Tooltips ist ziemlich einfach; es braucht allerdings eine Position (standardmäßig vom Plugin auf <code>top</code> gesetzt).</p>
+  <div class="bs-callout bs-callout-warning">
+    <h4>Mehrzeilige Links</h4>
+    <p>Manchmal willst du einen Tooltip vielleicht zu einem Hyperlink hinzufügen, der über mehrere Zeilen geht. Das Standard-Verhalten in diesem Fall ist, dass der Tooltip horizontal und vertikal zentriert wird. Füge zu deinen Links <code>white-space: nowrap;</code> hinzu, um das zu vermeiden.</p>
+  </div>
+{% highlight html linenos %}
+<!-- HTML -->
+<a href="#" data-toggle="tooltip" title="Ein bisschen Tooltip-Text!">Mauszeiger hier drüber</a>
+
+<!-- Generiertes Markup -->
+<div class="tooltip top">
+  <div class="tooltip-inner">
+    Ein bisschen Tooltip-Text!
+  </div>
+  <div class="tooltip-arrow"></div>
+</div>
+{% endhighlight %}
+
+  <h3>Optionen</h3>
+  <p>Optionen können über Data-Attribute oder JavaScript angegeben werden. Für Data-Attribute hängst du den Namen der Option einfach an <code>data-</code>, z.B. <code>data-animation=""</code>.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th style="width: 100px;">Name</th>
+          <th style="width: 100px;">type</th>
+          <th style="width: 50px;">Standard</th>
+          <th>Beschreibung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>animation</td>
+          <td>Boolean</td>
+          <td>true</td>
+          <td>Versieht den Tooltip mit einem CSS-Übergang beim Ein-/Ausblenden</td>
+        </tr>
+        <tr>
+          <td>html</td>
+          <td>Boolean</td>
+          <td>false</td>
+          <td>Falls du HTML im Tooltip einfügen willst. Beim Standard, false, wird jQuerys <code>text</code>-Methode verwendet, um den Inhalt ins DOM einzufügen. Verwende text, falls du dich wegen XSS-Angriffen sorgst.</td>
+        </tr>
+        <tr>
+          <td>placement</td>
+          <td>String | Funktion</td>
+          <td>'top'</td>
+          <td>Wie der Tooltip positioniert werden soll - top | bottom | left | right | auto. <br> Wenn "auto" angegeben wird, wird der Tooltip dynamisch umorientiert. Zum Beispiel wird bei "auto left" der Tooltip nach Möglichkeit links positioniert, aber sonst nach rechts verlegt.</td>
+        </tr>
+        <tr>
+          <td>selector</td>
+          <td>String</td>
+          <td>false</td>
+          <td>Falls ein Selektor angegeben wird, werden Tooltip-Objekte an die angegebenen Ziele gebunden.</td>
+        </tr>
+        <tr>
+          <td>title</td>
+          <td>String | Funktion</td>
+          <td>''</td>
+          <td>Standard-Titel-Wert, falls kein <code>title</code>-Attribut vorhanden ist</td>
+        </tr>
+        <tr>
+          <td>trigger</td>
+          <td>String</td>
+          <td>'hover focus'</td>
+          <td>Wie der Tooltip ausgelöst wird - click | hover | focus | manual. Du kannst mehrere Auslöser angeben; trenne sie mit einem Leerzeichen.</td>
+        </tr>
+        <tr>
+          <td>delay</td>
+          <td>Nummer | Objekt</td>
+          <td>0</td>
+          <td>
+            <p>Verzögere das Anzeigen und Verbergen eines Tooltips in ms - wirkt sich nicht auf den manuellen Auslöser aus</p>
+            <p>Falls eine Nummer angegeben wird, wird die Verzögerung auf hide und show angewendet</p>
+            <p>Object-Struktur: <code>delay: { show: 500, hide: 100 }</code></p>
+          </td>
+        </tr>
+        <tr>
+          <td>container</td>
+          <td>String | false</td>
+          <td>false</td>
+          <td>
+            <p>Ordnet den Tooltip einem bestimmten Element unter. Beispiel: <code>container: 'body'</code></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
+  <div class="bs-callout bs-callout-info">
+    <h4>Data-Attribute für einzelne Tooltips</h4>
+    <p>Optionen für individuelle Tooltips kannst du alternativ über Data-Attribute, wie oben erklärt, angeben.</p>
+  </div>
+
+  <h3>Methoden</h3>
+
+  <h4>$().tooltip(Optionen)</h4>
+  <p>Aktiviert Tooltip-Funktionen bei einer Reihe von Elementen.</p>
+
+  <h4>.tooltip('show')</h4>
+  <p>Öffnet den Tooltip eines Elements.</p>
+  {% highlight js %}$('#element').tooltip('show'){% endhighlight %}
+
+  <h4>.tooltip('hide')</h4>
+  <p>Verbirgt den Tooltip eines Elements.</p>
+  {% highlight js %}$('#element').tooltip('hide'){% endhighlight %}
+
+  <h4>.tooltip('toggle')</h4>
+  <p>Schaltet die Sichtbarkeit des Tooltips eines Elements um.</p>
+  {% highlight js %}$('#element').tooltip('toggle'){% endhighlight %}
+
+  <h4>.tooltip('destroy')</h4>
+  <p>Verbirgt und zerstört den Tooltip eines Elements.</p>
+  {% highlight js %}$('#element').tooltip('destroy'){% endhighlight %}
+
+  <h3>Ereignisse</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th style="width: 150px;">Ereignistyp</th>
+          <th>Beschreibung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>show.bs.tooltip</td>
+          <td>Dieses Ereignis wird ausgelöst, wenn die Methode <code>show</code> aufgerufen wird.</td>
+        </tr>
+        <tr>
+          <td>shown.bs.tooltip</td>
+          <td>Dieses Ereignis wird ausgelöst, wenn der Tooltip dem Nutzer vollständig angezeigt wurde (wartet auf CSS-Übergänge).</td>
+        </tr>
+        <tr>
+          <td>hide.bs.tooltip</td>
+          <td>Dieses Ereignis wird ausgelöst, wenn die Methode <code>hide</code> aufgerufen wird.</td>
+        </tr>
+        <tr>
+          <td>hidden.bs.tooltip</td>
+          <td>Dieses Ereignis wird ausgelöst, wenn der Tooltip vor dem Nutzer vollständig verborgen wurde (wartet auf CSS-Übergänge).</td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
+{% highlight js %}
+$('#meinTooltip').on('hidden.bs.tooltip', function () {
+  // etwas aufrufen...
+})
+{% endhighlight %}
+</div>

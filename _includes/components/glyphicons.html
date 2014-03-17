@@ -1,0 +1,52 @@
+<div class="bs-docs-section">
+  <h1 id="glyphicons" class="page-header">Glyphicons</h1>
+
+  <h2 id="glyphicons-glyphs">Verfügbare Glyphen</h2>
+  <p>Dabei sind 200 Glyphen in Form einer Schriftart aus den Glyphicons Halflings. <a href="http://glyphicons.com/">Glyphicons</a> Halflings sind normalerweise nicht kostenlos erhältlich, aber ihr Erfinder hat sie für Bootstrap gratis verfügbar gemacht. Als Dankeschön bitten wir dich nur, wo immer möglich einen Link zu den <a href="http://glyphicons.com/">Glyphicons</a> einzubinden.</p>
+  <div class="bs-glyphicons">
+    <ul class="bs-glyphicons-list">
+      {% for iconClassName in site.data.glyphicons %}
+        <li>
+          <span class="glyphicon {{ iconClassName }}"></span>
+          <span class="glyphicon-class">glyphicon {{ iconClassName }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+
+  <h2 id="glyphicons-how-to-use">Verwendung</h2>
+  <p>Aus Gründen der Performance benötigen alle Icons eine Grundklasse und eine weitere Klasse für das jeweilige Icon. Um ein Icon zu werwenden, platziere einfach den folgenden Code fast überall wo du willst. Denk daran, ein Leerzeichen zwischen Icon und eventuellem Text zu lassen, damit die Icons einen angemessenen Abstand haben.</p>
+  <div class="bs-callout bs-callout-danger">
+    <h4>Nicht mit anderen Komponenten vermischen.</h4>
+    <p>Icon-klassen können nicht direkt mit anderen Komponenten kombiniert werden. Sie sollten niemals mit anderen Klassen auf das selbe Element angewendet werden. Füge stattdessen ein untergeordnetes <code>&lt;span&gt;</code> ein und wende die Icon-Klassen auf dieses <code>&lt;span&gt;</code> an.</p>
+  </div>
+{% highlight html %}
+<span class="glyphicon glyphicon-search"></span>
+{% endhighlight %}
+
+
+  <h2 id="glyphicons-examples">Beispiele</h2>
+  <p>Du kannst Glyphicons prima in Buttons, Button-Gruppen für eine Toolbar, Navigation oder Formularfeldern mit Präfix verwenden.</p>
+  <div class="bs-example">
+    <div class="btn-toolbar" role="toolbar">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-left"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-center"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-right"></span></button>
+        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-justify"></span></button>
+      </div>
+    </div>
+    <div class="btn-toolbar" role="toolbar">
+      <button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star"></span> Markieren</button>
+      <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-star"></span> Markieren</button>
+      <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-star"></span> Markieren</button>
+      <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-star"></span> Markieren</button>
+    </div>
+  </div>
+{% highlight html %}
+<button type="button" class="btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-star"></span> Markieren
+</button>
+{% endhighlight %}
+</div>

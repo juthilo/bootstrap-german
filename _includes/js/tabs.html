@@ -1,0 +1,144 @@
+<div class="bs-docs-section">
+  <h1 id="tabs" class="page-header">Interaktive Tabs <small>tab.js</small></h1>
+
+  <h2 id="tabs-examples">Beispiel-Tabs</h2>
+  <p>Füge schnelle, dynamische Tab-Funktionalität hinzu, um zwischen verschiedenen Blöcken von Inhalt zu wechseln, auch über Dropdown-Menüs.</p>
+  <div class="bs-example bs-example-tabs">
+    <ul id="meinTab" class="nav nav-tabs">
+      <li class="active"><a href="#start" data-toggle="tab">Start</a></li>
+      <li><a href="#profil" data-toggle="tab">Profil</a></li>
+      <li class="dropdown">
+        <a href="#" id="meinTabDrop1" class="dropdown-toggle" data-toggle="dropdown">Dropdown-Menü <b class="caret"></b></a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="meinTabDrop1">
+          <li><a href="#dropdown1" tabindex="-1" data-toggle="tab">@fat</a></li>
+          <li><a href="#dropdown2" tabindex="-1" data-toggle="tab">@mdo</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div id="meinTabContent" class="tab-content">
+      <div class="tab-pane fade in active" id="start">
+        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+      </div>
+      <div class="tab-pane fade" id="profil">
+        <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+      </div>
+      <div class="tab-pane fade" id="dropdown1">
+        <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+      </div>
+      <div class="tab-pane fade" id="dropdown2">
+        <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+      </div>
+    </div>
+  </div><!-- /example -->
+
+  <div class="bs-callout bs-callout-info">
+    <h4>Erweitert die Tab-Navs</h4>
+    <p>Dieses Plugin erweitert die <a href="../komponenten/#nav-tabs">Komponente Tab-Navs</a>, um tatsächliches Tabverhalten hinzuzufügen.</p>
+  </div>
+
+
+  <h2 id="tabs-usage">Verwendung</h2>
+  <p>Aktiviere anklickbare Tabs über JavaScript (jeder Tab muss einzeln aktiviert werden):</p>
+
+{% highlight js %}
+$('#meinTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+{% endhighlight %}
+
+  <p>Du kannst einzelne Tabs auf verschiedene Weise aktivieren:</p>
+
+{% highlight js %}
+$('#meinTab a[href="#profile"]').tab('show') // Einen Tab über seinen Namen auswählen
+$('#meinTab a:first').tab('show') // Ersten Tab auswählen
+$('#meinTab a:last').tab('show') // Letzten Tab auswählen
+$('#meinTab li:eq(2) a').tab('show') // Dritten Tab auswählen (Nummern starten bei 0)
+{% endhighlight %}
+
+  <h3>Markup</h3>
+  <p>Du kannst Tab- oder Pills-Navs aktivieren, ohne JavaScript zu schreiben, indem du einfach <code>data-toggle="tab"</code> oder <code>data-toggle="pill"</code> bei einem Element hinzufügst. Durch Hinzufügen der Klassen <code>nav</code> und <code>nav-tabs</code> zur Tab-<code>ul</code> wird Bootstrap <a href="../komponenten/#nav-tabs">Tab-Stile</a> anwenden, während <code>nav</code> und <code>nav-pills</code> für <a href="../komponenten/#nav-pills">Pills-Stile</a> sorgen.</p>
+{% highlight html %}
+<!-- Tabs-Navs -->
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#start" data-toggle="tab">Start</a></li>
+  <li><a href="#profil" data-toggle="tab">Profil</a></li>
+  <li><a href="#nachrichten" data-toggle="tab">Nachrichten</a></li>
+  <li><a href="#einstellungen" data-toggle="tab">Einstellungen</a></li>
+</ul>
+
+<!-- Tab-Inhalte -->
+<div class="tab-content">
+  <div class="tab-pane active" id="start">...</div>
+  <div class="tab-pane" id="profil">...</div>
+  <div class="tab-pane" id="nachrichten">...</div>
+  <div class="tab-pane" id="einstellungen">...</div>
+</div>
+{% endhighlight %}
+
+  <h3>Einblendeffekte</h3>
+  <p>Um Tabs mit einem Effekt beim Einblenden zu versehen, füge <code>.fade</code> zu jedem <code>.tab-pane</code> hinzu. Die erste Tab-Inhaltsfläche muss auch mit der Klasse <code>.in</code> versehen werden, damit der erste Inhalt vernünftig eingeblendet wird.</p>
+{% highlight html %}
+<div class="tab-content">
+  <div class="tab-pane fade in active" id="start">...</div>
+  <div class="tab-pane fade" id="profil">...</div>
+  <div class="tab-pane fade" id="nachrichten">...</div>
+  <div class="tab-pane fade" id="einstellungen">...</div>
+</div>
+{% endhighlight %}
+
+  <h3>Methoden</h3>
+  <h4>$().tab</h4>
+  <p>
+    Aktivierte ein Tab-Element und seinen Inhalts-Container. Der Tab sollte entweder ein <code>data-target</code>- oder ein <code>href</code>-Attribut haben, um den richtigen Container im DOM anzuvisieren.
+  </p>
+{% highlight html %}
+<ul class="nav nav-tabs" id="meinTab">
+  <li class="active"><a href="#start" data-toggle="tab">Start</a></li>
+  <li><a href="#profil" data-toggle="tab">Profil</a></li>
+  <li><a href="#nachrichten" data-toggle="tab">Nachrichten</a></li>
+  <li><a href="#einstellungen" data-toggle="tab">Einstellungen</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="start">...</div>
+  <div class="tab-pane" id="profil">...</div>
+  <div class="tab-pane" id="nachrichten">...</div>
+  <div class="tab-pane" id="einstellungen">...</div>
+</div>
+
+<script>
+  $(function () {
+    $('#meinTab a:last').tab('show')
+  })
+</script>
+{% endhighlight %}
+
+  <h3>Ereignisse</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+       <tr>
+         <th style="width: 150px;">Ereignistyp</th>
+         <th>Beschreibung</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+         <td>show.bs.tab</td>
+         <td>Dieses Ereignis wird ausgelöst, wenn die Methode show aufgerufen wird, aber bevor der Tab wirklich vollständig angezeigt wurde. Verwende <code>event.target</code> und <code>event.relatedTarget</code>, um den aktiven Tab und den zuvor aktiven Tab (falls verfügbar) herauszufinden.</td>
+      </tr>
+      <tr>
+         <td>shown.bs.tab</td>
+         <td>Dieses Ereignis wird ausgelöst, sobald ein Tab vollständig eingeblendet wurde. Verwende <code>event.target</code> und <code>event.relatedTarget</code>, um den aktiven Tab und den zuvor aktiven Tab (falls verfügbar) herauszufinden.</td>
+       </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
+{% highlight js %}
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+  e.target // aktivierter Tab
+  e.relatedTarget // vorheriger tab
+})
+{% endhighlight %}
+</div>

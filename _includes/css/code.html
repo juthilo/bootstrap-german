@@ -1,0 +1,50 @@
+<div class="bs-docs-section">
+  <h1 id="code" class="page-header">Code</h1>
+
+  <h2 id="code-inline">Inline</h2>
+  <p>Um Code in Fließtext einzubinden, markiere diesen mit <code>&lt;code&gt;</code>.</p>
+<div class="bs-example">
+  Zum Beispiel sollte <code>&lt;section&gt;</code> mit in der Textzeile stehen.
+</div>
+{% highlight html %}
+Zum Beispiel sollte <code>&lt;section&gt;</code> mit in der Textzeile stehen.
+{% endhighlight %}
+
+  <h2 id="code-user-input">Benutzereingaben</h2>
+  <p>Für Eingaben, die normalerweise mit der Tastatur gemacht werden, kannst du <code>&lt;kbd&gt;</code> verwenden.</p>
+<div class="bs-example">
+  Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verzeichnisses ein.
+</div>
+{% highlight html %}
+Um das Verzeichnis zu wechseln, gib <kbd>cd</kbd> und dann den Namen eines Verzeichnisses ein.
+{% endhighlight %}
+
+  <h2 id="code-block">Code-Block</h2>
+  <p>Nutze <code>&lt;pre&gt;</code> für mehrere Zeilen Code. Denk daran, spitze Klammern in deinem Code zu escapen, damit alles richtig angezeigt wird.</p>
+<div class="bs-example">
+  <pre>&lt;p&gt;Ein bisschen Beispieltext...&lt;/p&gt;</pre>
+</div>
+{% highlight html %}
+<pre>&lt;p&gt;Ein bisschen Beispieltext...&lt;/p&gt;</pre>
+{% endhighlight %}
+
+  <p>Du kannst außerdem optional die Klasse <code>.pre-scrollable</code> hinzufügen, die eine maximale Höhe (max-height) von 350px festlegen und eine Scrollleiste für die y-Achse einblenden wird.</p>
+
+  <h2 id="code-variables">Variablen</h2>
+  <p>Verwende das Tag <code>&lt;var&gt;</code>, um Variablen zu markieren.</p>
+  <div class="bs-example">
+    <p><var>y</var> = <var>m</var><var>x</var> + <var>b</var></p>
+  </div>
+{% highlight html %}
+<var>y</var> = <var>m</var><var>x</var> + <var>b</var>
+{% endhighlight %}
+
+  <h2 id="code-sample-output">Beispiel-Ausgabe</h2>
+  <p>Um Text als Beispiel-Ausgabe eines Programms zu markieren, verwende das Tag <code>&lt;samp&gt;</code>.</p>
+  <div class="bs-example">
+    <p><samp>Dieser Text soll als Beispiel-Ausgabe eines Computer-Programms behandelt werden.</samp></p>
+  </div>
+{% highlight html %}
+<samp>Dieser Text soll als Beispiel-Ausgabe eines Computer-Programms behandelt werden.</samp>
+{% endhighlight %}
+</div>

@@ -1,0 +1,261 @@
+<div class="bs-docs-section">
+  <h1 id="btn-groups" class="page-header">Button-Gruppen</h1>
+
+  <p class="lead">Gruppiere eine Reihe von Buttons zusammen in einer Zeile mit der Hilfe von Button-Gruppen. Füge optionale Auswahlfeld-Funktionalität mit <a href="../javascript/#buttons">unserem Buttons-Plugin</a> hinzu.</p>
+
+  <div class="bs-callout bs-callout-warning">
+    <h4>Tooltips &amp; Popovers in Button-Gruppen benötigen besondere Einstellung</h4>
+    <p>Wenn du Tooltips oder Popovers an Elementen in einer <code>.btn-group</code> verwendest, musst du die Option <code>container: 'body'</code> festlegen, um unerwünschte Nebeneffekte zu vermeiden (das Element könnte z.B. breiter werden und/oder seine abgerundeten Ecken verlieren, wenn der Tooltip oder das Popover ausgelöst wird).</p>
+  </div>
+
+  <h3 id="btn-groups-single">Einfaches Beispiel</h3>
+  <p>Verpacke eine Reihe von Buttons mit <code>.btn</code> in einer <code>.btn-group</code>.</p>
+  <div class="bs-example">
+    <div class="btn-group" style="margin: 9px 0 5px;">
+      <button type="button" class="btn btn-default">Links</button>
+      <button type="button" class="btn btn-default">Mitte</button>
+      <button type="button" class="btn btn-default">Rechts</button>
+    </div>
+  </div>
+{% highlight html %}
+<div class="btn-group">
+  <button type="button" class="btn btn-default">Links</button>
+  <button type="button" class="btn btn-default">Mitte</button>
+  <button type="button" class="btn btn-default">Rechts</button>
+</div>
+{% endhighlight %}
+
+  <h3 id="btn-groups-toolbar">Button-Toolbar</h3>
+  <p>Kombiniere mehrere <code>&lt;div class="btn-group"&gt;</code> in einer <code>&lt;div class="btn-toolbar"&gt;</code> für komplexere Komponenten.</p>
+  <div class="bs-example">
+    <div class="btn-toolbar" role="toolbar" style="margin: 0;">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default">1</button>
+        <button type="button" class="btn btn-default">2</button>
+        <button type="button" class="btn btn-default">3</button>
+        <button type="button" class="btn btn-default">4</button>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default">5</button>
+        <button type="button" class="btn btn-default">6</button>
+        <button type="button" class="btn btn-default">7</button>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default">8</button>
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group">...</div>
+  <div class="btn-group">...</div>
+  <div class="btn-group">...</div>
+</div>
+{% endhighlight %}
+
+  <h3 id="btn-groups-sizing">Größe</h3>
+  <p>Anstatt die Button-Größen-Klassen zu jedem Button in einer Gruppe hinzuzufügen, kannst du einfach <code>.btn-group-*</code> zur <code>.btn-group</code> hinzufügen.</p>
+  <div class="bs-example">
+    <div class="btn-toolbar" role="toolbar">
+      <div class="btn-group btn-group-lg">
+        <button type="button" class="btn btn-default">Links</button>
+        <button type="button" class="btn btn-default">Mitte</button>
+        <button type="button" class="btn btn-default">Rechts</button>
+      </div>
+    </div>
+    <div class="btn-toolbar" role="toolbar">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default">Links</button>
+        <button type="button" class="btn btn-default">Mitte</button>
+        <button type="button" class="btn btn-default">Rechts</button>
+      </div>
+    </div>
+    <div class="btn-toolbar" role="toolbar">
+      <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-default">Links</button>
+        <button type="button" class="btn btn-default">Mitte</button>
+        <button type="button" class="btn btn-default">Rechts</button>
+      </div>
+    </div>
+    <div class="btn-toolbar" role="toolbar">
+      <div class="btn-group btn-group-xs">
+        <button type="button" class="btn btn-default">Links</button>
+        <button type="button" class="btn btn-default">Mitte</button>
+        <button type="button" class="btn btn-default">Rechts</button>
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="btn-group btn-group-lg">...</div>
+<div class="btn-group">...</div>
+<div class="btn-group btn-group-sm">...</div>
+<div class="btn-group btn-group-xs">...</div>
+{% endhighlight %}
+
+  <h3 id="btn-groups-nested">Verschachtelung</h3>
+  <p>Platziere eine <code>.btn-group</code> in einer anderen <code>.btn-group</code> wenn du Dropdown-Menüs mit einer Reihe von Buttons kombinieren willst.</p>
+  <div class="bs-example">
+    <div class="btn-group">
+      <button type="button" class="btn btn-default">1</button>
+      <button type="button" class="btn btn-default">2</button>
+
+      <div class="btn-group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          Dropdown-Menü
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="btnGroupDrop1">
+          <li><a href="#">Dropdown-Link</a></li>
+          <li><a href="#">Dropdown-Link</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="btn-group">
+  <button type="button" class="btn btn-default">1</button>
+  <button type="button" class="btn btn-default">2</button>
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      Dropdown-Menü
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Dropdown-Link</a></li>
+      <li><a href="#">Dropdown-Link</a></li>
+    </ul>
+  </div>
+</div>
+{% endhighlight %}
+
+  <h3 id="btn-groups-vertical">Vertikale Alternative</h3>
+  <p>Du kannst eine Reihe von Buttons auch vertikal statt horizontal anordnen. <strong class="text-danger">Unterteilte Button-Dropdowns werden hier nicht unterstützt.</strong></p>
+  <div class="bs-example">
+    <div class="btn-group-vertical">
+      <button type="button" class="btn btn-default">Button</button>
+      <button type="button" class="btn btn-default">Button</button>
+      <div class="btn-group">
+        <button id="btnGroupVerticalDrop1" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          Dropdown-Menü
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="btnGroupVerticalDrop1">
+          <li><a href="#">Dropdown-Link</a></li>
+          <li><a href="#">Dropdown-Link</a></li>
+        </ul>
+      </div>
+      <button type="button" class="btn btn-default">Button</button>
+      <button type="button" class="btn btn-default">Button</button>
+      <div class="btn-group">
+        <button id="btnGroupVerticalDrop2" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          Dropdown-Menü
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="btnGroupVerticalDrop2">
+          <li><a href="#">Dropdown-Link</a></li>
+          <li><a href="#">Dropdown-Link</a></li>
+        </ul>
+      </div>
+      <div class="btn-group">
+        <button id="btnGroupVerticalDrop3" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          Dropdown-Menü
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="btnGroupVerticalDrop3">
+          <li><a href="#">Dropdown-Link</a></li>
+          <li><a href="#">Dropdown-Link</a></li>
+        </ul>
+      </div>
+      <div class="btn-group">
+        <button id="btnGroupVerticalDrop4" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          Dropdown-Menü
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="btnGroupVerticalDrop4">
+          <li><a href="#">Dropdown-Link</a></li>
+          <li><a href="#">Dropdown-Link</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="btn-group-vertical">
+  ...
+</div>
+{% endhighlight %}
+
+  <h3 id="btn-groups-justified">Gleichmäßig verteilte Button-Gruppen</h3>
+  <p>Lass eine Gruppe von Buttons die gesamte Größe des übergeordneten Elements einnehmen, indem jeder Button den gleichen Anteil der Button-Gruppe einnimmt. Funktioniert auch mit Button-Dropdowns in der Button-Gruppe.</p>
+
+  <div class="bs-callout bs-callout-warning">
+    <h4>Umgang mit Rahmen</h4>
+    <p>Aufgrund von sehr spezifischem HTML und CSS zur gleichmäßigen Verteilung der Buttons (vor allem <code>display: table-cell</code>) verdoppelt sich die Rahmengrenze zwischen den Buttons. In normalen Button-Gruppen wird dies mit <code>margin-left: -1px</code> behoben. Leider funktioniert <code>margin</code> nicht mit <code>display: table-cell</code>. Abhängig davon, wie sehr du Bootstrap angepasst hast, solltest du daher eventuell die Rahmenlinien an dieser Stelle entfernen oder ihnen eine andere Farbe geben.</p>
+  </div>
+  <div class="bs-callout bs-callout-warning">
+    <h4>IE8 und Rahmengrenzen</h4>
+    <p>Internet Explorer 8 rendert keine Rahmen bei Buttons in gleichmäßigen Button-Gruppen, unabhängig vom verwendeten Element. Um das zu umgehen,  verpacke jeden Button in einer Extra-Gruppe.</p>
+    <p>Siehe <a href="https://github.com/twbs/bootstrap/issues/12476">#12476</a> für mehr Informationen.</p>
+  </div>
+
+  <h4>Mit <code>&lt;a&gt;</code>-Elementen</h4>
+  <p>Verpacke eine Reihe von <code>.btn</code>s einfach in <code>.btn-group.btn-group-justified</code>.</p>
+  <div class="bs-example">
+    <div class="btn-group btn-group-justified">
+      <a class="btn btn-default" role="button">Links</a>
+      <a class="btn btn-default" role="button">Mitte</a>
+      <a class="btn btn-default" role="button">Rechts</a>
+    </div>
+    <br>
+    <div class="btn-group btn-group-justified">
+      <a class="btn btn-default" role="button">Links</a>
+      <a class="btn btn-default" role="button">Mitte</a>
+      <div class="btn-group">
+        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+          Dropdown-Menü <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">Aktion</a></li>
+          <li><a href="#">Andere Aktion</a></li>
+          <li><a href="#">Irgendwas anderes</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Abgetrennter Link</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="btn-group btn-group-justified">
+  ...
+</div>
+{% endhighlight %}
+
+  <h4>Mit <code>&lt;button&gt;</code>-Elementen</h4>
+  <p>Um gleichmäßig verteilte Button-Gruppen mit <code>&lt;button&gt;</code>-Elementen zu verwenden, <strong class="text-danger">musst du jeden Button in einer Button-Gruppe verpacken</strong>. Die meisten Browser wenden unser CSS für den Gleichsatz nicht richtig auf <code>&lt;button&gt;</code>-Elemente an, aber da wir Button-Dropdown-Menüs unterstützen, können wir das Problem umgehen.</p>
+  <div class="bs-example">
+    <div class="btn-group btn-group-justified">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default">Links</button>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default">Mitte</button>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default">Rechts</button>
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="btn-group btn-group-justified">
+  <div class="btn-group">
+    <button type="button" class="btn btn-default">Links</button>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default">Mitte</button>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default">Rechts</button>
+  </div>
+</div>
+{% endhighlight %}
+</div>

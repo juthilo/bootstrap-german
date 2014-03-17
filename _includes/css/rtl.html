@@ -1,0 +1,20 @@
+<div class="bs-docs-section">
+  <h1 id="rtl" class="page-header">RTL</h1>
+  <p class="lead">Ab Bootstrap 3.2 beinhaltet das Projekt eine von-rechts-nach-links-Version der Stile. Diese wird von unserem Gruntfile mit der Hilfe von Twitters <a href="https://github.com/twitter/css-flip">Projekt CSS Flip</a> generiert.</p>
+
+  <h2 id="rtl-how-to">Verwendung</h2>
+  <p>Bootstrap ist standardmäßig ein von-links-nach-rechts-Projekt. Für von-rechts-nach-links-Projekt musst du deine Sprache festlegen und das Standard-Bootstrap-CSS mit einer RTL-Version ersetzen. Leg zuerst deine Sprache und Schreibrichtung fest:</p>
+{% highlight html %}
+<!-- Beispiel: Arabische Sprache und Textrichtung auf RTL festgelegt -->
+<html lang="ar" dir="rtl">
+{% endhighlight %}
+  <p>Ersetze dann das Standard-Bootstrap-CSS durch die von-rechts-nach-links-CSS-Datei:</p>
+{% highlight html %}
+<!-- Bootstrap-RTL -->
+<link rel="stylesheet" href="bootstrap-rtl.css">
+{% endhighlight %}
+  <p>Alternativ kannst du die komprimierte Version der RTL-Datei verwenden, <code>bootstrap-rtl.min.css</code>.</p>
+
+  <h2 id="rtl-css-flip">CSS Flip</h2>
+  <p><a href="https://github.com/twitter/css-flip">CSS Flip</a> ist ein Projekt zur Konvertierung von links-nach-rechts-CSS-Dateien in rechts-nach-links-CSS-Dateien. Wir verwenden es in unserem Gruntfile, um die Generierung von Bootstraps RTL-CSS-Dateien zu automatisieren.</p>
+</div>

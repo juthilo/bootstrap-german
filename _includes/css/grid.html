@@ -1,0 +1,543 @@
+<div class="bs-docs-section">
+  <h1 id="grid" class="page-header">Raster-System</h1>
+
+  <p class="lead">Bootstrap beinhaltet ein anpassungsfähiges, Mobile-First-basiertes, fließendes Rastersystem, das bis zu 12 Spalten über verschiedene Geräte- oder Viewport-Größen skaliert. Dabei sind <a href="#grid-example-basic">vordefinierte Klassen</a> für einfache Layout-Optionen, sowie umfangreiche <a href="#grid-less">Mixins für die Erstellung von semantischeren Layouts</a>.</p>
+
+  <h3 id="grid-intro">Einleitung</h3>
+  <p>Rastersysteme werden dafür verwendet, Seitenlayouts mit einer Reihe von Zeilen und Spalten zu erstellen, die deine Inhalte beherbergen. Hier steht, wie das Bootstrap-Rastersystem funktioniert:</p>
+  <ul>
+    <li>Zeilen (<code>.row</code>s) müssen für korrekte Ausrichtung und Abstände in einem <code>.container</code> (fixierte Breite) oder <code>.container-fluid</code> (ganze Breite) platziert werden.</li>
+    <li>Verwende Zeilen, um horizontale Gruppen von Spalten zu erstellen.</li>
+    <li>Inhalt sollte in Spalten platziert werden und nur Spalten dürfen direkte Kinder von Zeilen sein.</li>
+    <li>Vordefinierte Raster-Klassen wie <code>.row</code> und <code>.col-xs-4</code> sind verfügbar für die schnelle Erstellung von Layouts. Außerdem kannst du Less-Mixins verwenden, um deinem Layout mehr Semantik zu verleihen.</li>
+    <li>Spalten erzeugen "Furchen" (Lücken zwischen Spalten-Inhalt) über <code>padding</code>. Dieser Innenabstand wird in Zeilen von der ersten und letzten Spalte über negativen Außenabstand wieder abgezogen.</li>
+    <li>Der negative Außenabstand ist der Grund dafür, dass die Beispiele unten breiter sind als der Fließtext. Durch den negativen Außenabstand ist der Inhalt von Raster-Spalten auf einer Linie mit Inhalt außerhalb von jeglichen Raster-Elementen.</li>
+    <li>Raster-Spalten werden definiert, indem du die Anzahl von zwölf verfügbaren Spalten angibst, über die die Raster-Spalte gelegt werden soll. Zum Beispiel kannst du drei gleich große Spalten mit drei <code>.col-xs-4</code> erstellen.</li>
+    <li>Rasterklassen beziehen sich auf Geräte mit Bildschirmbreiten, die genau so groß oder größer als die Umbruchpunkt-Größen sind. Sie überschreiben Rasterklassen, die sich auf kleinere Geräte beziehen. Wenn du eine <code>.col-md-</code>-Klasse auf ein Element anwendest, wird sich dies daher nicht nur auf die Stile auf mittleren Geräten auswirken, sondern auch auf diejenigen auf großen Geräten, es sei denn es gibt außerdem eine <code>.col-lg-</code>-Klasse.</li>
+  </ul>
+  <p>Sieh dir die Beispiele an, um diese Prinzipien in deinen Code einzubauen.</p>
+
+  <h3 id="grid-media-queries">Media-Queries</h3>
+  <p>Wir verwenden die folgenden Media-Queries in unseren Less-Dateien, um die grundlegenden Umbruchpunkte in unserem Rastersystem zu erstellen.</p>
+{% highlight scss %}
+/* Extra-kleine Geräte (Smartphones, weniger als 768px) */
+/* Kein Media-Query, weil dies der Standard in Bootstrap ist */
+
+/* Kleine Geräte (Tablets, 768px und breiter) */
+@media (min-width: @screen-sm-min) { ... }
+
+/* Mittlere Geräte (Desktop-PCs, 992px und breiter) */
+@media (min-width: @screen-md-min) { ... }
+
+/* Große Geräte (Desktop-PCs, 1200px und breiter) */
+@media (min-width: @screen-lg-min) { ... }
+{% endhighlight %}
+  <p>Manchmal, wenn bestimmte Stile nur auf einigen Geräten Sinn machen, erweitern wir diese Media-Queries mit einer <code>max-width</code>.</p>
+{% highlight scss %}
+@media (max-width: @screen-xs-max) { ... }
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { ... }
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { ... }
+@media (min-width: @screen-lg-min) { ... }
+{% endhighlight %}
+
+  <h3 id="grid-options">Raster-Optionen</h3>
+  <p>Schau dir in einer praktischen Tabelle an, wie die Aspekte von Bootstraps Rastersystem auf den verschiedenen Geräten funktionieren.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th></th>
+          <th>
+            Extra-kleine Geräte
+            <small>Smartphones (&lt;768px)</small>
+          </th>
+          <th>
+            Kleine Geräte
+            <small>Tablets (&ge;768px)</small>
+          </th>
+          <th>
+            Mittlere Geräte
+            <small>Desktop-PCs (&ge;992px)</small>
+          </th>
+          <th>
+            Große Geräte
+            <small>Desktop-PCs (&ge;1200px)</small>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Raster-Verhalten</th>
+          <td>Durchgehend horizontal</td>
+          <td colspan="3">Zuerst minimiert, über Umbruchpunkten horizontal</td>
+        </tr>
+        <tr>
+          <th>Container-Breite</th>
+          <td>Keine (auto)</td>
+          <td>750px</td>
+          <td>970px</td>
+          <td>1170px</td>
+        </tr>
+        <tr>
+          <th>Klassen-Präfix</th>
+          <td><code>.col-xs-</code></td>
+          <td><code>.col-sm-</code></td>
+          <td><code>.col-md-</code></td>
+          <td><code>.col-lg-</code></td>
+        </tr>
+        <tr>
+          <th>Spaltenanzahl</th>
+          <td colspan="4">12</td>
+        </tr>
+        <tr>
+          <th>Spaltenbreite</th>
+          <td class="text-muted">Auto</td>
+          <td>~62px</td>
+          <td>~81px</td>
+          <td>~97px</td>
+        </tr>
+        <tr>
+          <th>Abstandsbreite</th>
+          <td colspan="4">30px (15px auf jeder Seite einer Spalte)</td>
+        </tr>
+        <tr>
+          <th>Verschachtelbar</th>
+          <td colspan="4">Ja</td>
+        </tr>
+        <tr>
+          <th>Abrückung</th>
+          <td colspan="4">Ja</td>
+        </tr>
+        <tr>
+          <th>Spalten-Umordnung</th>
+          <td colspan="4">Ja</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 id="grid-example-basic">Beispiel: Übereinander, nebeneinander</h3>
+  <p>Du brauchst nur ein paar <code>.col-md-*</code>-Klassen, um ein grundlegendes Raster zu erstellen, dessen Spalten auf Smartphones und Tablets (extra-klein bis klein) übereinander und dann ab mittleren Bildschirmgrößen auf Desktop-PCs nebeneinander angeordnet sind. Platziere die Rasterspalten einfach in irgendeiner <code>.row</code>.</p>
+  <div class="bs-docs-grid">
+    <div class="row show-grid">
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+      <div class="col-md-1">.col-md-1</div>
+    </div>
+    <div class="row show-grid">
+      <div class="col-md-8">.col-md-8</div>
+      <div class="col-md-4">.col-md-4</div>
+    </div>
+    <div class="row show-grid">
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4">.col-md-4</div>
+    </div>
+    <div class="row show-grid">
+      <div class="col-md-6">.col-md-6</div>
+      <div class="col-md-6">.col-md-6</div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="row">
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+</div>
+<div class="row">
+  <div class="col-md-8">.col-md-8</div>
+  <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+  <div class="col-md-6">.col-md-6</div>
+  <div class="col-md-6">.col-md-6</div>
+</div>
+{% endhighlight %}
+
+  <h3 id="grid-example-fluid">Beispiel: Fließender Container</h3>
+  <p>Ein auf festen Breiten basiertes Raster-Layout kannst du jederzeit in ein Layout über die ganze Breite der Seite verwandeln, indem du den äußeren <code>.container</code> in einen <code>.container-fluid</code> änderst.</p>
+{% highlight html %}
+<div class="container-fluid">
+  <div class="row">
+    ...
+  </div>
+</div>
+{% endhighlight %}
+
+  <h3 id="grid-example-mixed">Beispiel: Mobil und Desktop-PC</h3>
+  <p>Du willst deine Spalten auf kleineren Geräten nicht einfach nur übereinander haben? Verwende die extra-kleinen und mittleren Geräte-Raster-Klassen, indem du <code>.col-xs-*</code> <code>.col-md-*</code> zu deinen Spalten hinzufügst. Schau dir das Beispiel unten an, um besser zu verstehen, wie das funktioniert.</p>
+  <div class="bs-docs-grid">
+    <div class="row show-grid">
+      <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    </div>
+    <div class="row show-grid">
+      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    </div>
+    <div class="row show-grid">
+      <div class="col-xs-6">.col-xs-6</div>
+      <div class="col-xs-6">.col-xs-6</div>
+    </div>
+  </div>
+{% highlight html %}
+<!-- Stapel die Spalten auf mobilen Geräten, indem du eine über die ganze und eine über die halbe Breite spannst -->
+<div class="row">
+  <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+</div>
+
+<!-- Spalten sind zunächst 50% breit und vergrößern sich auf Desktop-PCs auf 33.3% -->
+<div class="row">
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+</div>
+
+<!-- Spalten sind auf allen Bildschirmgrößen immer 50% breit -->
+<div class="row">
+  <div class="col-xs-6">.col-xs-6</div>
+  <div class="col-xs-6">.col-xs-6</div>
+</div>
+{% endhighlight %}
+
+  <h3 id="grid-example-mixed-complete">Beispiel: Mobil, Tablet und Desktop-PC</h3>
+  <p>Bau das vorherige Beispiel weiter aus, indem du noch dynamischere und vielfältigere Layouts mit den Tablet-Klassen <code>.col-sm-*</code> erstellst.</p>
+  <div class="bs-docs-grid">
+    <div class="row show-grid">
+      <div class="col-xs-12 col-sm-6 col-md-8">.col-xs-12 .col-sm-6 .col-md-8</div>
+      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    </div>
+    <div class="row show-grid">
+      <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+      <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+      <!-- Optional: Setze die Floats der XS-Spalten zurück, falls ihr Inhalt nicht gleich hoch ist -->
+      <div class="clearfix visible-xs-block"></div>
+      <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-8">.col-xs-12 .col-sm-6 .col-md-8</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+  <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+  <!-- Optional: Setze die Floats der XS-Spalten zurück, falls ihr Inhalt nicht gleich hoch ist -->
+  <div class="clearfix visible-xs-block"></div>
+  <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+</div>
+{% endhighlight %}
+
+  <h3 id="grid-responsive-resets">Responsive Spalten-Resets</h3>
+  <p>Mit den vier Gliedern unseres Raster-Systems ist es fast unvermeidbar, dass du auf Probleme stößt, wenn bei bestimmten Umbruchpunkten deine Spalten nicht richtig positioniert werden, da eine höher ist als die andere. Um dies zu beheben, kannst du eine Kombination aus <code>.clearfix</code> und unseren <a href="#responsive-utilities">Responsiven Hiflsmitteln</a> verwenden.</p>
+  <div class="bs-docs-grid">
+    <div class="row show-grid">
+      <div class="col-xs-6 col-sm-3">
+        .col-xs-6 .col-sm-3
+        <br>
+        Veränder die Breite deines Browser-Fensters oder sieh dir das Beispiel auf deinem Smartphone an.
+      </div>
+      <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+
+      <!-- Der clearfix wird nur für die benötigte Breite des Ansichtsfensters hinzugefügt -->
+      <div class="clearfix visible-xs-block"></div>
+
+      <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+      <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="row">
+  <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+  <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+
+  <!-- Der clearfix wird nur für die benötigte Breite des Ansichtsfensters hinzugefügt -->
+  <div class="clearfix visible-xs-block"></div>
+
+  <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+  <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+</div>
+{% endhighlight %}
+  <p>Außerdem kann es sein, dass du <strong>Spalten-Abrückungen, -Pushes und -Pulls zurücksetzen musst</strong>. Schau es dir live und in Farbe im <a href="../examples/grid/">Raster-Beispiel</a> an.</p>
+{% highlight html %}
+<div class="row">
+  <div class="col-sm-5 col-md-6">.col-sm-5 .col-md-6</div>
+  <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">.col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0</div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 col-md-5 col-lg-6">.col-sm-6 .col-md-5 .col-lg-6</div>
+  <div class="col-sm-6 col-md-5 col-md-offset-2 col-lg-6 col-lg-offset-0">.col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-6 .col-lg-offset-0</div>
+</div>
+{% endhighlight %}
+
+
+  <h3 id="grid-offsetting">Spalten abrücken</h3>
+  <p>Du kannst mit Hilfe der <code>.col-md-offset-*</code>-Klassen Spalten nach rechts verschieben. Diese Klassen vergrößern den linken Außenabstand einer Spalte um <code>*</code> Spalten. <code>.col-md-offset-4</code> verschiebt eine <code>.col-md-4</code>-Spalte zum Beispiel um vier Spalten nach rechts.</p>
+  <div class="bs-docs-grid">
+    <div class="row show-grid">
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
+    </div>
+    <div class="row show-grid">
+      <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+      <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+    </div>
+    <div class="row show-grid">
+      <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="row">
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
+</div>
+<div class="row">
+  <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+  <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+</div>
+{% endhighlight %}
+
+
+  <h3 id="grid-nesting">Spalten verschachteln</h3>
+  <p>Um deinem Inhalt eine weitere Raster-Ebene hinzuzufügen, füge einfach eine neue <code>.row</code> und eine Reihe von <code>.col-md-*</code>-Spalten innerhalb von einer bestehenden <code>.col-md-*</code>-Spalte hinzu. Verschatelte Zeilen sollten bis zu 12 Spalten beinhalten.</p>
+  <div class="row show-grid">
+    <div class="col-md-9">
+      Ebene 1: .col-md-9
+      <div class="row show-grid">
+        <div class="col-md-6">
+          Ebene 2: .col-md-6
+        </div>
+        <div class="col-md-6">
+          Ebene 2: .col-md-6
+        </div>
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="row">
+  <div class="col-md-9">
+    Ebene 1: .col-md-9
+    <div class="row">
+      <div class="col-md-6">
+        Ebene 2: .col-md-6
+      </div>
+      <div class="col-md-6">
+        Ebene 2: .col-md-6
+      </div>
+    </div>
+  </div>
+</div>
+{% endhighlight %}
+
+  <h3 id="grid-column-ordering">Spalten umordnen</h3>
+  <p>Ändere die Reihenfolge von Raster-Spalten mit den Klassen <code>.col-md-push-*</code> und <code>.col-md-pull-*</code>.</p>
+  <div class="row show-grid">
+    <div class="col-md-9 col-md-push-3">.col-md-9 .col-md-push-3</div>
+    <div class="col-md-3 col-md-pull-9">.col-md-3 .col-md-pull-9</div>
+  </div>
+
+{% highlight html %}
+<div class="row">
+  <div class="col-md-9 col-md-push-3">.col-md-9 .col-md-push-3</div>
+  <div class="col-md-3 col-md-pull-9">.col-md-3 .col-md-pull-9</div>
+</div>
+{% endhighlight %}
+
+  <h3 id="grid-less">Less Mixins und Variablen</h3>
+  <p>Neben den <a href="#grid-example-basic">vorgefertigten Rasterklassen</a>, die du verwenden kannst, um schnell Layouts zusammenzustellen, enthält Bootstrap auch Less-Variablen und -Mixins, mit denen du deine eigenen Layouts mit semantischer Namensgebung generieren kannst.</p>
+
+  <h4>Variablen</h4>
+  <p>Variablen bestimmen die Anzahl der Spalten, die Breite des Abstands zwischen Spalten und den Punkt, an dem die Spalten anfangen, zu floaten und so horizontal werden. Wir verwenden diese, um die vordefinierten Rasterklassen oben zu erstellen, sowie für die unten beschriebenen Mixins.</p>
+{% highlight scss %}
+@grid-columns:              12;
+@grid-gutter-width:         30px;
+@grid-float-breakpoint:     768px;
+{% endhighlight %}
+
+  <h4>Mixins</h4>
+  <p>Mixins helfen dir zusammen mit den Raster-Variablen dabei, semantisches CSS für individuelle Raster-Spalten zu erstellen.</p>
+{% highlight scss %}
+// Generiert einen Wrapper für eine Reihe von Spalten
+.make-row(@gutter: @grid-gutter-width) {
+  // Floats der Spalten zurücksetzen
+  .clearfix();
+
+  @media (min-width: @screen-sm-min) {
+    margin-left:  (@gutter / -2);
+    margin-right: (@gutter / -2);
+  }
+
+  // Negativer Außenabstand für verschachtelte Zeilen, damit Spalteninhalt gut ausgerichtet ist
+  .row {
+    margin-left:  (@gutter / -2);
+    margin-right: (@gutter / -2);
+  }
+}
+
+// Generiert die extra-kleinen Spalten
+.make-xs-column(@columns; @gutter: @grid-gutter-width) {
+  position: relative;
+  // Verhindern, dass Spalten verschwinden, wenn sie leer sind
+  min-height: 1px;
+  // Innenabstand
+  padding-left:  (@gutter / 2);
+  padding-right: (@gutter / 2);
+
+  // Breite basierend auf den zur Verfügung stehenden Spalten berechnen
+  @media (min-width: @grid-float-breakpoint) {
+    float: left;
+    width: percentage((@columns / @grid-columns));
+  }
+}
+
+// Generiert die kleinen Spalten
+.make-sm-column(@columns; @gutter: @grid-gutter-width) {
+  position: relative;
+  // Verhindern, dass Spalten verschwinden, wenn sie leer sind
+  min-height: 1px;
+  // Innenabstand
+  padding-left:  (@gutter / 2);
+  padding-right: (@gutter / 2);
+
+  // Breite basierend auf den zur Verfügung stehenden Spalten berechnen
+  @media (min-width: @screen-sm-min) {
+    float: left;
+    width: percentage((@columns / @grid-columns));
+  }
+}
+
+// Generiert die Abrückungen der kleinen Spalten
+.make-sm-column-offset(@columns) {
+  @media (min-width: @screen-sm-min) {
+    margin-left: percentage((@columns / @grid-columns));
+  }
+}
+.make-sm-column-push(@columns) {
+  @media (min-width: @screen-sm-min) {
+    left: percentage((@columns / @grid-columns));
+  }
+}
+.make-sm-column-pull(@columns) {
+  @media (min-width: @screen-sm-min) {
+    right: percentage((@columns / @grid-columns));
+  }
+}
+
+// Generiert die mittelgroßen Spalten
+.make-md-column(@columns; @gutter: @grid-gutter-width) {
+  position: relative;
+  // Verhindern, dass Spalten verschwinden, wenn sie leer sind
+  min-height: 1px;
+  // Innenabstand
+  padding-left:  (@gutter / 2);
+  padding-right: (@gutter / 2);
+
+  // Breite basierend auf den zur Verfügung stehenden Spalten berechnen
+  @media (min-width: @screen-md-min) {
+    float: left;
+    width: percentage((@columns / @grid-columns));
+  }
+}
+
+// Generiert die Abrückungen der mittelgroßen Spalten
+.make-md-column-offset(@columns) {
+  @media (min-width: @screen-md-min) {
+    margin-left: percentage((@columns / @grid-columns));
+  }
+}
+.make-md-column-push(@columns) {
+  @media (min-width: @screen-md-min) {
+    left: percentage((@columns / @grid-columns));
+  }
+}
+.make-md-column-pull(@columns) {
+  @media (min-width: @screen-md-min) {
+    right: percentage((@columns / @grid-columns));
+  }
+}
+
+// Generiert die großen Spalten
+.make-lg-column(@columns; @gutter: @grid-gutter-width) {
+  position: relative;
+  // Verhindern, dass Spalten verschwinden, wenn sie leer sind
+  min-height: 1px;
+  // Innenabstand
+  padding-left:  (@gutter / 2);
+  padding-right: (@gutter / 2);
+
+  // Breite basierend auf den zur Verfügung stehenden Spalten berechnen
+  @media (min-width: @screen-lg-min) {
+    float: left;
+    width: percentage((@columns / @grid-columns));
+  }
+}
+
+// Generiert die Abrückungen der großen Spalten
+.make-lg-column-offset(@columns) {
+  @media (min-width: @screen-lg-min) {
+    margin-left: percentage((@columns / @grid-columns));
+  }
+}
+.make-lg-column-push(@columns) {
+  @media (min-width: @screen-lg-min) {
+    left: percentage((@columns / @grid-columns));
+  }
+}
+.make-lg-column-pull(@columns) {
+  @media (min-width: @screen-lg-min) {
+    right: percentage((@columns / @grid-columns));
+  }
+}
+{% endhighlight %}
+
+  <h4>Beispiel-Verwendung</h4>
+  <p>Du kannst Variablen mit deinen eigenen Werten anpassen oder die Mixins einfach mit den Standard-Werten verwenden. Hier siehst du ein Beispiel für die Erstellung einer zweispaltigen Layouts mit einer Lücke zwischen den Spalten.</p>
+{% highlight scss %}
+.wrapper {
+  .make-row();
+}
+.content-main {
+  .make-lg-column(8);
+}
+.content-secondary {
+  .make-lg-column(3);
+  .make-lg-column-offset(1);
+}
+{% endhighlight %}
+{% highlight html %}
+<div class="wrapper">
+  <div class="content-main">...</div>
+  <div class="content-secondary">...</div>
+</div>
+{% endhighlight %}
+</div>

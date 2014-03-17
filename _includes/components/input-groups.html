@@ -1,0 +1,311 @@
+<div class="bs-docs-section">
+  <h1 id="input-groups" class="page-header">Input-Gruppen</h1>
+
+  <p class="lead">Erweitere Formular-Felder, indem du Text oder Buttons vor, nach oder auf beiden Seiten von text-basierten Eingabefeldern hinzufügst. Verwende <code>.input-group</code> mit einem <code>.input-group-addon</code>, um Elemente bei einem einzelnen <code>.form-control</code> vor- bzw. nachzustellen.</p>
+
+  <div class="bs-callout bs-callout-danger">
+    <h4>Browser-Kompatibilität</h4>
+    <p>Du solltest hier keine <code>&lt;select&gt;</code>-Elemente verwenden, da diese in WebKit-Browsern nicht ausreichend gestaltet werden können.</p>
+  </div>
+  <div class="bs-callout bs-callout-warning">
+    <h4>Tooltips &amp; Popovers in Input-Gruppen benötigen besondere Einstellung</h4>
+    <p>Wenn du Tooltips oder Popovers an Elementen in einer <code>.input-group</code> verwendest, musst du die Option <code>container: 'body'</code> festlegen, um unerwünschte Nebeneffekte zu vermeiden (das Element könnte z.B. breiter werden und/oder seine abgerundeten Ecken verlieren, wenn der Tooltip oder das Popover ausgelöst wird).</p>
+  </div>
+  <div class="bs-callout bs-callout-warning">
+    <h4>Nicht mit anderen Komponenten vermischen</h4>
+    <p>Kombiniere Klassen für Formular-Gruppen oder Rasterspalten nicht direkt mit Input-Gruppen. Ordne die Input-Gruppe stattdessen einer Formular-Gruppe oder einem Rasterelement unter.</p>
+  </div>
+
+
+  <h2 id="input-groups-basic">Einfaches Beispiel</h2>
+  <p>Platziere ein Add-on oder einen Button auf einer Seite eines Feldes. Du kannst auch jeweils eins auf beiden Seiten des Feldes platzieren.</p>
+  <p><strong class="text-danger">Mehrere Add-ons auf einer Seite werden nicht unterstützt.</strong></p>
+  <p><strong class="text-danger">Mehrere Eingabefelder in einer einzelnen Input-Gruppe werden nicht unterstützt.</strong></p>
+  <form class="bs-example bs-example-form" role="form">
+    <div class="input-group">
+      <span class="input-group-addon">@</span>
+      <input type="text" class="form-control" placeholder="Benutzername">
+    </div>
+    <br>
+    <div class="input-group">
+      <input type="text" class="form-control">
+      <span class="input-group-addon">,00</span>
+    </div>
+    <br>
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+      <input type="text" class="form-control">
+      <span class="input-group-addon">,00</span>
+    </div>
+  </form>
+{% highlight html %}
+<div class="input-group">
+  <span class="input-group-addon">@</span>
+  <input type="text" class="form-control" placeholder="Benutzername">
+</div>
+
+<div class="input-group">
+  <input type="text" class="form-control">
+  <span class="input-group-addon">,00</span>
+</div>
+
+<div class="input-group">
+  <span class="input-group-addon">$</span>
+  <input type="text" class="form-control">
+  <span class="input-group-addon">,00</span>
+</div>
+{% endhighlight %}
+
+  <h2 id="input-groups-sizing">Größe</h2>
+  <p>Füge die Größen-Klassen für Formulare einfach zur <code>.input-group</code> selbst hinzu und die enthaltenen Elemente werden automatisch angepasst&mdash;du musst die Klassen nicht für jedes Element einzeln wiederholen.</p>
+  <form class="bs-example bs-example-form" role="form">
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon">@</span>
+      <input type="text" class="form-control" placeholder="Benutzername">
+    </div>
+    <br>
+    <div class="input-group">
+      <span class="input-group-addon">@</span>
+      <input type="text" class="form-control" placeholder="Benutzername">
+    </div>
+    <br>
+    <div class="input-group input-group-sm">
+      <span class="input-group-addon">@</span>
+      <input type="text" class="form-control" placeholder="Benutzername">
+    </div>
+  </form>
+{% highlight html %}
+<div class="input-group input-group-lg">
+  <span class="input-group-addon">@</span>
+  <input type="text" class="form-control" placeholder="Benutzername">
+</div>
+
+<div class="input-group">
+  <span class="input-group-addon">@</span>
+  <input type="text" class="form-control" placeholder="Benutzername">
+</div>
+
+<div class="input-group input-group-sm">
+  <span class="input-group-addon">@</span>
+  <input type="text" class="form-control" placeholder="Benutzername">
+</div>
+{% endhighlight %}
+
+
+  <h2 id="input-groups-checkboxes-radios">Auswahlfelder-Add-ons</h2>
+  <p>Platziere eine Checkbox (Häkchen-Auswahlfeld) oder einen Radio-Button (Auswahlfeld für eine Option von mehreren) statt Text im Add-on einer Input-Gruppe.</p>
+  <form class="bs-example bs-example-form">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <input type="checkbox">
+          </span>
+          <input type="text" class="form-control">
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+      <div class="col-lg-6">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <input type="radio">
+          </span>
+          <input type="text" class="form-control">
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+  </form>
+{% highlight html %}
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <input type="checkbox">
+      </span>
+      <input type="text" class="form-control">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <input type="radio">
+      </span>
+      <input type="text" class="form-control">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+{% endhighlight %}
+
+
+  <h2 id="input-groups-buttons">Button-Add-ons</h2>
+  <p>Buttons in Input-Gruppen sind etwas anders und brauchen eine zusätzliche Ebene der Verschachtelung. Statt <code>.input-group-addon</code> musst du <code>.input-group-btn</code> verwenden, um die Buttons zu umschließen. Dies ist notwendig, da sonst Standard-Stile im Browser nicht überschrieben werden können.</p>
+  <form class="bs-example bs-example-form">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-group">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Los!</button>
+          </span>
+          <input type="text" class="form-control">
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input type="text" class="form-control">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Los!</button>
+          </span>
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+  </form>
+{% highlight html %}
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Los!</button>
+      </span>
+      <input type="text" class="form-control">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Los!</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+{% endhighlight %}
+
+  <h2 id="input-groups-buttons-dropdowns">Buttons mit Dropdowns</h2>
+  <p></p>
+  <form class="bs-example bs-example-form" role="form">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Aktion <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Aktion</a></li>
+              <li><a href="#">Andere Aktion</a></li>
+              <li><a href="#">Irgendwas anderes</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Abgetrennter Link</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+          <input type="text" class="form-control">
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input type="text" class="form-control">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Aktion <span class="caret"></span></button>
+            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+              <li><a href="#">Aktion</a></li>
+              <li><a href="#">Andere Aktion</a></li>
+              <li><a href="#">Irgendwas anderes</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Abgetrennter Link</a></li>
+            </ul>
+          </div><!-- /btn-group -->
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+  </form>
+{% highlight html %}
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Aktion <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Aktion</a></li>
+          <li><a href="#">Andere Aktion</a></li>
+          <li><a href="#">Irgendwas anderes</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Abgetrennter Link</a></li>
+        </ul>
+      </div><!-- /btn-group -->
+      <input type="text" class="form-control">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Aktion <span class="caret"></span></button>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li><a href="#">Aktion</a></li>
+          <li><a href="#">Andere Aktion</a></li>
+          <li><a href="#">Irgendwas anderes</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Abgetrennter Link</a></li>
+        </ul>
+      </div><!-- /btn-group -->
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+{% endhighlight %}
+
+  <h2 id="input-groups-buttons-segmented">Unterteilte Buttons</h2>
+  <form class="bs-example bs-example-form" role="form">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default" tabindex="-1">Aktion</button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+              <span class="caret"></span>
+              <span class="sr-only">Menü ein-/ausblenden</span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Aktion</a></li>
+              <li><a href="#">Andere Aktion</a></li>
+              <li><a href="#">Irgendwas anderes</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Abgetrennter Link</a></li>
+            </ul>
+          </div>
+          <input type="text" class="form-control">
+        </div><!-- /.input-group -->
+      </div><!-- /.col-lg-6 -->
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input type="text" class="form-control">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default" tabindex="-1">Aktion</button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+              <span class="caret"></span>
+              <span class="sr-only">Menü ein-/ausblenden</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+              <li><a href="#">Aktion</a></li>
+              <li><a href="#">Andere Aktion</a></li>
+              <li><a href="#">Irgendwas anderes</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Abgetrennter Link</a></li>
+            </ul>
+          </div>
+        </div><!-- /.input-group -->
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+  </form>
+{% highlight html %}
+<div class="input-group">
+  <div class="input-group-btn">
+    <!-- Button und Dropdown-Menü -->
+  </div>
+  <input type="text" class="form-control">
+</div>
+
+<div class="input-group">
+  <input type="text" class="form-control">
+  <div class="input-group-btn">
+    <!-- Button und Dropdown-Menü -->
+  </div>
+</div>
+{% endhighlight %}
+</div>

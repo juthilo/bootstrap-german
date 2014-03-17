@@ -1,0 +1,27 @@
+<div class="bs-docs-section">
+  <h1 id="breadcrumbs" class="page-header">Breadcrumbs</h1>
+
+  <p class="lead">Zeige an, wo sich die aktuelle Seite in einer Navigationshierarchie befindet.</p>
+  <p>Unterteiler werden in CSS automatisch über <code>:before</code> und <code>content</code> hinzugefügt.</p>
+  <div class="bs-example">
+    <ol class="breadcrumb">
+      <li class="active">Start</li>
+    </ol>
+    <ol class="breadcrumb">
+      <li><a href="#">Start</a></li>
+      <li class="active">Bibliothek</li>
+    </ol>
+    <ol class="breadcrumb" style="margin-bottom: 5px;">
+      <li><a href="#">Start</a></li>
+      <li><a href="#">Bibliothek</a></li>
+      <li class="active">Daten</li>
+    </ol>
+  </div>
+{% highlight html %}
+<ol class="breadcrumb">
+  <li><a href="#">Start</a></li>
+  <li><a href="#">Bibliothek</a></li>
+  <li class="active">Daten</li>
+</ol>
+{% endhighlight %}
+</div>

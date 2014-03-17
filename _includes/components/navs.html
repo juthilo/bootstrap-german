@@ -1,0 +1,181 @@
+<div class="bs-docs-section">
+  <h1 id="nav" class="page-header">Navs</h1>
+
+  <p class="lead">Navs sind einfache Komponenten in Bootstrap, mit denen du verschiedene Bereiche deines Projekts verlinken kannst. Ausgehend von der grundlegenden <code>.nav</code>-Klasse kannst du verschiedene zusätzliche Klassen hinzufügen und austauschen, um verschiedene Designs anzuwenden.</p>
+
+  <h2 id="nav-tabs">Tabs</h2>
+  <p>Beachte, dass die <code>.nav-tabs</code>-Klasse nur zusammen mit der <code>.nav</code>-Grund-Klasse funktioniert.</p>
+  <div class="bs-example">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#">Start</a></li>
+      <li><a href="#">Profil</a></li>
+      <li><a href="#">Nachrichten</a></li>
+    </ul>
+  </div>
+{% highlight html %}
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#">Start</a></li>
+  <li><a href="#">Profil</a></li>
+  <li><a href="#">Nachrichten</a></li>
+</ul>
+{% endhighlight %}
+  <div class="bs-callout bs-callout-info">
+    <h4>Benötigt das JavaScript-Tabs-Plugin</h4>
+    <p>Für funktionierende Tabs mit Inhalt musst du das <a href="../javascript/#tabs">Tabs JavaScript-Plugin</a> verwenden.</p>
+  </div>
+
+  <h2 id="nav-pills">Pills</h2>
+  <p>Nimm den gleichen HTML-Code aber verwende stattdessen <code>.nav-pills</code>:</p>
+  <div class="bs-example">
+    <ul class="nav nav-pills">
+      <li class="active"><a href="#">Start</a></li>
+      <li><a href="#">Profil</a></li>
+      <li><a href="#">Nachrichten</a></li>
+    </ul>
+  </div>
+{% highlight html %}
+<ul class="nav nav-pills">
+  <li class="active"><a href="#">Start</a></li>
+  <li><a href="#">Profil</a></li>
+  <li><a href="#">Nachrichten</a></li>
+</ul>
+{% endhighlight %}
+  <p>Pills können auch übereinander angeordnet werden. Füge einfach <code>.nav-stacked</code> hinzu.</p>
+  <div class="bs-example">
+    <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+      <li class="active"><a href="#">Start</a></li>
+      <li><a href="#">Profil</a></li>
+      <li><a href="#">Nachrichten</a></li>
+    </ul>
+  </div>
+{% highlight html %}
+<ul class="nav nav-pills nav-stacked">
+  ...
+</ul>
+{% endhighlight %}
+
+
+  <h2 id="nav-justified">Gleichmäßig verteilte Variante</h2>
+  <p>Lass Tabs oder Pills mit <code>.nav-justified</code> den Platz ihres übergeordneten Elements ganz einfach vollständig einnehmen, sobald die Bildschirmbreite 768px überschreitet. Auf kleineren Bildschirmen werden die Nav-Links übereinander angezeigt.</p>
+  <div class="bs-callout bs-callout-warning">
+    <h4>Safari und responsive Gleichsatz-Navs</h4>
+    <p>Safari (Stand v7.0.1) hat einen Fehler, bei dem das Verändern der Breite deines Browser-Fensters Anzeigefehler in der gleichmäßig verteilten Variante der Navs hervorruft. Diese Fehler verschwinden nach einem erneuten Laden der Seite. Dieser Fehler ist auch im <a href="../examples/justified-nav/">Beispiel der gleichmäßig verteilten Variante</a> sichtbar.</p>
+  </div>
+  <div class="bs-example">
+    <ul class="nav nav-tabs nav-justified">
+      <li class="active"><a href="#">Start</a></li>
+      <li><a href="#">Profil</a></li>
+      <li><a href="#">Nachrichten</a></li>
+    </ul>
+    <br>
+    <ul class="nav nav-pills nav-justified">
+      <li class="active"><a href="#">Start</a></li>
+      <li><a href="#">Profil</a></li>
+      <li><a href="#">Nachrichten</a></li>
+    </ul>
+  </div>
+{% highlight html %}
+<ul class="nav nav-tabs nav-justified">
+  ...
+</ul>
+<ul class="nav nav-pills nav-justified">
+  ...
+</ul>
+{% endhighlight %}
+
+
+  <h2 id="nav-disabled-links">Deaktivierte Links</h2>
+  <p>Füge <code>.disabled</code> zu einem Eintrag in irgendeiner Nav-Komponente (Tabs oder Pills) hinzu für <strong>graue Links und deaktivierte Hover-Effekte</strong>.</p>
+
+  <div class="bs-callout bs-callout-warning">
+    <h4>Link-Funktionalität nicht beeinträchtigt</h4>
+    <p>Diese Klasse ändert nur das Erscheinungsbild des <code>&lt;a&gt;</code>, nicht seine Funktionalität. Verwende eigenes JavaScript, um Links wirklich zu deaktivieren.</p>
+  </div>
+
+  <div class="bs-example">
+    <ul class="nav nav-pills">
+      <li><a href="#">Klick-barer Link</a></li>
+      <li><a href="#">Klick-barer Link</a></li>
+      <li class="disabled"><a href="#">Deaktivierter Link</a></li>
+    </ul>
+  </div>
+{% highlight html %}
+<ul class="nav nav-pills">
+  ...
+  <li class="disabled"><a href="#">Deaktivierter Link</a></li>
+  ...
+</ul>
+{% endhighlight %}
+
+
+  <h2 id="nav-dropdowns">Mit Dropdowns</h2>
+  <p>Mit ein bisschen mehr HTML und dem <a href="../javascript/#dropdowns">Dropdowns-JavaScript-Plugin</a> kannst du Dropdown-Menüs zu Navs hinzufügen.</p>
+
+  <h3>Tabs mit Dropdowns</h3>
+  <div class="bs-example">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#">Start</a></li>
+      <li><a href="#">Hilfe</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          Dropdown-Menü <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">Aktion</a></li>
+          <li><a href="#">Andere Aktion</a></li>
+          <li><a href="#">Irgendwas anderes</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Abgetrennter Link</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+{% highlight html %}
+<ul class="nav nav-tabs">
+  ...
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      Dropdown-Menü <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      ...
+    </ul>
+  </li>
+  ...
+</ul>
+{% endhighlight %}
+
+  <h3>Pills mit Dropdowns</h3>
+  <div class="bs-example">
+    <ul class="nav nav-pills">
+      <li class="active"><a href="#">Start</a></li>
+      <li><a href="#">Hilfe</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          Dropdown-Menü <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">Aktion</a></li>
+          <li><a href="#">Andere Aktion</a></li>
+          <li><a href="#">Irgendwas anderes</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Abgetrennter Link</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div><!-- /example -->
+{% highlight html %}
+<ul class="nav nav-pills">
+  ...
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      Dropdown-Menü <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      ...
+    </ul>
+  </li>
+  ...
+</ul>
+{% endhighlight %}
+</div>

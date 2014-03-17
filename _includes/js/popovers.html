@@ -1,0 +1,264 @@
+<div class="bs-docs-section">
+  <h1 id="popovers" class="page-header">Popovers <small>popover.js</small></h1>
+
+  <h2 id="popovers-examples">Beispiele</h2>
+  <p>Füge kleine Inhaltsüberlagerungen wie die auf dem iPad zu irgendeinem Element hinzu, um zusätzliche Informationen anzuzeigen.</p>
+
+  <div class="bs-callout bs-callout-danger">
+    <h4>Plugin-Abhängigkeit</h4>
+    <p>Popovers sind eine Erweiterung des <a href="#tooltips">Tooltip-Plugins</a>, das daher in deiner Version von Bootstrap vorhanden sein muss.</p>
+  </div>
+  <div class="bs-callout bs-callout-danger">
+    <h4>Opt-in-Funktionalität</h4>
+    <p>Aus Gründen der Performance musst du die Data-APIs von Tooltips und Popovers <strong>manuell initialisieren</strong> bevor du sie verwenden kannst.</p>
+  </div>
+  <div class="bs-callout bs-callout-warning">
+    <h4>Tooltips &amp; Popovers in Button-Gruppen und Input-Gruppen benötigen besondere Einstellung</h4>
+    <p>Wenn du Tooltips oder Popovers an Elementen in einer <code>.btn-group</code> oder <code>.input-group</code> verwendest, musst du die Option <code>container: 'body'</code> festlegen, um unerwünschte Nebeneffekte zu vermeiden (das Element könnte z.B. breiter werden und/oder seine abgerundeten Ecken verlieren, wenn der Tooltip oder das Popover ausgelöst wird).</p>
+  </div>
+  <div class="bs-callout bs-callout-info">
+    <h4>Popovers an deaktivierten Elementen benötigen ein umschließendes Element</h4>
+    <p>Um ein Popover zu einem deaktivierten Element mit <code>disabled</code> oder <code>.disabled</code> hinzuzufügen, musst du das Element in einem <code>&lt;div&gt;</code> platzieren und das Popover stattdessen darauf anwenden.</p>
+  </div>
+
+  <h3>Statisches Popover</h3>
+  <p>Es gibt vier Optionen: Ausrichtung nach oben, rechts, unten und links.</p>
+  <div class="bs-example bs-example-popover">
+    <div class="popover top">
+      <div class="arrow"></div>
+      <h3 class="popover-title">Popover oben</h3>
+      <div class="popover-content">
+        <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+      </div>
+    </div>
+
+    <div class="popover right">
+      <div class="arrow"></div>
+      <h3 class="popover-title">Popover rechts</h3>
+      <div class="popover-content">
+        <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+      </div>
+    </div>
+
+    <div class="popover bottom">
+      <div class="arrow"></div>
+      <h3 class="popover-title">Popover unten</h3>
+
+      <div class="popover-content">
+        <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+      </div>
+    </div>
+
+    <div class="popover left">
+      <div class="arrow"></div>
+      <h3 class="popover-title">Popover links</h3>
+      <div class="popover-content">
+        <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+  </div>
+
+  <h3>Live-Ansicht</h3>
+  <div class="bs-example" style="padding-bottom: 24px;">
+    <button type="button" class="btn btn-lg btn-danger bs-docs-popover" data-toggle="popover" title="Popover-Titel" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?">Popover anzeigen</a>
+  </div>
+{% highlight html %}
+<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover-Titel" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?">Popover anzeigen</button>
+{% endhighlight %}
+
+  <h4>Vier Richtungen</h4>
+  <div class="bs-example tooltip-demo">
+    <div class="bs-example-tooltips">
+      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        Popover links
+      </button>
+      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        Popover oben
+      </button>
+      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        Popover unten
+      </button>
+      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        Popover rechts
+      </button>
+    </div>
+  </div><!-- /example -->
+{% highlight html %}
+<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover links
+</button>
+
+<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover oben
+</button>
+
+<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover unten
+</button>
+
+<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover rechts
+</button>
+{% endhighlight %}
+
+  <h4>Beim nächsten Klick schließen</h4>
+  <p>Verwende den Auslöser <code>focus</code>, um Popover beim nächsten Klick zu schließen.</p>
+  <div class="bs-example" style="padding-bottom: 24px;">
+    <button type="button" class="btn btn-lg btn-danger bs-docs-popover-dismiss" data-toggle="popover" title="Schließbares Popover" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?">Schließbares Popover</button>
+  </div>
+{% highlight html %}
+<button type="button" class="btn btn-lg btn-danger popover-dismiss" data-toggle="popover" title="Schließbares Popover" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?">Schließbares Popover</button>
+{% endhighlight %}
+{% highlight js %}
+$('.popover-dismiss').popover({
+  trigger: 'focus'
+})
+{% endhighlight %}
+
+  <div class="bs-callout bs-callout-warning">
+    <h4>Mehrzeilige Links</h4>
+    <p>Manchmal willst du ein Popover vielleicht zu einem Hyperlink hinzufügen, der über mehrere Zeilen geht. Das Standard-Verhalten in diesem Fall ist, dass das popover horizontal und vertikal zentriert wird. Füge zu deinen Links <code>white-space: nowrap;</code> hinzu, um das zu vermeiden.</p>
+  </div>
+
+
+  <h2 id="popovers-usage">Verwendung</h2>
+  <p>Aktiviere Popovers über JavaScript:</p>
+  {% highlight js %}$('#beispiel').popover(options){% endhighlight %}
+
+  <h3>Optionen</h3>
+  <p>Optionen können über Data-Attribute oder JavaScript angegeben werden. Für Data-Attribute hängst du den Namen der Option einfach an <code>data-</code>, z.B. <code>data-animation=""</code>.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th style="width: 100px;">Name</th>
+          <th style="width: 100px;">Typ</th>
+          <th style="width: 50px;">Standard</th>
+          <th>Beschreibung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>animation</td>
+          <td>Boolean</td>
+          <td>true</td>
+          <td>Versieht das Popover mit einem CSS-Übergang beim Ein-/Ausblenden</td>
+        </tr>
+        <tr>
+          <td>html</td>
+          <td>Boolean</td>
+          <td>false</td>
+          <td>Falls du HTML im Popover einfügen willst. Beim Standard, false, wird jQuerys <code>text</code>-Methode verwendet, um den Inhalt ins DOM einzufügen. Verwende text, falls du dich wegen XSS-Angriffen sorgst.</td>
+        </tr>
+        <tr>
+          <td>placement</td>
+          <td>String | Funktion</td>
+          <td>'top'</td>
+          <td>Wie das Popover positioniert werden soll - top | bottom | left | right | auto. <br> Wenn "auto" angegeben wird, wird das Popover dynamisch umorientiert. Zum Beispiel wird bei "auto left" das Popover nach Möglichkeit links positioniert, aber sonst nach rechts verlegt.</td>
+        </tr>
+        <tr>
+          <td>selector</td>
+          <td>String</td>
+          <td>false</td>
+          <td>Falls ein Selektor angegeben wird, werden Popover-Objekte an die angegebenen Ziele gebunden. In der Praxis ist dies nützlich, um dynamischen HTML-Inhalt mit Popovers zu versehen. Sieh dir <a href="https://github.com/twbs/bootstrap/issues/4215">dies</a> und <a href="http://jsfiddle.net/fScua/">ein informatives Beispiel</a> an.</td>
+        </tr>
+        <tr>
+          <td>trigger</td>
+          <td>String</td>
+          <td>'hover focus'</td>
+          <td>Wie das Popover ausgelöst wird - click | hover | focus | manual. Du kannst mehrere Auslöser angeben; trenne sie mit einem Leerzeichen.</td>
+        </tr>
+        <tr>
+          <td>title</td>
+          <td>String | Funktion</td>
+          <td>''</td>
+          <td>Standard-Titel-Wert, falls kein <code>title</code>-Attribut vorhanden ist</td>
+        </tr>
+        <tr>
+          <td>content</td>
+          <td>String | Funktion</td>
+          <td>''</td>
+          <td>Standard-Inhalt, falls kein <code>data-content</code>-Attribut vorhanden ist</td>
+        </tr>
+        <tr>
+          <td>delay</td>
+          <td>Nummer | Objekt</td>
+          <td>0</td>
+          <td>
+            <p>Verzögere das Anzeigen und Verbergen eines Popovers in ms - wirkt sich nicht auf den manuellen Auslöser aus</p>
+            <p>Falls eine Nummer angegeben wird, wird die Verzögerung auf hide und show angewendet</p>
+            <p>Object-Struktur: <code>delay: { show: 500, hide: 100 }</code></p>
+          </td>
+        </tr>
+        <tr>
+          <td>container</td>
+          <td>String | false</td>
+          <td>false</td>
+          <td>
+            <p>Ordnet das Popover einem bestimmten Element unter. Beispiel: <code>container: 'body'</code></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
+  <div class="bs-callout bs-callout-info">
+    <h4>Data-Attribute für einzelne Popovers</h4>
+    <p>Optionen für individuelle Popovers kannst du alternativ über Data-Attribute, wie oben erklärt, angeben.</p>
+  </div>
+
+  <h3>Methoden</h3>
+  <h4>$().popover(Optionen)</h4>
+  <p>Initialisiert Popovers für eine Reihe von Elementen.</p>
+
+  <h4>.popover('show')</h4>
+  <p>Öffnet das Popover eines Elements.</p>
+  {% highlight js %}$('#element').popover('show'){% endhighlight %}
+
+  <h4>.popover('hide')</h4>
+  <p>Verbirgt das Popover eines Elements.</p>
+  {% highlight js %}$('#element').popover('hide'){% endhighlight %}
+
+  <h4>.popover('toggle')</h4>
+  <p>Schaltet die Sichtbarkeit des Popovers eines Elements um.</p>
+  {% highlight js %}$('#element').popover('toggle'){% endhighlight %}
+
+  <h4>.popover('destroy')</h4>
+  <p>Verbirgt und zerstört das Popover eines Elements.</p>
+  {% highlight js %}$('#element').popover('destroy'){% endhighlight %}
+  <h3>Ereignisse</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+       <tr>
+         <th style="width: 150px;">Ereignistyp</th>
+         <th>Beschreibung</th>
+       </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>show.bs.popover</td>
+          <td>Dieses Ereignis wird ausgelöst, wenn die Methode <code>show</code> aufgerufen wird.</td>
+        </tr>
+        <tr>
+          <td>shown.bs.popover</td>
+          <td>Dieses Ereignis wird ausgelöst, wenn das Popover dem Nutzer vollständig angezeigt wurde (wartet auf CSS-Übergänge).</td>
+        </tr>
+        <tr>
+          <td>hide.bs.popover</td>
+          <td>Dieses Ereignis wird ausgelöst, wenn die Methode <code>hide</code> aufgerufen wird.</td>
+        </tr>
+        <tr>
+          <td>hidden.bs.popover</td>
+          <td>Dieses Ereignis wird ausgelöst, wenn das Popover vor dem Nutzer vollständig verborgen wurde (wartet auf CSS-Übergänge).</td>
+        </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
+{% highlight js %}
+$('#meinPopover').on('hidden.bs.popover', function () {
+  // etwas ausführen...
+})
+{% endhighlight %}
+</div>

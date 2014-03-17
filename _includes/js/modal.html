@@ -1,0 +1,333 @@
+<div class="bs-docs-section">
+  <h1 id="modals" class="page-header">Modals <small>modal.js</small></h1>
+
+  <h2 id="modals-examples">Beispiele</h2>
+  <p>Modals sind schlanke aber flexible Dialog-Fenster mit den minimalen benötigten Funktionen und sinnvollen Standards.</p>
+
+  <div class="bs-callout bs-callout-warning" id="callout-stacked-modals">
+    <h4>Überlappende Modals werden nicht unterstützt</h4>
+    <p>Denk daran, ein Modal niemals zu öffnen, wenn noch ein anderes sichtbar ist. Du musst eigenen Code schreiben, wenn du mehr als ein Modal auf einmal anzeigen möchtest.</p>
+  </div>
+  <div class="bs-callout bs-callout-warning" id="callout-modal-markup-placement">
+    <h4>Modal-Markup-Platzierung</h4>
+    <p>Damit andere Komponenten das Aussehen und/oder die Funktionen deines Modals nicht beeinträchtigen, solltest du den zugehörigen HTML-Code möglichst weit oben in deinem Dokument platzieren.</p>
+  </div>
+  <div class="bs-callout bs-callout-warning">
+    <h4>Schwierigkeiten auf mobilen Geräten</h4>
+    <p>Es gibt einige Tücken, die du bei der Verwendung von Modals auf mobilen Geräten beachten solltest. <a href="../los-gehts/#support-fixed-position-keyboards">Lies unsere Browser-Support-Infos</a> für Details.</p>
+  </div>
+
+  <h3>Statisches Beispiel</h3>
+  <p>Ein manuell generiertes Modal mit Header, Body und einigen Aktionen im Footer.</p>
+  <div class="bs-example bs-example-modal">
+    <div class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Modal-Titel</h4>
+          </div>
+          <div class="modal-body">
+            <p>Was für ein Körper&hellip;</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+            <button type="button" class="btn btn-primary">Änderungen speichern</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+  </div><!-- /example -->
+{% highlight html %}
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Modal-Titel</h4>
+      </div>
+      <div class="modal-body">
+        <p>Was für ein Körper&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+        <button type="button" class="btn btn-primary">Änderungen speichern</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+{% endhighlight %}
+
+  <h3>Live-Ansicht</h3>
+  <p>Blende ein Modal mit JavaScript oder über den Button unten ein und aus. Es wird von der oberen Kante der Seite heruntergleiten und mit Einblendeffekt sichtbar werden.</p>
+  <!-- Beispiel-Modal-Inhalt -->
+  <div id="meinModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="meinModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="meinModalLabel">Modal-Überschrift</h4>
+        </div>
+        <div class="modal-body">
+          <h4>Text in einem Modal</h4>
+          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+
+          <h4>Popover in a modal</h4>
+          <p>Dieser <a href="#" role="button" class="btn btn-default popover-test" title="Ein Titel" data-content="Und hier ist etwas Inhalt. Fasizinierend, nicht wahr?">Button</a> sollte ein Popover auslösen, wenn du ihn anklickst.</p>
+
+          <h4>Tooltips im Modal</h4>
+          <p><a href="#" class="tooltip-test" title="Tooltip">Dieser Link</a> und <a href="#" class="tooltip-test" title="Tooltip">der Link hier</a> sollten Tooltips anzeigen, wenn du den Mauszeiger darüber bewegst (hover).</p>
+
+          <hr>
+
+          <h4>Langer Text, um zu zeigen, wie sich das Modal beim Scrollen vehält</h4>
+          <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+          <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+          <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+          <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+          <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+          <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+          <button type="button" class="btn btn-primary">Änderungen speichern</button>
+        </div>
+
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <div class="bs-example" style="padding-bottom: 24px;">
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#meinModal">
+      Modal-Beispiel anzeigen
+    </button>
+  </div><!-- /example -->
+{% highlight html %}
+<!-- Button, der das Modal aufruft -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#meinModal">
+  Modal-Beispiel anzeigen
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="meinModal" tabindex="-1" role="dialog" aria-labelledby="meinModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="meinModalLabel">Modal-Überschrift</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+        <button type="button" class="btn btn-primary">Änderungen speichern</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endhighlight %}
+
+  <div class="bs-callout bs-callout-warning">
+    <h4>Modals barrierefrei machen</h4>
+    <p>Füge einige Attribute zum <code>.modal</code> hinzu (<code>role="dialog"</code>, <code>aria-labelledby="meinModalLabel"</code> und <code>aria-hidden="true"</code>), um assistiven Technologien mitzuteilen (in der Reihenfolge), worum es sich bei dem Modal handelt, welches Element der Titel ist und dass die Elemente des Modals im DOM übersprungen werden sollen.</p>
+    <p>Außerdem kannst du eine Beschreibung des Modals mit <code>aria-describedby</code> am <code>.modal</code> markieren.</p>
+  </div>
+
+  <div class="bs-callout bs-callout-info">
+    <h4>YouTube-Videos einbetten</h4>
+    <p>Zur Einbettung von YouTube-Videos in Modals wird zusätzliches JavaScript benötigt, das nicht in Bootstrap enthalten ist, um die Wiedergabe automatisch zu beenden und mehr. <a href="http://stackoverflow.com/questions/18622508/bootstrap-3-and-youtube-in-modal">Lies diesen hilfreichen Artikel auf StackOverflow</a> für mehr Informationen.</p>
+  </div>
+
+  <h2 id="modals-sizes">Größen</h2>
+  <p>Modals verfügen über zwei optionale Größen, die über Veränderungsklassen für <code>.modal-dialog</code> deklariert werden können.</p>
+  <div class="bs-example">
+    <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Großes Modal</button>
+    <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Kleines Modal</button>
+  </div>
+{% highlight html %}
+<!-- Großes Modal -->
+<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Großes Modal</button>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="meinGroßesModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
+
+<!-- Kleines Modal -->
+<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Kleines Modal</button>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="meinKleinesModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
+{% endhighlight %}
+
+  <!-- Modal-Inhalte für die beiden obigen Beispiele -->
+  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="meinGroßesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="meinLargeModalLabel">Großes Modal</h4>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="meinKleinesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="meinSmallModalLabel">Kleines Modal</h4>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <h2 id="modals-remove-animation">Animation entfernen</h2>
+  <p>Entferne die Klasse <code>.fade</code> von deinem Modal-Markup, wenn du lieber möchtest, dass das Modal einfach erscheint und nicht von oben eingeflogen wird.</p>
+{% highlight html %}
+<div class="modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+  ...
+</div>
+{% endhighlight %}
+
+  <h2 id="modals-usage">Verwendung</h2>
+  <p>Das Modal-Plugin blendet über Data-Attribute oder JavaScript verborgenen Inhalt bei Bedarf ein und wieder aus. Es fügt außerdem die Klasse <code>.modal-open</code> zum <code>&lt;body&gt;</code>hinzu, um standardmäßiges Scroll-Verhalten zu überschreiben und generiert ein <code>.modal-backdrop</code>-Element, damit Modals durch einen Klick außerhalb des Modals geschlossen werden können.</p>
+
+  <h3>Über Data-Attribute</h3>
+  <p>Aktiviere ein Modal ohne JavaScript zu schreiben. Statte ein kontrollierendes Element wie einen Button mit <code>data-toggle="modal"</code> aus, zusammen mit <code>data-target="#abc"</code> oder <code>href="#abc"</code>, um zu definieren, welches Modal genau geladen werden soll.</p>
+{% highlight html %}
+<button type="button" data-toggle="modal" data-target="#meinModal">Modal anzeigen</button>
+{% endhighlight %}
+
+  <h3>Über JavaScript</h3>
+  <p>Rufe ein Modal über seine ID <code>meinModal</code> mit nur einer Zeile JavaScript auf:</p>
+  {% highlight js %}$('#meinModal').modal(Optionen){% endhighlight %}
+
+  <h3>Optionen</h3>
+  <p>Optionen können über Data-Attribute oder JavaScript angegeben werden. Für Data-Attribute hängst du den Namen der Option einfach an <code>data-</code>, z.B. <code>data-backdrop=""</code>.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+       <tr>
+         <th style="width: 100px;">Name</th>
+         <th style="width: 50px;">Typ</th>
+         <th style="width: 50px;">Standard</th>
+         <th>Beschreibung</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+         <td>backdrop</td>
+         <td>Boolean oder den String <code>'static'</code></td>
+         <td>true</td>
+         <td>Fügt eine Hintergrundklickfläche zum Modal hinzu. Alternativ kannst du mit <code>static</code> zwar den Hintergrund abdunkeln aber das Schließen durch Klicken darauf verhindern.</td>
+       </tr>
+       <tr>
+         <td>keyboard</td>
+         <td>Boolean</td>
+         <td>true</td>
+         <td>Schließen des Modals über Drücken von <kbd>ESC</kbd> ermöglichen</td>
+       </tr>
+       <tr>
+         <td>show</td>
+         <td>Boolean</td>
+         <td>true</td>
+         <td>Zeigt das Modal an, sobald es initialisiert wird.</td>
+       </tr>
+       <tr>
+         <td>remote</td>
+         <td>Pfad</td>
+         <td>false</td>
+         <td><p>Falls eine Remote-URL angegeben wird, wird über jQuerys <code>load</code>-Methode <strong>Inhalt von dort einmal geladen</strong> und in den div-Container <code>.modal-content</code> injiziert. Falls du die Data-API verwendest, kannst du auch das Attribut <code>href</code> nutzen, um die Remote-Quelle anzugeben. Hier ein Beispiel:</p>
+{% highlight html %}
+<a data-toggle="modal" href="remote.html" data-target="#modal">Klick mich an</a>
+{% endhighlight %}
+         </td>
+       </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
+
+  <h3>Methoden</h3>
+
+  <h4>.modal(Optionen)</h4>
+  <p>Aktiviert deinen Inhalt als ein Modal. Akzeptiert ein optionales <code>object</code> mit Optionen.</p>
+{% highlight js %}
+$('#meinModal').modal({
+  keyboard: false
+})
+{% endhighlight %}
+
+  <h4>.modal('toggle')</h4>
+  <p>Schaltet ein Modal manuell um. <strong>Gibt ein Ergebnis zurück, bevor das Modal tatsächlich angezeigt/verborgen wurde</strong> (also vor den Ereignissen <code>shown.bs.modal</code> oder <code>hidden.bs.modal</code>).</p>
+  {% highlight js %}$('#meinModal').modal('toggle'){% endhighlight %}
+
+  <h4>.modal('show')</h4>
+  <p>Öffnet ein Modal manuell. <strong>Gibt ein Ergebnis zurück, bevor das Modal tatsächlich angezeigt wurde</strong> (also vor dem Ereignis <code>shown.bs.modal</code>).</p>
+  {% highlight js %}$('#meinModal').modal('show'){% endhighlight %}
+
+  <h4>.modal('hide')</h4>
+  <p>Verbirgt ein Modal manuell. <strong>Gibt ein Ergebnis zurück, bevor das Modal tatsächlich verborgen wurde</strong> (also vor dem Ereignis <code>hidden.bs.modal</code>).</p>
+  {% highlight js %}$('#meinModal').modal('hide'){% endhighlight %}
+
+  <h3>Ereignisse</h3>
+  <p>Bootstraps Modal-Klasse legt einige wenige Ereignisse offen, um sich in Modal-Funktionalität einzuklinken.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+       <tr>
+         <th style="width: 150px;">Ereignistyp</th>
+         <th>Beschreibung</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+         <td>show.bs.modal</td>
+         <td>Dieses Ereignis wird sofort ausgelöst, wenn die Methode <code>show</code> aufgerufen wird. Bei Auslösung durch Klick ist das angeklickte Element über die Eigenschaft <code>relatedTarget</code> des Ereignisses verfügbar.</td>
+       </tr>
+       <tr>
+         <td>shown.bs.modal</td>
+         <td>Dieses Ereignis wird ausgelöst, wenn das Modal dem Nutzer vollständig angezeigt wurde (wartet auf CSS-Übergänge). Bei Auslösung durch Klick ist das angeklickte Element über die Eigenschaft <code>relatedTarget</code> des Ereignisses verfügbar.</td>
+       </tr>
+       <tr>
+         <td>hide.bs.modal</td>
+         <td>Dieses Ereignis wird sofort ausgelöst, wenn die Methode <code>hide</code> aufgerufen wird.</td>
+       </tr>
+       <tr>
+         <td>hidden.bs.modal</td>
+         <td>Dieses Ereignis wird ausgelöst, wenn das Modal vor dem Nutzer vollständig verborgen wurde (wartet auf CSS-Übergänge).</td>
+       </tr>
+       <tr>
+         <td>loaded.bs.modal</td>
+         <td>Dieses Ereignis wird ausgelöst, wenn das Modal den Inhalt der Remote-Option geladen hat.</td>
+       </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
+{% highlight js %}
+$('#meinModal').on('hidden.bs.modal', function (e) {
+  // etwas ausführen...
+})
+{% endhighlight %}
+</div>

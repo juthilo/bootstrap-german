@@ -1,0 +1,222 @@
+<div class="bs-docs-section">
+  <h1 id="collapse" class="page-header">Collapse <small>collapse.js</small></h1>
+
+  <h3>Erklärung</h3>
+  <p>Mit grundlegenden Stilen und flexibler Unterstützung kannst du Komponenten wie Accordions und Navigation erstellen, die man ein- und ausklappen kann.</p>
+
+  <div class="bs-callout bs-callout-danger">
+    <h4>Plugin-Abhängigkeit</h4>
+    <p>Collapse benötigt das <a href="#transitions">Übergänge-Plugin</a> in deiner Version von Bootstrap.</p>
+  </div>
+
+  <h2 id="collapse-examples">Beispiel-Accordion</h2>
+  <p>Wir haben mit dem Collapse-Plugin ein einfaches Accordion gebaut, indem wir die Panel-Komponente erweitert haben.</p>
+
+  <div class="bs-example">
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+              Klappbarer Eintrag #1
+            </a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+          <div class="panel-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+              Klappbarer Eintrag #2
+            </a>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+          <div class="panel-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+              Klappbarer Eintrag #3
+            </a>
+          </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse">
+          <div class="panel-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /example -->
+{% highlight html %}
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          Klappbarer Eintrag #1
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+          Klappbarer Eintrag #2
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+          Klappbarer Eintrag #3
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
+{% endhighlight %}
+
+  <p>Du kannst das Plugin auch ohne das Accordion-Markup verwenden. Veranlasse einen Button dazu, ein anderes Element ein- und auszuklappen.</p>
+{% highlight html %}
+<button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">
+  Einfaches Klapp-Element
+</button>
+
+<div id="demo" class="collapse in">...</div>
+{% endhighlight %}
+
+
+  <h2 id="collapse-usage">Verwendung</h2>
+  <p>Das Collapse-Plugin verwendet einige Klassen, um die Schwerstarbeit zu machen:</p>
+  <ul>
+    <li><code>.collapse</code> verbirgt den Inhalt</li>
+    <li><code>.collapse.in</code> zeigt den Inhalt</li>
+    <li><code>.collapsing</code> wird hinzugefügt, wenn der Übergang startet und wieder entfernt, wenn dieser vorbei ist</li>
+  </ul>
+  <p>Diese Klassen findest du in <code>component-animations.less</code>.</p>
+
+  <h3>Über Data-Attribute</h3>
+  <p>Füge einfach <code>data-toggle="collapse"</code> und <code>data-target</code> zu einem Element hinzu, um automatisch die Kontrolle über ein klappbares Element zuzuweisen. Das Attribut <code>data-target</code> akzeptiert CSS-Selektor, auf die die Klappfunktion angewendet werden woll. Denk daran, die Klasse <code>collapse</code> zum klappbaren Element hinzuzufügen. Wenn es ausgeklappt starten soll, musst du außerdem die zusätzliche Klasse <code>in</code> hinzufügen.</p>
+  <p>Um Gruppenverwaltung wie beim Accordion zu einem kontrollierenden Element hinzuzufügen, ergänze einfach das Data-Attribut <code>data-parent="#selector"</code>. Sieh dir das Beispiel an, um die genauen Abläufe zu verstehen.</p>
+
+  <h3>Über JavaScript</h3>
+  <p>Aktiviere diese Funktionen manuell:</p>
+{% highlight js %}
+$('.collapse').collapse()
+{% endhighlight %}
+
+  <h3>Optionen</h3>
+  <p>Optionen können über Data-Attribute oder JavaScript angegeben werden. Für Data-Attribute hängst du den Namen der Option einfach an <code>data-</code>, z.B. <code>data-parent=""</code>.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+       <tr>
+         <th style="width: 100px;">Name</th>
+         <th style="width: 50px;">Typ</th>
+         <th style="width: 50px;">Standard</th>
+         <th>Beschreibung</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+         <td>parent</td>
+         <td>Selektor</td>
+         <td>false</td>
+         <td>Falls ein Selektor angegeben wird, werden alle anderen klappbaren Elemente unter dem angegeben Elternelement geschlossen, wenn eines davon geöffnet wird. (So ähnlich wie beim Accordion, das auf der Klasse <code>panel</code> basiert)</td>
+       </tr>
+       <tr>
+         <td>toggle</td>
+         <td>Boolean</td>
+         <td>true</td>
+         <td>Schlatet den Status des klappbaren Elements um, wenn es aufgerufen wird</td>
+       </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
+
+  <h3>Methoden</h3>
+
+  <h4>.collapse(Optionen)</h4>
+  <p>Aktiviert deinen Inhalt als klappbares Element. Akzeptiert optional ein <code>object</code> mit Optionen.
+{% highlight js %}
+$('#meinKlappelement').collapse({
+  toggle: false
+})
+{% endhighlight %}
+
+  <h4>.collapse('toggle')</h4>
+  <p>Ändert den Status eines klappbaren Elements von sichtbar zu verborgen und umgekehrt.</p>
+
+  <h4>.collapse('show')</h4>
+  <p>Zeigt ein klappbares Element an.</p>
+
+  <h4>.collapse('hide')</h4>
+  <p>Verbirgt ein klappbares Element.</p>
+
+  <h3>Ereignisse</h3>
+  <p>Bootstraps Collapse-Klassen legen einige Ereignisse offen, um sich in die Collapse-Funktionen einzuklinken.</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+       <tr>
+         <th style="width: 150px;">Ereignistyp</th>
+         <th>Beschreibung</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+         <td>show.bs.collapse</td>
+         <td>Dieses Ereignis wird sofort ausgelöst, wenn die Methode <code>show</code> aufgerufen wird.</td>
+       </tr>
+       <tr>
+         <td>shown.bs.collapse</td>
+         <td>Dieses Eregnis wird ausgelöst, wenn das Collapse-Element dem Nutzer angezeigt wurde (wartet auf CSS-Übergänge).</td>
+       </tr>
+       <tr>
+         <td>hide.bs.collapse</td>
+         <td>
+          Dieses Ereignis wird sofort ausgelöst, wenn die Methode <code>hide</code> aufgerufen wird.
+         </td>
+       </tr>
+       <tr>
+         <td>hidden.bs.collapse</td>
+         <td>Dieses Eregnis wird ausgelöst, wenn das Collapse-Element vor dem Nutzer verborgen wurde (wartet auf CSS-Übergänge).</td>
+       </tr>
+      </tbody>
+    </table>
+  </div><!-- /.table-responsive -->
+{% highlight js %}
+$('#meinCollapsible').on('hidden.bs.collapse', function () {
+  // etwas ausführen...
+})
+{% endhighlight %}
+</div>

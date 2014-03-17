@@ -1,0 +1,26 @@
+<div class="bs-docs-section">
+  <h1 id="accessibility" class="page-header">Barrierefreiheit</h1>
+  <p class="lead">Bootstrap folgt üblichen Web-Standards und kann&mdash;mit minimaler zusätzlicher Anstrengung&mdash;dazu verwendet werden, Seiten so zu gestalten, dass sie barrierefrei zugänglich für Personen sind, die <abbr title="Assistive Technologien" class="initialism">AT</abbr> verwenden.</p>
+
+  <h3>Navigation überspringen</h3>
+  <p>Falls deine Navigation viele Links enthält und im DOM vor dem Hauptinhalt kommt, kannst du einen <code>Zum Hauptinhalt springen</code>-Link direkt nach dem öffnenden <code>&lt;body&gt;</code>-Tag einfügen. <a href="http://a11yproject.com/posts/skip-nav-links/">(lies warum)</a></p>
+{% highlight html %}
+<body>
+  <a href="#content" class="sr-only sr-only-focusable">Zum Hauptinhalt springen</a>
+  <div class="container" id="content">
+    Der Hauptinhalt der Seite.
+  </div>
+</body>
+{% endhighlight %}
+
+  <h3>Verschachtelte Überschriften</h3>
+  <p>Wenn du verschiedene Überschriften (<code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code>) nacheinander und nebeneinander anordnest, sollte die Hauptüberschrift deines Dokuments eine <code>&lt;h1&gt;</code> sein. Nachfolgende Überschriften sollten dann logisch aus <code>&lt;h2&gt;</code> - <code>&lt;h6&gt;</code> bestehen, damit Screenreader ein Inhaltsverzeichnis für deine Seiten konstruieren können.</p>
+  <p>Lerne mehr darüber bei <a href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/Section508/">HTML CodeSniffer</a> und <a href="http://accessibility.psu.edu/headings">Penn State's AccessAbility</a>.</p>
+
+  <h3>Zusätzliche Ressourcen</h3>
+  <ul>
+    <li><a href="https://github.com/squizlabs/HTML_CodeSniffer">"HTML Codesniffer"-Bookmarklet, um Probleme mit Barrierefreiheit zu identifizieren</a></li>
+    <li><a href="http://a11yproject.com/">The A11Y Project</a></li>
+    <li><a href="https://developer.mozilla.org/de/docs/Barrierefreiheit">MDN Barrierefreiheit-Dokumentation</a></li>
+  </ul>
+</div>

@@ -1,0 +1,434 @@
+<div class="bs-docs-section">
+  <h1 id="navbar" class="page-header">Navbar</h1>
+
+  <h2 id="navbar-default">Standard-Navbar</h2>
+  <p>Navbars sind anpassungsfähige Meta-Komponenten, die zur übergeordneten Navigation für deine Anwendung oder Site dienen. Sie beginnen auf mobilen Geräten minimiert (und können ein-/ausgeklappt werden) und werden dann horizontal, wenn die Breite des Bildschirms größer wird.</p>
+
+  <div class="bs-callout bs-callout-info" id="callout-navbar-overflow">
+    <h4>Umfang und Breite der Inhalte</h4>
+    <p>Da Bootstrap nicht weiß, wie viel Platz die Inhalte in deiner Navbar brauchen, kannst du eventuell auf Probleme stoßen, weil der Inhalt in einer zweiten Zeile weitergeführt wird. Um dies zu beheben kannst du:</p>
+    <ol type="a">
+      <li>Die Anzahl oder Breite von Navbar-Einträgen reduzieren.</li>
+      <li>Einige Navbar-Einträge auf bestimmten Bildschirmgrößen über <a href="../css/#responsive-utilities">responsive Hilfsklassen</a> ausblenden.</li>
+      <li>Den Punkt, an dem deine Navbar zwischen minimierter und horizontaler Ansicht wechselt, anpassen. Verändere die <code>@grid-float-breakpoint</code> Variable oder füge deine eigenen Media Queries hinzu.</li>
+    </ol>
+  </div>
+  <div class="bs-callout bs-callout-danger">
+    <h4>Benötigt JavaScript</h4>
+    <p>Falls JavaScript deaktiviert ist und die Anzeige nicht breit genug für den horizontalen Modus der Navbar ist, wird es unmöglich sein, die Navbar auszuklappen und die Inhalte in <code>.navbar-collapse</code> anzusehen.</p>
+  </div>
+
+  <div class="bs-example">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <!-- Titel und Schalter werden für eine bessere mobile Ansicht zusammengefasst -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Navigation ein-/ausblenden</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Titel</a>
+        </div>
+
+        <!-- Alle Navigationslinks, Formulare und anderer Inhalt werden hier zusammengefasst und können dann ein- und ausgeblendet werden -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menü <b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Aktion</a></li>
+                <li><a href="#">Andere Aktion</a></li>
+                <li><a href="#">Irgendwas anderes</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Abgetrennter Link</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Noch ein abgetrennter Link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Suchen">
+            </div>
+            <button type="submit" class="btn btn-default">Los</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Link</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menü <b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Aktion</a></li>
+                <li><a href="#">Andere Aktion</a></li>
+                <li><a href="#">Irgendwas anderes</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Abgetrennter Link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+{% highlight html %}
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Titel und Schalter werden für eine bessere mobile Ansicht zusammengefasst -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Navigation ein-/ausblenden</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Titel</a>
+    </div>
+
+    <!-- Alle Navigationslinks, Formulare und anderer Inhalt werden hier zusammengefasst und können dann ein- und ausgeblendet werden -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menü <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Aktion</a></li>
+            <li><a href="#">Andere Aktion</a></li>
+            <li><a href="#">Irgendwas anderes</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Abgetrennter Link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Noch ein abgetrennter Link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Suchen">
+        </div>
+        <button type="submit" class="btn btn-default">Los</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menü <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Aktion</a></li>
+            <li><a href="#">Andere Aktion</a></li>
+            <li><a href="#">Irgendwas anderes</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Abgetrennter Link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+{% endhighlight %}
+
+  <div class="bs-callout bs-callout-danger">
+    <h4>Plugin-Abhängigkeit</h4>
+    <p>Die responsive Navbar benötigt das <a href="../javascript/#collapse">Collapse-Plugin</a> in deiner Version von Bootstrap.</p>
+  </div>
+
+  <div class="bs-callout bs-callout-warning">
+    <h4>Navbars barrierefrei gestalten</h4>
+    <p>Denk daran, <code>role="navigation"</code> zu jeder Navbar hinzuzufügen, um sie möglichst barrierefrei zu machen.</p>
+  </div>
+
+
+  <h2 id="navbar-forms">Formulare</h2>
+  <p>Formulare müssen für eine korrekte Ausrichtung und sinnvolles Verhalten auf kleinen Bildschirmen in <code>.navbar-form</code> platziert werden. Nutze die Ausrichtungsoptionen, um zu entscheiden, wo das Formular sich in der Navbar befinden soll.</p>
+  <p>Ein Hinweis: <code>.navbar-form</code> importiert viel Code von <code>.form-inline</code> über ein Mixin. <strong class="text-danger">Einige Felder, wie Input-Gruppen, benötigen eventuell feste Breiten, um vernünftig angezeigt zu werden.</strong></p>
+  <div class="bs-example">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+            <span class="sr-only">Navigation ein-/ausblenden</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Titel</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Suchen">
+            </div>
+            <button type="submit" class="btn btn-default">Los</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+{% highlight html %}
+<form class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Suchen">
+  </div>
+  <button type="submit" class="btn btn-default">Los</button>
+</form>
+{% endhighlight %}
+
+  <div class="bs-callout bs-callout-warning">
+    <h4>Tücken auf mobilen Geräten</h4>
+    <p>Es kann zu Schwierigkeiten kommen, wenn Formularelemente in fixierten Elementen auf mobilen Geräten angezeigt werden sollen. Mehr Informationen findest du in <a href="../los-gehts/#support-fixed-position-keyboards">unseren Browser-Support-Dokumenten</a>.</p>
+  </div>
+
+  <div class="bs-callout bs-callout-warning">
+    <h4>Füge immer Labels hinzu</h4>
+    <p>Screenreader haben Schwierigkeiten mit Formularen, wenn du kein Lebel für jedes Eingabefeld hinzufügst. Du kannst diese Labels zu Inline-Formularen hinzufügen und dann mit <code>.sr-only</code> ausblenden.</p>
+  </div>
+
+
+  <h2 id="navbar-buttons">Buttons</h2>
+  <p>Füge die Klasse <code>.navbar-btn</code> zu <code>&lt;button&gt;</code>-Elementen hinzu, die nicht in einem <code>&lt;form&gt;</code> sind, um sie in der Navbar vertikal zu zentrieren.</p>
+  <div class="bs-example">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3">
+            <span class="sr-only">Navigation ein-/ausblenden</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Titel</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
+          <button type="button" class="btn btn-default navbar-btn">Anmelden</button>
+        </div>
+      </div>
+    </nav>
+  </div>
+{% highlight html %}
+<button type="button" class="btn btn-default navbar-btn">Anmelden</button>
+{% endhighlight %}
+
+  <div class="bs-callout bs-callout-warning">
+    <h4>Kontext-spezifische Verwendung</h4>
+    <p>Wie die normalen <a href="../css/#buttons">Button-Klassen</a> kann auch <code>.navbar-btn</code> bei <code>&lt;a&gt;</code> und <code>&lt;input&gt;</code> angewendet werden. Du solltest allerdings weder <code>.navbar-btn</code> noch die ganz normalen Button-Klassen jemals bei <code>&lt;a&gt;</code>-Elementen innerhalb von <code>.navbar-nav</code> verwenden.</p>
+  </div>
+
+  <h2 id="navbar-text">Text</h2>
+  <p>Umschließe Text mit <code>.navbar-text</code>, typischerweise über ein <code>&lt;p&gt;</code>-Tag, für angemessene Abstände und Farben.</p>
+  <div class="bs-example">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-4">
+            <span class="sr-only">Navigation ein-/ausblenden</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Titel</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-4">
+          <p class="navbar-text">Angemeldet als Mark Otto</p>
+        </div>
+      </div>
+    </nav>
+  </div>
+{% highlight html %}
+<p class="navbar-text">Angemeldet als Mark Otto</p>
+{% endhighlight %}
+
+
+  <h2 id="navbar-links">Zusätzliche Links</h2>
+  <p>Wenn du normale Links außerhalb von normalen Navigations-Komponenten verwenden willst, nimm die Klasse <code>.navbar-link</code>, um die richtigen Farben für Standard- und invertierte Navbar anzuwenden.</p>
+  <div class="bs-example">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-5">
+            <span class="sr-only">Navigation ein-/ausblenden</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Titel</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-5">
+          <p class="navbar-text navbar-right">Angemeldet als <a href="#" class="navbar-link">Mark Otto</a></p>
+        </div>
+      </div>
+    </nav>
+  </div>
+{% highlight html %}
+<p class="navbar-text navbar-right">Angemeldet als <a href="#" class="navbar-link">Mark Otto</a></p>
+{% endhighlight %}
+
+
+  <h2 id="navbar-component-alignment">Ausrichtung</h2>
+  <p>Du kannst Navigationslinks, Formulare, Buttons oder Text mit Hilfe der Hilfsklassen <code>.navbar-left</code> oder <code>.navbar-right</code> ausrichten. Beide Klassen legen einen CSS-Float in die angegebene Richtung fest. Als Beispiel, um Navigationslinks auszurichten, platziere diese in einer separaten <code>&lt;ul&gt;</code>, auf die die jeweilige Klasse angewendet ist.</p>
+  <p>Diese Klassen werden über ein Mixin von <code>.pull-left</code> und <code>.pull-right</code> erzeugt, sind aber an Media Queries gebunden, damit die Ausrichtung auf verschiedenen Geräten stimmig bleibt.</p>
+  <div class="bs-callout bs-callout-warning">
+    <h4>Mehrere Komponenten rechts ausrichten</h4>
+    <p>Navbars sind zurzeit eingeschränkt, was mehrere <code>.navbar-right</code>-Klassen angeht. Um für richtigen Abstand zwischen Inhalten zu sorgen, verwenden wir beim letzten <code>.navbar-right</code>-Element negativen Außenabstand. Wenn mehrere Elemente diese Klasse verwenden, funktionieren die Abstände nicht wie gedacht.</p>
+    <p>Wir werden dies neu überdenken, wenn wir die Komponente in v4 neu schreiben können.</p>
+  </div>
+
+
+  <h2 id="navbar-fixed-top">Oben fixierte Variante</h2>
+  <p>Füge <code>.navbar-fixed-top</code> hinzu und denke an einen <code>.container</code> oder <code>.container-fluid</code>, um den Navbar-Inhalt zu zentrieren und mit passenden Abständen zu versehen.</p>
+  <div class="bs-example bs-navbar-top-example">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <!-- Wir benutzen hier die fluid-Option, um zu vermeiden, dass die feste Breite eines normalen Containers in den schmalen Inhaltsspalten überschrieben wird. -->
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6">
+            <span class="sr-only">Navigation ein-/ausblenden</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Titel</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Start</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </nav>
+  </div><!-- /example -->
+{% highlight html %}
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    ...
+  </div>
+</nav>
+{% endhighlight %}
+
+  <div class="bs-callout bs-callout-danger">
+    <h4>Body-Padding notwendig</h4>
+    <p>Die oben fixierte Navbar wird Teile deines Inhalts überlagern, solange du nicht oben <code>padding</code> zum <code>&lt;body&gt;</code> hinzufügst. Teste deine eigenen Werte oder nutze unseren Schnipsel unten. Tipp: Standardmäßig ist die Navbar 50 Pixel hoch.</p>
+{% highlight scss %}
+body { padding-top: 70px; }
+{% endhighlight %}
+    <p>Denk daran, dass du diesen Code unbedingt <strong>nach</strong> dem normalen Bootstrap-CSS einfügen musst.</p>
+  </div>
+
+
+  <h2 id="navbar-fixed-bottom">Unten fixierte Variante</h2>
+  <p>Füge <code>.navbar-fixed-bottom</code> hinzu und denke an einen <code>.container</code> oder <code>.container-fluid</code>, um den Navbar-Inhalt zu zentrieren und mit passenden Abständen zu versehen.</p>
+  <div class="bs-example bs-navbar-bottom-example">
+    <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+      <!-- Wir benutzen hier die fluid-Option, um zu vermeiden, dass die feste Breite eines normalen Containers in den schmalen Inhaltsspalten überschrieben wird. -->
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-7">
+            <span class="sr-only">Navigation ein-/ausblenden</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Titel</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-7">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Start</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </nav>
+  </div><!-- /example -->
+{% highlight html %}
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+  <div class="container">
+    ...
+  </div>
+</nav>
+{% endhighlight %}
+
+  <div class="bs-callout bs-callout-danger">
+    <h4>Body-Padding notwendig</h4>
+    <p>Die unten fixierte Navbar wird Teile deines Inhalts überlagern, solange du nicht unten <code>padding</code> zum <code>&lt;body&gt;</code> hinzufügst. Teste deine eigenen Werte oder nutze unseren Schnipsel unten. Tipp: Standardmäßig ist die Navbar 50 Pixel hoch.</p>
+{% highlight scss %}
+body { padding-bottom: 70px; }
+{% endhighlight %}
+    <p>Denk daran, dass du diesen Code unbedingt <strong>nach</strong> dem normalen Bootstrap-CSS einfügen musst.</p>
+  </div>
+
+
+  <h2 id="navbar-static-top">Oben statische Variante</h2>
+  <p>Erstelle mit <code>.navbar-static-top</code> eine Navbar, die die ganze Breite einnimmt, aber mit der Seite wegscrollt. Denke auch hier an einen <code>.container</code> oder <code>.container-fluid</code>, um den Navbar-Inhalt zu zentrieren und mit passenden Abständen zu versehen.</p>
+  <p>Anders als bei den <code>.navbar-fixed-*</code>-Klassen musst du in diesem Fall kein Padding zum <code>body</code> hinzufügen.</p>
+  <div class="bs-example bs-navbar-top-example">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <!-- Wir benutzen hier die fluid-Option, um zu vermeiden, dass die feste Breite eines normalen Containers in den schmalen Inhaltsspalten überschrieben wird. -->
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-8">
+            <span class="sr-only">Navigation ein-/ausblenden</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Titel</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-8">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Start</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </nav>
+  </div><!-- /example -->
+{% highlight html %}
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    ...
+  </div>
+</nav>
+{% endhighlight %}
+
+
+  <h2 id="navbar-inverted">Invertierte Variante</h2>
+  <p>Verändere das Aussehen der Navbar, indem du <code>.navbar-inverse</code> hinzufügst.</p>
+  <div class="bs-example">
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="container-fluid">
+        <!-- Titel und Schalter werden für eine bessere mobile Ansicht zusammengefasst -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9">
+            <span class="sr-only">Navigation ein-/ausblenden</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Titel</a>
+        </div>
+
+        <!-- Alle Navigationslinks, Formulare und anderer Inhalt werden hier zusammengefasst und können dann ein- und ausgeblendet werden -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Start</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div><!-- /example -->
+{% highlight html %}
+<nav class="navbar navbar-inverse" role="navigation">
+  ...
+</nav>
+{% endhighlight %}
+</div>

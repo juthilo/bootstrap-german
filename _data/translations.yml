@@ -1,0 +1,29 @@
+- name: Chinesisch
+  code: zh
+  description: Bootstrap 中文文档
+  url: http://v3.bootcss.com/
+
+- name: Französisch
+  code: fr
+  description: Bootstrap en Français
+  url: http://www.oneskyapp.com/docs/bootstrap/fr
+
+- name: Koreanisch
+  code: ko
+  description: Bootstrap 한국어
+  url: http://bootstrapk.com/BS3/
+
+- name: Russisch
+  code: ru
+  description: Bootstrap по-русски
+  url: http://www.oneskyapp.com/docs/bootstrap/ru
+
+- name: Spanisch
+  code: es
+  description: Bootstrap en Español
+  url: http://www.oneskyapp.com/docs/bootstrap/es
+
+- name: Ukrainisch
+  code: uk
+  description: Bootstrap ua Українською
+  url: http://twbs.site-konstruktor.com.ua

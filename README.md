@@ -64,10 +64,9 @@ Bootstraps Dokumentation, die du in diesem Repository als Übersetzung findest, 
 
 ### Dokumentation lokal ausführen
 
-1. Falls notwendig, [installiere Jekyll](http://jekyllrb.com/docs/installation) (benötigt wird v1.x).
+1. Falls notwendig, [installiere Jekyll](http://jekyllrb.com/docs/installation) (benötigt wird v1.5.x).
   - **Windows-Nutzer:** Lies [diesen unoffiziellen Ratgeber](https://github.com/juthilo/run-jekyll-on-windows/), um Jekyll ohne Probleme zum Laufen zu kriegen. Wir verwenden Pygments, um Code-Schnipsel zu gestalten und hervorzuheben, lies also unbedingt auch die Abschnitte zur Installation von Python und Pygments.
 2. Öffne eine Befehlszeile im Wurzelverzeichnis `/bootstrap` und führe `jekyll serve` aus.
-  - **Windows-Nutzer:** Obwohl wir Jekylls `encoding`-Einstellung verwenden, kann es sein, dass du die Zeichenkodierung ([Code Page](http://en.wikipedia.org/wiki/Windows_code_page)) deiner Befehlszeile in UTF-8 ändern musst, damit Jekyll ohne Probleme läuft. Mit Ruby 2.0.0 führst du einfach immer zuerst `chcp 65001` aus. Mit Ruby 1.9.3 kannst alternativ auch `SET LANG=en_EN.UTF-8` verwenden.
 3. Öffne die Dokumentation in deinem Browser über <http://localhost:10006> (Übersetzung) bzw. <http://localhost:9001> (Original) und fertig!
 
 Erfahre mehr über den Umgang mit Jekyll, indem du dessen [Dokumentation](http://jekyllrb.com/docs/home/) liest.
@@ -93,7 +92,7 @@ In der Befehlszeile:
 
 Wenn das abgeschlossen ist, kannst du die verschiedenen Grunt-Befehle über die Befehlszeile ausführen.
 
-**Du kennst dich mit `npm` nicht aus? Du hast node nicht installiert?** Überhaupt kein Problem. npm steht für [node packaged modules](http://npmjs.org/) und dient dazu benötigte Pakete für die Entwicklung über node.js zu verwalten. [Lade node.js herunter und installiere es](http://nodejs.org/download/), bevor du die anderen Schritt durchführst.
+**Du kennst dich mit npm nicht aus? Du hast node nicht installiert?** Überhaupt kein Problem. npm steht für [node packaged modules](http://npmjs.org/) und dient dazu benötigte Pakete für die Entwicklung über node.js zu verwalten. [Lade node.js herunter und installiere es](http://nodejs.org/download/), bevor du die anderen Schritt durchführst.
 
 ### Verfügbare Grunt-Befehle
 

@@ -19,7 +19,11 @@
   <p>Aus Gründen der Performance benötigen alle Icons eine Grundklasse und eine weitere Klasse für das jeweilige Icon. Um ein Icon zu werwenden, platziere einfach den folgenden Code fast überall wo du willst. Denk daran, ein Leerzeichen zwischen Icon und eventuellem Text zu lassen, damit die Icons einen angemessenen Abstand haben.</p>
   <div class="bs-callout bs-callout-danger">
     <h4>Nicht mit anderen Komponenten vermischen.</h4>
-    <p>Icon-klassen können nicht direkt mit anderen Komponenten kombiniert werden. Sie sollten niemals mit anderen Klassen auf das selbe Element angewendet werden. Füge stattdessen ein untergeordnetes <code>&lt;span&gt;</code> ein und wende die Icon-Klassen auf dieses <code>&lt;span&gt;</code> an.</p>
+    <p>Icon-Klassen können nicht direkt mit anderen Komponenten kombiniert werden. Sie sollten niemals mit anderen Klassen auf das selbe Element angewendet werden. Füge stattdessen ein untergeordnetes <code>&lt;span&gt;</code> ein und wende die Icon-Klassen auf dieses <code>&lt;span&gt;</code> an.</p>
+  </div>
+  <div class="bs-callout bs-callout-danger">
+    <h4>Nur mit leeren Elementen verwenden</h4>
+    <p>Icon-Klassen sollten nur auf Elemente angewendet werden, die weder Text noch untergeordnete Elemente enthalten.</p>
   </div>
 {% highlight html %}
 <span class="glyphicon glyphicon-search"></span>

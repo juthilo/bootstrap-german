@@ -37,10 +37,14 @@
 
   <h4>Auswahlfeld (Checkbox)</h4>
   <p>Füge <code>data-toggle="buttons"</code> zu einer Gruppe von Ankreuzfeldern (Checkboxen) hinzu, um sie in einer Button-Gruppe besonders zu gestalten.</p>
+  <div class="bs-callout bs-callout-warning">
+    <h4>Vorausgewählte Optionen benötigen <code>.active</code></h4>
+    <p>Wenn du Optionen vorauswählen möchtest, musst du selbst die Klasse <code>.active</code> zum <code>label</code> einer Schaltfläche hinzufügen.</p>
+  </div>
   <div class="bs-example" style="padding-bottom: 24px;">
     <div class="btn-group" data-toggle="buttons">
-      <label class="btn btn-primary">
-        <input type="checkbox"> Option 1
+      <label class="btn btn-primary active">
+        <input type="checkbox" checked> Option 1 (vorausgewählt)
       </label>
       <label class="btn btn-primary">
         <input type="checkbox"> Option 2
@@ -52,8 +56,8 @@
   </div><!-- /example -->
 {% highlight html %}
 <div class="btn-group" data-toggle="buttons">
-  <label class="btn btn-primary">
-    <input type="checkbox"> Option 1
+  <label class="btn btn-primary active">
+    <input type="checkbox" checked> Option 1 (vorausgewählt)
   </label>
   <label class="btn btn-primary">
     <input type="checkbox"> Option 2
@@ -66,10 +70,14 @@
 
   <h4>Auswahlfeld (Radio)</h4>
   <p>Füge <code>data-toggle="buttons"</code> zu einer Gruppe von Optionsfeldern (Radios) hinzu, um sie in einer Button-Gruppe besonders zu gestalten.</p>
+  <div class="bs-callout bs-callout-warning">
+    <h4>Vorausgewählte Optionen benötigen <code>.active</code></h4>
+    <p>Wenn du eine Option vorauswählen möchtest, musst du selbst die Klasse <code>.active</code> zum <code>label</code> einer Schaltfläche hinzufügen.</p>
+  </div>
   <div class="bs-example" style="padding-bottom: 24px;">
     <div class="btn-group" data-toggle="buttons">
-      <label class="btn btn-primary">
-        <input type="radio" name="options" id="option1"> Option 1
+      <label class="btn btn-primary active">
+        <input type="radio" name="options" id="option1" checked> Option 1 (vorausgewählt)
       </label>
       <label class="btn btn-primary">
         <input type="radio" name="options" id="option2"> Option 2
@@ -81,8 +89,8 @@
   </div><!-- /example -->
 {% highlight html %}
 <div class="btn-group" data-toggle="buttons">
-  <label class="btn btn-primary">
-    <input type="radio" name="options" id="option1"> Option 1
+  <label class="btn btn-primary active">
+    <input type="radio" name="options" id="option1" checked> Option 1 (vorausgewählt)
   </label>
   <label class="btn btn-primary">
     <input type="radio" name="options" id="option2"> Option 2

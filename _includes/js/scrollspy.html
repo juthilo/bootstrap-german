@@ -83,6 +83,10 @@ $('body').scrollspy({ target: '.navbar-example' })
     <h4>ID-Ziele müssen zuzuordnen sein</h4>
     <p>Die Links in der navbar müssen einer ID zuzuordnen sein. Zum Beispiel muss <code>&lt;a href="#home"&gt;start&lt;/a&gt;</code> mit einem Element im DOM wie <code>&lt;div id="start"&gt;&lt;/div&gt;</code> korrespondieren.</p>
   </div>
+  <div class="bs-callout bs-callout-info">
+    <h4>Zielelemente, die nicht <code>:visible</code> sind, werden ignoriert</h4>
+    <p>Zielelemente, die <a href="http://api.jquery.com/visible-selector/">laut jQuery nicht <code>:visible</code></a> (sichtbar) sind, werden ignoriert und die zugehörigen Nav-Einträge werden niemals hervorgehoben.</p>
+  </div>
 
   <h3>Methoden</h3>
   <h4>.scrollspy('refresh')</h4>

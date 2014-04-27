@@ -154,7 +154,7 @@ Mehr Informationen über SemVer findest du auf <http://semver.org/>.
 
 
 
-## Autoren
+## Erfinder
 
 **Mark Otto**
 

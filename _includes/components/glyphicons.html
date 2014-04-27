@@ -25,6 +25,11 @@
     <h4>Nur mit leeren Elementen verwenden</h4>
     <p>Icon-Klassen sollten nur auf Elemente angewendet werden, die weder Text noch untergeordnete Elemente enthalten.</p>
   </div>
+  <div class="bs-callout bs-callout-info">
+    <h4>Ort der Icon-Schriftarten-Dateien ändern</h4>
+    <p>Standardmäßig nimmt Bootstrap an, dass sich die Dateien für die Symbole im Verzeichnis <code>../fonts/</code> relativ zu deinem CSS befinden. Zum Beispiel: wenn deine CSS-Datei sich unter <code>http://example.com/foobar/css/bootstrap.css</code> befindet, sollten deine Schrift-Dateien sich unter <code>http://example.com/foobar/fonts/glyphicons-halflings-regular.woff</code>, usw. befinden.</p>
+    <p>Falls du die Schrift-Dateien woanders speicherst oder ihre Dateinamen änderst, musst du die Less-Variablen <code>@icon-font-path</code> und/oder <code>@icon-font-name</code> entsprechend anpassen.</p>
+  </div>
 {% highlight html %}
 <span class="glyphicon glyphicon-search"></span>
 {% endhighlight %}

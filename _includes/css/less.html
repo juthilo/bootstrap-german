@@ -76,7 +76,7 @@
 {% highlight scss %}
 // Variablen
 @link-color:       @brand-primary;
-@link-color-hover: darken(@link-color, 15%);
+@link-hover-color: darken(@link-color, 15%);
 
 // Verwendung
 a {
@@ -84,12 +84,12 @@ a {
   text-decoration: none;
 
   &:hover {
-    color: @link-color-hover;
+    color: @link-hover-color;
     text-decoration: underline;
   }
 }
 {% endhighlight %}
-  <p>Beachte, dass <code>@link-color-hover</code> eine Funktion verwendet (ein anderes tolles Werkzeug in Less), die automagisch die richtige Hover-Farbe für Links generiert. Du kannst <code>darken</code>, <code>lighten</code>, <code>saturate</code> und <code>desaturate</code> verwenden.</p>
+  <p>Beachte, dass <code>@link-hover-color</code> eine Funktion verwendet (ein anderes tolles Werkzeug in Less), die automagisch die richtige Hover-Farbe für Links generiert. Du kannst <code>darken</code>, <code>lighten</code>, <code>saturate</code> und <code>desaturate</code> verwenden.</p>
 
   <h3 id="less-variables-typography">Typografie</h3>
   <p>Lege ganz einfach Schriftart, Textgröße, Durchschuss und vieles mehr mit einigen wenigen Variablen fest. Bootstrap verwendet diese ebenfalls, um einfache typografische Mixins bereitzustellen.</p>

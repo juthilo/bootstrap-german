@@ -16,6 +16,10 @@
     <h4>Tooltips &amp; Popovers in Button-Gruppen und Input-Gruppen benötigen besondere Einstellung</h4>
     <p>Wenn du Tooltips oder Popovers an Elementen in einer <code>.btn-group</code> oder <code>.input-group</code> verwendest, musst du die Option <code>container: 'body'</code> festlegen, um unerwünschte Nebeneffekte zu vermeiden (das Element könnte z.B. breiter werden und/oder seine abgerundeten Ecken verlieren, wenn der Tooltip oder das Popover ausgelöst wird).</p>
   </div>
+  <div class="bs-callout bs-callout-warning">
+    <h4>Versuche nicht, Popovers an verborgenen Elementen anzuzeigen</h4>
+    <p>Wenn das Zielelement <code>display: none;</code> ist und du trotzdem versuchst, <code>$(...).popover('show')</code> aufzurufen, wird das Popover falsch positioniert.</p>
+  </div>
   <div class="bs-callout bs-callout-info">
     <h4>Popovers an deaktivierten Elementen benötigen ein umschließendes Element</h4>
     <p>Um ein Popover zu einem deaktivierten Element mit <code>disabled</code> oder <code>.disabled</code> hinzuzufügen, musst du das Element in einem <code>&lt;div&gt;</code> platzieren und das Popover stattdessen darauf anwenden.</p>

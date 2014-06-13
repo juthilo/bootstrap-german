@@ -349,6 +349,18 @@
 
   <h2 id="tables-responsive">Responsive Tabellen</h2>
   <p>Erstelle anpassungsfähige Tabellen, indem du eine <code>.table</code> in <code>.table-responsive</code> verpackst. Auf allen Geräten mit weniger als 768px Breite kann man dann in der Tabelle horizontal scrollen. Auf größeren Geräten wirst du keinen Unterschied zwischen dieser und ganz normalen Tabellen feststellen.</p>
+
+  <div class="bs-callout bs-callout-warning">
+    <h4>Firefox und Fieldsets</h4>
+    <p>Firefox hält einige seltsame Stile für Fieldsets parat, bei denen <code>width</code> die responsive Tabelle stört. Dies kann ohne einen Firefox-spezifischen Hack, den wir <strong>nicht</strong> in Bootstrap zur Verfügung stellen, nicht umgangen werden:</p>
+{% highlight css %}
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
+{% endhighlight %}
+    <p>Lies für mehr Informationen <a href="http://stackoverflow.com/questions/17408815/fieldset-resizes-wrong-appears-to-have-unremovable-min-width-min-content/17863685#17863685">diese Antwort auf Stack Overflow</a>.</p>
+  </div>
+
   <div class="bs-example">
     <div class="table-responsive">
       <table class="table">

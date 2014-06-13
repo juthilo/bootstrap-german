@@ -151,6 +151,33 @@ $('.popover-dismiss').popover({
           <td>Versieht das Popover mit einem CSS-Übergang beim Ein-/Ausblenden</td>
         </tr>
         <tr>
+          <td>container</td>
+          <td>String | false</td>
+          <td>false</td>
+          <td>
+            <p>Ordnet das Popover einem bestimmten Element unter. Beispiel: <code>container: 'body'</code>. Dies erlaubt es dir, das Popover im Flow des Dokuments in der Nähe des auslösenden Elements zu positionieren, was es daran hindert, bei einer Änderung der Fenstergröße davon wegzudriften.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>content</td>
+          <td>String | Funktion</td>
+          <td>''</td>
+          <td>
+            <p>Standard-Inhalt, falls kein <code>data-content</code>-Attribut vorhanden ist.</p>
+            <p>Falls eine Funktion angegeben wird, wird diese mit einem Argument aufgerufen, nämlich dem Element, an das das Popover angebunden ist.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>delay</td>
+          <td>Nummer | Objekt</td>
+          <td>0</td>
+          <td>
+            <p>Verzögere das Anzeigen und Verbergen eines Popovers in ms - wirkt sich nicht auf den manuellen Auslöser aus</p>
+            <p>Falls eine Nummer angegeben wird, wird die Verzögerung auf hide und show angewendet</p>
+            <p>Object-Struktur: <code>delay: { show: 500, hide: 100 }</code></p>
+          </td>
+        </tr>
+        <tr>
           <td>html</td>
           <td>Boolean</td>
           <td>false</td>
@@ -169,21 +196,9 @@ $('.popover-dismiss').popover({
           <td>Falls ein Selektor angegeben wird, werden Popover-Objekte an die angegebenen Ziele gebunden. In der Praxis ist dies nützlich, um dynamischen HTML-Inhalt mit Popovers zu versehen. Sieh dir <a href="https://github.com/twbs/bootstrap/issues/4215">dies</a> und <a href="http://jsfiddle.net/fScua/">ein informatives Beispiel</a> an.</td>
         </tr>
         <tr>
-          <td>trigger</td>
-          <td>String</td>
-          <td>'hover focus'</td>
-          <td>Wie das Popover ausgelöst wird - click | hover | focus | manual. Du kannst mehrere Auslöser angeben; trenne sie mit einem Leerzeichen.</td>
-        </tr>
-        <tr>
-          <td>title</td>
-          <td>String | Funktion</td>
-          <td>''</td>
-          <td>Standard-Titel-Wert, falls kein <code>title</code>-Attribut vorhanden ist</td>
-        </tr>
-        <tr>
           <td>template</td>
           <td>string</td>
-          <td><code>'&lt;div class="popover"&gt;&lt;div class="arrow"&gt;&lt;/div&gt;&lt;h3 class="popover-title"&gt;&lt;/h3&gt;&lt;div class="popover-content"&gt;&lt;/div&gt;&lt;/div&gt;'</code></td>
+          <td><code>'&lt;div class="popover" role="tooltip"&gt;&lt;div class="arrow"&gt;&lt;/div&gt;&lt;h3 class="popover-title"&gt;&lt;/h3&gt;&lt;div class="popover-content"&gt;&lt;/div&gt;&lt;/div&gt;'</code></td>
           <td>
             <p>Grundlegendes HTML für die Erstellung des Popovers.</p>
             <p>Der <code>title</code> des Popovers wird in <code>.popover-title</code> injiziert.</p>
@@ -193,32 +208,25 @@ $('.popover-dismiss').popover({
           </td>
         </tr>
         <tr>
-          <td>content</td>
+          <td>title</td>
           <td>String | Funktion</td>
           <td>''</td>
-          <td>
-            <p>Standard-Inhalt, falls kein <code>data-content</code>-Attribut vorhanden ist.</p>
-            <p>Falls eine Funktion angegeben wird , wird diese mit einem Argument aufgerufen, nämlich dem Element, an das das Popover angebunden ist.</p>
-          </td>
+          <td>Standard-Titel-Wert, falls kein <code>title</code>-Attribut vorhanden ist</td>
         </tr>
         <tr>
-          <td>delay</td>
-          <td>Nummer | Objekt</td>
-          <td>0</td>
-          <td>
-            <p>Verzögere das Anzeigen und Verbergen eines Popovers in ms - wirkt sich nicht auf den manuellen Auslöser aus</p>
-            <p>Falls eine Nummer angegeben wird, wird die Verzögerung auf hide und show angewendet</p>
-            <p>Object-Struktur: <code>delay: { show: 500, hide: 100 }</code></p>
-          </td>
+          <td>trigger</td>
+          <td>String</td>
+          <td>'click'</td>
+          <td>Wie das Popover ausgelöst wird - click | hover | focus | manual. Du kannst mehrere Auslöser angeben; trenne sie mit einem Leerzeichen.</td>
         </tr>
         <tr>
-          <td>container</td>
-          <td>String | false</td>
-          <td>false</td>
-          <td>
-            <p>Ordnet das Popover einem bestimmten Element unter. Beispiel: <code>container: 'body'</code></p>
-          </td>
-        </tr>
+         <td>viewport</td>
+         <td>String | Objekt</td>
+         <td>{ selector: 'body', padding: 0 }</td>
+         <td>
+          <p>Hält das Popover innerhalb der Grenzen dieses Elements. Beispiel: <code>viewport: '#viewport'</code> oder <code>{ selector: '#viewport', padding: 0 }</code></p>
+         </td>
+       </tr>
       </tbody>
     </table>
   </div><!-- /.table-responsive -->

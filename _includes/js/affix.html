@@ -7,13 +7,13 @@
   <hr class="bs-docs-separator">
 
   <h2 id="affix-usage">Verwendung</h2>
-  <p>Verwende das Affix-Plugin über Data-Attribute oder manuell mit deinem eigenen JavaScript. <strong>In beiden Fällen musst du CSS für die Positionierung deines Inhalts angeben.</strong></p>
+  <p>Verwende das Affix-Plugin über Data-Attribute oder manuell mit deinem eigenen JavaScript. <strong class="text-danger">In beiden Fällen musst du CSS für die Positionierung deines fixierten Inhalts angeben.</strong></p>
 
   <h3>Positionierung über CSS</h3>
   <p>Das Affix-Plugin wechselt bei einem Element zwischen drei Klassen, die jeweils einen bestimmten Status repräsentieren: <code>.affix</code>, <code>.affix-top</code> und <code>.affix-bottom</code>. Du musst für diese Klassen selbst (unabhängig von diesem Plugin) Stile hinzufügen, um die tatsächlichen Positionen zu regeln.</p>
   <p>So funktioniert das Affix-Plugin:</p>
   <ol>
-    <li>Am Anfangh fügt das Plugin die Klasse <code>.affix-top</code> hinzu, um anzuzeigen, dass das Element ganz oben ist. Hier brauchst du noch kein CSS zur Positionierung.</li>
+    <li>Am Anfang fügt das Plugin die Klasse <code>.affix-top</code> hinzu, um anzuzeigen, dass das Element ganz oben ist. Hier brauchst du noch kein CSS zur Positionierung.</li>
     <li>Wenn du an dem Element vorbeiscrollst, sollte das eigentliche Affix-Verhalten ausgelöst werden. Jetzt wird <code>.affix-top</code> durch <code>.affix</code> ersetzt und die Position wird von Bootstrap selbst auf <code>position: fixed;</code> festgelegt.</li>
     <li>Falls ein Versatz am unteren Ende angegeben wurde, wird <code>.affix</code> oder <code>.affix-top</code> durch <code>.affix-bottom</code> ersetzt, wenn daran vorbeigescrollt wird. Da so ein Versatz optional ist, ist gegebenenfalls angemessenes CSS erforderlich. In diesem Fall solltest du, falls notwendig, <code>position: absolute;</code> hinzufügen. das Plugin verwendet die Option vom Data-Attribut oder JavaScript, um herauszufinden, wo das Element dann genau positioniert werden soll.</li>
   </ol>
@@ -61,6 +61,12 @@
           <td>Nummer | Funktion | Objekt</td>
           <td>10</td>
           <td>Anzahl der Pixel für einen Versatz vom Bildschirm, wenn die Scroll-Position kalkuliert wird. Falls eine einzelne Nummer angegeben wird, wird der Versatz oben und unten angewendet. Um separate Werte für den Versatz oben und unten anzugeben, definiere ein Objekt: <code>offset: { top: 10 }</code> oder <code>offset: { top: 10, bottom: 5 }</code>. Verwende eine Funktion, wenn du den Versatz dynamisch berechnen musst.</td>
+        </tr>
+        <tr>
+          <td>target</td>
+          <td>Selektor | Knotenpunkt | jQuery-Element</td>
+          <td>das Objekt <code>window</code></td>
+          <td>Legt das Zielelement des Affix fest.</td>
         </tr>
       </tbody>
     </table>

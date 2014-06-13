@@ -36,13 +36,13 @@
   <p>Baue einen Warnhinweis aus, indem du optional <code>.alert-dismissable</code> und einen Schließen-Button hinzufügst.</p>
   <div class="bs-example">
     <div class="alert alert-warning alert-dismissable" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
       <strong>Warnung!</strong> Du siehst ganz blass aus, ist alles in Ordnung?
     </div>
   </div>
 {% highlight html %}
 <div class="alert alert-warning alert-dismissable">
-  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
   <strong>Warnung!</strong> Du siehst ganz blass aus, ist alles in Ordnung?
 </div>
 {% endhighlight %}

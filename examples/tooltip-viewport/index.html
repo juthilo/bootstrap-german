@@ -6,55 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../assets/ico/favicon.ico">
+    <link rel="icon" href="../../favicon.ico">
 
     <title>Tooltip-Viewport-Beispiel für Bootstrap</title>
 
     <!-- Bootstrap-CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap-Theme -->
-    <link href="../../dist/css/bootstrap-theme.min.css" rel="stylesheet">
 
     <!-- Besondere Stile für diese Vorlage -->
     <link href="tooltip-viewport.css" rel="stylesheet">
 
-    <!-- Nur für Testzwecke. Kopiere diese Zeile nicht in echte Projekte! -->
+    <!-- Nur für Testzwecke. Kopiere diese Zeilen nicht in echte Projekte! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
     <!-- IE10-Anzeigefenster-Hack für Fehler auf Surface und Desktop-Windows-8 -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
     <!-- Unterstützung für Media Queries und HTML5-Elemente im Internet Explorer über HTML5 shim und Respond.js -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.1/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
 
   <body>
 
-    <button class="btn pull-right tooltip-bottom" title="Dies sollte nach links geschoben sein">Nach links</button>
-    <button class="btn tooltip-bottom" title="Dies sollte nach rechts geschoben sein">Nach rechts</button>
-    <button class="btn tooltip-right" title="Dies sollte nach unten geschoben sein">Nach unten</button>
+    <button class="btn btn-default pull-right tooltip-bottom" title="Dies sollte nach links geschoben sein">Nach links</button>
+    <button class="btn btn-default tooltip-bottom" title="Dies sollte nach rechts geschoben sein">Nach rechts</button>
+    <button class="btn btn-default tooltip-right" title="Dies sollte nach unten geschoben sein">Nach unten</button>
 
-    <div class="placeholder">Da unten ist ein Button ↓</div>
-
-    <button class="btn tooltip-right" title="Dies sollte nach oben geschoben sein">Nach oben</button>
+    <button class="btn btn-default tooltip-right btn-bottom" title="Dies sollte nach oben geschoben sein">Nach oben</button>
 
     <div class="container-viewport">
-      <button class="btn tooltip-viewport-bottom" title="Dies sollte nach links geschoben sein">Nach links</button>
-      <button class="btn tooltip-viewport-right" title="Dies sollte nach unten geschoben sein">Nach unten</button>
+      <button class="btn btn-default tooltip-viewport-bottom" title="Dies sollte nach links geschoben sein">Nach links</button>
+      <button class="btn btn-default tooltip-viewport-right" title="Dies sollte nach unten geschoben sein">Nach unten</button>
 
-      <button class="btn pull-right tooltip-viewport-bottom" title="Dies sollte nach rechts geschoben sein">Nach rechts</button>
+      <button class="btn btn-default pull-right tooltip-viewport-bottom" title="Dies sollte nach rechts geschoben sein">Nach rechts</button>
 
-      <button class="btn tooltip-viewport-right btn-bottom" title="Dies sollte nach oben geschoben sein">nach oben</button>
+      <button class="btn btn-default tooltip-viewport-right btn-bottom" title="Dies sollte nach oben geschoben sein">nach oben</button>
     </div>
 
 
     <!-- Bootstrap-JavaScript
     ================================================== -->
     <!-- Am Ende des Dokuments platziert, damit Seiten schneller laden -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="../../dist/js/bootstrap.min.js"></script>
     <script src="tooltip-viewport.js"></script>
   </body>

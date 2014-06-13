@@ -6,14 +6,14 @@
   <h2 id="nav-tabs">Tabs</h2>
   <p>Beachte, dass die <code>.nav-tabs</code>-Klasse nur zusammen mit der <code>.nav</code>-Grund-Klasse funktioniert.</p>
   <div class="bs-example">
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs" role="tablist">
       <li class="active"><a href="#">Start</a></li>
       <li><a href="#">Profil</a></li>
       <li><a href="#">Nachrichten</a></li>
     </ul>
   </div>
 {% highlight html %}
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#">Start</a></li>
   <li><a href="#">Profil</a></li>
   <li><a href="#">Nachrichten</a></li>
@@ -62,7 +62,7 @@
     <p>Safari (Stand v7.0.1) hat einen Fehler, bei dem das Verändern der Breite deines Browser-Fensters Anzeigefehler in der gleichmäßig verteilten Variante der Navs hervorruft. Diese Fehler verschwinden nach einem erneuten Laden der Seite. Dieser Fehler ist auch im <a href="../examples/justified-nav/">Beispiel der gleichmäßig verteilten Variante</a> sichtbar.</p>
   </div>
   <div class="bs-example">
-    <ul class="nav nav-tabs nav-justified">
+    <ul class="nav nav-tabs nav-justified" role="tablist">
       <li class="active"><a href="#">Start</a></li>
       <li><a href="#">Profil</a></li>
       <li><a href="#">Nachrichten</a></li>
@@ -75,7 +75,7 @@
     </ul>
   </div>
 {% highlight html %}
-<ul class="nav nav-tabs nav-justified">
+<ul class="nav nav-tabs nav-justified" role="tablist">
   ...
 </ul>
 <ul class="nav nav-pills nav-justified">
@@ -113,7 +113,7 @@
 
   <h3>Tabs mit Dropdowns</h3>
   <div class="bs-example">
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs" role="tablist">
       <li class="active"><a href="#">Start</a></li>
       <li><a href="#">Hilfe</a></li>
       <li class="dropdown">
@@ -131,13 +131,13 @@
     </ul>
   </div>
 {% highlight html %}
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs" role="tablist">
   ...
   <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       Dropdown-Menü <span class="caret"></span>
     </a>
-    <ul class="dropdown-menu">
+    <ul class="dropdown-menu" role="menu">
       ...
     </ul>
   </li>
@@ -171,7 +171,7 @@
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       Dropdown-Menü <span class="caret"></span>
     </a>
-    <ul class="dropdown-menu">
+    <ul class="dropdown-menu" role="menu">
       ...
     </ul>
   </li>

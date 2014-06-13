@@ -5,14 +5,14 @@
   <p>Ermögliche mit diesem Plugin das Schließen von allen Warnhinweisen.</p>
   <div class="bs-example">
     <div class="alert alert-warning fade in" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
       <strong>Du siehst ein bisschen blass aus!</strong> Ist alles in Ordnung?
     </div>
   </div><!-- /example -->
 
   <div class="bs-example">
     <div class="alert alert-danger fade in" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
       <h4>Oh nein! Es ist ein Fehler aufgetreten!</h4>
       <p>Verändere dies und das und versuche es dann erneut. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
       <p>
@@ -29,7 +29,7 @@
 
   <h3>Markup</h3>
   <p>Füge einfach <code>data-dismiss="alert"</code> zu deinem Schließen-Button hinzu, um einem Warnhinweis Schließen-Funktionalität hinzuzufügen.</p>
-  {% highlight html %}<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>{% endhighlight %}
+  {% highlight html %}<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>{% endhighlight %}
 
   <h3>Methoden</h3>
 

@@ -21,22 +21,28 @@
 
 <!-- Bootstrap CSS -->
 <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+{% if page.slug == "css" or page.slug == "components" or page.slug == "js" %}
+  <!-- Optionales Bootstrap-Theme -->
+  <link href="data:text/css;charset=utf-8," data-href="../dist/css/bootstrap-theme.min.css" rel="stylesheet" id="bs-theme-stylesheet">
+{% endif %}
 
 <!-- Stile für die Dokumentation -->
 <link href="../assets/css/docs.min.css" rel="stylesheet">
 <!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 <!-- IE10-Anzeigefenster-Hack für Fehler auf Surface und Desktop-Windows-8 -->
 <script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="../assets/js/ie-emulation-modes-warning.js"></script>
 
 <!-- Unterstützung für Media Queries und HTML5-Elemente im Internet Explorer über HTML5 shim und Respond.js -->
 <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.1/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
 <!-- Favicons -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-                               <link rel="icon" href="../assets/ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-precomposed.png">
+<link rel="icon" href="/favicon.ico">
+
 <script>
 var gaProperty = 'UA-46834633-2';
 var disableStr = 'ga-disable-' + gaProperty;
@@ -53,7 +59,6 @@ function gaOptout() {
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-46834633-2', 'holdirbootstrap.de');
   ga('set', 'anonymizeIp', true);
   ga('send', 'pageview');

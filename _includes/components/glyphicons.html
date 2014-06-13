@@ -27,8 +27,13 @@
   </div>
   <div class="bs-callout bs-callout-info">
     <h4>Ort der Icon-Schriftarten-Dateien ändern</h4>
-    <p>Standardmäßig nimmt Bootstrap an, dass sich die Dateien für die Symbole im Verzeichnis <code>../fonts/</code> relativ zu deinem CSS befinden. Zum Beispiel: wenn deine CSS-Datei sich unter <code>http://example.com/foobar/css/bootstrap.css</code> befindet, sollten deine Schrift-Dateien sich unter <code>http://example.com/foobar/fonts/glyphicons-halflings-regular.woff</code>, usw. befinden.</p>
-    <p>Falls du die Schrift-Dateien woanders speicherst oder ihre Dateinamen änderst, musst du die Less-Variablen <code>@icon-font-path</code> und/oder <code>@icon-font-name</code> entsprechend anpassen.</p>
+    <p>Bootstrap erwartet, dass sich die Dateien für die Symbole im Verzeichnis <code>../fonts/</code> relativ zu den kompilierten CSS-Dateien befinden. Ein Verschieben oder Umbenennen dieser Schriftarten-Dateien bedeutet, dass du das CSS über einen von drei Wegen aktualisieren musst:</p>
+    <ul>
+      <li>Verändere die Variablen <code>@icon-font-path</code> und/oder <code>@icon-font-name</code> in den Less-Quelldateien.</li>
+      <li>Verwende die <a href="http://lesscss.org/usage/#command-line-usage-relative-urls">Option der relativen URLs</a>, die der Less-Kompilierer bereitstellt.</li>
+      <li>Verändere die <code>url()</code>-Pfade im kompilierten CSS.</li>
+    </ul>
+    <p>Verwende die Option, die am besten zu deiner spezifischen Umwicklungseinrichtung passt.</p>
   </div>
 {% highlight html %}
 <span class="glyphicon glyphicon-search"></span>

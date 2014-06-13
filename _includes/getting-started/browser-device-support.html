@@ -20,7 +20,7 @@
         <tr>
           <th>Android</th>
           <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Unterstützt</span></td>
-          <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> <span class="sr-only">Nicht Unterstützt</span></td>
+          <td class="text-success"><span class="glyphicon glyphicon-ok"></span> <span class="sr-only">Unterstützt</span></td>
           <td class="text-muted" rowspan="3" style="vertical-align: middle;">k.A.</td>
           <td class="text-danger"><span class="glyphicon glyphicon-remove"></span> <span class="sr-only">Nicht Unterstützt</span></td>
           <td class="text-muted">k.A.</td>
@@ -141,7 +141,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
 }
 {% endhighlight %}
   <p>Für mehr Informationen und Hilfe bei der Umsetzung, lies <a href="http://timkadlec.com/2013/01/windows-phone-8-and-device-width/">Windows Phone 8 and Device-Width</a>.</p>
-  <p>Hinweis: wir verwenden diese Technik in der Bootstrap-Dokumentation als Beispiel.</p>
+  <p>Hinweis: wir verwenden diese Technik in der Bootstraps Dokumentation und Vorlagen als Beispiel.</p>
 
   <h3 id="support-safari-percentages">Safari-Prozent-Rundung</h3>
   <p>Ausgehend von Safari v7.0.1 für OS X und Safari für iOS v7.0.1 hat Safaris Rendering-Engine Probleme mit der Anzahl der Dezimalstellen in unseren <code>.col-*-1</code>-Rasterklassen. Falls du also 12 einzelne Rasterspalten hast, wirst du bemerken, dass diese weniger breit als andere Spaltenreihen erscheinen. Wir können hier nicht viel tun (<a href="https://github.com/twbs/bootstrap/issues/9282">siehe #9282</a>), aber du hast einige Möglichkeiten:</p>
@@ -173,7 +173,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
   <h3 id="support-android-stock-browser">Android Stock Browser</h3>
   <p>Statt Chrome zu verwenden, kommt bis Android 4.1 (und anscheinend auch bei einigen neueren Versionen) die sogenannte Internet-App als Standard-Browser auf Android-Geräten. Leider ist dieser Browser von Fehlern und Unstimmigkeiten in Bezug auf CSS allgemein behaftet.</p>
   <h4>Auswahlmenüs</h4>
-  <p>Der Android Stock Browser wird bei <code>&lt;select&gt;</code>-Elementen die Symbole an der Seite nicht richtig anzeigen, wenn ein <code>border-radius</code> und/oder <code>border</code> vorhanden ist. Verwende den Code-Schnipsel unten, um diese CSS-Eigenschaften im Android Stock Browser zu entfernen und das <code>&lt;select&gt;</code>-Element ohne Stile darzustellen. Der Code analysiert den User Agent, damit Chrome, Safari und Mozilla-Browser nicht beeinträchtigt werden.</p>
+  <p>Der Android Stock Browser wird bei <code>&lt;select&gt;</code>-Elementen die Symbole an der Seite nicht richtig anzeigen, wenn ein <code>border-radius</code> und/oder <code>border</code> vorhanden ist. (Siehe <a href="http://stackoverflow.com/questions/14744437/html-select-box-not-showing-drop-down-arrow-on-android-version-4-0-when-set-with">diese Frage auf StackOverflow</a> für Details.) Verwende den Code-Schnipsel unten, um diese CSS-Eigenschaften im Android Stock Browser zu entfernen und das <code>&lt;select&gt;</code>-Element ohne Stile darzustellen. Der Code analysiert den User Agent, damit Chrome, Safari und Mozilla-Browser nicht beeinträchtigt werden.</p>
 {% highlight html %}
 <script>
 &(function () {

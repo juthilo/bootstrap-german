@@ -378,10 +378,10 @@ a {
 {% highlight scss %}
 #gradient > .striped(#333; 45deg);
 {% endhighlight %}
-  <p>Lass die Korken knallen und nimm stattdessen drei Farben. Lege die erste Farbe, die zweite Farbe, den Farbstopp der zweiten Farbe (ein Dezimalwert wie 0.25) und die dritte Farbe mit diesen Mixins fest:</p>
+  <p>Lass die Korken knallen und nimm stattdessen drei Farben. Lege die erste Farbe, die zweite Farbe, den Farbstopp der zweiten Farbe (ein Prozentwert wie 25%) und die dritte Farbe mit diesen Mixins fest:</p>
 {% highlight scss %}
-#gradient > .vertical-three-colors(#777; #333; .25; #000);
-#gradient > .horizontal-three-colors(#777; #333; .25; #000);
+#gradient > .vertical-three-colors(#777; #333; 25%; #000);
+#gradient > .horizontal-three-colors(#777; #333; 25%; #000);
 {% endhighlight %}
   <p><strong>Aufgepasst!</strong> Wenn du einen Farbverlauf einmal entfernen musst, denk daran IE-spezifische <code>filter</code> zu entfernen, die du evtl. hinzugefügt hast. Du kannst das mit dem <code>.reset-filter()</code>-Mixin zusammen mit <code>background-image: none;</code> bewerkstelligen.</p>
 

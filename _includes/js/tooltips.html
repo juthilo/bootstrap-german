@@ -63,11 +63,11 @@ $('#beispiel').tooltip(Optionen)
 <a href="#" data-toggle="tooltip" title="Ein bisschen Tooltip-Text!">Mauszeiger hier drüber</a>
 
 <!-- Generiertes Markup -->
-<div class="tooltip top">
+<div class="tooltip top" role="tooltip">
+  <div class="tooltip-arrow"></div>
   <div class="tooltip-inner">
     Ein bisschen Tooltip-Text!
   </div>
-  <div class="tooltip-arrow"></div>
 </div>
 {% endhighlight %}
 
@@ -91,6 +91,24 @@ $('#beispiel').tooltip(Optionen)
           <td>Versieht den Tooltip mit einem CSS-Übergang beim Ein-/Ausblenden</td>
         </tr>
         <tr>
+          <td>container</td>
+          <td>String | false</td>
+          <td>false</td>
+          <td>
+            <p>Ordnet den Tooltip einem bestimmten Element unter. Beispiel: <code>container: 'body'</code>. Dies erlaubt es dir, das Popover im Flow des Dokuments in der Nähe des auslösenden Elements zu positionieren, was es daran hindert, bei einer Änderung der Fenstergröße davon wegzudriften.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>delay</td>
+          <td>Nummer | Objekt</td>
+          <td>0</td>
+          <td>
+            <p>Verzögere das Anzeigen und Verbergen eines Tooltips in ms - wirkt sich nicht auf den manuellen Auslöser aus</p>
+            <p>Falls eine Nummer angegeben wird, wird die Verzögerung auf hide und show angewendet</p>
+            <p>Object-Struktur: <code>delay: { show: 500, hide: 100 }</code></p>
+          </td>
+        </tr>
+        <tr>
           <td>html</td>
           <td>Boolean</td>
           <td>false</td>
@@ -106,7 +124,7 @@ $('#beispiel').tooltip(Optionen)
           <td>selector</td>
           <td>String</td>
           <td>false</td>
-          <td>Falls ein Selektor angegeben wird, werden Tooltip-Objekte an die angegebenen Ziele gebunden.</td>
+          <td>Falls ein Selektor angegeben wird, werden Tooltip-Objekte an die angegebenen Ziele gebunden. In der Praxis wird dies verwendet, um Tooltips zu dynamischem HTML-Inhalt hinzufügen zu können. Siehe <a href="https://github.com/twbs/bootstrap/issues/4215">hier</a> und <a href="http://jsfiddle.net/fScua/">ein informatives Beispiel</a>.</td>
         </tr>
         <tr>
           <td>template</td>
@@ -130,24 +148,6 @@ $('#beispiel').tooltip(Optionen)
           <td>String</td>
           <td>'hover focus'</td>
           <td>Wie der Tooltip ausgelöst wird - click | hover | focus | manual. Du kannst mehrere Auslöser angeben; trenne sie mit einem Leerzeichen.</td>
-        </tr>
-        <tr>
-          <td>delay</td>
-          <td>Nummer | Objekt</td>
-          <td>0</td>
-          <td>
-            <p>Verzögere das Anzeigen und Verbergen eines Tooltips in ms - wirkt sich nicht auf den manuellen Auslöser aus</p>
-            <p>Falls eine Nummer angegeben wird, wird die Verzögerung auf hide und show angewendet</p>
-            <p>Object-Struktur: <code>delay: { show: 500, hide: 100 }</code></p>
-          </td>
-        </tr>
-        <tr>
-          <td>container</td>
-          <td>String | false</td>
-          <td>false</td>
-          <td>
-            <p>Ordnet den Tooltip einem bestimmten Element unter. Beispiel: <code>container: 'body'</code></p>
-          </td>
         </tr>
        <tr>
          <td>viewport</td>

@@ -208,6 +208,7 @@
 
   <h3>Optionsfelder</h3>
   <p>Felder zum Ankreuzen (checkbox) sind dazu da, eine oder mehr Optionen aus einer Liste auszuwählen, während man mit runden Optionsfeldern (radio) eine von mehrere Optionen auswählt.</p>
+  <p>Eine Checkbox oder ein Radio-Button mit dem Attribut <code>disabled</code> wird als deaktiviert gestaltet. Damit auch beim <code>&lt;label&gt;</code> für das entsprechende Feld ein "not-allowed"-Cursor angezeigt wird, wenn der Nutzer den Mauszeiger darüber hält, füge die Klasse <code>.disabled</code> zu deinen Elementen mit den Klassen <code>.radio</code>, <code>.radio-inline</code>, <code>.checkbox</code> oder <code>.checkbox-inline</code> oder zu einem <code>&lt;fieldset&gt;</code> hinzu.</p>
   <h4>Standard (übereinander)</h4>
   <div class="bs-example">
     <form role="form">
@@ -215,6 +216,12 @@
         <label>
           <input type="checkbox" value="">
           Die erste Option ist dies und das&mdash;denk daran, zu sagen, warum es toll ist!
+        </label>
+      </div>
+      <div class="checkbox disabled">
+        <label>
+          <input type="checkbox" value="">
+          Die zweite Option ist deaktiviert
         </label>
       </div>
       <br>
@@ -230,6 +237,12 @@
           Die zweite Option ist etwas anderes und wenn du sie auswählst, wird die erste abgewählt.
         </label>
       </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsfeldRadio" id="optionsfeldRadio3" value="option3" checked>
+          Die dritte Option ist deaktiviert
+        </label>
+      </div>
     </form>
   </div><!-- /.bs-example -->
 {% highlight html %}
@@ -237,6 +250,12 @@
   <label>
     <input type="checkbox" value="">
     Die erste Option ist dies und das&mdash;denk daran, zu sagen, warum es toll ist!
+  </label>
+</div>
+<div class="checkbox disabled">
+  <label>
+    <input type="checkbox" value="">
+    Die zweite Option ist deaktiviert
   </label>
 </div>
 
@@ -250,6 +269,12 @@
   <label>
     <input type="radio" name="optionsfeldRadio" id="optionsfeldRadio2" value="option2">
     Die zweite Option ist etwas anderes und wenn du sie auswählst, wird die erste abgewählt.
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsfeldRadio" id="optionsfeldRadio3" value="option3" checked>
+    Die dritte Option ist deaktiviert
   </label>
 </div>
 {% endhighlight %}
@@ -511,7 +536,7 @@
   <p>Du kannst optional außerdem passende Icons hinzufügen, indem du die Klasse <code>.has-feedback</code> und das richtige Icon ergänzt.</p>
   <div class="bs-callout bs-callout-warning">
     <h4>Icons, Labels und Input-Gruppen</h4>
-    <p>Die Feedback-Icons müssen manuell positioniert werden, wenn du sie mit Feldern ohne Label oder mit <a href="../komponenten#input-groups">Input-Gruppen</a> mit einem Add-on auf der rechten Seite verwendest. Bei nicht vorhandenen Labels musst du den Wert für <code>top</code> anpassen. Ändere bei Input-Grupen den Standard <code>right: 0;</code> zu einem sinnvollen Pixel-Wert, abhängig von der Breite deines Add-ons.</p>
+    <p>Die Feedback-Icons müssen manuell positioniert werden, wenn du sie mit Feldern ohne Label oder mit <a href="../komponenten#input-groups">Input-Gruppen</a> mit einem Add-on auf der rechten Seite verwendest. Es wird aus Gründen der Barrierefreiheit dringend empfohlen, Labels für alle Felder anzugeben. Falls du die Anzeige von Labels verhindern möchtest, verberge sie mit der Klasse <code>sr-only</code>. Falls du wirklich keine Labels einfügen kannst, musst du den Wert für <code>top</code> beim Feedback-Icon anpassen. Ändere bei Input-Grupen den Standard <code>right: 0;</code> zu einem sinnvollen Pixel-Wert, abhängig von der Breite deines Add-ons.</p>
   </div>
   <div class="bs-example">
     <form role="form">
@@ -550,7 +575,7 @@
 </div>
 {% endhighlight %}
 
-  <p>Diese Icons funktionieren auch in horizontalen und Inline-Formularen.</p>
+  <h4>Optionale Icons in horizontalen und einzeiligen Formularen</h4>
   <div class="bs-example">
     <form class="form-horizontal" role="form">
       <div class="form-group has-success has-feedback">
@@ -588,6 +613,25 @@
   <div class="form-group has-success has-feedback">
     <label class="control-label" for="eingabefeldErfolg4">Feld mit Erfolg</label>
     <input type="text" class="form-control" id="eingabefeldErfolg4">
+    <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+  </div>
+</form>
+{% endhighlight %}
+
+  <h4>Optionale Icons mit versteckten <code>.sr-only</code>-Labels</h4>
+  <p>Für Formularelemente ohne sichtbares Label kannst du die Klasse <code>.sr-only</code> zum Label hinzufügen. Bootstrap wird die Position des Icons automatisch anpassen.</p>
+  <div class="bs-example">
+    <div class="form-group has-success has-feedback">
+      <label class="control-label sr-only" for="eingabefeldErfolg5">Verstecktes Label</label>
+      <input type="text" class="form-control" id="eingabefeldErfolg5">
+      <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+    </div>
+  </div>
+{% highlight html %}
+<form class="form-inline" role="form">
+  <div class="form-group has-success has-feedback">
+    <label class="control-label sr-only" for="eingabefeldErfolg5">Verstecktes Label</label>
+    <input type="text" class="form-control" id="eingabefeldErfolg5">
     <span class="glyphicon glyphicon-ok form-control-feedback"></span>
   </div>
 </form>

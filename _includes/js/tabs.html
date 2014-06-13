@@ -4,14 +4,14 @@
   <h2 id="tabs-examples">Beispiel-Tabs</h2>
   <p>Füge schnelle, dynamische Tab-Funktionalität hinzu, um zwischen verschiedenen Blöcken von Inhalt zu wechseln, auch über Dropdown-Menüs.</p>
   <div class="bs-example bs-example-tabs">
-    <ul id="meinTab" class="nav nav-tabs">
-      <li class="active"><a href="#start" data-toggle="tab">Start</a></li>
-      <li><a href="#profil" data-toggle="tab">Profil</a></li>
+    <ul id="meinTab" class="nav nav-tabs" role="tablist">
+      <li class="active"><a href="#start" role="tab" data-toggle="tab">Start</a></li>
+      <li><a href="#profil" role="tab" data-toggle="tab">Profil</a></li>
       <li class="dropdown">
         <a href="#" id="meinTabDrop1" class="dropdown-toggle" data-toggle="dropdown">Dropdown-Menü <span class="caret"></span></a>
         <ul class="dropdown-menu" role="menu" aria-labelledby="meinTabDrop1">
-          <li><a href="#dropdown1" tabindex="-1" data-toggle="tab">@fat</a></li>
-          <li><a href="#dropdown2" tabindex="-1" data-toggle="tab">@mdo</a></li>
+          <li><a href="#dropdown1" tabindex="-1" role="tab" data-toggle="tab">@fat</a></li>
+          <li><a href="#dropdown2" tabindex="-1" role="tab" data-toggle="tab">@mdo</a></li>
         </ul>
       </li>
     </ul>
@@ -60,11 +60,11 @@ $('#meinTab li:eq(2) a').tab('show') // Dritten Tab auswählen (Nummern starten 
   <p>Du kannst Tab- oder Pills-Navs aktivieren, ohne JavaScript zu schreiben, indem du einfach <code>data-toggle="tab"</code> oder <code>data-toggle="pill"</code> bei einem Element hinzufügst. Durch Hinzufügen der Klassen <code>nav</code> und <code>nav-tabs</code> zur Tab-<code>ul</code> wird Bootstrap <a href="../komponenten/#nav-tabs">Tab-Stile</a> anwenden, während <code>nav</code> und <code>nav-pills</code> für <a href="../komponenten/#nav-pills">Pills-Stile</a> sorgen.</p>
 {% highlight html %}
 <!-- Tabs-Navs -->
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#start" data-toggle="tab">Start</a></li>
-  <li><a href="#profil" data-toggle="tab">Profil</a></li>
-  <li><a href="#nachrichten" data-toggle="tab">Nachrichten</a></li>
-  <li><a href="#einstellungen" data-toggle="tab">Einstellungen</a></li>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#start" role="tab" data-toggle="tab">Start</a></li>
+  <li><a href="#profil" role="tab" data-toggle="tab">Profil</a></li>
+  <li><a href="#nachrichten" role="tab" data-toggle="tab">Nachrichten</a></li>
+  <li><a href="#einstellungen" role="tab" data-toggle="tab">Einstellungen</a></li>
 </ul>
 
 <!-- Tab-Inhalte -->
@@ -93,11 +93,11 @@ $('#meinTab li:eq(2) a').tab('show') // Dritten Tab auswählen (Nummern starten 
     Aktivierte ein Tab-Element und seinen Inhalts-Container. Der Tab sollte entweder ein <code>data-target</code>- oder ein <code>href</code>-Attribut haben, um den richtigen Container im DOM anzuvisieren.
   </p>
 {% highlight html %}
-<ul class="nav nav-tabs" id="meinTab">
+<ul class="nav nav-tabs" role="tablist" id="meinTab">
   <li class="active"><a href="#start" data-toggle="tab">Start</a></li>
-  <li><a href="#profil" data-toggle="tab">Profil</a></li>
-  <li><a href="#nachrichten" data-toggle="tab">Nachrichten</a></li>
-  <li><a href="#einstellungen" data-toggle="tab">Einstellungen</a></li>
+  <li><a href="#profil" role="tab" data-toggle="tab">Profil</a></li>
+  <li><a href="#nachrichten" role="tab" data-toggle="tab">Nachrichten</a></li>
+  <li><a href="#einstellungen" role="tab" data-toggle="tab">Einstellungen</a></li>
 </ul>
 
 <div class="tab-content">

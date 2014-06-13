@@ -48,10 +48,10 @@
   <h3 id="helper-classes-close">Schließen-Symbol</h3>
   <p>Verwende das generische Schließen-Symbol für das Schließen von Inhalten wie Modals oder Warnhinweisen.</p>
   <div class="bs-example">
-    <p><button type="button" class="close" aria-hidden="true">&times;</button></p>
+    <p><button type="button" class="close" aria-hidden="true"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button></p>
   </div>
 {% highlight html %}
-<button type="button" class="close" aria-hidden="true">&times;</button>
+<button type="button" class="close" aria-hidden="true"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button></p>
 {% endhighlight %}
 
 
@@ -116,7 +116,7 @@
 
 
   <h3 id="helper-classes-clearfix">Clearfix</h3>
-  <p>Setze <code>float</code> bei einem Element mit der <code>.clearfix</code>-Klasse zurück. Verwendet <a href="http://nicolasgallagher.com/micro-clearfix-hack/">das Micro-Clearfix</a>, bekannt gemacht von Nicolas Gallagher. Kann auch als Mixin verwendet werden.</p>
+  <p>Setze ganz einfach <code>float</code>s bei einem Element zurück, indem du <code>.clearfix</code> <strong>zum übergeordneten Element</strong> hinzufügst. Verwendet <a href="http://nicolasgallagher.com/micro-clearfix-hack/">das Micro-Clearfix</a>, bekannt gemacht von Nicolas Gallagher. Kann auch als Mixin verwendet werden.</p>
 {% highlight html %}
 <!-- Verwendung als Klasse -->
 <div class="clearfix">...</div>

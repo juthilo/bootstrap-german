@@ -13,6 +13,7 @@
     <li>Spalten erzeugen "Furchen" (Lücken zwischen Spalten-Inhalt) über <code>padding</code>. Dieser Innenabstand wird in Zeilen von der ersten und letzten Spalte über negativen Außenabstand wieder abgezogen.</li>
     <li>Der negative Außenabstand ist der Grund dafür, dass die Beispiele unten breiter sind als der Fließtext. Durch den negativen Außenabstand ist der Inhalt von Raster-Spalten auf einer Linie mit Inhalt außerhalb von jeglichen Raster-Elementen.</li>
     <li>Raster-Spalten werden definiert, indem du die Anzahl von zwölf verfügbaren Spalten angibst, über die die Raster-Spalte gelegt werden soll. Zum Beispiel kannst du drei gleich große Spalten mit drei <code>.col-xs-4</code> erstellen.</li>
+    <li>Falls mehr als 12 Spalten in einer einzigen Zeile platziert werden, wird jede Gruppe mit Extra-Spalten als eine Einheit in eine neue Zeile rutschen.</li>
     <li>Rasterklassen beziehen sich auf Geräte mit Bildschirmbreiten, die genau so groß oder größer als die Umbruchpunkt-Größen sind. Sie überschreiben Rasterklassen, die sich auf kleinere Geräte beziehen. Wenn du eine <code>.col-md-</code>-Klasse auf ein Element anwendest, wird sich dies daher nicht nur auf die Stile auf mittleren Geräten auswirken, sondern auch auf diejenigen auf großen Geräten, es sei denn es gibt außerdem eine <code>.col-lg-</code>-Klasse.</li>
   </ul>
   <p>Sieh dir die Beispiele an, um diese Prinzipien in deinen Code einzubauen.</p>
@@ -67,49 +68,49 @@
       </thead>
       <tbody>
         <tr>
-          <th>Raster-Verhalten</th>
+          <th class="text-nowrap">Raster-Verhalten</th>
           <td>Durchgehend horizontal</td>
           <td colspan="3">Zuerst minimiert, über Umbruchpunkten horizontal</td>
         </tr>
         <tr>
-          <th>Container-Breite</th>
+          <th class="text-nowrap">Container-Breite</th>
           <td>Keine (auto)</td>
           <td>750px</td>
           <td>970px</td>
           <td>1170px</td>
         </tr>
         <tr>
-          <th>Klassen-Präfix</th>
+          <th class="text-nowrap">Klassen-Präfix</th>
           <td><code>.col-xs-</code></td>
           <td><code>.col-sm-</code></td>
           <td><code>.col-md-</code></td>
           <td><code>.col-lg-</code></td>
         </tr>
         <tr>
-          <th>Spaltenanzahl</th>
+          <th class="text-nowrap">Spaltenanzahl</th>
           <td colspan="4">12</td>
         </tr>
         <tr>
-          <th>Spaltenbreite</th>
+          <th class="text-nowrap">Spaltenbreite</th>
           <td class="text-muted">Auto</td>
           <td>~62px</td>
           <td>~81px</td>
           <td>~97px</td>
         </tr>
         <tr>
-          <th>Abstandsbreite</th>
+          <th class="text-nowrap">Abstandsbreite</th>
           <td colspan="4">30px (15px auf jeder Seite einer Spalte)</td>
         </tr>
         <tr>
-          <th>Verschachtelbar</th>
+          <th class="text-nowrap">Verschachtelbar</th>
           <td colspan="4">Ja</td>
         </tr>
         <tr>
-          <th>Abrückung</th>
+          <th class="text-nowrap">Abrückung</th>
           <td colspan="4">Ja</td>
         </tr>
         <tr>
-          <th>Spalten-Umordnung</th>
+          <th class="text-nowrap">Spalten-Umordnung</th>
           <td colspan="4">Ja</td>
         </tr>
       </tbody>
@@ -254,6 +255,23 @@
 </div>
 {% endhighlight %}
 
+  <h3 id="grid-example-wrapping">Beispiel: Spaltenumbruch</h3>
+  <p>Falls mehr als 12 Spalten in einer einzigen Zeile platziert werden, wird jede Gruppe mit Extra-Spalten als eine Einheit in eine neue Zeile rutschen.</p>
+  <div class="bs-docs-grid">
+    <div class="row show-grid">
+      <div class="col-xs-9">.col-xs-9</div>
+      <div class="col-xs-4">.col-xs-4<br>Da 9 + 4 = 13 &gt; 12, rutscht dieser 4 Spalten breite div als ganze Einheit in eine neue Zeile.</div>
+      <div class="col-xs-6">.col-xs-6<br>Folgende Spalten werden in der neuen Zeile fortgeführt.</div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="row">
+  <div class="col-xs-9">.col-xs-9</div>
+  <div class="col-xs-4">.col-xs-4<br>Da 9 + 4 = 13 &gt; 12, rutscht dieser 4 Spalten breite div als ganze Einheit in eine neue Zeile.</div>
+  <div class="col-xs-6">.col-xs-6<br>Folgende Spalten werden in der neuen Zeile fortgeführt.</div>
+</div>
+{% endhighlight %}
+
   <h3 id="grid-responsive-resets">Responsive Spalten-Resets</h3>
   <p>Mit den vier Gliedern unseres Raster-Systems ist es fast unvermeidbar, dass du auf Probleme stößt, wenn bei bestimmten Umbruchpunkten deine Spalten nicht richtig positioniert werden, da eine höher ist als die andere. Um dies zu beheben, kannst du eine Kombination aus <code>.clearfix</code> und unseren <a href="#responsive-utilities">Responsiven Hiflsmitteln</a> verwenden.</p>
   <div class="bs-docs-grid">
@@ -329,30 +347,30 @@
 
 
   <h3 id="grid-nesting">Spalten verschachteln</h3>
-  <p>Um deinem Inhalt eine weitere Raster-Ebene hinzuzufügen, füge einfach eine neue <code>.row</code> und eine Reihe von <code>.col-md-*</code>-Spalten innerhalb von einer bestehenden <code>.col-md-*</code>-Spalte hinzu. Verschatelte Zeilen sollten bis zu 12 Spalten beinhalten.</p>
+  <p>Um deinem Inhalt eine weitere Raster-Ebene hinzuzufügen, füge einfach eine neue <code>.row</code> und eine Reihe von <code>.col-md-*</code>-Spalten innerhalb von einer bestehenden <code>.col-md-*</code>-Spalte hinzu. Verschatelte Zeilen sollten bis zu 12 Spalten beinhalten (es ist nicht notwendig, dass du alle 12 verfügbaren Spalten nutzt).</p>
   <div class="row show-grid">
-    <div class="col-md-9">
-      Ebene 1: .col-md-9
+    <div class="col-sm-9">
+      Ebene 1: .col-sm-9
       <div class="row show-grid">
-        <div class="col-md-6">
-          Ebene 2: .col-md-6
+        <div class="col-xs-8 col-sm-6">
+          Ebene 2: .col-xs-8 .col-sm-6
         </div>
-        <div class="col-md-6">
-          Ebene 2: .col-md-6
+        <div class="col-xs-4 col-sm-6">
+          Ebene 2: .col-xs-4 .col-sm-6
         </div>
       </div>
     </div>
   </div>
 {% highlight html %}
 <div class="row">
-  <div class="col-md-9">
-    Ebene 1: .col-md-9
+  <div class="col-sm-9">
+    Ebene 1: .col-sm-9
     <div class="row">
-      <div class="col-md-6">
-        Ebene 2: .col-md-6
+      <div class="col-xs-8 col-sm-6">
+        Ebene 2: .col-xs-8 .col-sm-6
       </div>
-      <div class="col-md-6">
-        Ebene 2: .col-md-6
+      <div class="col-xs-4 col-sm-6">
+        Ebene 2: .col-xs-4 .col-sm-6
       </div>
     </div>
   </div>

@@ -15,7 +15,7 @@ Um direkt loszulegen, geh auf <http://holdirbootstrap.de>!
  - [Mitmachen](#mitmachen)
  - [Community](#community)
  - [Versionen](#versionen)
- - [Autoren](#autoren)
+ - [Erfinder](#erfinder)
  - [Copyright und Lizenz](#copyright-und-lizenz)
 
 ## Schnellstart
@@ -64,7 +64,7 @@ Bootstraps Dokumentation, die du in diesem Repository als Übersetzung findest, 
 
 ### Dokumentation lokal ausführen
 
-1. Falls notwendig, [installiere Jekyll](http://jekyllrb.com/docs/installation) (benötigt wird v1.5.x).
+1. Falls notwendig, [installiere Jekyll](http://jekyllrb.com/docs/installation) (benötigt wird v2.0.x).
   - **Windows-Nutzer:** Lies [diesen unoffiziellen Ratgeber](https://github.com/juthilo/run-jekyll-on-windows/), um Jekyll ohne Probleme zum Laufen zu kriegen. Wir verwenden Pygments, um Code-Schnipsel zu gestalten und hervorzuheben, lies also unbedingt auch die Abschnitte zur Installation von Python und Pygments.
 2. Öffne eine Befehlszeile im Wurzelverzeichnis `/bootstrap` und führe `jekyll serve` aus.
 3. Öffne die Dokumentation in deinem Browser über <http://localhost:10006> (Übersetzung) bzw. <http://localhost:9001> (Original) und fertig!
@@ -135,22 +135,9 @@ Bleib auf dem Laufenden, was die Entwicklung und Neuigkeiten aus der Community a
 
 
 
-
 ## Versionen
 
-Um unsere Veröffentlichungen so klar wie möglich zu halten und Rückwärtskompatibilität zu gewährleisten, wird Bootstrap unter den Richtlinien des Semantic Versioning entwickelt. Wir versuchen diese Regeln so gut wie möglich einzuhalten, doch manchmal kann uns dabei ein Fehler unterlaufen.
-
-Versionen werden in diesem Format nummeriert:
-
-`<Haupt>.<Unter>.<Patch>`
-
-Und mit diesen Regeln konzipiert:
-
-- Nicht rückwärts-kompatible Änderungen **erhöhen die Haupt-Nummer** und setzen Unternummer und Patch zurück
-- Neue Funktionen, die rückwärts-kompatibel sind **erhöhen die Unter-Nummer** und setzen die Patchnummer zurück
-- Simple Fehlerbehebungen und unproblematische Änderungen **erhöhen nur die Patch-Nummer**
-
-Mehr Informationen über SemVer findest du auf <http://semver.org/>.
+Um unsere Veröffentlichungen so klar wie möglich zu halten und Rückwärtskompatibilität zu gewährleisten, wird Bootstrap unter den [Richtlinien des Semantic Versioning](http://semver.org) entwickelt. Wir versuchen diese Regeln so gut wie möglich einzuhalten, doch manchmal kann uns dabei ein Fehler unterlaufen.
 
 
 

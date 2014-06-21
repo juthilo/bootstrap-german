@@ -1,4 +1,6 @@
 # [Bootstrap (deutsch)](http://holdirbootstrap.de)
+[![Bower-Version](https://badge.fury.io/bo/bootstrap.svg)](http://badge.fury.io/bo/bootstrap)
+[![NPM-Version](https://badge.fury.io/js/bootstrap.svg)](http://badge.fury.io/js/bootstrap)
 
 Bootstrap, ein umfangreiches und dennoch schlankes Mobile-First Frond-End-Framework für einfachere und schnellere Entwicklung im Web. Erdacht von [Mark Otto](http://twitter.com/mdo) und [Jacob Thornton](http://twitter.com/fat) und gepflegt vom [Hauptteam](https://github.com/twbs?tab=members) mit der großartigen Unterstützung der immer involvierten Community.
 

@@ -106,6 +106,9 @@
   <h3 id="support-ie8-box-sizing">Internet Explorer 8 und box-sizing</h3>
   <p>IE8 bietet keine vollständige Untestützung für <code>box-sizing: border-box;</code> wenn es mit <code>min-width</code>, <code>max-width</code>, <code>min-height</code> oder <code>max-height</code> kombiniert wird. Seit v3.0.1 verwenden wir daher keine <code>max-width</code> bei <code>.container</code>n mehr.</p>
 
+  <h3 id="suport-ie8-font-face">Internet Explorer 8 und @font-face</h3>
+  <p>IE8 hat einige Probleme mit der Kombination aus <code>@font-face</code> und <code>:before</code>. Bootstrap verwendet diese Kombination für die Glyphicons. Falls eine Seite im Cache (Zwischenspeicher des Browsers) gespeichert und danach geladen wird, ohne dass sich der Mauszeiger über der Seite selbst befindet (z.B. durch Drücken der Neu laden-Taste oder wenn etwas in einem iframe geladen wird), wird das Layout der Seite erzeugt, bevor die Schriftart geladen wird. Wird der Mauszeiger dann über der Seite positioniert, werden zumindest einige Icons nachträglich geladen und die restlichen können ebenfalls geladen werden, indem der Mauszeiger genau über ihnen platziert wird. <a href="https://github.com/twbs/bootstrap/issues/13863">Siehe #13863</a> für Details.</p>
+
   <h3 id="support-ie-compatibility-modes">IE Compatibility View</h3>
   <p>Bootstrap wird in den alten Internet Explorer Compatibility Views nicht unterstützt. Um sicherzugehen, dass du den neuesten Anzeigemodus für IE verwendest, denk darüber nach, das passende <code>&lt;meta&gt;</code>-Tag auf deinen Seiten anzugeben:</p>
 {% highlight html %}

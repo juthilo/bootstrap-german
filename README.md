@@ -13,7 +13,6 @@ Um direkt loszulegen, geh auf <http://holdirbootstrap.de>!
  - [Schnellstart](#schnellstart)
  - [Fehler und Funktionswünsche](#fehler-und-funktionswuensche)
  - [Dokumentation](#dokumentation)
- - [CSS und JavaScript kompilieren](#css-und-javascript-kompilieren)
  - [Mitmachen](#mitmachen)
  - [Community](#community)
  - [Versionen](#versionen)
@@ -78,41 +77,6 @@ Erfahre mehr über den Umgang mit Jekyll, indem du dessen [Dokumentation](http:/
 Die englische Dokumentation für v2.3.2 ist fürs Erste unter <http://getbootstrap.com/2.3.2/> verfügbar, solange einige noch zu Bootstrap 3 wechseln müssen.
 
 [Frühere Versionen](https://github.com/twbs/bootstrap/releases) und ihre zugehörigen Dokumentationen (auf Englisch) sind auch noch zum Herunterladen verfügbar.
-
-
-
-## CSS und JavaScript kompilieren
-
-Bootstrap verwendet [Grunt](http://gruntjs.com/) mit einigen praktischen Methoden, um mit dem Framework zu arbeiten. Wir kompilieren damit unseren Code, führen Tests durch und mehr. Um es zu verwenden, installiere die benötigten Pakete wie unten erklärt und führe dann einige Grunt-Befehle aus.
-
-### Grunt installieren
-
-In der Befehlszeile:
-
-1. Installiere `grunt-cli` global mit `npm install -g grunt-cli`.
-2. Navigiere zum Wurzelverzeichnis `/bootstrap` und führe dann `npm install` aus. npm wird sich die [package.json](https://github.com/twbs/bootstrap/blob/master/package.json) ansehen und automatisch die aufgeführten benötigten lokalen Pakete installieren.
-
-Wenn das abgeschlossen ist, kannst du die verschiedenen Grunt-Befehle über die Befehlszeile ausführen.
-
-**Du kennst dich mit npm nicht aus? Du hast node nicht installiert?** Überhaupt kein Problem. npm steht für [node packaged modules](http://npmjs.org/) und dient dazu benötigte Pakete für die Entwicklung über node.js zu verwalten. [Lade node.js herunter und installiere es](http://nodejs.org/download/), bevor du die anderen Schritt durchführst.
-
-### Verfügbare Grunt-Befehle
-
-#### Zusammenstellung - `grunt`
-Führe `grunt` aus, um lokale Tests durchzuführen und CSS und JavaScript in `/dist` zu kompilieren und minimieren. **Verwendet [Less](http://lesscss.org/) und [UglifyJS](http://lisperator.net/uglifyjs/).**
-
-#### Nur CSS und JavaScript kompilieren - `grunt dist`
-`grunt dist` erstellt das `/dist`-Verzeichnis mit den kompilierten und minimierten Dateien. **Verwendet [Less](http://lesscss.org/) und [UglifyJS](http://lisperator.net/uglifyjs/).**
-
-#### Tests - `grunt test`
-Führt [JSHint](http://jshint.com)- und [QUnit](http://qunitjs.com/)-Tests über [PhantomJS](http://phantomjs.org/) aus (wird für eine kontinuierliche Integration verwendet).
-
-#### Beobachten - `grunt watch`
-Dies ist eine praktische Methode, um die Less-Dateien beobachten automatisch kompilieren zu lassen, sobald du neue Änderungen speicherst.
-
-### Probleme mit benötigten Paketen beheben
-
-Wenn es ein Problem mit den installierten Paketen oder beim Ausführen von Grunt-Befehlen gibt, deinstalliere alle vorherigen Installationen dieser Pakete (global und lokal). Führe danach erneut `npm install` aus.
 
 
 

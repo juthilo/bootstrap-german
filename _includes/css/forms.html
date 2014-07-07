@@ -96,6 +96,12 @@
     <input type="email" class="form-control" id="beispielFeldEmail2" placeholder="Email-Adresse">
   </div>
   <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">@</div>
+      <input class="form-control" type="email" placeholder="Email-Adresse">
+    </div>
+  </div>
+  <div class="form-group">
     <label class="sr-only" for="beispielFeldPasswort2">Passwort</label>
     <input type="password" class="form-control" id="beispielFeldPasswort2" placeholder="Passwort">
   </div>
@@ -515,6 +521,30 @@
         <label class="control-label" for="eingabefeldFehler1">Feld mit Fehler</label>
         <input type="text" class="form-control" id="eingabefeldFehler1">
       </div>
+      <div class="has-success">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="ankreuzfeldErfolg" value="option1">
+            Ankreuzfeld mit Erfolg
+          </label>
+        </div>
+      </div>
+      <div class="has-warning">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="ankreuzfeldWarnung" value="option1">
+            Ankreuzfeld mit Warnung
+          </label>
+        </div>
+      </div>
+      <div class="has-error">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="ankreuzfeldFehler" value="option1">
+            Ankreuzfeld mit Fehler
+          </label>
+        </div>
+      </div>
     </form>
   </div><!-- /.bs-example -->
 {% highlight html %}
@@ -529,6 +559,30 @@
 <div class="form-group has-error">
   <label class="control-label" for="eingabefeldFehler1">Feld mit Fehler</label>
   <input type="text" class="form-control" id="eingabefeldFehler1">
+</div>
+<div class="has-success">
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" id="ankreuzfeldErfolg" value="option1">
+      Ankreuzfeld mit Erfolg
+    </label>
+  </div>
+</div>
+<div class="has-warning">
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" id="ankreuzfeldWarnung" value="option1">
+      Ankreuzfeld mit Warnung
+    </label>
+  </div>
+</div>
+<div class="has-error">
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" id="ankreuzfeldFehler" value="option1">
+      Ankreuzfeld mit Fehler
+    </label>
+  </div>
 </div>
 {% endhighlight %}
 

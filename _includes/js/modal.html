@@ -67,7 +67,7 @@
 
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
-          <h4 class="modal-title" id="meinModalLabel">Modal-Überschrift</h4>
+          <h4 class="modal-title" id="meinModalLabel">Modal-Titel</h4>
         </div>
         <div class="modal-body">
           <h4>Text in einem Modal</h4>
@@ -259,7 +259,9 @@
          <td>remote</td>
          <td>Pfad</td>
          <td>false</td>
-         <td><p>Falls eine Remote-URL angegeben wird, wird über jQuerys <code>load</code>-Methode <strong>Inhalt von dort einmal geladen</strong> und in den div-Container <code>.modal-content</code> injiziert. Falls du die Data-API verwendest, kannst du auch das Attribut <code>href</code> nutzen, um die Remote-Quelle anzugeben. Hier ein Beispiel:</p>
+         <td>
+          <p><span class="text-danger">Diese Option ist ab v3.2.1 als veraltet markiert und wird in v4 entfernt.</span> Wir empfehlen stattdessen, mit Client-seitigen Vorlagen oder einem Framework zum Einbinden von Daten zu arbeiten oder <a href="http://api.jquery.com/load/">jQuery.load</a> selbst aufzurufen.</p>
+          <p>Falls eine Remote-URL angegeben wird, wird über jQuerys <code>load</code>-Methode <strong>Inhalt von dort einmal geladen</strong> und in den div-Container <code>.modal-content</code> injiziert. Falls du die Data-API verwendest, kannst du auch das Attribut <code>href</code> nutzen, um die Remote-Quelle anzugeben. Hier ein Beispiel:</p>
 {% highlight html %}
 <a data-toggle="modal" href="remote.html" data-target="#modal">Klick mich an</a>
 {% endhighlight %}

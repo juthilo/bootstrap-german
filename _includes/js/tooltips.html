@@ -58,7 +58,7 @@ $('#beispiel').tooltip(Optionen)
     <h4>Mehrzeilige Links</h4>
     <p>Manchmal willst du einen Tooltip vielleicht zu einem Hyperlink hinzufügen, der über mehrere Zeilen geht. Das Standard-Verhalten in diesem Fall ist, dass der Tooltip horizontal und vertikal zentriert wird. Füge zu deinen Links <code>white-space: nowrap;</code> hinzu, um das zu vermeiden.</p>
   </div>
-{% highlight html linenos %}
+{% highlight html %}
 <!-- HTML -->
 <a href="#" data-toggle="tooltip" title="Ein bisschen Tooltip-Text!">Mauszeiger hier drüber</a>
 
@@ -105,7 +105,7 @@ $('#beispiel').tooltip(Optionen)
           <td>
             <p>Verzögere das Anzeigen und Verbergen eines Tooltips in ms - wirkt sich nicht auf den manuellen Auslöser aus</p>
             <p>Falls eine Nummer angegeben wird, wird die Verzögerung auf hide und show angewendet</p>
-            <p>Object-Struktur: <code>delay: { show: 500, hide: 100 }</code></p>
+            <p>Object-Struktur: <code>delay: { "show": 500, "hide": 100 }</code></p>
           </td>
         </tr>
         <tr>
@@ -154,7 +154,7 @@ $('#beispiel').tooltip(Optionen)
          <td>string | object</td>
          <td>{ selector: 'body', padding: 0 }</td>
          <td>
-          <p>Behält den Tooltip innerhalb der Grenzen dieses Elements. Beispiel: <code>viewport: '#viewport'</code> oder <code>{ selector: '#viewport', padding: 0 }</code></p>
+          <p>Behält den Tooltip innerhalb der Grenzen dieses Elements. Beispiel: <code>viewport: '#viewport'</code> oder <code>{ "selector": "#viewport", "padding": 0 }</code></p>
          </td>
        </tr>
       </tbody>

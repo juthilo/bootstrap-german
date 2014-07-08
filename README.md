@@ -66,9 +66,10 @@ Bootstraps Dokumentation, die du in diesem Repository als Übersetzung findest, 
 ### Dokumentation lokal ausführen
 
 1. Falls notwendig, [installiere Jekyll](http://jekyllrb.com/docs/installation) (benötigt wird v2.1.x).
-  - **Windows-Nutzer:** Lies [diesen unoffiziellen Ratgeber](https://github.com/juthilo/run-jekyll-on-windows/), um Jekyll ohne Probleme zum Laufen zu kriegen. Wir verwenden Pygments, um Code-Schnipsel zu gestalten und hervorzuheben, lies also unbedingt auch die Abschnitte zur Installation von Python und Pygments.
-2. Öffne eine Befehlszeile im Wurzelverzeichnis `/bootstrap` und führe `jekyll serve` aus.
-3. Öffne die Dokumentation in deinem Browser über <http://localhost:10006> (Übersetzung) bzw. <http://localhost:9001> (Original) und fertig!
+  - **Windows-Nutzer:** Lies [diesen unoffiziellen Ratgeber](https://github.com/juthilo/run-jekyll-on-windows/), um Jekyll ohne Probleme zum Laufen zu kriegen.
+2. Installiere das Ruby-basierte [Rouge](https://github.com/jneen/rouge), das wir zum Hervorheben und Gestalten von Code-Schnipseln verwenden, mit `gem install rouge`.
+3. Öffne eine Befehlszeile im Wurzelverzeichnis `/bootstrap` und führe `jekyll serve` aus.
+4. Öffne die Dokumentation in deinem Browser über <http://localhost:10006> (Übersetzung) bzw. <http://localhost:9001> (Original) und fertig!
 
 Erfahre mehr über den Umgang mit Jekyll, indem du dessen [Dokumentation](http://jekyllrb.com/docs/home/) liest.
 

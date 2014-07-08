@@ -49,17 +49,17 @@
   <button type="submit" class="btn btn-default">Abschicken</button>
 </form>
 {% endhighlight %}
-    <div class="bs-callout bs-callout-warning">
-      <h4>Vermische niemals Formular-Gruppen mit Input-Gruppen</h4>
-      <p>Du solltest Formular-Gruppen (<code>.form-group</code>) nicht direkt mit <a href="/komponenten/#input-groups">Input-Gruppen</a> kombinieren. Ordne die Input-Gruppe stattdessen der Formular-Gruppe unter.</p>
-    </div>
+  <div class="bs-callout bs-callout-warning">
+    <h4>Vermische niemals Formular-Gruppen mit Input-Gruppen</h4>
+    <p>Du solltest Formular-Gruppen (<code>.form-group</code>) nicht direkt mit <a href="/komponenten/#input-groups">Input-Gruppen</a> kombinieren. Ordne die Input-Gruppe stattdessen der Formular-Gruppe unter.</p>
+  </div>
 
 
   <h2 id="forms-inline">Formular in einer Zeile</h2>
   <p>Füge <code>.form-inline</code> zu deinem <code>&lt;form&gt;</code> hinzu, um die Felder links in einer Reihe auszurichten (inline-block). <strong>Dies hat nur Auswirkungen auf Formular auf Anzeigefenstern, die mindestens 768px breit sind.</strong></p>
   <div class="bs-callout bs-callout-danger">
     <h4>Benötigt manuelle Breiten</h4>
-    <p>Eingabefelder, Auswahlfelder und Text-Flächen sind in Bootstrap standardmäßig 100% breit. Um das Inline-Formular zu verwenden, musst du daher manuell eine feste Breite für die darin enthaltenen Formularfelder definieren.</p>
+    <p>Eingabefelder und Auswahlfelder sind in Bootstrap standardmäßig mit <code>width: 100%</code> versehen. In Inline-Formularen setzen wir das auf <code>width: auto</code> zurück, damit mehrere Felder in der gleichen Zeile sein können. Abhängig von deinem Layout sind eventuell zusätzliche, manuelle Breiten notwendig.</p>
   </div>
   <div class="bs-callout bs-callout-warning">
     <h4>Füge immer Labels hinzu</h4>

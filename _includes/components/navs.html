@@ -27,14 +27,14 @@
   <h2 id="nav-pills">Pills</h2>
   <p>Nimm den gleichen HTML-Code aber verwende stattdessen <code>.nav-pills</code>:</p>
   <div class="bs-example">
-    <ul class="nav nav-pills">
+    <ul class="nav nav-pills" role="tablist">
       <li class="active"><a href="#">Start</a></li>
       <li><a href="#">Profil</a></li>
       <li><a href="#">Nachrichten</a></li>
     </ul>
   </div>
 {% highlight html %}
-<ul class="nav nav-pills">
+<ul class="nav nav-pills" role="tablist">
   <li class="active"><a href="#">Start</a></li>
   <li><a href="#">Profil</a></li>
   <li><a href="#">Nachrichten</a></li>
@@ -42,14 +42,14 @@
 {% endhighlight %}
   <p>Pills können auch übereinander angeordnet werden. Füge einfach <code>.nav-stacked</code> hinzu.</p>
   <div class="bs-example">
-    <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+    <ul class="nav nav-pills nav-stacked" role="tablist" style="max-width: 300px;">
       <li class="active"><a href="#">Start</a></li>
       <li><a href="#">Profil</a></li>
       <li><a href="#">Nachrichten</a></li>
     </ul>
   </div>
 {% highlight html %}
-<ul class="nav nav-pills nav-stacked">
+<ul class="nav nav-pills nav-stacked" role="tablist">
   ...
 </ul>
 {% endhighlight %}
@@ -68,7 +68,7 @@
       <li><a href="#">Nachrichten</a></li>
     </ul>
     <br>
-    <ul class="nav nav-pills nav-justified">
+    <ul class="nav nav-pills nav-justified" role="tablist">
       <li class="active"><a href="#">Start</a></li>
       <li><a href="#">Profil</a></li>
       <li><a href="#">Nachrichten</a></li>
@@ -78,7 +78,7 @@
 <ul class="nav nav-tabs nav-justified" role="tablist">
   ...
 </ul>
-<ul class="nav nav-pills nav-justified">
+<ul class="nav nav-pills nav-justified" role="tablist">
   ...
 </ul>
 {% endhighlight %}
@@ -93,14 +93,14 @@
   </div>
 
   <div class="bs-example">
-    <ul class="nav nav-pills">
+    <ul class="nav nav-pills" role="tablist">
       <li><a href="#">Klick-barer Link</a></li>
       <li><a href="#">Klick-barer Link</a></li>
       <li class="disabled"><a href="#">Deaktivierter Link</a></li>
     </ul>
   </div>
 {% highlight html %}
-<ul class="nav nav-pills">
+<ul class="nav nav-pills" role="tablist">
   ...
   <li class="disabled"><a href="#">Deaktivierter Link</a></li>
   ...
@@ -147,7 +147,7 @@
 
   <h3>Pills mit Dropdowns</h3>
   <div class="bs-example">
-    <ul class="nav nav-pills">
+    <ul class="nav nav-pills" role="tablist">
       <li class="active"><a href="#">Start</a></li>
       <li><a href="#">Hilfe</a></li>
       <li class="dropdown">
@@ -165,7 +165,7 @@
     </ul>
   </div><!-- /example -->
 {% highlight html %}
-<ul class="nav nav-pills">
+<ul class="nav nav-pills" role="tablist">
   ...
   <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">

@@ -3,15 +3,13 @@
 
   <h2 id="alerts-examples">Beispiel-Warnungen</h2>
   <p>Ermögliche mit diesem Plugin das Schließen von allen Warnhinweisen.</p>
-  <div class="bs-example">
-    <div class="alert alert-warning fade in" role="alert">
+  <div class="bs-example bs-example-standalone">
+    <div class="alert alert-warning alert-dismissible fade in" role="alert">
       <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
       <strong>Du siehst ein bisschen blass aus!</strong> Ist alles in Ordnung?
     </div>
-  </div><!-- /example -->
 
-  <div class="bs-example">
-    <div class="alert alert-danger fade in" role="alert">
+    <div class="alert alert-danger alert-dismissible fade in" role="alert">
       <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
       <h4>Oh nein! Es ist ein Fehler aufgetreten!</h4>
       <p>Verändere dies und das und versuche es dann erneut. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
@@ -24,21 +22,24 @@
 
 
   <h2 id="alerts-usage">Verwendung</h2>
-  <p>Ermögliche das Schließen eines Warnhinweises über JavaScript:</p>
-  {% highlight js %}$(".alert").alert(){% endhighlight %}
-
-  <h3>Markup</h3>
   <p>Füge einfach <code>data-dismiss="alert"</code> zu deinem Schließen-Button hinzu, um einem Warnhinweis Schließen-Funktionalität hinzuzufügen.</p>
-  {% highlight html %}<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>{% endhighlight %}
+
+{% highlight html %}
+<button type="button" class="close" data-dismiss="alert">
+  <span aria-hidden="true">&times;</span>
+  <span class="sr-only">Schließen</span>
+</button>
+{% endhighlight %}
+  
+  <p>Damit deine Warnhinweise beim Schließen animiert werden, achte darauf, dass sie schon die Klassen <code>.fade</code> und <code>.in</code> besitzen.</p>
 
   <h3>Methoden</h3>
 
   <h4>$().alert()</h4>
-  <p>Verpackt alle Warnhinweise mit Schließen-Funktionalität. Damit sie beim Schließen langsam ausblenden, gib ihnen vorher die Klassen <code>.fade</code> und <code>.in</code>.</p>
+  <p>Sorgt dafür, dass ein Warnhinweis nach Klick-Ereignissen horcht, die bei untergeordneten Elementen mit dem Attribut <code>data-dismiss="alert"</code> ausgelöst werden. (Nicht notwendig, wenn die automatische Initialisierung über die Data-API verwendet wird.)</p>
 
-  <h4>.alert('close')</h4>
+  <h4>$().alert('close')</h4>
   <p>Schließt einen Warnhinweis.</p>
-  {% highlight js %}$(".alert").alert('close'){% endhighlight %}
 
 
   <h3>Ereignisse</h3>
@@ -64,7 +65,7 @@
     </table>
   </div><!-- /.table-responsive -->
 {% highlight js %}
-$('#mein-alert').on('closed.bs.alert', function () {
+$('#meinWarnhinweis').on('closed.bs.alert', function () {
   // etwas ausführen...
 })
 {% endhighlight %}

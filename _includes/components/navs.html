@@ -7,16 +7,16 @@
   <p>Beachte, dass die <code>.nav-tabs</code>-Klasse nur zusammen mit der <code>.nav</code>-Grund-Klasse funktioniert.</p>
   <div class="bs-example">
     <ul class="nav nav-tabs" role="tablist">
-      <li class="active"><a href="#">Start</a></li>
-      <li><a href="#">Profil</a></li>
-      <li><a href="#">Nachrichten</a></li>
+      <li role="presentation" class="active"><a href="#">Start</a></li>
+      <li role="presentation"><a href="#">Profil</a></li>
+      <li role="presentation"><a href="#">Nachrichten</a></li>
     </ul>
   </div>
 {% highlight html %}
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#">Start</a></li>
-  <li><a href="#">Profil</a></li>
-  <li><a href="#">Nachrichten</a></li>
+  <li role="presentation" class="active"><a href="#">Start</a></li>
+  <li role="presentation"><a href="#">Profil</a></li>
+  <li role="presentation"><a href="#">Nachrichten</a></li>
 </ul>
 {% endhighlight %}
   <div class="bs-callout bs-callout-info">
@@ -28,24 +28,24 @@
   <p>Nimm den gleichen HTML-Code aber verwende stattdessen <code>.nav-pills</code>:</p>
   <div class="bs-example">
     <ul class="nav nav-pills" role="tablist">
-      <li class="active"><a href="#">Start</a></li>
-      <li><a href="#">Profil</a></li>
-      <li><a href="#">Nachrichten</a></li>
+      <li role="presentation" class="active"><a href="#">Start</a></li>
+      <li role="presentation"><a href="#">Profil</a></li>
+      <li role="presentation"><a href="#">Nachrichten</a></li>
     </ul>
   </div>
 {% highlight html %}
 <ul class="nav nav-pills" role="tablist">
-  <li class="active"><a href="#">Start</a></li>
-  <li><a href="#">Profil</a></li>
-  <li><a href="#">Nachrichten</a></li>
+  <li role="presentation" class="active"><a href="#">Start</a></li>
+  <li role="presentation"><a href="#">Profil</a></li>
+  <li role="presentation"><a href="#">Nachrichten</a></li>
 </ul>
 {% endhighlight %}
   <p>Pills können auch übereinander angeordnet werden. Füge einfach <code>.nav-stacked</code> hinzu.</p>
   <div class="bs-example">
     <ul class="nav nav-pills nav-stacked" role="tablist" style="max-width: 300px;">
-      <li class="active"><a href="#">Start</a></li>
-      <li><a href="#">Profil</a></li>
-      <li><a href="#">Nachrichten</a></li>
+      <li role="presentation" class="active"><a href="#">Start</a></li>
+      <li role="presentation"><a href="#">Profil</a></li>
+      <li role="presentation"><a href="#">Nachrichten</a></li>
     </ul>
   </div>
 {% highlight html %}
@@ -63,15 +63,15 @@
   </div>
   <div class="bs-example">
     <ul class="nav nav-tabs nav-justified" role="tablist">
-      <li class="active"><a href="#">Start</a></li>
-      <li><a href="#">Profil</a></li>
-      <li><a href="#">Nachrichten</a></li>
+      <li role="presentation" class="active"><a href="#">Start</a></li>
+      <li role="presentation"><a href="#">Profil</a></li>
+      <li role="presentation"><a href="#">Nachrichten</a></li>
     </ul>
     <br>
     <ul class="nav nav-pills nav-justified" role="tablist">
-      <li class="active"><a href="#">Start</a></li>
-      <li><a href="#">Profil</a></li>
-      <li><a href="#">Nachrichten</a></li>
+      <li role="presentation" class="active"><a href="#">Start</a></li>
+      <li role="presentation"><a href="#">Profil</a></li>
+      <li role="presentation"><a href="#">Nachrichten</a></li>
     </ul>
   </div>
 {% highlight html %}
@@ -94,15 +94,15 @@
 
   <div class="bs-example">
     <ul class="nav nav-pills" role="tablist">
-      <li><a href="#">Klick-barer Link</a></li>
-      <li><a href="#">Klick-barer Link</a></li>
-      <li class="disabled"><a href="#">Deaktivierter Link</a></li>
+      <li role="presentation"><a href="#">Klick-barer Link</a></li>
+      <li role="presentation"><a href="#">Klick-barer Link</a></li>
+      <li role="presentation" class="disabled"><a href="#">Deaktivierter Link</a></li>
     </ul>
   </div>
 {% highlight html %}
 <ul class="nav nav-pills" role="tablist">
   ...
-  <li class="disabled"><a href="#">Deaktivierter Link</a></li>
+  <li role="presentation" class="disabled"><a href="#">Deaktivierter Link</a></li>
   ...
 </ul>
 {% endhighlight %}
@@ -114,9 +114,9 @@
   <h3>Tabs mit Dropdowns</h3>
   <div class="bs-example">
     <ul class="nav nav-tabs" role="tablist">
-      <li class="active"><a href="#">Start</a></li>
-      <li><a href="#">Hilfe</a></li>
-      <li class="dropdown">
+      <li role="presentation" class="active"><a href="#">Start</a></li>
+      <li role="presentation"><a href="#">Hilfe</a></li>
+      <li role="presentation" class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
           Dropdown-Menü <span class="caret"></span>
         </a>
@@ -133,7 +133,7 @@
 {% highlight html %}
 <ul class="nav nav-tabs" role="tablist">
   ...
-  <li class="dropdown">
+  <li role="presentation" class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       Dropdown-Menü <span class="caret"></span>
     </a>
@@ -148,9 +148,9 @@
   <h3>Pills mit Dropdowns</h3>
   <div class="bs-example">
     <ul class="nav nav-pills" role="tablist">
-      <li class="active"><a href="#">Start</a></li>
-      <li><a href="#">Hilfe</a></li>
-      <li class="dropdown">
+      <li role="presentation" class="active"><a href="#">Start</a></li>
+      <li role="presentation"><a href="#">Hilfe</a></li>
+      <li role="presentation"class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
           Dropdown-Menü <span class="caret"></span>
         </a>
@@ -167,7 +167,7 @@
 {% highlight html %}
 <ul class="nav nav-pills" role="tablist">
   ...
-  <li class="dropdown">
+  <li role="presentation" class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
       Dropdown-Menü <span class="caret"></span>
     </a>

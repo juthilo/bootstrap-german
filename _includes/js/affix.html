@@ -31,14 +31,14 @@
   <h3>Über JavaScript</h3>
   <p>Ruf das Affix-Plugin über JavaScript auf:</p>
 {% highlight js %}
-  $('#mein-affix').affix({
-    offset: {
-      top: 100,
-      bottom: function () {
-        return (this.bottom = $('.footer').outerHeight(true))
-      }
+$('#mein-affix').affix({
+  offset: {
+    top: 100,
+    bottom: function () {
+      return (this.bottom = $('.footer').outerHeight(true))
     }
-  })
+  }
+})
 {% endhighlight %}
 
 
@@ -74,7 +74,7 @@
 
 
   <h3>Ereignisse</h3>
-  <p>Bootstraps Affix-Klassen legen einige Ereignisse offen, über die du dich in Affix-Funktionen einklinken kannst.</p>
+  <p>Bootstraps Affix-Plugin legt einige Ereignisse offen, über die du dich in Affix-Funktionen einklinken kannst.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
       <thead>

@@ -24,6 +24,10 @@
     <h4>Popovers an deaktivierten Elementen benötigen ein umschließendes Element</h4>
     <p>Um ein Popover zu einem deaktivierten Element mit <code>disabled</code> oder <code>.disabled</code> hinzuzufügen, musst du das Element in einem <code>&lt;div&gt;</code> platzieren und das Popover stattdessen darauf anwenden.</p>
   </div>
+  <div class="bs-callout bs-callout-info">
+    <h4>Links über mehrere Zeilen</h4>
+    <p>Manchmal willst du ein Popover zu einem Hyperlink hinzufügen, der über mehrere Zeilen geht. Das Standard-Verhalten des Popover-Plugins in diesem Fall ist, es horizontal und vertikal zu zentrieren. Füge <code>white-space: nowrap;</code> zu deinen Links hinzu, um dies zu vermeiden.</p>
+  </div>
 
   <h3>Statisches Popover</h3>
   <p>Es gibt vier Optionen: Ausrichtung nach oben, rechts, unten und links.</p>
@@ -109,22 +113,21 @@
 
   <h4>Beim nächsten Klick schließen</h4>
   <p>Verwende den Auslöser <code>focus</code>, um Popovers beim nächsten Klick des Nutzers zu schließen.</p>
+  <div class="bs-callout bs-callout-danger">
+    <h4>Spezifisches Markup für Schließen-beim-nächsten-Klick benötigt</h4>
+    <p>Für vernünftiges Verhalten in allen Browsern und auf allen Plattformen musst du das Tag <code>&lt;a&gt;</code>, <i>nicht</i> <code>&lt;button&gt;</code>, verwenden und außerdem das Attribut <a href="https://developer.mozilla.org/de/docs/Web/HTML/Global_attributes#tabindex"><code>tabindex</code></a> hinzufügen.</p>
+  </div>
   <div class="bs-example" style="padding-bottom: 24px;">
-    <button type="button" class="btn btn-lg btn-danger bs-docs-popover-dismiss" data-toggle="popover" title="Schließbares Popover" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?">Schließbares Popover</button>
+    <a href="#" tabindex="0" class="btn btn-lg btn-danger bs-docs-popover" data-toggle="popover" data-trigger="focus" title="Schließbares Popover" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?">Schließbares Popover</a>
   </div>
 {% highlight html %}
-<button type="button" class="btn btn-lg btn-danger popover-dismiss" data-toggle="popover" title="Schließbares Popover" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?">Schließbares Popover</button>
+<a href="#" tabindex="0" class="btn btn-lg btn-danger bs-docs-popover" data-toggle="popover" data-trigger="focus" title="Schließbares Popover" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?">Schließbares Popover</a>
 {% endhighlight %}
 {% highlight js %}
 $('.popover-dismiss').popover({
   trigger: 'focus'
 })
 {% endhighlight %}
-
-  <div class="bs-callout bs-callout-warning">
-    <h4>Mehrzeilige Links</h4>
-    <p>Manchmal willst du ein Popover vielleicht zu einem Hyperlink hinzufügen, der über mehrere Zeilen geht. Das Standard-Verhalten in diesem Fall ist, dass das popover horizontal und vertikal zentriert wird. Füge zu deinen Links <code>white-space: nowrap;</code> hinzu, um das zu vermeiden.</p>
-  </div>
 
 
   <h2 id="popovers-usage">Verwendung</h2>
@@ -193,7 +196,7 @@ $('.popover-dismiss').popover({
           <td>selector</td>
           <td>String</td>
           <td>false</td>
-          <td>Falls ein Selektor angegeben wird, werden Popover-Objekte an die angegebenen Ziele gebunden. In der Praxis ist dies nützlich, um dynamischen HTML-Inhalt mit Popovers zu versehen. Sieh dir <a href="https://github.com/twbs/bootstrap/issues/4215">dies</a> und <a href="http://jsfiddle.net/fScua/">ein informatives Beispiel</a> an.</td>
+          <td>Falls ein Selektor angegeben wird, werden Popover-Objekte an die angegebenen Ziele gebunden. In der Praxis ist dies nützlich, um dynamischen HTML-Inhalt mit Popovers zu versehen. Sieh dir <a href="https://github.com/twbs/bootstrap/issues/4215">dies</a> und <a href="http://jsbin.com/zopod/1/edit">ein informatives Beispiel</a> an.</td>
         </tr>
         <tr>
           <td>template</td>

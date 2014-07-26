@@ -20,7 +20,10 @@
         <div class="collapse navbar-collapse bs-example-js-navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="dropdown">
-              <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Dropdown-Menü <span class="caret"></span></a>
+              <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown-Menü
+                <span class="caret"></span>
+              </a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Aktion</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Andere Aktion</a></li>
@@ -30,7 +33,10 @@
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" id="drop2" role="button" class="dropdown-toggle" data-toggle="dropdown">Dropdown-Menü 2 <span class="caret"></span></a>
+              <a id="drop2" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown-Menü
+                <span class="caret"></span>
+              </a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Aktion</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Andere Aktion</a></li>
@@ -42,7 +48,10 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li id="fat-menu" class="dropdown">
-              <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Dropdown-Menü 3 <span class="caret"></span></a>
+              <a id="drop3" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown-Menü
+                <span class="caret"></span>
+              </a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Aktion</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Andere Aktion</a></li>
@@ -60,9 +69,12 @@
   <h3>In Pills-Navs</h3>
   <div class="bs-example">
     <ul class="nav nav-pills" role="tablist">
-      <li class="active"><a href="#">Regulärer Link</a></li>
-      <li class="dropdown">
-        <a id="drop4" role="button" data-toggle="dropdown" href="#">Dropdown-Menü <span class="caret"></span></a>
+      <li role="presentation" class="active"><a href="#">Regulärer Link</a></li>
+      <li role="presentation" class="dropdown">
+        <a id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown-Menü
+          <span class="caret"></span>
+        </a>
         <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop4">
           <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Aktion</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Andere Aktion</a></li>
@@ -71,8 +83,11 @@
           <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Abgetrennter Link</a></li>
         </ul>
       </li>
-      <li class="dropdown">
-        <a id="drop5" role="button" data-toggle="dropdown" href="#">Dropdown-Menü 2 <span class="caret"></span></a>
+      <li role="presentation" class="dropdown">
+        <a id="drop5" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown-Menü
+          <span class="caret"></span>
+        </a>
         <ul id="menu2" class="dropdown-menu" role="menu" aria-labelledby="drop5">
           <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Aktion</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Andere Aktion</a></li>
@@ -81,8 +96,11 @@
           <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Abgetrennter Link</a></li>
         </ul>
       </li>
-      <li class="dropdown">
-        <a id="drop6" role="button" data-toggle="dropdown" href="#">Dropdown-Menü 3 <span class="caret"></span></a>
+      <li role="presentation" class="dropdown">
+        <a id="drop6" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown-Menü
+          <span class="caret"></span>
+        </a>
         <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop6">
           <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Aktion</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" href="http://twitter.com/fat">Andere Aktion</a></li>
@@ -104,19 +122,22 @@
   <p>Füge <code>data-toggle="dropdown"</code> zu einem Link oder Button hinzu, um ein Dropdown-Menü zu kontrollieren.</p>
 {% highlight html %}
 <div class="dropdown">
-  <a data-toggle="dropdown" href="#">Dropdown-Auslöser</a>
+  <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown-Auslöser
+    <span class="caret"></span>
+  </button>
   <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
     ...
   </ul>
 </div>
 {% endhighlight %}
-  <p>Um URLs nicht zu beeinträchtigen, kannst du das Attribut <code>data-target</code> statt <code>href="#"</code> verwenden.</p>
+  <p>Um URLs mit Link-Buttons nicht zu beeinträchtigen, kannst du das Attribut <code>data-target</code> statt <code>href="#"</code> verwenden.</p>
 {% highlight html %}
 <div class="dropdown">
-  <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="/seite.html">
-    Dropdown-Menü <span class="caret"></span>
+  <a id="dLabel" data-target="#" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown-Auslöser
+    <span class="caret"></span>
   </a>
-
 
   <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
     ...

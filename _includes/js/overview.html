@@ -64,6 +64,9 @@ $('#meinModal').on('show.bs.modal', function (e) {
 })
 {% endhighlight %}
 
+  <h3 id="js-disabled">Keine besonderen Ersatzfunktionen wenn JavaScript deaktiviert ist</h3>
+  <p>Bootstraps Plugins haben keine ausgesprochen elegante Reserve wenn JavaScript deaktiviert ist. Falls du dich in diesem Fall um das Benutzererlebnis sorgst, verwende <a href="https://developer.mozilla.org/de/docs/Web/HTML/Element/noscript"><code>&lt;noscript&gt;</code></a>, um deinen Nutzern die Situation (und die Reaktivierung von JavaScript) zu erklären und/oder füge dein eigenes Reservesystem hinzu.</p>
+
   <div class="bs-callout bs-callout-warning" id="callout-third-party-libs">
     <h4>Drittanbieter-Bibliotheken</h4>
     <p><strong>Bootstrap unterstützt offiziell keine dritten JavaScript-Bibliotheken</strong> wie Prototype oder jQuery UI. Trotz <code>.noConflict</code> und Ereignissen mit Namespace kann es zu Kompatibilitätsproblemen kommen, die du alleine beheben musst.</p>

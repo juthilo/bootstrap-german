@@ -63,7 +63,7 @@ hilfreich, also vielen Dank an dieser Stelle!
 
 3. **Isoliere das Problem** &mdash; am besten ist ein [reduzierter Musterfall](http://css-tricks.com/6263-reduced-test-cases/)
    und ein Live-Beispiel.
-   [Dieser JS Bin](http://jsbin.com/EBAwOkOK/1) ist eine hilfreiche Vorlage.
+   [Dieser JS Bin](http://jsbin.com/lefey/1/edit?html,output) ist eine hilfreiche Vorlage.
 
 
 Eine gute Fehlermeldung sollte nicht dazu führen, dass Andere nach mehr
@@ -179,36 +179,17 @@ Projekteigentümern, deine Arbeit unter den Bedingungen der
 
 ### HTML
 
-- Zwei Leerzeichen für Einrückung, niemals Tabs.
-- Immer doppelte Anführungszeichen (`"`), niemals einzelne (`'`).
-- Verwende immer vernünftige Einrückung.
+[Befolge die Regeln aus dem Code Guide.](http://codeguide.co/#html)
+
 - Verwende Tags und Elemente für einen HTML5-Doctype (z.B. selbst-schließende Tags)
-- Nutze CDNs und HTTPS für JS von Dritten, wenn möglich. Wir nutzen keine
-  protokoll-unabhängigen URLs in diesem Fall, da diese nicht funktionieren,
-  wenn die Seite lokal über `file://` angezeigt wird.
+- Nutze CDNs und HTTPS für JS von Dritten, wenn möglich. Wir nutzen keine protokoll-unabhängigen URLs in diesem Fall, da diese nicht funktionieren, wenn die Seite lokal über `file://` angezeigt wird.
+- Verwende Attribute entsprechend [WAI-ARIA](https://developer.mozilla.org/de/docs/Web/Barrierefreiheit/ARIA) in Beispielen in der Dokumentation, um beim Thema Barrierefreiheit mit gutem Beispiel voranzugehen.
 
 ### CSS
 
-- CSS-Änderungen müssen zuerst in den `.less`-Dateien gemacht werden,
-  nie einfach nur in den kompilierten `.css`-Dateien.
-- Befolge die [CSS-Eigenschaften-Reihenfolge](http://markdotto.com/2011/11/29/css-property-order/).
-- Immer nur eine Eigenschaft und ein Wert pro Zeile.
-- Immer ein Leerzeichen nach dem Doppelpunkt einer Eigenschaft (z.B. `display: block;` und nicht `display:block;`).
-- Beende alle Zeilen mit einem Semikolon.
-- Für mehrere, durch Kommas getrennte Selektoren, platziere jeden Selektor auf einer neuen Zeile.
-- Füge keine Vendor-Präfix-Eigenschaften zu ihren Gegenstücken ohne Präfix hinzu (z.B. nur `box-sizing` und nicht zusätzlich `-webkit-box-sizing`), da diese automatisch generiert werden.
-- Attribut-Selektoren, wie `input[type="text"]`, sollten den Wert des Attributs
-  immer in doppelten Anführungszeichen verpacken, der Einheitlichkeit und
-  Sicherheit wegen
-  (siehe diesen [Blogpost über unverpackte Attribut-Werte](http://mathiasbynens.be/notes/unquoted-attribute-values), die zu XSS-Angriffen führen können).
-- Attribut-Selektoren sollten nur in Fällen ohne gute Alternative verwendet
-  werden (z.B. Formularfelder) und bei eigenen Komponenten aus Gründen der
-  Performance und Genauigkeit vermieden werden.
-- Eine Reihe von Klassen für eine Komponente sollte eine Grundklasse
-  (z.B. `.component`) enthalten und die Grundklasse als Präfix für
-  Änderungsklassen und Unterkomponenten verwenden (z.B. `.component-lg`).
-- Vermeide Vererbung und zu viele Verschachtelungen—verwende einzelne,
-  explizite Klassen, wann immer möglich.
+[Befolge die Regeln aus dem Code Guide.](http://codeguide.co/#html)
+
+- Wenn es nicht all zu umständlich ist, sollten Standard-Farbpaletten den [WCAG-Richtlinien für Farbkontrast](http://www.w3.org/TR/WCAG20/#visual-audio-contrast) folgen.
 - Abgesehen von seltenen Einzelfällen, solltest du die Standard-Stile für `:focus` (also z.B. `outline: none;`) nicht entfernen ohne sinnvolle Alternativen bereitzustellen. Lies [diesen Artikel des A11Y Projects](http://a11yproject.com/posts/never-remove-css-outlines/) für mehr Informationen.
 
 ### JS

@@ -22,7 +22,7 @@
 
 
   <h2 id="alerts-usage">Verwendung</h2>
-  <p>Füge einfach <code>data-dismiss="alert"</code> zu deinem Schließen-Button hinzu, um einem Warnhinweis Schließen-Funktionalität hinzuzufügen.</p>
+  <p>Füge einfach <code>data-dismiss="alert"</code> zu deinem Schließen-Button hinzu, um einem Warnhinweis Schließen-Funktionalität hinzuzufügen. Wird ein Warnhinweis geschlossen, wird dieser auch vollständig aus dem DOM entfernt.</p>
 
 {% highlight html %}
 <button type="button" class="close" data-dismiss="alert">
@@ -39,11 +39,11 @@
   <p>Sorgt dafür, dass ein Warnhinweis nach Klick-Ereignissen horcht, die bei untergeordneten Elementen mit dem Attribut <code>data-dismiss="alert"</code> ausgelöst werden. (Nicht notwendig, wenn die automatische Initialisierung über die Data-API verwendet wird.)</p>
 
   <h4>$().alert('close')</h4>
-  <p>Schließt einen Warnhinweis.</p>
+  <p>Schließt einen Warnhinweis, indem dieser aus dem DOM entfernt wird. Falls die Klassen <code>.fade</code> und <code>.in</code> beim zugehörigen Element vorhanden sind, wird der Warnhinweis langsam ausgeblendet, bevor dieser entfernt wird.</p>
 
 
   <h3>Ereignisse</h3>
-  <p>Bootstraps Warnhinweis-Klassen legen einige Ereignisse offen, mit denen du dich in die Warnhinweise-Funktionen einklinken kannst.</p>
+  <p>Bootstraps Warnhinweis-Plugin legt einige Ereignisse offen, mit denen du dich in die Warnhinweise-Funktionen einklinken kannst.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
       <thead>

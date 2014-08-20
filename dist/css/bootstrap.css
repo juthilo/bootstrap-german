@@ -2244,13 +2244,14 @@ table th[class*="col-"] {
 .table-hover > tbody > tr.danger:hover > th {
   background-color: #ebcccc;
 }
+.table-responsive {
+  overflow-x: auto;
+}
 @media screen and (max-width: 767px) {
   .table-responsive {
     width: 100%;
     margin-bottom: 15px;
-    overflow-x: auto;
     overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     border: 1px solid #ddd;
   }
@@ -2417,6 +2418,36 @@ input[type="datetime-local"].input-lg,
 input[type="month"].input-lg {
   line-height: 46px;
   line-height: 1.33 \0;
+}
+_:-ms-fullscreen,
+:root input[type="date"],
+_:-ms-fullscreen,
+:root input[type="time"],
+_:-ms-fullscreen,
+:root input[type="datetime-local"],
+_:-ms-fullscreen,
+:root input[type="month"] {
+  line-height: 1.42857143;
+}
+_:-ms-fullscreen.input-sm,
+:root input[type="date"].input-sm,
+_:-ms-fullscreen.input-sm,
+:root input[type="time"].input-sm,
+_:-ms-fullscreen.input-sm,
+:root input[type="datetime-local"].input-sm,
+_:-ms-fullscreen.input-sm,
+:root input[type="month"].input-sm {
+  line-height: 1.5;
+}
+_:-ms-fullscreen.input-lg,
+:root input[type="date"].input-lg,
+_:-ms-fullscreen.input-lg,
+:root input[type="time"].input-lg,
+_:-ms-fullscreen.input-lg,
+:root input[type="datetime-local"].input-lg,
+_:-ms-fullscreen.input-lg,
+:root input[type="month"].input-lg {
+  line-height: 1.33;
 }
 .form-group {
   margin-bottom: 15px;
@@ -3077,6 +3108,7 @@ fieldset[disabled] .btn-danger.active {
 }
 .btn-link,
 .btn-link:active,
+.btn-link.active,
 .btn-link[disabled],
 fieldset[disabled] .btn-link {
   background-color: transparent;
@@ -5167,7 +5199,9 @@ a.list-group-item-danger.active:focus {
   border-bottom-right-radius: 3px;
 }
 .panel > .panel-body + .table,
-.panel > .panel-body + .table-responsive {
+.panel > .panel-body + .table-responsive,
+.panel > .table + .panel-body,
+.panel > .table-responsive + .panel-body {
   border-top: 1px solid #ddd;
 }
 .panel > .table > tbody:first-child > tr:first-child th,
@@ -5788,6 +5822,37 @@ button.close {
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   line-height: 1;
+}
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .carousel-inner > .item {
+    -webkit-transition: -webkit-transform .6s ease-in-out;
+         -o-transition:      -o-transform .6s ease-in-out;
+            transition:         transform .6s ease-in-out;
+
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-perspective: 1000;
+            perspective: 1000;
+  }
+  .carousel-inner > .item.next,
+  .carousel-inner > .item.active.right {
+    left: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+  .carousel-inner > .item.prev,
+  .carousel-inner > .item.active.left {
+    left: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+  .carousel-inner > .item.next.left,
+  .carousel-inner > .item.prev.right,
+  .carousel-inner > .item.active {
+    left: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
 }
 .carousel-inner > .active,
 .carousel-inner > .next,

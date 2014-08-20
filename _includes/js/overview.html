@@ -47,6 +47,12 @@ $('#meinModal').modal('show')                // initiieren und direkt 'show' auf
 
   <p>Jedes Plugin legt seinen rohen Konstruktor in der <code>Constructor</code>-Eigenschaft offen: <code>$.fn.popover.Constructor</code>. Falls du eine bestimmte Instanz eines Plugins brauchst, ruf sie direkt von einem Element auf: <code>$('[rel="popover"]').data('popover')</code>.</p>
 
+  <h4>Standard-Einstellungen</h4>
+  <p>Du kannst die Standard-Einstellungen für ein Plugin ändern, indem du das Objekt <code>Constructor.DEFAULTS</code> des Plugins bearbeitest:<p>
+{% highlight js %}
+$.fn.modal.Constructor.DEFAULTS.keyboard = false // setzt die Option `keyboard` des Modal-Plugins standardmäßig auf false
+{% endhighlight %}
+
   <h3 id="js-noconflict">No conflict</h3>
   <p>Unter Umständen musst du Bootstraps Plugins Seite an Seite mit anderen UI-Frameworks verwenden. In diesen Fällen kann es manchmal dazu kommen, dass sich Namespaces überschneiden. Falls das passiert, rufe <code>.noConflict</code> an einem Plugin auf, um dessen Wert zurückzusetzen.</p>
 {% highlight js %}

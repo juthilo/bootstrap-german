@@ -3,6 +3,7 @@
 
   <h2 id="popovers-examples">Beispiele</h2>
   <p>Füge kleine Inhaltsüberlagerungen wie die auf dem iPad zu irgendeinem Element hinzu, um zusätzliche Informationen anzuzeigen.</p>
+  <p>Popovers, deren Titel und Inhalt beide null Charaktere lang sind, werden niemals angezeigt.</p>
 
   <div class="bs-callout bs-callout-danger">
     <h4>Plugin-Abhängigkeit</h4>
@@ -123,11 +124,6 @@
 {% highlight html %}
 <a href="#" tabindex="0" class="btn btn-lg btn-danger bs-docs-popover" data-toggle="popover" data-trigger="focus" title="Schließbares Popover" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?">Schließbares Popover</a>
 {% endhighlight %}
-{% highlight js %}
-$('.popover-dismiss').popover({
-  trigger: 'focus'
-})
-{% endhighlight %}
 
 
   <h2 id="popovers-usage">Verwendung</h2>
@@ -167,7 +163,7 @@ $('.popover-dismiss').popover({
           <td>''</td>
           <td>
             <p>Standard-Inhalt, falls kein <code>data-content</code>-Attribut vorhanden ist.</p>
-            <p>Falls eine Funktion angegeben wird, wird diese mit einem Argument aufgerufen, nämlich dem Element, an das das Popover angebunden ist.</p>
+            <p>Falls eine Funktion angegeben wird, wird diese mit ihrer <code>this</code>-Referenz gesetzt auf das Element, an das das Popover angebunden ist, aufgerufen.</p>
           </td>
         </tr>
         <tr>
@@ -190,7 +186,10 @@ $('.popover-dismiss').popover({
           <td>placement</td>
           <td>String | Funktion</td>
           <td>'top'</td>
-          <td>Wie das Popover positioniert werden soll - top | bottom | left | right | auto. <br> Wenn "auto" angegeben wird, wird das Popover dynamisch umorientiert. Zum Beispiel wird bei "auto left" das Popover nach Möglichkeit links positioniert, aber sonst nach rechts verlegt.</td>
+          <td>
+            <p>Wie das Popover positioniert werden soll - top | bottom | left | right | auto. <br> Wenn "auto" angegeben wird, wird das Popover dynamisch umorientiert. Zum Beispiel wird bei "auto left" das Popover nach Möglichkeit links positioniert, aber sonst nach rechts verlegt.</p>
+            <p>Wenn eine Funktion verwendet wird, um die Positionierung zu bestimmen, wird diese mit dem Popover-DOM-Knoten als ihr erstes und dem auslösenden DOM-Element als ihr zweites Argument aufgerufen. Der <code>this</code>-Kontext wird auf die Popover-Instanz gesetzt.</p>
+          </td>
         </tr>
         <tr>
           <td>selector</td>
@@ -214,7 +213,10 @@ $('.popover-dismiss').popover({
           <td>title</td>
           <td>String | Funktion</td>
           <td>''</td>
-          <td>Standard-Titel-Wert, falls kein <code>title</code>-Attribut vorhanden ist</td>
+          <td>
+            <p>Standard-Titel-Wert, falls kein <code>title</code>-Attribut vorhanden ist.</p>
+            <p>Falls eine Funktion angegeben wird, wird diese mit ihrer <code>this</code>-Referenz gesetzt auf das Element, an das das Popover angebunden ist, aufgerufen.</p>
+          </td>
         </tr>
         <tr>
           <td>trigger</td>
@@ -223,12 +225,12 @@ $('.popover-dismiss').popover({
           <td>Wie das Popover ausgelöst wird - click | hover | focus | manual. Du kannst mehrere Auslöser angeben; trenne sie mit einem Leerzeichen.</td>
         </tr>
         <tr>
-         <td>viewport</td>
-         <td>String | Objekt</td>
-         <td>{ selector: 'body', padding: 0 }</td>
-         <td>
-          <p>Hält das Popover innerhalb der Grenzen dieses Elements. Beispiel: <code>viewport: '#viewport'</code> oder <code>{ "selector": "#viewport", "padding": 0 }</code></p>
-         </td>
+          <td>viewport</td>
+          <td>String | Objekt</td>
+          <td>{ selector: 'body', padding: 0 }</td>
+          <td>
+            <p>Hält das Popover innerhalb der Grenzen dieses Elements. Beispiel: <code>viewport: '#viewport'</code> oder <code>{ "selector": "#viewport", "padding": 0 }</code></p>
+          </td>
        </tr>
       </tbody>
     </table>
@@ -261,10 +263,10 @@ $('.popover-dismiss').popover({
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
       <thead>
-       <tr>
-         <th style="width: 150px;">Ereignistyp</th>
-         <th>Beschreibung</th>
-       </tr>
+        <tr>
+          <th style="width: 150px;">Ereignistyp</th>
+          <th>Beschreibung</th>
+        </tr>
       </thead>
       <tbody>
         <tr>

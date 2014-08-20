@@ -1,42 +1,53 @@
 <div class="bs-docs-section">
   <h1 id="buttons" class="page-header">Buttons <small>button.js</small></h1>
 
-  <h2 id="buttons-examples">Beispiel-Verwendung</h2>
-  <p>Mach noch mehr mit Buttons. Kontrolliere den Status von Buttons oder gruppiere sie, um Toolbar-ähnliche Komponenten zu erstellen.</p>
+  <p class="lead">Mach noch mehr mit Buttons. Kontrolliere den Status von Buttons oder gruppiere sie, um Toolbar-ähnliche Komponenten zu erstellen.</p>
 
-  <h4>Aussagekräftig</h4>
+  <div class="bs-callout bs-callout-danger">
+    <h4>Browser-Kompatibilität</h4>
+    <p><a href="https://github.com/twbs/bootstrap/issues/793">Firefox speichert jeglichen besonderen Status (deaktiviert und/oder ausgewählt) eines Formularelements (inkl. Buttons) auch wenn die Seite neu geladen wird</a>. Ein Workaround für dieses Problem ist die Verwendung von <code>autocomplete="off"</code>.</p>
+  </div>
+
+  <h2 id="buttons-stateful">Aussagekräftig</h2>
   <p>Füge <code>data-loading-text="Wird geladen..."</code> hinzu, um bei einem Button einen Lade-Zustand anzuzeigen.</p>
-  <div class="bs-example" style="padding-bottom: 24px;">
-    <button type="button" id="loading-example-btn" data-loading-text="Wird geladen..." class="btn btn-primary">
+  <div class="bs-callout bs-callout-info">
+    <h4>Nimm den Zustand, der dir gefällt!</h4>
+    <p>Im Rahmen dieser Demonstration verwenden wir <code>data-loading-text</code> und <code>$().button('loading')</code>; das ist aber nicht der einzige Zustand, den du verwenden kannst. <a href="#buttons-methods">Sieh dir für mehr Informationen dazu die Dokumentation für <code>$().button(string)</code> weiter unten an</a>.</p>
+  </div>
+  <div class="bs-example">
+    <button type="button" id="loading-example-btn" data-loading-text="Wird geladen..." class="btn btn-primary" autocomplete="off">
       Ladezustand
     </button>
   </div><!-- /example -->
 {% highlight html %}
-<button type="button" id="loading-example-btn" data-loading-text="Wird geladen..." class="btn btn-primary">
+<button type="button" id="meinButton" data-loading-text="Wird geladen..." class="btn btn-primary" autocomplete="off">
   Ladezustand
 </button>
+
 <script>
-  $('#loading-example-btn').click(function () {
-    var btn = $(this)
-    btn.button('loading')
-    $.ajax(...).always(function () {
-      btn.button('reset')
-    });
-  });
+  $('#meinButton').on('click', function () {
+    var $btn = $(this).button('loading')
+    // Geschäftslogik...
+    $btn.button('reset')
+  })
 </script>
 {% endhighlight %}
 
-  <h4>Einzelner Schalter</h4>
+  <h2 id="buttons-single-toggle">Einzelner Schalter</h2>
   <p>Füge <code>data-toggle="button"</code> hinzu, um einen einzelnen Button in einen Schalter zu verwandeln.</p>
-  <div class="bs-example" style="padding-bottom: 24px;">
-    <button type="button" class="btn btn-primary" data-toggle="button">Einzelner Schalter</button>
+  <div class="bs-example">
+    <button type="button" class="btn btn-primary" data-toggle="button" autocomplete="off">
+      Einzelner Schalter
+    </button>
   </div><!-- /example -->
 {% highlight html %}
-<button type="button" class="btn btn-primary" data-toggle="button">Einzelner Schalter</button>
+<button type="button" class="btn btn-primary" data-toggle="button" autocomplete="off">
+  Einzelner Schalter
+</button>
 {% endhighlight %}
 
-  <h4>Auswahlfeld (Checkbox)</h4>
-  <p>Füge <code>data-toggle="buttons"</code> zu einer Gruppe von Ankreuzfeldern (Checkboxen) hinzu, um sie in einer Button-Gruppe besonders zu gestalten.</p>
+  <h2 id="buttons-checkbox-radio">Auswahlfelder</h2>
+  <p>Füge <code>data-toggle="buttons"</code> zu einer <code>.btn-group</code> hinzu, die Ankreuzfelder (Checkboxen) oder Radio-Buttons enthält, um sie zusammen mit ihren jeweiligen Stilen in Schalter zu verwandeln.</p>
   <div class="bs-callout bs-callout-warning">
     <h4>Vorausgewählte Optionen benötigen <code>.active</code></h4>
     <p>Wenn du Optionen vorauswählen möchtest, musst du selbst die Klasse <code>.active</code> zum <code>label</code> einer Schaltfläche hinzufügen.</p>
@@ -45,124 +56,77 @@
     <h4>Optischer "Ausgewählt"-Status wird nur bei Klick aktualisiert</h4>
     <p>Falls ein Checkbox-Button an- bzw. abgewählt wird, ohne ein <code>click</code>-Ereignis am Button auszulösen (z.B. über <code>&lt;input type="reset"&gt;</code> oder durch Setzen der Eigenschaft <code>checked</code> beim Eingabefeld), musst du die Klasse <code>.active</code> beim <code>label</code> des Eingabefelds selbst hinzufügen bzw. entfernen.</p>
   </div>
-  <div class="bs-example" style="padding-bottom: 24px;">
+  <div class="bs-example">
     <div class="btn-group" data-toggle="buttons">
       <label class="btn btn-primary active">
-        <input type="checkbox" autocomplete="off" checked> Option 1 (vorausgewählt)
+        <input type="checkbox" checked autocomplete="off"> Checkbox 1 (vorausgewählt)
       </label>
       <label class="btn btn-primary">
-        <input type="checkbox" autocomplete="off"> Option 2
+        <input type="checkbox" autocomplete="off"> Checkbox 2
       </label>
       <label class="btn btn-primary">
-        <input type="checkbox" autocomplete="off"> Option 3
+        <input type="checkbox" autocomplete="off"> Checkbox 3
       </label>
     </div>
   </div><!-- /example -->
 {% highlight html %}
 <div class="btn-group" data-toggle="buttons">
   <label class="btn btn-primary active">
-    <input type="checkbox" autocomplete="off" checked> Option 1 (vorausgewählt)
+    <input type="checkbox" autocomplete="off" checked> Checkbox 1 (vorausgewählt)
   </label>
   <label class="btn btn-primary">
-    <input type="checkbox" autocomplete="off"> Option 2
+    <input type="checkbox" autocomplete="off"> Checkbox 2
   </label>
   <label class="btn btn-primary">
-    <input type="checkbox" autocomplete="off"> Option 3
+    <input type="checkbox" autocomplete="off"> Checkbox 3
   </label>
 </div>
 {% endhighlight %}
 
-  <h4>Auswahlfeld (Radio)</h4>
-  <p>Füge <code>data-toggle="buttons"</code> zu einer Gruppe von Optionsfeldern (Radios) hinzu, um sie in einer Button-Gruppe besonders zu gestalten.</p>
-  <div class="bs-callout bs-callout-warning">
-    <h4>Vorausgewählte Optionen benötigen <code>.active</code></h4>
-    <p>Wenn du eine Option vorauswählen möchtest, musst du selbst die Klasse <code>.active</code> zum <code>label</code> einer Schaltfläche hinzufügen.</p>
-  </div>
-  <div class="bs-callout bs-callout-warning">
-    <h4>Optischer "Ausgewählt"-Status wird nur bei Klick aktualisiert</h4>
-    <p>Falls ein Checkbox-Button an- bzw. abgewählt wird, ohne ein <code>click</code>-Ereignis am Button auszulösen (z.B. über <code>&lt;input type="reset"&gt;</code> oder durch Setzen der Eigenschaft <code>checked</code> beim Eingabefeld), musst du die Klasse <code>.active</code> beim <code>label</code> des Eingabefelds selbst hinzufügen bzw. entfernen.</p>
-  </div>
-  <div class="bs-example" style="padding-bottom: 24px;">
+  <div class="bs-example">
     <div class="btn-group" data-toggle="buttons">
       <label class="btn btn-primary active">
-        <input type="radio" name="options" id="option1" autocomplete="off" checked> Option 1 (vorausgewählt)
+        <input type="radio" name="options" id="option1" autocomplete="off" checked> Radio-Button 1 (vorausgewählt)
       </label>
       <label class="btn btn-primary">
-        <input type="radio" name="options" id="option2" autocomplete="off"> Option 2
+        <input type="radio" name="options" id="option2" autocomplete="off"> Radio-Button 2
       </label>
       <label class="btn btn-primary">
-        <input type="radio" name="options" id="option3" autocomplete="off"> Option 3
+        <input type="radio" name="options" id="option3" autocomplete="off"> Radio-Button 3
       </label>
     </div>
   </div><!-- /example -->
 {% highlight html %}
 <div class="btn-group" data-toggle="buttons">
   <label class="btn btn-primary active">
-    <input type="radio" name="options" id="option1" autocomplete="off" checked> Option 1 (vorausgewählt)
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> Radio-Button 1 (vorausgewählt)
   </label>
   <label class="btn btn-primary">
-    <input type="radio" name="options" id="option2" autocomplete="off"> Option 2
+    <input type="radio" name="options" id="option2" autocomplete="off"> Radio-Button 2
   </label>
   <label class="btn btn-primary">
-    <input type="radio" name="options" id="option3" autocomplete="off"> Option 3
+    <input type="radio" name="options" id="option3" autocomplete="off"> Radio-Button 3
   </label>
 </div>
 {% endhighlight %}
 
-
-  <h2 id="buttons-usage">Verwendung</h2>
-  <p>Aktiviere Buttons über JavaScript:</p>
-{% highlight js %}
-$('.btn').button()
-{% endhighlight %}
-
-  <h3>Markup</h3>
-  <p>Data-Attribute sind essentiell für das Button-Plugin. Sieh dir den Beispiel-Code unten für die verschiedenen Markup-Arten an.</p>
-
-  <h3>Optionen</h3>
-  <p><em>Keine</em></p>
-
-  <h3>Methoden</h3>
+  <h2 id="buttons-methods">Methoden</h2>
 
   <h4>$().button('toggle')</h4>
   <p>Schaltet das "Gedrückt"-Aussehen um. Gibt dem Button den Anschein, dass er aktiviert wurde oder entfernt diesen wieder.</p>
-  <div class="bs-callout bs-callout-info">
-    <h4>Automatische Umschaltung</h4>
-    <p>Du kannst die automatische Umschaltung bei einem button mit dem Attribut <code>data-toggle</code> aktivieren.</p>
-  </div>
-{% highlight html %}
-<button type="button" class="btn btn-primary" data-toggle="button">...</button>
-{% endhighlight %}
-
-  <h4>$().button('loading')</h4>
-  <p>Ändert den Status des Buttons zu "ladend". Deaktiviert den Button und ändert den Text zum Laden-Text. Dieser Text sollte am Button-Element mit dem Data-Attribut <code>data-loading-text</code> definiert werden.</p>
-{% highlight html %}
-<button id="loading-example-btn" type="button" class="btn btn-primary" data-loading-text="Etwas wird geladen...">...</button>
-<script>
-  $('#loading-example-btn').click(function () {
-    var btn = $(this)
-    btn.button('loading')
-    $.ajax(...).always(function () {
-      btn.button('reset')
-    });
-  });
-</script>
-{% endhighlight %}
-
-  <div class="bs-callout bs-callout-danger">
-    <h4>Browser-Kompatibilität</h4>
-    <p><a href="https://github.com/twbs/bootstrap/issues/793">Firefox speichert jeglichen besonderen Status (deaktiviert und/oder ausgewählt) eines Formularelements (inkl. Buttons) auch wenn die Seite neu geladen wird</a>. Ein Workaround für dieses Problem ist die Verwendung von <code>autocomplete="off"</code>.</p>
-  </div>
 
   <h4>$().button('reset')</h4>
   <p>Setzt den Status des Buttons zurück. Ändert den Text wieder zum Original.</p>
 
   <h4>$().button(String)</h4>
-  <p>Setzt den Status des Buttons zurück. Ändert den Text zum angegebenen String.</p>
+  <p>Ändert den Text zu irgendeinem angegebenen String.</p>
 {% highlight html %}
-<button type="button" class="btn btn-primary" data-complete-text="Fertig!">...</button>
+<button type="button" id="meinButtonMitZustand" class="btn btn-primary" data-complete-text="Fertig!">...</button>
+
 <script>
-  $('.btn').button('complete')
+  $('#meinButtonMitZustand').on('click', function () {
+    $(this).button('complete') // Button-Text wird "Fertig!" sein
+  })
 </script>
 {% endhighlight %}
 </div>

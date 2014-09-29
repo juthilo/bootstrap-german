@@ -10,6 +10,35 @@
     </p>
   </div><!-- /example -->
 
+  <h3>Statischer Tooltip</h3>
+  <p>Vier Optionen sind verfügbar: nach oben, nach rechts, nach unten und nach links ausgerichtet.</p>
+  <div class="bs-example bs-example-tooltip">
+    <div class="tooltip left" role="tooltip">
+      <div class="tooltip-arrow"></div>
+      <div class="tooltip-inner">
+        Tooltip links
+      </div>
+    </div>
+    <div class="tooltip top" role="tooltip">
+      <div class="tooltip-arrow"></div>
+      <div class="tooltip-inner">
+        Tooltip oben
+      </div>
+    </div>
+    <div class="tooltip bottom" role="tooltip">
+      <div class="tooltip-arrow"></div>
+      <div class="tooltip-inner">
+        Tooltip unten
+      </div>
+    </div>
+    <div class="tooltip right" role="tooltip">
+      <div class="tooltip-arrow"></div>
+      <div class="tooltip-inner">
+        Tooltip rechts
+      </div>
+    </div>
+  </div>
+
   <h3>Vier Richtungen</h3>
   <div class="bs-example tooltip-demo">
     <div class="bs-example-tooltips">
@@ -54,7 +83,7 @@ $('#beispiel').tooltip(Optionen)
 {% endhighlight %}
 
   <h3>Markup</h3>
-  <p>Das benötigte Markup für einen tooltip ist nur ein <code>data</code>-Attribut und ein <code>title</code> auf dem HTML-Element, das mit einem Tooltip versehen werden soll. Das generierte Markup eines Tooltips ist ziemlich einfach; es braucht allerdings eine Position (standardmäßig vom Plugin auf <code>top</code> gesetzt).</p>
+  <p>Das benötigte Markup für einen Tooltip ist nur ein <code>data</code>-Attribut und ein <code>title</code> auf dem HTML-Element, das mit einem Tooltip versehen werden soll. Das generierte Markup eines Tooltips ist ziemlich einfach; es braucht allerdings eine Position (standardmäßig vom Plugin auf <code>top</code> gesetzt).</p>
   <div class="bs-callout bs-callout-warning">
     <h4>Mehrzeilige Links</h4>
     <p>Manchmal willst du einen Tooltip vielleicht zu einem Hyperlink hinzufügen, der über mehrere Zeilen geht. Das Standard-Verhalten in diesem Fall ist, dass der Tooltip horizontal und vertikal zentriert wird. Füge zu deinen Links <code>white-space: nowrap;</code> hinzu, um das zu vermeiden.</p>

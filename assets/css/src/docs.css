@@ -1102,6 +1102,12 @@ h1[id] {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+.bs-example-tooltip .tooltip {
+  position: relative;
+  display: inline-block;
+  margin: 10px 20px;
+  opacity: 1;
+}
 
 /* Popovers */
 .bs-example-popover {
@@ -1143,7 +1149,6 @@ h1[id] {
   margin-top: 0;
   margin-bottom: 0;
   word-break: normal;
-  word-wrap: nowrap;
   white-space: nowrap;
   background-color: transparent;
   border: 0;
@@ -1391,13 +1396,16 @@ h1[id] {
   margin-top: 0;
   margin-bottom: 5px;
 }
+.bs-dropzone hr {
+  width: 100px;
+}
 .bs-dropzone .lead {
   margin-bottom: 10px;
   font-weight: normal;
   color: #333;
 }
-.bs-dropzone hr {
-  width: 100px;
+/*.bs-dropzone*/ #import-manual-trigger {
+  cursor: pointer;
 }
 .bs-dropzone p:last-child {
   margin-bottom: 0;

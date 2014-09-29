@@ -2,7 +2,7 @@
 [![Bower-Version](https://badge.fury.io/bo/bootstrap.svg)](http://badge.fury.io/bo/bootstrap)
 [![NPM-Version](https://badge.fury.io/js/bootstrap.svg)](http://badge.fury.io/js/bootstrap)
 
-Bootstrap, ein umfangreiches und dennoch schlankes Mobile-First Frond-End-Framework für einfachere und schnellere Entwicklung im Web. Erdacht von [Mark Otto](http://twitter.com/mdo) und [Jacob Thornton](http://twitter.com/fat) und gepflegt vom [Hauptteam](https://github.com/twbs?tab=members) mit der großartigen Unterstützung der immer involvierten Community.
+Bootstrap, ein umfangreiches und dennoch schlankes Mobile-First Frond-End-Framework für einfachere und schnellere Entwicklung im Web. Erdacht von [Mark Otto](https://twitter.com/mdo) und [Jacob Thornton](https://twitter.com/fat) und gepflegt vom [Hauptteam](https://github.com/twbs?tab=members) mit der großartigen Unterstützung der immer involvierten Community.
 
 Dies ist eine inoffizielle Übersetzung der Dokumentation von Bootstrap auf Deutsch. Die enthaltenen Informationen sind unter Umständen nicht immer aktuell. Für die neuesten und zuverlässigsten Informationen solltest du die [Original-Dokumentation auf Englisch](http://getbootstrap.com) lesen. Auch diese README-Datei ist eine übersetzte Version des Originals mit einigen Ergänzungen bezüglich der Übersetzung.
 
@@ -10,22 +10,23 @@ Um direkt loszulegen, geh auf <http://holdirbootstrap.de>!
 
 ## Inhaltsverzeichnis
 
- - [Schnellstart](#schnellstart)
- - [Fehler und Funktionswünsche](#fehler-und-funktionswuensche)
- - [Dokumentation](#dokumentation)
- - [Mitmachen](#mitmachen)
- - [Community](#community)
- - [Versionen](#versionen)
- - [Erfinder](#erfinder)
- - [Copyright und Lizenz](#copyright-und-lizenz)
+- [Schnellstart](#schnellstart)
+- [Fehler und Funktionsanfragen](#fehler-und-funktionsanfragen)
+- [Dokumentation](#dokumentation)
+- [Mitmachen](#mitmachen)
+- [Community](#community)
+- [Versionen](#versionen)
+- [Erfinder](#erfinder)
+- [Copyright und Lizenz](#copyright-und-lizenz)
 
 ## Schnellstart
 
-Es sind drei Optionen verfügbar, um direkt loszulegen:
+Es sind vier Optionen verfügbar, um direkt loszulegen:
 
 - [Neueste Version herunterladen](https://github.com/twbs/bootstrap/archive/v3.2.0.zip).
 - Repository klonen: `git clone https://github.com/twbs/bootstrap.git`.
 - Mit [Bower](http://bower.io) installieren: `bower install bootstrap`.
+- Mit [npm](https://www.npmjs.org) installieren: `npm install bootstrap`.
 
 Lies die Seite [Los geht's](http://holdirbootstrap.de/los-gehts/) für Informationen über die Inhalte des Frameworks, Vorlagen und Beispiele und mehr.
 
@@ -54,7 +55,7 @@ Wir stellen sowohl kompiliertes CSS und JS (`bootstrap.*`), als auch kompilierte
 
 
 
-## Fehler und Funktionswünsche
+## Fehler und Funktionsanfragen
 
 Du hast einen Fehler gefunden oder möchtest eine neue Funktion vorschlagen? Bitte lies dir zunächst die Richtlinien für Fehlerberichte ([Übersetzung](https://github.com/juthilo/bootstrap-german/blob/master/CONTRIBUTING.md#fehlermeldungen-verwenden) / [Original](https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md#using-the-issue-tracker)) durch und suche dann nach bereits existierenden und eventuell geschlossenen Meldungen. Falls wir uns noch nicht mit deinem Problem oder deiner Idee beschäftigt haben, [eröffne einen neuen Fehlerbericht](https://github.com/twbs/bootstrap/issues/new) auf Englisch im Original-Repository auf GitHub.
 
@@ -65,8 +66,8 @@ Bootstraps Dokumentation, die du in diesem Repository als Übersetzung findest, 
 
 ### Dokumentation lokal ausführen
 
-1. Falls notwendig, [installiere Jekyll](http://jekyllrb.com/docs/installation) (benötigt wird v2.1.x).
-  - **Windows-Nutzer:** Lies [diesen unoffiziellen Ratgeber](https://github.com/juthilo/run-jekyll-on-windows/), um Jekyll ohne Probleme zum Laufen zu kriegen.
+1. Falls notwendig, [installiere Jekyll](http://jekyllrb.com/docs/installation) (benötigt wird v2.3.x).
+  - **Windows-Nutzer:** Lies [diesen unoffiziellen Ratgeber](http://jekyll-windows.juthilo.com/), um Jekyll ohne Probleme zum Laufen zu kriegen.
 2. Installiere das Ruby-basierte [Rouge](https://github.com/jneen/rouge), das wir zum Hervorheben und Gestalten von Code-Schnipseln verwenden, mit `gem install rouge`.
 3. Öffne eine Befehlszeile im Wurzelverzeichnis `/bootstrap` und führe `jekyll serve` aus.
 4. Öffne die Dokumentation in deinem Browser über <http://localhost:10006> (Übersetzung) bzw. <http://localhost:9001> (Original) und fertig!
@@ -85,7 +86,7 @@ Die englische Dokumentation für v2.3.2 ist fürs Erste unter <http://getbootstr
 
 Bitte lies dir unsere Richtlinien für Beiträge ([Übersetzung](https://github.com/juthilo/bootstrap-german/blob/master/CONTRIBUTING.md) / [Original](https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md)) durch. Darin findest du Anleitungen zum Erstellen von Fehlerberichten, Programmier-Standards und Hinweise zur Entwicklung.
 
-Außerdem denke bitte daran relevante Unit Tests beizufügen, wenn die Beiträge, die du über einen Pull Request einreichst, JavaScript-Verbesserungen oder -Funktionen enthalten. HTML und CSS sollte immer dem [Code Guide](http://github.com/mdo/code-guide) von [Mark Otto](http://github.com/mdo) folgen.
+Außerdem denke bitte daran relevante Unit Tests beizufügen, wenn die Beiträge, die du über einen Pull Request einreichst, JavaScript-Verbesserungen oder -Funktionen enthalten. HTML und CSS sollte immer dem [Code Guide](https://github.com/mdo/code-guide) von [Mark Otto](https://github.com/mdo) folgen.
 
 Voreinstellungen für Editoren / Textbearbeitungsprogramme sind in der Datei [.editorconfig](https://github.com/twbs/bootstrap/blob/master/.editorconfig) angegeben, damit du ganz einfach in gängigen Text-Editoren loslegen kannst. Lies mehr darüber und lade passende Plugins für Editoren auf <http://editorconfig.org> herunter.
 
@@ -95,9 +96,9 @@ Voreinstellungen für Editoren / Textbearbeitungsprogramme sind in der Datei [.e
 
 Bleib auf dem Laufenden, was die Entwicklung und Neuigkeiten aus der Community angeht.
 
-- Folge [@twbootstrap auf Twitter](http://twitter.com/twbootstrap).
+- Folge [@twbootstrap auf Twitter](https://twitter.com/twbootstrap).
 - Lies und abonniere [Das Offizielle Bootstrap Blog](http://blog.getbootstrap.com).
-- Chatte mit anderen Bootstrappern über IRC. Und zwar auf dem `irc.freenode.net`-Server, im Kanal `##twitter-bootstrap`.
+- Chatte mit anderen Bootstrappern über IRC. Und zwar auf dem `irc.freenode.net`-Server, im Kanal `##bootstrap`.
 - Hilfe bei der Umsetzung deiner Projekte findest du z.B. auf Stack Overflow (markiert mit [`twitter-bootstrap-3`](http://stackoverflow.com/questions/tagged/twitter-bootstrap-3)).
 
 
@@ -112,13 +113,13 @@ Um unsere Veröffentlichungen so klar wie möglich zu halten und Rückwärtskomp
 
 **Mark Otto**
 
-- <http://twitter.com/mdo>
-- <http://github.com/mdo>
+- <https://twitter.com/mdo>
+- <https://github.com/mdo>
 
 **Jacob Thornton**
 
-- <http://twitter.com/fat>
-- <http://github.com/fat>
+- <https://twitter.com/fat>
+- <https://github.com/fat>
 
 
 

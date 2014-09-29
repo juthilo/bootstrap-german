@@ -1,7 +1,5 @@
 <div class="bs-docs-section">
   <h1 id="modals" class="page-header">Modals <small>modal.js</small></h1>
-
-  <h2 id="modals-examples">Beispiele</h2>
   <p>Modals sind schlanke aber flexible Dialog-Fenster mit den minimalen benötigten Funktionen und sinnvollen Standards.</p>
 
   <div class="bs-callout bs-callout-warning" id="callout-stacked-modals">
@@ -16,6 +14,10 @@
     <h4>Schwierigkeiten auf mobilen Geräten</h4>
     <p>Es gibt einige Tücken, die du bei der Verwendung von Modals auf mobilen Geräten beachten solltest. <a href="../los-gehts/#support-fixed-position-keyboards">Lies unsere Browser-Support-Infos</a> für Details.</p>
   </div>
+
+  <p><strong class="text-danger">Das HTML-Attribut <code>autofocus</code> hat aufgrund von internen Funktionsweisen in HTML5 keinen Effekt in Bootstrap-Modals.</strong></p>
+
+  <h2 id="modals-examples">Beispiele</h2>
 
   <h3>Statisches Beispiel</h3>
   <p>Ein manuell generiertes Modal mit Header, Body und einigen Aktionen im Footer.</p>
@@ -102,13 +104,13 @@
   </div><!-- /.modal -->
 
   <div class="bs-example" style="padding-bottom: 24px;">
-    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#meinModal">
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#meinModal">
       Modal-Beispiel anzeigen
     </button>
   </div><!-- /example -->
 {% highlight html %}
 <!-- Button, der das Modal aufruft -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#meinModal">
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#meinModal">
   Modal-Beispiel anzeigen
 </button>
 
@@ -146,12 +148,12 @@
   <h2 id="modals-sizes">Größen</h2>
   <p>Modals verfügen über zwei optionale Größen, die über Veränderungsklassen für <code>.modal-dialog</code> deklariert werden können.</p>
   <div class="bs-example">
-    <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Großes Modal</button>
-    <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Kleines Modal</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Großes Modal</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Kleines Modal</button>
   </div>
 {% highlight html %}
 <!-- Großes Modal -->
-<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Großes Modal</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Großes Modal</button>
 
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="meinGroßesModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -162,7 +164,7 @@
 </div>
 
 <!-- Kleines Modal -->
-<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Kleines Modal</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Kleines Modal</button>
 
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="meinKleinesModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">

@@ -334,6 +334,35 @@
 </label>
 {% endhighlight %}
 
+  <h4>Auswahlfelder ohne Label</h4>
+  <p>Falls du keinen Text im <code>&lt;label&gt; hast, wird das Auswahlfeld trotzdem allen Erwartungen entsprechend positioniert. <strong>Funktioniert aktuell nur mit Auswahlfeldern, die nicht zusammen in einer Zeile stehen.</strong></code>
+  <div class="bs-example">
+    <form role="form">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" id="blankoCheckbox" value="option1">
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="blankoRadio" id="blankoRadio1" value="option1">
+        </label>
+      </div>
+    </form>
+  </div>
+{% highlight html %}
+<div class="checkbox">
+  <label>
+    <input type="checkbox" id="blankoCheckbox" value="option1">
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="blankoRadio" id="blankoRadio1" value="option1">
+  </label>
+</div>
+{% endhighlight %}
+
   <h3>Auswahlfelder</h3>
   <p>Verwende <code>&lt;select&gt;</code>s in der Standard-Ausführung oder füge <code>multiple</code> hinzu, um mehrere Optionen anzuzeigen und auswählbar zu machen.</p>
   <div class="bs-example">
@@ -469,7 +498,7 @@
 
   <div class="bs-callout bs-callout-danger">
     <h4>Browser-Kompatibilität</h4>
-    <p>Obwohl Bootstrap diese Stile in allen Browsern anwendet, unterstützen Internet Explorer 9 und ältere Versionen das Attribut <code>disabled</code> bei einem <code>&lt;fieldset&gt;</code> nicht wirklich. Verwende eigenes JavaScript, um die Interaktion mit Elementen in einem Fieldset in diesen Browsern zu deaktivieren.</p>
+    <p>Obwohl Bootstrap diese Stile in allen Browsern anwendet, unterstützen Internet Explorer 11 und ältere Versionen das Attribut <code>disabled</code> bei einem <code>&lt;fieldset&gt;</code> nicht vollständig. Verwende eigenes JavaScript, um die Interaktion mit Elementen in einem Fieldset in diesen Browsern zu deaktivieren.</p>
   </div>
 
   <div class="bs-example">

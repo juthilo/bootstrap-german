@@ -54,6 +54,10 @@ hilfreich, also vielen Dank an dieser Stelle!
 
 ### Richtlinien für Fehlermeldungen:
 
+0. **Validiere und linte deinen Code** &mdash; [validiere dein HTML](http://html5.vaidator.nu)
+   und [linte dein HTML](https://github.com/twbs/bootlint), um sicherzustellen, dass dein
+   Problem nicht von einem einfachen Fehler in deinem eigenen Code verursacht wird.
+
 1. **Verwende die Suche auf GitHub** &mdash; sieh nach, ob der Fehler schon
    gemeldet wurde.
 

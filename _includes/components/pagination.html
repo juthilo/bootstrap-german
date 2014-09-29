@@ -6,73 +6,7 @@
   <h2 id="pagination-default">Standard</h2>
   <p>Einfache Seiten-Nummerierung, inspiriert von Rdio, super für Apps und Suchergebnisse. Der große Block ist schwer zu verfehlen, leicht skalierbar und bietet große Klick-Bereiche.</p>
   <div class="bs-example">
-    <ul class="pagination">
-      <li><a href="#">&laquo;</a></li>
-      <li><a href="#">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">5</a></li>
-      <li><a href="#">&raquo;</a></li>
-    </ul>
-  </div>
-{% highlight html %}
-<ul class="pagination">
-  <li><a href="#">&laquo;</a></li>
-  <li><a href="#">1</a></li>
-  <li><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
-  <li><a href="#">&raquo;</a></li>
-</ul>
-{% endhighlight %}
-
-  <h3>Deaktivierte oder aktive Ansichten</h3>
-  <p>Links sind für verschiedene Umstände anpassbar. Verwende <code>.disabled</code> für nicht-klickbare Links und <code>.active</code>, um die aktuelle Seite zu markieren.</p>
-  <div class="bs-example">
-    <ul class="pagination">
-      <li class="disabled"><a href="#">&laquo;</a></li>
-      <li class="active"><a href="#">1 <span class="sr-only">(aktuell)</span></a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">5</a></li>
-      <li><a href="#">&raquo;</a></li>
-   </ul>
-  </div>
-{% highlight html %}
-<ul class="pagination">
-  <li class="disabled"><a href="#">&laquo;</a></li>
-  <li class="active"><a href="#">1 <span class="sr-only">(aktuell)</span></a></li>
-  ...
-</ul>
-{% endhighlight %}
-  <p>Du kannst optional aktive oder deaktivierte Anchors durch <code>&lt;span&gt;</code> ersetzen, um Klick-Funktionalität zu entfernen und dennoch die gewünschten Stile beizubehalten.</p>
-{% highlight html %}
-<ul class="pagination">
-  <li class="disabled"><span>&laquo;</span></li>
-  <li class="active"><span>1 <span class="sr-only">(aktuell)</span></span></li>
-  ...
-</ul>
-{% endhighlight %}
-
-
-  <h3>Größe</h3>
-  <p>Du möchtest die Komponente lieber in kleiner oder größer haben? Füge <code>.pagination-lg</code> oder <code>.pagination-sm</code> für weitere Größen hinzu.</p>
-  <div class="bs-example">
-    <div>
-      <ul class="pagination pagination-lg">
-        <li><a href="#">&laquo;</a></li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">&raquo;</a></li>
-      </ul>
-    </div>
-    <div>
+    <nav>
       <ul class="pagination">
         <li><a href="#">&laquo;</a></li>
         <li><a href="#">1</a></li>
@@ -82,8 +16,84 @@
         <li><a href="#">5</a></li>
         <li><a href="#">&raquo;</a></li>
       </ul>
-    </div>
-    <div>
+    </nav>
+  </div>
+{% highlight html %}
+<nav>
+  <ul class="pagination">
+    <li><a href="#">&laquo;</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">&raquo;</a></li>
+  </ul>
+</nav>
+{% endhighlight %}
+
+  <h3>Deaktivierte oder aktive Ansichten</h3>
+  <p>Links sind für verschiedene Umstände anpassbar. Verwende <code>.disabled</code> für nicht-klickbare Links und <code>.active</code>, um die aktuelle Seite zu markieren.</p>
+  <div class="bs-example">
+    <nav>
+      <ul class="pagination">
+        <li class="disabled"><a href="#">&laquo;</a></li>
+        <li class="active"><a href="#">1 <span class="sr-only">(aktuell)</span></a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+      </ul>
+    </nav>
+  </div>
+{% highlight html %}
+<nav>
+  <ul class="pagination">
+    <li class="disabled"><a href="#">&laquo;</a></li>
+    <li class="active"><a href="#">1 <span class="sr-only">(aktuell)</span></a></li>
+    ...
+  </ul>
+</nav>
+{% endhighlight %}
+  <p>Du kannst optional aktive oder deaktivierte Anchors durch <code>&lt;span&gt;</code> ersetzen, um Klick-Funktionalität zu entfernen und dennoch die gewünschten Stile beizubehalten.</p>
+{% highlight html %}
+<nav>
+  <ul class="pagination">
+    <li class="disabled"><span>&laquo;</span></li>
+    <li class="active"><span>1 <span class="sr-only">(aktuell)</span></span></li>
+    ...
+  </ul>
+</nav>
+{% endhighlight %}
+
+
+  <h3>Größe</h3>
+  <p>Du möchtest die Komponente lieber in kleiner oder größer haben? Füge <code>.pagination-lg</code> oder <code>.pagination-sm</code> für weitere Größen hinzu.</p>
+  <div class="bs-example">
+    <nav>
+      <ul class="pagination pagination-lg">
+        <li><a href="#">&laquo;</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+      </ul>
+    </nav>
+    <nav>
+      <ul class="pagination">
+        <li><a href="#">&laquo;</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+      </ul>
+    </nav>
+    <nav>
       <ul class="pagination pagination-sm">
         <li><a href="#">&laquo;</a></li>
         <li><a href="#">1</a></li>
@@ -93,12 +103,12 @@
         <li><a href="#">5</a></li>
         <li><a href="#">&raquo;</a></li>
       </ul>
-    </div>
+    </nav>
   </div>
 {% highlight html %}
-<ul class="pagination pagination-lg">...</ul>
-<ul class="pagination">...</ul>
-<ul class="pagination pagination-sm">...</ul>
+<nav><ul class="pagination pagination-lg">...</ul></nav>
+<nav><ul class="pagination">...</ul></nav>
+<nav><ul class="pagination pagination-sm">...</ul></nav>
 {% endhighlight %}
 
 
@@ -108,46 +118,58 @@
   <h3>Standard-Beispiel</h3>
   <p>Links im Pager sind standardmäßig zentriert.</p>
   <div class="bs-example">
-    <ul class="pager">
-      <li><a href="#">Vorherige</a></li>
-      <li><a href="#">Nächste</a></li>
-    </ul>
+    <nav>
+      <ul class="pager">
+        <li><a href="#">Vorherige</a></li>
+        <li><a href="#">Nächste</a></li>
+      </ul>
+    </nav>
   </div>
 {% highlight html %}
-<ul class="pager">
-  <li><a href="#">Vorherige</a></li>
-  <li><a href="#">Nächste</a></li>
-</ul>
+<nav>
+  <ul class="pager">
+    <li><a href="#">Vorherige</a></li>
+    <li><a href="#">Nächste</a></li>
+  </ul>
+</nav>
 {% endhighlight %}
 
   <h3>Ausgerichtete Links</h3>
   <p>Alternativ kannst du die Links auch gegenüber an den Seiten ausrichten:</p>
   <div class="bs-example">
-    <ul class="pager">
-      <li class="previous"><a href="#">&larr; Älter</a></li>
-      <li class="next"><a href="#">Neuer &rarr;</a></li>
-    </ul>
+    <nav>
+      <ul class="pager">
+        <li class="previous"><a href="#">&larr; Älter</a></li>
+        <li class="next"><a href="#">Neuer &rarr;</a></li>
+      </ul>
+    </nav>
   </div>
 {% highlight html %}
-<ul class="pager">
-  <li class="previous"><a href="#">&larr; Älter</a></li>
-  <li class="next"><a href="#">Neuer &rarr;</a></li>
-</ul>
+<nav>
+  <ul class="pager">
+    <li class="previous"><a href="#">&larr; Älter</a></li>
+    <li class="next"><a href="#">Neuer &rarr;</a></li>
+  </ul>
+</nav>
 {% endhighlight %}
 
 
   <h3>Deaktivierte Ansicht</h3>
   <p>Pager-Links nutzen außerdem die allgemeine Hilfsklasse <code>.disabled</code> wie bei der Pagination.</p>
   <div class="bs-example">
-    <ul class="pager">
-      <li class="previous disabled"><a href="#">&larr; Älter</a></li>
-      <li class="next"><a href="#">Neuer &rarr;</a></li>
-    </ul>
+    <nav>
+      <ul class="pager">
+        <li class="previous disabled"><a href="#">&larr; Älter</a></li>
+        <li class="next"><a href="#">Neuer &rarr;</a></li>
+      </ul>
+    </nav>
   </div>
 {% highlight html %}
-<ul class="pager">
-  <li class="previous disabled"><a href="#">&larr; Älter</a></li>
-  <li class="next"><a href="#">Neuer &rarr;</a></li>
-</ul>
+<nav>
+  <ul class="pager">
+    <li class="previous disabled"><a href="#">&larr; Älter</a></li>
+    <li class="next"><a href="#">Neuer &rarr;</a></li>
+  </ul>
+</nav>
 {% endhighlight %}
 </div>

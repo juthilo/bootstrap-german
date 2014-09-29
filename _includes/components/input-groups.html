@@ -1,11 +1,12 @@
 <div class="bs-docs-section">
   <h1 id="input-groups" class="page-header">Input-Gruppen</h1>
 
-  <p class="lead">Erweitere Formular-Felder, indem du Text oder Buttons vor, nach oder auf beiden Seiten von text-basierten Eingabefeldern hinzufügst. Verwende <code>.input-group</code> mit einem <code>.input-group-addon</code>, um Elemente bei einem einzelnen <code>.form-control</code> vor- bzw. nachzustellen.</p>
+  <p class="lead">Erweitere Formular-Felder, indem du Text oder Buttons vor, nach oder auf beiden Seiten von text-basierten Eingabefeldern (<code>&lt;input&gt;</code>s) hinzufügst. Verwende <code>.input-group</code> mit einem <code>.input-group-addon</code>, um Elemente bei einem einzelnen <code>.form-control</code> vor- bzw. nachzustellen.</p>
 
   <div class="bs-callout bs-callout-danger">
-    <h4>Browser-Kompatibilität</h4>
+    <h4>Nur text-basierte <code>&lt;input&gt;</code>s</h4>
     <p>Du solltest hier keine <code>&lt;select&gt;</code>-Elemente verwenden, da diese in WebKit-Browsern nicht ausreichend gestaltet werden können.</p>
+    <p>Du solltest hier keine <code>&lt;textarea&gt;</code>-Elemente verwenden, da deren Attribut <code>rows</code> in einigen Fällen nicht beachtet wird.</p>
   </div>
   <div class="bs-callout bs-callout-warning">
     <h4>Tooltips &amp; Popovers in Input-Gruppen benötigen besondere Einstellung</h4>

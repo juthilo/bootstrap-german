@@ -101,6 +101,18 @@ All diese Informationen helfen Anderen dabei, potentielle Fehler im Code zu bese
 > Codezeilen, von denen du schon weißt, dass sie den Fehler verursachen und
 > mögliche Lösungen (und deine Einschätzung von deren Wert).
 
+### Browser-Bugs melden
+
+Einige der Fehlermeldungen, die wir erhalten, beziehen sich auf Fehler, die von Bugs in den Browsern selbst und nicht von Bootstrap verursacht werden.
+Wenn angebracht, versuchen wir diese Upstream-Fehler an die relevanten Browser-Hersteller zu melden und dann an unserer [Pinnwand für Browser-Bugs](http://holdirbootstrap.de/browser-bugs/) aufzuführen.
+
+| Hersteller    | Browser                      | Rendering Engine | Seite für Fehlermeldungen                                                             | Hinweise                                            |
+| ------------- | ---------------------------- | ---------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------- |
+| Mozilla       | Firefox                      | Gecko            | https://bugzilla.mozilla.org/enter_bug.cgi                                            | "Core" ist meistens die richtige Produktkategorie.  |
+| Apple         | Safari                       | WebKit           | https://bugs.webkit.org/enter_bug.cgi?product=WebKit <br> https://bugreport.apple.com | In Apples Bug Reporter "Safari" als Produkt wählen. |
+| Google, Opera | Chrome, Chromium, Opera v15+ | Blink            | https://code.google.com/p/chromium/issues/list                                        | Klick den Button "New issue".                       |
+| Microsoft     | Internet Explorer            | Trident          | https://connect.microsoft.com/IE/feedback/LoadSubmitFeedbackForm                      |                                                     |
+
 
 ## Funktionsvorschläge
 

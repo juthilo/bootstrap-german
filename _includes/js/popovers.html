@@ -119,10 +119,10 @@
     <p>Für vernünftiges Verhalten in allen Browsern und auf allen Plattformen musst du das Tag <code>&lt;a&gt;</code>, <i>nicht</i> <code>&lt;button&gt;</code>, verwenden und außerdem das Attribut <a href="https://developer.mozilla.org/de/docs/Web/HTML/Global_attributes#tabindex"><code>tabindex</code></a> hinzufügen.</p>
   </div>
   <div class="bs-example" style="padding-bottom: 24px;">
-    <a href="#" tabindex="0" class="btn btn-lg btn-danger bs-docs-popover" data-toggle="popover" data-trigger="focus" title="Schließbares Popover" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?">Schließbares Popover</a>
+    <a href="#" tabindex="0" class="btn btn-lg btn-danger bs-docs-popover" role="button" data-toggle="popover" data-trigger="focus" title="Schließbares Popover" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?">Schließbares Popover</a>
   </div>
 {% highlight html %}
-<a href="#" tabindex="0" class="btn btn-lg btn-danger bs-docs-popover" data-toggle="popover" data-trigger="focus" title="Schließbares Popover" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?">Schließbares Popover</a>
+<a href="#" tabindex="0" class="btn btn-lg btn-danger bs-docs-popover" role="button" data-toggle="popover" data-trigger="focus" title="Schließbares Popover" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?">Schließbares Popover</a>
 {% endhighlight %}
 
 
@@ -245,7 +245,7 @@
   <p>Initialisiert Popovers für eine Reihe von Elementen.</p>
 
   <h4>.popover('show')</h4>
-  <p>Öffnet das Popover eines Elements.</p>
+  <p>Öffnet das Popover eines Elements. Popovers, deren Titel und Inhalt keine Zeichen enthalten, werden niemals angezeigt.</p>
   {% highlight js %}$('#element').popover('show'){% endhighlight %}
 
   <h4>.popover('hide')</h4>

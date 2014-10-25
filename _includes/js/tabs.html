@@ -115,6 +115,14 @@ $('#meinTab li:eq(2) a').tab('show') // Dritten Tab auswählen (Nummern starten 
 {% endhighlight %}
 
   <h3>Ereignisse</h3>
+  <p>Wenn ein neuer Tab angezeigt wird, werden in der folgenden Reihenfolge Ereignisse ausgelöst:</p>
+  <ol>
+    <li><code>hide.bs.tab</code> (beim zurzeit aktiven Tab)</li>
+    <li><code>show.bs.tab</code> (beim gleich eingeblendeten Tab)</li>
+    <li><code>hidden.bs.tab</code> (beim bisher aktiven Tab, dem von <code>hide.bs.tab</code>)</li>
+    <li><code>shown.bs.tab</code> (beim jetzt eingeblendeten Tab, dem von <code>show.bs.tab</code>)</li>
+  </ol>
+  <p>Falls zuvor kein Tab aktiv ist, werden die Ereignisse <code>hide.bs.tab</code> und <code>hidden.bs.tab</code> nicht ausgelöst.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
       <thead>
@@ -137,8 +145,8 @@ $('#meinTab li:eq(2) a').tab('show') // Dritten Tab auswählen (Nummern starten 
   </div><!-- /.table-responsive -->
 {% highlight js %}
 $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-  e.target // aktivierter Tab
-  e.relatedTarget // vorheriger tab
+  e.target // neuerdings aktivierter Tab
+  e.relatedTarget // bisher aktiver Tab
 })
 {% endhighlight %}
 </div>

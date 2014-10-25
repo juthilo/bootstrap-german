@@ -36,15 +36,19 @@
   <h2 id="buttons-single-toggle">Einzelner Schalter</h2>
   <p>Füge <code>data-toggle="button"</code> hinzu, um einen einzelnen Button in einen Schalter zu verwandeln.</p>
   <div class="bs-example">
-    <button type="button" class="btn btn-primary" data-toggle="button" autocomplete="off">
+    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
       Einzelner Schalter
     </button>
   </div><!-- /example -->
 {% highlight html %}
-<button type="button" class="btn btn-primary" data-toggle="button" autocomplete="off">
+<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
   Einzelner Schalter
 </button>
 {% endhighlight %}
+  <div class="bs-callout bs-callout-warning">
+    <h4>Voreingestellte Buttons benötigen <code>.active</code> und <code>aria-pressed="true"</code></h4>
+    <p>Bei Buttons, die schon als gedrückt markiert sein sollen, musst du die Klasse <code>.active</code> und das Attribut <code>aria-pressed="true"</code> selbst zum <code>button</code> hinzufügen.</p>
+  </div>
 
   <h2 id="buttons-checkbox-radio">Auswahlfelder</h2>
   <p>Füge <code>data-toggle="buttons"</code> zu einer <code>.btn-group</code> hinzu, die Ankreuzfelder (Checkboxen) oder Radio-Buttons enthält, um sie zusammen mit ihren jeweiligen Stilen in Schalter zu verwandeln.</p>

@@ -31,7 +31,7 @@
       <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="überschriftZwei">
           <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseZwei" aria-expanded="true" aria-controls"collapseZwei">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseZwei" aria-expanded="false" aria-controls"collapseZwei">
               Klappbarer Eintrag #2
             </a>
           </h4>
@@ -45,7 +45,7 @@
       <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="überschriftDrei">
           <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseDrei" aria-expanded="true" aria-controls"collapseDrei">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseDrei" aria-expanded="false" aria-controls"collapseDrei">
               Klappbarer Eintrag #3
             </a>
           </h4>
@@ -77,7 +77,7 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="überschriftZwei">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseZwei" aria-expanded="true" aria-controls"collapseZwei">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseZwei" aria-expanded="false" aria-controls"collapseZwei">
           Klappbarer Eintrag #2
         </a>
       </h4>
@@ -91,7 +91,7 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="überschriftDrei">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseDrei" aria-expanded="true" aria-controls"collapseDrei">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseDrei" aria-expanded="false" aria-controls"collapseDrei">
           Klappbarer Eintrag #3
         </a>
       </h4>
@@ -104,6 +104,28 @@
   </div>
 </div>
 {% endhighlight %}
+
+  <p>Es ist auch möglich, <code>.panel-body</code>s mit <code>.list-group</code>s auszutauschen.</p>
+
+  <div class="panel-group" role="tablist">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="collapseListengruppeÜberschrift1">
+        <h4 class="panel-title">
+          <a class="collapsed" data-toggle="collapse" href="#collapseListengruppe1" aria-expanded="false" aria-controls="collapseListengruppe1">
+            Klappbare Listengruppe
+          </a>
+        </h4>
+      </div>
+      <div id="collapseListengruppe1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListengruppeÜberschrift1">
+        <ul class="list-group">
+          <li class="list-group-item">Bootply</li>
+          <li class="list-group-item">One itmus ac facilin</li>
+          <li class="list-group-item">Second eros</li>
+        </ul>
+        <div class="panel-footer">Footer</div>
+      </div>
+    </div>
+  </div>
 
   <p>Du kannst das Plugin auch ohne das Accordion-Markup verwenden. Veranlasse einen Button dazu, ein anderes Element ein- und auszuklappen.</p>
 {% highlight html %}

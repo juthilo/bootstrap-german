@@ -4,11 +4,11 @@
   <p class="lead">Abstrakte Stile für Objekte, mit denen du verschiedene Komponenten (wie Blog-Kommentare, Tweets, usw.) erstellen kannst, die ein links oder rechts ausgerichtetes Bild neben Text-Inhalt enthalten.</p>
 
   <h3 id="media-default">Standard-Medien-Objekte</h3>
-  <p>Die normalen Medien-Objekte erlauben es dir, ein Medienobjekt (Bilder, Video, Ton) links oder rechts vom Inhalt zu floaten.</p>
+  <p>Die normalen Medien-Objekte zeigen ein Medienobjekt (Bilder, Video, Ton) links oder rechts vom Inhalt an.</p>
   <div class="bs-example">
     <div class="media">
-      <a class="pull-left" href="#">
-        <img class="media-object" data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
+      <a class="media-left" href="#">
+        <img data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
       </a>
       <div class="media-body">
         <h4 class="media-heading">Medien-Überschrift</h4>
@@ -16,15 +16,15 @@
       </div>
     </div>
     <div class="media">
-      <a class="pull-left" href="#">
-        <img class="media-object" data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
+      <a class="media-left" href="#">
+        <img data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
       </a>
       <div class="media-body">
         <h4 class="media-heading">Medien-Überschrift</h4>
         Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
         <div class="media">
-          <a class="pull-left" href="#">
-            <img class="media-object" data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
+          <a class="media-left" href="#">
+            <img data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
           </a>
           <div class="media-body">
             <h4 class="media-heading">Verschachtelte Medien-Überschrift</h4>
@@ -33,11 +33,32 @@
         </div>
       </div>
     </div>
+    <div class="media">
+      <div class="media-body">
+        <h4 class="media-heading">Medien-Überschrift</h4>
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+      </div>
+      <a class="media-right" href="#">
+        <img data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
+      </a>
+    </div>
+    <div class="media">
+      <a class="pull-right" href="#">
+        <img data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
+      </a>
+      <a class="pull-left" href="#">
+        <img data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">Veraltetes Beispiel mit pull-right und pull-left</h4>
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+      </div>
+    </div>
   </div><!-- /.bs-example -->
 {% highlight html %}
 <div class="media">
-  <a class="pull-left" href="#">
-    <img class="media-object" src="..." alt="...">
+  <a class="media-left" href="#">
+    <img src="..." alt="...">
   </a>
   <div class="media-body">
     <h4 class="media-heading">Medien-Überschrift</h4>
@@ -46,29 +67,77 @@
 </div>
 {% endhighlight %}
 
+  <p>Die Klassen <code>.pull-left</code> and <code>.pull-right</code> gibt es ebenfalls und sie wurden zuvor als Teil der Medien-Komponente verwendet, sind aber für diese Art der Verwendung ab v3.3.0 als veraltet markiert. Sie haben ungefähre Gegenstücke in <code>.media-left</code> und <code>.media-right</code>, abgesehen davon, dass <code>.media-right</code> im HTML nach dem <code>.media-body</code> platziert werden sollte.</p>
+  <h3 id="media-alignment">Medien-Ausrichtung</h3>
+  <p>Die Bilder oder anderen Medien können oben, mittig oder unten ausgerichtet werden. Der Standard ist eine Ausrichtung oben.</p>
+  <div class="bs-example">
+    <div class="media">
+      <a class="media-left" href="#">
+        <img data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">Oben ausgerichtet</h4>
+        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+      </div>
+    </div>
+    <div class="media">
+      <a class="media-left media-middle" href="#">
+        <img data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">Mittig ausgerichtet</h4>
+        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+      </div>
+    </div>
+    <div class="media">
+      <a class="media-left media-bottom" href="#">
+        <img data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">Unten ausgerichtet</h4>
+        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="media">
+  <a class="media-left media-middle" href="#">
+    <img data-src="..." alt="...">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading">Mittig ausgerichtet</h4>
+    ...
+  </div>
+</div>
+{% endhighlight %}
+
+
   <h3 id="media-list">Medien-Liste</h3>
   <p>Mit etwas mehr Markup kannst du Medien-Objekte in einer Liste verwenden (hilfreich für Kommentar-Threads oder Artikellisten).</p>
   <div class="bs-example">
     <ul class="media-list">
       <li class="media">
-        <a class="pull-left" href="#">
-          <img class="media-object" data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
+        <a class="media-left" href="#">
+          <img data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
         </a>
         <div class="media-body">
           <h4 class="media-heading">Medien-Überschrift</h4>
           <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
           <!-- Verschachteltes Medien-Objekt -->
           <div class="media">
-            <a class="pull-left" href="#">
-              <img class="media-object" data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
+            <a class="media-left" href="#">
+              <img data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
             </a>
             <div class="media-body">
               <h4 class="media-heading">Verschachtelte Medien-Überschrift</h4>
               Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
               <!-- Nested media object -->
               <div class="media">
-                <a class="pull-left" href="#">
-                  <img class="media-object" data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
+                <a class="media-left" href="#">
+                  <img data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
                 </a>
                 <div class="media-body">
                   <h4 class="media-heading">Verschachtelte Medien-Überschrift</h4>
@@ -79,8 +148,8 @@
           </div>
           <!-- Nested media object -->
           <div class="media">
-            <a class="pull-left" href="#">
-              <img class="media-object" data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
+            <a class="media-left" href="#">
+              <img data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
             </a>
             <div class="media-body">
               <h4 class="media-heading">Verschachtelte Medien-Überschrift</h4>
@@ -89,22 +158,13 @@
           </div>
         </div>
       </li>
-      <li class="media">
-        <a class="pull-right" href="#">
-          <img class="media-object" data-src="holder.js/64x64" alt="Generisches Platzhalter-Bild">
-        </a>
-        <div class="media-body">
-          <h4 class="media-heading">Medien-Überschrift</h4>
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
-        </div>
-      </li>
     </ul>
   </div>
 {% highlight html %}
 <ul class="media-list">
   <li class="media">
-    <a class="pull-left" href="#">
-      <img class="media-object" src="..." alt="...">
+    <a class="media-left" href="#">
+      <img src="..." alt="...">
     </a>
     <div class="media-body">
       <h4 class="media-heading">Medien-Überschrift</h4>

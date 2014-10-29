@@ -63,7 +63,7 @@
 
       var activateTheme = function () {
         stylesheetLink.attr('href', stylesheetLink.attr('data-href'))
-        themeBtn.text('Disable theme preview')
+        themeBtn.text('Theme-Vorschau deaktivieren')
         localStorage.setItem('previewTheme', true)
       }
 
@@ -77,7 +77,7 @@
           activateTheme()
         } else {
           stylesheetLink.attr('href', '')
-          themeBtn.text('Preview theme')
+          themeBtn.text('Theme-Vorschau aktivieren')
           localStorage.removeItem('previewTheme')
         }
       })

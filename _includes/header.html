@@ -12,7 +12,7 @@
 {% endif %}
 
 <title>
-  {% if page.url == site.baseurl %}
+  {% if page.layout == "home" %}
     {{ page.title }}
   {% else %}
     {{ page.title }} &middot; Bootstrap (deutsch)

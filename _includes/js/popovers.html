@@ -1,7 +1,6 @@
 <div class="bs-docs-section">
   <h1 id="popovers" class="page-header">Popovers <small>popover.js</small></h1>
 
-  <h2 id="popovers-examples">Beispiele</h2>
   <p>Füge kleine Inhaltsüberlagerungen wie die auf dem iPad zu irgendeinem Element hinzu, um zusätzliche Informationen anzuzeigen.</p>
   <p>Popovers, deren Titel und Inhalt beide null Charaktere lang sind, werden niemals angezeigt.</p>
 
@@ -12,6 +11,12 @@
   <div class="bs-callout bs-callout-danger">
     <h4>Opt-in-Funktionalität</h4>
     <p>Aus Gründen der Performance musst du die Data-APIs von Tooltips und Popovers <strong>manuell initialisieren</strong> bevor du sie verwenden kannst.</p>
+    <p>Ein Weg, alle Popovers auf einer Seite zu initialisieren, wäre, sie über ihr Attribut <code>data-toggle</code> auszuwählen:</p>
+{% highlight js %}
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+{% endhighlight %}
   </div>
   <div class="bs-callout bs-callout-warning">
     <h4>Tooltips &amp; Popovers in Button-Gruppen und Input-Gruppen benötigen besondere Einstellung</h4>
@@ -30,6 +35,7 @@
     <p>Manchmal willst du ein Popover zu einem Hyperlink hinzufügen, der über mehrere Zeilen geht. Das Standard-Verhalten des Popover-Plugins in diesem Fall ist, es horizontal und vertikal zu zentrieren. Füge <code>white-space: nowrap;</code> zu deinen Links hinzu, um dies zu vermeiden.</p>
   </div>
 
+  <h2 id="popovers-examples">Beispiele</h2>
   <h3>Statisches Popover</h3>
   <p>Es gibt vier Optionen: Ausrichtung nach oben, rechts, unten und links.</p>
   <div class="bs-example bs-example-popover">

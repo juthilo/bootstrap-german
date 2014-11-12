@@ -213,6 +213,86 @@
 </div>
 {% endhighlight %}
 
+  <h2 id="modals-related-target">Modal-Inhalt abhängig vom auslösenden Button variieren</h2>
+  <p>Du hast eine Reihe von Buttons, die alle das gleiche Modal auslösen, nur mit etwas anderen Inhalten? Verwende <code>event.relatedTarget</code> und <a href="https://developer.mozilla.org/de-DE/docs/Web/Guide/HTML/Using_data_attributes">HTML <code>data-*</code>-Attribute</a> (möglicherweise <a href="http://api.jquery.com/data/">via jQuery</a>), um den Inhalt des Modals abhängig davon, welcher Button geklickt wurde, zu ändern. Siehe die Dokumentation für Modal-Ereignisse für mehr Details zu <code>relatedTarget</code>.</p>
+  <div class="bs-example" style="padding-bottom: 24px;">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#beispielModal" data-whatever="@mdo">Modal für @mdo öffnen</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#beispielModal" data-whatever="@fat">Modal für @fat öffnen</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#beispielModal" data-whatever="@twbootstrap">Modal für @twbootstrap öffnen</button>
+    ...mehr Buttons...
+
+    <div class="modal fade" id="beispielModal" tabindex="-1" role="dialog" aria-labelledby="beispielModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
+            <h4 class="modal-title" id="beispielModalLabel">Neue Nachricht</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form">
+              <div class="form-group">
+                <label for="empfaenger-name" class="control-label">Empfänger:</label>
+                <input type="text" class="form-control" id="empfaenger-name">
+              </div>
+              <div class="form-group">
+                <label for="nachricht-text" class="control-label">Nachricht:</label>
+                <textarea class="form-control" id="nachricht-text"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+            <button type="button" class="btn btn-primary">Nachricht senden</button>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.modal -->
+  </div><!-- /.bs-example -->
+{% highlight html %}
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#beispielModal" data-whatever="@mdo">Modal für @mdo öffnen</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#beispielModal" data-whatever="@fat">Modal für @fat öffnen</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#beispielModal" data-whatever="@twbootstrap">Modal für @twbootstrap öffnen</button>
+...mehr Buttons...
+
+<div class="modal fade" id="beispielModal" tabindex="-1" role="dialog" aria-labelledby="beispielModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
+        <h4 class="modal-title" id="beispielModalLabel">Neue Nachricht</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form">
+          <div class="form-group">
+            <label for="empfaenger-name" class="control-label">Empfänger:</label>
+            <input type="text" class="form-control" id="empfaenger-name">
+          </div>
+          <div class="form-group">
+            <label for="nachricht-text" class="control-label">Nachricht:</label>
+            <textarea class="form-control" id="nachricht-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+        <button type="button" class="btn btn-primary">Nachricht senden</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endhighlight %}
+{% highlight js %}
+$('#beispielModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button, der das Modal ausgelöst hat
+  var recipient = button.data('whatever') // Infos aus data-*-Attributen extrahieren
+  // Falls notwendig, könntest du an dieser Stelle eine AJAX-Anfrage initiieren (und dann die Aktualisierung in einem Callback erledigen).
+  // Modal-Inhalt aktualisieren. Wir verwenden an dieser Stelle jQuery here, aber du könntest auch eine Data-Binding-Bibliothek oder andere Methoden verwenden.
+  var modal = $(this)
+  modal.find('.modal-title').text('Neue Nachricht an ' + recipient)
+  modal.find('.modal-body input').val(recipient)
+})
+{% endhighlight %}
+
   <h2 id="modals-usage">Verwendung</h2>
   <p>Das Modal-Plugin blendet über Data-Attribute oder JavaScript verborgenen Inhalt bei Bedarf ein und wieder aus. Es fügt außerdem die Klasse <code>.modal-open</code> zum <code>&lt;body&gt;</code>hinzu, um standardmäßiges Scroll-Verhalten zu überschreiben und generiert ein <code>.modal-backdrop</code>-Element, damit Modals durch einen Klick außerhalb des Modals geschlossen werden können.</p>
 
@@ -262,7 +342,7 @@
          <td>Pfad</td>
          <td>false</td>
          <td>
-          <p><span class="text-danger">Diese Option ist ab v3.2.1 als veraltet markiert und wird in v4 entfernt.</span> Wir empfehlen stattdessen, mit Client-seitigen Vorlagen oder einem Framework zum Einbinden von Daten zu arbeiten oder <a href="http://api.jquery.com/load/">jQuery.load</a> selbst aufzurufen.</p>
+          <p><strong class="text-danger">Diese Option ist ab v3.3.0 als veraltet markiert und wird in v4 entfernt.</strong> Wir empfehlen stattdessen, mit Client-seitigen Vorlagen oder einem Framework zum Einbinden von Daten zu arbeiten oder <a href="http://api.jquery.com/load/">jQuery.load</a> selbst aufzurufen.</p>
           <p>Falls eine Remote-URL angegeben wird, wird über jQuerys <code>load</code>-Methode <strong>Inhalt von dort einmal geladen</strong> und in den div-Container <code>.modal-content</code> injiziert. Falls du die Data-API verwendest, kannst du auch das Attribut <code>href</code> nutzen, um die Remote-Quelle anzugeben. Hier ein Beispiel:</p>
 {% highlight html %}
 <a data-toggle="modal" href="remote.html" data-target="#modal">Klick mich an</a>

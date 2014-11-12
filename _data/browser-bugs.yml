@@ -1,0 +1,201 @@
+-
+  browser: >
+    Internet Explorer 11
+  summary: >
+    Element behält <code>:hover</code>-Stile nachdem darüber hinweg gescrollt wurde
+  upstream_bug: >
+    IE#926665
+  origin: >
+    Bootstrap#14211
+
+-
+  browser: >
+    Internet Explorer 11
+  summary: >
+    Wenn der Cursor über einem `<select>`-Menüeintrag ist, hat er das für das Element darunter angemessene Aussehen
+  upstream_bug: >
+    IE#963961
+  origin: >
+    Bootstrap#14528
+
+-
+  browser: >
+    Firefox
+  summary: >
+    `.table-bordered` mit leerem `<tbody>` hat keine Rahmengrenzen.
+  upstream_bug: >
+    Mozilla#1023761
+  origin: >
+    Bootstrap#13453
+
+-
+  browser: >
+    Firefox
+  summary: >
+    `max-width: 100%;` funktioniert nicht innerhalb von Tabellen.
+  upstream_bug: >
+    Mozilla#975632
+  origin: >
+    Bootstrap#10690
+
+-
+  browser: >
+    Firefox (Windows)
+  summary: >
+    Java-Applets, die Elementen untergeordnet sind, bei denen über `translate3d(0,0,0)` die Hardware-Beschleunigung erzwungen wurde, sind unsichtbar.
+  upstream_bug: >
+    Mozilla#1048279
+  origin: >
+    Bootstrap#14124
+
+-
+  browser: >
+    Firefox
+  summary: >
+    Button-Elemente mit `width: 100%` werden in langen Tabellen abgeschnitten.
+  upstream_bug: >
+    Mozilla#1060131
+  origin: >
+    Bootstrap#14320
+
+-
+  browser: >
+    Firefox
+  summary: >
+    Wenn der deaktivierte Status eines Formularelements über JavaScript geändert wird, kehrt dieses nicht zum normalen Status zurück bevor die Seite neu geladen wird.
+  upstream_bug: >
+    Mozilla#654072
+  origin: >
+    Bootstrap#793
+
+-
+  browser: >
+    Chrome (OS X)
+  summary: >
+    Klicken über dem Vergrößern-Button von `<input type="number">` hebt den Verkleinern-Button hervor.
+  upstream_bug: >
+    Chromium#419108
+  origin: >
+    Hervorgegangen aus Bootstrap#8350 & Chromium#337668
+
+-
+  browser: >
+    Chrome
+  summary: >
+    `display: table;` innerhalb von `display: block;` schiebt andere Inhalte in neue Zeile.
+  upstream_bug: >
+    Chromium#309483
+  origin: >
+    Bootstrap#9950
+
+-
+  browser: >
+    Chrome
+  summary: >
+    Falsche Anzeigefenster-Größe für Media-Queries beim Druck verwendet.
+  upstream_bug: >
+    Chromium#273306
+  origin: >
+    Bootstrap#12078
+
+-
+  browser: >
+    Safari (OS X)
+  summary: >
+    OS X-Scroll-Leiste in `select[multiple]` mit Innenabstand verdeckt.
+  upstream_bug: >
+    WebKit#128489
+  origin: >
+    Bootstrap#12536
+
+-
+  browser: >
+    Chrome
+  summary: >
+    `display: table-cell; width: 100%;` funktioniert nicht richtig bei `<input type="date">`.
+  upstream_bug: >
+    Chromium#346051
+  origin: >
+    Bootstrap#12548
+
+-
+  browser: >
+    Chrome
+  summary: >
+    `<input type="password">` verursacht gelegentlich korrupte Breiten bei Elementen mit Float.
+  upstream_bug: >
+    Chromium#377346
+  origin: >
+    Bootstrap#13892
+
+-
+  browser: >
+    Chrome
+  summary: >
+    Unendliche lineare CSS-Animation mit Alpha-Transparenz leakt Arbeitsspeicher.
+  upstream_bug: >
+    Chromium#429375
+  origin: >
+    Bootstrap#14409
+
+-
+  browser: >
+    Safari (OS X)
+  summary: >
+    Seltsames Button-Verhalten bei einigen `<input type="number">`-Elementen.
+  upstream_bug: >
+    WebKit#137269
+  origin: >
+    Bootstrap#8350,
+    Normalize#283,
+    Chromium#337668
+
+-
+  browser: >
+    Safari (OS X)
+  summary: >
+    `display: table-cell;` in Media-Query verursacht Rendering-Fehler beim Ändern der Fenstergröße.
+  upstream_bug: >
+    WebKit#138167
+  origin: >
+    Bootstrap#9774
+
+-
+  browser: >
+    Safari (iOS)
+  summary: >
+    `transform: translate3d(0,0,0);` Rendering-Bug.
+  upstream_bug: >
+    WebKit#138162, Safari#18804973
+  origin: >
+    Bootstrap#14603
+
+-
+  browser: >
+    Safari (OS X)
+  summary: >
+    Kleine Schriftgröße beim Drucken von Webseiten mit `.container`n mit fester Breite.
+  upstream_bug: >
+    WebKit#138192
+  origin: >
+    Bootstrap#14868
+
+-
+  browser: >
+    Safari (iOS)
+  summary: >
+    Textfeld-Cursor bewegt sich beim Scrollen der Seite nicht mit.
+  upstream_bug: >
+    WebKit#138201, Safari#18819624
+  origin: >
+    Bootstrap#14708
+
+-
+  browser: >
+    Chrome (Windows & Linux)
+  summary: >
+    Seiteninhalt kann gescrollt werden, obwohl `overflow: hidden;` angewendet wird.
+  upstream_bug: >
+    Chromium#429604
+  origin: >
+    Bootstrap#14972

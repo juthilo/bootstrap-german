@@ -23,11 +23,11 @@
         </div>
       </div>
       <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Zurück</span>
       </a>
       <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Weiter</span>
       </a>
     </div>
@@ -60,19 +60,29 @@
 
   <!-- Schalter -->
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Zurück</span>
   </a>
   <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Weiter</span>
   </a>
 </div>
 {% endhighlight %}
 
+  <div class="bs-callout bs-callout-danger">
+    <h4>Barrierefreiheit</h4>
+    <p>Die Karussell-Komponente erfüllt generell keine Standards für Barrierefreiheit. Falls du diese einhalten musst, solltest du andere Optionen für die Präsentation dieser Inhalte in Betracht ziehen.</p>
+  </div>
+
   <div class="bs-callout bs-callout-warning" id="callout-carousel-transitions">
     <h4>Übergangs-Animationen in Internet Explorer 8 &amp; 9 nicht unterstützt</h4>
     <p>Bootstrap nutzt ausschließlich CSS3 für seine Animationen, aber Internet Explorer 8 &amp; 9 unterstützen die notwendigen CSS-Eigenschaften nicht. Daher gibt es keine Gleit-Animation im Karussell in diesen Browsern. Wir haben uns bewusst dafür entschieden, jQuery-basierte Alternativen für die Übergänge nicht einzusetzen.</p>
+  </div>
+
+  <div class="bs-callout bs-callout-warning" id="callout-carousel-active">
+    <h4>Anfängliches aktives Element erforderlich</h4>
+    <p>Die Klasse <code>.active</code> muss zu einem der Karussell-Elemente hinzugefügt werden. Das Karussell wird anderenfalls nicht sichtbar sein.</p>
   </div>
 
   <h3>Optionale Untertitel</h3>
@@ -108,11 +118,11 @@
         </div>
       </div>
       <a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
         <span class="sr-only">Zurück</span>
       </a>
       <a class="right carousel-control" href="#carousel-example-captions" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Weiter</span>
       </a>
     </div>
@@ -126,11 +136,6 @@
   </div>
 </div>
 {% endhighlight %}
-
-  <div class="bs-callout bs-callout-danger">
-    <h4>Barrierefreiheit</h4>
-    <p>Die Karussell-Komponente erfüllt generell keine Standards für Barrierefreiheit. Falls du diese einhalten musst, solltest du andere Optionen für die Präsentation dieser Inhalte in Betracht ziehen.</p>
-  </div>
 
   <h2 id="carousel-usage">Verwendung</h2>
 

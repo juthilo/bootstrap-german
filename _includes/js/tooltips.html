@@ -61,6 +61,12 @@
   <div class="bs-callout bs-callout-danger">
     <h4>Opt-in-Funktionalität</h4>
     <p>Aus Gründen der Performance musst du die Data-APIs von Tooltips und Popovers <strong>manuell initialisieren</strong> bevor du sie verwenden kannst.</p>
+    <p>Ein Weg, alle Tooltips auf einer Seite zu initialisieren, wäre, sie über ihr Attribut <code>data-toggle</code> auszuwählen:</p>
+{% highlight js %}
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+{% endhighlight %}
   </div>
   <div class="bs-callout bs-callout-warning">
     <h4>Tooltips &amp; Popovers in Button-Gruppen und Input-Gruppen benötigen besondere Einstellung</h4>

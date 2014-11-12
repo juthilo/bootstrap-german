@@ -66,7 +66,7 @@ Bootstraps Dokumentation, die du in diesem Repository als Übersetzung findest, 
 
 ### Dokumentation lokal ausführen
 
-1. Falls notwendig, [installiere Jekyll](http://jekyllrb.com/docs/installation) (benötigt wird v2.3.x).
+1. Falls notwendig, [installiere Jekyll](http://jekyllrb.com/docs/installation) (benötigt wird v2.5.x).
   - **Windows-Nutzer:** Lies [diesen unoffiziellen Ratgeber](http://jekyll-windows.juthilo.com/), um Jekyll ohne Probleme zum Laufen zu kriegen.
 2. Installiere das Ruby-basierte [Rouge](https://github.com/jneen/rouge), das wir zum Hervorheben und Gestalten von Code-Schnipseln verwenden, mit `gem install rouge`.
 3. Öffne eine Befehlszeile im Wurzelverzeichnis `/bootstrap` und führe `jekyll serve` aus.

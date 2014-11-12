@@ -33,8 +33,10 @@
 
       <form class="form-signin" role="form">
         <h2 class="form-signin-heading">Bitte melde dich an</h2>
-        <input type="email" class="form-control" placeholder="Email-Adresse" required autofocus>
-        <input type="password" class="form-control" placeholder="Passwort" required>
+        <label for="eingabefeldEmail" class="sr-only">Email-Adresse</label>
+        <input type="email" id="eingabefeldEmail" class="form-control" placeholder="Email-Adresse" required autofocus>
+        <label for="eingabefeldPasswort" class="sr-only">Passwort</label>
+        <input type="password" id="eingabefeldPasswort" class="form-control" placeholder="Passwort" required>
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Anmeldung speichern

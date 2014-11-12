@@ -20,7 +20,7 @@
             <li><a href="#fat">@fat</a></li>
             <li><a href="#mdo">@mdo</a></li>
             <li class="dropdown">
-              <a href="#" id="navbarDrop1" class="dropdown-toggle" data-toggle="dropdown">Dropdown-Menü <span class="caret"></span></a>
+              <a href="#" id="navbarDrop1" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown-Menü <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="navbarDrop1">
                 <li><a href="#one" tabindex="-1">eins</a></li>
                 <li><a href="#two" tabindex="-1">zwei</a></li>
@@ -55,6 +55,14 @@
     <h4>Bootstrap-Nav erforderlich</h4>
     <p>ScrollSpy erfordert zurzeit die Verwendung einer <a href="../components/#nav">Bootstrap-Nav-Komponente</a> für die richtige Hervorhebung von aktiven Links.</p>
   </div>
+  <div class="bs-callout bs-callout-danger">
+    <h4>ID-Ziele müssen zuzuordnen sein</h4>
+    <p>Die Links in der navbar müssen einer ID zuzuordnen sein. Zum Beispiel muss <code>&lt;a href="#start"&gt;Start&lt;/a&gt;</code> mit einem Element im DOM wie <code>&lt;div id="start"&gt;&lt;/div&gt;</code> korrespondieren.</p>
+  </div>
+  <div class="bs-callout bs-callout-info">
+    <h4>Zielelemente, die nicht <code>:visible</code> sind, werden ignoriert</h4>
+    <p>Zielelemente, die <a href="http://api.jquery.com/visible-selector/">laut jQuery nicht <code>:visible</code></a> (sichtbar) sind, werden ignoriert und die zugehörigen Nav-Einträge werden niemals hervorgehoben.</p>
+  </div>
 
   <h3>Relative Positionierung notwendig</h3>
   <p>Unabhängig von der Umsetzung, erfordert ScrollSpy <code>position: relative;</code> beim Element, das beobachtet wird. In den meisten Fällen ist das der <code>&lt;body&gt;</code>.</p>
@@ -84,14 +92,6 @@ body {
 $('body').scrollspy({ target: '.navbar-example' })
 {% endhighlight %}
 
-  <div class="bs-callout bs-callout-danger">
-    <h4>ID-Ziele müssen zuzuordnen sein</h4>
-    <p>Die Links in der navbar müssen einer ID zuzuordnen sein. Zum Beispiel muss <code>&lt;a href="#start"&gt;Start&lt;/a&gt;</code> mit einem Element im DOM wie <code>&lt;div id="start"&gt;&lt;/div&gt;</code> korrespondieren.</p>
-  </div>
-  <div class="bs-callout bs-callout-info">
-    <h4>Zielelemente, die nicht <code>:visible</code> sind, werden ignoriert</h4>
-    <p>Zielelemente, die <a href="http://api.jquery.com/visible-selector/">laut jQuery nicht <code>:visible</code></a> (sichtbar) sind, werden ignoriert und die zugehörigen Nav-Einträge werden niemals hervorgehoben.</p>
-  </div>
 
   <h3>Methoden</h3>
   <h4>.scrollspy('refresh')</h4>

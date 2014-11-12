@@ -8,10 +8,17 @@
     <p>Wenn du Tooltips oder Popovers an Elementen in einer <code>.btn-group</code> verwendest, musst du die Option <code>container: 'body'</code> festlegen, um unerwünschte Nebeneffekte zu vermeiden (das Element könnte z.B. breiter werden und/oder seine abgerundeten Ecken verlieren, wenn der Tooltip oder das Popover ausgelöst wird).</p>
   </div>
 
+  <div class="bs-callout bs-callout-warning">
+    <h4>Nutze die richtige <code>role</code> und stelle ein Label zur Verfügung</h4>
+    <p>Damit assistive Technologien wie Screenreader vermitteln können, dass eine Reihe von Buttons gruppiert ist, muss ein passendes <code>role</code>-Attribut zur Verfügung gestellt werden. Für Button-Gruppen ist das <code>role="group"</code>, während Werkzeugleisten <code>role="toolbar"</code> haben sollten.</p>
+    <p>Eine Ausnehme sind Gruppen, die nur eine einzige Schaltfläche enthalten (z.B. <a href="#btn-groups-justified">gleichmäßige Button-Gruppen</a> mit <code>&lt;button&gt;</code>-Elementen) oder ein Dropdown-Menü.</p>
+    <p>Außerdem sollte Gruppen und Werkzeugleisten ein aussagekräftiges Label gegeben werden, da die meisten assistiven Technologien sie anderenfalls dem Nutzer nicht wiedergeben werden, auch wenn das richtige <code>role</code>-Attribut präsent ist. In den Beispielen unten verwenden wir <code>aria-label</code>, aber Alternativen wie <code>aria-labelledby</code> können auch verwendet werden.</p>
+  </div>
+
   <h3 id="btn-groups-single">Einfaches Beispiel</h3>
   <p>Verpacke eine Reihe von Buttons mit <code>.btn</code> in einer <code>.btn-group</code>.</p>
   <div class="bs-example">
-    <div class="btn-group" style="margin: 9px 0 5px;">
+    <div class="btn-group" role="group" aria-label="Einfaches Beispiel">
       <button type="button" class="btn btn-default">Links</button>
       <button type="button" class="btn btn-default">Mitte</button>
       <button type="button" class="btn btn-default">Rechts</button>
@@ -28,79 +35,74 @@
   <h3 id="btn-groups-toolbar">Button-Toolbar</h3>
   <p>Kombiniere mehrere <code>&lt;div class="btn-group"&gt;</code> in einer <code>&lt;div class="btn-toolbar"&gt;</code> für komplexere Komponenten.</p>
   <div class="bs-example">
-    <div class="btn-toolbar" role="toolbar" style="margin: 0;">
-      <div class="btn-group">
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar mit Button-Gruppen">
+      <div class="btn-group" role="group" aria-label="Erste Gruppe">
         <button type="button" class="btn btn-default">1</button>
         <button type="button" class="btn btn-default">2</button>
         <button type="button" class="btn btn-default">3</button>
         <button type="button" class="btn btn-default">4</button>
       </div>
-      <div class="btn-group">
+      <div class="btn-group" role="group" aria-label="Zweite Gruppe">
         <button type="button" class="btn btn-default">5</button>
         <button type="button" class="btn btn-default">6</button>
         <button type="button" class="btn btn-default">7</button>
       </div>
-      <div class="btn-group">
+      <div class="btn-group" role="group" aria-label="Dritte Gruppe">
         <button type="button" class="btn btn-default">8</button>
       </div>
     </div>
   </div>
 {% highlight html %}
-<div class="btn-toolbar" role="toolbar">
-  <div class="btn-group">...</div>
-  <div class="btn-group">...</div>
-  <div class="btn-group">...</div>
+<div class="btn-toolbar" role="toolbar" aria-label="...">
+  <div class="btn-group" role="group" aria-label="...">...</div>
+  <div class="btn-group" role="group" aria-label="...">...</div>
+  <div class="btn-group" role="group" aria-label="...">...</div>
 </div>
 {% endhighlight %}
 
   <h3 id="btn-groups-sizing">Größe</h3>
   <p>Anstatt die Button-Größen-Klassen zu jedem Button in einer Gruppe hinzuzufügen, kannst du einfach <code>.btn-group-*</code> zur <code>.btn-group</code> hinzufügen.</p>
   <div class="bs-example">
-    <div class="btn-toolbar" role="toolbar">
-      <div class="btn-group btn-group-lg">
-        <button type="button" class="btn btn-default">Links</button>
-        <button type="button" class="btn btn-default">Mitte</button>
-        <button type="button" class="btn btn-default">Rechts</button>
-      </div>
+    <div class="btn-group btn-group-lg" role="group" aria-label="Große Button-Gruppe">
+      <button type="button" class="btn btn-default">Links</button>
+      <button type="button" class="btn btn-default">Mitte</button>
+      <button type="button" class="btn btn-default">Rechts</button>
     </div>
-    <div class="btn-toolbar" role="toolbar">
-      <div class="btn-group">
-        <button type="button" class="btn btn-default">Links</button>
-        <button type="button" class="btn btn-default">Mitte</button>
-        <button type="button" class="btn btn-default">Rechts</button>
-      </div>
+    <br>
+    <div class="btn-group" role="group" aria-label="Normale Button-Gruppe">
+      <button type="button" class="btn btn-default">Links</button>
+      <button type="button" class="btn btn-default">Mitte</button>
+      <button type="button" class="btn btn-default">Rechts</button>
     </div>
-    <div class="btn-toolbar" role="toolbar">
-      <div class="btn-group btn-group-sm">
-        <button type="button" class="btn btn-default">Links</button>
-        <button type="button" class="btn btn-default">Mitte</button>
-        <button type="button" class="btn btn-default">Rechts</button>
-      </div>
+    <br>
+    <div class="btn-group btn-group-sm" role="group" aria-label="Kleine Button-Gruppe">
+      <button type="button" class="btn btn-default">Links</button>
+      <button type="button" class="btn btn-default">Mitte</button>
+      <button type="button" class="btn btn-default">Rechts</button>
     </div>
-    <div class="btn-toolbar" role="toolbar">
-      <div class="btn-group btn-group-xs">
-        <button type="button" class="btn btn-default">Links</button>
-        <button type="button" class="btn btn-default">Mitte</button>
-        <button type="button" class="btn btn-default">Rechts</button>
-      </div>
+    <br>
+    <div class="btn-group btn-group-xs" role="group" aria-label="Sehr kleine Button-Gruppe">
+      <button type="button" class="btn btn-default">Links</button>
+      <button type="button" class="btn btn-default">Mitte</button>
+      <button type="button" class="btn btn-default">Rechts</button>
     </div>
   </div>
 {% highlight html %}
-<div class="btn-group btn-group-lg">...</div>
-<div class="btn-group">...</div>
-<div class="btn-group btn-group-sm">...</div>
-<div class="btn-group btn-group-xs">...</div>
+<div class="btn-group btn-group-lg" role="group" aria-label="...">...</div>
+<div class="btn-group" role="group" aria-label="...">...</div>
+<div class="btn-group btn-group-sm" role="group" aria-label="...">...</div>
+<div class="btn-group btn-group-xs" role="group" aria-label="...">...</div>
 {% endhighlight %}
 
   <h3 id="btn-groups-nested">Verschachtelung</h3>
   <p>Platziere eine <code>.btn-group</code> in einer anderen <code>.btn-group</code> wenn du Dropdown-Menüs mit einer Reihe von Buttons kombinieren willst.</p>
   <div class="bs-example">
-    <div class="btn-group">
+    <div class="btn-group" role="group" aria-label="Button-Gruppe mit verschachteltem Dropdown-Menü">
       <button type="button" class="btn btn-default">1</button>
       <button type="button" class="btn btn-default">2</button>
 
-      <div class="btn-group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
           Dropdown-Menü
           <span class="caret"></span>
         </button>
@@ -112,12 +114,12 @@
     </div>
   </div>
 {% highlight html %}
-<div class="btn-group">
+<div class="btn-group" role="group" aria-label="...">
   <button type="button" class="btn btn-default">1</button>
   <button type="button" class="btn btn-default">2</button>
 
-  <div class="btn-group">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
       Dropdown-Menü
       <span class="caret"></span>
     </button>
@@ -132,11 +134,11 @@
   <h3 id="btn-groups-vertical">Vertikale Alternative</h3>
   <p>Du kannst eine Reihe von Buttons auch vertikal statt horizontal anordnen. <strong class="text-danger">Unterteilte Button-Dropdowns werden hier nicht unterstützt.</strong></p>
   <div class="bs-example">
-    <div class="btn-group-vertical">
+    <div class="btn-group-vertical" role="group" aria-label="Vertikale Button-Gruppe">
       <button type="button" class="btn btn-default">Button</button>
       <button type="button" class="btn btn-default">Button</button>
-      <div class="btn-group">
-        <button id="btnGroupVerticalDrop1" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <div class="btn-group" role="group">
+        <button id="btnGroupVerticalDrop1" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
           Dropdown-Menü
           <span class="caret"></span>
         </button>
@@ -147,8 +149,8 @@
       </div>
       <button type="button" class="btn btn-default">Button</button>
       <button type="button" class="btn btn-default">Button</button>
-      <div class="btn-group">
-        <button id="btnGroupVerticalDrop2" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <div class="btn-group" role="group">
+        <button id="btnGroupVerticalDrop2" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
           Dropdown-Menü
           <span class="caret"></span>
         </button>
@@ -157,8 +159,8 @@
           <li><a href="#">Dropdown-Link</a></li>
         </ul>
       </div>
-      <div class="btn-group">
-        <button id="btnGroupVerticalDrop3" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <div class="btn-group" role="group">
+        <button id="btnGroupVerticalDrop3" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
           Dropdown-Menü
           <span class="caret"></span>
         </button>
@@ -167,8 +169,8 @@
           <li><a href="#">Dropdown-Link</a></li>
         </ul>
       </div>
-      <div class="btn-group">
-        <button id="btnGroupVerticalDrop4" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <div class="btn-group" role="group">
+        <button id="btnGroupVerticalDrop4" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
           Dropdown-Menü
           <span class="caret"></span>
         </button>
@@ -180,7 +182,7 @@
     </div>
   </div>
 {% highlight html %}
-<div class="btn-group-vertical">
+<div class="btn-group-vertical" role="group" aria-label="...">
   ...
 </div>
 {% endhighlight %}
@@ -201,17 +203,17 @@
   <h4>Mit <code>&lt;a&gt;</code>-Elementen</h4>
   <p>Verpacke eine Reihe von <code>.btn</code>s einfach in <code>.btn-group.btn-group-justified</code>.</p>
   <div class="bs-example">
-    <div class="btn-group btn-group-justified">
+    <div class="btn-group btn-group-justified" role="group" aria-label="Gleichmäßige Button-Gruppe">
       <a href="#" class="btn btn-default" role="button">Links</a>
       <a href="#" class="btn btn-default" role="button">Mitte</a>
       <a href="#" class="btn btn-default" role="button">Rechts</a>
     </div>
     <br>
-    <div class="btn-group btn-group-justified">
+    <div class="btn-group btn-group-justified" role="group" aria-label="Gleichmäßige Button-Gruppe mit verschachteltem Dropdown-Menü">
       <a href="#" class="btn btn-default" role="button">Links</a>
       <a href="#" class="btn btn-default" role="button">Mitte</a>
-      <div class="btn-group">
-        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <div class="btn-group" role="group">
+        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
           Dropdown-Menü <span class="caret"></span>
         </a>
         <ul class="dropdown-menu" role="menu">
@@ -225,35 +227,40 @@
     </div>
   </div>
 {% highlight html %}
-<div class="btn-group btn-group-justified">
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
   ...
 </div>
 {% endhighlight %}
 
+  <div class="bs-callout bs-callout-warning">
+    <h4>Links, die als Buttons fungieren</h4>
+    <p>Falls <code>&lt;a&gt;</code>-Elemente als Buttons verwendet werden, also um Funktionen auf der gleichen Seite zu aktivieren statt zu einem anderen Dokument oder Bereich auf der gleichen Seite zu navigieren, sollten diese auch die passende <code>role="button"</code> erhalten.</p>
+  </div>
+
   <h4>Mit <code>&lt;button&gt;</code>-Elementen</h4>
   <p>Um gleichmäßig verteilte Button-Gruppen mit <code>&lt;button&gt;</code>-Elementen zu verwenden, <strong class="text-danger">musst du jeden Button in einer Button-Gruppe verpacken</strong>. Die meisten Browser wenden unser CSS für den Gleichsatz nicht richtig auf <code>&lt;button&gt;</code>-Elemente an, aber da wir Button-Dropdown-Menüs unterstützen, können wir das Problem umgehen.</p>
   <div class="bs-example">
-    <div class="btn-group btn-group-justified">
-      <div class="btn-group">
+    <div class="btn-group btn-group-justified" role="group" aria-label="Gleichmäßige Button-Gruppe">
+      <div class="btn-group" role="group">
         <button type="button" class="btn btn-default">Links</button>
       </div>
-      <div class="btn-group">
+      <div class="btn-group" role="group">
         <button type="button" class="btn btn-default">Mitte</button>
       </div>
-      <div class="btn-group">
+      <div class="btn-group" role="group">
         <button type="button" class="btn btn-default">Rechts</button>
       </div>
     </div>
   </div>
 {% highlight html %}
-<div class="btn-group btn-group-justified">
-  <div class="btn-group">
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+  <div class="btn-group" role="group">
     <button type="button" class="btn btn-default">Links</button>
   </div>
-  <div class="btn-group">
+  <div class="btn-group" role="group">
     <button type="button" class="btn btn-default">Mitte</button>
   </div>
-  <div class="btn-group">
+  <div class="btn-group" role="group">
     <button type="button" class="btn btn-default">Rechts</button>
   </div>
 </div>

@@ -63,18 +63,15 @@
   </div>
   <div class="bs-callout bs-callout-warning">
     <h4>Füge immer Labels hinzu</h4>
-    <p>Screenreader werden Probleme mit deinen Formularen haben, wenn du nicht für jedes Feld ein Label einfügst. Du kannst solche Labels für diese Inline-Formulare verbergen, indem du die <code>.sr-only</code>-Klasse verwendest.</p>
+    <p>Screenreader werden Probleme mit deinen Formularen haben, wenn du nicht für jedes Feld ein Label einfügst. Du kannst solche Labels für diese Inline-Formulare verbergen, indem du die <code>.sr-only</code>-Klasse verwendest. Es gibt weitere alternative Methoden, um ein Label für assistiven Technologien bereitzustellen, wie z.B. die Attribute <code>aria-label</code>, <code>aria-labelledby</code> oder <code>title</code>. Falls keins davon vorhanden ist, verwenden Screenreader evtl. das Attribut <code>placeholder</code>, falls vorhanden, aber die Verwendung von <code>placeholder</code> als Ersatz für andere Labelling-Methoden wird nicht empfohlen.</p>
   </div>
   <div class="bs-example">
     <form class="form-inline" role="form">
       <div class="form-group">
-        <label class="sr-only" for="beispielFeldEmail2">Email-Adresse</label>
-        <input type="email" class="form-control" id="beispielFeldEmail2" placeholder="Email-Adresse">
-      </div>
-      <div class="form-group">
         <div class="input-group">
+          <label class="sr-only" for="beispielFeldEmail2">Email-Adresse</label>
           <div class="input-group-addon">@</div>
-          <input class="form-control" type="email" placeholder="Email-Adresse">
+          <input type="email" class="form-control" id="beispielFeldEmail2" placeholder="Email-Adresse eingeben">
         </div>
       </div>
       <div class="form-group">
@@ -205,7 +202,7 @@
   <p>Formular-Feld, in das mehrere Zeilen Text eingegeben werden können. Veränder das <code>rows</code>-Attribut so wie es für dich am besten passt.</p>
   <div class="bs-example">
     <form role="form">
-      <textarea class="form-control" rows="3"></textarea>
+      <textarea class="form-control" rows="3" placeholder="Text-Fläche"></textarea>
     </form>
   </div><!-- /.bs-example -->
 {% highlight html %}
@@ -334,18 +331,18 @@
 </label>
 {% endhighlight %}
 
-  <h4>Auswahlfelder ohne Label</h4>
-  <p>Falls du keinen Text im <code>&lt;label&gt; hast, wird das Auswahlfeld trotzdem allen Erwartungen entsprechend positioniert. <strong>Funktioniert aktuell nur mit Auswahlfeldern, die nicht zusammen in einer Zeile stehen.</strong></code>
+  <h4>Auswahlfelder ohne Labeltext</h4>
+  <p>Falls du keinen Text im <code>&lt;label&gt;</code> hast, wird das Auswahlfeld trotzdem allen Erwartungen entsprechend positioniert. <strong>Funktioniert aktuell nur mit Auswahlfeldern, die nicht zusammen in einer Zeile stehen.</strong> Denk daran, trotzdem irgendeine Art von Label für assistive Technologien zur Verfügung zu stellen (z.B. mit Hilfe von <code>aria-label</code>).</p>
   <div class="bs-example">
     <form role="form">
       <div class="checkbox">
         <label>
-          <input type="checkbox" id="blankoCheckbox" value="option1">
+          <input type="checkbox" id="blankoCheckbox" value="option1" aria-label="Checkbox ohne Labeltext">
         </label>
       </div>
       <div class="radio">
         <label>
-          <input type="radio" name="blankoRadio" id="blankoRadio1" value="option1">
+          <input type="radio" name="blankoRadio" id="blankoRadio1" value="option1" aria-label="Radio-Button ohne Labeltext">
         </label>
       </div>
     </form>
@@ -353,12 +350,12 @@
 {% highlight html %}
 <div class="checkbox">
   <label>
-    <input type="checkbox" id="blankoCheckbox" value="option1">
+    <input type="checkbox" id="blankoCheckbox" value="option1" aria-label="...">
   </label>
 </div>
 <div class="radio">
   <label>
-    <input type="radio" name="blankoRadio" id="blankoRadio1" value="option1">
+    <input type="radio" name="blankoRadio" id="blankoRadio1" value="option1" aria-label="...">
   </label>
 </div>
 {% endhighlight %}
@@ -562,6 +559,12 @@
     <h2 id="forms-control-validation">Formular-Überprüfung</h2>
   <p>Bootstrap beinhaltet Stile für Fehler-, Warnung- und Erfolg-Rückmeldungen bei Formularfeldern. Um sie zu verwenden, füge <code>.has-warning</code>, <code>.has-error</code> oder <code>.has-success</code> zum übergeordneten Element hinzu. Alle <code>.control-label</code>, <code>.form-control</code> und <code>.help-block</code> in diesem Element werden dann die Rückmeldungs-Stile erhalten.</p>
 
+  <div class="bs-callout bs-callout-warning">
+    <h4>Validierungsstatus an assistive Technologien vermitteln</h4>
+    <p>Die Verwendung dieser Validierungsstile zur Bezeichnung des Status eines Formularelements führt nur zu einem visuellen Hinweis, der Nutzern von assistiven Technologien wie Screenreadern nicht vermittelt wird.</p>
+    <p>Sorge dafür, dass ein alternativer Hinweis auf den Status ebenfalls bereitgestellt wird. Zum Beispiel kannst du im Text des <code>&lt;label&gt;</code> des jeweiligen Formularelements selbst auf den Status hinweisen (wie im folgenden Beispiel) oder ein zusätzliches Element mit Textinformationn über den Validierungsstatus über <code>aria-describedby</code> mit dem Formularelement verknüpfen (siehe das Beispiel im folgenden Abschnitt). Im Falle eines Fehlers kannst du auch das Attribut <code>aria-invalid="true"</code> zum Formularelement hinzufügen.</p>
+  </div>
+
   <div class="bs-example">
     <form role="form">
       <div class="form-group has-success">
@@ -648,40 +651,51 @@
     <h4>Icons, Labels und Input-Gruppen</h4>
     <p>Die Feedback-Icons müssen manuell positioniert werden, wenn du sie mit Feldern ohne Label oder mit <a href="../komponenten#input-groups">Input-Gruppen</a> mit einem Add-on auf der rechten Seite verwendest. Es wird aus Gründen der Barrierefreiheit dringend empfohlen, Labels für alle Felder anzugeben. Falls du die Anzeige von Labels verhindern möchtest, verberge sie mit der Klasse <code>sr-only</code>. Falls du wirklich keine Labels einfügen kannst, musst du den Wert für <code>top</code> beim Feedback-Icon anpassen. Ändere bei Input-Grupen den Standard <code>right: 0;</code> zu einem sinnvollen Pixel-Wert, abhängig von der Breite deines Add-ons.</p>
   </div>
+  <div class="bs-callout bs-callout-warning">
+    <h4>Bedeutung des Icons an assistive Technologien vermitteln</h4>
+    <p>Um sicherzustellen, dass assistive Technologien wie Screenreader die Bedeutung eines Icons korrekt wiedergeben, sollte zusätzlicher verborgener Text mit Hilfe der Klasse <code>.sr-only</code> eingebunden werden und über das Attribut <code>aria-describedby</code> ausdrücklich mit dem Formularelement, auf das er sich bezieht, verknüpft werden. Alternativ solltest du sicherstellen, dass die Bedeutung (z.B. die Tatsache, dass es eine Warnung für ein bestimmtes Textfeld gibt) in irgendeiner anderen Form vermittelt wird, z.B. durch Veränderung des eigentlichen, mit dem Formularelement verknüpften <code>&lt;label&gt;</code>.</p>
+    <p>Obwohl die folgenden Beispiele den Validierugnsstatus ihrer jeweiligen Formularelemente im <code>&lt;label&gt;</code>-Text selbst bereits einbinden, wurde die obige Methode (die Verwendung von Text in <code>.sr-only</code> und <code>aria-describedby</code>) zur Illustration zusätzlich hinzugefügt.</p>
+  </div>
   <div class="bs-example">
     <form role="form">
       <div class="form-group has-success has-feedback">
         <label class="control-label" for="eingabefeldErfolg2">Feld mit Erfolg</label>
-        <input type="text" class="form-control" id="eingabefeldErfolg2">
-        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+        <input type="text" class="form-control" id="eingabefeldErfolg2" aria-describedby="eingabefeldErfolg2Status">
+        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+        <span id="eingabefeldErfolg2Status" class="sr-only">(Erfolg)</span>
       </div>
       <div class="form-group has-warning has-feedback">
         <label class="control-label" for="eingabefeldWarnung2">Feld mit Warnung</label>
-        <input type="text" class="form-control" id="eingabefeldWarnung2">
-        <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+        <input type="text" class="form-control" id="eingabefeldWarnung2" aria-describedby="eingabefeldWarnung2Status">
+        <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+        <span id="eingabefeldWarnung2Status" class="sr-only">(Warnung)</span>
       </div>
       <div class="form-group has-error has-feedback">
         <label class="control-label" for="eingabefeldFehler2">Feld mit Fehler</label>
-        <input type="text" class="form-control" id="eingabefeldFehler2">
-        <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+        <input type="text" class="form-control" id="eingabefeldFehler2" aria-describedby="eingabefeldFehler2Status">
+        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+        <span id="eingabefeldFehler2Status" class="sr-only">(Fehler)</span>
       </div>
     </form>
   </div>
 {% highlight html %}
 <div class="form-group has-success has-feedback">
   <label class="control-label" for="eingabefeldErfolg2">Feld mit Erfolg</label>
-  <input type="text" class="form-control" id="eingabefeldErfolg2">
-  <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+  <input type="text" class="form-control" id="eingabefeldErfolg2" aria-describedby="eingabefeldErfolg2Status">
+  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+  <span id="eingabefeldErfolg2Status" class="sr-only">(Erfolg)</span>
 </div>
 <div class="form-group has-warning has-feedback">
   <label class="control-label" for="eingabefeldWarnung2">Feld mit Warnung</label>
-  <input type="text" class="form-control" id="eingabefeldWarnung2">
-  <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+  <input type="text" class="form-control" id="eingabefeldWarnung2" aria-describedby="eingabefeldWarnung2Status">
+  <span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
+  <span id="eingabefeldWarnung2Status" class="sr-only">(Warnung)</span>
 </div>
 <div class="form-group has-error has-feedback">
   <label class="control-label" for="eingabefeldFehler2">Feld mit Fehler</label>
-  <input type="text" class="form-control" id="eingabefeldFehler2">
-  <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+  <input type="text" class="form-control" id="eingabefeldFehler2" aria-describedby="eingabefeldFehler2Status">
+  <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+  <span id="eingabefeldFehler2Status" class="sr-only">(Fehler)</span>
 </div>
 {% endhighlight %}
 
@@ -691,8 +705,9 @@
       <div class="form-group has-success has-feedback">
         <label class="control-label col-sm-3" for="eingabefeldErfolg3">Feld mit Erfolg</label>
         <div class="col-sm-9">
-          <input type="text" class="form-control" id="eingabefeldErfolg3">
-          <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+          <input type="text" class="form-control" id="eingabefeldErfolg3" aria-describedby="eingabefeldErfolg3Status">
+          <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+          <span id="eingabefeldErfolg3Status" class="sr-only">(Erfolg)</span>
         </div>
       </div>
     </form>
@@ -702,8 +717,9 @@
   <div class="form-group has-success has-feedback">
     <label class="control-label col-sm-3" for="eingabefeldErfolg3">Feld mit Erfolg</label>
     <div class="col-sm-9">
-      <input type="text" class="form-control" id="eingabefeldErfolg3">
-      <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+      <input type="text" class="form-control" id="eingabefeldErfolg3" aria-describedby="eingabefeldErfolg3Status">
+      <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+      <span id="eingabefeldErfolg3Status" class="sr-only">(Erfolg)</span>
     </div>
   </div>
 </form>
@@ -713,8 +729,9 @@
     <form class="form-inline" role="form">
       <div class="form-group has-success has-feedback">
         <label class="control-label" for="eingabefeldErfolg4">Feld mit Erfolg</label>
-        <input type="text" class="form-control" id="eingabefeldErfolg4">
-        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+        <input type="text" class="form-control" id="eingabefeldErfolg4" aria-describedby="eingabefeldErfolg4Status">
+        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+        <span id="eingabefeldErfolg4Status" class="sr-only">(Erfolg)</span>
       </div>
     </form>
   </div>
@@ -722,8 +739,9 @@
 <form class="form-inline" role="form">
   <div class="form-group has-success has-feedback">
     <label class="control-label" for="eingabefeldErfolg4">Feld mit Erfolg</label>
-    <input type="text" class="form-control" id="eingabefeldErfolg4">
-    <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+    <input type="text" class="form-control" id="eingabefeldErfolg4" aria-describedby="eingabefeldErfolg4Status">
+    <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+    <span id="eingabefeldErfolg4Status" class="sr-only">(Erfolg)</span>
   </div>
 </form>
 {% endhighlight %}
@@ -733,16 +751,18 @@
   <div class="bs-example">
     <div class="form-group has-success has-feedback">
       <label class="control-label sr-only" for="eingabefeldErfolg5">Verstecktes Label</label>
-      <input type="text" class="form-control" id="eingabefeldErfolg5">
-      <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+      <input type="text" class="form-control" id="eingabefeldErfolg5" aria-describedby="eingabefeldErfolg5Status">
+      <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+      <span id="eingabefeldErfolg5Status" class="sr-only">(Erfolg)</span>
     </div>
   </div>
 {% highlight html %}
 <form class="form-inline" role="form">
   <div class="form-group has-success has-feedback">
     <label class="control-label sr-only" for="eingabefeldErfolg5">Verstecktes Label</label>
-    <input type="text" class="form-control" id="eingabefeldErfolg5">
-    <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+    <input type="text" class="form-control" id="eingabefeldErfolg5" aria-describedby="eingabefeldErfolg5Status">
+    <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+    <span id="eingabefeldErfolg5Status" class="sr-only">(Erfolg)</span>
   </div>
 </form>
 {% endhighlight %}
@@ -851,13 +871,23 @@
 
   <h2 id="forms-help-text">Hilfe-Text</h2>
   <p>Füge Textblöcke mit Hilfetexten für Formularfelder hinzu.</p>
+  <div class="bs-callout bs-callout-info">
+    <h4>Hilfe-Text mit Formularelementen assoziieren</h4>
+    <p>Hilfe-Text sollte mit dem Attribut <code>aria-describedby</code> ausdrücklich mit dem Formularelement assoziiert werden, auf das er sich bezieht. Dies stellt sicher, dass assistive Technologien wie Screenreader den Hilfe-Text vorlesen, wenn Nutzer das Element fokussieren oder hineingehen.</p>
+  </div>
   <div class="bs-example">
     <form role="form">
-      <input type="text" class="form-control">
-      <span class="help-block">Ein Block mit hilfreichem Text, der mehr als eine Zeile lang sein darf und bei Bedarf umbricht.</span>
+      <div class="form-group">
+        <label for="eingabefeldHilfeText">Eingabefeld mit Hilfe-Text</label>
+        <input type="text" id="eingabefeldHilfeText" class="form-control" aria-describedby="hilfeText">
+      </div>
+      <span id="hilfeText" class="help-block">Ein Block mit hilfreichem Text, der mehr als eine Zeile lang sein darf und bei Bedarf umbricht.</span>
     </form>
   </div><!-- /.bs-example -->
 {% highlight html %}
-<span class="help-block">Ein Block mit hilfreichem Text, der mehr als eine Zeile lang sein darf und bei Bedarf umbricht.</span>
+<label class="sr-only" for="eingabefeldHilfeText">Eingabefeld mit Hilfe-Text</label>
+<input type="text" id="eingabefeldHilfeText" class="form-control" aria-describedby="hilfeText">
+...
+<span id="hilfeText" class="help-block">Ein Block mit hilfreichem Text, der mehr als eine Zeile lang sein darf und bei Bedarf umbricht.</span>
 {% endhighlight %}
 </div>

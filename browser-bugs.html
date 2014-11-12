@@ -3,6 +3,7 @@ layout: default
 title: Pinnwand für Browser-Bugs
 slug: browser-bugs
 lead: "Eine Liste der Browser-Bugs, mit denen Bootstrap zurzeit zu kämpfen hat."
+fullwidth: true
 ---
 
 
@@ -13,7 +14,7 @@ lead: "Eine Liste der Browser-Bugs, mit denen Bootstrap zurzeit zu kämpfen hat.
   <p>Wir veröffentlichen hier eine Liste von Browser-Bugs, die uns beeinträchtigen, in der Hoffnung deren Behebung zu beschleunigen. Sieh dir für Informationen zu Bootstraps Browser-Kompatiblität <a href="../los-gehts/#support">unsere Browser-Kompatibilität-Dokumentation</a> an.</p>
 
   <div class="table-responsive">
-    <table class="table table-bordered table-hover">
+    <table class="bs-docs-browser-bugs table table-bordered table-hover">
       <thead>
         <tr>
           <th>Browser</th>
@@ -23,102 +24,14 @@ lead: "Eine Liste der Browser-Bugs, mit denen Bootstrap zurzeit zu kämpfen hat.
         </tr>
       </thead>
       <tbody>
+        {% for bug in site.data.browser-bugs %}
         <tr>
-          <td>Internet Explorer 11</td>
-          <td>Element behält <code>:hover</code>-Stile nachdem darüber hinweg gescrollt wurde</td>
-          <td><a href="https://connect.microsoft.com/IE/feedback/details/926665/ie-11-hovering-over-an-element-and-then-scrolling-without-moving-the-mouse-pointer-leaves-the-element-in-hover-state">IE Bug #926665</a></td>
-          <td><a href="https://github.com/twbs/bootstrap/issues/14211">#14211</a></td>
+          <td>{{ bug.browser }}</td>
+          <td>{{ bug.summary | markdownify | bugify }}</td>
+          <td>{{ bug.upstream_bug | bugify }}</td>
+          <td>{{ bug.origin | bugify }}</td>
         </tr>
-        <tr>
-          <td>Internet Explorer 11</td>
-          <td>Wenn der Cursor über einem <code>&lt;select&gt;</code>-Menüeintrag ist, hat er das für das Element darunter angemessene Aussehen</td>
-          <td><a href="https://connect.microsoft.com/IE/feedbackdetail/view/963961">IE Bug #963961</a></td>
-          <td><a href="https://github.com/twbs/bootstrap/issues/14528">#14528</a></td>
-        </tr>
-        <tr>
-          <td>Firefox</td>
-          <td><code>.table-bordered</code> mit leerem <code>&lt;body&gt;</code> hat keine Rahmengrenzen</td>
-          <td><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1023761">Mozilla Bug #1023761</a></td>
-          <td><a href="https://github.com/twbs/bootstrap/issues/13453">#13453</a></td>
-        </tr>
-        <tr>
-          <td>Firefox</td>
-          <td><code>max-width: 100%;</code> funktioniert nicht innerhalb von Tabellen</td>
-          <td><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=975632">Mozilla Bug #975632</a></td>
-          <td><a href="https://github.com/twbs/bootstrap/issues/10690">#10690</a></td>
-        </tr>
-        <tr>
-          <td>Firefox</td>
-          <td>Java-Applets, die Elementen untergeordnet sind, bei denen über <code>translate3d(0,0,0)</code> die Hardware-Beschleunigung erzwungen wurde, sind auf Windows unsichtbar</td>
-          <td><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1048279">Mozilla Bug #1048279</a></td>
-          <td><a href="https://github.com/twbs/bootstrap/issues/14124">#14124</a></td>
-        </tr>
-        <tr>
-          <td>Firefox</td>
-          <td>Button-Elemente mit <code>width: 100%</code> werden in langen Tabellen abgeschnitten</td>
-          <td><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1060131">Mozilla Bug #1060131</a></td>
-          <td><a href="https://github.com/twbs/bootstrap/issues/14320">#14320</a></td>
-        </tr>
-        <tr>
-          <td>Firefox</td>
-          <td>Wenn der deaktivierte Status eines Formularelements über JavaScript geändert wird, kehrt dieses nicht zum normalen Status zurück bevor die Seite neu geladen wird</td>
-          <td><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=654072">Mozilla Bug #654072</a></td>
-          <td><a href="https://github.com/twbs/bootstrap/issues/793">#793</a></td>
-        </tr>
-        <tr>
-          <td>Chrome</td>
-          <td>Klicken über dem Vergrößern-Button von <code>&lt;input type="number"&gt;</code> hebt den Verkleinern-Button hervor</td>
-          <td><a href="https://code.google.com/p/chromium/issues/detail?id=419108">Chromium Issue #419108</a></td>
-          <td>Aus <a href="https://github.com/twbs/bootstrap/issues/8350">#8350</a> &amp; <a href="https://code.google.com/p/chromium/issues/detail?id=337668">Chromium Issue #337668</a></td>
-        </tr>
-        <tr>
-          <td>Chrome</td>
-          <td><code>display: table;</code> innerhalb von <code>display: block;</code> schiebt andere Inhalte in neue Zeile</td>
-          <td><a href="https://code.google.com/p/chromium/issues/detail?id=309483">Chromium Issue #309483</a></td>
-          <td><a href="https://github.com/twbs/bootstrap/issues/9950">#9950</a></td>
-        </tr>
-        <tr>
-          <td>Chrome</td>
-          <td>Falsche Anzeigefenster-Größe für Media-Queries beim Druck verwendet</td>
-          <td><a href="https://code.google.com/p/chromium/issues/detail?id=273306">Chromium Issue #273306</a></td>
-          <td><a href="https://github.com/twbs/bootstrap/issues/12078">#12078</a></td>
-        </tr>
-        <tr>
-          <td>Chrome &amp; Safari</td>
-          <td>OS X-Scroll-Leiste in <code>select[multiple]</code> mit Innenabstand verdeckt</td>
-          <td><a href="https://code.google.com/p/chromium/issues/detail?id=342208">Chromium Issue #342208</a>, <a href="https://bugs.webkit.org/show_bug.cgi?id=128489">WebKit Bug #128489</a></td>
-          <td><a href="https://github.com/twbs/bootstrap/issues/12536">#12536</a></td>
-        </tr>
-        <tr>
-          <td>Chrome</td>
-          <td><code>display: table-cell; width: 100%;</code> funktioniert nicht richtig bei Datums-<code>&lt;input&gt;</code></td>
-          <td><a href="https://code.google.com/p/chromium/issues/detail?id=346051">Chromium Issue #346051</a></td>
-          <td><a href="https://github.com/twbs/bootstrap/issues/12548">#12548</a></td>
-        </tr>
-        <tr>
-          <td>Chrome</td>
-          <td><code>&lt;input type="password"&gt;</code> verursacht gelegentlich korrupte Breiten bei Elementen mit Float</td>
-          <td><a href="https://code.google.com/p/chromium/issues/detail?id=377346">Chrome Issue #377346</a></td>
-          <td><a href="https://github.com/twbs/bootstrap/issues/13892">#13892</a></td>
-        </tr>
-        <tr>
-          <td>Safari</td>
-          <td>Seltsames Button-Verhalten bei einigen numerischen <code>&lt;input&gt;</code>s</td>
-          <td><a href="https://bugs.webkit.org/show_bug.cgi?id=137269">WebKit Bug #137269</a></td>
-          <td><a href="https://github.com/twbs/bootstrap/issues/8350">#8350</a>, <a href="https://github.com/necolas/normalize.css/issues/283">Normalize #283</a>, <a href="https://code.google.com/p/chromium/issues/detail?id=337668">Chromium Issue #337668</a></td>
-        </tr>
-        <tr>
-          <td>Safari</td>
-          <td><code>display: table-cell;</code> in Media-Query verursacht Rendering-Fehler beim Ändern der Fenstergröße</td>
-          <td><a href="https://bugs.webkit.org/show_bug.cgi?id=138167">WebKit Bug #138167</a></td>
-          <td><a href="https://github.com/twbs/bootstrap/issues/9774">#9774</a></td>
-        </tr>
-        <tr>
-          <td>Safari</td>
-          <td><code>transform: translate3d(0, 0, 0);</code> iOS Bug</td>
-          <td><a href="https://bugs.webkit.org/show_bug.cgi?id=138162">WebKit Bug #138162</a>, <a href="http://openradar.appspot.com/18804973">Apple Safari Radar #18804973</a></td>
-          <td><a href="https://github.com/twbs/bootstrap/pull/14603">#14603</a></td>
-        </tr>
+        {% endfor %}
       </tbody>
     </table>
   </div>

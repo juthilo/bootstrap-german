@@ -15,12 +15,17 @@
     </ol>
   </div>
   <div class="bs-callout bs-callout-danger">
-    <h4>Benötigt JavaScript</h4>
+    <h4>Benötigt JavaScript-Plugin</h4>
     <p>Falls JavaScript deaktiviert ist und die Anzeige nicht breit genug für den horizontalen Modus der Navbar ist, wird es unmöglich sein, die Navbar auszuklappen und die Inhalte in <code>.navbar-collapse</code> anzusehen.</p>
+    <p>Für die responsive Navbar muss das <a href="../javascript/#collapse">Collapse-Plugin</a> in deiner Version von Bootstrap enthalten sein.</p>
   </div>
   <div class="bs-callout bs-callout-info">
     <h4>Punkt anpassen, an dem sich das Navbar-Layout verändert</h4>
     <p>Die Navbar faltet sich zu ihrer vertikalen mobilen Ansicht zusammen, wenn das Anzeigefenster schmaler als <code>@grid-float-breakpoint</code> ist und wird horizontal wenn die Breite des Anzeigefensters mindestens <code>@grid-float-breakpoint</code> ist. Verändere diese Variable im Less-Quellcode, um zu kontrollieren, wann die Navbar zwischen der kleinen mobilen und der breiteren Ansicht wechselt. Der Standard-Wert ist <code>768px</code> (der kleinste "small"-, oder "tablet"-Bildschirm).</p>
+  </div>
+  <div class="bs-callout bs-callout-warning">
+    <h4>Navbars barrierefrei gestalten</h4>
+    <p>Denk daran, <code>role="navigation"</code> zu jeder Navbar hinzuzufügen, um sie möglichst barrierefrei zu machen.</p>
   </div>
 
   <div class="bs-example">
@@ -40,10 +45,10 @@
         <!-- Alle Navigationslinks, Formulare und anderer Inhalt werden hier zusammengefasst und können dann ein- und ausgeblendet werden -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Link</a></li>
+            <li class="active"><a href="#">Link <span class="sr-only">(aktuell)</span></a></li>
             <li><a href="#">Link</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menü <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menü <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="#">Aktion</a></li>
                 <li><a href="#">Andere Aktion</a></li>
@@ -64,7 +69,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Link</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menü <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menü <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="#">Aktion</a></li>
                 <li><a href="#">Andere Aktion</a></li>
@@ -95,10 +100,10 @@
     <!-- Alle Navigationslinks, Formulare und anderer Inhalt werden hier zusammengefasst und können dann ein- und ausgeblendet werden -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link</a></li>
+        <li class="active"><a href="#">Link <span class="sr-only">(aktuell)</span></a></li>
         <li><a href="#">Link</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menü <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menü <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Aktion</a></li>
             <li><a href="#">Andere Aktion</a></li>
@@ -119,7 +124,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Link</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menü <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menü <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Aktion</a></li>
             <li><a href="#">Andere Aktion</a></li>
@@ -133,16 +138,6 @@
   </div><!-- /.container-fluid -->
 </nav>
 {% endhighlight %}
-
-  <div class="bs-callout bs-callout-danger">
-    <h4>Plugin-Abhängigkeit</h4>
-    <p>Die responsive Navbar benötigt das <a href="../javascript/#collapse">Collapse-Plugin</a> in deiner Version von Bootstrap.</p>
-  </div>
-
-  <div class="bs-callout bs-callout-warning">
-    <h4>Navbars barrierefrei gestalten</h4>
-    <p>Denk daran, <code>role="navigation"</code> zu jeder Navbar hinzuzufügen, um sie möglichst barrierefrei zu machen.</p>
-  </div>
 
 
   <h2 id="navbar-brand-image">Logo</h2>

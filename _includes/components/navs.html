@@ -3,38 +3,44 @@
 
   <p class="lead">Navs sind einfache Komponenten in Bootstrap, mit denen du verschiedene Bereiche deines Projekts verlinken kannst. Ausgehend von der grundlegenden <code>.nav</code>-Klasse kannst du verschiedene zusätzliche Klassen hinzufügen und austauschen, um verschiedene Designs anzuwenden.</p>
 
+  <div class="bs-callout bs-callout-info">
+    <h4>Navs als Teil von Tab-Panels benötigen JavaScript-Tabs-Plugin</h4>
+    <p>Für Tabs mit Flächen, zwischen denen man wechseln kann, musst du das <a href="../javascript/#tabs">Tabs JavaScript-Plugin</a> verwenden. Im Markup sind dann außerdem zusätzliche <code>role</code>- und ARIA-Attribute erforderlich. Siehe das <a href="../javascript/#tabs-usage">Beispiel-Markup</a> des Plugins für mehr Infos.</p>
+  </div>
+
+  <div class="bs-callout bs-callout-warning">
+    <h4>Navs als Navigationselemente barrierefrei gestalten</h4>
+    <p>Falls du Navs verwendest, um eine Navigationsleiste zu erstellen, füge unbedingt <code>role="navigation"</code> zum logischsten übergeordneten Container der <code>&lt;ul&gt;</code> hinzu oder umschließe die ganze Navigation mit einem <code>&lt;nav&gt;</code>-Element. Füge die Rolle nicht zur <code>&lt;ul&gt;</code> selbst hinzu, da dies assistive Technologien davon abhalten würde, sie als tatsächliche Liste vorzulesen.</p>
+  </div>
+
   <h2 id="nav-tabs">Tabs</h2>
   <p>Beachte, dass die <code>.nav-tabs</code>-Klasse nur zusammen mit der <code>.nav</code>-Grund-Klasse funktioniert.</p>
   <div class="bs-example">
-    <ul class="nav nav-tabs" role="tablist">
+    <ul class="nav nav-tabs">
       <li role="presentation" class="active"><a href="#">Start</a></li>
       <li role="presentation"><a href="#">Profil</a></li>
       <li role="presentation"><a href="#">Nachrichten</a></li>
     </ul>
   </div>
 {% highlight html %}
-<ul class="nav nav-tabs" role="tablist">
+<ul class="nav nav-tabs">
   <li role="presentation" class="active"><a href="#">Start</a></li>
   <li role="presentation"><a href="#">Profil</a></li>
   <li role="presentation"><a href="#">Nachrichten</a></li>
 </ul>
 {% endhighlight %}
-  <div class="bs-callout bs-callout-info">
-    <h4>Benötigt das JavaScript-Tabs-Plugin</h4>
-    <p>Für funktionierende Tabs mit Inhalt musst du das <a href="../javascript/#tabs">Tabs JavaScript-Plugin</a> verwenden.</p>
-  </div>
 
   <h2 id="nav-pills">Pills</h2>
   <p>Nimm den gleichen HTML-Code aber verwende stattdessen <code>.nav-pills</code>:</p>
   <div class="bs-example">
-    <ul class="nav nav-pills" role="tablist">
+    <ul class="nav nav-pills">
       <li role="presentation" class="active"><a href="#">Start</a></li>
       <li role="presentation"><a href="#">Profil</a></li>
       <li role="presentation"><a href="#">Nachrichten</a></li>
     </ul>
   </div>
 {% highlight html %}
-<ul class="nav nav-pills" role="tablist">
+<ul class="nav nav-pills">
   <li role="presentation" class="active"><a href="#">Start</a></li>
   <li role="presentation"><a href="#">Profil</a></li>
   <li role="presentation"><a href="#">Nachrichten</a></li>
@@ -42,14 +48,14 @@
 {% endhighlight %}
   <p>Pills können auch übereinander angeordnet werden. Füge einfach <code>.nav-stacked</code> hinzu.</p>
   <div class="bs-example">
-    <ul class="nav nav-pills nav-stacked" role="tablist" style="max-width: 300px;">
+    <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
       <li role="presentation" class="active"><a href="#">Start</a></li>
       <li role="presentation"><a href="#">Profil</a></li>
       <li role="presentation"><a href="#">Nachrichten</a></li>
     </ul>
   </div>
 {% highlight html %}
-<ul class="nav nav-pills nav-stacked" role="tablist">
+<ul class="nav nav-pills nav-stacked">
   ...
 </ul>
 {% endhighlight %}
@@ -63,23 +69,23 @@
     <p>Safari (Stand v8.0) hat einen Fehler, bei dem das Verändern der Breite deines Browser-Fensters Anzeigefehler in der gleichmäßig verteilten Variante der Navs hervorruft. Diese Fehler verschwinden nach einem erneuten Laden der Seite. Dieser Fehler ist auch im <a href="../examples/justified-nav/">Beispiel der gleichmäßig verteilten Variante</a> sichtbar.</p>
   </div>
   <div class="bs-example">
-    <ul class="nav nav-tabs nav-justified" role="tablist">
+    <ul class="nav nav-tabs nav-justified">
       <li role="presentation" class="active"><a href="#">Start</a></li>
       <li role="presentation"><a href="#">Profil</a></li>
       <li role="presentation"><a href="#">Nachrichten</a></li>
     </ul>
     <br>
-    <ul class="nav nav-pills nav-justified" role="tablist">
+    <ul class="nav nav-pills nav-justified">
       <li role="presentation" class="active"><a href="#">Start</a></li>
       <li role="presentation"><a href="#">Profil</a></li>
       <li role="presentation"><a href="#">Nachrichten</a></li>
     </ul>
   </div>
 {% highlight html %}
-<ul class="nav nav-tabs nav-justified" role="tablist">
+<ul class="nav nav-tabs nav-justified">
   ...
 </ul>
-<ul class="nav nav-pills nav-justified" role="tablist">
+<ul class="nav nav-pills nav-justified">
   ...
 </ul>
 {% endhighlight %}
@@ -94,14 +100,14 @@
   </div>
 
   <div class="bs-example">
-    <ul class="nav nav-pills" role="tablist">
+    <ul class="nav nav-pills">
       <li role="presentation"><a href="#">Klick-barer Link</a></li>
       <li role="presentation"><a href="#">Klick-barer Link</a></li>
       <li role="presentation" class="disabled"><a href="#">Deaktivierter Link</a></li>
     </ul>
   </div>
 {% highlight html %}
-<ul class="nav nav-pills" role="tablist">
+<ul class="nav nav-pills">
   ...
   <li role="presentation" class="disabled"><a href="#">Deaktivierter Link</a></li>
   ...
@@ -114,11 +120,11 @@
 
   <h3>Tabs mit Dropdowns</h3>
   <div class="bs-example">
-    <ul class="nav nav-tabs" role="tablist">
+    <ul class="nav nav-tabs">
       <li role="presentation" class="active"><a href="#">Start</a></li>
       <li role="presentation"><a href="#">Hilfe</a></li>
       <li role="presentation" class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
           Dropdown-Menü <span class="caret"></span>
         </a>
         <ul class="dropdown-menu" role="menu">
@@ -132,10 +138,10 @@
     </ul>
   </div>
 {% highlight html %}
-<ul class="nav nav-tabs" role="tablist">
+<ul class="nav nav-tabs">
   ...
   <li role="presentation" class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
       Dropdown-Menü <span class="caret"></span>
     </a>
     <ul class="dropdown-menu" role="menu">
@@ -148,11 +154,11 @@
 
   <h3>Pills mit Dropdowns</h3>
   <div class="bs-example">
-    <ul class="nav nav-pills" role="tablist">
+    <ul class="nav nav-pills">
       <li role="presentation" class="active"><a href="#">Start</a></li>
       <li role="presentation"><a href="#">Hilfe</a></li>
       <li role="presentation"class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
           Dropdown-Menü <span class="caret"></span>
         </a>
         <ul class="dropdown-menu" role="menu">
@@ -166,10 +172,10 @@
     </ul>
   </div><!-- /example -->
 {% highlight html %}
-<ul class="nav nav-pills" role="tablist">
+<ul class="nav nav-pills">
   ...
   <li role="presentation" class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
       Dropdown-Menü <span class="caret"></span>
     </a>
     <ul class="dropdown-menu" role="menu">

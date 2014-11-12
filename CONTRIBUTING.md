@@ -45,6 +45,25 @@ folgenden Einschränkungen:
   Beiträge stattdessen im zugehörigen Repository ein).
 
 
+## Fehlermeldungen und Labels
+
+Wir verwenden in unserem Issue Tracker verschiedene Labels, um Fehlermeldungen leichter organisieren und identifizieren zu können. Hier siehst du, was sie bedeuten und wie sie genutzt werden:
+
+- `browser bug` - Probleme, die uns gemeldet werden, aber eigentlich das Ergebnis eines Browser-spezifischen Bugs sind. Diese Probleme werden mit reduzierten Musterfällen diagnostiziert und führen dazu, dass eine Fehlermeldung im eigenen Issue Tracker eines Browsers geöffnet wird.
+- `confirmed` - Probleme, die mit einem reduzierten Musterfall bestätigt wurden und mit einem Bug in Bootstrap zusammenhängen.
+- `css` - Probleme, die mit unserem kompilierten CSS oder Quell-Less-Dateien zusammenhängen.
+- `customizer` - Probleme, die unseren webbasierten Customizer betreffen.
+- `docs` - Issues für die Verbesserung oder Aktualisierung unserer Dokumentation.
+- `examples` - Probleme im Zusammenhang der Beispiel-Vorlagen, die Teil unserer Dokumentation sind.
+- `feature` - Vorschläge für neue Funktionen an sich oder als Ergänzung oder Veränderung einer bestehenden Komponente. Neue Funktionen machen eine höhere zweite Versionsnummer erforderlich (z.B. von `v3.0.0` auf `v3.1.0`).
+- `grunt` - Probleme bei unserem JavaScript-basierten Gruntfile, das dazu dient, all unsere Tests laufen zu lassen, Quelldateien zusammenzuführen und zu kompilieren und mehr.
+- `help wanted` - Probleme, für deren Lösung wir die Hilfe der Community brauchen oder willkommen heißen würden.
+- `js` - Probleme in unseren kompilierten oder ursprünglichen JavaScript-Dateien.
+- `meta` - Issues, die das Projekt selbst oder unser GitHub-Repository betreffen.
+
+Für eine komplette Übersicht über unsere Labels kannst du dir die [Labels-Liste des Projekts](/twbs/bootstrap/labels) ansehen.
+
+
 ## Fehlermeldungen
 
 Ein Fehler ist ein _Problem, welches man reproduzieren kann_, das heißt, dass
@@ -114,6 +133,11 @@ Wenn angebracht, versuchen wir diese Upstream-Fehler an die relevanten Browser-H
 | Microsoft     | Internet Explorer            | Trident          | https://connect.microsoft.com/IE/feedback/LoadSubmitFeedbackForm                      |                                                     |
 
 
+### Issues Bots
+
+[@twbs-lmvtfy](https://github.com/twbs-lmvtfy) ist ein Bootstrap-Bot, der in unserem GitHub-Issue-Tracker herumhängt und automatisch alle Live-Beispiele (z.B. jsFiddles, JS Bins, Bootplys, Plunks, CodePens, usw.), die in Issue-Kommentaren gepostet werden, auf HTML-Validierungs-Fehler überprüft. Falls er irgendwelche Fehler findet, schreibt er einen Kommentar darunter und weist auf diese hin. Falls das mit einem Beispiel von dir passiert, behebe bitte die Fehler und poste eine aktualisierte Version deines Live-Beispiels. Falls du eine Fehlermeldung erstellt hast, überprüfe bitte, ob der Bug mit dem berichtigten Beispiel immer noch auftritt. Falls der Fehler nicht mehr auftritt, ist dieser wahrscheinlich auf dein ungültiges HTML zurückzuführen und nicht durch etwas in Bootstrap verursacht und wir würden es begrüßen, wenn du das Issue auf GitHub schließen könntest.
+
+
 ## Funktionsvorschläge
 
 Wir freuen uns, wenn du neue Funktionen vorschlägst. Nimm dir aber bitte einen
@@ -136,6 +160,19 @@ des Projekts vielleicht gar nicht einfügen wollen.
 
 Bitte halte dich an die [Code-Richtlinien](#code-richtlinien) dieses Projekt
 (Einrückung, Kommentare, usw.) und andere Anforderungen (z.B. Unit-Tests).
+
+**Bearbeite `bootstrap.css`, `bootstrap-theme.css` oder `bootstrap.js` niemals
+direkt!** Diese Dateien werden automatisch generiert. Du solltest stattdessen
+die Quelldateien in
+[`/bootstrap/less/`](https://github.com/twbs/bootstrap/tree/master/less)
+und/oder [`/bootstrap/js/`](https://github.com/twbs/bootstrap/tree/master/js)
+bearbeiten.
+
+Genauso solltest du bei Beiträgen zu Bootstraps Dokumentation die Quelldateien im
+[Verzeichnis `/bootstrap/docs/` der `master`-Branch](https://github.com/twbs/bootstrap/tree/master/docs)
+bearbeiten. **Bearbeite niemals die `gh-pages`-Branch.** Diese Branch wird aus den
+Quelldateien der Dokumentation generiert und wird vom Bootstrap-Hauptteam separat
+verwaltet.
 
 Der beste Weg, um deine Arbeit in das Projekt integriert zu bekommen, ist dem
 folgenden Prozess zu folgen:
@@ -190,6 +227,13 @@ folgenden Prozess zu folgen:
 **WICHTIG**: Wenn du eine Korrektur einreichst, erlaubst du den
 Projekteigentümern, deine Arbeit unter den Bedingungen der
 [MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE) weiterzuverbreiten.
+
+### Pull Request Bot: Rorschach
+
+[@twbs-rorschach](https://github.com/twbs-rorschach) ist ein Bootstrap-Bot, der in unserem GitHub-Issue-Tracker herumhängt und automatisch alle Pull Requests auf einige übliche kleine Fehler überprüft. Es kann sein, dass Rorschach einen Kommentar bei deinem Pull Request hinterlässt und diesen dann schließt. Falls das passiert, behebe einfach die Probleme, die im Kommentar genannt werden (dieser sollte Links zu Detailinformationen zu den jeweiligen Problemen enthalten) und dann:
+
+* Pushe die überarbeitete Version der Branch deines Pull Requests und schreibe einen Kommentar bei dem Pull Request, in dem du sagst, dass du das Problem behoben hast. Jemand aus dem Bootstrap-Hauptteam wird dann deinen Pull Request wieder öffnen.
+* Oder du kannst einfach einen neuen Pull Request für deine überarbeitete Version öffnen.
 
 ## Code-Richtlinien
 

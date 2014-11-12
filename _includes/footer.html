@@ -51,9 +51,9 @@
 {% if site.github %}
   <script src="../assets/js/docs.min.js"></script>
 {% else %}
-  <script src="../assets/js/vendor/holder.js"></script>
-  <script src="../assets/js/vendor/ZeroClipboard.min.js"></script>
-  <script src="../assets/js/src/application.js"></script>
+  {% for file in site.data.configBridge.paths.docsJs %}
+  <script src="{{ file }}"></script>
+  {% endfor %}
 {% endif %}
 
 <!-- IE10-Anzeigefenster-Hack für Fehler auf Surface und Desktop-Windows-8 -->

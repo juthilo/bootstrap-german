@@ -7,7 +7,7 @@
     <ul class="bs-glyphicons-list">
       {% for iconClassName in site.data.glyphicons %}
         <li>
-          <span class="glyphicon {{ iconClassName }}"></span>
+          <span class="glyphicon {{ iconClassName }}" aria-hidden="true"></span>
           <span class="glyphicon-class">glyphicon {{ iconClassName }}</span>
         </li>
       {% endfor %}
@@ -35,8 +35,14 @@
     </ul>
     <p>Verwende die Option, die am besten zu deiner spezifischen Umwicklungseinrichtung passt.</p>
   </div>
+  <div class="bs-callout bs-callout-warning">
+    <h4>Barrierefreie Icons</h4>
+    <p>Moderne Versionen von assistiven Technologien geben CSS-generierten Inhalt und spezifische Unicode-Zeichen wieder. Um ungewollte und verwirrende Ausgaben in Screenreadern zu vermeiden (insbesondere wenn Icons nur zur Dekoration verwendet werden), verstecken wir diese mit dem Attribut <code>aria-hidden="true"</code>.</p>
+    <p>Falls du ein Icon verwendest, um etwas zu vermitteln (im Kontrast zu einer rein dekorativen Verwendung), achte darauf, dass die Bedeutung auch über assistive Technologien vermittelt wird, z.B. solltest du zusätzlichen Inhalt hinzufügen, den du mit der Klasse <code>.sr-only</code> unsichtbar machen kannst.</p>
+    <p>Falls du Schaltflächen ohne anderen Text (z.B. einen <code>&lt;button&gt;</code>, der nur ein Icon enthält) erstellst, solltest du immer alternativen Inhalt bereitstellen, um den Zweck der Schaltfläche zu identifizieren, so dass diese für Nutzer von assistiven Technologien Sinn macht. In diesem Fall könntest du ein <code>aria-label</code>-Attribut zur Schaltfläche selbst hinzufügen.</p>
+  </div>
 {% highlight html %}
-<span class="glyphicon glyphicon-search"></span>
+<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 {% endhighlight %}
 
 
@@ -45,22 +51,41 @@
   <div class="bs-example">
     <div class="btn-toolbar" role="toolbar">
       <div class="btn-group">
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-left"></span> <span class="sr-only">Links ausrichten</span></button>
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-center"></span> <span class="sr-only">Zentrieren</span></button>
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-right"></span> <span class="sr-only">Rechts ausrichten</span></button>
-        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-justify"></span> <span class="sr-only">Blocksatz</span></button>
+        <button type="button" class="btn btn-default" aria-label="Links ausrichten"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></button>
+        <button type="button" class="btn btn-default" aria-label="Zentrieren"><span class="glyphicon glyphicon-align-center" aria-hidden="true" aria-hidden="true"></span></button>
+        <button type="button" class="btn btn-default" aria-label="Rechts ausrichten"><span class="glyphicon glyphicon-align-right" aria-hidden="true"></span></button>
+        <button type="button" class="btn btn-default" aria-label="Blocksatz"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></button>
       </div>
     </div>
     <div class="btn-toolbar" role="toolbar">
-      <button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star"></span> Markieren</button>
-      <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-star"></span> Markieren</button>
-      <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-star"></span> Markieren</button>
-      <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-star"></span> Markieren</button>
+      <button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Markieren</button>
+      <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Markieren</button>
+      <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Markieren</button>
+      <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Markieren</button>
     </div>
   </div>
 {% highlight html %}
-<button type="button" class="btn btn-default btn-lg">
-  <span class="glyphicon glyphicon-star"></span> Markieren
+<button type="button" class="btn btn-default" aria-label="Links ausrichten">
+  <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
 </button>
+
+<button type="button" class="btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Markieren
+</button>
+{% endhighlight %}
+  <p>Du kannst ein Icon in einem <a href="#alerts">Warnhinweis</a> verwenden, um zu vermitteln, dass es sich um eine Fehlermeldung handelt. Nutze zusätzlichen <code>.sr-only</code>-Text, um diese Tatsache auch an Nutzer von assistiven Technologien zu vermitteln.</p>
+  <div class="bs-example">
+    <div class="alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Fehler:</span>
+      Gib eine gültige Email-Adresse ein
+    </div>
+  </div>
+{% highlight html %}
+<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  <span class="sr-only">Fehler:</span>
+  Gib eine gültige Email-Adresse ein
+</div>
 {% endhighlight %}
 </div>

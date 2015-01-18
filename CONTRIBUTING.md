@@ -225,7 +225,10 @@ folgenden Prozess zu folgen:
 
 **WICHTIG**: Wenn du eine Korrektur einreichst, erlaubst du den
 Projekteigentümern, deine Arbeit unter den Bedingungen der
-[MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE) weiterzuverbreiten.
+[MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE) 
+(falls sie Code-Änderungen enthält) und unter der 
+[Creative Commons Attribution 3.0 Unported-Lizenz](LICENSE) 
+(falls sie Dokumentations-Änderungen enthält) weiterzuverbreiten.
 
 ### Pull Request Bots
 
@@ -268,6 +271,10 @@ Du solltest `grunt test` ausführen, bevor du einen Commit erstellst, um sicherz
 ## Lizenz
 
 Durch die Einreichung deiner Code-Beiträge stimmst du zu, deinen Beitrag unter
-der [MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE) zu lizenzieren.
+der [MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE) 
+zu lizenzieren.
+Durch die Einreichung deiner Beiträge zur Dokumentation stimmst du zu, deinen 
+Beitrag unter der [Creative Commons Attribution 3.0 Unported-Lizenz](LICENSE)
+zu lizenzieren.
 
-Vor v3.1.0 war Bootstrap unter der Apache-Lizenz v2.0 freigegeben.
+Vor v3.1.0 war Bootstraps Code unter der Apache-Lizenz v2.0 freigegeben.

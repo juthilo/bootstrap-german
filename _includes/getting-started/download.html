@@ -44,4 +44,17 @@
   <h3 id="download-bower">Mit Bower installieren</h3>
   <p>Du kannst Bootstraps Less, CSS, JavaScript und Schriften auch mit Hilfe von <a href="http://bower.io">Bower</a> installieren und verwalten.</p>
   {% highlight bash %}$ bower install bootstrap{% endhighlight %}
+
+  <h3 id="download-npm">Mit npm installieren</h3>
+  <p>Du kannst Bootstrap auch mit Hilfe von <a href="https://www.npmjs.com">npm</a> installieren:</p>
+  {% highlight bash %}$ npm install bootstrap{% endhighlight %}
+  <p><code>require('bootstrap')</code> lädt Bootstraps jQuery-Plugins in das jQuery-Objekt. Das Modul <code>bootstrap</code> selbst exportiert nichts. Du kannst Bootstraps jQuery-Plugins individuell laden, indem du die <code>/js/*.js</code>-Dateien im obersten Verzeichnis des Pakets lädst.</p>
+  <p>Bootstraps <code>package.json</code> enthält einige zusätzliche Metadaten unter den folgenden Schlüsseln:</p>
+  <ul>
+    <li><code>less</code> - Pfad zu Bootstraps Haupt-<a href="http://lesscss.org">Less</a>-Quelldateien</li>
+    <li><code>style</code> - Pfad zu Bootstraps nicht-minimiertem CSS, das mit den Standardeinstellungen vorkompiliert wurde (ohne Anpassungsmöglichkeit)</li>
+  </ul>
+
+  <h3 id="download-autoprefixer">Autoprefixer für Less/Sass benötigt</h3>
+  <p>Bootstrap verwendet <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>, um mit den <a href="http://webdesign.about.com/od/css/a/css-vendor-prefixes.htm">CSS Vendor Präfixen</a> klarzukommen. Falls du Bootstrap von der Less/Sass-Quelle kompilieren möchtest und nicht unser Gruntfile verwendest, musst du Autoprefixer selbst in deinen Build-Vorgang integrieren. Falls du vorkompilierte Bootstrap-Dateien oder unser Gruntfile verwendest, musst du dir darüber keine Sorgen machen, da Autoprefixer dort bereits eingebunden ist.</p>
 </div>

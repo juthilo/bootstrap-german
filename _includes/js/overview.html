@@ -75,6 +75,12 @@ $('#meinModal').on('show.bs.modal', function (e) {
 })
 {% endhighlight %}
 
+  <h3 id="js-version-nums">Versionsnummern</h3>
+  <p>Die Version jedes der Bootstrap-jQuery-Plugins kann über die Eigenschaft <code>VERSION</code> des Plugin-Konstruktors abgerufen werden. Zum Beispiel beim Tooltip-Plugin:</p>
+{% highlight js %}
+$.fn.tooltip.Constructor.VERSION // => "{{ site.current_version }}"
+{% endhighlight %}
+
   <h3 id="js-disabled">Keine besonderen Ersatzfunktionen wenn JavaScript deaktiviert ist</h3>
   <p>Bootstraps Plugins haben keine ausgesprochen elegante Reserve wenn JavaScript deaktiviert ist. Falls du dich in diesem Fall um das Benutzererlebnis sorgst, verwende <a href="https://developer.mozilla.org/de/docs/Web/HTML/Element/noscript"><code>&lt;noscript&gt;</code></a>, um deinen Nutzern die Situation (und die Reaktivierung von JavaScript) zu erklären und/oder füge dein eigenes Reservesystem hinzu.</p>
 

@@ -251,20 +251,21 @@ $(function () {
   <p>Initialisiert Popovers für eine Reihe von Elementen.</p>
 
   <h4>.popover('show')</h4>
-  <p>Öffnet das Popover eines Elements. Popovers, deren Titel und Inhalt keine Zeichen enthalten, werden niemals angezeigt.</p>
+  <p>Öffnet das Popover eines Elements. <strong>Gibt das Ergebnis an den Aufruf zurück, bevor das Popover tatsächlich angezeigt wurde</strong> (also bevor das Ereignis <code>shown.bs.popover</code> passiert). Dies wird als "manuelles" Auslösen des Popovers betrachtet. Popovers, deren Titel und Inhalt keine Zeichen enthalten, werden niemals angezeigt.</p>
   {% highlight js %}$('#element').popover('show'){% endhighlight %}
 
   <h4>.popover('hide')</h4>
-  <p>Verbirgt das Popover eines Elements.</p>
+  <p>Verbirgt das Popover eines Elements. <strong>Gibt das Ergebnis an den Aufruf zurück, bevor das Popover tatsächlich verborgen wurde</strong> (also bevor das Ereignis <code>hidden.bs.popover</code> passiert). Dies wird als "manuelles" Auslösen des Popovers betrachtet.</p>
   {% highlight js %}$('#element').popover('hide'){% endhighlight %}
 
   <h4>.popover('toggle')</h4>
-  <p>Schaltet die Sichtbarkeit des Popovers eines Elements um.</p>
+  <p>Schaltet die Sichtbarkeit des Popovers eines Elements um. <strong>Gibt das Ergebnis an den Aufruf zurück, bevor das Popover tatsächlich ein-/ausgeblendet wurde</strong> (also bevor das Ereignis <code>shown.bs.popover</code> oder <code>hidden.bs.popover</code> passiert). Dies wird als "manuelles" Auslösen des Popovers betrachtet.</p>
   {% highlight js %}$('#element').popover('toggle'){% endhighlight %}
 
   <h4>.popover('destroy')</h4>
   <p>Verbirgt und zerstört das Popover eines Elements.</p>
   {% highlight js %}$('#element').popover('destroy'){% endhighlight %}
+
   <h3 id="popovers-events">Ereignisse</h3>
   <div class="table-responsive">
     <table class="table table-bordered table-striped bs-events-table">

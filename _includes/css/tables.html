@@ -352,6 +352,10 @@
   <h2 id="tables-responsive">Responsive Tabellen</h2>
   <p>Erstelle anpassungsfähige Tabellen, indem du eine <code>.table</code> in <code>.table-responsive</code> verpackst. Auf allen Geräten mit weniger als 768px Breite kann man dann in der Tabelle horizontal scrollen. Auf größeren Geräten wirst du keinen Unterschied zwischen dieser und ganz normalen Tabellen feststellen.</p>
 
+  <div class="bs-callout bs-callout-warning" id="callout-tables-responsive-overflow">
+    <h4>Vertikale Kürzung</h4>
+    <p>Responsive Tabellen verwenden <code>overflow-y: hidden</code>, das jeglichen Inhalt, der über die obere oder untere Kante der Tabelle hinausgeht, abschneidet. Insbesondere kann dies Dropdown-Menüs und andere Drittanbieter-Widgets beeinträchtigen.</p>
+  </div>
   <div class="bs-callout bs-callout-warning" id="callout-tables-responsive-ff-fieldset">
     <h4>Firefox und Fieldsets</h4>
     <p>Firefox hält einige seltsame Stile für Fieldsets parat, bei denen <code>width</code> die responsive Tabelle stört. Dies kann ohne einen Firefox-spezifischen Hack, den wir <strong>nicht</strong> in Bootstrap zur Verfügung stellen, nicht umgangen werden:</p>

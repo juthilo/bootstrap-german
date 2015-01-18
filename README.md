@@ -1,6 +1,6 @@
 # [Bootstrap (deutsch)](http://holdirbootstrap.de)
-[![Bower-Version](https://badge.fury.io/bo/bootstrap.svg)](http://badge.fury.io/bo/bootstrap)
-[![npm-Version](https://badge.fury.io/js/bootstrap.svg)](http://badge.fury.io/js/bootstrap)
+![Bower-Version](https://img.shields.io/bower/v/bootstrap.svg?style=flat)
+[![npm-Version](https://img.shields.io/npm/v/bootstrap.svg?style=flat)](https://www.npmjs.com/package/bootstrap)
 
 Bootstrap, ein umfangreiches und dennoch schlankes Mobile-First Frond-End-Framework für einfachere und schnellere Entwicklung im Web. Erdacht von [Mark Otto](https://twitter.com/mdo) und [Jacob Thornton](https://twitter.com/fat) und gepflegt vom [Hauptteam](https://github.com/orgs/twbs/people) mit der großartigen Unterstützung der immer involvierten Community.
 
@@ -128,4 +128,4 @@ Um unsere Veröffentlichungen so klar wie möglich zu halten und Rückwärtskomp
 
 ## Copyright und Lizenz
 
-Code und Dokumentation Copyright 2011-2014 Twitter, Inc. Code freigegeben unter [der MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE). Dokumentation freigegeben unter den Bedingungen von [Creative Commons](LICENSE).
+Code und Dokumentation Copyright 2011-2015 Twitter, Inc. Code freigegeben unter [der MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE). Dokumentation freigegeben unter den Bedingungen von [Creative Commons](LICENSE).

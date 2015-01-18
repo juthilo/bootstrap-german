@@ -56,24 +56,52 @@
 
 
   <h2 id="forms-inline">Formular in einer Zeile</h2>
-  <p>Füge <code>.form-inline</code> zu deinem <code>&lt;form&gt;</code> hinzu, um die Felder links in einer Reihe auszurichten (inline-block). <strong>Dies hat nur Auswirkungen auf Formular auf Anzeigefenstern, die mindestens 768px breit sind.</strong></p>
+  <p>Füge <code>.form-inline</code> zu deinem Formular hinzu (das kein <code>&lt;form&gt;</code> sein muss), um die Felder links in einer Reihe auszurichten (inline-block). <strong>Dies hat nur Auswirkungen auf Formular auf Anzeigefenstern, die mindestens 768px breit sind.</strong></p>
   <div class="bs-callout bs-callout-danger" id="callout-inline-form-width">
-    <h4>Benötigt manuelle Breiten</h4>
+    <h4>Benötigt evtl. manuelle Breiten</h4>
     <p>Eingabefelder und Auswahlfelder sind in Bootstrap standardmäßig mit <code>width: 100%</code> versehen. In Inline-Formularen setzen wir das auf <code>width: auto</code> zurück, damit mehrere Felder in der gleichen Zeile sein können. Abhängig von deinem Layout sind eventuell zusätzliche, manuelle Breiten notwendig.</p>
   </div>
   <div class="bs-callout bs-callout-warning" id="callout-inline-form-labels">
     <h4>Füge immer Labels hinzu</h4>
     <p>Screenreader werden Probleme mit deinen Formularen haben, wenn du nicht für jedes Feld ein Label einfügst. Du kannst solche Labels für diese Inline-Formulare verbergen, indem du die <code>.sr-only</code>-Klasse verwendest. Es gibt weitere alternative Methoden, um ein Label für assistiven Technologien bereitzustellen, wie z.B. die Attribute <code>aria-label</code>, <code>aria-labelledby</code> oder <code>title</code>. Falls keins davon vorhanden ist, verwenden Screenreader evtl. das Attribut <code>placeholder</code>, falls vorhanden, aber die Verwendung von <code>placeholder</code> als Ersatz für andere Labelling-Methoden wird nicht empfohlen.</p>
   </div>
+
   <div class="bs-example" data-example-id="simple-form-inline">
     <form class="form-inline">
       <div class="form-group">
-        <label class="sr-only" for="beispielFeldEmail2">Email-Adresse</label>
-        <input type="email" class="form-control" id="beispielFeldEmail2" placeholder="Email-Adresse eingeben">
+        <label for="beispielFeldName2">Name</label>
+        <input type="text" class="form-control" id="beispielFeldName2" placeholder="Marie Mustermann">
       </div>
       <div class="form-group">
-        <label class="sr-only" for="beispielFeldPasswort2">Passwort</label>
-        <input type="password" class="form-control" id="beispielFeldPasswort2" placeholder="Passwort">
+        <label for="beispielFeldEmail2">Email</label>
+        <input type="email" class="form-control" id="beispielFeldEmail2" placeholder="m.mustermann@beispiel.de">
+      </div>
+      <button type="submit" class="btn btn-default">Einladung senden</button>
+    </form>
+  </div><!-- /example -->
+{% highlight html %}
+<form class="form-inline">
+  <div class="form-group">
+    <label for="beispielFeldName2">Name</label>
+    <input type="text" class="form-control" id="beispielFeldName2" placeholder="Marie Mustermann">
+  </div>
+  <div class="form-group">
+    <label for="beispielFeldEmail2">Email</label>
+    <input type="email" class="form-control" id="beispielFeldEmail2" placeholder="m.mustermann@beispiel.de">
+  </div>
+  <button type="submit" class="btn btn-default">Einladung senden</button>
+</form>
+{% endhighlight %}
+
+  <div class="bs-example" data-example-id="simple-form-inline">
+    <form class="form-inline">
+      <div class="form-group">
+        <label class="sr-only" for="beispielFeldEmail3">Email-Adresse</label>
+        <input type="email" class="form-control" id="beispielFeldEmail3" placeholder="Email-Adresse eingeben">
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="beispielFeldPasswort3">Passwort</label>
+        <input type="password" class="form-control" id="beispielFeldPasswort3" placeholder="Passwort">
       </div>
       <div class="checkbox">
         <label>
@@ -86,12 +114,12 @@
 {% highlight html %}
 <form class="form-inline">
   <div class="form-group">
-    <label class="sr-only" for="beispielFeldEmail2">Email-Adresse</label>
-    <input type="email" class="form-control" id="beispielFeldEmail2" placeholder="Email-Adresse">
+    <label class="sr-only" for="beispielFeldEmail3">Email-Adresse</label>
+    <input type="email" class="form-control" id="beispielFeldEmail3" placeholder="Email-Adresse eingeben">
   </div>
   <div class="form-group">
-    <label class="sr-only" for="beispielFeldPasswort2">Passwort</label>
-    <input type="password" class="form-control" id="beispielFeldPasswort2" placeholder="Passwort">
+    <label class="sr-only" for="beispielFeldPasswort3">Passwort</label>
+    <input type="password" class="form-control" id="beispielFeldPasswort3" placeholder="Passwort">
   </div>
   <div class="checkbox">
     <label>
@@ -130,7 +158,7 @@
 {% endhighlight %}
 
   <h2 id="forms-horizontal">Horizontales Formular</h2>
-  <p>Verwende Bootstraps vordefinierte Raster-Klassen, um Labels und mehrere Formularfelder (<code>.form-control</code>s) in einem horizontalen Layout anzulegen. Dazu musst du zunächst <code>.form-horizontal</code> zu deinem Formular hinzufügen. <code>.form-group</code>s verhalten sich dadurch wie Raster-Zeilen, so dass wir <code>.row</code> nicht brauchen.</p>
+  <p>Verwende Bootstraps vordefinierte Raster-Klassen, um Labels und mehrere Formularfelder (<code>.form-control</code>s) in einem horizontalen Layout anzulegen. Dazu musst du zunächst <code>.form-horizontal</code> zu deinem Formular (das kein <code>&lt;form&gt;</code> sein muss) hinzufügen. <code>.form-group</code>s verhalten sich dadurch wie Raster-Zeilen, so dass wir <code>.row</code> nicht brauchen.</p>
   <div class="bs-example" data-example-id="simple-horizontal-form">
     <form class="form-horizontal">
       <div class="form-group">
@@ -701,6 +729,15 @@
         <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
         <span id="eingabefeldFehler2Status" class="sr-only">(Fehler)</span>
       </div>
+      <div class="form-group has-success has-feedback">
+        <label class="control-label" for="inputGruppeErfolg1">Input-Gruppe mit Erfolg</label>
+        <div class="input-group">
+          <span class="input-group-addon">@</span>
+          <input type="text" class="form-control" id="inputGruppeErfolg1" aria-describedby="inputGruppeErfolg1Status">
+        </div>
+        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+        <span id="inputGruppeErfolg1Status" class="sr-only">(Erfolg)</span>
+      </div>
     </form>
   </div>
 {% highlight html %}
@@ -722,6 +759,15 @@
   <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
   <span id="eingabefeldFehler2Status" class="sr-only">(Fehler)</span>
 </div>
+<div class="form-group has-success has-feedback">
+  <label class="control-label" for="inputGruppeErfolg1">Input-Gruppe mit Erfolg</label>
+  <div class="input-group">
+    <span class="input-group-addon">@</span>
+    <input type="text" class="form-control" id="inputGruppeErfolg1" aria-describedby="inputGruppeErfolg1Status">
+  </div>
+  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+  <span id="inputGruppeErfolg1Status" class="sr-only">(Erfolg)</span>
+</div>
 {% endhighlight %}
 
   <h4>Optionale Icons in horizontalen und einzeiligen Formularen</h4>
@@ -733,6 +779,17 @@
           <input type="text" class="form-control" id="eingabefeldErfolg3" aria-describedby="eingabefeldErfolg3Status">
           <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
           <span id="eingabefeldErfolg3Status" class="sr-only">(Erfolg)</span>
+        </div>
+      </div>
+      <div class="form-group has-success has-feedback">
+        <label class="control-label col-sm-3" for="inputGruppeErfolg2">Input-Gruppe mit Erfolg</label>
+        <div class="col-sm-9">
+          <div class="input-group">
+            <span class="input-group-addon">@</span>
+            <input type="text" class="form-control" id="inputGruppeErfolg2" aria-describedby="inputGruppeErfolg2Status">
+          </div>
+          <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+          <span id="inputGruppeErfolg2Status" class="sr-only">(Erfolg)</span>
         </div>
       </div>
     </form>
@@ -747,6 +804,17 @@
       <span id="eingabefeldErfolg3Status" class="sr-only">(Erfolg)</span>
     </div>
   </div>
+  <div class="form-group has-success has-feedback">
+    <label class="control-label col-sm-3" for="inputGruppeErfolg2">Input-Gruppe mit Erfolg</label>
+    <div class="col-sm-9">
+      <div class="input-group">
+        <span class="input-group-addon">@</span>
+        <input type="text" class="form-control" id="inputGruppeErfolg2" aria-describedby="inputGruppeErfolg2Status">
+      </div>
+      <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+      <span id="inputGruppeErfolg2Status" class="sr-only">(Erfolg)</span>
+    </div>
+  </div>
 </form>
 {% endhighlight %}
 
@@ -759,6 +827,18 @@
         <span id="eingabefeldErfolg4Status" class="sr-only">(Erfolg)</span>
       </div>
     </form>
+    <br>
+    <form class="form-inline">
+      <div class="form-group has-success has-feedback">
+        <label class="control-label" for="inputGruppeErfolg3">Input-Gruppe mit Erfolg</label>
+        <div class="input-group">
+          <span class="input-group-addon">@</span>
+          <input type="text" class="form-control" id="inputGruppeErfolg3" aria-describedby="inputGruppeErfolg3Status">
+        </div>
+        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+        <span id="inputGruppeErfolg3Status" class="sr-only">(Erfolg)</span>
+      </div>
+    </form>
   </div>
 {% highlight html %}
 <form class="form-inline">
@@ -767,6 +847,17 @@
     <input type="text" class="form-control" id="eingabefeldErfolg4" aria-describedby="eingabefeldErfolg4Status">
     <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
     <span id="eingabefeldErfolg4Status" class="sr-only">(Erfolg)</span>
+  </div>
+</form>
+<form class="form-inline">
+  <div class="form-group has-success has-feedback">
+    <label class="control-label" for="inputGruppeErfolg3">Input-Gruppe mit Erfolg</label>
+    <div class="input-group">
+      <span class="input-group-addon">@</span>
+      <input type="text" class="form-control" id="inputGruppeErfolg3" aria-describedby="inputGruppeErfolg3Status">
+    </div>
+    <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+    <span id="inputGruppeErfolg3Status" class="sr-only">(Erfolg)</span>
   </div>
 </form>
 {% endhighlight %}
@@ -780,6 +871,15 @@
       <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
       <span id="eingabefeldErfolg5Status" class="sr-only">(Erfolg)</span>
     </div>
+    <div class="form-group has-success has-feedback">
+      <label class="control-label sr-only" for="inputGruppeErfolg4">Input-Gruppe mit Erfolg</label>
+      <div class="input-group">
+        <span class="input-group-addon">@</span>
+        <input type="text" class="form-control" id="inputGruppeErfolg4" aria-describedby="inputGruppeErfolg4Status">
+      </div>
+      <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+      <span id="inputGruppeErfolg4Status" class="sr-only">(Erfolg)</span>
+    </div>
   </div>
 {% highlight html %}
 <div class="form-group has-success has-feedback">
@@ -787,6 +887,15 @@
   <input type="text" class="form-control" id="eingabefeldErfolg5" aria-describedby="eingabefeldErfolg5Status">
   <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
   <span id="eingabefeldErfolg5Status" class="sr-only">(Erfolg)</span>
+</div>
+<div class="form-group has-success has-feedback">
+  <label class="control-label sr-only" for="inputGruppeErfolg4">Input-Gruppe mit Erfolg</label>
+  <div class="input-group">
+    <span class="input-group-addon">@</span>
+    <input type="text" class="form-control" id="inputGruppeErfolg4" aria-describedby="inputGruppeErfolg4Status">
+  </div>
+  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+  <span id="inputGruppeErfolg4Status" class="sr-only">(Erfolg)</span>
 </div>
 {% endhighlight %}
 

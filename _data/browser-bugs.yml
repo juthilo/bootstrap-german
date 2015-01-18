@@ -102,16 +102,6 @@
   browser: >
     Chrome
   summary: >
-    `<input type="password">` verursacht gelegentlich korrupte Breiten bei Elementen mit Float.
-  upstream_bug: >
-    Chromium#377346
-  origin: >
-    Bootstrap#13892
-
--
-  browser: >
-    Chrome
-  summary: >
     Unendliche lineare CSS-Animation mit Alpha-Transparenz leakt Arbeitsspeicher.
   upstream_bug: >
     Chromium#429375
@@ -120,14 +110,13 @@
 
 -
   browser: >
-    Chrome (Windows)
+    Chrome (Windows & Linux)
   summary: >
-    Seiteninhalt kann gescrollt werden, obwohl `overflow: hidden;` angewendet wird.
+    Animationsfehler bei der Rückkehr zu einem inaktiven Tab, nachdem während der Tab im Hintergrund war, Animationen ausgeführt wurden.
   upstream_bug: >
-    Chromium#438064
+    Chromium#449180
   origin: >
-    Chromium#175502,
-    Bootstrap#14972
+    Bootstrap#15298
 
 -
   browser: >
@@ -167,7 +156,7 @@
   summary: >
     Kleine Schriftgröße beim Drucken von Webseiten mit `.container`n mit fester Breite.
   upstream_bug: >
-    WebKit#138192
+    WebKit#138192, Safari#19435018
   origin: >
     Bootstrap#14868
 
@@ -177,7 +166,7 @@
   summary: >
     Linearer Alpha-Verlauf hat dunkle Linie am Rand.
   upstream_bug: >
-    WebKit#139803
+    WebKit#139803, Safari#19434933
   origin: >
     Bootstrap#15205
 
@@ -207,6 +196,6 @@
   summary: >
     `display: block` verursacht eine falsche vertikale Ausrichtung von Text in zeitlichen `<input>`s.
   upstream_bug: >
-    WebKit#139848
+    WebKit#139848, Safari#19434878
   origin: >
     Bootstrap#11266, Bootstrap#13098

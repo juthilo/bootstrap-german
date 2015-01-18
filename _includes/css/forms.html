@@ -3,8 +3,8 @@
 
   <h2 id="forms-example">Einfaches Beispiel</h2>
   <p>Einzelne Formular-Felder erhalten automatisch einige globale Stile. Alle text-basierten <code>&lt;input&gt;</code>-, <code>&lt;textarea&gt;</code>- und <code>&lt;select&gt;</code>-Elemente mit der Klasse <code>.form-control</code> bekommen standardmäßig <code>width: 100%;</code> und nehmen die ganze Breite ihres übergeordneten Elements ein. Für optimale Abstände solltest Labels und Felder jeweils in <code>.form-group</code> verpacken.</p>
-  <div class="bs-example">
-    <form role="form">
+  <div class="bs-example" data-example-id="basic-forms">
+    <form>
       <div class="form-group">
         <label for="beispielFeldEmail1">Email-Adresse</label>
         <input type="email" class="form-control" id="beispielFeldEmail1" placeholder="Email-Adresse">
@@ -27,7 +27,7 @@
     </form>
   </div><!-- /example -->
 {% highlight html %}
-<form role="form">
+<form>
   <div class="form-group">
     <label for="beispielFeldEmail1">Email-Adresse</label>
     <input type="email" class="form-control" id="beispielFeldEmail1" placeholder="Email-Adresse">
@@ -49,7 +49,7 @@
   <button type="submit" class="btn btn-default">Abschicken</button>
 </form>
 {% endhighlight %}
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-formgroup-inputgroup">
     <h4>Vermische niemals Formular-Gruppen mit Input-Gruppen</h4>
     <p>Du solltest Formular-Gruppen (<code>.form-group</code>) nicht direkt mit <a href="/komponenten/#input-groups">Input-Gruppen</a> kombinieren. Ordne die Input-Gruppe stattdessen der Formular-Gruppe unter.</p>
   </div>
@@ -57,22 +57,19 @@
 
   <h2 id="forms-inline">Formular in einer Zeile</h2>
   <p>Füge <code>.form-inline</code> zu deinem <code>&lt;form&gt;</code> hinzu, um die Felder links in einer Reihe auszurichten (inline-block). <strong>Dies hat nur Auswirkungen auf Formular auf Anzeigefenstern, die mindestens 768px breit sind.</strong></p>
-  <div class="bs-callout bs-callout-danger">
+  <div class="bs-callout bs-callout-danger" id="callout-inline-form-width">
     <h4>Benötigt manuelle Breiten</h4>
     <p>Eingabefelder und Auswahlfelder sind in Bootstrap standardmäßig mit <code>width: 100%</code> versehen. In Inline-Formularen setzen wir das auf <code>width: auto</code> zurück, damit mehrere Felder in der gleichen Zeile sein können. Abhängig von deinem Layout sind eventuell zusätzliche, manuelle Breiten notwendig.</p>
   </div>
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-inline-form-labels">
     <h4>Füge immer Labels hinzu</h4>
     <p>Screenreader werden Probleme mit deinen Formularen haben, wenn du nicht für jedes Feld ein Label einfügst. Du kannst solche Labels für diese Inline-Formulare verbergen, indem du die <code>.sr-only</code>-Klasse verwendest. Es gibt weitere alternative Methoden, um ein Label für assistiven Technologien bereitzustellen, wie z.B. die Attribute <code>aria-label</code>, <code>aria-labelledby</code> oder <code>title</code>. Falls keins davon vorhanden ist, verwenden Screenreader evtl. das Attribut <code>placeholder</code>, falls vorhanden, aber die Verwendung von <code>placeholder</code> als Ersatz für andere Labelling-Methoden wird nicht empfohlen.</p>
   </div>
-  <div class="bs-example">
-    <form class="form-inline" role="form">
+  <div class="bs-example" data-example-id="simple-form-inline">
+    <form class="form-inline">
       <div class="form-group">
-        <div class="input-group">
-          <label class="sr-only" for="beispielFeldEmail2">Email-Adresse</label>
-          <div class="input-group-addon">@</div>
-          <input type="email" class="form-control" id="beispielFeldEmail2" placeholder="Email-Adresse eingeben">
-        </div>
+        <label class="sr-only" for="beispielFeldEmail2">Email-Adresse</label>
+        <input type="email" class="form-control" id="beispielFeldEmail2" placeholder="Email-Adresse eingeben">
       </div>
       <div class="form-group">
         <label class="sr-only" for="beispielFeldPasswort2">Passwort</label>
@@ -87,16 +84,10 @@
     </form>
   </div><!-- /example -->
 {% highlight html %}
-<form class="form-inline" role="form">
+<form class="form-inline">
   <div class="form-group">
     <label class="sr-only" for="beispielFeldEmail2">Email-Adresse</label>
     <input type="email" class="form-control" id="beispielFeldEmail2" placeholder="Email-Adresse">
-  </div>
-  <div class="form-group">
-    <div class="input-group">
-      <div class="input-group-addon">@</div>
-      <input class="form-control" type="email" placeholder="Email-Adresse">
-    </div>
   </div>
   <div class="form-group">
     <label class="sr-only" for="beispielFeldPasswort2">Passwort</label>
@@ -110,12 +101,38 @@
   <button type="submit" class="btn btn-default">Anmelden</button>
 </form>
 {% endhighlight %}
-
+ 
+  <div class="bs-example" data-example-id="form-inline-with-input-group">
+    <form class="form-inline">
+      <div class="form-group">
+        <label class="sr-only" for="beispielFeldSumme">Summe (in Euro)</label>
+        <div class="input-group">
+          <div class="input-group-addon">€</div>
+          <input type="text" class="form-control" id="beispielFeldSumme" placeholder="Summe">
+          <div class="input-group-addon">,00</div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Geld senden</button>
+    </form>
+  </div><!-- /example -->
+{% highlight html %}
+<form class="form-inline">
+  <div class="form-group">
+    <label class="sr-only" for="beispielFeldSumme">Summe (in Euro)</label>
+    <div class="input-group">
+      <div class="input-group-addon">€</div>
+      <input type="text" class="form-control" id="beispielFeldSumme" placeholder="Summe">
+      <div class="input-group-addon">,00</div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Geld senden</button>
+</form>
+{% endhighlight %}
 
   <h2 id="forms-horizontal">Horizontales Formular</h2>
   <p>Verwende Bootstraps vordefinierte Raster-Klassen, um Labels und mehrere Formularfelder (<code>.form-control</code>s) in einem horizontalen Layout anzulegen. Dazu musst du zunächst <code>.form-horizontal</code> zu deinem Formular hinzufügen. <code>.form-group</code>s verhalten sich dadurch wie Raster-Zeilen, so dass wir <code>.row</code> nicht brauchen.</p>
-  <div class="bs-example">
-    <form class="form-horizontal" role="form">
+  <div class="bs-example" data-example-id="simple-horizontal-form">
+    <form class="form-horizontal">
       <div class="form-group">
         <label for="eingabefeldEmail3" class="col-sm-2 control-label">Email</label>
         <div class="col-sm-10">
@@ -145,7 +162,7 @@
     </form>
   </div><!-- /.bs-example -->
 {% highlight html %}
-<form class="form-horizontal" role="form">
+<form class="form-horizontal">
   <div class="form-group">
     <label for="eingabefeldEmail3" class="col-sm-2 control-label">Email</label>
     <div class="col-sm-10">
@@ -181,27 +198,27 @@
 
   <h3>Inputs</h3>
   <p>Das häufigste Formularfeld, text-basierte Eingabefelder. Bietet Unterstützung für alle HTML5-Typen: <code>text</code>, <code>password</code>, <code>datetime</code>, <code>datetime-local</code>, <code>date</code>, <code>month</code>, <code>time</code>, <code>week</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, <code>tel</code> und <code>color</code>.</p>
-  <div class="bs-callout bs-callout-danger">
+  <div class="bs-callout bs-callout-danger" id="callout-input-needs-type">
     <h4>Typ-Benennung erforderlich</h4>
     <p>Eingabefelder werden nur vollständig gestaltet, wenn ihr <code>type</code> vernünftig angegeben wird.</p>
   </div>
-  <div class="bs-example">
-    <form role="form">
+  <div class="bs-example" data-example-id="text-form-control">
+    <form>
       <input type="text" class="form-control" placeholder="Text-Feld">
     </form>
   </div><!-- /.bs-example -->
 {% highlight html %}
 <input type="text" class="form-control" placeholder="Text-Feld">
 {% endhighlight %}
-  <div class="bs-callout bs-callout-info">
+  <div class="bs-callout bs-callout-info" id="callout-xref-input-group">
     <h4>Input-Gruppen</h4>
     <p>Um Text oder Buttons vor und/oder nach irgendeinem text-basierten <code>&lt;input&gt;</code> hinzuzufügen, <a href="../komponenten/#input-groups">sieh dir doch mal Input-Gruppen an</a>.</p>
   </div>
 
   <h3>Text-Fläche</h3>
   <p>Formular-Feld, in das mehrere Zeilen Text eingegeben werden können. Veränder das <code>rows</code>-Attribut so wie es für dich am besten passt.</p>
-  <div class="bs-example">
-    <form role="form">
+  <div class="bs-example" data-example-id="textarea-form-control">
+    <form>
       <textarea class="form-control" rows="3" placeholder="Text-Fläche"></textarea>
     </form>
   </div><!-- /.bs-example -->
@@ -213,8 +230,8 @@
   <p>Felder zum Ankreuzen (checkbox) sind dazu da, eine oder mehr Optionen aus einer Liste auszuwählen, während man mit runden Optionsfeldern (radio) eine von mehrere Optionen auswählt.</p>
   <p>Eine Checkbox oder ein Radio-Button mit dem Attribut <code>disabled</code> wird als deaktiviert gestaltet. Damit auch beim <code>&lt;label&gt;</code> für das entsprechende Feld ein "not-allowed"-Cursor angezeigt wird, wenn der Nutzer den Mauszeiger darüber hält, füge die Klasse <code>.disabled</code> zu deinen Elementen mit den Klassen <code>.radio</code>, <code>.radio-inline</code>, <code>.checkbox</code> oder <code>.checkbox-inline</code> oder zu einem <code>&lt;fieldset&gt;</code> hinzu.</p>
   <h4>Standard (übereinander)</h4>
-  <div class="bs-example">
-    <form role="form">
+  <div class="bs-example" data-example-id="block-checkboxes-radios">
+    <form>
       <div class="checkbox">
         <label>
           <input type="checkbox" value="">
@@ -284,8 +301,8 @@
 
   <h4>Optionsfelder in einer Zeile</h4>
   <p>Verwende <code>.checkbox-inline</code> oder <code>.radio-inline</code>, um eine Reihe von Checkboxen oder Radios nebeneinander anzuzeigen.</p>
-  <div class="bs-example">
-    <form role="form">
+  <div class="bs-example" data-example-id="inline-checkboxes-radios">
+    <form>
       <label class="checkbox-inline">
         <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
       </label>
@@ -297,7 +314,7 @@
       </label>
     </form>
     <br>
-    <form role="form">
+    <form>
       <label class="radio-inline">
         <input type="radio" name="inlineRadioOptionen" id="inlineRadio1" value="option1"> 1
       </label>
@@ -333,8 +350,8 @@
 
   <h4>Auswahlfelder ohne Labeltext</h4>
   <p>Falls du keinen Text im <code>&lt;label&gt;</code> hast, wird das Auswahlfeld trotzdem allen Erwartungen entsprechend positioniert. <strong>Funktioniert aktuell nur mit Auswahlfeldern, die nicht zusammen in einer Zeile stehen.</strong> Denk daran, trotzdem irgendeine Art von Label für assistive Technologien zur Verfügung zu stellen (z.B. mit Hilfe von <code>aria-label</code>).</p>
-  <div class="bs-example">
-    <form role="form">
+  <div class="bs-example" data-example-id="checkboxes-radios-without-labels">
+    <form>
       <div class="checkbox">
         <label>
           <input type="checkbox" id="blankoCheckbox" value="option1" aria-label="Checkbox ohne Labeltext">
@@ -360,19 +377,11 @@
 </div>
 {% endhighlight %}
 
-  <h3>Auswahlfelder</h3>
-  <p>Verwende <code>&lt;select&gt;</code>s in der Standard-Ausführung oder füge <code>multiple</code> hinzu, um mehrere Optionen anzuzeigen und auswählbar zu machen.</p>
-  <div class="bs-example">
-    <form role="form">
+  <h3>Auswahlmenüs</h3>
+  <p>Beachte, dass viele eingebaute Auswahlmenüs, nämlich in Safari und Chrome, abgerundete Ecken haben, die über die <code>border-radius</code>-Eigenschaften nicht verändert werden können.</p>
+  <div class="bs-example" data-example-ids="select-form-control">
+    <form>
       <select class="form-control">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
-      <br>
-      <select multiple class="form-control">
         <option>1</option>
         <option>2</option>
         <option>3</option>
@@ -389,7 +398,23 @@
   <option>4</option>
   <option>5</option>
 </select>
+{% endhighlight %}
 
+  <p>In <code>&lt;select&gt;</code>-Schaltflächen mit dem Attribut <code>multiple</code> werden standardmäßig mehrere Optionen angezeigt.</p>
+
+  <div class="bs-example" data-example-ids="select-multiple-form-control">
+    <form>
+      <select multiple class="form-control">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </form>
+  </div><!-- /.bs-example -->
+
+{% highlight html %}
 <select multiple class="form-control">
   <option>1</option>
   <option>2</option>
@@ -402,8 +427,8 @@
 
   <h2 id="forms-controls-static">Statisches Feld</h2>
   <p>Wenn du puren Text in einem Formular platzieren willst, kannst du die Klasse <code>.form-control-static</code> an einem <code>&lt;p&gt;</code> verwenden.</p>
-  <div class="bs-example">
-    <form class="form-horizontal" role="form">
+  <div class="bs-example" data-example-id="horizontal-static-form-control">
+    <form class="form-horizontal">
       <div class="form-group">
         <label class="col-sm-2 control-label">Email</label>
         <div class="col-sm-10">
@@ -419,7 +444,7 @@
     </form>
   </div><!-- /.bs-example -->
 {% highlight html %}
-<form class="form-horizontal" role="form">
+<form class="form-horizontal">
   <div class="form-group">
     <label class="col-sm-2 control-label">Email</label>
     <div class="col-sm-10">
@@ -434,8 +459,8 @@
   </div>
 </form>
 {% endhighlight %}
-  <div class="bs-example">
-    <form class="form-inline" role="form">
+  <div class="bs-example" data-example-id="inline-static-form-control">
+    <form class="form-inline">
       <div class="form-group">
         <label class="sr-only">Email</label>
         <p class="form-control-static">email@example.com</p>
@@ -448,7 +473,7 @@
     </form>
   </div>
 {% highlight html %}
-<form class="form-inline" role="form">
+<form class="form-inline">
   <div class="form-group">
     <label class="sr-only">Email</label>
     <p class="form-control-static">email@example.com</p>
@@ -464,11 +489,11 @@
   <h2 id="forms-control-focus">Fokus-Ansicht</h2>
   <p>Wir entfernen die Standard-Umrahmung (<code>outline</code>) von einigen Formularfeldern und wenden stattdessen einen Schatten (<code>box-shadow</code>) an, wenn das Feld fokussiert ist (<code>:focus</code>).</p>
   <div class="bs-example">
-    <form role="form">
+    <form>
       <input class="form-control" id="fokussiertesFeld" type="text" value="Demonstrative Fokus-Ansicht">
     </form>
   </div>
-  <div class="bs-callout bs-callout-info">
+  <div class="bs-callout bs-callout-info" id="callout-focus-demo">
     <h4>Demonstrative <code>:focus</code>-Ansicht</h4>
     <p>Das obige Beispiel wird manuell so gestaltet, dass es so aussieht wie ein fokussiertes Formular-Element. Diese manuellen Stile sind nicht in Bootstrap, sondern nur in dieser Dokumentation enthalten.</p>
   </div>
@@ -476,8 +501,8 @@
 
   <h2 id="forms-control-disabled">Deaktivierte Ansicht</h2>
   <p>Füge das Boolean-Attribut <code>disabled</code> zu einem Feld hinzu, um Benutzereingaben abzuschalten und einen etwas anderen Look anzuwenden.</p>
-  <div class="bs-example">
-    <form role="form">
+  <div class="bs-example" data-example-id="text-form-control-disabled">
+    <form>
       <input class="form-control" id="deaktiviertesFeld" type="text" placeholder="Deaktivierter Platzhalter-Text." disabled>
     </form>
   </div><!-- /.bs-example -->
@@ -488,18 +513,18 @@
   <h3 id="forms-disabled-fieldsets">Deaktivierte Fieldsets</h3>
   <p>Füge das Attribut <code>disabled</code> zu einem <code>&lt;fieldset&gt;</code> hinzu, um alle Felder darin auf einmal zu deaktivieren.</p>
 
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-fieldset-disabled-pointer-events">
     <h4>Besonderheiten der Link-Funktionalität von <code>&lt;a&gt;</code></h4>
-    <p>Unsere Stile verwenden in diesem Fall <code>pointer-events: none</code>, um zu versuchen, die Link-Funktionalität von <code>&lt;a class="btn btn-*"&gt;</code>-Buttons zu deaktivieren. Diese Eigenschaft ist noch nicht standardisiert und wird von Opera 18 und älter sowie Internet Explorer 11 nicht rundum unterstützt. Um wirklich sicherzugehen, solltest du in diesem Fall JavaScript verwenden, um Links zu deaktivieren.</p>
+    <p>Browser behandeln standardmäßig alle eingebauten Formularelemente (<code>&lt;input&gt;</code>, <code>&lt;select&gt;</code> und <code>&lt;button&gt;</code>-Elemente) in einem <code>&lt;fieldset disabled&gt;</code> als deaktiviert und verhindern sowohl Tastatur- als auch Maus-Interaktionen mit diesen. Falls dein Formular allerdings auch <code>&lt;a ... class="btn btn-*"&gt;</code>-Elemente enthält, erhalten diese einfach nur den Stil <code>pointer-events: none</code>. Wie im Abschnitt über die <a href="#buttons-disabled">deaktivierte Ansicht für Buttons</a> (und ausdrücklich im Unterabschnitt für Anchor-Elemente) erklärt, ist diese CSS-Eigenschaft noch nicht standardisiert und wird in Opera 18 und älter oder in Internet Explorer 11 nicht vollständig unterstützt, und wird daher Tastatur-Nutzer nicht daran hindern, diese Links fokussieren oder aktivieren zu können. Um ganz sicherzugehen, solltest du daher eigenes JavaScript verwenden, um solche Links zu deaktivieren.</p>
   </div>
 
-  <div class="bs-callout bs-callout-danger">
+  <div class="bs-callout bs-callout-danger" id="callout-fieldset-disabled-ie">
     <h4>Browser-Kompatibilität</h4>
     <p>Obwohl Bootstrap diese Stile in allen Browsern anwendet, unterstützen Internet Explorer 11 und ältere Versionen das Attribut <code>disabled</code> bei einem <code>&lt;fieldset&gt;</code> nicht vollständig. Verwende eigenes JavaScript, um die Interaktion mit Elementen in einem Fieldset in diesen Browsern zu deaktivieren.</p>
   </div>
 
-  <div class="bs-example">
-    <form role="form">
+  <div class="bs-example" data-example-id="disabled-fieldset">
+    <form>
       <fieldset disabled>
         <div class="form-group">
           <label for="deaktiviertesEingabefeld">Deaktiviertes Feld</label>
@@ -521,7 +546,7 @@
     </form>
   </div><!-- /.bs-example -->
 {% highlight html %}
-<form role="form">
+<form>
   <fieldset disabled>
     <div class="form-group">
       <label for="deaktiviertesEingabefeld">Deaktiviertes Feld</label>
@@ -546,8 +571,8 @@
 
   <h2 id="forms-control-readonly">Nur-Lesen-Ansicht</h2>
   <p>Füge das Boolean-Attribut <code>readonly</code> zu einem Formularfeld hinzu, um Benutzereingaben zu verhindern und das Feld deaktiviert aussehen zu lassen.</p>
-  <div class="bs-example">
-    <form role="form">
+  <div class="bs-example" data-example-id="readonly-text-form-control">
+    <form>
       <input class="form-control" type="text" placeholder="Mich bitte nur lesen…" readonly>
     </form>
   </div><!-- /.bs-example -->
@@ -559,14 +584,14 @@
     <h2 id="forms-control-validation">Formular-Überprüfung</h2>
   <p>Bootstrap beinhaltet Stile für Fehler-, Warnung- und Erfolg-Rückmeldungen bei Formularfeldern. Um sie zu verwenden, füge <code>.has-warning</code>, <code>.has-error</code> oder <code>.has-success</code> zum übergeordneten Element hinzu. Alle <code>.control-label</code>, <code>.form-control</code> und <code>.help-block</code> in diesem Element werden dann die Rückmeldungs-Stile erhalten.</p>
 
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-form-validation-state-accessibility">
     <h4>Validierungsstatus an assistive Technologien vermitteln</h4>
     <p>Die Verwendung dieser Validierungsstile zur Bezeichnung des Status eines Formularelements führt nur zu einem visuellen Hinweis, der Nutzern von assistiven Technologien wie Screenreadern nicht vermittelt wird.</p>
     <p>Sorge dafür, dass ein alternativer Hinweis auf den Status ebenfalls bereitgestellt wird. Zum Beispiel kannst du im Text des <code>&lt;label&gt;</code> des jeweiligen Formularelements selbst auf den Status hinweisen (wie im folgenden Beispiel) oder ein zusätzliches Element mit Textinformationn über den Validierungsstatus über <code>aria-describedby</code> mit dem Formularelement verknüpfen (siehe das Beispiel im folgenden Abschnitt). Im Falle eines Fehlers kannst du auch das Attribut <code>aria-invalid="true"</code> zum Formularelement hinzufügen.</p>
   </div>
 
-  <div class="bs-example">
-    <form role="form">
+  <div class="bs-example" data-example-id="form-validation-states">
+    <form>
       <div class="form-group has-success">
         <label class="control-label" for="eingabefeldErfolg1">Feld mit Erfolg</label>
         <input type="text" class="form-control" id="eingabefeldErfolg1">
@@ -647,17 +672,17 @@
   <h3>Mit optionalen Icons</h3>
   <p>Du kannst optional außerdem passende Icons hinzufügen, indem du die Klasse <code>.has-feedback</code> und das richtige Icon ergänzt.</p>
   <p><strong class="text-danger">Feedback-Icons funktionieren nur mit <code>&lt;input class="form-control"&gt;</code>-Elementen, in die man Text eingeben kann.</strong></p>
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-has-feedback-icon-positioning">
     <h4>Icons, Labels und Input-Gruppen</h4>
     <p>Die Feedback-Icons müssen manuell positioniert werden, wenn du sie mit Feldern ohne Label oder mit <a href="../komponenten#input-groups">Input-Gruppen</a> mit einem Add-on auf der rechten Seite verwendest. Es wird aus Gründen der Barrierefreiheit dringend empfohlen, Labels für alle Felder anzugeben. Falls du die Anzeige von Labels verhindern möchtest, verberge sie mit der Klasse <code>sr-only</code>. Falls du wirklich keine Labels einfügen kannst, musst du den Wert für <code>top</code> beim Feedback-Icon anpassen. Ändere bei Input-Grupen den Standard <code>right: 0;</code> zu einem sinnvollen Pixel-Wert, abhängig von der Breite deines Add-ons.</p>
   </div>
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-has-feedback-icon-accessibility">
     <h4>Bedeutung des Icons an assistive Technologien vermitteln</h4>
     <p>Um sicherzustellen, dass assistive Technologien wie Screenreader die Bedeutung eines Icons korrekt wiedergeben, sollte zusätzlicher verborgener Text mit Hilfe der Klasse <code>.sr-only</code> eingebunden werden und über das Attribut <code>aria-describedby</code> ausdrücklich mit dem Formularelement, auf das er sich bezieht, verknüpft werden. Alternativ solltest du sicherstellen, dass die Bedeutung (z.B. die Tatsache, dass es eine Warnung für ein bestimmtes Textfeld gibt) in irgendeiner anderen Form vermittelt wird, z.B. durch Veränderung des eigentlichen, mit dem Formularelement verknüpften <code>&lt;label&gt;</code>.</p>
     <p>Obwohl die folgenden Beispiele den Validierugnsstatus ihrer jeweiligen Formularelemente im <code>&lt;label&gt;</code>-Text selbst bereits einbinden, wurde die obige Methode (die Verwendung von Text in <code>.sr-only</code> und <code>aria-describedby</code>) zur Illustration zusätzlich hinzugefügt.</p>
   </div>
-  <div class="bs-example">
-    <form role="form">
+  <div class="bs-example" data-example-id="form-validation-states-with-icons">
+    <form>
       <div class="form-group has-success has-feedback">
         <label class="control-label" for="eingabefeldErfolg2">Feld mit Erfolg</label>
         <input type="text" class="form-control" id="eingabefeldErfolg2" aria-describedby="eingabefeldErfolg2Status">
@@ -700,8 +725,8 @@
 {% endhighlight %}
 
   <h4>Optionale Icons in horizontalen und einzeiligen Formularen</h4>
-  <div class="bs-example">
-    <form class="form-horizontal" role="form">
+  <div class="bs-example" data-example-id="horizontal-form-validation-state-with-icon">
+    <form class="form-horizontal">
       <div class="form-group has-success has-feedback">
         <label class="control-label col-sm-3" for="eingabefeldErfolg3">Feld mit Erfolg</label>
         <div class="col-sm-9">
@@ -713,7 +738,7 @@
     </form>
   </div>
 {% highlight html %}
-<form class="form-horizontal" role="form">
+<form class="form-horizontal">
   <div class="form-group has-success has-feedback">
     <label class="control-label col-sm-3" for="eingabefeldErfolg3">Feld mit Erfolg</label>
     <div class="col-sm-9">
@@ -725,8 +750,8 @@
 </form>
 {% endhighlight %}
 
-  <div class="bs-example">
-    <form class="form-inline" role="form">
+  <div class="bs-example" data-example-id="inline-form-validation-state-with-icon">
+    <form class="form-inline">
       <div class="form-group has-success has-feedback">
         <label class="control-label" for="eingabefeldErfolg4">Feld mit Erfolg</label>
         <input type="text" class="form-control" id="eingabefeldErfolg4" aria-describedby="eingabefeldErfolg4Status">
@@ -736,7 +761,7 @@
     </form>
   </div>
 {% highlight html %}
-<form class="form-inline" role="form">
+<form class="form-inline">
   <div class="form-group has-success has-feedback">
     <label class="control-label" for="eingabefeldErfolg4">Feld mit Erfolg</label>
     <input type="text" class="form-control" id="eingabefeldErfolg4" aria-describedby="eingabefeldErfolg4Status">
@@ -747,8 +772,8 @@
 {% endhighlight %}
 
   <h4>Optionale Icons mit versteckten <code>.sr-only</code>-Labels</h4>
-  <p>Für Formularelemente ohne sichtbares Label kannst du die Klasse <code>.sr-only</code> zum Label hinzufügen. Bootstrap wird die Position des Icons automatisch anpassen.</p>
-  <div class="bs-example">
+  <p>Falls du die Klasse <code>.sr-only</code> verwendest, um das <code>&lt;label&gt;</code> einer Formularschaltfläche zu verbergen (statt andere Labelling-Optionen wie das Attribut <code>aria-label</code> zu nutzen), wird Bootstrap die Position des Icons automatisch anpassen, sobald es hinzugefügt wurde.</p>
+  <div class="bs-example" data-example-id="form-validation-state-with-icon-without-label">
     <div class="form-group has-success has-feedback">
       <label class="control-label sr-only" for="eingabefeldErfolg5">Verstecktes Label</label>
       <input type="text" class="form-control" id="eingabefeldErfolg5" aria-describedby="eingabefeldErfolg5Status">
@@ -757,14 +782,12 @@
     </div>
   </div>
 {% highlight html %}
-<form class="form-inline" role="form">
-  <div class="form-group has-success has-feedback">
-    <label class="control-label sr-only" for="eingabefeldErfolg5">Verstecktes Label</label>
-    <input type="text" class="form-control" id="eingabefeldErfolg5" aria-describedby="eingabefeldErfolg5Status">
-    <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-    <span id="eingabefeldErfolg5Status" class="sr-only">(Erfolg)</span>
-  </div>
-</form>
+<div class="form-group has-success has-feedback">
+  <label class="control-label sr-only" for="eingabefeldErfolg5">Verstecktes Label</label>
+  <input type="text" class="form-control" id="eingabefeldErfolg5" aria-describedby="eingabefeldErfolg5Status">
+  <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+  <span id="eingabefeldErfolg5Status" class="sr-only">(Erfolg)</span>
+</div>
 {% endhighlight %}
 
 
@@ -773,8 +796,8 @@
 
   <h3>Höhenveränderung</h3>
   <p>Erstelle höhere oder niedrigere Formularfelder, deren Höhe mit Button-Größen übereinstimmt.</p>
-  <div class="bs-example bs-example-control-sizing">
-    <form role="form">
+  <div class="bs-example bs-example-control-sizing" data-example-id="form-control-height-sizes">
+    <form>
       <div class="controls">
         <input class="form-control input-lg" type="text" placeholder=".input-lg">
         <input type="text" class="form-control" placeholder="Standard-Größe">
@@ -804,8 +827,8 @@
 
   <h3>Größen in horizontalen Formularen</h3>
   <p>Lege die Größe von Labels und Formularelementen in <code>.form-horizontal</code> einfach und schnell fest, indem du <code>.form-group-lg</code> oder <code>.form-group-sm</code> hinzufügst.</p>
-  <div class="bs-example">
-    <form class="form-horizontal" role="form">
+  <div class="bs-example" data-example-id="form-group-height-sizes">
+    <form class="form-horizontal">
       <div class="form-group form-group-lg">
         <label class="col-sm-2 control-label" for="formularGruppenFeldGross">Großes Label</label>
         <div class="col-sm-10">
@@ -821,7 +844,7 @@
     </form>
   </div><!-- /.bs-example -->
 {% highlight html %}
-<form class="form-horizontal" role="form">
+<form class="form-horizontal">
   <div class="form-group form-group-lg">
     <label class="col-sm-2 control-label" for="formularGruppenFeldGross">Großes Label</label>
     <div class="col-sm-10">
@@ -840,8 +863,8 @@
 
   <h3>Breitenveränderung mit Spalten</h3>
   <p>Verpacke Felder in Raster-Spalten oder eigens angepassten übergeordneten Elementen, um auf einfache Weise gewünschte Breiten festzulegen.</p>
-  <div class="bs-example">
-    <form role="form">
+  <div class="bs-example" data-example-id="form-control-column-sizing">
+    <form>
       <div class="row">
         <div class="col-xs-2">
           <input type="text" class="form-control" placeholder=".col-xs-2">
@@ -871,12 +894,12 @@
 
   <h2 id="forms-help-text">Hilfe-Text</h2>
   <p>Füge Textblöcke mit Hilfetexten für Formularfelder hinzu.</p>
-  <div class="bs-callout bs-callout-info">
+  <div class="bs-callout bs-callout-info" id="callout-help-text-accessibility">
     <h4>Hilfe-Text mit Formularelementen assoziieren</h4>
     <p>Hilfe-Text sollte mit dem Attribut <code>aria-describedby</code> ausdrücklich mit dem Formularelement assoziiert werden, auf das er sich bezieht. Dies stellt sicher, dass assistive Technologien wie Screenreader den Hilfe-Text vorlesen, wenn Nutzer das Element fokussieren oder hineingehen.</p>
   </div>
-  <div class="bs-example">
-    <form role="form">
+  <div class="bs-example" data-example-id="simple-help-text">
+    <form>
       <div class="form-group">
         <label for="eingabefeldHilfeText">Eingabefeld mit Hilfe-Text</label>
         <input type="text" id="eingabefeldHilfeText" class="form-control" aria-describedby="hilfeText">

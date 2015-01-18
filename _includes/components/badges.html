@@ -3,7 +3,7 @@
 
   <p class="lead">Füge <code>&lt;span class="badge"&gt;</code> zu Links, Bootstrap-Navs und mehr hinzu, um neue oder ungelesene Einträge hervorzuheben.</p>
 
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-badges">
     <a href="#">Posteingang <span class="badge">42</span></a>
     <br><br>
     <button class="btn btn-primary" type="button">
@@ -21,14 +21,14 @@
   <h4>Verschwinden von allein</h4>
   <p>Wenn es keine neuen oder ungelesenen Objekte gibt, verschwinden Badges einfach (über den <code>:empty</code>-Selektor in CSS), solange wirklich kein Inhalt darin vorhanden ist.</p>
 
-  <div class="bs-callout bs-callout-danger">
+  <div class="bs-callout bs-callout-danger" id="callout-badges-ie8-empty">
     <h4>Browser-Kompatibilität</h4>
     <p>Badges werden im Internet Explorer 8 nicht automatisch verschwinden, da dieser <code>:empty</code> nicht unterstützt.</p>
   </div>
 
   <h4>Passt sich der aktiven Ansicht in Navs an</h4>
   <p>Da passende Stile eingebaut sind, kannst du Badges ohne Probleme zusammen mit der aktiven Ansicht in Pills-Navs verwenden.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="badges-in-pills">
     <ul class="nav nav-pills" role="tablist">
       <li role="presentation" class="active"><a href="#">Start <span class="badge">42</span></a></li>
       <li role="presentation"><a href="#">Profil</a></li>

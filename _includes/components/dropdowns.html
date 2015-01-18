@@ -5,7 +5,7 @@
 
   <h3 id="dropdowns-example">Beispiel</h3>
   <p>Pack den Auslöser eines Dropdowns und das eigentliche Menü in <code>.dropdown</code> oder ein anderes Element, das <code>position: relative;</code> deklariert. Dann kannst du die eigentlichen Menü-Einträge hinzufügen.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="static-dropdown">
     <div class="dropdown clearfix">
       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
         Dropdown-Menü
@@ -36,11 +36,11 @@
 
   <h3 id="dropdowns-alignment">Ausrichtung</h3>
   <p>Jedes Dropdown-Menü wird normalerweise 100% von oben und entlang der linken Seite seines übergeordneten Elements platziert. Du kannst es stattdessen nach rechts ausrichten, indem du <code>.dropdown-menu-right</code> zu einem <code>.dropdown-menu</code> hinzufügst.</p>
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-dropdown-positioning">
     <h4>Zusätzliche Positionierung eventuell erforderlich</h4>
     <p>Dropdowns werden automatisch via CSS im normalen Dokumentenfluss positioniert. Das bedeutet, dass Dropdowns von ihren übergeordneten Elementen mit bestimmten <code>overflow</code>-Eigenschaften abgeschnitten werden können oder dass sie außerhalb des angezeigten Bereichs erscheinen können. Gehe diese Probleme selbst an, wenn sie auftreten.</p>
   </div>
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-dropdown-pull-right">
     <h4>Ausrichtung über <code>.pull-right</code> veraltet</h4>
     <p>Wir haben mit v3.1.0 die Verwendung von <code>.pull-right</code> bei Dropdown-Menüs als veraltet markiert. Um ein Menü nach rechts auszurichten, solltest du ab sofort nur noch <code>.dropdown-menu-right</code> nutzen. Werden Komponenten in der Navbar rechts ausgerichtet, wird auch das Menü über ein Mixin dieser Klasse automatisch ausgerichtet. Um dies zu überschreiben musst du <code>.dropdown-menu-left</code> verwenden.</p>
   </div>

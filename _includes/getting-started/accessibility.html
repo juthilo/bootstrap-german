@@ -3,12 +3,13 @@
   <p class="lead">Bootstrap folgt üblichen Web-Standards und kann&mdash;mit minimaler zusätzlicher Anstrengung&mdash;dazu verwendet werden, Seiten so zu gestalten, dass sie barrierefrei zugänglich für Personen sind, die <abbr title="Assistive Technologien" class="initialism">AT</abbr> verwenden.</p>
 
   <h3>Navigation überspringen</h3>
-  <p>Falls deine Navigation viele Links enthält und im DOM vor dem Hauptinhalt kommt, kannst du einen <code>Zum Hauptinhalt springen</code>-Link direkt nach dem öffnenden <code>&lt;body&gt;</code>-Tag einfügen. <a href="http://a11yproject.com/posts/skip-nav-links/">(lies warum)</a></p>
+  <p>Falls deine Navigation viele Links enthält und im DOM vor dem Hauptinhalt kommt, kannst du einen <code>Zum Hauptinhalt springen</code>-Link vor der Navigation einfügen <a href="http://a11yproject.com/posts/skip-nav-links/">(lies warum)</a>. Die Klasse <code>.sr-only</code> wurd den Link zum Überspringen verbergen und die Klasse <code>.sr-only-focusable</code> stellt sicher, dass der Link sichtbar wird, sobald der Fokus darauf liegt (für sehende Tastatur-Nutzer).</p>
 {% highlight html %}
 <body>
   <a href="#content" class="sr-only sr-only-focusable">Zum Hauptinhalt springen</a>
+  ...
   <div class="container" id="content">
-    Der Hauptinhalt der Seite.
+    <!-- Der Hauptinhalt der Seite. -->
   </div>
 </body>
 {% endhighlight %}
@@ -18,7 +19,7 @@
   <p>Lerne mehr darüber bei <a href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/Section508/">HTML CodeSniffer</a> und <a href="http://accessibility.psu.edu/headings">Penn State's AccessAbility</a>.</p>
 
   <h3>Farbkontrast</h3>
-  <p>Einige der Farbkombinationen, die zurzeit in Bootstrap verfügbar sind (wie die verschiedenen Klassen für <a href="../css/#buttons">gestaltete Buttons</a>, einige der Code-Highlighting-Farben, die für <a href="../css/#code-block">einfache Code-Blöcke</a> verwendet werden, die Hilfsklasse <code>.bg-primary</code> für <a href="..css/#helper-classes-backgrounds">Kontext-Hintergründe</a>, und die Standard-Linkfarbe auf einem weißen Hintergrund) haben ein niedriges Kontrastverhältnis (unter dem <a href="http://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast">empfohlenen Verhältnis von 4.5:1</a>). Dies kann Probleme für Nutzer verursachen, die eingeschränkte Sehkraft haben oder farbenblind sind. Diese Standardfarben müssen evtl. angepasst werden, um ihren Kontrast und ihre Lesbarkeit zu erhöhen.</p>
+  <p>Einige der Farbkombinationen, die zurzeit in Bootstrap verfügbar sind (wie die verschiedenen Klassen für <a href="../css/#buttons">gestaltete Buttons</a>, einige der Code-Highlighting-Farben, die für <a href="../css/#code-block">einfache Code-Blöcke</a> verwendet werden, die Hilfsklasse <code>.bg-primary</code> für <a href="../css/#helper-classes-backgrounds">Kontext-Hintergründe</a>, und die Standard-Linkfarbe auf einem weißen Hintergrund) haben ein niedriges Kontrastverhältnis (unter dem <a href="http://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast">empfohlenen Verhältnis von 4.5:1</a>). Dies kann Probleme für Nutzer verursachen, die eingeschränkte Sehkraft haben oder farbenblind sind. Diese Standardfarben müssen evtl. angepasst werden, um ihren Kontrast und ihre Lesbarkeit zu erhöhen.</p>
 
   <h3>Zusätzliche Ressourcen</h3>
   <ul>

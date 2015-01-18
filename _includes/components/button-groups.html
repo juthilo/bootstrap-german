@@ -3,12 +3,12 @@
 
   <p class="lead">Gruppiere eine Reihe von Buttons zusammen in einer Zeile mit der Hilfe von Button-Gruppen. Füge optionale Auswahlfeld-Funktionalität mit <a href="../javascript/#buttons">unserem Buttons-Plugin</a> hinzu.</p>
 
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-btn-group-tooltips">
     <h4>Tooltips &amp; Popovers in Button-Gruppen benötigen besondere Einstellung</h4>
     <p>Wenn du Tooltips oder Popovers an Elementen in einer <code>.btn-group</code> verwendest, musst du die Option <code>container: 'body'</code> festlegen, um unerwünschte Nebeneffekte zu vermeiden (das Element könnte z.B. breiter werden und/oder seine abgerundeten Ecken verlieren, wenn der Tooltip oder das Popover ausgelöst wird).</p>
   </div>
 
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-btn-group-accessibility">
     <h4>Nutze die richtige <code>role</code> und stelle ein Label zur Verfügung</h4>
     <p>Damit assistive Technologien wie Screenreader vermitteln können, dass eine Reihe von Buttons gruppiert ist, muss ein passendes <code>role</code>-Attribut zur Verfügung gestellt werden. Für Button-Gruppen ist das <code>role="group"</code>, während Werkzeugleisten <code>role="toolbar"</code> haben sollten.</p>
     <p>Eine Ausnehme sind Gruppen, die nur eine einzige Schaltfläche enthalten (z.B. <a href="#btn-groups-justified">gleichmäßige Button-Gruppen</a> mit <code>&lt;button&gt;</code>-Elementen) oder ein Dropdown-Menü.</p>
@@ -17,7 +17,7 @@
 
   <h3 id="btn-groups-single">Einfaches Beispiel</h3>
   <p>Verpacke eine Reihe von Buttons mit <code>.btn</code> in einer <code>.btn-group</code>.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-button-group">
     <div class="btn-group" role="group" aria-label="Einfaches Beispiel">
       <button type="button" class="btn btn-default">Links</button>
       <button type="button" class="btn btn-default">Mitte</button>
@@ -34,7 +34,7 @@
 
   <h3 id="btn-groups-toolbar">Button-Toolbar</h3>
   <p>Kombiniere mehrere <code>&lt;div class="btn-group"&gt;</code> in einer <code>&lt;div class="btn-toolbar"&gt;</code> für komplexere Komponenten.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-button-toolbar">
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar mit Button-Gruppen">
       <div class="btn-group" role="group" aria-label="Erste Gruppe">
         <button type="button" class="btn btn-default">1</button>
@@ -61,8 +61,8 @@
 {% endhighlight %}
 
   <h3 id="btn-groups-sizing">Größe</h3>
-  <p>Anstatt die Button-Größen-Klassen zu jedem Button in einer Gruppe hinzuzufügen, kannst du einfach <code>.btn-group-*</code> zur <code>.btn-group</code> hinzufügen.</p>
-  <div class="bs-example">
+  <p>Anstatt die Button-Größen-Klassen zu jedem Button in einer Gruppe hinzuzufügen, kannst du einfach <code>.btn-group-*</code> zu jeder <code>.btn-group</code> hinzufügen, auch wenn du mehrere Gruppen verschachtelst.</p>
+  <div class="bs-example" data-example-id="button-group-sizing">
     <div class="btn-group btn-group-lg" role="group" aria-label="Große Button-Gruppe">
       <button type="button" class="btn btn-default">Links</button>
       <button type="button" class="btn btn-default">Mitte</button>
@@ -96,7 +96,7 @@
 
   <h3 id="btn-groups-nested">Verschachtelung</h3>
   <p>Platziere eine <code>.btn-group</code> in einer anderen <code>.btn-group</code> wenn du Dropdown-Menüs mit einer Reihe von Buttons kombinieren willst.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="button-group-nesting">
     <div class="btn-group" role="group" aria-label="Button-Gruppe mit verschachteltem Dropdown-Menü">
       <button type="button" class="btn btn-default">1</button>
       <button type="button" class="btn btn-default">2</button>
@@ -133,7 +133,7 @@
 
   <h3 id="btn-groups-vertical">Vertikale Alternative</h3>
   <p>Du kannst eine Reihe von Buttons auch vertikal statt horizontal anordnen. <strong class="text-danger">Unterteilte Button-Dropdowns werden hier nicht unterstützt.</strong></p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="vertical-button-group">
     <div class="btn-group-vertical" role="group" aria-label="Vertikale Button-Gruppe">
       <button type="button" class="btn btn-default">Button</button>
       <button type="button" class="btn btn-default">Button</button>
@@ -190,11 +190,11 @@
   <h3 id="btn-groups-justified">Gleichmäßig verteilte Button-Gruppen</h3>
   <p>Lass eine Gruppe von Buttons die gesamte Größe des übergeordneten Elements einnehmen, indem jeder Button den gleichen Anteil der Button-Gruppe einnimmt. Funktioniert auch mit Button-Dropdowns in der Button-Gruppe.</p>
 
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-btn-group-justified-dbl-border">
     <h4>Umgang mit Rahmen</h4>
     <p>Aufgrund von sehr spezifischem HTML und CSS zur gleichmäßigen Verteilung der Buttons (vor allem <code>display: table-cell</code>) verdoppelt sich die Rahmengrenze zwischen den Buttons. In normalen Button-Gruppen wird dies mit <code>margin-left: -1px</code> behoben. Leider funktioniert <code>margin</code> nicht mit <code>display: table-cell</code>. Abhängig davon, wie sehr du Bootstrap angepasst hast, solltest du daher eventuell die Rahmenlinien an dieser Stelle entfernen oder ihnen eine andere Farbe geben.</p>
   </div>
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-btn-group-ie8-border">
     <h4>IE8 und Rahmengrenzen</h4>
     <p>Internet Explorer 8 rendert keine Rahmen bei Buttons in gleichmäßigen Button-Gruppen, unabhängig vom verwendeten Element. Um das zu umgehen,  verpacke jeden Button in einer Extra-Gruppe.</p>
     <p>Siehe <a href="https://github.com/twbs/bootstrap/issues/12476">#12476</a> für mehr Informationen.</p>
@@ -202,7 +202,7 @@
 
   <h4>Mit <code>&lt;a&gt;</code>-Elementen</h4>
   <p>Verpacke eine Reihe von <code>.btn</code>s einfach in <code>.btn-group.btn-group-justified</code>.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-justified-button-group">
     <div class="btn-group btn-group-justified" role="group" aria-label="Gleichmäßige Button-Gruppe">
       <a href="#" class="btn btn-default" role="button">Links</a>
       <a href="#" class="btn btn-default" role="button">Mitte</a>
@@ -232,14 +232,14 @@
 </div>
 {% endhighlight %}
 
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-btn-group-anchor-btn">
     <h4>Links, die als Buttons fungieren</h4>
     <p>Falls <code>&lt;a&gt;</code>-Elemente als Buttons verwendet werden, also um Funktionen auf der gleichen Seite zu aktivieren statt zu einem anderen Dokument oder Bereich auf der gleichen Seite zu navigieren, sollten diese auch die passende <code>role="button"</code> erhalten.</p>
   </div>
 
   <h4>Mit <code>&lt;button&gt;</code>-Elementen</h4>
   <p>Um gleichmäßig verteilte Button-Gruppen mit <code>&lt;button&gt;</code>-Elementen zu verwenden, <strong class="text-danger">musst du jeden Button in einer Button-Gruppe verpacken</strong>. Die meisten Browser wenden unser CSS für den Gleichsatz nicht richtig auf <code>&lt;button&gt;</code>-Elemente an, aber da wir Button-Dropdown-Menüs unterstützen, können wir das Problem umgehen.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="button-tag-button-group-justified">
     <div class="btn-group btn-group-justified" role="group" aria-label="Gleichmäßige Button-Gruppe">
       <div class="btn-group" role="group">
         <button type="button" class="btn btn-default">Links</button>

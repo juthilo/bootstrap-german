@@ -1,18 +1,55 @@
 <div class="bs-docs-section">
   <h1 id="collapse" class="page-header">Collapse <small>collapse.js</small></h1>
 
-  <h3>Erklärung</h3>
-  <p>Mit grundlegenden Stilen und flexibler Unterstützung kannst du Komponenten wie Accordions und Navigation erstellen, die man ein- und ausklappen kann.</p>
+  <p class="lead">Flexibles Plugin, das mit Hilfe von einigen Klassen ein einfaches Ein- und Ausklappen von Komponenten ermöglicht.</p>
 
-  <div class="bs-callout bs-callout-danger">
+  <div class="bs-callout bs-callout-danger" id="callout-collapse-dependency">
     <h4>Plugin-Abhängigkeit</h4>
     <p>Collapse benötigt das <a href="#transitions">Übergänge-Plugin</a> in deiner Version von Bootstrap.</p>
   </div>
 
-  <h2 id="collapse-examples">Beispiel-Accordion</h2>
-  <p>Wir haben mit dem Collapse-Plugin ein einfaches Accordion gebaut, indem wir die Panel-Komponente erweitert haben.</p>
+  <h2 id="collapse-example">Beispiel</h2>
+  <p>Klick auf die buttons unten, um ein anderes Element über veränderte Klassen ein-/auszublenden:</p>
+  <ul>
+    <li><code>.collapse</code> verbirgt Inhalt</li>
+    <li><code>.collapsing</code> wird während des Übergangs angewendet</li>
+    <li><code>.collapse.in</code> zeigt Inhalt an</li>
+  </ul>
+  <p>Du kannst einen link mit dem Attribut <code>href</code> oder einen Button mit dem Attribut <code>data-target</code> verwenden. In beiden Fällen ist <code>data-toggle="collapse"</code> unbedingt erforderlich.</p>
+ 
+   <div class="bs-example">
+    <p>
+      <a class="btn btn-primary" data-toggle="collapse" href="#collapseBeispiel" aria-expanded="false" aria-controls="collapseBeispiel">
+        Link mit href
+      </a>
+      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBeispiel" aria-expanded="false" aria-controls="collapseBeispiel">
+        Button mit data-target
+      </button>
+    </p>
+    <div class="collapse" id="collapseBeispiel">
+      <div class="well">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<a class="btn btn-primary" data-toggle="collapse" href="#collapseBeispiel" aria-expanded="false" aria-controls="collapseBeispiel">
+  Link mit href
+</a>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBeispiel" aria-expanded="false" aria-controls="collapseBeispiel">
+  Button mit data-target
+</button>
+<div class="collapse" id="collapseBeispiel">
+  <div class="well">
+    ...
+  </div>
+</div>
+{% endhighlight %}
 
-  <div class="bs-example">
+  <h2 id="collapse-example-accordion">Beispiel-Accordion</h2>
+  <p>Erweitere den Collapse-Standard, um ein Accordion mit der Panel-Komponente zu erstellen.</p>
+
+  <div class="bs-example" data-example-id="collapse-accordion">
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
       <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="überschriftEins">
@@ -127,16 +164,7 @@
     </div>
   </div>
 
-  <p>Du kannst das Plugin auch ohne das Accordion-Markup verwenden. Veranlasse einen Button dazu, ein anderes Element ein- und auszuklappen.</p>
-{% highlight html %}
-<button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo" aria-expanded="true" aria-controls="demo">
-  Einfaches Klapp-Element
-</button>
-
-<div id="demo" class="collapse in">...</div>
-{% endhighlight %}
-
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-collapse-accessibility">
     <h4>Mach Collapse barrierefrei</h4>
     <p>Füge unbedingt <code>aria-expanded</code> zum kontrollierenden Element hinzu. Dieses Attribut definiert explizit den aktuellen Status des ein-/ausklappbaren Elements für Screenreader und ähnliche assistive Technologien. Falls das ein-/ausklappbare Element standardmäßig geschlossen ist, sollte es den Wert <code>aria-expanded="false"</code> haben. Falls du das ein-/ausklappbare Element über die Klasse <code>in</code> standardmäßig geöffnet hast, füge stattdessen <code>aria-expanded="true"</code> zum kontrollierenden Element hinzu. Das Plugin wird das Attribut automatisch umschalten, wenn das ein-/ausklappbare Element geöffnet oder geschlossen wird.</p>
     <p>Zusätzlich kannst du, wenn das kontrollierende Element mit einem einzelnen ein-/ausklappbaren Element verknüpft ist (also wenn das Attribut <code>data-target</code> auf einen <code>id</code>-Selektor zeigt), ein zusätzliches <code>aria-controls</code>-Attribut, das die <code>id</code> des ein-/ausklappbaren Elements enthält, zum kontrollierenden Element hinzufügen. Moderne Screenreader und ähnliche assistive Technologien verwenden dieses Attribut, um Nutzern zusätzliche Kürzel zur Verfügung zu stellen, mit denen sie direkt zum ein-/ausklappbaren Element selbst navigieren können.</p>
@@ -162,7 +190,7 @@
 $('.collapse').collapse()
 {% endhighlight %}
 
-  <h3>Optionen</h3>
+  <h3 id="collapse-options">Optionen</h3>
   <p>Optionen können über Data-Attribute oder JavaScript angegeben werden. Für Data-Attribute hängst du den Namen der Option einfach an <code>data-</code>, z.B. <code>data-parent=""</code>.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -191,7 +219,7 @@ $('.collapse').collapse()
     </table>
   </div><!-- /.table-responsive -->
 
-  <h3>Methoden</h3>
+  <h3 id="collapse-methods">Methoden</h3>
 
   <h4>.collapse(Optionen)</h4>
   <p>Aktiviert deinen Inhalt als klappbares Element. Akzeptiert optional ein <code>object</code> mit Optionen.
@@ -210,10 +238,10 @@ $('#meinKlappelement').collapse({
   <h4>.collapse('hide')</h4>
   <p>Verbirgt ein klappbares Element.</p>
 
-  <h3>Ereignisse</h3>
+  <h3 id="collapse-events">Ereignisse</h3>
   <p>Bootstraps Collapse-Klassen legen einige Ereignisse offen, um sich in die Collapse-Funktionen einzuklinken.</p>
   <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped bs-events-table">
       <thead>
        <tr>
          <th style="width: 150px;">Ereignistyp</th>

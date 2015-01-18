@@ -3,8 +3,8 @@
 
   <h2 id="scrollspy-examples">Beispiel in einer Navbar</h2>
   <p>Dass ScrollSpy-Plugin ist dazu da, in Navigationselementen automatisch anzuzeigen, wo sich die aktuelle Scroll-Position befindet. Scrolle durch das Beispiel unten und sieh dir an, wie die <code>.active</code>-Klasse nach und nach anderen Einträgen zugeordnet wird. Die Einträge im Dropdown-Menü werden ebenfalls hervorgehoben.</p>
-  <div class="bs-example">
-    <nav id="navbar-example2" class="navbar navbar-default navbar-static" role="navigation">
+  <div class="bs-example" data-example-id="embedded-scrollspy">
+    <nav id="navbar-example2" class="navbar navbar-default navbar-static">
       <div class="container-fluid">
         <div class="navbar-header">
           <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-scrollspy">
@@ -51,15 +51,15 @@
 
   <h2 id="scrollspy-usage">Verwendung</h2>
 
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-scrollspy-needs-nav">
     <h4>Bootstrap-Nav erforderlich</h4>
     <p>ScrollSpy erfordert zurzeit die Verwendung einer <a href="../components/#nav">Bootstrap-Nav-Komponente</a> für die richtige Hervorhebung von aktiven Links.</p>
   </div>
-  <div class="bs-callout bs-callout-danger">
+  <div class="bs-callout bs-callout-danger" id="callout-scrollspy-target-ids">
     <h4>ID-Ziele müssen zuzuordnen sein</h4>
     <p>Die Links in der navbar müssen einer ID zuzuordnen sein. Zum Beispiel muss <code>&lt;a href="#start"&gt;Start&lt;/a&gt;</code> mit einem Element im DOM wie <code>&lt;div id="start"&gt;&lt;/div&gt;</code> korrespondieren.</p>
   </div>
-  <div class="bs-callout bs-callout-info">
+  <div class="bs-callout bs-callout-info" id="callout-scrollspy-invisible-targets">
     <h4>Zielelemente, die nicht <code>:visible</code> sind, werden ignoriert</h4>
     <p>Zielelemente, die <a href="http://api.jquery.com/visible-selector/">laut jQuery nicht <code>:visible</code></a> (sichtbar) sind, werden ignoriert und die zugehörigen Nav-Einträge werden niemals hervorgehoben.</p>
   </div>
@@ -93,7 +93,7 @@ $('body').scrollspy({ target: '.navbar-example' })
 {% endhighlight %}
 
 
-  <h3>Methoden</h3>
+  <h3 id="scrollspy-methods">Methoden</h3>
   <h4>.scrollspy('refresh')</h4>
   <p>Wenn du ScrollSpy auf Seiten verwendest, auf denen Elemente (aus) dem DOM hinzugefügt oder entfernt werden, musst du die Methode zur Aktualisierung so aufrufen:</p>
 {% highlight js %}
@@ -103,7 +103,7 @@ $('[data-spy="scroll"]').each(function () {
 {% endhighlight %}
 
 
-  <h3>Optionen</h3>
+  <h3 id="scrollspy-options">Optionen</h3>
   <p>Optionen können über Data-Attribute oder JavaScript angegeben werden. Für Data-Attribute hängst du den Namen einer Option einfach an <code>data-</code>, also z.B. <code>data-offset=""</code>.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -126,9 +126,9 @@ $('[data-spy="scroll"]').each(function () {
     </table>
   </div><!-- ./bs-table-responsive -->
 
-  <h3>Ereignisse</h3>
+  <h3 id="scrollspy-events">Ereignisse</h3>
   <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped bs-events-table">
       <thead>
        <tr>
          <th style="width: 150px;">Ereignistyp</th>

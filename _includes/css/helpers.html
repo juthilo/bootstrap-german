@@ -3,7 +3,7 @@
 
   <h3 id="helper-classes-colors">Kontext-Farben</h3>
   <p>Versehe jeden Text mit mehr Bedeutung, indem du die Hilfsklassen für Kontextfarben verwendest. Wenn sie direkt oder indirekt auf einen Link angewendet werden, wird die Farbe verdunkelt, wenn sich der Mauszeiger darüber befindet (hover), genau wie bei normalen Links.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="contextual-colors-helpers">
     <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
     <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
     <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
@@ -19,18 +19,18 @@
 <p class="text-warning">...</p>
 <p class="text-danger">...</p>
 {% endhighlight %}
-  <div class="bs-callout bs-callout-info">
+  <div class="bs-callout bs-callout-info" id="callout-helper-context-color-specificity">
     <h4>Probleme mit Spezifität</h4>
     <p>Diese Klassen funktionieren manchmal nicht, weil die Genauigkeit eines anderen Selektors größer ist. Meistens reicht es in diesen Fällen, deinen Text in einem <code>&lt;span&gt;</code> mit der jeweiligen Klasse zu verpacken.</p>
   </div>
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-helper-context-color-accessibility">
     <h4>Bedeutungen an assistive Technologien vermitteln</h4>
     <p>Die Verwendung von Farbe, um eine Bedeutung zu einem Button hinzuzufügen, erzeugt nur einen visuellen Hinweis, der Nutzern von assistiven Technologien wie Screenreadern nicht vermittelt werden kann. Stell sicher, dass durch Farbe bezeichnete Informationen entweder durch den Inhalt selbst (den sichtbaren Text des Buttons) offensichtlich sind oder über alternative Wege eingebunden sind, wie z.B. zusätzlicher Text, der mit der Klasse <code>.sr-only</code> verborgen wird.</p>
   </div>
 
   <h3 id="helper-classes-backgrounds">Kontext-Hintergründe</h3>
   <p>Ähnlich wie die Kontext-Farben für Text, gibt es auch Kontext-Hintergründe. Link-Farben werden auch hier wieder etwas angepasst, um zu den Hintergründen zu passen.</p>
-  <div class="bs-example bs-example-bg-classes">
+  <div class="bs-example bs-example-bg-classes" data-example-id="contextual-backgrounds-helpers">
     <p class="bg-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
     <p class="bg-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
     <p class="bg-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
@@ -44,28 +44,28 @@
 <p class="bg-warning">...</p>
 <p class="bg-danger">...</p>
 {% endhighlight %}
-  <div class="bs-callout bs-callout-info">
+  <div class="bs-callout bs-callout-info" id="callout-helper-bg-specificity">
     <h4>Umgang mit Genauigkeit</h4>
     <p>Manchmal können Kontext-Hintergrund-Klassen nicht angewendet werden, weil andere Stile zu spezifisch definiert sind. In einigen Fällen reicht es, den Inhalt deines Elements in einem <code>&lt;div&gt;</code> mit der Klasse zu verpacken.</p>
   </div>
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-helper-bg-accessibility">
     <h4>Bedeutungen an assistive Technologien vermitteln</h4>
     <p>Genau wie bei <a href="#helper-classes-colors">Kontext-Farben</a>, solltest du sicherstellen, dass besondere durch Farbe ausgewiesene Bedeutungen auch in einem Format übermittelt werden, das nicht rein visuell ist.</p>
   </div>
 
   <h3 id="helper-classes-close">Schließen-Symbol</h3>
   <p>Verwende das generische Schließen-Symbol für das Schließen von Inhalten wie Modals oder Warnhinweisen.</p>
-  <div class="bs-example">
-    <p><button type="button" class="close" aria-hidden="true"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button></p>
+  <div class="bs-example" data-example-id="close-icon">
+    <p><button type="button" class="close" aria-label="Schließen"><span aria-hidden="true">&times;</span></button></p>
   </div>
 {% highlight html %}
-<button type="button" class="close" aria-hidden="true"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
+<button type="button" class="close" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>
 {% endhighlight %}
 
 
   <h3 id="helper-classes-carets">Carets</h3>
   <p>Verwende Carets (kleine Pfeile ohne Strich), um die Funktionalität und Richtung von Dropdown-Menüs und ähnlichen Komponenten anzuzeigen. Beachte, dass das Caret in <a href="../komponenten/#btn-dropdowns-dropup">Dropup-Menüs</a> automatisch umgedreht wird.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="caret">
     <span class="caret"></span>
   </div>
 {% highlight html %}
@@ -97,7 +97,7 @@
 }
 {% endhighlight %}
 
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-helper-pull-navbar">
     <h4>Nicht für Navbars geeignet</h4>
     <p>Um Komponenten in Navbars mit Hilfsklassen auszurichten, verwende stattdessen <code>.navbar-left</code> oder <code>.navbar-right</code>. <a href="../komponenten/#navbar-component-alignment">Lies die Navbar-Dokumentation</a> für Details.</p>
   </div>

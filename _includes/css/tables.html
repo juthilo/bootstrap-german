@@ -3,7 +3,7 @@
 
   <h2 id="tables-example">Einfaches Beispiel</h2>
   <p>Für ein paar grundlegende Stile&mdash;leichte Abstände und nur horizontale Unterteilungen&mdash;füge einfach die Grundklasse <code>.table</code> zu einer <code>&lt;table&gt;</code> hinzu. Das mag überflüssig erscheinen, aber da viele Plugins wie Kalender und Datum-Auswählfelder Tabellen zur Formatierung verwenden, haben wir uns entschieden unsere eigenen Tabellen-Stile so zu isolieren.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-table">
     <table class="table">
       <caption>Optionale Tabellen-Beschriftung.</caption>
       <thead>
@@ -16,19 +16,19 @@
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
+          <th scope="row">1</th>
           <td>Mark</td>
           <td>Otto</td>
           <td>@mdo</td>
         </tr>
         <tr>
-          <td>2</td>
+          <th scope="row">2</th>
           <td>Jacob</td>
           <td>Thornton</td>
           <td>@fat</td>
         </tr>
         <tr>
-          <td>3</td>
+          <th scope="row">3</th>
           <td>Larry</td>
           <td>the Bird</td>
           <td>@twitter</td>
@@ -45,11 +45,11 @@
 
   <h2 id="tables-striped">Gestreifte Zeilen</h2>
   <p>Verwende <code>.table-striped</code>, um Streifen in Zebra-Art zu allen Tabellen-Zeilen im <code>&lt;tbody&gt;</code> hinzuzufügen.</p>
-  <div class="bs-callout bs-callout-danger">
+  <div class="bs-callout bs-callout-danger" id="callout-tables-striped-ie8">
     <h4>Browser-Kompatibilität</h4>
     <p>Gestreifte Tabellen werden mit dem CSS-Selektor <code>:nth-child</code> umgesetzt, der im Internet Explorer 8 nicht verfügbar ist.</p>
   </div>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="striped-table">
     <table class="table table-striped">
       <thead>
         <tr>
@@ -61,19 +61,19 @@
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
+          <th scope="row">1</th>
           <td>Mark</td>
           <td>Otto</td>
           <td>@mdo</td>
         </tr>
         <tr>
-          <td>2</td>
+          <th scope="row">2</th>
           <td>Jacob</td>
           <td>Thornton</td>
           <td>@fat</td>
         </tr>
         <tr>
-          <td>3</td>
+          <th scope="row">3</th>
           <td>Larry</td>
           <td>the Bird</td>
           <td>@twitter</td>
@@ -90,7 +90,7 @@
 
   <h2 id="tables-bordered">Tabelle mit Rahmen</h2>
   <p>Ergänze <code>.table-bordered</code> für Rahmengrenzen auf allen Seiten der Tabelle und ihren Zellen.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="bordered-table">
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -102,25 +102,21 @@
       </thead>
       <tbody>
         <tr>
-          <td rowspan="2">1</td>
+          <th scope="row">1</th>
           <td>Mark</td>
           <td>Otto</td>
           <td>@mdo</td>
         </tr>
         <tr>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@TwBootstrap</td>
-        </tr>
-        <tr>
-          <td>2</td>
+          <th scope="row">2</th>
           <td>Jacob</td>
           <td>Thornton</td>
           <td>@fat</td>
         </tr>
         <tr>
-          <td>3</td>
-          <td colspan="2">Larry the Bird</td>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
           <td>@twitter</td>
         </tr>
       </tbody>
@@ -135,7 +131,7 @@
 
   <h2 id="tables-hover-rows">Hover-Zeilen</h2>
   <p>Ergänze <code>.table-hover</code>, um Zeilen im <code>&lt;tbody&gt;</code> der Tabelle hervorzuheben, wenn sich der Mauszeiger darüber befindet (hover).</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="hoverable-table">
     <table class="table table-hover">
       <thead>
         <tr>
@@ -147,20 +143,21 @@
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
+          <th scope="row">1</th>
           <td>Mark</td>
           <td>Otto</td>
           <td>@mdo</td>
         </tr>
         <tr>
-          <td>2</td>
+          <th scope="row">2</th>
           <td>Jacob</td>
           <td>Thornton</td>
           <td>@fat</td>
         </tr>
         <tr>
-          <td>3</td>
-          <td colspan="2">Larry the Bird</td>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
           <td>@twitter</td>
         </tr>
       </tbody>
@@ -175,7 +172,7 @@
 
   <h2 id="tables-condensed">Komprimierte Tabelle</h2>
   <p>Ergänze <code>.table-condensed</code>, um die Innenabstände in Tabellen zu halbieren und sie so schmaler zu machen.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="condensed-table">
     <table class="table table-condensed">
       <thead>
         <tr>
@@ -187,20 +184,21 @@
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
+          <th scope="row">1</th>
           <td>Mark</td>
           <td>Otto</td>
           <td>@mdo</td>
         </tr>
         <tr>
-          <td>2</td>
+          <th scope="row">2</th>
           <td>Jacob</td>
           <td>Thornton</td>
           <td>@fat</td>
         </tr>
         <tr>
-          <td>3</td>
-          <td colspan="2">Larry the Bird</td>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
           <td>@twitter</td>
         </tr>
       </tbody>
@@ -229,39 +227,39 @@
       </thead>
       <tbody>
         <tr>
-          <td>
+          <th scope="row">
             <code>.active</code>
           </td>
           <td>Wendet die Stile der Hover-Zeilen fest auf eine bestimmte Zeile oder Zelle an</td>
         </tr>
         <tr>
-          <td>
+          <th scope="row">
             <code>.success</code>
-          </td>
+          </th>
           <td>Zeigt eine erfolgreiche oder positive Aktion an</td>
         </tr>
         <tr>
-          <td>
+          <th scope="row">
             <code>.info</code>
-          </td>
+          </th>
           <td>Zeigt eine neutrale Veränderung oder Aktion an</td>
         </tr>
         <tr>
-          <td>
+          <th scope="row">
             <code>.warning</code>
-          </td>
+          </th>
           <td>Zeigt eine Warnung an, die evtl. Aufmerksamkeit erfordert</td>
         </tr>
         <tr>
-          <td>
+          <th scope="row">
             <code>.danger</code>
-          </td>
+          </th>
           <td>Zeigt eine gefährliche oder evtl. negative Aktion an</td>
         </tr>
       </tbody>
     </table>
   </div>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="contextual-table">
     <table class="table">
       <thead>
         <tr>
@@ -273,55 +271,55 @@
       </thead>
       <tbody>
         <tr class="active">
-          <td>1</td>
+          <th scope="row">1</th>
           <td>Spalten-Inhalt</td>
           <td>Spalten-Inhalt</td>
           <td>Spalten-Inhalt</td>
         </tr>
         <tr>
-          <td>2</td>
+          <th scope="row">2</th>
           <td>Spalten-Inhalt</td>
           <td>Spalten-Inhalt</td>
           <td>Spalten-Inhalt</td>
         </tr>
         <tr class="success">
-          <td>3</td>
+          <th scope="row">3</th>
           <td>Spalten-Inhalt</td>
           <td>Spalten-Inhalt</td>
           <td>Spalten-Inhalt</td>
         </tr>
         <tr>
-          <td>4</td>
+          <th scope="row">4</th>
           <td>Spalten-Inhalt</td>
           <td>Spalten-Inhalt</td>
           <td>Spalten-Inhalt</td>
         </tr>
         <tr class="info">
-          <td>5</td>
+          <th scope="row">5</th>
           <td>Spalten-Inhalt</td>
           <td>Spalten-Inhalt</td>
           <td>Spalten-Inhalt</td>
         </tr>
         <tr>
-          <td>6</td>
+          <th scope="row">6</th>
           <td>Spalten-Inhalt</td>
           <td>Spalten-Inhalt</td>
           <td>Spalten-Inhalt</td>
         </tr>
         <tr class="warning">
-          <td>7</td>
+          <th scope="row">7</th>
           <td>Spalten-Inhalt</td>
           <td>Spalten-Inhalt</td>
           <td>Spalten-Inhalt</td>
         </tr>
         <tr>
-          <td>8</td>
+          <th scope="row">8</th>
           <td>Spalten-Inhalt</td>
           <td>Spalten-Inhalt</td>
           <td>Spalten-Inhalt</td>
         </tr>
         <tr class="danger">
-          <td>9</td>
+          <th scope="row">9</th>
           <td>Spalten-Inhalt</td>
           <td>Spalten-Inhalt</td>
           <td>Spalten-Inhalt</td>
@@ -346,7 +344,7 @@
   <td class="info">...</td>
 </tr>
 {% endhighlight %}
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-tables-context-accessibility">
     <h4>Bedeutungen an assistive Technologien vermitteln</h4>
     <p>Die Verwendung von Farbe, um eine Bedeutung zu einem Button hinzuzufügen, erzeugt nur einen visuellen Hinweis, der Nutzern von assistiven Technologien wie Screenreadern nicht vermittelt werden kann. Stell sicher, dass durch Farbe bezeichnete Informationen entweder durch den Inhalt selbst (den sichtbaren Text des Buttons) offensichtlich sind oder über alternative Wege eingebunden sind, wie z.B. zusätzlicher Text, der mit der Klasse <code>.sr-only</code> verborgen wird.</p>
   </div>
@@ -354,7 +352,7 @@
   <h2 id="tables-responsive">Responsive Tabellen</h2>
   <p>Erstelle anpassungsfähige Tabellen, indem du eine <code>.table</code> in <code>.table-responsive</code> verpackst. Auf allen Geräten mit weniger als 768px Breite kann man dann in der Tabelle horizontal scrollen. Auf größeren Geräten wirst du keinen Unterschied zwischen dieser und ganz normalen Tabellen feststellen.</p>
 
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-tables-responsive-ff-fieldset">
     <h4>Firefox und Fieldsets</h4>
     <p>Firefox hält einige seltsame Stile für Fieldsets parat, bei denen <code>width</code> die responsive Tabelle stört. Dies kann ohne einen Firefox-spezifischen Hack, den wir <strong>nicht</strong> in Bootstrap zur Verfügung stellen, nicht umgangen werden:</p>
 {% highlight css %}
@@ -365,7 +363,7 @@
     <p>Lies für mehr Informationen <a href="http://stackoverflow.com/questions/17408815/fieldset-resizes-wrong-appears-to-have-unremovable-min-width-min-content/17863685#17863685">diese Antwort auf Stack Overflow</a>.</p>
   </div>
 
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-responsive-table">
     <div class="table-responsive">
       <table class="table">
         <thead>
@@ -381,7 +379,7 @@
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
+            <th scope="row">1</th>
             <td>Tabellen-Zelle</td>
             <td>Tabellen-Zelle</td>
             <td>Tabellen-Zelle</td>
@@ -390,7 +388,7 @@
             <td>Tabellen-Zelle</td>
           </tr>
           <tr>
-            <td>2</td>
+            <th scope="row">2</th>
             <td>Tabellen-Zelle</td>
             <td>Tabellen-Zelle</td>
             <td>Tabellen-Zelle</td>
@@ -399,7 +397,7 @@
             <td>Tabellen-Zelle</td>
           </tr>
           <tr>
-            <td>3</td>
+            <th scope="row"th>3</th>
             <td>Tabellen-Zelle</td>
             <td>Tabellen-Zelle</td>
             <td>Tabellen-Zelle</td>
@@ -426,7 +424,7 @@
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
+            <th scope="row">1</th>
             <td>Tabellen-Zelle</td>
             <td>Tabellen-Zelle</td>
             <td>Tabellen-Zelle</td>
@@ -435,7 +433,7 @@
             <td>Tabellen-Zelle</td>
           </tr>
           <tr>
-            <td>2</td>
+            <th scope="row">2</th>
             <td>Tabellen-Zelle</td>
             <td>Tabellen-Zelle</td>
             <td>Tabellen-Zelle</td>
@@ -444,7 +442,7 @@
             <td>Tabellen-Zelle</td>
           </tr>
           <tr>
-            <td>3</td>
+            <th scope="row">3</th>
             <td>Tabellen-Zelle</td>
             <td>Tabellen-Zelle</td>
             <td>Tabellen-Zelle</td>

@@ -4,14 +4,14 @@
   <h2 id="alerts-examples">Beispiel-Warnungen</h2>
   <p>Ermögliche mit diesem Plugin das Schließen von allen Warnhinweisen.</p>
   <p>Wenn du einen <code>.close</code>-Button verwendest, muss dieser das erste untergeordnete Element von <code>.alert-dismissible</code> sein und vor dem Markup darf keinerlei Textinhalt stehen.</p>
-  <div class="bs-example bs-example-standalone">
+  <div class="bs-example bs-example-standalone" data-example-id="dismissible-alert-js">
     <div class="alert alert-warning alert-dismissible fade in" role="alert">
-      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>
       <strong>Du siehst ein bisschen blass aus!</strong> Ist alles in Ordnung?
     </div>
 
     <div class="alert alert-danger alert-dismissible fade in" role="alert">
-      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>
       <h4>Oh nein! Es ist ein Fehler aufgetreten!</h4>
       <p>Verändere dies und das und versuche es dann erneut. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
       <p>
@@ -26,15 +26,14 @@
   <p>Füge einfach <code>data-dismiss="alert"</code> zu deinem Schließen-Button hinzu, um einem Warnhinweis Schließen-Funktionalität hinzuzufügen. Wird ein Warnhinweis geschlossen, wird dieser auch vollständig aus dem DOM entfernt.</p>
 
 {% highlight html %}
-<button type="button" class="close" data-dismiss="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Schließen">
   <span aria-hidden="true">&times;</span>
-  <span class="sr-only">Schließen</span>
 </button>
 {% endhighlight %}
   
   <p>Damit deine Warnhinweise beim Schließen animiert werden, achte darauf, dass sie schon die Klassen <code>.fade</code> und <code>.in</code> besitzen.</p>
 
-  <h3>Methoden</h3>
+  <h3 id="alerts-methods">Methoden</h3>
 
   <h4>$().alert()</h4>
   <p>Sorgt dafür, dass ein Warnhinweis nach Klick-Ereignissen horcht, die bei untergeordneten Elementen mit dem Attribut <code>data-dismiss="alert"</code> ausgelöst werden. (Nicht notwendig, wenn die automatische Initialisierung über die Data-API verwendet wird.)</p>
@@ -43,10 +42,10 @@
   <p>Schließt einen Warnhinweis, indem dieser aus dem DOM entfernt wird. Falls die Klassen <code>.fade</code> und <code>.in</code> beim zugehörigen Element vorhanden sind, wird der Warnhinweis langsam ausgeblendet, bevor dieser entfernt wird.</p>
 
 
-  <h3>Ereignisse</h3>
+  <h3 id="alerts-events">Ereignisse</h3>
   <p>Bootstraps Warnhinweis-Plugin legt einige Ereignisse offen, mit denen du dich in die Warnhinweise-Funktionen einklinken kannst.</p>
   <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped bs-events-table">
       <thead>
         <tr>
           <th style="width: 150px;">Ereignistyp</th>

@@ -10,23 +10,28 @@
     <h4>Modal-Markup-Platzierung</h4>
     <p>Damit andere Komponenten das Aussehen und/oder die Funktionen deines Modals nicht beeinträchtigen, solltest du den zugehörigen HTML-Code möglichst weit oben in deinem Dokument platzieren.</p>
   </div>
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-modal-mobile-caveats">
     <h4>Schwierigkeiten auf mobilen Geräten</h4>
     <p>Es gibt einige Tücken, die du bei der Verwendung von Modals auf mobilen Geräten beachten solltest. <a href="../los-gehts/#support-fixed-position-keyboards">Lies unsere Browser-Support-Infos</a> für Details.</p>
   </div>
 
-  <p><strong class="text-danger">Das HTML-Attribut <code>autofocus</code> hat aufgrund von internen Funktionsweisen in HTML5 keinen Effekt in Bootstrap-Modals.</strong></p>
+  <p><strong class="text-danger">Das HTML-Attribut <code>autofocus</code> hat aufgrund von internen Funktionsweisen in HTML5 keinen Effekt in Bootstrap-Modals.</strong> Nutze eigenes JavaScript, um einen ähnlichen Effekt zu erlangen:</p>
+  {% highlight js %}
+  $('#meinModal').on('shown.bs.modal', function () {
+    $('#meinEingabefeld').focus()
+  })
+  {% endhighlight %}
 
   <h2 id="modals-examples">Beispiele</h2>
 
   <h3>Statisches Beispiel</h3>
   <p>Ein manuell generiertes Modal mit Header, Body und einigen Aktionen im Footer.</p>
-  <div class="bs-example bs-example-modal">
+  <div class="bs-example bs-example-modal" data-example-id="static-modal">
     <div class="modal">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title">Modal-Titel</h4>
           </div>
           <div class="modal-body">
@@ -45,7 +50,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title">Modal-Titel</h4>
       </div>
       <div class="modal-body">
@@ -68,7 +73,7 @@
       <div class="modal-content">
 
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title" id="meinModalLabel">Modal-Titel</h4>
         </div>
         <div class="modal-body">
@@ -119,7 +124,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="meinModalLabel">Modal-Überschrift</h4>
       </div>
       <div class="modal-body">
@@ -134,13 +139,13 @@
 </div>
 {% endhighlight %}
 
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-modal-accessibility">
     <h4>Modals barrierefrei machen</h4>
     <p>Füge einige Attribute zum <code>.modal</code> hinzu (<code>role="dialog"</code>, <code>aria-labelledby="meinModalLabel"</code> und <code>aria-hidden="true"</code>), um assistiven Technologien mitzuteilen (in der Reihenfolge), worum es sich bei dem Modal handelt, welches Element der Titel ist und dass die Elemente des Modals im DOM übersprungen werden sollen.</p>
     <p>Außerdem kannst du eine Beschreibung des Modals mit <code>aria-describedby</code> am <code>.modal</code> markieren.</p>
   </div>
 
-  <div class="bs-callout bs-callout-info">
+  <div class="bs-callout bs-callout-info" id="callout-modal-youtube">
     <h4>YouTube-Videos einbetten</h4>
     <p>Zur Einbettung von YouTube-Videos in Modals wird zusätzliches JavaScript benötigt, das nicht in Bootstrap enthalten ist, um die Wiedergabe automatisch zu beenden und mehr. <a href="http://stackoverflow.com/questions/18622508/bootstrap-3-and-youtube-in-modal">Lies diesen hilfreichen Artikel auf StackOverflow</a> für mehr Informationen.</p>
   </div>
@@ -181,7 +186,7 @@
       <div class="modal-content">
 
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title" id="meinGroßesModalLabel">Großes Modal</h4>
         </div>
         <div class="modal-body">
@@ -195,7 +200,7 @@
       <div class="modal-content">
 
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title" id="meinKleinesModalLabel">Kleines Modal</h4>
         </div>
         <div class="modal-body">
@@ -225,11 +230,11 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title" id="beispielModalLabel">Neue Nachricht</h4>
           </div>
           <div class="modal-body">
-            <form role="form">
+            <form>
               <div class="form-group">
                 <label for="empfaenger-name" class="control-label">Empfänger:</label>
                 <input type="text" class="form-control" id="empfaenger-name">
@@ -258,11 +263,11 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Schließen</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="beispielModalLabel">Neue Nachricht</h4>
       </div>
       <div class="modal-body">
-        <form role="form">
+        <form>
           <div class="form-group">
             <label for="empfaenger-name" class="control-label">Empfänger:</label>
             <input type="text" class="form-control" id="empfaenger-name">
@@ -306,7 +311,7 @@ $('#beispielModal').on('show.bs.modal', function (event) {
   <p>Rufe ein Modal über seine ID <code>meinModal</code> mit nur einer Zeile JavaScript auf:</p>
   {% highlight js %}$('#meinModal').modal(Optionen){% endhighlight %}
 
-  <h3>Optionen</h3>
+  <h3 id="modals-options">Optionen</h3>
   <p>Optionen können über Data-Attribute oder JavaScript angegeben werden. Für Data-Attribute hängst du den Namen der Option einfach an <code>data-</code>, z.B. <code>data-backdrop=""</code>.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -353,7 +358,7 @@ $('#beispielModal').on('show.bs.modal', function (event) {
     </table>
   </div><!-- /.table-responsive -->
 
-  <h3>Methoden</h3>
+  <h3 id="modals-methods">Methoden</h3>
 
   <h4>.modal(Optionen)</h4>
   <p>Aktiviert deinen Inhalt als ein Modal. Akzeptiert ein optionales <code>object</code> mit Optionen.</p>
@@ -375,10 +380,10 @@ $('#meinModal').modal({
   <p>Verbirgt ein Modal manuell. <strong>Gibt ein Ergebnis zurück, bevor das Modal tatsächlich verborgen wurde</strong> (also vor dem Ereignis <code>hidden.bs.modal</code>).</p>
   {% highlight js %}$('#meinModal').modal('hide'){% endhighlight %}
 
-  <h3>Ereignisse</h3>
+  <h3 id="modals-events">Ereignisse</h3>
   <p>Bootstraps Modal-Klasse legt einige wenige Ereignisse offen, um sich in Modal-Funktionalität einzuklinken.</p>
   <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped bs-events-table">
       <thead>
        <tr>
          <th style="width: 150px;">Ereignistyp</th>

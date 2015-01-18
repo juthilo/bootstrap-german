@@ -3,14 +3,14 @@
 
   <p class="lead">Du kannst jeden Button auch verwenden, um ein Dropdown-Menü zu öffnen und zu schließen, indem du diesen in einer <code>.btn-group</code> platzierst und das Markup für das Menü hinzufügst.</p>
 
-  <div class="bs-callout bs-callout-danger">
+  <div class="bs-callout bs-callout-danger" id="callout-btndropdown-dependency">
     <h4>Plugin-Abhängigkeit</h4>
     <p>Button-Dropdowns benötigen das <a href="../javascript/#dropdowns">Dropdown-Plugin</a> in deiner Bootstrap-Version.</p>
   </div>
 
   <h3 id="btn-dropdowns-single">Einzelne Button-Dropdowns</h3>
   <p>Verwandel einen Button in einen Menü-Schalter mit ein paar einfachen Markup-Änderungen.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="single-button-dropdown">
     <div class="btn-group">
       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Standard <span class="caret"></span></button>
       <ul class="dropdown-menu" role="menu">
@@ -90,7 +90,7 @@
 
   <h3 id="btn-dropdowns-split">Getrennte Button-Dropdowns</h3>
   <p>Auf ähnliche Weise kannst du Button-Dropdowns erstellen, bei denen der Menü-Schalter von einem eigentlichen Button abgetrennt ist.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="split-button-dropdown">
     <div class="btn-group">
       <button type="button" class="btn btn-default">Standard</button>
       <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -196,7 +196,7 @@
 
   <h3 id="btn-dropdowns-sizing">Größe</h3>
   <p>Button-Dropdowns funktionieren mit Buttons in allen Größen.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="button-dropdown-sizing">
     <div class="btn-toolbar" role="toolbar">
       <div class="btn-group">
         <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
@@ -274,7 +274,7 @@
 
   <h3 id="btn-dropdowns-dropup">Dropup-Variante</h3>
   <p>Öffne und schließe Menüs über anderen Elementen, indem du <code>.dropup</code> zum übergeordneten Element hinzufügst.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="button-dropdown-dropup">
     <div class="btn-toolbar" role="toolbar">
       <div class="btn-group dropup">
         <button type="button" class="btn btn-default">Dropup</button>

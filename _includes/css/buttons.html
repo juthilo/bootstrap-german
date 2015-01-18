@@ -1,9 +1,41 @@
 <div class="bs-docs-section">
   <h1 id="buttons" class="page-header">Buttons</h1>
 
+  <h2 id="buttons-tags">Button-Tags</h2>
+  <p>Du kannst die Button-Klassen mit den Elementen <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code> oder <code>&lt;input&gt;</code> verwenden.</p>
+  <form class="bs-example" data-example-id="btn-tags">
+    <a class="btn btn-default" href="#" role="button">Link</a>
+    <button class="btn btn-default" type="submit">Button</button>
+    <input class="btn btn-default" type="button" value="Input">
+    <input class="btn btn-default" type="submit" value="Submit">
+  </form>
+{% highlight html %}
+<a class="btn btn-default" href="#" role="button">Link</a>
+<button class="btn btn-default" type="submit">Button</button>
+<input class="btn btn-default" type="button" value="Input">
+<input class="btn btn-default" type="submit" value="Submit">
+{% endhighlight %}
+
+  <div class="bs-callout bs-callout-warning" id="callout-buttons-context-usage">
+    <h4>Kontext-spezifische Verwendung</h4>
+    <p>Obwohl Button-Klassen mit den Elementen <code>&lt;a&gt;</code> und <code>&lt;button&gt;</code> funktionieren, werden nur <code>&lt;button&gt;</code>-Elemente in unseren Navs und Navbars unterstützt.</p>
+  </div>
+
+  <div class="bs-callout bs-callout-warning" id="callout-buttons-anchor-accessibility">
+    <h4>Links, die sich wie Buttons verhalten</h4>
+    <p>Wenn <code>&lt;a&gt;</code>-Elemente verwendet werden wie Buttons – um Funktionen auf der Seite zu aktivieren, statt zu einem anderen Dokument oder anderen Abschnitt auf der aktuellen Seite zu führen – sollten sie passenderweise das Attribut <code>role="button"</code> zugewiesen bekommen.</p>
+  </div>
+
+  <div class="bs-callout bs-callout-warning" id="callout-buttons-ff-height">
+    <h4>Cross-Browser-Kompatibilität</h4>
+    <p>Als Erfolgsmethode <strong>empfehlen wir stärkstens, das Element <code>&lt;button&gt;</code> wann immer möglich zu verwenden</strong>, um sicherzustellen, dass die Buttons über verschiedene Browser hinweg gleich gut aussehen.</p>
+    <p>Unter anderem gibt es <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=697451">einen Bug in Firefox &lt;30</a>, der uns daran hindert, die <code>line-height</code> von Buttons, die auf <code>&lt;input&gt;</code> basieren, zu setzen, was dazu führt, dass sie nicht die exakt gleiche Höhe wie andere Buttons in Firefox haben.</p>
+  </div>
+
+
   <h2 id="buttons-options">Optionen</h2>
   <p>Verwende irgendwelche der verfügbaren Button-Klassen, um ganz schnell einen schön gestalteten Button zu erstellen.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="btn-variants">
     <button type="button" class="btn btn-default">Standard</button>
     <button type="button" class="btn btn-primary">Primär</button>
     <button type="button" class="btn btn-success">Erfolg</button>
@@ -35,14 +67,14 @@
 <button type="button" class="btn btn-link">Link</button>
 {% endhighlight %}
 
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-buttons-color-accessibility">
     <h4>Bedeutungen an assistive Technologien vermitteln</h4>
     <p>Die Verwendung von Farbe, um eine Bedeutung zu einem Button hinzuzufügen, erzeugt nur einen visuellen Hinweis, der Nutzern von assistiven Technologien wie Screenreadern nicht vermittelt werden kann. Stell sicher, dass durch Farbe bezeichnete Informationen entweder durch den Inhalt selbst (den sichtbaren Text des Buttons) offensichtlich sind oder über alternative Wege eingebunden sind, wie z.B. zusätzlicher Text, der mit der Klasse <code>.sr-only</code> verborgen wird.</p>
   </div>
 
   <h2 id="buttons-sizes">Größe</h2>
   <p>Du magst lieber größere oder kleinere Buttons? Füge <code>.btn-lg</code>, <code>.btn-sm</code> oder <code>.btn-xs</code> für weitere Größen hinzu.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="btn-sizes">
     <p>
       <button type="button" class="btn btn-primary btn-lg">Großer Button</button>
       <button type="button" class="btn btn-default btn-lg">Großer Button</button>
@@ -80,7 +112,7 @@
 {% endhighlight %}
 
   <p>Erstelle Buttons, die die gesamte Breite ihres übergeordneten Elements einnehmen, indem du <code>.btn-block</code> hinzufügst.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="block-btns">
     <div class="well" style="max-width: 400px; margin: 0 auto 10px;">
       <button type="button" class="btn btn-primary btn-lg btn-block">Block-Button</button>
       <button type="button" class="btn btn-default btn-lg btn-block">Block-Button</button>
@@ -97,7 +129,7 @@
 
   <h3>Button-Element</h3>
   <p><code>:active</code> ist eine Pseudo-Klasse und muss daher nicht manuell hinzugefügt werden. Falls du die Ansicht erzwingen möchtest, kein Problem, füg einfach <code>.active</code> ein.</p>
-  <p class="bs-example">
+  <p class="bs-example" data-example-id="active-button-btns">
     <button type="button" class="btn btn-primary btn-lg active">Primärer Button</button>
     <button type="button" class="btn btn-default btn-lg active">Button</button>
   </p>
@@ -108,7 +140,7 @@
 
   <h3>Anchor-Element</h3>
   <p>Füge die <code>.active</code>-Klasse zu <code>&lt;a&gt;</code>-Buttons hinzu.</p>
-  <p class="bs-example">
+  <p class="bs-example" data-example-id="active-anchor-btns">
     <a href="#" class="btn btn-primary btn-lg active" role="button">Primärer Link</a>
     <a href="#" class="btn btn-default btn-lg active" role="button">Link</a>
   </p>
@@ -123,7 +155,7 @@
 
   <h3>Button-Element</h3>
   <p>Füge das <code>disabled</code>-Attribut zu <code>&lt;button&gt;</code>s hinzu.</p>
-  <p class="bs-example">
+  <p class="bs-example" data-example-id="disabled-button-btns">
     <button type="button" class="btn btn-primary btn-lg" disabled="disabled">Primärer Button</button>
     <button type="button" class="btn btn-default btn-lg" disabled="disabled">Button</button>
   </p>
@@ -132,14 +164,14 @@
 <button type="button" class="btn btn-default btn-lg" disabled="disabled">Button</button>
 {% endhighlight %}
 
-  <div class="bs-callout bs-callout-danger">
+  <div class="bs-callout bs-callout-danger" id="callout-buttons-ie-disabled">
     <h4>Browser-Kompatibilität</h4>
-    <p>Wenn du das Attribut <code>disabled</code> zu einem <code>&lt;button&gt;</code> hinzufügst, generiert Internet Explorer 9 einen ekligen grauen Schatten an grauem Text, was wir nicht beheben können.</p>
+    <p>Wenn du das Attribut <code>disabled</code> zu einem <code>&lt;button&gt;</code> hinzufügst, generiert Internet Explorer 9 und älter einen ekligen grauen Schatten an grauem Text, was wir nicht beheben können.</p>
   </div>
 
   <h3>Anchor-Element</h3>
   <p>Füge die Klasse <code>.disabled</code> bei einem <code>&lt;a&gt;</code>-Button ein.</p>
-  <p class="bs-example">
+  <p class="bs-example" id="callout-buttons-disabled-anchor">
     <a href="#" class="btn btn-primary btn-lg disabled" role="button">Primärer Link</a>
     <a href="#" class="btn btn-default btn-lg disabled" role="button">Link</a>
   </p>
@@ -150,39 +182,9 @@
   <p>
     Wir verwenden <code>.disabled</code> hier als eine Hilfsklasse, so ähnlich wie die weit verbreitete <code>.active</code>-Klasse, deshalb gibt es hier kein Präfix.
   </p>
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-buttons-disabled-anchor">
     <h4>Probleme mit Link-Funktionalität</h4>
     <p>Diese Klasse verwendet <code>pointer-events: none</code>, um zu versuchen, die Link-Funktionalität von <code>&lt;a&gt;</code>-Buttons zu deaktivieren, diese Eigenschaft ist allerdings noch nicht standardisiert und wird von Opera 18 und älter sowie Internet Explorer 11 nicht rundum unterstützt. Außerdem ist auch in Browsern, die <code>pointer-events: none</code> unterstützen, die Navigation über die Tastatur nicht eingeschränkt. Das bedeutet, dass sehende Tastaturnutzer und Nutzer von assistiven Technologien diese Links weiterhin aktivieren können. Um wirklich sicherzugehen, solltest du solche Links mit eigenem JavaScript deaktivieren.</p>
   </div>
-  <div class="bs-callout bs-callout-warning">
-    <h4>Kontext-spezifische Verwendung</h4>
-    <p>Während Button-Klassen mit <code>&lt;a&gt;</code>- und <code>&lt;button&gt;</code>-Elementen verwendet werden können, sind für Buttons nur <code>&lt;button&gt;</code>-Elemente in Navs und Navbars erlaubt.</p>
-  </div>
 
-
-  <h2 id="buttons-tags">Button-Tags</h2>
-  <p>Verwende die Button-Klassen in Kombination mit <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code> oder <code>&lt;input&gt;</code>.</p>
-  <form class="bs-example">
-    <a class="btn btn-default" href="#" role="button">Link</a>
-    <button class="btn btn-default" type="submit">Button</button>
-    <input class="btn btn-default" type="button" value="Input &quot;button&quot;">
-    <input class="btn btn-default" type="submit" value="Input &quot;submit&quot;">
-  </form>
-{% highlight html %}
-<a class="btn btn-default" href="#" role="button">Link</a>
-<button class="btn btn-default" type="submit">Button</button>
-<input class="btn btn-default" type="button" value="Input &quot;button&quot;">
-<input class="btn btn-default" type="submit" value="Input &quot;submit&quot;">
-{% endhighlight %}
-
-  <div class="bs-callout bs-callout-warning">
-    <h4>Links, die als Buttons fungieren</h4>
-    <p>Falls <code>&lt;a&gt;</code>-Elemente als Buttons verwendet werden, also um Funktionen auf der gleichen Seite zu aktivieren statt zu einem anderen Dokument oder Bereich auf der gleichen Seite zu navigieren, sollten diese auch die passende <code>role="button"</code> erhalten.</p>
-  </div>
-
-  <div class="bs-callout bs-callout-warning">
-    <h4>Ergebnis in den verschiedenen Browsern</h4>
-    <p><strong>Wir empfehlen dir ausdrücklich, wenn möglich immer das <code>&lt;button&gt;</code>-Element zu verwenden</strong>, um sicherzustellen, dass Buttons in den verschiedenen Browsern immer gleich aussehen.</p>
-    <p>Unter anderem gibt es <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=697451">einen Bug in Firefox &lt;30</a>, der uns daran hindert, die Zeilenhöhe (<code>line-height</code>) von <code>&lt;input&gt;</code>-basierten Buttons zu verändern, was dazu führt, dass diese Buttons nicht die gleiche Höhe wie die anderen in Firefox haben.</p>
-  </div>
 </div>

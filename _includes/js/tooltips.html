@@ -6,13 +6,13 @@
   <h2 id="tooltips-examples">Beispiele</h2>
   <p>Bewege den Mauszeiger über (hover) die Links unten, um Tooltips zu sehen:</p>
   <div class="bs-example tooltip-demo">
-    <p class="muted" style="margin-bottom: 0;">Tight pants next level keffiyeh <a href="#" data-toggle="tooltip" title="Standard-Tooltip">you probably</a> haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel <a href="#" data-toggle="tooltip" title="Ein anderer Tooltip">have a</a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney's cleanse vegan chambray. A really ironic artisan <a href="#" data-toggle="tooltip" title="Und hier noch einer">whatever keytar</a>, scenester farm-to-table banksy Austin <a href="#" data-toggle="tooltip" title="Der letzte Tipp!">twitter handle</a> freegan cred raw denim single-origin coffee viral.
+    <p>Tight pants next level keffiyeh <a href="#" data-toggle="tooltip" title="Standard-Tooltip">you probably</a> haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel <a href="#" data-toggle="tooltip" title="Ein anderer Tooltip">have a</a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney's cleanse vegan chambray. A really ironic artisan <a href="#" data-toggle="tooltip" title="Und hier noch einer">whatever keytar</a>, scenester farm-to-table banksy Austin <a href="#" data-toggle="tooltip" title="Der letzte Tipp!">twitter handle</a> freegan cred raw denim single-origin coffee viral.
     </p>
   </div><!-- /example -->
 
   <h3>Statischer Tooltip</h3>
   <p>Vier Optionen sind verfügbar: nach oben, nach rechts, nach unten und nach links ausgerichtet.</p>
-  <div class="bs-example bs-example-tooltip">
+  <div class="bs-example bs-example-tooltip" data-example-id="static-tooltips">
     <div class="tooltip left" role="tooltip">
       <div class="tooltip-arrow"></div>
       <div class="tooltip-inner">
@@ -58,7 +58,7 @@
 <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip rechts">Tooltip rechts</button>
 {% endhighlight %}
 
-  <div class="bs-callout bs-callout-danger">
+  <div class="bs-callout bs-callout-danger" id="callout-tooltip-opt-in">
     <h4>Opt-in-Funktionalität</h4>
     <p>Aus Gründen der Performance musst du die Data-APIs von Tooltips und Popovers <strong>manuell initialisieren</strong> bevor du sie verwenden kannst.</p>
     <p>Ein Weg, alle Tooltips auf einer Seite zu initialisieren, wäre, sie über ihr Attribut <code>data-toggle</code> auszuwählen:</p>
@@ -68,15 +68,15 @@ $(function () {
 })
 {% endhighlight %}
   </div>
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-tooltip-groups">
     <h4>Tooltips &amp; Popovers in Button-Gruppen und Input-Gruppen benötigen besondere Einstellung</h4>
     <p>Wenn du Tooltips oder Popovers an Elementen in einer <code>.btn-group</code> oder <code>.input-group</code> verwendest, musst du die Option <code>container: 'body'</code> festlegen, um unerwünschte Nebeneffekte zu vermeiden (das Element könnte z.B. breiter werden und/oder seine abgerundeten Ecken verlieren, wenn der Tooltip oder das Popover ausgelöst wird).</p>
   </div>
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-tooltip-hidden">
     <h4>Versuche nicht, Tooltips an verborgenen Elementen anzuzeigen</h4>
     <p>Wenn das Zielelement <code>display: none;</code> ist und du trotzdem versuchst, <code>$(...).tooltip('show')</code> aufzurufen, wird der Tooltip falsch positioniert.</p>
   </div>
-  <div class="bs-callout bs-callout-info">
+  <div class="bs-callout bs-callout-info" id="callout-tooltip-disabled">
     <h4>Tooltips an deaktivierten Elementen benötigen ein umschließendes Element</h4>
     <p>Um einen Tooltip zu einem deaktivierten Element mit <code>disabled</code> oder <code>.disabled</code> hinzuzufügen, musst du das Element in einem <code>&lt;div&gt;</code> platzieren und den Tooltip stattdessen darauf anwenden.</p>
   </div>
@@ -90,7 +90,7 @@ $('#beispiel').tooltip(Optionen)
 
   <h3>Markup</h3>
   <p>Das benötigte Markup für einen Tooltip ist nur ein <code>data</code>-Attribut und ein <code>title</code> auf dem HTML-Element, das mit einem Tooltip versehen werden soll. Das generierte Markup eines Tooltips ist ziemlich einfach; es braucht allerdings eine Position (standardmäßig vom Plugin auf <code>top</code> gesetzt).</p>
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-tooltip-multiline">
     <h4>Mehrzeilige Links</h4>
     <p>Manchmal willst du einen Tooltip vielleicht zu einem Hyperlink hinzufügen, der über mehrere Zeilen geht. Das Standard-Verhalten in diesem Fall ist, dass der Tooltip horizontal und vertikal zentriert wird. Füge zu deinen Links <code>white-space: nowrap;</code> hinzu, um das zu vermeiden.</p>
   </div>
@@ -107,7 +107,7 @@ $('#beispiel').tooltip(Optionen)
 </div>
 {% endhighlight %}
 
-  <h3>Optionen</h3>
+  <h3 id="tooltips-options">Optionen</h3>
   <p>Optionen können über Data-Attribute oder JavaScript angegeben werden. Für Data-Attribute hängst du den Namen der Option einfach an <code>data-</code>, z.B. <code>data-animation=""</code>.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -202,12 +202,12 @@ $('#beispiel').tooltip(Optionen)
       </tbody>
     </table>
   </div><!-- /.table-responsive -->
-  <div class="bs-callout bs-callout-info">
+  <div class="bs-callout bs-callout-info" id="callout-tooltip-data">
     <h4>Data-Attribute für einzelne Tooltips</h4>
     <p>Optionen für individuelle Tooltips kannst du alternativ über Data-Attribute, wie oben erklärt, angeben.</p>
   </div>
 
-  <h3>Methoden</h3>
+  <h3 id="tooltips-methods">Methoden</h3>
 
   <h4>$().tooltip(Optionen)</h4>
   <p>Aktiviert Tooltip-Funktionen bei einer Reihe von Elementen.</p>
@@ -228,9 +228,9 @@ $('#beispiel').tooltip(Optionen)
   <p>Verbirgt und zerstört den Tooltip eines Elements.</p>
   {% highlight js %}$('#element').tooltip('destroy'){% endhighlight %}
 
-  <h3>Ereignisse</h3>
+  <h3 id="tooltips-events">Ereignisse</h3>
   <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped bs-events-table">
       <thead>
         <tr>
           <th style="width: 150px;">Ereignistyp</th>

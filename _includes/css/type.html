@@ -4,7 +4,7 @@
   <!-- Headings -->
   <h2 id="type-headings">Überschriften</h2>
   <p>Alle HTML-Überschriften, <code>&lt;h1&gt;</code> bis <code>&lt;h6&gt;</code>, sind verfügbar. Außerdem gibt es die Klassen <code>.h1</code> bis <code>.h6</code>, wenn du die Schriftstile einer Überschrift übernehmen willst, aber den Text weiterhin in einer Zeile (inline) mit anderem Text anzeigen möchtest.</p>
-  <div class="bs-example bs-example-type">
+  <div class="bs-example bs-example-type" data-example-id="simple-headings">
     <table class="table">
       <tbody>
         <tr>
@@ -44,7 +44,7 @@
 {% endhighlight %}
 
   <p>Platziere untergeordneten Text mit einem generischen <code>&lt;small&gt;</code>-Tag oder der Klasse <code>.small</code> in einer Überschrift.</p>
-  <div class="bs-example bs-example-type">
+  <div class="bs-example bs-example-type" data-example-id="small-headings">
     <table class="table">
       <tbody>
         <tr>
@@ -81,7 +81,7 @@
   <!-- Body copy -->
   <h2 id="type-body-copy">Fließtext</h2>
   <p>Bootstraps globaler Standardwert für die Schriftgröße, <code>font-size</code>, ist <strong>14px</strong>, mit einer Zeilenhöhe, <code>line-height</code>, von <strong>1.428</strong>. Dies wird auf den <code>&lt;body&gt;</code> und alle Absätze angewendet. Außerdem erhalten <code>&lt;p&gt;</code>s (Absätze) einen unteren Außenabstand von ihrer halben berechneten Zeilenhöhe (standardmäßig 10px).</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="body-copy">
     <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
     <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
     <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
@@ -93,7 +93,7 @@
   <!-- Body copy .lead -->
   <h3>Einführungstext</h3>
   <p>Hebe einen Absatz hervor, indem du <code>.lead</code> hinzufügst.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="lead-copy">
     <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.</p>
   </div>
 {% highlight html %}
@@ -108,7 +108,7 @@
   <h2 id="type-inline-text">Inline-Text-Elemente</h2>
   <h3>Markierter Text</h3>
   <p>Verwende das Tag <code>&lt;mark&gt;</code>, um Text aufgrund seiner Bedeutung in einem anderen Kontext hervorzuheben.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-mark">
     <p>Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.</p>
   </div>
 {% highlight html %}
@@ -117,7 +117,7 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
 
   <h3>Gelöschter Text</h3>
   <p>Um gelöschte Textblöcke anzuzeigen kannst du das Tag <code>&lt;del&gt;</code> verwenden.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-del">
     <p><del>Diese Textzeile soll als gelöschter Text angezeigt werden.</del></p>
   </div>
 {% highlight html %}
@@ -126,7 +126,7 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
 
   <h3>Durchgestrichener Text</h3>
   <p>Um nicht mehr relevante Textblöcke anzuzeigen, kannst du das Tag <code>&lt;s&gt;</code> verwenden.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-s">
     <p><s>Diese Textzeile soll als nicht mehr korrekt behandelt werden.</s></p>
   </div>
 {% highlight html %}
@@ -135,7 +135,7 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
 
   <h3>Eingefügter Text</h3>
   <p>Um Ergänzungen zum Dokument zu markieren kannst du das Tag <code>&lt;ins&gt;</code> verwenden.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-ins">
     <p><ins>Diese Textzeile soll als Ergänzung zum Dokument behandelt werden.</ins></p>
   </div>
 {% highlight html %}
@@ -144,7 +144,7 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
 
   <h3>Unterstrichener Text</h3>
   <p>Um Text zu unterstreichen kannst du das Tag <code>&lt;u&gt;</code> verwenden.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-u">
     <p><u>Diese Textzeile wird unterstrichen angezeigt</u>.</p>
   </div>
 {% highlight html %}
@@ -156,7 +156,7 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
   <h3>Kleiner Text</h3>
   <p>Um Text-Zeilen und -Blöcke in ihrer Bedeutung herabzusetzen, verwende das Tag <code>&lt;small&gt;</code>, das einen Text auf 85% der Größe seines übergeordneten Elements setzt. Überschriften-Elemente erhalten ihre eigene <code>font-size</code> für verschachtelte <code>&lt;small&gt;</code>-Elemente.</p>
   <p>Du kannst alternativ ein Inline-Element mit <code>.small</code> statt <code>&lt;small&gt;</code> verwenden.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-small">
     <p><small>Diese Textzeile steht im Kleingedruckten.</small></p>
   </div>
 {% highlight html %}
@@ -166,7 +166,7 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
 
   <h3>Fett</h3>
   <p>Um einen Textschnipsel mit einer dickeren Schriftstärke (font-weight) hervorzuheben.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-strong">
     <p>Der folgende Schnipsel wird <strong>als fetter Text angezeigt</strong>.</p>
   </div>
 {% highlight html %}
@@ -175,21 +175,21 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
 
   <h3>Kursiv</h3>
   <p>Um einen Textschnipsel mit Kursivdruck hervorzuheben.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-em">
     <p>Der folgende Schnipsel wird <em>als Kursiv angezeigt</em>.</p>
   </div>
 {% highlight html %}
 <em>als Kursiv angezeigt</em>
 {% endhighlight %}
 
-  <div class="bs-callout bs-callout-info">
+  <div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
     <h4>Alternative Elemente</h4>
     <p>Du kannst gerne die Elemente <code>&lt;b&gt;</code> und <code>&lt;i&gt;</code> in HTML5 verwenden. <code>&lt;b&gt;</code> ist dazu gedacht, Wörter hervorzuheben ohne ihre Bedeutung zu vergrößern während <code>&lt;i&gt;</code> hauptsächlich für Gesprochenes, technische Begriffe, usw. verwendet wird.</p>
   </div>
 
   <h2 id="type-alignment">Ausrichtungsklassen</h2>
   <p>Richte Text ganz einfach mit den folgenden Klassen neu aus.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="text-alignment">
     <p class="text-left">Links ausgerichteter Text.</p>
     <p class="text-center">Zentrierter Text.</p>
     <p class="text-right">Rechts ausgerichteter Text.</p>
@@ -206,7 +206,7 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
 
   <h2 id="type-transformation">Umwandlungsklassen</h2>
   <p>Wandle Text in Komponenten mit Klassen für Groß-/Kleinschreibung um.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="text-capitalization">
     <p class="text-lowercase">Kleingeschriebener Text.</p>
     <p class="text-uppercase">Großgeschriebener Text.</p>
     <p class="text-capitalize">Am Wortanfang großgeschriebener Text.</p>
@@ -219,11 +219,11 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
 
   <!-- Abbreviations -->
   <h2 id="type-abbreviations">Abkürzungen</h2>
-  <p>Gestaltete Umsetzung des HTML-Elements <code>&lt;abbr&gt;</code> für Abkürzungen und Akkronyme, die die vollständige Version des Wortes oder Begriffes bei hover anzeigen. Abkürzungen mit einem <code>title</code>-Attribut haben unten eine kleine gepunktete Linie und der Mauszeiger wird zu einem Hilfe-Fragezeichen, wenn er sich über der Abkürzung befindet und dann zusätzliche Informationen eingeblendet werden.</p>
+  <p>Gestaltete Umsetzung des HTML-Elements <code>&lt;abbr&gt;</code> für Abkürzungen und Akkronyme, die die vollständige Version des Wortes oder Begriffes bei hover anzeigen. Abkürzungen mit einem <code>title</code>-Attribut haben unten eine kleine gepunktete Linie und der Mauszeiger wird zu einem Hilfe-Fragezeichen, wenn er sich über der Abkürzung befindet. Über das Attribut werden dann zusätzliche Informationen vermittelt, auch an Nutzer von assistiven Technologien.</p>
 
   <h3>Einfache Abkürzung</h3>
   <p>Wenn du die ausgeschriebene Version der Abkürzung anzeigen möchtest, wenn der Mauszeiger darüber ist, musst du das <code>title</code>-Attribut zum <code>&lt;abbr&gt;</code>-Element hinzufügen.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-abbr">
     <p>Eine Abkürzung des Wortes Attribut ist <abbr title="Attribut">Attr.</abbr>.</p>
   </div>
 {% highlight html %}
@@ -232,7 +232,7 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
 
   <h3>Initialen</h3>
   <p>Füge <code>.initialism</code> zu einer Abkürzung hinzu, um die Schriftgröße etwas zu verkleinern.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-initialism">
     <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr> ist das Beste, was es seit geschnittenem Brot gegeben hat.</p>
   </div>
 {% highlight html %}
@@ -243,7 +243,7 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
   <!-- Addresses -->
   <h2 id="type-addresses">Adressen</h2>
   <p>Zeige Kontakt-Informationen für die nächste übergeordnete Person oder ein gesamtes Angebot an. Denk daran, die Zeilen mit <code>&lt;br&gt;</code> am Ende vernünftig zu formatieren.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-address">
     <address>
       <strong>Twitter, Inc.</strong><br>
       795 Folsom Ave, Suite 600<br>
@@ -276,7 +276,7 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
 
   <h3>Standard-Blockzitat</h3>
   <p>Umschließe irgendwelches <abbr title="HyperText Markup Language">HTML</abbr> als Zitat mit <code>&lt;blockquote&gt;</code>. Für direkte Zitate empfehlen wir das <code>&lt;p&gt;</code>-Element.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-blockquote">
     <blockquote>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
     </blockquote>
@@ -292,7 +292,7 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
 
   <h4>Eine Quelle benennen</h4>
   <p>Füge einen <code>&lt;footer&gt;</code> hinzu, um die Quelle zu identifizieren. Der eigentliche Name der Quelle sollte in <code>&lt;cite&gt;</code> stehen.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="blockquote-cite">
     <blockquote>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       <footer>Jemand berühmtes in <cite title="Quellentitel">Quellentitel</cite></footer>
@@ -307,7 +307,7 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
 
   <h4>Alternative Ansichten</h4>
   <p>Füge <code>.blockquote-reverse</code> hinzu, um das Blockzitat nach rechts auszurichten.</p>
-  <div class="bs-example" style="overflow: hidden;">
+  <div class="bs-example" style="overflow: hidden;" data-example-id="blockquote-reverse">
     <blockquote class="blockquote-reverse">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
       <footer>Jemand berühmtes in <cite title="Quellentitel">Quellentitel</cite></footer>
@@ -325,7 +325,7 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
 
   <h3>Unsortiert</h3>
   <p>Eine Liste von Objekten, bei denen die Reihenfolge explizit <em>nicht</em> von Bedeutung ist.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-ul">
     <ul>
       <li>Lorem ipsum dolor sit amet</li>
       <li>Consectetur adipiscing elit</li>
@@ -352,7 +352,7 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
 
   <h3>Sortiert</h3>
   <p>Eine Liste von Objekten, bei denen die Reihenfolge explizit von Bedeutung <em>ist</em>.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-ol">
     <ol>
       <li>Lorem ipsum dolor sit amet</li>
       <li>Consectetur adipiscing elit</li>
@@ -372,7 +372,7 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
 
   <h3>Ohne Gestaltung</h3>
   <p>Entferne die Standard-Gestaltung (<code>list-style</code>) und den linken Abstand von Listen-Einträgen. <strong>Dies bezieht sich nur auf direkte Unterobjekte der Liste</strong>, daher musst du die Klasse auch zu jeder eventuell verschachtelten Liste erneut hinzufügen.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="unstyled-list">
     <ul class="list-unstyled">
       <li>Lorem ipsum dolor sit amet</li>
       <li>Consectetur adipiscing elit</li>
@@ -399,7 +399,7 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
 
   <h3>Inline</h3>
   <p>Platziere alle Listen-Objekte in einer Zeile mit <code>display: inline-block;</code> und ein wenig Innenabstand.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="list-inline">
     <ul class="list-inline">
       <li>Lorem ipsum</li>
       <li>Phasellus iaculis</li>
@@ -414,7 +414,7 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
 
   <h3>Beschreibung</h3>
   <p>Eine Liste von Begriffen zusammen mit ihren Beschreibungen.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-dl">
     <dl>
       <dt>Beschreibungs-Listen</dt>
       <dd>Eine Liste mit Beschreibungen ist perfekt, um Begriffe zu erläutern.</dd>
@@ -434,7 +434,7 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
 
   <h4>Horizontale Beschreibung</h4>
   <p>Du kannst die Begriffe und Beschreibungen in einer <code>&lt;dl&gt;</code> auch nebeneinander anordnen. Sie sind dann auf kleinen Bildschirmen genau so gestapelt wie normale <code>&lt;dl&gt;</code>s aber sobald die Navbar horizontal wird, werden es auch diese Beschreibungen.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="horizontal-dl">
     <dl class="dl-horizontal">
       <dt>Beschreibungs-Listen</dt>
       <dd>Eine Liste mit Beschreibungen ist perfekt, um Begriffe zu erläutern.</dd>
@@ -454,7 +454,7 @@ Du kannst das Mark-Tag verwenden, um Text <mark>hervorzuheben</mark>.
 </dl>
 {% endhighlight %}
 
-  <div class="bs-callout bs-callout-info">
+  <div class="bs-callout bs-callout-info" id="callout-type-dl-truncate">
     <h4>Automatische Kürzung</h4>
     <p>In horizontalen Beschreibungs-Listen werden Begriffe mit <code>text-overflow</code> automatisch gekürzt, wenn sie zu lang sind, um in die linke Spalte zu passen. Auf schmaleren Ansichtsfenstern nehmen sie das normale gestapelte Layout an.</p>
   </div>

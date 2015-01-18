@@ -3,19 +3,19 @@
 
   <p class="lead">Navs sind einfache Komponenten in Bootstrap, mit denen du verschiedene Bereiche deines Projekts verlinken kannst. Ausgehend von der grundlegenden <code>.nav</code>-Klasse kannst du verschiedene zusätzliche Klassen hinzufügen und austauschen, um verschiedene Designs anzuwenden.</p>
 
-  <div class="bs-callout bs-callout-info">
+  <div class="bs-callout bs-callout-info" id="callout-navs-tabs-plugin">
     <h4>Navs als Teil von Tab-Panels benötigen JavaScript-Tabs-Plugin</h4>
     <p>Für Tabs mit Flächen, zwischen denen man wechseln kann, musst du das <a href="../javascript/#tabs">Tabs JavaScript-Plugin</a> verwenden. Im Markup sind dann außerdem zusätzliche <code>role</code>- und ARIA-Attribute erforderlich. Siehe das <a href="../javascript/#tabs-usage">Beispiel-Markup</a> des Plugins für mehr Infos.</p>
   </div>
 
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-navs-accessibility">
     <h4>Navs als Navigationselemente barrierefrei gestalten</h4>
     <p>Falls du Navs verwendest, um eine Navigationsleiste zu erstellen, füge unbedingt <code>role="navigation"</code> zum logischsten übergeordneten Container der <code>&lt;ul&gt;</code> hinzu oder umschließe die ganze Navigation mit einem <code>&lt;nav&gt;</code>-Element. Füge die Rolle nicht zur <code>&lt;ul&gt;</code> selbst hinzu, da dies assistive Technologien davon abhalten würde, sie als tatsächliche Liste vorzulesen.</p>
   </div>
 
   <h2 id="nav-tabs">Tabs</h2>
   <p>Beachte, dass die <code>.nav-tabs</code>-Klasse nur zusammen mit der <code>.nav</code>-Grund-Klasse funktioniert.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-nav-tabs">
     <ul class="nav nav-tabs">
       <li role="presentation" class="active"><a href="#">Start</a></li>
       <li role="presentation"><a href="#">Profil</a></li>
@@ -32,7 +32,7 @@
 
   <h2 id="nav-pills">Pills</h2>
   <p>Nimm den gleichen HTML-Code aber verwende stattdessen <code>.nav-pills</code>:</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-nav-pills">
     <ul class="nav nav-pills">
       <li role="presentation" class="active"><a href="#">Start</a></li>
       <li role="presentation"><a href="#">Profil</a></li>
@@ -47,7 +47,7 @@
 </ul>
 {% endhighlight %}
   <p>Pills können auch übereinander angeordnet werden. Füge einfach <code>.nav-stacked</code> hinzu.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-nav-stacked">
     <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
       <li role="presentation" class="active"><a href="#">Start</a></li>
       <li role="presentation"><a href="#">Profil</a></li>
@@ -64,11 +64,11 @@
   <h2 id="nav-justified">Gleichmäßig verteilte Variante</h2>
   <p>Lass Tabs oder Pills mit <code>.nav-justified</code> den Platz ihres übergeordneten Elements ganz einfach vollständig einnehmen, sobald die Bildschirmbreite 768px überschreitet. Auf kleineren Bildschirmen werden die Nav-Links übereinander angezeigt.</p>
   <p><strong class="text-danger">Gleichmäßig verteilte Nav-Links werden zurzeit in der Navbar nicht unterstützt.</strong></p>
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-navs-justified-safari">
     <h4>Safari und responsive Gleichsatz-Navs</h4>
     <p>Safari (Stand v8.0) hat einen Fehler, bei dem das Verändern der Breite deines Browser-Fensters Anzeigefehler in der gleichmäßig verteilten Variante der Navs hervorruft. Diese Fehler verschwinden nach einem erneuten Laden der Seite. Dieser Fehler ist auch im <a href="../examples/justified-nav/">Beispiel der gleichmäßig verteilten Variante</a> sichtbar.</p>
   </div>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-nav-justified">
     <ul class="nav nav-tabs nav-justified">
       <li role="presentation" class="active"><a href="#">Start</a></li>
       <li role="presentation"><a href="#">Profil</a></li>
@@ -94,12 +94,12 @@
   <h2 id="nav-disabled-links">Deaktivierte Links</h2>
   <p>Füge <code>.disabled</code> zu einem Eintrag in irgendeiner Nav-Komponente (Tabs oder Pills) hinzu für <strong>graue Links und deaktivierte Hover-Effekte</strong>.</p>
 
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-navs-anchor-disabled">
     <h4>Link-Funktionalität nicht beeinträchtigt</h4>
     <p>Diese Klasse ändert nur das Erscheinungsbild des <code>&lt;a&gt;</code>, nicht seine Funktionalität. Verwende eigenes JavaScript, um Links wirklich zu deaktivieren.</p>
   </div>
 
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="disabled-nav-link">
     <ul class="nav nav-pills">
       <li role="presentation"><a href="#">Klick-barer Link</a></li>
       <li role="presentation"><a href="#">Klick-barer Link</a></li>
@@ -119,7 +119,7 @@
   <p>Mit ein bisschen mehr HTML und dem <a href="../javascript/#dropdowns">Dropdowns-JavaScript-Plugin</a> kannst du Dropdown-Menüs zu Navs hinzufügen.</p>
 
   <h3>Tabs mit Dropdowns</h3>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="nav-tabs-with-dropdown">
     <ul class="nav nav-tabs">
       <li role="presentation" class="active"><a href="#">Start</a></li>
       <li role="presentation"><a href="#">Hilfe</a></li>
@@ -153,7 +153,7 @@
 {% endhighlight %}
 
   <h3>Pills mit Dropdowns</h3>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="nav-pills-with-dropdown">
     <ul class="nav nav-pills">
       <li role="presentation" class="active"><a href="#">Start</a></li>
       <li role="presentation"><a href="#">Hilfe</a></li>

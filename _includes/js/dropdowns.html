@@ -6,7 +6,7 @@
 
   <h3>In einer Navbar</h3>
   <div class="bs-example">
-    <nav id="navbar-example" class="navbar navbar-default navbar-static" role="navigation">
+    <nav id="navbar-example" class="navbar navbar-default navbar-static">
       <div class="container-fluid">
         <div class="navbar-header">
           <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-collapse">
@@ -122,7 +122,7 @@
   <p>Füge <code>data-toggle="dropdown"</code> zu einem Link oder Button hinzu, um ein Dropdown-Menü zu kontrollieren.</p>
 {% highlight html %}
 <div class="dropdown">
-  <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+  <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Dropdown-Auslöser
     <span class="caret"></span>
   </button>
@@ -150,22 +150,22 @@
 {% highlight js %}
 $('.dropdown-toggle').dropdown()
 {% endhighlight %}
-  <div class="bs-callout bs-callout-info">
+  <div class="bs-callout bs-callout-info" id="callout-dropdowns-data-required">
     <h4><code>data-toggle="dropdown"</code> weiterhin notwendig</h4>
     <p>Unabhängig davon, ob du dein Dropdown-Menü über JavaScript oder die Data-API aufrufst, musst du das auslösende Element (den Schalter) immer mit <code>data-toggle="dropdown"</code> kennzeichnen.</p>
   </div>
 
-  <h3>Optionen</h3>
+  <h3 id="dropdowns-options">Optionen</h3>
   <p><em>Keine</em></p>
 
-  <h3>Methoden</h3>
+  <h3 id="dropdowns-methods">Methoden</h3>
   <h4>$().dropdown('toggle')</h4>
   <p>Blendet das Dropdown-Menü einer angegebenen Navbar oder Tabs-Navigation ein/aus.</p>
 
-  <h3>Ereignisse</h3>
-  <p>Alle Dropdown-Ereignisse werden am übergeordneten Element von <code>.dropdown-menu</code> ausgelöst.</p>
+  <h3 id="dropdowns-events">Ereignisse</h3>
+  <p>Alle Dropdown-Ereignisse haben eine Eigenschaft <code>relatedTarget</code>, deren Wert das auslösende Anchor-Element ist.</p>
   <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped bs-events-table">
       <thead>
         <tr>
           <th style="width: 150px;">Ereignistyp</th>
@@ -175,19 +175,19 @@ $('.dropdown-toggle').dropdown()
       <tbody>
         <tr>
           <td>show.bs.dropdown</td>
-          <td>Dieses Ereignis wird sofort ausgelöst, wenn die Methode show aufgerufen wird. Das Element, das zum Umschalten verwendet wurde, ist über die <code>relatedTarget</code>-Eigenschaft des Ereignisses verfügbar.</td>
+          <td>Dieses Ereignis wird sofort ausgelöst, wenn die Methode show aufgerufen wird.</td>
         </tr>
         <tr>
           <td>shown.bs.dropdown</td>
-          <td>Dieses Ereignis wird ausgelöst, wenn das Dropdown-Menü dem Nutzer vollständig angezeigt wurde (wartet auf CSS-Übergänge). Das Element, das zum Umschalten verwendet wurde, ist über die <code>relatedTarget</code>-Eigenschaft des Ereignisses verfügbar.</td>
+          <td>Dieses Ereignis wird ausgelöst, wenn das Dropdown-Menü dem Nutzer vollständig angezeigt wurde (wartet auf CSS-Übergänge)..</td>
         </tr>
         <tr>
           <td>hide.bs.dropdown</td>
-          <td>Dieses Ereignis wird ausgelöst, wenn die Methode hide aufgerufen wird. Das Element, das zum Umschalten verwendet wurde, ist über die <code>relatedTarget</code>-Eigenschaft des Ereignisses verfügbar.</td>
+          <td>Dieses Ereignis wird ausgelöst, wenn die Methode hide aufgerufen wird.</td>
         </tr>
         <tr>
           <td>hidden.bs.dropdown</td>
-          <td>Dieses Ereignis wird ausgelöst, wenn das Dropdown-Menü vor dem Nutzer vollständig verborgen wurde (wartet auf CSS-Übergänge). Das Element, das zum Umschalten verwendet wurde, ist über die <code>relatedTarget</code>-Eigenschaft des Ereignisses verfügbar.</td>
+          <td>Dieses Ereignis wird ausgelöst, wenn das Dropdown-Menü vor dem Nutzer vollständig verborgen wurde (wartet auf CSS-Übergänge).</td>
         </tr>
       </tbody>
     </table>

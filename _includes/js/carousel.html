@@ -4,7 +4,7 @@
   <p>Eine Diashow-Komponente zum animierten Vorführen einer Reihe von Elementen, wie in einem Karussell. <strong>Mehrere Karussells ineinander verschachtelt werden nicht unterstützt.</strong></p>
 
   <h2 id="carousel-examples">Beispiele</h2>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="simple-carousel">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -87,7 +87,7 @@
 
   <h3>Optionale Untertitel</h3>
   <p>Füge Untertitel zu deinen Folien ganz einfach mit <code>.carousel-caption</code> zu jedem <code>.item</code> hinzu. Darin kannst du fast alle optionalen HTML-Inhalte einfügen und alles wird automatisch ausgerichtet und formatiert.</p>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="carousel-with-captions">
     <div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
@@ -152,7 +152,7 @@
 $('.karussell').carousel()
 {% endhighlight %}
 
-  <h3>Optionen</h3>
+  <h3 id="carousel-options">Optionen</h3>
   <p>Optionen können über Data-Attribute oder JavaScript angegeben werden. Für Data-Attribute hängst du den Namen der Option einfach an <code>data-</code>, z.B. <code>data-interval=""</code>.</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
@@ -193,7 +193,7 @@ $('.karussell').carousel()
     </table>
   </div><!-- /.table-responsive -->
 
-  <h3>Methoden</h3>
+  <h3 id="carousel-methods">Methoden</h3>
 
   <h4>.carousel(Optionen)</h4>
   <p>Initialisiert das Karussell mit einem optionalen <code>object</code> mit Optionen und beginnt, zwischen den verschiedenen Folien zu wechseln.</p>
@@ -219,7 +219,7 @@ $('.karussell').carousel({
   <h4>.carousel('next')</h4>
   <p>Bewegt das Karussell zum nächsten Eintrag.</p>
 
-  <h3>Ereignisse</h3>
+  <h3 id="carousel-events">Ereignisse</h3>
   <p>Bootstraps Karussell-Klassen legen zwei Ereignisse offen, mit denen du dich in Karussell-Funktionen einklinken kannst.</p>
   <p>Beide Ereignisse haben die folgenden zusätzlichen Eigenschaften:</p>
   <ul>
@@ -227,7 +227,7 @@ $('.karussell').carousel({
     <li><code>relatedTarget</code>: Das DOM-Element, das als aktives Element sichtbar gemacht wird.</li>
   </ul>
   <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped bs-events-table">
       <thead>
        <tr>
          <th style="width: 150px;">Ereignistyp</th>

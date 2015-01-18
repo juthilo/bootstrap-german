@@ -32,10 +32,9 @@ Kanal für [Fehlermeldungen](#fehlermeldungen), [Funktionsvorschläge](#funktion
 und [das Einreichen von Pull Requests](#pull-requests). Beachte allerdings bitte die
 folgenden Einschränkungen:
 
-* Der Issue Tracker ist **nicht** für persönliche Hilfe-Anfragen geeignet. Stack
-  Overflow ([`twitter-boostrap-3`](http://stackoverflow.com/questions/tagged/twitter-bootstrap-3)-Label)
-  oder [IRC](https://github.com/juthilo/bootstrap-german/blob/master/README.md#community)
-  sind bessere Orte, um Hilfe zu erhalten.
+* Der Issue Tracker ist **nicht** für persönliche Hilfe-Anfragen geeignet.
+  Stack Overflow ([`twitter-boostrap-3`](http://stackoverflow.com/questions/tagged/twitter-bootstrap-3)-Label)
+  oder [IRC](README.md#community) sind bessere Orte, um Hilfe zu erhalten.
 
 * **Beachte und respektiere** Andere in Diskussionen zu Issues und **vermeide**
   einen unhöflichen Umgangston sowie Abschweifungen vom Thema.
@@ -61,7 +60,7 @@ Wir verwenden in unserem Issue Tracker verschiedene Labels, um Fehlermeldungen l
 - `js` - Probleme in unseren kompilierten oder ursprünglichen JavaScript-Dateien.
 - `meta` - Issues, die das Projekt selbst oder unser GitHub-Repository betreffen.
 
-Für eine komplette Übersicht über unsere Labels kannst du dir die [Labels-Liste des Projekts](/twbs/bootstrap/labels) ansehen.
+Für eine komplette Übersicht über unsere Labels kannst du dir die [Labels-Liste des Projekts](https://github.com/twbs/bootstrap/labels) ansehen.
 
 
 ## Fehlermeldungen
@@ -123,7 +122,7 @@ All diese Informationen helfen Anderen dabei, potentielle Fehler im Code zu bese
 ### Browser-Bugs melden
 
 Einige der Fehlermeldungen, die wir erhalten, beziehen sich auf Fehler, die von Bugs in den Browsern selbst und nicht von Bootstrap verursacht werden.
-Wenn angebracht, versuchen wir diese Upstream-Fehler an die relevanten Browser-Hersteller zu melden und dann an unserer [Pinnwand für Browser-Bugs](http://holdirbootstrap.de/browser-bugs/) aufzuführen.
+Wenn angebracht, versuchen wir diese Upstream-Fehler an die relevanten Browser-Hersteller zu melden und dann an unserer [Pinnwand für Browser-Bugs](http://holdirbootstrap.de/browser-bugs/) aufzuführen und [sie im MDN zu dokumentieren](https://developer.mozilla.org/de/docs/Web).
 
 | Hersteller    | Browser                      | Rendering Engine | Seite für Fehlermeldungen                                                             | Hinweise                                            |
 | ------------- | ---------------------------- | ---------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------- |
@@ -228,12 +227,14 @@ folgenden Prozess zu folgen:
 Projekteigentümern, deine Arbeit unter den Bedingungen der
 [MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE) weiterzuverbreiten.
 
-### Pull Request Bot: Rorschach
+### Pull Request Bots
 
 [@twbs-rorschach](https://github.com/twbs-rorschach) ist ein Bootstrap-Bot, der in unserem GitHub-Issue-Tracker herumhängt und automatisch alle Pull Requests auf einige übliche kleine Fehler überprüft. Es kann sein, dass Rorschach einen Kommentar bei deinem Pull Request hinterlässt und diesen dann schließt. Falls das passiert, behebe einfach die Probleme, die im Kommentar genannt werden (dieser sollte Links zu Detailinformationen zu den jeweiligen Problemen enthalten) und dann:
 
 * Pushe die überarbeitete Version der Branch deines Pull Requests und schreibe einen Kommentar bei dem Pull Request, in dem du sagst, dass du das Problem behoben hast. Jemand aus dem Bootstrap-Hauptteam wird dann deinen Pull Request wieder öffnen.
 * Oder du kannst einfach einen neuen Pull Request für deine überarbeitete Version öffnen.
+
+[@twbs-savage](https://github.com/twbs-savage) ist ein Bootstrap-Bot, der automatisch Tests in verschiedenen Browsern (via [Sauce](https://saucelabs.com) und Travis CI) bei JavaScript-Pull Requests durchführt. Savage hinterlässt einen Kommentar bei Pull Requests und sagt, ob JS-Browsertests erfolgreich waren oder fehlgeschlagen sind, mit einem Link zu den vollständigen Travis-Build-Details. Falls dein Pull Request durchfällt, überprüfe das Travis-Log, um zu sehen, welche Browser- und Betriebssystem-Kombinationen die Tests nicht erfolgreich ausführen konnten. Jeder Browser-Test im Travis-Log enthält einen Link zu einer Seite bei Sauce mit Details über den Test. Auf diesen Detail-Seiten kannst du einen Bildschirmmitschnitt von dem Testlauf anschauen, um genau zu sehen, welche Unit Tests fehlgeschlagen sind.
 
 ## Code-Richtlinien
 

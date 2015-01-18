@@ -16,8 +16,10 @@ Copy any changes made here over to the README too. -->
 bootstrap/
 ├── css/
 │   ├── bootstrap.css
+│   ├── bootstrap.css.map
 │   ├── bootstrap.min.css
 │   ├── bootstrap-theme.css
+│   ├── bootstrap-theme.css.map
 │   └── bootstrap-theme.min.css
 ├── js/
 │   ├── bootstrap.js
@@ -26,10 +28,11 @@ bootstrap/
     ├── glyphicons-halflings-regular.eot
     ├── glyphicons-halflings-regular.svg
     ├── glyphicons-halflings-regular.ttf
-    └── glyphicons-halflings-regular.woff
+    ├── glyphicons-halflings-regular.woff
+    └── glyphicons-halflings-regular.woff2
 {% endhighlight %}
 
-  <p>Dies ist die einfachste Form von Bootstrap: vorkompilierte Dateien, die du einfach in fast jedem Web-Projekt einbauen kannst. Wir stellen sowohl kompiliertes CSS und JS (<code>bootstrap.*</code>), als auch kompiliertes und dann zusätzlich minimiertes CSS und JS (<code>bootstrap.min.*</code>) zur Verfügung. Schriften von Glyphicons sind auch dabei, sowie das optionale Bootstrap-Theme.</p>
+  <p>Dies ist die einfachste Form von Bootstrap: vorkompilierte Dateien, die du einfach in fast jedem Web-Projekt einbauen kannst. Wir stellen sowohl kompiliertes CSS und JS (<code>bootstrap.*</code>), als auch kompiliertes und dann zusätzlich minimiertes CSS und JS (<code>bootstrap.min.*</code>) zur Verfügung. CSS <a href="https://developers.google.com/chrome-developer-tools/docs/css-preprocessors">Source Maps</a> (`bootstrap.*.map`) sind für die Verwendung mit bestimmten Browser-Entwicklertools verfügbar. Schriften von Glyphicons sind auch dabei, sowie das optionale Bootstrap-Theme.</p>
 
   <h2 id="whats-included-source">Bootstrap-Quelltext</h2>
   <p>Wenn du den Bootstrap-Quelltext herunterlädst, erhältst du vorkompiliertes CSS, JavaScript und Schriftdateien, zusammen mit Less-, JavaScript- und Dokumentations-Quelldateien. Etwas genauer enthält es die folgende Dateistruktur und noch einiges mehr:</p>

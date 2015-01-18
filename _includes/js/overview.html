@@ -4,7 +4,7 @@
   <h3 id="js-individual-compiled">Einzeln oder kompiliert</h3>
   <p>Plugins können einzeln (über Bootstraps separate <code>*.js</code>-Dateien) oder alle auf einmal (über <code>bootstrap.js</code> oder das minimierte <code>bootstrap.min.js</code>) eingebunden werden.</p>
 
-  <div class="bs-callout bs-callout-danger">
+  <div class="bs-callout bs-callout-danger" id="callout-overview-not-both">
     <h4>Umgang mit dem kompilierten JavaScript</h4>
     <p>Sowohl <code>bootstrap.js</code> als auch <code>bootstrap.min.js</code> enhalten alle Plugins in einer einzigen Datei. Binde immer nur eine von beiden in deine Dokumente ein.</p>
   </div>
@@ -14,7 +14,7 @@
     <p>Du solltest Data-Attribute von verschiedenen Plugins nicht zusammen an einer Komponente verwenden. Zum Beispiel kann ein Button nicht gleichzeitig einen Tooltip anzeigen und ein Modal öffnen. Verwende ein umschließendes Element, um dies umzusetzen.</p>
   </div>
 
-  <div class="bs-callout bs-callout-danger">
+  <div class="bs-callout bs-callout-danger" id="callout-overview-dependencies">
     <h4>Plugin-Abhängigkeiten</h4>
     <p>Einige Plugins und CSS-Komponenten sind von anderen Plugins abhängig. Falls du Plugins einzeln einbindest, musst du mit Hilfe der Dokumentation überprüfen, ob diese Abhängigkeiten erfüllt werden. Beachte außerdem, dass alle Plugins jQuery benötigen (das bedeutet, dass jQuery <strong>vor</strong> den Plugin-Dateien eingebunden werden muss). <a href="{{ site.repo }}/blob/v{{ site.current_version }}/bower.json">Lies unsere <code>bower.json</code></a>, um herauszufinden, welche Versionen von jQuery unterstützt werden.</p>
   </div>
@@ -26,6 +26,11 @@
 {% highlight js %}
 $(document).off('.data-api')
 {% endhighlight %}
+
+  <div class="bs-callout bs-callout-danger" id="callout-overview-single-data">
+    <h4>Nur ein Plugin pro Element über Data-Attribute</h4>
+    <p>Verwende keine Data-Attribute von mehreren unterschiedlichen Plugins bei einem gleichen Element. Zum Beispiel kann ein Button nicht sowohl einen Tooltip haben und ein Modal aktivieren. Um so etwas zu bewerkstelligen, kannst du ein umschließendes Element hinzufügen.</p>
+  </div>
 
   <p>Alternativ kannst du ein bestimmtes Plugin anvisieren. Füge einfach den Namen des Plugins zur Namespace-Angabe hinzu, so wie hier:</p>
 {% highlight js %}

@@ -14,7 +14,7 @@
     <li>Der negative Außenabstand ist der Grund dafür, dass die Beispiele unten breiter sind als der Fließtext. Durch den negativen Außenabstand ist der Inhalt von Raster-Spalten auf einer Linie mit Inhalt außerhalb von jeglichen Raster-Elementen.</li>
     <li>Raster-Spalten werden definiert, indem du die Anzahl von zwölf verfügbaren Spalten angibst, über die die Raster-Spalte gelegt werden soll. Zum Beispiel kannst du drei gleich große Spalten mit drei <code>.col-xs-4</code> erstellen.</li>
     <li>Falls mehr als 12 Spalten in einer einzigen Zeile platziert werden, wird jede Gruppe mit Extra-Spalten als eine Einheit in eine neue Zeile rutschen.</li>
-    <li>Rasterklassen beziehen sich auf Geräte mit Bildschirmbreiten, die genau so groß oder größer als die Umbruchpunkt-Größen sind. Sie überschreiben Rasterklassen, die sich auf kleinere Geräte beziehen. Wenn du eine <code>.col-md-</code>-Klasse auf ein Element anwendest, wird sich dies daher nicht nur auf die Stile auf mittleren Geräten auswirken, sondern auch auf diejenigen auf großen Geräten, es sei denn es gibt außerdem eine <code>.col-lg-</code>-Klasse.</li>
+    <li>Rasterklassen beziehen sich auf Geräte mit Bildschirmbreiten, die genau so groß oder größer als die Umbruchpunkt-Größen sind. Sie überschreiben Rasterklassen, die sich auf kleinere Geräte beziehen. Wenn du z.B. eine <code>.col-md-*</code>-Klasse auf ein Element anwendest, wird sich dies daher nicht nur auf die Stile auf mittleren Geräten auswirken, sondern auch auf diejenigen auf großen Geräten, es sei denn es gibt außerdem eine <code>.col-lg-*</code>-Klasse.</li>
   </ul>
   <p>Sieh dir die Beispiele an, um diese Prinzipien in deinen Code einzubauen.</p>
 
@@ -68,49 +68,49 @@
       </thead>
       <tbody>
         <tr>
-          <th class="text-nowrap">Raster-Verhalten</th>
+          <th class="text-nowrap" scope="row">Raster-Verhalten</th>
           <td>Durchgehend horizontal</td>
           <td colspan="3">Zuerst minimiert, über Umbruchpunkten horizontal</td>
         </tr>
         <tr>
-          <th class="text-nowrap">Container-Breite</th>
+          <th class="text-nowrap" scope="row">Container-Breite</th>
           <td>Keine (auto)</td>
           <td>750px</td>
           <td>970px</td>
           <td>1170px</td>
         </tr>
         <tr>
-          <th class="text-nowrap">Klassen-Präfix</th>
+          <th class="text-nowrap" scope="row">Klassen-Präfix</th>
           <td><code>.col-xs-</code></td>
           <td><code>.col-sm-</code></td>
           <td><code>.col-md-</code></td>
           <td><code>.col-lg-</code></td>
         </tr>
         <tr>
-          <th class="text-nowrap">Spaltenanzahl</th>
+          <th class="text-nowrap" scope="row">Spaltenanzahl</th>
           <td colspan="4">12</td>
         </tr>
         <tr>
-          <th class="text-nowrap">Spaltenbreite</th>
+          <th class="text-nowrap" scope="row">Spaltenbreite</th>
           <td class="text-muted">Auto</td>
           <td>~62px</td>
           <td>~81px</td>
           <td>~97px</td>
         </tr>
         <tr>
-          <th class="text-nowrap">Abstandsbreite</th>
+          <th class="text-nowrap" scope="row">Abstandsbreite</th>
           <td colspan="4">30px (15px auf jeder Seite einer Spalte)</td>
         </tr>
         <tr>
-          <th class="text-nowrap">Verschachtelbar</th>
+          <th class="text-nowrap" scope="row">Verschachtelbar</th>
           <td colspan="4">Ja</td>
         </tr>
         <tr>
-          <th class="text-nowrap">Abrückung</th>
+          <th class="text-nowrap" scope="row">Abrückung</th>
           <td colspan="4">Ja</td>
         </tr>
         <tr>
-          <th class="text-nowrap">Spalten-Umordnung</th>
+          <th class="text-nowrap" scope="row">Spalten-Umordnung</th>
           <td colspan="4">Ja</td>
         </tr>
       </tbody>

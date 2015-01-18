@@ -3,14 +3,14 @@
 
   <p class="lead">Mach noch mehr mit Buttons. Kontrolliere den Status von Buttons oder gruppiere sie, um Toolbar-ähnliche Komponenten zu erstellen.</p>
 
-  <div class="bs-callout bs-callout-danger">
+  <div class="bs-callout bs-callout-danger" id="callout-buttons-ff-autocomplete">
     <h4>Browser-Kompatibilität</h4>
     <p><a href="https://github.com/twbs/bootstrap/issues/793">Firefox speichert jeglichen besonderen Status (deaktiviert und/oder ausgewählt) eines Formularelements (inkl. Buttons) auch wenn die Seite neu geladen wird</a>. Ein Workaround für dieses Problem ist die Verwendung von <code>autocomplete="off"</code>. Siehe <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=654072">Mozilla Bug #654072</a>.</p>
   </div>
 
   <h2 id="buttons-stateful">Aussagekräftig</h2>
   <p>Füge <code>data-loading-text="Wird geladen..."</code> hinzu, um bei einem Button einen Lade-Zustand anzuzeigen.</p>
-  <div class="bs-callout bs-callout-info">
+  <div class="bs-callout bs-callout-info" id="callout-buttons-state-names">
     <h4>Nimm den Zustand, der dir gefällt!</h4>
     <p>Im Rahmen dieser Demonstration verwenden wir <code>data-loading-text</code> und <code>$().button('loading')</code>; das ist aber nicht der einzige Zustand, den du verwenden kannst. <a href="#buttons-methods">Sieh dir für mehr Informationen dazu die Dokumentation für <code>$().button(string)</code> weiter unten an</a>.</p>
   </div>
@@ -35,7 +35,7 @@
 
   <h2 id="buttons-single-toggle">Einzelner Schalter</h2>
   <p>Füge <code>data-toggle="button"</code> hinzu, um einen einzelnen Button in einen Schalter zu verwandeln.</p>
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-buttons-single-pretoggled">
     <h4>Voreingestellte Buttons benötigen <code>.active</code> und <code>aria-pressed="true"</code></h4>
     <p>Bei Buttons, die schon als gedrückt markiert sein sollen, musst du die Klasse <code>.active</code> und das Attribut <code>aria-pressed="true"</code> selbst zum <code>button</code> hinzufügen.</p>
   </div>
@@ -52,15 +52,15 @@
 
   <h2 id="buttons-checkbox-radio">Auswahlfelder</h2>
   <p>Füge <code>data-toggle="buttons"</code> zu einer <code>.btn-group</code> hinzu, die Ankreuzfelder (Checkboxen) oder Radio-Buttons enthält, um sie zusammen mit ihren jeweiligen Stilen in Schalter zu verwandeln.</p>
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-buttons-multi-preselected">
     <h4>Vorausgewählte Optionen benötigen <code>.active</code></h4>
     <p>Wenn du Optionen vorauswählen möchtest, musst du selbst die Klasse <code>.active</code> zum <code>label</code> einer Schaltfläche hinzufügen.</p>
   </div>
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-buttons-only-click">
     <h4>Optischer "Ausgewählt"-Status wird nur bei Klick aktualisiert</h4>
     <p>Falls ein Checkbox-Button an- bzw. abgewählt wird, ohne ein <code>click</code>-Ereignis am Button auszulösen (z.B. über <code>&lt;input type="reset"&gt;</code> oder durch Setzen der Eigenschaft <code>checked</code> beim Eingabefeld), musst du die Klasse <code>.active</code> beim <code>label</code> des Eingabefelds selbst hinzufügen bzw. entfernen.</p>
   </div>
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="buttons-checkbox">
     <div class="btn-group" data-toggle="buttons">
       <label class="btn btn-primary active">
         <input type="checkbox" checked autocomplete="off"> Checkbox 1 (vorausgewählt)
@@ -87,7 +87,7 @@
 </div>
 {% endhighlight %}
 
-  <div class="bs-example">
+  <div class="bs-example" data-example-id="buttons-radio">
     <div class="btn-group" data-toggle="buttons">
       <label class="btn btn-primary active">
         <input type="radio" name="options" id="option1" autocomplete="off" checked> Radio-Button 1 (vorausgewählt)

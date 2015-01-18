@@ -3,7 +3,7 @@
 
   <h2 id="tabs-examples">Beispiel-Tabs</h2>
   <p>Füge schnelle, dynamische Tab-Funktionalität hinzu, um zwischen verschiedenen Blöcken von Inhalt zu wechseln, auch über Dropdown-Menüs.</p>
-  <div class="bs-example bs-example-tabs" role="tabpanel">
+  <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
     <ul id="meinTab" class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active"><a href="#start" id="start-tab" role="tab" data-toggle="tab" aria-controls="start" aria-expanded="true">Start</a></li>
       <li role="presentation"><a href="#profil" role="tab" id="profil-tab" data-toggle="tab" aria-controls="profil">Profil</a></li>
@@ -31,7 +31,7 @@
     </div>
   </div><!-- /example -->
 
-  <div class="bs-callout bs-callout-info">
+  <div class="bs-callout bs-callout-info" id="callout-tabs-extends-component">
     <h4>Erweitert die Tab-Navs</h4>
     <p>Dieses Plugin erweitert die <a href="../komponenten/#nav-tabs">Komponente Tab-Navs</a>, um tatsächliches Tabverhalten hinzuzufügen.</p>
   </div>
@@ -91,7 +91,7 @@ $('#meinTab li:eq(2) a').tab('show') // Dritten Tab auswählen (Nummern starten 
 </div>
 {% endhighlight %}
 
-  <h3>Methoden</h3>
+  <h3 id="tabs-methods">Methoden</h3>
   <h4>$().tab</h4>
   <p>
     Aktivierte ein Tab-Element und seinen Inhalts-Container. Der Tab sollte entweder ein <code>data-target</code>- oder ein <code>href</code>-Attribut haben, um den richtigen Container im DOM anzuvisieren.
@@ -118,7 +118,7 @@ $('#meinTab li:eq(2) a').tab('show') // Dritten Tab auswählen (Nummern starten 
 </script>
 {% endhighlight %}
 
-  <h3>Ereignisse</h3>
+  <h3 id="tabs-events">Ereignisse</h3>
   <p>Wenn ein neuer Tab angezeigt wird, werden in der folgenden Reihenfolge Ereignisse ausgelöst:</p>
   <ol>
     <li><code>hide.bs.tab</code> (beim zurzeit aktiven Tab)</li>
@@ -128,7 +128,7 @@ $('#meinTab li:eq(2) a').tab('show') // Dritten Tab auswählen (Nummern starten 
   </ol>
   <p>Falls zuvor kein Tab aktiv ist, werden die Ereignisse <code>hide.bs.tab</code> und <code>hidden.bs.tab</code> nicht ausgelöst.</p>
   <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped bs-events-table">
       <thead>
        <tr>
          <th style="width: 150px;">Ereignistyp</th>

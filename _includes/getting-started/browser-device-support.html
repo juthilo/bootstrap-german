@@ -18,7 +18,7 @@
       </thead>
       <tbody>
         <tr>
-          <th>Android</th>
+          <th scope="row">Android</th>
           <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
           <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
           <td class="text-muted" rowspan="3" style="vertical-align: middle;">k.A.</td>
@@ -26,21 +26,21 @@
           <td class="text-muted">k.A.</td>
         </tr>
         <tr>
-          <th>iOS</th>
+          <th scope="row">iOS</th>
           <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
           <td class="text-muted">k.A.</td>
           <td class="text-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Nicht Unterstützt</td>
           <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
         </tr>
         <tr>
-          <th>Mac OS X</th>
+          <th scope="row">Mac OS X</th>
           <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
           <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
           <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
           <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
         </tr>
         <tr>
-          <th>Windows</th>
+          <th scope="row">Windows</th>
           <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
           <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
           <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
@@ -59,9 +59,9 @@
     <table class="table table-bordered table-striped">
       <thead>
         <tr>
-          <th scope="col" class="col-xs-4">Funktion</th>
-          <th scope="col" class="col-xs-4">Internet Explorer 8</th>
-          <th scope="col" class="col-xs-4">Internet Explorer 9</th>
+          <th class="col-xs-4">Funktion</th>
+          <th class="col-xs-4">Internet Explorer 8</th>
+          <th class="col-xs-4">Internet Explorer 9</th>
         </tr>
       </thead>
       <tbody>
@@ -152,7 +152,6 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
     <li>Füge <code>.pull-right</code> zur letzten Spalte hinzu, um diese hart rechts auszurichten</li>
     <li>Verändere deine Prozentwerte manuell, um die Abrundungen in Safari perfekt auszubalancieren (schwieriger als die erste Option)</li>
   </ul>
-  <p>Wir behalten dies allerdings im Auge und werden unseren Code anpassen, falls wir eine einfache Lösung finden.</p>
 
   <h3 id="support-fixed-position-keyboards">Modals, Navbars und virtuelle Tastaturen</h3>
   <h4>Overflow und Scrolling</h4>
@@ -160,7 +159,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
   <h4>Virtuelle Tastaturen</h4>
   <p>Wenn du Eingabefelder in einem Modal oder einer fixierten Navbar verwendest, solltest du beachten, dass iOS einen Anzeigefehler hat, wegen dem die Position von fixierten Elementen nicht aktualisiert wird, wenn sich die virtuelle Tastatur öffnet. Dies kannst du z.B. umgehen, indem du deine Elemente zu <code>position: absolute</code> änderst oder einen Timer auslöst, wenn ein Feld fokussiert wird, um die Position manuell zu korrigieren. Dies wird nicht von Bootstrap geregelt, sondern du musst selbst entscheiden, welche Lösung die beste für deine Anwendung ist.</p>
   <h4>Navbar-Dropdown-Menüs</h4>
-  <p>Das <code>.dropdown-backdrop</code>-Element wird auf iOS im Nav nicht verwendet, da z-indexing zu komplex ist. Um Dropdowns in Navbars zu schließen, musst du daher direkt auf das Dropdown-Element (oder ein anderes Element, das ein click-Ereignis in iOS auslöst) klicken.</p>
+  <p>Das <code>.dropdown-backdrop</code>-Element wird auf iOS im Nav nicht verwendet, da z-indexing zu komplex ist. Um Dropdowns in Navbars zu schließen, musst du daher direkt auf das Dropdown-Element (oder <a href="https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile">ein anderes Element, das ein click-Ereignis in iOS auslöst</a>) klicken.</p>
 
   <h3 id="support-browser-zooming">Browser-Zooming</h3>
   <p>Zoomen auf Seiten kann in manchen Komponenten Anzeigefehler hervorbringen und das in Bootstrap genau so wie im restlichen Web. Abhängig vom Problem können wir es vielleicht beheben (suche zunächst und öffne dann ggf. einen Fehlerbericht auf GitHub). Im Zweifelsfall ignorieren wir diese Fehler aber häufig, weil sie oft keine einfache Lösung haben, sondern nur mit umständlichen Workarounds zu beheben sind.</p>

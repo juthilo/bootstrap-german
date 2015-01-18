@@ -131,9 +131,9 @@
       hoverClass: 'btn-clipboard-hover'
     })
 
-    // Insert copy to clipboard button before .highlight
+    // Insert In Zwischenablage kopieren button before .highlight
     $('.highlight').each(function () {
-      var btnHtml = '<div class="zero-clipboard"><span class="btn-clipboard">Copy</span></div>'
+      var btnHtml = '<div class="zero-clipboard"><span class="btn-clipboard">Kopieren</span></div>'
       $(this).before(btnHtml)
     })
     var zeroClipboard = new ZeroClipboard($('.btn-clipboard'))
@@ -143,11 +143,11 @@
     zeroClipboard.on('load', function () {
       htmlBridge
         .data('placement', 'top')
-        .attr('title', 'Copy to clipboard')
+        .attr('title', 'In Zwischenablage kopieren')
         .tooltip()
     })
 
-    // Copy to clipboard
+    // In Zwischenablage kopieren
     zeroClipboard.on('dataRequested', function (client) {
       var highlight = $(this).parent().nextAll('.highlight').first()
       client.setText(highlight.text())
@@ -156,17 +156,17 @@
     // Notify copy success and reset tooltip title
     zeroClipboard.on('complete', function () {
       htmlBridge
-        .attr('title', 'Copied!')
+        .attr('title', 'Kopiert!')
         .tooltip('fixTitle')
         .tooltip('show')
-        .attr('title', 'Copy to clipboard')
+        .attr('title', 'In Zwischenablage kopieren')
         .tooltip('fixTitle')
     })
 
     // Notify copy failure
     zeroClipboard.on('noflash wrongflash', function () {
       htmlBridge
-        .attr('title', 'Flash required')
+        .attr('title', 'Flash benötigt')
         .tooltip('fixTitle')
         .tooltip('show')
     })

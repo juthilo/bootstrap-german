@@ -1,8 +1,8 @@
 # [Bootstrap (deutsch)](http://holdirbootstrap.de)
 [![Bower-Version](https://badge.fury.io/bo/bootstrap.svg)](http://badge.fury.io/bo/bootstrap)
-[![NPM-Version](https://badge.fury.io/js/bootstrap.svg)](http://badge.fury.io/js/bootstrap)
+[![npm-Version](https://badge.fury.io/js/bootstrap.svg)](http://badge.fury.io/js/bootstrap)
 
-Bootstrap, ein umfangreiches und dennoch schlankes Mobile-First Frond-End-Framework für einfachere und schnellere Entwicklung im Web. Erdacht von [Mark Otto](https://twitter.com/mdo) und [Jacob Thornton](https://twitter.com/fat) und gepflegt vom [Hauptteam](https://github.com/twbs?tab=members) mit der großartigen Unterstützung der immer involvierten Community.
+Bootstrap, ein umfangreiches und dennoch schlankes Mobile-First Frond-End-Framework für einfachere und schnellere Entwicklung im Web. Erdacht von [Mark Otto](https://twitter.com/mdo) und [Jacob Thornton](https://twitter.com/fat) und gepflegt vom [Hauptteam](https://github.com/orgs/twbs/people) mit der großartigen Unterstützung der immer involvierten Community.
 
 Dies ist eine inoffizielle Übersetzung der Dokumentation von Bootstrap auf Deutsch. Die enthaltenen Informationen sind unter Umständen nicht immer aktuell. Für die neuesten und zuverlässigsten Informationen solltest du die [Original-Dokumentation auf Englisch](http://getbootstrap.com) lesen. Auch diese README-Datei ist eine übersetzte Version des Originals mit einigen Ergänzungen bezüglich der Übersetzung.
 
@@ -38,8 +38,10 @@ Sobald du Bootstrap heruntergeladen hast, findest du im Paket die folgenden Verz
 bootstrap/
 ├── css/
 │   ├── bootstrap.css
+│   ├── bootstrap.css.map
 │   ├── bootstrap.min.css
 │   ├── bootstrap-theme.css
+│   ├── bootstrap-theme.css.map
 │   └── bootstrap-theme.min.css
 ├── js/
 │   ├── bootstrap.js
@@ -48,10 +50,11 @@ bootstrap/
     ├── glyphicons-halflings-regular.eot
     ├── glyphicons-halflings-regular.svg
     ├── glyphicons-halflings-regular.ttf
-    └── glyphicons-halflings-regular.woff
+    ├── glyphicons-halflings-regular.woff
+    └── glyphicons-halflings-regular.woff2
 ```
 
-Wir stellen sowohl kompiliertes CSS und JS (`bootstrap.*`), als auch kompiliertes und dann zusätzlich minimiertes CSS und JS (`bootstrap.min.*`) zur Verfügung. Schriften von Glyphicons sind auch dabei, sowie das optionale Bootstrap-Theme.
+Wir stellen sowohl kompiliertes CSS und JS (`bootstrap.*`), als auch kompiliertes und dann zusätzlich minimiertes CSS und JS (`bootstrap.min.*`) zur Verfügung. CSS [Source Maps](https://developers.google.com/chrome-developer-tools/docs/css-preprocessors) (`bootstrap.*.map`) sind für die Verwendung mit bestimmten Browser-Entwicklertools verfügbar. Schriften von Glyphicons sind auch dabei, sowie das optionale Bootstrap-Theme.
 
 
 

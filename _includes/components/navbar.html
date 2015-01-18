@@ -14,22 +14,22 @@
       <li>Den Punkt, an dem deine Navbar zwischen minimierter und horizontaler Ansicht wechselt, anpassen. Verändere die <code>@grid-float-breakpoint</code> Variable oder füge deine eigenen Media Queries hinzu.</li>
     </ol>
   </div>
-  <div class="bs-callout bs-callout-danger">
+  <div class="bs-callout bs-callout-danger" id="callout-navbar-js">
     <h4>Benötigt JavaScript-Plugin</h4>
     <p>Falls JavaScript deaktiviert ist und die Anzeige nicht breit genug für den horizontalen Modus der Navbar ist, wird es unmöglich sein, die Navbar auszuklappen und die Inhalte in <code>.navbar-collapse</code> anzusehen.</p>
     <p>Für die responsive Navbar muss das <a href="../javascript/#collapse">Collapse-Plugin</a> in deiner Version von Bootstrap enthalten sein.</p>
   </div>
-  <div class="bs-callout bs-callout-info">
+  <div class="bs-callout bs-callout-info" id="callout-navbar-breakpoint">
     <h4>Punkt anpassen, an dem sich das Navbar-Layout verändert</h4>
     <p>Die Navbar faltet sich zu ihrer vertikalen mobilen Ansicht zusammen, wenn das Anzeigefenster schmaler als <code>@grid-float-breakpoint</code> ist und wird horizontal wenn die Breite des Anzeigefensters mindestens <code>@grid-float-breakpoint</code> ist. Verändere diese Variable im Less-Quellcode, um zu kontrollieren, wann die Navbar zwischen der kleinen mobilen und der breiteren Ansicht wechselt. Der Standard-Wert ist <code>768px</code> (der kleinste "small"-, oder "tablet"-Bildschirm).</p>
   </div>
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-navbar-role">
     <h4>Navbars barrierefrei gestalten</h4>
     <p>Denk daran, <code>role="navigation"</code> zu jeder Navbar hinzuzufügen, um sie möglichst barrierefrei zu machen.</p>
   </div>
 
-  <div class="bs-example">
-    <nav class="navbar navbar-default" role="navigation">
+  <div class="bs-example" data-example-id="default-navbar">
+    <nav class="navbar navbar-default">
       <div class="container-fluid">
         <!-- Titel und Schalter werden für eine bessere mobile Ansicht zusammengefasst -->
         <div class="navbar-header">
@@ -84,7 +84,7 @@
     </nav>
   </div>
 {% highlight html %}
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Titel und Schalter werden für eine bessere mobile Ansicht zusammengefasst -->
     <div class="navbar-header">
@@ -142,19 +142,19 @@
 
   <h2 id="navbar-brand-image">Logo</h2>
   <p>Ersetze den Titel in der Navbar mit deinem eigenen Bild, indem du den Text mit einem <code>&lt;img&gt;</code> tauschst. Da <code>.navbar-brand</code> eigene Abstände und eine feste Höhe hat, musst du abhängig von deinem Bild eventuell einiges CSS überschreiben.</p>
-  <div class="bs-example">
-    <nav class="navbar navbar-default" role="navigation">
+  <div class="bs-example" data-example-id="navbar-with-image-brand">
+    <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">
-            <img alt="Titel" height="20" src="data:image/png;base64,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">
+            <img alt="Titel" width="20" height="20" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAA81BMVEX///9VPnxWPXxWPXxWPXxWPXxWPXxWPXz///9hSYT6+vuFc6BXPn37+vz8+/z9/f2LeqWMe6aOfqiTg6uXiK5bQ4BZQX9iS4VdRYFdRYJfSINuWI5vWY9xXJF0YJR3Y5Z4ZZd5ZZd6Z5h9apq0qcW1qsW1q8a6sMqpnLyrn76tocCvpMGwpMJoUoprVYxeRoJjS4abjLGilLemmbrDutDFvdLPx9nX0eDa1OLb1uPd1+Td2OXe2eXh3Ofj3+nk4Orl4evp5u7u7PLv7fPx7/T08vb08/f19Pf29Pj39vn6+fuEcZ9YP35aQn/8/P1ZQH5fR4PINAOdAAAAB3RSTlMAIWWOw/P002ipnAAAAPhJREFUeF6NldWOhEAUBRvtRsfdfd3d3e3/v2ZPmGSWZNPDqScqqaSBSy4CGJbtSi2ubRkiwXRkBo6ZdJIApeEwoWMIS1JYwuZCW7hc6ApJkgrr+T/eW1V9uKXS5I5GXAjW2VAV9KFfSfgJpk+w4yXhwoqwl5AIGwp4RPgdK3XNHD2ETYiwe6nUa18f5jYSxle4vulw7/EtoCdzvqkPv3bn7M0eYbc7xFPXzqCrRCgH0Hsm/IjgTSb04W0i7EGjz+xw+wR6oZ1MnJ9TWrtToEx+4QfcZJ5X6tnhw+nhvqebdVhZUJX/oFcKvaTotUcvUnY188ue/n38AunzPPE8yg7bAAAAAElFTkSuQmCC">
           </a>
         </div>
       </div>
     </nav>
   </div>
 {% highlight html %}
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">
@@ -169,8 +169,8 @@
   <h2 id="navbar-forms">Formulare</h2>
   <p>Formulare müssen für eine korrekte Ausrichtung und sinnvolles Verhalten auf kleinen Bildschirmen in <code>.navbar-form</code> platziert werden. Nutze die Ausrichtungsoptionen, um zu entscheiden, wo das Formular sich in der Navbar befinden soll.</p>
   <p>Ein Hinweis: <code>.navbar-form</code> importiert viel Code von <code>.form-inline</code> über ein Mixin. <strong class="text-danger">Einige Felder, wie Input-Gruppen, benötigen eventuell feste Breiten, um vernünftig angezeigt zu werden.</strong></p>
-  <div class="bs-example">
-    <nav class="navbar navbar-default" role="navigation">
+  <div class="bs-example" data-example-id="navbar-form">
+    <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
@@ -201,21 +201,21 @@
 </form>
 {% endhighlight %}
 
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-navbar-mobile-caveats">
     <h4>Tücken auf mobilen Geräten</h4>
     <p>Es kann zu Schwierigkeiten kommen, wenn Formularelemente in fixierten Elementen auf mobilen Geräten angezeigt werden sollen. Mehr Informationen findest du in <a href="../los-gehts/#support-fixed-position-keyboards">unseren Browser-Support-Dokumenten</a>.</p>
   </div>
 
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-navbar-form-labels">
     <h4>Füge immer Labels hinzu</h4>
-    <p>Screenreader haben Schwierigkeiten mit Formularen, wenn du kein Lebel für jedes Eingabefeld hinzufügst. Du kannst diese Labels zu Inline-Formularen hinzufügen und dann mit <code>.sr-only</code> ausblenden.</p>
+    <p>Screenreader haben Schwierigkeiten mit Formularen, wenn du kein Lebel für jedes Eingabefeld hinzufügst. Du kannst diese Labels zu Inline-Formularen hinzufügen und dann mit <code>.sr-only</code> ausblenden. Es gibt noch andere Methoden, um ein Label für assistive Technologien bereitzustellen, wie z.B. die Attribute <code>aria-label</code>, <code>aria-labelledby</code> oder <code>title</code>. Falls keines davon vorhanden ist, greifen Screenreader u.U. auf das Attribut <code>placeholder</code> zurück, wenn es da ist. Beachte, dass die Verwendung von <code>placeholder</code> als Ersatz für andere Labelling-Methoden nicht empfohlen wird.</p>
   </div>
 
 
   <h2 id="navbar-buttons">Buttons</h2>
   <p>Füge die Klasse <code>.navbar-btn</code> zu <code>&lt;button&gt;</code>-Elementen hinzu, die nicht in einem <code>&lt;form&gt;</code> sind, um sie in der Navbar vertikal zu zentrieren.</p>
-  <div class="bs-example">
-    <nav class="navbar navbar-default" role="navigation">
+  <div class="bs-example" data-example-id="navbar-button">
+    <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3">
@@ -236,15 +236,15 @@
 <button type="button" class="btn btn-default navbar-btn">Anmelden</button>
 {% endhighlight %}
 
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-navbar-btn-context">
     <h4>Kontext-spezifische Verwendung</h4>
     <p>Wie die normalen <a href="../css/#buttons">Button-Klassen</a> kann auch <code>.navbar-btn</code> bei <code>&lt;a&gt;</code> und <code>&lt;input&gt;</code> angewendet werden. Du solltest allerdings weder <code>.navbar-btn</code> noch die ganz normalen Button-Klassen jemals bei <code>&lt;a&gt;</code>-Elementen innerhalb von <code>.navbar-nav</code> verwenden.</p>
   </div>
 
   <h2 id="navbar-text">Text</h2>
   <p>Umschließe Text mit <code>.navbar-text</code>, typischerweise über ein <code>&lt;p&gt;</code>-Tag, für angemessene Abstände und Farben.</p>
-  <div class="bs-example">
-    <nav class="navbar navbar-default" role="navigation">
+  <div class="bs-example" data-example-id="navbar-text">
+    <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-4">
@@ -268,8 +268,8 @@
 
   <h2 id="navbar-links">Zusätzliche Links</h2>
   <p>Wenn du normale Links außerhalb von normalen Navigations-Komponenten verwenden willst, nimm die Klasse <code>.navbar-link</code>, um die richtigen Farben für Standard- und invertierte Navbar anzuwenden.</p>
-  <div class="bs-example">
-    <nav class="navbar navbar-default" role="navigation">
+  <div class="bs-example" data-example-id="navbar-link">
+    <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-5">
@@ -294,7 +294,7 @@
   <h2 id="navbar-component-alignment">Ausrichtung</h2>
   <p>Du kannst Navigationslinks, Formulare, Buttons oder Text mit Hilfe der Hilfsklassen <code>.navbar-left</code> oder <code>.navbar-right</code> ausrichten. Beide Klassen legen einen CSS-Float in die angegebene Richtung fest. Als Beispiel, um Navigationslinks auszurichten, platziere diese in einer separaten <code>&lt;ul&gt;</code>, auf die die jeweilige Klasse angewendet ist.</p>
   <p>Diese Klassen werden über ein Mixin von <code>.pull-left</code> und <code>.pull-right</code> erzeugt, sind aber an Media Queries gebunden, damit die Ausrichtung auf verschiedenen Geräten stimmig bleibt.</p>
-  <div class="bs-callout bs-callout-warning">
+  <div class="bs-callout bs-callout-warning" id="callout-navbar-right-align">
     <h4>Mehrere Komponenten rechts ausrichten</h4>
     <p>Navbars sind zurzeit eingeschränkt, was mehrere <code>.navbar-right</code>-Klassen angeht. Um für richtigen Abstand zwischen Inhalten zu sorgen, verwenden wir beim letzten <code>.navbar-right</code>-Element negativen Außenabstand. Wenn mehrere Elemente diese Klasse verwenden, funktionieren die Abstände nicht wie gedacht.</p>
     <p>Wir werden dies neu überdenken, wenn wir die Komponente in v4 neu schreiben können.</p>
@@ -303,8 +303,8 @@
 
   <h2 id="navbar-fixed-top">Oben fixierte Variante</h2>
   <p>Füge <code>.navbar-fixed-top</code> hinzu und denke an einen <code>.container</code> oder <code>.container-fluid</code>, um den Navbar-Inhalt zu zentrieren und mit passenden Abständen zu versehen.</p>
-  <div class="bs-example bs-navbar-top-example">
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="bs-example bs-navbar-top-example" data-example-id="navbar-fixed-to-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <!-- Wir benutzen hier die fluid-Option, um zu vermeiden, dass die feste Breite eines normalen Containers in den schmalen Inhaltsspalten überschrieben wird. -->
       <div class="container-fluid">
         <div class="navbar-header">
@@ -328,14 +328,14 @@
     </nav>
   </div><!-- /example -->
 {% highlight html %}
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     ...
   </div>
 </nav>
 {% endhighlight %}
 
-  <div class="bs-callout bs-callout-danger">
+  <div class="bs-callout bs-callout-danger" id="callout-navbar-fixed-top-padding">
     <h4>Body-Padding notwendig</h4>
     <p>Die oben fixierte Navbar wird Teile deines Inhalts überlagern, solange du nicht oben <code>padding</code> zum <code>&lt;body&gt;</code> hinzufügst. Teste deine eigenen Werte oder nutze unseren Schnipsel unten. Tipp: Standardmäßig ist die Navbar 50 Pixel hoch.</p>
 {% highlight scss %}
@@ -347,8 +347,8 @@ body { padding-top: 70px; }
 
   <h2 id="navbar-fixed-bottom">Unten fixierte Variante</h2>
   <p>Füge <code>.navbar-fixed-bottom</code> hinzu und denke an einen <code>.container</code> oder <code>.container-fluid</code>, um den Navbar-Inhalt zu zentrieren und mit passenden Abständen zu versehen.</p>
-  <div class="bs-example bs-navbar-bottom-example">
-    <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+  <div class="bs-example bs-navbar-bottom-example" data-example-id="navbar-fixed-to-bottom">
+    <nav class="navbar navbar-default navbar-fixed-bottom">
       <!-- Wir benutzen hier die fluid-Option, um zu vermeiden, dass die feste Breite eines normalen Containers in den schmalen Inhaltsspalten überschrieben wird. -->
       <div class="container-fluid">
         <div class="navbar-header">
@@ -372,14 +372,14 @@ body { padding-top: 70px; }
     </nav>
   </div><!-- /example -->
 {% highlight html %}
-<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">
     ...
   </div>
 </nav>
 {% endhighlight %}
 
-  <div class="bs-callout bs-callout-danger">
+  <div class="bs-callout bs-callout-danger" id="callout-navbar-fixed-bottom-padding">
     <h4>Body-Padding notwendig</h4>
     <p>Die unten fixierte Navbar wird Teile deines Inhalts überlagern, solange du nicht unten <code>padding</code> zum <code>&lt;body&gt;</code> hinzufügst. Teste deine eigenen Werte oder nutze unseren Schnipsel unten. Tipp: Standardmäßig ist die Navbar 50 Pixel hoch.</p>
 {% highlight scss %}
@@ -392,8 +392,8 @@ body { padding-bottom: 70px; }
   <h2 id="navbar-static-top">Oben statische Variante</h2>
   <p>Erstelle mit <code>.navbar-static-top</code> eine Navbar, die die ganze Breite einnimmt, aber mit der Seite wegscrollt. Denke auch hier an einen <code>.container</code> oder <code>.container-fluid</code>, um den Navbar-Inhalt zu zentrieren und mit passenden Abständen zu versehen.</p>
   <p>Anders als bei den <code>.navbar-fixed-*</code>-Klassen musst du in diesem Fall kein Padding zum <code>body</code> hinzufügen.</p>
-  <div class="bs-example bs-navbar-top-example">
-    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="bs-example bs-navbar-top-example" data-example-id="navbar-static-top">
+    <nav class="navbar navbar-default navbar-static-top">
       <!-- Wir benutzen hier die fluid-Option, um zu vermeiden, dass die feste Breite eines normalen Containers in den schmalen Inhaltsspalten überschrieben wird. -->
       <div class="container-fluid">
         <div class="navbar-header">
@@ -417,7 +417,7 @@ body { padding-bottom: 70px; }
     </nav>
   </div><!-- /example -->
 {% highlight html %}
-<nav class="navbar navbar-default navbar-static-top" role="navigation">
+<nav class="navbar navbar-default navbar-static-top">
   <div class="container">
     ...
   </div>
@@ -427,8 +427,8 @@ body { padding-bottom: 70px; }
 
   <h2 id="navbar-inverted">Invertierte Variante</h2>
   <p>Verändere das Aussehen der Navbar, indem du <code>.navbar-inverse</code> hinzufügst.</p>
-  <div class="bs-example">
-    <nav class="navbar navbar-inverse" role="navigation">
+  <div class="bs-example" data-example-id="inverted-navbar">
+    <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <!-- Titel und Schalter werden für eine bessere mobile Ansicht zusammengefasst -->
         <div class="navbar-header">
@@ -453,7 +453,7 @@ body { padding-bottom: 70px; }
     </nav>
   </div><!-- /example -->
 {% highlight html %}
-<nav class="navbar navbar-inverse" role="navigation">
+<nav class="navbar navbar-inverse">
   ...
 </nav>
 {% endhighlight %}

@@ -5,7 +5,7 @@
     {% include header.html %}
   </head>
   <body>
-    <a class="sr-only sr-only-focusable" href="#content">Zum Hauptinhalt springen</a>
+    <a id="skippy" class="sr-only sr-only-focusable" href="#content"><div class="container"><span class="skiplink-text">Zum Hauptinhalt springen</span></div></a>
 
     <!-- Hauptnavigation -->
     {% include nav/main.html %}
@@ -25,8 +25,8 @@
           {{ content }}
         </div>
         {% unless page.fullwidth == true %}
-        <div class="col-md-3">
-          <div class="bs-docs-sidebar hidden-print hidden-xs-hidden-sm" role="complementary">
+        <div class="col-md-3" role="complementary">
+          <nav class="bs-docs-sidebar hidden-print hidden-xs-hidden-sm">
             <ul class="nav bs-docs-sidenav">
               {% if page.slug == "getting-started" %}
                 {% include nav/getting-started.html %}
@@ -54,7 +54,7 @@
               Theme-Vorschau aktivieren
             </a>
             {% endif %}
-          </div>
+          </nav>
         </div>
         {% endunless %}
       </div>

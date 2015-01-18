@@ -100,26 +100,6 @@
 
 -
   browser: >
-    Safari (OS X)
-  summary: >
-    OS X-Scroll-Leiste in `select[multiple]` mit Innenabstand verdeckt.
-  upstream_bug: >
-    WebKit#128489
-  origin: >
-    Bootstrap#12536
-
--
-  browser: >
-    Chrome
-  summary: >
-    `display: table-cell; width: 100%;` funktioniert nicht richtig bei `<input type="date">`.
-  upstream_bug: >
-    Chromium#346051
-  origin: >
-    Bootstrap#12548
-
--
-  browser: >
     Chrome
   summary: >
     `<input type="password">` verursacht gelegentlich korrupte Breiten bei Elementen mit Float.
@@ -140,11 +120,32 @@
 
 -
   browser: >
+    Chrome (Windows)
+  summary: >
+    Seiteninhalt kann gescrollt werden, obwohl `overflow: hidden;` angewendet wird.
+  upstream_bug: >
+    Chromium#438064
+  origin: >
+    Chromium#175502,
+    Bootstrap#14972
+
+-
+  browser: >
+    Safari (OS X)
+  summary: >
+    Scroll-Leiste in `select[multiple]` mit Innenabstand verdeckt.
+  upstream_bug: >
+    WebKit#128489, Safari#19208483
+  origin: >
+    Bootstrap#12536
+
+-
+  browser: >
     Safari (OS X)
   summary: >
     Seltsames Button-Verhalten bei einigen `<input type="number">`-Elementen.
   upstream_bug: >
-    WebKit#137269
+    WebKit#137269, Safari#18834768
   origin: >
     Bootstrap#8350,
     Normalize#283,
@@ -156,19 +157,9 @@
   summary: >
     `display: table-cell;` in Media-Query verursacht Rendering-Fehler beim Ändern der Fenstergröße.
   upstream_bug: >
-    WebKit#138167
+    WebKit#138167, Safari#18987206
   origin: >
     Bootstrap#9774
-
--
-  browser: >
-    Safari (iOS)
-  summary: >
-    `transform: translate3d(0,0,0);` Rendering-Bug.
-  upstream_bug: >
-    WebKit#138162, Safari#18804973
-  origin: >
-    Bootstrap#14603
 
 -
   browser: >
@@ -182,6 +173,26 @@
 
 -
   browser: >
+    Safari (OS X)
+  summary: >
+    Linearer Alpha-Verlauf hat dunkle Linie am Rand.
+  upstream_bug: >
+    WebKit#139803
+  origin: >
+    Bootstrap#15205
+
+-
+  browser: >
+    Safari (iOS)
+  summary: >
+    `transform: translate3d(0,0,0);` Rendering-Bug.
+  upstream_bug: >
+    WebKit#138162, Safari#18804973
+  origin: >
+    Bootstrap#14603
+
+-
+  browser: >
     Safari (iOS)
   summary: >
     Textfeld-Cursor bewegt sich beim Scrollen der Seite nicht mit.
@@ -192,10 +203,10 @@
 
 -
   browser: >
-    Chrome (Windows & Linux)
+    Safari (iOS)
   summary: >
-    Seiteninhalt kann gescrollt werden, obwohl `overflow: hidden;` angewendet wird.
+    `display: block` verursacht eine falsche vertikale Ausrichtung von Text in zeitlichen `<input>`s.
   upstream_bug: >
-    Chromium#429604
+    WebKit#139848
   origin: >
-    Bootstrap#14972
+    Bootstrap#11266, Bootstrap#13098

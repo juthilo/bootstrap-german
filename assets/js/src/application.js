@@ -63,7 +63,7 @@
 
       var activateTheme = function () {
         stylesheetLink.attr('href', stylesheetLink.attr('data-href'))
-        themeBtn.text('Theme-Vorschau deaktivieren')
+        themeBtn.text('Theme-Preview deaktivieren')
         localStorage.setItem('previewTheme', true)
       }
 
@@ -77,7 +77,7 @@
           activateTheme()
         } else {
           stylesheetLink.attr('href', '')
-          themeBtn.text('Theme-Vorschau aktivieren')
+          themeBtn.text('Theme-Preview aktivieren')
           localStorage.removeItem('previewTheme')
         }
       })
@@ -131,7 +131,7 @@
       hoverClass: 'btn-clipboard-hover'
     })
 
-    // Insert In Zwischenablage kopieren button before .highlight
+    // Insert copy to clipboard button before .highlight
     $('.highlight').each(function () {
       var btnHtml = '<div class="zero-clipboard"><span class="btn-clipboard">Kopieren</span></div>'
       $(this).before(btnHtml)
@@ -147,7 +147,7 @@
         .tooltip()
     })
 
-    // In Zwischenablage kopieren
+    // Copy to clipboard
     zeroClipboard.on('dataRequested', function (client) {
       var highlight = $(this).parent().nextAll('.highlight').first()
       client.setText(highlight.text())

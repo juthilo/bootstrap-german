@@ -2,7 +2,7 @@
   <h1 id="affix" class="page-header">Affix <small>affix.js</small></h1>
 
   <h2 id="affix-examples">Beispiel</h2>
-  <p>Die Unternavigation rechts auf dieser Seite ist eine Live-Ansicht des Affix-Plugins.</p>
+  <p>Das Affix-Plugin schaltet <code>position: fixed;</code> ein und aus, um den Effekt von <a href="https://developer.mozilla.org/de/docs/Web/CSS/position#Sticky_positioning"><code>position: sticky;</code></a> zu simulieren. Die Unternavigation rechts auf dieser Seite ist eine Live-Ansicht des Affix-Plugins.</p>
 
   <hr class="bs-docs-separator">
 
@@ -10,7 +10,7 @@
   <p>Verwende das Affix-Plugin über Data-Attribute oder manuell mit deinem eigenen JavaScript. <strong class="text-danger">In beiden Fällen musst du CSS für die Positionierung deines fixierten Inhalts angeben.</strong></p>
 
   <h3>Positionierung über CSS</h3>
-  <p>Das Affix-Plugin wechselt bei einem Element zwischen drei Klassen, die jeweils einen bestimmten Status repräsentieren: <code>.affix</code>, <code>.affix-top</code> und <code>.affix-bottom</code>. Du musst für diese Klassen selbst (unabhängig von diesem Plugin) Stile hinzufügen, um die tatsächlichen Positionen zu regeln.</p>
+  <p>Das Affix-Plugin wechselt bei einem Element zwischen drei Klassen, die jeweils einen bestimmten Status repräsentieren: <code>.affix</code>, <code>.affix-top</code> und <code>.affix-bottom</code>. Du musst für diese Klassen alle Stile außer <code>position: fixed;</code> selbst (unabhängig von diesem Plugin) hinzufügen, um die tatsächlichen Positionen zu regeln.</p>
   <p>So funktioniert das Affix-Plugin:</p>
   <ol>
     <li>Am Anfang fügt das Plugin die Klasse <code>.affix-top</code> hinzu, um anzuzeigen, dass das Element ganz oben ist. Hier brauchst du noch kein CSS zur Positionierung.</li>
@@ -46,12 +46,12 @@ $('#mein-affix').affix({
   <p>Optionen können über Data-Attribute oder JavaScript angegeben werden. Für Data-Attribute hängst du den Namen der Option einfach an <code>data-</code>, z.B. <code>data-offset-top="200"</code>.</p>
 
   <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped js-options-table">
       <thead>
         <tr>
-          <th style="width: 100px;">Name</th>
-          <th style="width: 100px;">Typ</th>
-          <th style="width: 50px;">Standard</th>
+          <th>Name</th>
+          <th>Typ</th>
+          <th>Standard</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
@@ -79,7 +79,7 @@ $('#mein-affix').affix({
     <table class="table table-bordered table-striped bs-events-table">
       <thead>
         <tr>
-          <th style="width: 150px;">Ereignistyp</th>
+          <th>Ereignistyp</th>
           <th>Beschreibung</th>
         </tr>
       </thead>

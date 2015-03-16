@@ -76,7 +76,7 @@ $(function () {
   </div>
 
   <h3>Live-Ansicht</h3>
-  <div class="bs-example" style="padding-bottom: 24px;">
+  <div class="bs-example bs-example-padded-bottom">
     <button type="button" class="btn btn-lg btn-danger bs-docs-popover" data-toggle="popover" title="Popover-Titel" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?">Popover anzeigen</button>
   </div>
 {% highlight html %}
@@ -122,9 +122,9 @@ $(function () {
   <p>Verwende den Auslöser <code>focus</code>, um Popovers beim nächsten Klick des Nutzers zu schließen.</p>
   <div class="bs-callout bs-callout-danger" id="callout-popover-dismiss-click">
     <h4>Spezifisches Markup für Schließen-beim-nächsten-Klick benötigt</h4>
-    <p>Für vernünftiges Verhalten in allen Browsern und auf allen Plattformen musst du das Tag <code>&lt;a&gt;</code>, <i>nicht</i> <code>&lt;button&gt;</code>, verwenden und außerdem das Attribut <a href="https://developer.mozilla.org/de/docs/Web/HTML/Global_attributes#tabindex"><code>tabindex</code></a> hinzufügen.</p>
+    <p>Für vernünftiges Verhalten in allen Browsern und auf allen Plattformen musst du das Tag <code>&lt;a&gt;</code>, <i>nicht</i> <code>&lt;button&gt;</code>, verwenden und außerdem die Attribute <code>role="button"</code> und <a href="https://developer.mozilla.org/de/docs/Web/HTML/Global_attributes#tabindex"><code>tabindex</code></a> hinzufügen.</p>
   </div>
-  <div class="bs-example" style="padding-bottom: 24px;">
+  <div class="bs-example bs-example-padded-bottom">
     <a tabindex="0" class="btn btn-lg btn-danger bs-docs-popover" role="button" data-toggle="popover" data-trigger="focus" title="Schließbares Popover" data-content="Und ein bisschen Inhalt. Ganz schön faszinierend, oder?">Schließbares Popover</a>
   </div>
 {% highlight html %}
@@ -139,12 +139,12 @@ $(function () {
   <h3 id="popovers-options">Optionen</h3>
   <p>Optionen können über Data-Attribute oder JavaScript angegeben werden. Für Data-Attribute hängst du den Namen der Option einfach an <code>data-</code>, z.B. <code>data-animation=""</code>.</p>
   <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped js-options-table js-options-table">
       <thead>
         <tr>
-          <th style="width: 100px;">Name</th>
-          <th style="width: 100px;">Typ</th>
-          <th style="width: 50px;">Standard</th>
+          <th>Name</th>
+          <th>Typ</th>
+          <th>Standard</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
@@ -247,23 +247,23 @@ $(function () {
   </div>
 
   <h3>Methoden</h3>
-  <h4>$().popover(Optionen)</h4>
+  <h4><code>$().popover(Optionen)</code></h4>
   <p>Initialisiert Popovers für eine Reihe von Elementen.</p>
 
-  <h4>.popover('show')</h4>
+  <h4><code>.popover('show')</code></h4>
   <p>Öffnet das Popover eines Elements. <strong>Gibt das Ergebnis an den Aufruf zurück, bevor das Popover tatsächlich angezeigt wurde</strong> (also bevor das Ereignis <code>shown.bs.popover</code> passiert). Dies wird als "manuelles" Auslösen des Popovers betrachtet. Popovers, deren Titel und Inhalt keine Zeichen enthalten, werden niemals angezeigt.</p>
   {% highlight js %}$('#element').popover('show'){% endhighlight %}
 
-  <h4>.popover('hide')</h4>
+  <h4><code>.popover('hide')</code></h4>
   <p>Verbirgt das Popover eines Elements. <strong>Gibt das Ergebnis an den Aufruf zurück, bevor das Popover tatsächlich verborgen wurde</strong> (also bevor das Ereignis <code>hidden.bs.popover</code> passiert). Dies wird als "manuelles" Auslösen des Popovers betrachtet.</p>
   {% highlight js %}$('#element').popover('hide'){% endhighlight %}
 
-  <h4>.popover('toggle')</h4>
+  <h4><code>.popover('toggle')</code></h4>
   <p>Schaltet die Sichtbarkeit des Popovers eines Elements um. <strong>Gibt das Ergebnis an den Aufruf zurück, bevor das Popover tatsächlich ein-/ausgeblendet wurde</strong> (also bevor das Ereignis <code>shown.bs.popover</code> oder <code>hidden.bs.popover</code> passiert). Dies wird als "manuelles" Auslösen des Popovers betrachtet.</p>
   {% highlight js %}$('#element').popover('toggle'){% endhighlight %}
 
-  <h4>.popover('destroy')</h4>
-  <p>Verbirgt und zerstört das Popover eines Elements.</p>
+  <h4><code>.popover('destroy')</code></h4>
+  <p>Verbirgt und zerstört das Popover eines Elements. Popovers, die Delegierung verwenden (die mit <a href="#popovers-options">der <code>selector</code>-Option erstellt werden), können nicht einzeln über untergeordnete Auslöser-Elemente zerstört werden.</a>
   {% highlight js %}$('#element').popover('destroy'){% endhighlight %}
 
   <h3 id="popovers-events">Ereignisse</h3>
@@ -271,7 +271,7 @@ $(function () {
     <table class="table table-bordered table-striped bs-events-table">
       <thead>
         <tr>
-          <th style="width: 150px;">Ereignistyp</th>
+          <th>Ereignistyp</th>
           <th>Beschreibung</th>
         </tr>
       </thead>

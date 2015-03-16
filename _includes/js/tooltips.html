@@ -110,12 +110,12 @@ $('#beispiel').tooltip(Optionen)
   <h3 id="tooltips-options">Optionen</h3>
   <p>Optionen können über Data-Attribute oder JavaScript angegeben werden. Für Data-Attribute hängst du den Namen der Option einfach an <code>data-</code>, z.B. <code>data-animation=""</code>.</p>
   <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped js-options-table">
       <thead>
         <tr>
-          <th style="width: 100px;">Name</th>
-          <th style="width: 100px;">type</th>
-          <th style="width: 50px;">Standard</th>
+          <th>Name</th>
+          <th>type</th>
+          <th>Standard</th>
           <th>Beschreibung</th>
         </tr>
       </thead>
@@ -209,23 +209,23 @@ $('#beispiel').tooltip(Optionen)
 
   <h3 id="tooltips-methods">Methoden</h3>
 
-  <h4>$().tooltip(Optionen)</h4>
+  <h4><code>$().tooltip(Optionen)</code></h4>
   <p>Aktiviert Tooltip-Funktionen bei einer Reihe von Elementen.</p>
 
-  <h4>.tooltip('show')</h4>
+  <h4><code>.tooltip('show')</code></h4>
   <p>Öffnet den Tooltip eines Elements. <strong>Gibt das Ergebnis an den Aufruf zurück, bevor der Tooltip tatsächlich angezeigt wurde</strong> (also bevor das Ereignis <code>shown.bs.tooltip</code> passiert). Dies wird als "manuelles" Auslösen des Tooltips betrachtet. Tooltips, deren Titel keine Zeichen enthalten, werden niemals angezeigt.</p>
   {% highlight js %}$('#element').tooltip('show'){% endhighlight %}
 
-  <h4>.tooltip('hide')</h4>
+  <h4><code>.tooltip('hide')</code></h4>
   <p>Verbirgt den Tooltip eines Elements. <strong>Gibt das Ergebnis an den Aufruf zurück, bevor der Tooltip tatsächlich verborgen wurde</strong> (also bevor das Ereignis <code>hidden.bs.tooltip</code> passiert). Dies wird als "manuelles" Auslösen des Tooltips betrachtet.</p>
   {% highlight js %}$('#element').tooltip('hide'){% endhighlight %}
 
-  <h4>.tooltip('toggle')</h4>
+  <h4><code>.tooltip('toggle')</code></h4>
   <p>Schaltet die Sichtbarkeit des Tooltips eines Elements um. <strong>Gibt das Ergebnis an den Aufruf zurück, bevor der Tooltip tatsächlich ein-/ausgeblendet wurde</strong> (also bevor das Ereignis <code>shown.bs.tooltip</code> oder <code>hidden.bs.tooltip</code> passiert). Dies wird als "manuelles" Auslösen des Tooltips betrachtet.</p>
   {% highlight js %}$('#element').tooltip('toggle'){% endhighlight %}
 
-  <h4>.tooltip('destroy')</h4>
-  <p>Verbirgt und zerstört den Tooltip eines Elements.</p>
+  <h4><code>.tooltip('destroy')</code></h4>
+  <p>Verbirgt und zerstört den Tooltip eines Elements. Tooltips, die Delegierung verwenden (die mit <a href="#tooltips-options">der <code>selector</code>-Option erstellt werden), können nicht einzeln über untergeordnete Auslöser-Elemente zerstört werden.</a>
   {% highlight js %}$('#element').tooltip('destroy'){% endhighlight %}
 
   <h3 id="tooltips-events">Ereignisse</h3>
@@ -233,7 +233,7 @@ $('#beispiel').tooltip(Optionen)
     <table class="table table-bordered table-striped bs-events-table">
       <thead>
         <tr>
-          <th style="width: 150px;">Ereignistyp</th>
+          <th>Ereignistyp</th>
           <th>Beschreibung</th>
         </tr>
       </thead>

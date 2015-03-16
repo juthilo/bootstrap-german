@@ -193,12 +193,12 @@ $('.collapse').collapse()
   <h3 id="collapse-options">Optionen</h3>
   <p>Optionen können über Data-Attribute oder JavaScript angegeben werden. Für Data-Attribute hängst du den Namen der Option einfach an <code>data-</code>, z.B. <code>data-parent=""</code>.</p>
   <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped js-options-table">
       <thead>
        <tr>
-         <th style="width: 100px;">Name</th>
-         <th style="width: 50px;">Typ</th>
-         <th style="width: 50px;">Standard</th>
+         <th>Name</th>
+         <th>Typ</th>
+         <th>Standard</th>
          <th>Beschreibung</th>
        </tr>
       </thead>
@@ -221,21 +221,21 @@ $('.collapse').collapse()
 
   <h3 id="collapse-methods">Methoden</h3>
 
-  <h4>.collapse(Optionen)</h4>
-  <p>Aktiviert deinen Inhalt als klappbares Element. Akzeptiert optional ein <code>object</code> mit Optionen.
+  <h4><code>.collapse(Optionen)</code></h4>
+  <p>Aktiviert deinen Inhalt als klappbares Element. Akzeptiert optional ein <code>object</code> mit Optionen.</p>
 {% highlight js %}
 $('#meinKlappelement').collapse({
   toggle: false
 })
 {% endhighlight %}
 
-  <h4>.collapse('toggle')</h4>
+  <h4><code>.collapse('toggle')</code></h4>
   <p>Ändert den Status eines klappbaren Elements von sichtbar zu verborgen und umgekehrt.</p>
 
-  <h4>.collapse('show')</h4>
+  <h4><code>.collapse('show')</code></h4>
   <p>Zeigt ein klappbares Element an.</p>
 
-  <h4>.collapse('hide')</h4>
+  <h4><code>.collapse('hide')</code></h4>
   <p>Verbirgt ein klappbares Element.</p>
 
   <h3 id="collapse-events">Ereignisse</h3>
@@ -244,7 +244,7 @@ $('#meinKlappelement').collapse({
     <table class="table table-bordered table-striped bs-events-table">
       <thead>
        <tr>
-         <th style="width: 150px;">Ereignistyp</th>
+         <th>Ereignistyp</th>
          <th>Beschreibung</th>
        </tr>
       </thead>

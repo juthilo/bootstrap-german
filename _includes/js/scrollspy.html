@@ -75,9 +75,9 @@ body {
 }
 {% endhighlight %}
 {% highlight html %}
-<body data-spy="scroll" data-target=".navbar-example">
+<body data-spy="scroll" data-target="#navbar-example">
   ...
-  <div class="navbar-example">
+  <div id="navbar-example">
     <ul class="nav nav-tabs" role="tablist">
       ...
     </ul>
@@ -89,12 +89,12 @@ body {
   <h3>Über JavaScript</h3>
   <p>Ruf den Scroll-Beobachter über JavaScript auf, nachdem du <code>position: relative;</code> in deinem CSS hinzugefügt hast:</p>
 {% highlight js %}
-$('body').scrollspy({ target: '.navbar-example' })
+$('body').scrollspy({ target: '#navbar-example' })
 {% endhighlight %}
 
 
   <h3 id="scrollspy-methods">Methoden</h3>
-  <h4>.scrollspy('refresh')</h4>
+  <h4><code>.scrollspy('refresh')</code></h4>
   <p>Wenn du ScrollSpy auf Seiten verwendest, auf denen Elemente (aus) dem DOM hinzugefügt oder entfernt werden, musst du die Methode zur Aktualisierung so aufrufen:</p>
 {% highlight js %}
 $('[data-spy="scroll"]').each(function () {
@@ -106,12 +106,12 @@ $('[data-spy="scroll"]').each(function () {
   <h3 id="scrollspy-options">Optionen</h3>
   <p>Optionen können über Data-Attribute oder JavaScript angegeben werden. Für Data-Attribute hängst du den Namen einer Option einfach an <code>data-</code>, also z.B. <code>data-offset=""</code>.</p>
   <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped js-options-table">
       <thead>
        <tr>
-         <th style="width: 100px;">Name</th>
-         <th style="width: 100px;">Typ</th>
-         <th style="width: 50px;">Standard</th>
+         <th>Name</th>
+         <th>Typ</th>
+         <th>Standard</th>
          <th>Beschreibung</th>
        </tr>
       </thead>
@@ -131,7 +131,7 @@ $('[data-spy="scroll"]').each(function () {
     <table class="table table-bordered table-striped bs-events-table">
       <thead>
        <tr>
-         <th style="width: 150px;">Ereignistyp</th>
+         <th>Ereignistyp</th>
          <th>Beschreibung</th>
        </tr>
       </thead>

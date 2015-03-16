@@ -21,12 +21,13 @@ Um direkt loszulegen, geh auf <http://holdirbootstrap.de>!
 
 ## Schnellstart
 
-Es sind vier Optionen verfügbar, um direkt loszulegen:
+Es sind fünf Optionen verfügbar, um direkt loszulegen:
 
 - [Neueste Version herunterladen](https://github.com/twbs/bootstrap/archive/v3.2.0.zip).
 - Repository klonen: `git clone https://github.com/twbs/bootstrap.git`.
 - Mit [Bower](http://bower.io) installieren: `bower install bootstrap`.
-- Mit [npm](https://www.npmjs.org) installieren: `npm install bootstrap`.
+- Mit [npm](https://www.npmjs.com) installieren: `npm install bootstrap`.
+- Mit [Meteor](https://www.meteor.com/) installieren: `meteor add twbs:bootstrap`.
 
 Lies die Seite [Los geht's](http://holdirbootstrap.de/los-gehts/) für Informationen über die Inhalte des Frameworks, Vorlagen und Beispiele und mehr.
 
@@ -89,7 +90,7 @@ Die englische Dokumentation für v2.3.2 ist fürs Erste unter <http://getbootstr
 
 Bitte lies dir unsere Richtlinien für Beiträge ([Übersetzung](https://github.com/juthilo/bootstrap-german/blob/master/CONTRIBUTING.md) / [Original](https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md)) durch. Darin findest du Anleitungen zum Erstellen von Fehlerberichten, Programmier-Standards und Hinweise zur Entwicklung.
 
-Außerdem denke bitte daran relevante Unit Tests beizufügen, wenn die Beiträge, die du über einen Pull Request einreichst, JavaScript-Verbesserungen oder -Funktionen enthalten. HTML und CSS sollte immer dem [Code Guide](https://github.com/mdo/code-guide) von [Mark Otto](https://github.com/mdo) folgen.
+Außerdem musst du [relevante Unit Tests](https://github.com/twbs/bootstrap/tree/master/js/tests) beifügen, wenn die Beiträge, die du über einen Pull Request einreichst, JavaScript-Verbesserungen oder -Funktionen enthalten. HTML und CSS sollte immer dem [Code Guide](https://github.com/mdo/code-guide) von [Mark Otto](https://github.com/mdo) folgen.
 
 Voreinstellungen für Editoren / Textbearbeitungsprogramme sind in der Datei [.editorconfig](https://github.com/twbs/bootstrap/blob/master/.editorconfig) angegeben, damit du ganz einfach in gängigen Text-Editoren loslegen kannst. Lies mehr darüber und lade passende Plugins für Editoren auf <http://editorconfig.org> herunter.
 
@@ -99,11 +100,11 @@ Voreinstellungen für Editoren / Textbearbeitungsprogramme sind in der Datei [.e
 
 Bleib auf dem Laufenden, was die Entwicklung und Neuigkeiten aus der Community angeht.
 
-- Folge [@twbootstrap auf Twitter](https://twitter.com/twbootstrap).
+- Folge [@getbootstrap auf Twitter](https://twitter.com/getbootstrap).
 - Lies und abonniere [Das Offizielle Bootstrap Blog](http://blog.getbootstrap.com).
 - Chatte mit anderen Bootstrappern über IRC. Und zwar auf dem `irc.freenode.net`-Server, im Kanal `##bootstrap`.
 - Hilfe bei der Umsetzung deiner Projekte findest du z.B. auf Stack Overflow (markiert mit [`twitter-bootstrap-3`](http://stackoverflow.com/questions/tagged/twitter-bootstrap-3)).
-
+- Entwickler sollten das Stichwort `bootstrap` bei Paketen verwenden, die die Funktionen von Bootstrap anpassen oder erweitern, wenn die Pakete über [npm](https://www.npmjs.com/browse/keyword/bootstrap) oder ähnliche Mechanismen verbreitet werden, um bestmöglich gefunden werden zu können.
 
 
 ## Versionen

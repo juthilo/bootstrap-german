@@ -528,7 +528,7 @@
 
 
   <h2 id="forms-control-disabled">Deaktivierte Ansicht</h2>
-  <p>Füge das Boolean-Attribut <code>disabled</code> zu einem Feld hinzu, um Benutzereingaben abzuschalten und einen etwas anderen Look anzuwenden.</p>
+  <p>Füge das Boolean-Attribut <code>disabled</code> zu einem Feld hinzu, um Benutzerinteraktionen zu verhindern. Deaktivierte Eingabefelder sind etwas heller und fügen einen <code>not-allowed</code>-Cursor hinzu.</p>
   <div class="bs-example" data-example-id="text-form-control-disabled">
     <form>
       <input class="form-control" id="deaktiviertesFeld" type="text" placeholder="Deaktivierter Platzhalter-Text." disabled>
@@ -598,7 +598,7 @@
 
 
   <h2 id="forms-control-readonly">Nur-Lesen-Ansicht</h2>
-  <p>Füge das Boolean-Attribut <code>readonly</code> zu einem Formularfeld hinzu, um Benutzereingaben zu verhindern und das Feld deaktiviert aussehen zu lassen.</p>
+  <p>Füge das Boolean-Attribut <code>readonly</code> zu einem Formularfeld hinzu, um zu verhindern, dass der Wert des Felds verändert wird. Nur-Lesen-Felder sind etwas heller (genau wie deaktivierte Felder), behalten aber ihren normalen Cursor.</p>
   <div class="bs-example" data-example-id="readonly-text-form-control">
     <form>
       <input class="form-control" type="text" placeholder="Mich bitte nur lesen…" readonly>
@@ -613,9 +613,9 @@
   <p>Bootstrap beinhaltet Stile für Fehler-, Warnung- und Erfolg-Rückmeldungen bei Formularfeldern. Um sie zu verwenden, füge <code>.has-warning</code>, <code>.has-error</code> oder <code>.has-success</code> zum übergeordneten Element hinzu. Alle <code>.control-label</code>, <code>.form-control</code> und <code>.help-block</code> in diesem Element werden dann die Rückmeldungs-Stile erhalten.</p>
 
   <div class="bs-callout bs-callout-warning" id="callout-form-validation-state-accessibility">
-    <h4>Validierungsstatus an assistive Technologien vermitteln</h4>
-    <p>Die Verwendung dieser Validierungsstile zur Bezeichnung des Status eines Formularelements führt nur zu einem visuellen Hinweis, der Nutzern von assistiven Technologien wie Screenreadern nicht vermittelt wird.</p>
-    <p>Sorge dafür, dass ein alternativer Hinweis auf den Status ebenfalls bereitgestellt wird. Zum Beispiel kannst du im Text des <code>&lt;label&gt;</code> des jeweiligen Formularelements selbst auf den Status hinweisen (wie im folgenden Beispiel) oder ein zusätzliches Element mit Textinformationn über den Validierungsstatus über <code>aria-describedby</code> mit dem Formularelement verknüpfen (siehe das Beispiel im folgenden Abschnitt). Im Falle eines Fehlers kannst du auch das Attribut <code>aria-invalid="true"</code> zum Formularelement hinzufügen.</p>
+    <h4>Validierungsstatus an assistive Technologien und farbenblinde Nutzer vermitteln</h4>
+    <p>Die Verwendung dieser Validierungsstile zur Bezeichnung des Status eines Formularelements führt nur zu einem visuellen, farbbasierten Hinweis, der Nutzern von assistiven Technologien - wie Screenreadern - oder farbenblinden Nutzern nicht vermittelt wird.</p>
+    <p>Sorge dafür, dass ein alternativer Hinweis auf den Status ebenfalls bereitgestellt wird. Zum Beispiel kannst du im Text des <code>&lt;label&gt;</code> des jeweiligen Formularelements selbst auf den Status hinweisen (wie im folgenden Beispiel), ein <a href="../components/#glyphicons">Glyphicon</a> (mit angemessenem alternativen Text innerhalb der Klasse <code>.sr-only</code> - siehe die <a href="../components/#glyphicons-examples">Glyphicon-Beispiele) hinzufügen, oder einen zusätzlichen <a href="#forms-help-text">Hilfetextblock</a> zur Verfügung stellen. Für assistive Technologien im Besonderen können ungültige Formularfelder ein Attribut <code>aria-invalid="true"</code> zugewiesen bekommen.</p>
   </div>
 
   <div class="bs-example" data-example-id="form-validation-states">

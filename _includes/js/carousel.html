@@ -155,12 +155,12 @@ $('.karussell').carousel()
   <h3 id="carousel-options">Optionen</h3>
   <p>Optionen können über Data-Attribute oder JavaScript angegeben werden. Für Data-Attribute hängst du den Namen der Option einfach an <code>data-</code>, z.B. <code>data-interval=""</code>.</p>
   <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped js-options-table">
       <thead>
        <tr>
-         <th style="width: 100px;">Name</th>
-         <th style="width: 50px;">Typ</th>
-         <th style="width: 50px;">Standard</th>
+         <th>Name</th>
+         <th>Typ</th>
+         <th>Standard</th>
          <th>Beschreibung</th>
        </tr>
       </thead>
@@ -195,7 +195,7 @@ $('.karussell').carousel()
 
   <h3 id="carousel-methods">Methoden</h3>
 
-  <h4>.carousel(Optionen)</h4>
+  <h4><code>.carousel(Optionen)</code></h4>
   <p>Initialisiert das Karussell mit einem optionalen <code>object</code> mit Optionen und beginnt, zwischen den verschiedenen Folien zu wechseln.</p>
 {% highlight js %}
 $('.karussell').carousel({
@@ -203,20 +203,20 @@ $('.karussell').carousel({
 })
 {% endhighlight %}
 
-  <h4>.carousel('cycle')</h4>
+  <h4><code>.carousel('cycle')</code></h4>
   <p>Wechselt zwischen den Karussell-Einträgen von links nach rechts.</p>
 
-  <h4>.carousel('pause')</h4>
+  <h4><code>.carousel('pause')</code></h4>
   <p>Pausiert die Drehung des Karussells.</p>
 
 
-  <h4>.carousel(number)</h4>
+  <h4><code>.carousel(number)</code></h4>
   <p>Bewegt das Karussell zu einem bestimmten Eintrag (basiert auf 0, wie ein Array).</p>
 
-  <h4>.carousel('prev')</h4>
+  <h4><code>.carousel('prev')</code></h4>
   <p>Bewegt das Karussell zum vorherigen Eintrag.</p>
 
-  <h4>.carousel('next')</h4>
+  <h4><code>.carousel('next')</code></h4>
   <p>Bewegt das Karussell zum nächsten Eintrag.</p>
 
   <h3 id="carousel-events">Ereignisse</h3>
@@ -226,11 +226,12 @@ $('.karussell').carousel({
     <li><code>direction</code>: Die Richtung, in die das Karussell rotiert (entweder <code>"left"</code> (nach links) oder <code>"right"</code> (nach rechts)).</li>
     <li><code>relatedTarget</code>: Das DOM-Element, das als aktives Element sichtbar gemacht wird.</li>
   </ul>
+  <p>Alle Karussell-Ereignisse werden beim Karussell selbst ausgelöst (also beim <code>&lt;div class="carousel"&gt;</code>).</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped bs-events-table">
       <thead>
        <tr>
-         <th style="width: 150px;">Ereignistyp</th>
+         <th>Ereignistyp</th>
          <th>Beschreibung</th>
        </tr>
       </thead>

@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Die 2 Meta-Tags oben *müssen* zuerst im head stehen; jeglicher sonstiger head-Inhalt muss *nach* diesen Tags kommen -->
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -35,15 +36,11 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Navigation ein-/ausblenden</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+          <!-- Der Button zum Umschalten der Navigation in der mobilen Ansicht kann ohne Probleme entfernt werden, da er in einer nicht-responsiven Umsetzung nicht benötigt wird -->
           <a class="navbar-brand" href="#">Projekt-Titel</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <!-- Beachte, dass die Klassen .navbar-collapse und .collapse von der #navbar entfernt wurden -->
+        <div id="navbar">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Start</a></li>
             <li><a href="#ueber">Über</a></li>
@@ -84,7 +81,7 @@
       </div>
 
       <h3>Was sich ändert</h3>
-      <p>Beachte, dass es kein <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code> gibt, was das Anpassen der Seite auf mobilen Geräten deaktiviert. Außerdem setzen wir die Breite von unserem Container zurück und sind damit schon quasi fertig.</p>
+      <p>Beachte, dass es kein <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code> gibt, was das Anpassen der Seite auf mobilen Geräten deaktiviert. Außerdem setzen wir die Breite von unserem Container zurück und verändern die Navbar, so dass sie nicht mehr zusammenklappt, und sind damit schon quasi fertig.</p>
 
       <h3>Navbars</h3>
       <p>Ein kleiner Hinweis: die Navbar-Komponente ist in diesem Zusammenhang eher schwierig zu handhaben, da die Stile für ihre Anzeige eher spezifisch und detailliert sind. Überschreibungen dieser Stile für eine Desktop-PC-artige Anzeige sind nicht so schlank oder leicht zu berechnen, wie man es sich vielleicht wünscht. Denk einfach daran, dass es hier eine größere Gefahr für Probleme gibt, wenn du das Beispiel erweiterst.</p>

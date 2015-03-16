@@ -9,7 +9,7 @@
  * details, see http://creativecommons.org/licenses/by/3.0/.
  */
 
-/* global ZeroClipboard */
+/* global ZeroClipboard, addAnchors */
 
 !function ($) {
   'use strict';
@@ -133,7 +133,7 @@
 
     // Insert copy to clipboard button before .highlight
     $('.highlight').each(function () {
-      var btnHtml = '<div class="zero-clipboard"><span class="btn-clipboard">Kopieren</span></div>'
+      var btnHtml = '<div class="zero-clipboard"><span class="btn-clipboard">Copy</span></div>'
       $(this).before(btnHtml)
     })
     var zeroClipboard = new ZeroClipboard($('.btn-clipboard'))
@@ -143,7 +143,7 @@
     zeroClipboard.on('load', function () {
       htmlBridge
         .data('placement', 'top')
-        .attr('title', 'In Zwischenablage kopieren')
+        .attr('title', 'Copy to clipboard')
         .tooltip()
     })
 
@@ -156,17 +156,17 @@
     // Notify copy success and reset tooltip title
     zeroClipboard.on('complete', function () {
       htmlBridge
-        .attr('title', 'Kopiert!')
+        .attr('title', 'Copied!')
         .tooltip('fixTitle')
         .tooltip('show')
-        .attr('title', 'In Zwischenablage kopieren')
+        .attr('title', 'Copy to clipboard')
         .tooltip('fixTitle')
     })
 
     // Notify copy failure
     zeroClipboard.on('noflash wrongflash', function () {
       htmlBridge
-        .attr('title', 'Flash benötigt')
+        .attr('title', 'Flash required')
         .tooltip('fixTitle')
         .tooltip('show')
     })
@@ -174,3 +174,8 @@
   })
 
 }(jQuery)
+
+;(function () {
+  'use strict';
+  addAnchors('.bs-docs-container h1, .bs-docs-container h2, .bs-docs-container h3, .bs-docs-container h4, .bs-docs-container h5');
+})();

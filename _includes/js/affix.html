@@ -8,6 +8,7 @@
 
   <h2 id="affix-usage">Verwendung</h2>
   <p>Verwende das Affix-Plugin über Data-Attribute oder manuell mit deinem eigenen JavaScript. <strong class="text-danger">In beiden Fällen musst du CSS für die Positionierung deines fixierten Inhalts angeben.</strong></p>
+  <p>Hinweis: Verwende das Affix-Plugin nicht an einem Element, das sich in einem relativ positionierten Element, wie einer verschobenen (pull/push) Spalte aus dem Raster-System, befindet, da es einen <a href="https://github.com/twbs/bootstrap/issues/12126">Rendering-Bug in Safari</a> gibt.</p>
 
   <h3>Positionierung über CSS</h3>
   <p>Das Affix-Plugin wechselt bei einem Element zwischen drei Klassen, die jeweils einen bestimmten Status repräsentieren: <code>.affix</code>, <code>.affix-top</code> und <code>.affix-bottom</code>. Du musst für diese Klassen alle Stile außer <code>position: fixed;</code> selbst (unabhängig von diesem Plugin) hinzufügen, um die tatsächlichen Positionen zu regeln.</p>
@@ -72,6 +73,19 @@ $('#mein-affix').affix({
     </table>
   </div><!-- /.table-responsive -->
 
+  <h3 id="affix-methods">Methoden</h3>
+
+  <h4><code>.affix(Optionen)</code></h4>
+  <p>Aktiviert deinen Inhalt als Inhalt mit Affix-Funktion. Akzeptiert ein optionales <code>object</code> mit Optionen.</p>
+{% highlight js %}
+$('#meinAffix').affix({
+  offset: 15
+})
+{% endhighlight %}
+
+  <h4><code>.affix('checkPosition')</code></h4>
+  <p>Berechnet den Status des Affix-Elements basierend auf den Abmessungen, der Position und der Scrollposition der relevanten Elemente neu. Die Klassen <code>.affix</code>, <code>.affix-top</code> und <code>.affix-bottom</code> werden abhängig von dem neuen Status hinzugefügt oder entfernt. Diese Methode muss aufgerufen werden, wenn die Dimensionen des Affix-Inhalts oder des Zielelements sich ändern, um eine korrekte Positioniertung des Affix-Inhalts sicherzustellen.</p>
+  {% highlight js %}$('#meinAffix').affix('checkPosition'){% endhighlight %}
 
   <h3 id="affix-events">Ereignisse</h3>
   <p>Bootstraps Affix-Plugin legt einige Ereignisse offen, über die du dich in Affix-Funktionen einklinken kannst.</p>

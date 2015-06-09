@@ -10,6 +10,7 @@
 
   <h2 id="buttons-stateful">Aussagekräftig</h2>
   <p>Füge <code>data-loading-text="Wird geladen..."</code> hinzu, um bei einem Button einen Lade-Zustand anzuzeigen.</p>
+  <p><strong class="text-danger">Diese Funktion ist ab v3.3.5 als veraltet markiert und wird in v4 entfernt.</strong></p>
   <div class="bs-callout bs-callout-info" id="callout-buttons-state-names">
     <h4>Nimm den Zustand, der dir gefällt!</h4>
     <p>Im Rahmen dieser Demonstration verwenden wir <code>data-loading-text</code> und <code>$().button('loading')</code>; das ist aber nicht der einzige Zustand, den du verwenden kannst. <a href="#buttons-methods">Sieh dir für mehr Informationen dazu die Dokumentation für <code>$().button(string)</code> weiter unten an</a>.</p>
@@ -119,7 +120,7 @@
   <p>Schaltet das "Gedrückt"-Aussehen um. Gibt dem Button den Anschein, dass er aktiviert wurde oder entfernt diesen wieder.</p>
 
   <h4><code>$().button('reset')</code></h4>
-  <p>Setzt den Status des Buttons zurück. Ändert den Text wieder zum Original.</p>
+  <p>Setzt den Status des Buttons zurück. Ändert den Text wieder zum Original. <strong>Diese Methode ist asynchron und meldet sich zurück, bevor das Zurücksetzen tatsächlich abgeschlossen wurde.</strong></p>
 
   <h4><code>$().button(String)</code></h4>
   <p>Ändert den Text zu irgendeinem angegebenen String.</p>

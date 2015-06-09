@@ -1,4 +1,5 @@
 # [Bootstrap (deutsch)](http://holdirbootstrap.de)
+[![Slack (englisch)](https://bootstrap-slack.herokuapp.com/badge.svg)](https://bootstrap-slack.herokuapp.com)
 ![Bower-Version](https://img.shields.io/bower/v/bootstrap.svg?style=flat)
 [![npm-Version](https://img.shields.io/npm/v/bootstrap.svg?style=flat)](https://www.npmjs.com/package/bootstrap)
 
@@ -56,7 +57,7 @@ bootstrap/
     └── glyphicons-halflings-regular.woff2
 ```
 
-Wir stellen sowohl kompiliertes CSS und JS (`bootstrap.*`), als auch kompiliertes und dann zusätzlich minimiertes CSS und JS (`bootstrap.min.*`) zur Verfügung. CSS [Source Maps](https://developers.google.com/chrome-developer-tools/docs/css-preprocessors) (`bootstrap.*.map`) sind für die Verwendung mit bestimmten Browser-Entwicklertools verfügbar. Schriften von Glyphicons sind auch dabei, sowie das optionale Bootstrap-Theme.
+Wir stellen sowohl kompiliertes CSS und JS (`bootstrap.*`), als auch kompiliertes und dann zusätzlich minimiertes CSS und JS (`bootstrap.min.*`) zur Verfügung. CSS [Source Maps](https://developer.chrome.com/devtools/docs/css-preprocessors) (`bootstrap.*.map`) sind für die Verwendung mit bestimmten Browser-Entwicklertools verfügbar. Schriften von Glyphicons sind auch dabei, sowie das optionale Bootstrap-Theme.
 
 
 
@@ -99,12 +100,13 @@ Voreinstellungen für Editoren / Textbearbeitungsprogramme sind in der Datei [.e
 
 ## Community
 
-Bleib auf dem Laufenden, was die Entwicklung und Neuigkeiten aus der Community angeht.
+Erhalte Neuigkeiten über Bootstraps Entwicklung und chatte mit den Verantwortlichen des Projekts und der Community.
 
 - Folge [@getbootstrap auf Twitter](https://twitter.com/getbootstrap).
 - Lies und abonniere [Das Offizielle Bootstrap Blog](http://blog.getbootstrap.com).
+- Komm in den [offiziellen Slack-Room](https://bootstrap-slack.herokuapp.com).
 - Chatte mit anderen Bootstrappern über IRC. Und zwar auf dem `irc.freenode.net`-Server, im Kanal `##bootstrap`.
-- Hilfe bei der Umsetzung deiner Projekte findest du z.B. auf Stack Overflow (markiert mit [`twitter-bootstrap-3`](http://stackoverflow.com/questions/tagged/twitter-bootstrap-3)).
+- Hilfe bei der Umsetzung deiner Projekte findest du z.B. auf Stack Overflow (markiert mit [`twitter-bootstrap-3`](https://stackoverflow.com/questions/tagged/twitter-bootstrap-3)).
 - Entwickler sollten das Stichwort `bootstrap` bei Paketen verwenden, die die Funktionen von Bootstrap anpassen oder erweitern, wenn die Pakete über [npm](https://www.npmjs.com/browse/keyword/bootstrap) oder ähnliche Mechanismen verbreitet werden, um bestmöglich gefunden werden zu können.
 
 

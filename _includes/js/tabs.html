@@ -2,16 +2,16 @@
   <h1 id="tabs" class="page-header">Interaktive Tabs <small>tab.js</small></h1>
 
   <h2 id="tabs-examples">Beispiel-Tabs</h2>
-  <p>Füge schnelle, dynamische Tab-Funktionalität hinzu, um zwischen verschiedenen Blöcken von Inhalt zu wechseln, auch über Dropdown-Menüs.</p>
+  <p>Füge schnelle, dynamische Tab-Funktionalität hinzu, um zwischen verschiedenen Blöcken von Inhalt zu wechseln, auch über Dropdown-Menüs. <strong>Verschachtelte Tabs werden nicht unterstützt.</strong></p>
   <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
     <ul id="meineTabs" class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active"><a href="#start" id="start-tab" role="tab" data-toggle="tab" aria-controls="start" aria-expanded="true">Start</a></li>
       <li role="presentation"><a href="#profil" role="tab" id="profil-tab" data-toggle="tab" aria-controls="profil">Profil</a></li>
       <li role="presentation" class="dropdown">
         <a href="#" id="meinTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="meinTabDrop1-inhalte">Dropdown-Menü <span class="caret"></span></a>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="meinTabDrop1" id="meinTabDrop1-inhalte">
-          <li><a href="#dropdown1" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">@fat</a></li>
-          <li><a href="#dropdown2" tabindex="-1" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2">@mdo</a></li>
+        <ul class="dropdown-menu" aria-labelledby="meinTabDrop1" id="meinTabDrop1-inhalte">
+          <li><a href="#dropdown1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">@fat</a></li>
+          <li><a href="#dropdown2" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2">@mdo</a></li>
         </ul>
       </li>
     </ul>

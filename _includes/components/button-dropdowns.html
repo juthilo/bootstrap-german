@@ -12,62 +12,62 @@
   <p>Verwandel einen Button in einen Menü-Schalter mit ein paar einfachen Markup-Änderungen.</p>
   <div class="bs-example" data-example-id="single-button-dropdown">
     <div class="btn-group">
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Standard <span class="caret"></span></button>
-      <ul class="dropdown-menu" role="menu">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Standard <span class="caret"></span></button>
+      <ul class="dropdown-menu">
         <li><a href="#">Aktion</a></li>
         <li><a href="#">Andere Aktion</a></li>
         <li><a href="#">Irgendwas anderes</a></li>
-        <li class="divider"></li>
+        <li role="separator" class="divider"></li>
         <li><a href="#">Abgetrennter Link</a></li>
       </ul>
     </div><!-- /btn-group -->
     <div class="btn-group">
-      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Primär <span class="caret"></span></button>
-      <ul class="dropdown-menu" role="menu">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Primär <span class="caret"></span></button>
+      <ul class="dropdown-menu">
         <li><a href="#">Aktion</a></li>
         <li><a href="#">Andere Aktion</a></li>
         <li><a href="#">Irgendwas anderes</a></li>
-        <li class="divider"></li>
+        <li role="separator" class="divider"></li>
         <li><a href="#">Abgetrennter Link</a></li>
       </ul>
     </div><!-- /btn-group -->
     <div class="btn-group">
-      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Erfolg <span class="caret"></span></button>
-      <ul class="dropdown-menu" role="menu">
+      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Erfolg <span class="caret"></span></button>
+      <ul class="dropdown-menu">
         <li><a href="#">Aktion</a></li>
         <li><a href="#">Andere Aktion</a></li>
         <li><a href="#">Irgendwas anderes</a></li>
-        <li class="divider"></li>
+        <li role="separator" class="divider"></li>
         <li><a href="#">Abgetrennter Link</a></li>
       </ul>
     </div><!-- /btn-group -->
     <div class="btn-group">
-      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Info <span class="caret"></span></button>
-      <ul class="dropdown-menu" role="menu">
+      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Info <span class="caret"></span></button>
+      <ul class="dropdown-menu">
         <li><a href="#">Aktion</a></li>
         <li><a href="#">Andere Aktion</a></li>
         <li><a href="#">Irgendwas anderes</a></li>
-        <li class="divider"></li>
+        <li role="separator" class="divider"></li>
         <li><a href="#">Abgetrennter Link</a></li>
       </ul>
     </div><!-- /btn-group -->
     <div class="btn-group">
-      <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Warnung <span class="caret"></span></button>
-      <ul class="dropdown-menu" role="menu">
+      <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Warnung <span class="caret"></span></button>
+      <ul class="dropdown-menu">
         <li><a href="#">Aktion</a></li>
         <li><a href="#">Andere Aktion</a></li>
         <li><a href="#">Irgendwas anderes</a></li>
-        <li class="divider"></li>
+        <li role="separator" class="divider"></li>
         <li><a href="#">Abgetrennter Link</a></li>
       </ul>
     </div><!-- /btn-group -->
     <div class="btn-group">
-      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Gefahr <span class="caret"></span></button>
-      <ul class="dropdown-menu" role="menu">
+      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gefahr <span class="caret"></span></button>
+      <ul class="dropdown-menu">
         <li><a href="#">Aktion</a></li>
         <li><a href="#">Andere Aktion</a></li>
         <li><a href="#">Irgendwas anderes</a></li>
-        <li class="divider"></li>
+        <li role="separator" class="divider"></li>
         <li><a href="#">Abgetrennter Link</a></li>
       </ul>
     </div><!-- /btn-group -->
@@ -75,14 +75,14 @@
 {% highlight html %}
 <!-- Einzelner Button -->
 <div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Aktion <span class="caret"></span>
   </button>
-  <ul class="dropdown-menu" role="menu">
+  <ul class="dropdown-menu">
     <li><a href="#">Aktion</a></li>
     <li><a href="#">Andere Aktion</a></li>
     <li><a href="#">Irgendwas anderes</a></li>
-    <li class="divider"></li>
+    <li role="separator" class="divider"></li>
     <li><a href="#">Abgetrennter Link</a></li>
   </ul>
 </div>
@@ -93,85 +93,85 @@
   <div class="bs-example" data-example-id="split-button-dropdown">
     <div class="btn-group">
       <button type="button" class="btn btn-default">Standard</button>
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="caret"></span>
         <span class="sr-only">Menü ein-/ausblenden</span>
       </button>
-      <ul class="dropdown-menu" role="menu">
+      <ul class="dropdown-menu">
         <li><a href="#">Aktion</a></li>
         <li><a href="#">Andere Aktion</a></li>
         <li><a href="#">Irgendwas anderes</a></li>
-        <li class="divider"></li>
+        <li role="separator" class="divider"></li>
         <li><a href="#">Abgetrennter Link</a></li>
       </ul>
     </div><!-- /btn-group -->
     <div class="btn-group">
       <button type="button" class="btn btn-primary">Primär</button>
-      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="caret"></span>
         <span class="sr-only">Menü ein-/ausblenden</span>
       </button>
-      <ul class="dropdown-menu" role="menu">
+      <ul class="dropdown-menu">
         <li><a href="#">Aktion</a></li>
         <li><a href="#">Andere Aktion</a></li>
         <li><a href="#">Irgendwas anderes</a></li>
-        <li class="divider"></li>
+        <li role="separator" class="divider"></li>
         <li><a href="#">Abgetrennter Link</a></li>
       </ul>
     </div><!-- /btn-group -->
     <div class="btn-group">
       <button type="button" class="btn btn-success">Erfolg</button>
-      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="caret"></span>
         <span class="sr-only">Menü ein-/ausblenden</span>
       </button>
-      <ul class="dropdown-menu" role="menu">
+      <ul class="dropdown-menu">
         <li><a href="#">Aktion</a></li>
         <li><a href="#">Andere Aktion</a></li>
         <li><a href="#">Irgendwas anderes</a></li>
-        <li class="divider"></li>
+        <li role="separator" class="divider"></li>
         <li><a href="#">Abgetrennter Link</a></li>
       </ul>
     </div><!-- /btn-group -->
     <div class="btn-group">
       <button type="button" class="btn btn-info">Info</button>
-      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="caret"></span>
         <span class="sr-only">Menü ein-/ausblenden</span>
       </button>
-      <ul class="dropdown-menu" role="menu">
+      <ul class="dropdown-menu">
         <li><a href="#">Aktion</a></li>
         <li><a href="#">Andere Aktion</a></li>
         <li><a href="#">Irgendwas anderes</a></li>
-        <li class="divider"></li>
+        <li role="separator" class="divider"></li>
         <li><a href="#">Abgetrennter Link</a></li>
       </ul>
     </div><!-- /btn-group -->
     <div class="btn-group">
       <button type="button" class="btn btn-warning">Warnung</button>
-      <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+      <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="caret"></span>
         <span class="sr-only">Menü ein-/ausblenden</span>
       </button>
-      <ul class="dropdown-menu" role="menu">
+      <ul class="dropdown-menu">
         <li><a href="#">Aktion</a></li>
         <li><a href="#">Andere Aktion</a></li>
         <li><a href="#">Irgendwas anderes</a></li>
-        <li class="divider"></li>
+        <li role="separator" class="divider"></li>
         <li><a href="#">Abgetrennter Link</a></li>
       </ul>
     </div><!-- /btn-group -->
     <div class="btn-group">
       <button type="button" class="btn btn-danger">Gefahr</button>
-      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="caret"></span>
         <span class="sr-only">Menü ein-/ausblenden</span>
       </button>
-      <ul class="dropdown-menu" role="menu">
+      <ul class="dropdown-menu">
         <li><a href="#">Aktion</a></li>
         <li><a href="#">Andere Aktion</a></li>
         <li><a href="#">Irgendwas anderes</a></li>
-        <li class="divider"></li>
+        <li role="separator" class="divider"></li>
         <li><a href="#">Abgetrennter Link</a></li>
       </ul>
     </div><!-- /btn-group -->
@@ -180,15 +180,15 @@
 <!-- Abgetrennter Button -->
 <div class="btn-group">
   <button type="button" class="btn btn-danger">Aktion</button>
-  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <span class="caret"></span>
     <span class="sr-only">Menü ein-/ausblenden</span>
   </button>
-  <ul class="dropdown-menu" role="menu">
+  <ul class="dropdown-menu">
     <li><a href="#">Aktion</a></li>
     <li><a href="#">Andere Aktion</a></li>
     <li><a href="#">Irgendwas anderes</a></li>
-    <li class="divider"></li>
+    <li role="separator" class="divider"></li>
     <li><a href="#">Abgetrennter Link</a></li>
   </ul>
 </div>
@@ -199,42 +199,42 @@
   <div class="bs-example" data-example-id="button-dropdown-sizing">
     <div class="btn-toolbar" role="toolbar">
       <div class="btn-group">
-        <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Großer Button <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu" role="menu">
+        <ul class="dropdown-menu">
           <li><a href="#">Aktion</a></li>
           <li><a href="#">Andere Aktion</a></li>
           <li><a href="#">Irgendwas anderes</a></li>
-          <li class="divider"></li>
+          <li role="separator" class="divider"></li>
           <li><a href="#">Abgetrennter Link</a></li>
         </ul>
       </div><!-- /btn-group -->
     </div><!-- /btn-toolbar -->
     <div class="btn-toolbar" role="toolbar">
       <div class="btn-group">
-        <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Kleiner Button <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu" role="menu">
+        <ul class="dropdown-menu">
           <li><a href="#">Aktion</a></li>
           <li><a href="#">Andere Aktion</a></li>
           <li><a href="#">Irgendwas anderes</a></li>
-          <li class="divider"></li>
+          <li role="separator" class="divider"></li>
           <li><a href="#">Abgetrennter Link</a></li>
         </ul>
       </div><!-- /btn-group -->
     </div><!-- /btn-toolbar -->
     <div class="btn-toolbar" role="toolbar">
       <div class="btn-group">
-        <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Extra-kleiner Button <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu" role="menu">
+        <ul class="dropdown-menu">
           <li><a href="#">Aktion</a></li>
           <li><a href="#">Andere Aktion</a></li>
           <li><a href="#">Irgendwas anderes</a></li>
-          <li class="divider"></li>
+          <li role="separator" class="divider"></li>
           <li><a href="#">Abgetrennter Link</a></li>
         </ul>
       </div><!-- /btn-group -->
@@ -243,30 +243,30 @@
 {% highlight html %}
 <!-- Große Button-Gruppe -->
 <div class="btn-group">
-  <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+  <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Großer Button <span class="caret"></span>
   </button>
-  <ul class="dropdown-menu" role="menu">
+  <ul class="dropdown-menu">
     ...
   </ul>
 </div>
 
 <!-- Kleine Button-Gruppe -->
 <div class="btn-group">
-  <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+  <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Kleiner Button <span class="caret"></span>
   </button>
-  <ul class="dropdown-menu" role="menu">
+  <ul class="dropdown-menu">
     ...
   </ul>
 </div>
 
 <!-- Extra-kleine Button-Gruppe -->
 <div class="btn-group">
-  <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+  <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Extra-kleiner Button <span class="caret"></span>
   </button>
-  <ul class="dropdown-menu" role="menu">
+  <ul class="dropdown-menu">
     ...
   </ul>
 </div>
@@ -278,29 +278,29 @@
     <div class="btn-toolbar" role="toolbar">
       <div class="btn-group dropup">
         <button type="button" class="btn btn-default">Dropup</button>
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="caret"></span>
           <span class="sr-only">Menü ein-/ausblenden</span>
         </button>
-        <ul class="dropdown-menu" role="menu">
+        <ul class="dropdown-menu">
           <li><a href="#">Aktion</a></li>
           <li><a href="#">Andere Aktion</a></li>
           <li><a href="#">Irgendwas anderes</a></li>
-          <li class="divider"></li>
+          <li role="separator" class="divider"></li>
           <li><a href="#">Abgetrennter Link</a></li>
         </ul>
       </div><!-- /btn-group -->
       <div class="btn-group dropup">
         <button type="button" class="btn btn-primary">Dropup rechts</button>
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="caret"></span>
           <span class="sr-only">Menü ein-/ausblenden</span>
         </button>
-        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+        <ul class="dropdown-menu dropdown-menu-right">
           <li><a href="#">Aktion</a></li>
           <li><a href="#">Andere Aktion</a></li>
           <li><a href="#">Irgendwas anderes</a></li>
-          <li class="divider"></li>
+          <li role="separator" class="divider"></li>
           <li><a href="#">Abgetrennter Link</a></li>
         </ul>
       </div><!-- /btn-group -->
@@ -309,11 +309,11 @@
 {% highlight html %}
 <div class="btn-group dropup">
   <button type="button" class="btn btn-default">Dropup</button>
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <span class="caret"></span>
     <span class="sr-only">Menü ein-/ausblenden</span>
   </button>
-  <ul class="dropdown-menu" role="menu">
+  <ul class="dropdown-menu">
     <!-- Dropdown-Menü-Links -->
   </ul>
 </div>

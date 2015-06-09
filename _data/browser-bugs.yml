@@ -92,6 +92,16 @@
   browser: >
     Chrome
   summary: >
+    Fokussierungs-Umrandung einer Image-Map innerhalb eines Modals wird an der falschen Stelle angezeigt.
+  upstream_bug: >
+    Chromium#475128
+  origin: >
+    Bootstrap#16180
+
+-
+  browser: >
+    Chrome
+  summary: >
     `display: table;` innerhalb von `display: block;` schiebt andere Inhalte in neue Zeile.
   upstream_bug: >
     Chromium#309483
@@ -130,6 +140,16 @@
 
 -
   browser: >
+    Chrome
+  summary: >
+    `width: 1%` bei einer verschachtelten Tabellenzelle verursacht das unnötige Einnehmen von horizontalem Platz durch die Tabelle.
+  upstream_bug: >
+    Chromium#427994
+  origin: >
+    Bootstrap#16372
+
+-
+  browser: >
     Chrome (Windows & Linux)
   summary: >
     Animationsfehler bei der Rückkehr zu einem inaktiven Tab, nachdem während der Tab im Hintergrund war, Animationen ausgeführt wurden.
@@ -137,6 +157,16 @@
     Chromium#449180
   origin: >
     Bootstrap#15298
+
+-
+  browser: >
+    Safari
+  summary: >
+    `width: 1%` bei einer verschachtelten Tabellenzelle verursacht das unnötige Einnehmen von horizontalem Platz durch die Tabelle.
+  upstream_bug: >
+    WebKit#144696, Safari#20839572
+  origin: >
+    Bootstrap#16372
 
 -
   browser: >
@@ -199,6 +229,26 @@
     WebKit#141804, Safari#19892433
   origin: >
     Bootstrap#15832
+
+-
+  browser: >
+    Safari (OS X)
+  summary: >
+    Fokussierungs-Umrandung einer Image-Map innerhalb eines Modals wird an der falschen Stelle angezeigt.
+  upstream_bug: >
+    WebKit#143527
+  origin: >
+    Bootstrap#16180
+
+-
+  browser: >
+    Safari (OS X)
+  summary: >
+    Unnötiger Zeilenumbruch bei `.navbar-brand`-Text ohne erkennbaren Grund
+  upstream_bug: >
+    WebKit#144990, Safari#20950962
+  origin: >
+    Bootstrap#15998
 
 -
   browser: >

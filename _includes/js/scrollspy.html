@@ -20,12 +20,12 @@
             <li><a href="#fat">@fat</a></li>
             <li><a href="#mdo">@mdo</a></li>
             <li class="dropdown">
-              <a href="#" id="navbarDrop1" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown-Menü <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="navbarDrop1">
-                <li><a href="#one" tabindex="-1">eins</a></li>
-                <li><a href="#two" tabindex="-1">zwei</a></li>
-                <li class="divider"></li>
-                <li><a href="#three" tabindex="-1">drei</a></li>
+              <a href="#" id="navbarDrop1" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown-Menü <span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDrop1">
+                <li><a href="#one">eins</a></li>
+                <li><a href="#two">zwei</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#three">drei</a></li>
               </ul>
             </li>
           </ul>
@@ -65,7 +65,7 @@
   </div>
 
   <h3>Relative Positionierung notwendig</h3>
-  <p>Unabhängig von der Umsetzung, erfordert ScrollSpy <code>position: relative;</code> beim Element, das beobachtet wird. In den meisten Fällen ist das der <code>&lt;body&gt;</code>.</p>
+  <p>Unabhängig von der Umsetzung, erfordert ScrollSpy <code>position: relative;</code> beim Element, das beobachtet wird. In den meisten Fällen ist das der <code>&lt;body&gt;</code>. Wenn Scrollspy an Elementen außer dem <code>&lt;body&gt;</code> verwendet wird, solltest du sichergehen, dass eine <code>height</code> und <code>overflow-y: scroll;</code> gesetzt sind.</p>
 
   <h3>Über Data-Attribute</h3>
   <p>Um zu deiner Hauptnavigation ganz leicht ScrollSpy-Funktionen hinzuzufügen, füge <code>data-spy="scroll"</code> zu dem Element hinzu, bei dem du die Scroll-Position beobachten willst (üblicherweise der <code>&lt;body&gt;</code>). Dann fügst du das Attribut <code>data-target</code> mit einer ID oder Klasse des übergeordneten Elements einer Bootstrap-<code>.nav</code>-Komponente hinzu.</p>

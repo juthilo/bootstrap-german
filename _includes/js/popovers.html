@@ -228,14 +228,15 @@ $(function () {
           <td>trigger</td>
           <td>String</td>
           <td>'click'</td>
-          <td>Wie das Popover ausgelöst wird - click | hover | focus | manual. Du kannst mehrere Auslöser angeben; trenne sie mit einem Leerzeichen.</td>
+          <td>Wie das Popover ausgelöst wird - click | hover | focus | manual. Du kannst mehrere Auslöser angeben; trenne sie mit einem Leerzeichen. <code>manual</code> kann nicht mit anderen Auslösern kombiniert werden.</td>
         </tr>
         <tr>
           <td>viewport</td>
-          <td>String | Objekt</td>
+          <td>String | Objekt | Funktion</td>
           <td>{ selector: 'body', padding: 0 }</td>
           <td>
             <p>Hält das Popover innerhalb der Grenzen dieses Elements. Beispiel: <code>viewport: '#viewport'</code> oder <code>{ "selector": "#viewport", "padding": 0 }</code></p>
+            <p>Wenn eine Funktion angegeben wird, wird diese mit dem auslösenden DOM Node als einziges Argument aufgerufen. Der <code>this</code>-Kontext wird auf die Popover-Instanz gesetzt.</p>
           </td>
        </tr>
       </tbody>
@@ -291,6 +292,10 @@ $(function () {
         <tr>
           <td>hidden.bs.popover</td>
           <td>Dieses Ereignis wird ausgelöst, wenn das Popover vor dem Nutzer vollständig verborgen wurde (wartet auf CSS-Übergänge).</td>
+        </tr>
+        <tr>
+          <td>inserted.bs.popover</td>
+          <td>Dieses Ereignis wird nach dem Ereignis <code>show.bs.popover</code> ausgelöst, wenn das Popover-Template zum DOM hinzugefügt wurde.</td>
         </tr>
       </tbody>
     </table>

@@ -195,14 +195,15 @@ $('#beispiel').tooltip(Optionen)
           <td>trigger</td>
           <td>String</td>
           <td>'hover focus'</td>
-          <td>Wie der Tooltip ausgelöst wird - click | hover | focus | manual. Du kannst mehrere Auslöser angeben; trenne sie mit einem Leerzeichen.</td>
+          <td>Wie der Tooltip ausgelöst wird - click | hover | focus | manual. Du kannst mehrere Auslöser angeben; trenne sie mit einem Leerzeichen. <code>manual</code> kann nicht mit anderen Auslösern kombiniert werden.</td>
         </tr>
         <tr>
           <td>viewport</td>
-          <td>string | object</td>
+          <td>String | Objekt | Funktion</td>
           <td>{ selector: 'body', padding: 0 }</td>
           <td>
             <p>Behält den Tooltip innerhalb der Grenzen dieses Elements. Beispiel: <code>viewport: '#viewport'</code> oder <code>{ "selector": "#viewport", "padding": 0 }</code></p>
+            <p>Wenn eine Funktion angegeben wird, wird diese mit dem auslösenden DOM Node als einziges Argument aufgerufen. Der <code>this</code>-Kontext wird auf die Tooltip-Instanz gesetzt.</p>
           </td>
         </tr>
       </tbody>
@@ -259,6 +260,10 @@ $('#beispiel').tooltip(Optionen)
         <tr>
           <td>hidden.bs.tooltip</td>
           <td>Dieses Ereignis wird ausgelöst, wenn der Tooltip vor dem Nutzer vollständig verborgen wurde (wartet auf CSS-Übergänge).</td>
+        </tr>
+        <tr>
+          <td>inserted.bs.tooltip</td>
+          <td>Dieses Ereignis wird nach dem Ereignis <code>show.bs.tooltip</code> ausgelöst, wenn das Tooltip-Template zum DOM hinzugefügt wurde.</td>
         </tr>
       </tbody>
     </table>

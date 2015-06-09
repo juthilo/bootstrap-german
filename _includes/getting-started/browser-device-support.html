@@ -116,7 +116,7 @@
 {% endhighlight %}
   <p>Sieh nach, welchen Dokumentenmodus dein IE verwendet, indem du die Entwicklerhilfen öffnest: drücke <kbd>F12</kbd> und sieh dann nach dem "Dokumentenmodus".</p>
   <p>Dieses Tag ist überall in Bootstraps Dokumentation und Beispielen eingebunden, damit die bestmögliche Anzeige in jeder unterstützten Version von Internet Explorer erreicht wird.</p>
-  <p>Sieh dir <a href="http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge">diese StackOverflow-Frage</a> für mehr Informationen an.</p>
+  <p>Sieh dir <a href="https://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge">diese StackOverflow-Frage</a> für mehr Informationen an.</p>
 
   <h2 id="support-ie10-width">Internet Explorer 10 auf Windows 8 und Windows Phone 8</h2>
   <p>Internet Explorer 10 unterscheidet nicht zwischen <strong>Gerätebreite</strong> und <strong>Breite der tatsächlichen Anzeige</strong> und wendet Media-Queries aus Bootstraps CSS daher nicht korrekt an. Normalerweise würdest du einfach diesen CSS-Block einfügen, um das zu beheben:</p>
@@ -133,6 +133,8 @@
 {% endhighlight %}
 
 {% highlight js %}
+// Copyright 2014-2015 Twitter, Inc.
+// Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
   var msViewportStyle = document.createElement('style')
   msViewportStyle.appendChild(
@@ -187,7 +189,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
   <h2 id="support-android-stock-browser">Android Stock Browser</h2>
   <p>Statt Chrome zu verwenden, kommt bis Android 4.1 (und anscheinend auch bei einigen neueren Versionen) die sogenannte Internet-App als Standard-Browser auf Android-Geräten. Leider ist dieser Browser von Fehlern und Unstimmigkeiten in Bezug auf CSS allgemein behaftet.</p>
   <h3>Auswahlmenüs</h3>
-  <p>Der Android Stock Browser wird bei <code>&lt;select&gt;</code>-Elementen die Symbole an der Seite nicht richtig anzeigen, wenn ein <code>border-radius</code> und/oder <code>border</code> vorhanden ist. (Siehe <a href="http://stackoverflow.com/questions/14744437/html-select-box-not-showing-drop-down-arrow-on-android-version-4-0-when-set-with">diese Frage auf StackOverflow</a> für Details.) Verwende den Code-Schnipsel unten, um diese CSS-Eigenschaften im Android Stock Browser zu entfernen und das <code>&lt;select&gt;</code>-Element ohne Stile darzustellen. Der Code analysiert den User Agent, damit Chrome, Safari und Mozilla-Browser nicht beeinträchtigt werden.</p>
+  <p>Der Android Stock Browser wird bei <code>&lt;select&gt;</code>-Elementen die Symbole an der Seite nicht richtig anzeigen, wenn ein <code>border-radius</code> und/oder <code>border</code> vorhanden ist. (Siehe <a href="https://stackoverflow.com/questions/14744437/html-select-box-not-showing-drop-down-arrow-on-android-version-4-0-when-set-with">diese Frage auf StackOverflow</a> für Details.) Verwende den Code-Schnipsel unten, um diese CSS-Eigenschaften im Android Stock Browser zu entfernen und das <code>&lt;select&gt;</code>-Element ohne Stile darzustellen. Der Code analysiert den User Agent, damit Chrome, Safari und Mozilla-Browser nicht beeinträchtigt werden.</p>
 {% highlight html %}
 <script>
 &(function () {

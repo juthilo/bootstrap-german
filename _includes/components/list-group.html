@@ -76,6 +76,27 @@
 </div>
 {% endhighlight %}
 
+  <h2 id="list-group-buttons">Button-Einträge</h2>
+  <p>Einträge in Listengruppen können anstelle von Listeneinträgen auch Buttons sein (wenn sie in einem <code>&lt;div&gt;</code> statt einer <code>&lt;ul&gt;</code> sind). Den Einträgen müssen dann keine einzelnen Elemente mehr übergeordnet werden. <strong class="text-danger">Hier nicht die normalen <code>.btn</code>-Klassen verwenden.</strong></p>
+  <div class="bs-example" data-example-id="list-group-btns">
+    <div class="list-group">
+      <button type="button" class="list-group-item">Cras justo odio</button>
+      <button type="button" class="list-group-item">Dapibus ac facilisis in</button>
+      <button type="button" class="list-group-item">Morbi leo risus</button>
+      <button type="button" class="list-group-item">Porta ac consectetur ac</button>
+      <button type="button" class="list-group-item">Vestibulum at eros</button>
+    </div>
+  </div>
+{% highlight html %}
+<div class="list-group">
+  <button type="button" class="list-group-item">Cras justo odio</button>
+  <button type="button" class="list-group-item">Dapibus ac facilisis in</button>
+  <button type="button" class="list-group-item">Morbi leo risus</button>
+  <button type="button" class="list-group-item">Porta ac consectetur ac</button>
+  <button type="button" class="list-group-item">Vestibulum at eros</button>
+</div>
+{% endhighlight %}
+
   <h2 id="list-group-disabled">Deaktivierte Einträge</h2>
   <p>Füge <code>.disabled</code> zu einem <code>.list-group-item</code> hinzu, um durch Grautöne einen Eintrag deaktiviert aussehen zu lassen.</p>
   <div class="bs-example" data-example-id="list-group-disabled">

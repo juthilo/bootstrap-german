@@ -33,8 +33,8 @@ und [das Einreichen von Pull Requests](#pull-requests). Beachte allerdings bitte
 folgenden Einschränkungen:
 
 * Der Issue Tracker ist **nicht** für persönliche Hilfe-Anfragen geeignet.
-  Stack Overflow ([`twitter-boostrap-3`](http://stackoverflow.com/questions/tagged/twitter-bootstrap-3)-Label)
-  oder [IRC](README.md#community) sind bessere Orte, um Hilfe zu erhalten.
+  Stack Overflow ([`twitter-boostrap-3`](https://stackoverflow.com/questions/tagged/twitter-bootstrap-3)-Label),
+  [Slack](https://bootstrap-slack.herokuapp.com) oder [IRC](README.md#community) sind bessere Orte, um Hilfe zu erhalten.
 
 * **Beachte und respektiere** Andere in Diskussionen zu Issues und **vermeide**
   einen unhöflichen Umgangston sowie Abschweifungen vom Thema.
@@ -176,7 +176,7 @@ verwaltet.
 Der beste Weg, um deine Arbeit in das Projekt integriert zu bekommen, ist dem
 folgenden Prozess zu folgen:
 
-1. [Forke](http://help.github.com/fork-a-repo/) das Projekt, klone deine Fork
+1. [Forke](https://help.github.com/fork-a-repo/) das Projekt, klone deine Fork
    lokal und richte die Remote-URLs ein:
 
    ```bash

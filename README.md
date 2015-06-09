@@ -21,13 +21,14 @@ Um direkt loszulegen, geh auf <http://holdirbootstrap.de>!
 
 ## Schnellstart
 
-Es sind fünf Optionen verfügbar, um direkt loszulegen:
+Es sind einige Optionen verfügbar, um direkt loszulegen:
 
 - [Neueste Version herunterladen](https://github.com/twbs/bootstrap/archive/v3.3.4.zip).
 - Repository klonen: `git clone https://github.com/twbs/bootstrap.git`.
 - Mit [Bower](http://bower.io) installieren: `bower install bootstrap`.
 - Mit [npm](https://www.npmjs.com) installieren: `npm install bootstrap`.
 - Mit [Meteor](https://www.meteor.com/) installieren: `meteor add twbs:bootstrap`.
+- Mit [Composer](https://getcomposer.org) installieren: `composer require twbs/bootstrap`.
 
 Lies die Seite [Los geht's](http://holdirbootstrap.de/los-gehts/) für Informationen über die Inhalte des Frameworks, Vorlagen und Beispiele und mehr.
 

@@ -83,7 +83,7 @@ hilfreich, also vielen Dank an dieser Stelle!
    dem neuesten Code aus dem Branch `master` oder einem Entwicklungszweig im
    Repository zu reproduzieren.
 
-3. **Isoliere das Problem** &mdash; am besten ist ein [reduzierter Musterfall](http://css-tricks.com/6263-reduced-test-cases/)
+3. **Isoliere das Problem** &mdash; am besten ist ein [reduzierter Musterfall](https://css-tricks.com/reduced-test-cases/)
    und ein Live-Beispiel.
    [Dieser JS Bin](http://jsbin.com/lefey/1/edit?html,output) ist eine hilfreiche Vorlage.
 
@@ -225,9 +225,9 @@ folgenden Prozess zu folgen:
 
 **WICHTIG**: Wenn du eine Korrektur einreichst, erlaubst du den
 Projekteigentümern, deine Arbeit unter den Bedingungen der
-[MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE) 
-(falls sie Code-Änderungen enthält) und unter der 
-[Creative Commons Attribution 3.0 Unported-Lizenz](LICENSE) 
+[MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE)
+(falls sie Code-Änderungen enthält) und unter der
+[Creative Commons Attribution 3.0 Unported-Lizenz](LICENSE)
 (falls sie Dokumentations-Änderungen enthält) weiterzuverbreiten.
 
 ### Pull Request Bots
@@ -271,9 +271,9 @@ Du solltest `grunt test` ausführen, bevor du einen Commit erstellst, um sicherz
 ## Lizenz
 
 Durch die Einreichung deiner Code-Beiträge stimmst du zu, deinen Beitrag unter
-der [MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE) 
+der [MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE)
 zu lizenzieren.
-Durch die Einreichung deiner Beiträge zur Dokumentation stimmst du zu, deinen 
+Durch die Einreichung deiner Beiträge zur Dokumentation stimmst du zu, deinen
 Beitrag unter der [Creative Commons Attribution 3.0 Unported-Lizenz](LICENSE)
 zu lizenzieren.
 

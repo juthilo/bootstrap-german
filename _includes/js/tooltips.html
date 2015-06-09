@@ -68,18 +68,6 @@ $(function () {
 })
 {% endhighlight %}
   </div>
-  <div class="bs-callout bs-callout-warning" id="callout-tooltip-groups">
-    <h4>Tooltips &amp; Popovers in Button-Gruppen und Input-Gruppen benötigen besondere Einstellung</h4>
-    <p>Wenn du Tooltips oder Popovers an Elementen in einer <code>.btn-group</code> oder <code>.input-group</code> verwendest, musst du die Option <code>container: 'body'</code> festlegen, um unerwünschte Nebeneffekte zu vermeiden (das Element könnte z.B. breiter werden und/oder seine abgerundeten Ecken verlieren, wenn der Tooltip oder das Popover ausgelöst wird).</p>
-  </div>
-  <div class="bs-callout bs-callout-warning" id="callout-tooltip-hidden">
-    <h4>Versuche nicht, Tooltips an verborgenen Elementen anzuzeigen</h4>
-    <p>Wenn das Zielelement <code>display: none;</code> ist und du trotzdem versuchst, <code>$(...).tooltip('show')</code> aufzurufen, wird der Tooltip falsch positioniert.</p>
-  </div>
-  <div class="bs-callout bs-callout-info" id="callout-tooltip-disabled">
-    <h4>Tooltips an deaktivierten Elementen benötigen ein umschließendes Element</h4>
-    <p>Um einen Tooltip zu einem deaktivierten Element mit <code>disabled</code> oder <code>.disabled</code> hinzuzufügen, musst du das Element in einem <code>&lt;div&gt;</code> platzieren und den Tooltip stattdessen darauf anwenden.</p>
-  </div>
 
   <h2 id="tooltips-usage">Verwendung</h2>
   <p>Das Tooltip-Plugin generiert Inhalt und Markup bei Bedarf und platziert diese standardmäßig hinter dem Element, das einen Tooltip auslöst.</p>
@@ -90,10 +78,7 @@ $('#beispiel').tooltip(Optionen)
 
   <h3>Markup</h3>
   <p>Das benötigte Markup für einen Tooltip ist nur ein <code>data</code>-Attribut und ein <code>title</code> auf dem HTML-Element, das mit einem Tooltip versehen werden soll. Das generierte Markup eines Tooltips ist ziemlich einfach; es braucht allerdings eine Position (standardmäßig vom Plugin auf <code>top</code> gesetzt).</p>
-  <div class="bs-callout bs-callout-warning" id="callout-tooltip-multiline">
-    <h4>Mehrzeilige Links</h4>
-    <p>Manchmal willst du einen Tooltip vielleicht zu einem Hyperlink hinzufügen, der über mehrere Zeilen geht. Das Standard-Verhalten in diesem Fall ist, dass der Tooltip horizontal und vertikal zentriert wird. Füge zu deinen Links <code>white-space: nowrap;</code> hinzu, um das zu vermeiden.</p>
-  </div>
+
 {% highlight html %}
 <!-- HTML -->
 <a href="#" data-toggle="tooltip" title="Ein bisschen Tooltip-Text!">Mauszeiger hier drüber</a>
@@ -106,6 +91,27 @@ $('#beispiel').tooltip(Optionen)
   </div>
 </div>
 {% endhighlight %}
+
+  <div class="bs-callout bs-callout-warning" id="callout-tooltip-multiline">
+    <h4>Mehrzeilige Links</h4>
+    <p>Manchmal willst du einen Tooltip vielleicht zu einem Hyperlink hinzufügen, der über mehrere Zeilen geht. Das Standard-Verhalten in diesem Fall ist, dass der Tooltip horizontal und vertikal zentriert wird. Füge zu deinen Links <code>white-space: nowrap;</code> hinzu, um das zu vermeiden.</p>
+  </div>
+  <div class="bs-callout bs-callout-warning" id="callout-tooltip-groups">
+    <h4>Tooltips &amp; Popovers in Button-Gruppen und Input-Gruppen benötigen besondere Einstellung</h4>
+    <p>Wenn du Tooltips oder Popovers an Elementen in einer <code>.btn-group</code> oder <code>.input-group</code> verwendest, musst du die Option <code>container: 'body'</code> festlegen, um unerwünschte Nebeneffekte zu vermeiden (das Element könnte z.B. breiter werden und/oder seine abgerundeten Ecken verlieren, wenn der Tooltip oder das Popover ausgelöst wird).</p>
+  </div>
+  <div class="bs-callout bs-callout-warning" id="callout-tooltip-hidden">
+    <h4>Versuche nicht, Tooltips an verborgenen Elementen anzuzeigen</h4>
+    <p>Wenn das Zielelement <code>display: none;</code> ist und du trotzdem versuchst, <code>$(...).tooltip('show')</code> aufzurufen, wird der Tooltip falsch positioniert.</p>
+  </div>
+  <div class="bs-callout bs-callout-warning" id="callout-tooltip-accessibility">
+    <h4>Barrierefreie Tooltips für Nutzer von assistiven Technologien und Tastaturen</h4>
+    <p>Für Nutzer, die mit einer Tastatur navigieren und insbesondere für Nutzer von assistiven Technologien, solltest du Tooltips nur zu Elementen hinzufügen, die mit einer Tastatur fokussiert werden können, z.B. Links, Formfelder, oder irgendein Element mit dem Attribut <code>tabindex="0"</code>.</p>
+  </div>
+  <div class="bs-callout bs-callout-info" id="callout-tooltip-disabled">
+    <h4>Tooltips an deaktivierten Elementen benötigen ein umschließendes Element</h4>
+    <p>Um einen Tooltip zu einem deaktivierten Element mit <code>disabled</code> oder <code>.disabled</code> hinzuzufügen, musst du das Element in einem <code>&lt;div&gt;</code> platzieren und den Tooltip stattdessen darauf anwenden.</p>
+  </div>
 
   <h3 id="tooltips-options">Optionen</h3>
   <p>Optionen können über Data-Attribute oder JavaScript angegeben werden. Für Data-Attribute hängst du den Namen der Option einfach an <code>data-</code>, z.B. <code>data-animation=""</code>.</p>

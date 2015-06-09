@@ -68,7 +68,7 @@ $('#meinModal').on('shown.bs.modal', function () {
   <h3>Live-Ansicht</h3>
   <p>Blende ein Modal mit JavaScript oder über den Button unten ein und aus. Es wird von der oberen Kante der Seite heruntergleiten und mit Einblendeffekt sichtbar werden.</p>
   <!-- Beispiel-Modal-Inhalt -->
-  <div id="meinModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="meinModalLabel" aria-hidden="true">
+  <div id="meinModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="meinModalLabel">
     <div class="modal-dialog">
       <div class="modal-content">
 
@@ -120,7 +120,7 @@ $('#meinModal').on('shown.bs.modal', function () {
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="meinModal" tabindex="-1" role="dialog" aria-labelledby="meinModalLabel" aria-hidden="true">
+<div class="modal fade" id="meinModal" tabindex="-1" role="dialog" aria-labelledby="meinModalLabel">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -141,7 +141,7 @@ $('#meinModal').on('shown.bs.modal', function () {
 
   <div class="bs-callout bs-callout-warning" id="callout-modal-accessibility">
     <h4>Modals barrierefrei machen</h4>
-    <p>Füge einige Attribute zum <code>.modal</code> hinzu (<code>role="dialog"</code>, <code>aria-labelledby="meinModalLabel"</code> und <code>aria-hidden="true"</code>), um assistiven Technologien mitzuteilen (in der Reihenfolge), worum es sich bei dem Modal handelt, welches Element der Titel ist und dass die Elemente des Modals im DOM übersprungen werden sollen.</p>
+    <p>Füge einige Attribute zum <code>.modal</code> hinzu (<code>role="dialog"</code> und <code>aria-labelledby="meinModalLabel"</code>), um assistiven Technologien mitzuteilen (in der Reihenfolge), worum es sich bei dem Modal handelt und welches Element der Titel ist.</p>
     <p>Außerdem kannst du eine Beschreibung des Modals mit <code>aria-describedby</code> am <code>.modal</code> markieren.</p>
   </div>
 
@@ -160,7 +160,7 @@ $('#meinModal').on('shown.bs.modal', function () {
 <!-- Großes Modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Großes Modal</button>
 
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="meinGroßesModalLabel" aria-hidden="true">
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="meinGroßesModalLabel">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       ...
@@ -171,7 +171,7 @@ $('#meinModal').on('shown.bs.modal', function () {
 <!-- Kleines Modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Kleines Modal</button>
 
-<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="meinKleinesModalLabel" aria-hidden="true">
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="meinKleinesModalLabel">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       ...
@@ -181,7 +181,7 @@ $('#meinModal').on('shown.bs.modal', function () {
 {% endhighlight %}
 
   <!-- Modal-Inhalte für die beiden obigen Beispiele -->
-  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="meinGroßesModalLabel" aria-hidden="true">
+  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="meinGroßesModalLabel">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
 
@@ -195,7 +195,7 @@ $('#meinModal').on('shown.bs.modal', function () {
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
-  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="meinKleinesModalLabel" aria-hidden="true">
+  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="meinKleinesModalLabel">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
 
@@ -213,7 +213,7 @@ $('#meinModal').on('shown.bs.modal', function () {
   <h2 id="modals-remove-animation">Animation entfernen</h2>
   <p>Entferne die Klasse <code>.fade</code> von deinem Modal-Markup, wenn du lieber möchtest, dass das Modal einfach erscheint und nicht von oben eingeflogen wird.</p>
 {% highlight html %}
-<div class="modal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+<div class="modal" tabindex="-1" role="dialog" aria-labelledby="...">
   ...
 </div>
 {% endhighlight %}
@@ -221,7 +221,7 @@ $('#meinModal').on('shown.bs.modal', function () {
   <h2 id="modals-grid-system">Raster-System verwenden</h2>
   <p>Um die Vorteile von Bootstraps Raster-System in einem Modal zu nutzen, füge einfach einen <code>.container-fluid</code> innerhalb von <code>.modal-body</code> hinzu und verwende dann das normale Raster-System in diesem Container.</p>
 <!-- Beispiel-Modal-Inhalt -->
-  <div id="rasterSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rasterModalLabel" aria-hidden="true">
+  <div id="rasterSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rasterModalLabel">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -269,48 +269,48 @@ $('#meinModal').on('shown.bs.modal', function () {
   </button>
 </div><!-- /example -->
 {% highlight html %}
-<div class="modal fade" role="dialog" aria-labelledby="rasterSystemModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="rasterSystemModalLabel">Modal-Titel</h4>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-4">.col-md-4</div>
-              <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
-            </div>
-            <div class="row">
-              <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
-              <div class="col-md-2 col-md-offset-4">.col-md-2 .col-md-offset-4</div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
-            </div>
-            <div class="row">
-              <div class="col-sm-9">
-                Ebene 1: .col-sm-9
-                <div class="row">
-                  <div class="col-xs-8 col-sm-6">
-                    Ebene 2: .col-xs-8 .col-sm-6
-                  </div>
-                  <div class="col-xs-4 col-sm-6">
-                    Ebene 2: .col-xs-4 .col-sm-6
-                  </div>
+<div class="modal fade" role="dialog" aria-labelledby="rasterSystemModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="rasterSystemModalLabel">Modal-Titel</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+            <div class="col-md-2 col-md-offset-4">.col-md-2 .col-md-offset-4</div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+          </div>
+          <div class="row">
+            <div class="col-sm-9">
+              Ebene 1: .col-sm-9
+              <div class="row">
+                <div class="col-xs-8 col-sm-6">
+                  Ebene 2: .col-xs-8 .col-sm-6
+                </div>
+                <div class="col-xs-4 col-sm-6">
+                  Ebene 2: .col-xs-4 .col-sm-6
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
-          <button type="button" class="btn btn-primary">Änderungen speichern</button>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+        <button type="button" class="btn btn-primary">Änderungen speichern</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 {% endhighlight %}
 
@@ -322,7 +322,7 @@ $('#meinModal').on('shown.bs.modal', function () {
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#beispielModal" data-whatever="@getbootstrap">Modal für @getbootstrap öffnen</button>
     ...mehr Buttons...
 
-    <div class="modal fade" id="beispielModal" tabindex="-1" role="dialog" aria-labelledby="beispielModalLabel" aria-hidden="true">
+    <div class="modal fade" id="beispielModal" tabindex="-1" role="dialog" aria-labelledby="beispielModalLabel">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -355,7 +355,7 @@ $('#meinModal').on('shown.bs.modal', function () {
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#beispielModal" data-whatever="@getbootstrap">Modal für @getbootstrap öffnen</button>
 ...mehr Buttons...
 
-<div class="modal fade" id="beispielModal" tabindex="-1" role="dialog" aria-labelledby="beispielModalLabel" aria-hidden="true">
+<div class="modal fade" id="beispielModal" tabindex="-1" role="dialog" aria-labelledby="beispielModalLabel">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -476,7 +476,7 @@ $('#meinModal').modal({
   <p>Verbirgt ein Modal manuell. <strong>Gibt ein Ergebnis zurück, bevor das Modal tatsächlich verborgen wurde</strong> (also vor dem Ereignis <code>hidden.bs.modal</code>).</p>
   {% highlight js %}$('#meinModal').modal('hide'){% endhighlight %}
 
-  <h4>.modal('handleUpdate')</h4>
+  <h4><code>.modal('handleUpdate')</code></h4>
   <p>Passt die Positionierung des Modals für den Fall an, dass eine Scrollleiste erscheinen könnte, was zu einem Sprung des Modals nach links führen würde.</p>
   <p>Wird nur gebraucht, wenn sich die Höhe des Modals ändert, während es geöffnet ist.</p>
   {% highlight js %}$('#meinModal').modal('handleUpdate'){% endhighlight %}

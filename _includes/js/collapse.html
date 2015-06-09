@@ -16,10 +16,10 @@
     <li><code>.collapse.in</code> zeigt Inhalt an</li>
   </ul>
   <p>Du kannst einen link mit dem Attribut <code>href</code> oder einen Button mit dem Attribut <code>data-target</code> verwenden. In beiden Fällen ist <code>data-toggle="collapse"</code> unbedingt erforderlich.</p>
- 
+
    <div class="bs-example">
     <p>
-      <a class="btn btn-primary" data-toggle="collapse" href="#collapseBeispiel" aria-expanded="false" aria-controls="collapseBeispiel">
+      <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseBeispiel" aria-expanded="false" aria-controls="collapseBeispiel">
         Link mit href
       </a>
       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBeispiel" aria-expanded="false" aria-controls="collapseBeispiel">
@@ -33,7 +33,7 @@
     </div>
   </div>
 {% highlight html %}
-<a class="btn btn-primary" data-toggle="collapse" href="#collapseBeispiel" aria-expanded="false" aria-controls="collapseBeispiel">
+<a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseBeispiel" aria-expanded="false" aria-controls="collapseBeispiel">
   Link mit href
 </a>
 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBeispiel" aria-expanded="false" aria-controls="collapseBeispiel">
@@ -54,7 +54,7 @@
       <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="überschriftEins">
           <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapseEins" aria-expanded="true" aria-controls"collapseEins">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEins" aria-expanded="true" aria-controls"collapseEins">
               Klappbarer Eintrag #1
             </a>
           </h4>
@@ -68,7 +68,7 @@
       <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="überschriftZwei">
           <h4 class="panel-title">
-            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseZwei" aria-expanded="false" aria-controls"collapseZwei">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseZwei" aria-expanded="false" aria-controls"collapseZwei">
               Klappbarer Eintrag #2
             </a>
           </h4>
@@ -82,7 +82,7 @@
       <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="überschriftDrei">
           <h4 class="panel-title">
-            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseDrei" aria-expanded="false" aria-controls"collapseDrei">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseDrei" aria-expanded="false" aria-controls"collapseDrei">
               Klappbarer Eintrag #3
             </a>
           </h4>
@@ -100,7 +100,7 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="überschriftEins">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseEins" aria-expanded="true" aria-controls"collapseEins">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEins" aria-expanded="true" aria-controls"collapseEins">
           Klappbarer Eintrag #1
         </a>
       </h4>
@@ -114,7 +114,7 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="überschriftZwei">
       <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseZwei" aria-expanded="false" aria-controls"collapseZwei">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseZwei" aria-expanded="false" aria-controls"collapseZwei">
           Klappbarer Eintrag #2
         </a>
       </h4>
@@ -128,7 +128,7 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="überschriftDrei">
       <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseDrei" aria-expanded="false" aria-controls"collapseDrei">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseDrei" aria-expanded="false" aria-controls"collapseDrei">
           Klappbarer Eintrag #3
         </a>
       </h4>
@@ -148,7 +148,7 @@
     <div class="panel panel-default">
       <div class="panel-heading" role="tab" id="collapseListengruppeÜberschrift1">
         <h4 class="panel-title">
-          <a class="collapsed" data-toggle="collapse" href="#collapseListengruppe1" aria-expanded="false" aria-controls="collapseListengruppe1">
+          <a class="collapsed" role="button" data-toggle="collapse" href="#collapseListengruppe1" aria-expanded="false" aria-controls="collapseListengruppe1">
             Klappbare Listengruppe
           </a>
         </h4>

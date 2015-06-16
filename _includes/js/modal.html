@@ -69,7 +69,7 @@ $('#meinModal').on('shown.bs.modal', function () {
   <p>Blende ein Modal mit JavaScript oder über den Button unten ein und aus. Es wird von der oberen Kante der Seite heruntergleiten und mit Einblendeffekt sichtbar werden.</p>
   <!-- Beispiel-Modal-Inhalt -->
   <div id="meinModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="meinModalLabel">
-    <div class="modal-dialog">
+    <div class="modal-dialog" role="document">
       <div class="modal-content">
 
         <div class="modal-header">
@@ -121,7 +121,7 @@ $('#meinModal').on('shown.bs.modal', function () {
 
 <!-- Modal -->
 <div class="modal fade" id="meinModal" tabindex="-1" role="dialog" aria-labelledby="meinModalLabel">
-  <div class="modal-dialog">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>
@@ -141,7 +141,7 @@ $('#meinModal').on('shown.bs.modal', function () {
 
   <div class="bs-callout bs-callout-warning" id="callout-modal-accessibility">
     <h4>Modals barrierefrei machen</h4>
-    <p>Füge einige Attribute zum <code>.modal</code> hinzu (<code>role="dialog"</code> und <code>aria-labelledby="meinModalLabel"</code>), um assistiven Technologien mitzuteilen (in der Reihenfolge), worum es sich bei dem Modal handelt und welches Element der Titel ist.</p>
+    <p>Füge unbedingt die Attribute <code>role="dialog"</code> und <code>aria-labelledby="..."</code> mit Bezug auf den Modal-Titel zum <code>.modal</code> und <code>role="document"</code> zum <code>.modal-dialog</code> selbst hinzu.</p>
     <p>Außerdem kannst du eine Beschreibung des Modals mit <code>aria-describedby</code> am <code>.modal</code> markieren.</p>
   </div>
 
@@ -222,7 +222,7 @@ $('#meinModal').on('shown.bs.modal', function () {
   <p>Um die Vorteile von Bootstraps Raster-System in einem Modal zu nutzen, füge einfach einen <code>.container-fluid</code> innerhalb von <code>.modal-body</code> hinzu und verwende dann das normale Raster-System in diesem Container.</p>
 <!-- Beispiel-Modal-Inhalt -->
   <div id="rasterSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="rasterModalLabel">
-    <div class="modal-dialog">
+    <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>
@@ -270,7 +270,7 @@ $('#meinModal').on('shown.bs.modal', function () {
 </div><!-- /example -->
 {% highlight html %}
 <div class="modal fade" role="dialog" aria-labelledby="rasterSystemModalLabel">
-  <div class="modal-dialog">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>
@@ -323,7 +323,7 @@ $('#meinModal').on('shown.bs.modal', function () {
     ...mehr Buttons...
 
     <div class="modal fade" id="beispielModal" tabindex="-1" role="dialog" aria-labelledby="beispielModalLabel">
-      <div class="modal-dialog">
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>
@@ -356,7 +356,7 @@ $('#meinModal').on('shown.bs.modal', function () {
 ...mehr Buttons...
 
 <div class="modal fade" id="beispielModal" tabindex="-1" role="dialog" aria-labelledby="beispielModalLabel">
-  <div class="modal-dialog">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>

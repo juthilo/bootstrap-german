@@ -19,7 +19,7 @@ exclude:
   - vendor
 
 # Custom vars
-current_version:  3.3.5
+current_version:  3.3.6
 repo:             https://github.com/twbs/bootstrap
 sass_repo:        https://github.com/twbs/bootstrap-sass
 

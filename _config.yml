@@ -25,7 +25,7 @@ sass_repo:        https://github.com/twbs/bootstrap-sass
 
 download:
   source:         https://github.com/twbs/bootstrap/archive/v3.3.6.zip
-  dist:           https://github.com/twbs/bootstrap/releases/download/v3.3.5/bootstrap-3.3.6-dist.zip
+  dist:           https://github.com/twbs/bootstrap/releases/download/v3.3.6/bootstrap-3.3.6-dist.zip
   sass:           https://github.com/twbs/bootstrap-sass/archive/v3.3.6.tar.gz
 
 blog:             http://blog.getbootstrap.com

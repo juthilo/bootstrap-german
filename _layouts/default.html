@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <!-- Meta-Informationen, Seitentitel, CSS, Favicons, usw. -->
     {% include header.html %}
   </head>
   <body>
-    <a id="skippy" class="sr-only sr-only-focusable" href="#content"><div class="container"><span class="skiplink-text">Zum Hauptinhalt springen</span></div></a>
+    {% include skippy.html %}
+    {% include v4.html %}
 
-    <!-- Hauptnavigation -->
     {% include nav/main.html %}
 
-    <!-- Seitenlayout -->
     <div class="bs-docs-header" id="content" tabindex="-1">
       <div class="container">
         <h1>{{ page.title }}</h1>
@@ -27,6 +25,7 @@
         {% unless page.fullwidth == true %}
         <div class="col-md-3" role="complementary">
           <nav class="bs-docs-sidebar hidden-print hidden-xs-hidden-sm">
+
             <ul class="nav bs-docs-sidenav">
               {% if page.slug == "getting-started" %}
                 {% include nav/getting-started.html %}

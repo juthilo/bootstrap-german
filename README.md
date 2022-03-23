@@ -26,7 +26,7 @@ Es sind einige Optionen verfügbar, um direkt loszulegen:
 
 * [Neueste Version herunterladen](https://github.com/twbs/bootstrap/archive/v3.4.1.zip).
 * Repository klonen: `git clone https://github.com/twbs/bootstrap.git`.
-* Mit [Bower](http://bower.io) installieren: `bower install bootstrap`.
+* Mit [Bower](https://bower.io) installieren: `bower install bootstrap`.
 * Mit [npm](https://www.npmjs.com) installieren: `npm install bootstrap`.
 * Mit [Meteor](https://www.meteor.com/) installieren: `meteor add twbs:bootstrap`.
 * Mit [Composer](https://getcomposer.org) installieren: `composer require twbs/bootstrap`.
@@ -113,7 +113,7 @@ Erhalte Neuigkeiten über Bootstraps Entwicklung und chatte mit den Verantwortli
 
 ## Versionen
 
-Um unsere Veröffentlichungen so klar wie möglich zu halten und Rückwärtskompatibilität zu gewährleisten, wird Bootstrap unter den [Richtlinien des Semantic Versioning](http://semver.org) entwickelt. Wir versuchen diese Regeln so gut wie möglich einzuhalten, doch manchmal kann uns dabei ein Fehler unterlaufen.
+Um unsere Veröffentlichungen so klar wie möglich zu halten und Rückwärtskompatibilität zu gewährleisten, wird Bootstrap unter den [Richtlinien des Semantic Versioning](https://semver.org) entwickelt. Wir versuchen diese Regeln so gut wie möglich einzuhalten, doch manchmal kann uns dabei ein Fehler unterlaufen.
 
 Schau dir [die Releases in unserem GitHub-Projekt](https://github.com/twbs/bootstrap/releases) an, um Changelogs für jede veröffentlichte Version von Bootstrap zu lesen. Ankündigungen zu den einzelnen Releases im [offiziellen Bootstrap-Blog](https://blog.getbootstrap.com/) enthalten Zusammenfassungen der wichtigsten Änderungen.
 

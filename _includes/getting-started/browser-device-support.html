@@ -3,7 +3,43 @@
   <p class="lead">Bootstrap ist so gebaut, dass es mit den neuesten Desktop- und mobilen Browsern funktioniert. Das bedeutet, dass ältere Browser unter Umständen anders gestaltete Komponenten anzeigen, die aber trotzdem voll funktionsfähig sind.</p>
 
   <h2 id="support-browsers">Unterstützte Browser</h2>
-  <p>Explizit unterstützen wir die <strong>neuesten Versionen</strong> der folgenden Browser und Plattformen. Auf Windows <strong>unterstützen wir Internet Explorer 8-11</strong>. Genauere Angaben findest du in der Tabelle unten.</p>
+  <p>Explizit unterstützen wir die <strong>neuesten Versionen</strong> der folgenden Browser und Plattformen.</p>
+
+  <p>Andere Browser, die die neueste Version von WebKit, Blink oder Gecko verwenden (entweder direkt oder über die Web View API der Plattform) werden nicht explizit unterstützt. Bootstrap sollte in den meisten Fällen aber dennoch auch in diesen Browsern gut aussehen und funktionieren. Genauere Informationen gibt es unten.</p>
+
+  <h3 id="mobile-devices">Mobile Geräte</h3>
+  <p>Ganz allgemein unterstützt Bootstrap die neuesten Versionen der Standardbrowser auf den bekanntesten Plattformen. Beachte aber, dass Proxy-Browser (wie Opera Mini, Opera Mobile Turbo, UC Browser Mini, Amazon Silk) nicht unterstützt werden.</p>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <td></td>
+          <th>Chrome</th>
+          <th>Firefox</th>
+          <th>Safari</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Android</th>
+          <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
+          <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
+          <td class="text-muted">k.A.</td>
+        </tr>
+        <tr>
+          <th scope="row">iOS</th>
+          <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
+          <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
+          <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 id="desktop-browsers">Desktop-Browser</h3>
+  <p>Genauso werden die neuesten Versionen der meisten Desktop-Browser unterstützt.</p>
+
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
       <thead>
@@ -18,24 +54,10 @@
       </thead>
       <tbody>
         <tr>
-          <th scope="row">Android</th>
+          <th scope="row">Mac</th>
           <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
-          <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
-          <td class="text-muted" rowspan="3" style="vertical-align: middle;">k.A.</td>
-          <td class="text-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Nicht Unterstützt</td>
-          <td class="text-muted">k.A.</td>
-        </tr>
-        <tr>
-          <th scope="row">iOS</th>
           <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
           <td class="text-muted">k.A.</td>
-          <td class="text-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Nicht Unterstützt</td>
-          <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
-        </tr>
-        <tr>
-          <th scope="row">Mac OS X</th>
-          <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
-          <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
           <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
           <td class="text-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Unterstützt</td>
         </tr>
@@ -50,6 +72,11 @@
       </tbody>
     </table>
   </div>
+
+  <p>Auf Windows <strong>unterstützen wir Internet Explorer 8-11</strong>.</p>
+
+  <p>Bei Firefox unterstützen wir zusätzlich zum normalen Stable Release auch die neueste <a href="https://www.mozilla.org/en-US/firefox/organizations/">Extended Support Release (ESR)</a>-Version.</p>
+
   <p>Inoffiziell sollte Bootstrap in Chromium und Chrome für Linux, Firefox für Linux und Internet Explorer 7 in Ordnung aussehen und funktionieren, aber wir unterstützen diese Browser nicht offiziell.</p>
   <p>Auf unserer <a href="{{ site.baseurl }}/browser-bugs/">Pinnwand für Browser-Bugs</a> findest du einige der Browser-Bugs, mit denen Bootstrap zu kämpfen hat.</p>
 
@@ -171,7 +198,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
 
   <h2 id="support-printing">Drucken</h2>
   <p>Sogar in eigenen modernen Browsern kann es Probleme beim Drucken geben.</p>
-  <p>Insbesondere verwendet Chrome (ab v32 und unabhängig von Randeinstellungen) eine Anzeigefensterbreite, die weit unter der tatsächlichen Größe des Papiers liegt, wenn es beim Drucken darum geht, die Media-Queries zu aufzuschlüsseln. Dies kann dazu führen, dass beim Druck unerwartet Bootstraps extra-kleines Raster aktiviert wird. <a href="https://github.com/twbs/bootstrap/issues/12078">Siehe #12078 für mehr Details.</a> Vorschläge, für den Umgang mit diesem Problem:</p>
+  <p>Insbesondere verwendet Chrome (ab v32 und unabhängig von Randeinstellungen) eine Anzeigefensterbreite, die weit unter der tatsächlichen Größe des Papiers liegt, wenn es beim Drucken darum geht, die Media-Queries zu aufzuschlüsseln. Dies kann dazu führen, dass beim Druck unerwartet Bootstraps extra-kleines Raster aktiviert wird. <a href="https://github.com/twbs/bootstrap/issues/12078">Siehe #12078 für mehr Details.</a> Vorschläge für den Umgang mit diesem Problem:</p>
   <ul>
     <li>Lass dich auf das XS-Raster ein und stelle sicher, dass deine Seite darauf in Ordnung aussieht.</li>
     <li>Verändere die Werte der <code>@screen-*</code>-Less-Variablen, damit dein Druckerpapier größer als extra-klein eingeschätzt wird.</li>

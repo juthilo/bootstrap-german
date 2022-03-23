@@ -5,7 +5,6 @@
 {% endif %}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Bootstrap, ein umfangreiches und dennoch schlankes Mobile-First Frond-End-Framework für einfachere und schnellere Entwicklung im Web.">
-<meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, bootstrap, bootstrap deutsch, dokumentation, übersetzung">
 <meta name="author" content="Mark Otto, Jacob Thornton und Bootstrap-Beitragende">
 {% if page.redirect == true %}
 <meta name="robots" content="noindex">
@@ -25,31 +24,34 @@
 {% else %}
 <link href="{{ site.baseurl }}/dist/css/bootstrap.css" rel="stylesheet">
 {% endif %}
+
 {% if page.slug == "css" or page.slug == "components" or page.slug == "js" %}
   <!-- Optionales Bootstrap-Theme -->
-{% if site.github %}
-  <link href="data:text/css;charset=utf-8," data-href="{{ site.baseurl }}/dist/css/bootstrap-theme.min.css" rel="stylesheet" id="bs-theme-stylesheet">
-{% else %}
-  <link href="data:text/css;charset=utf-8," data-href="{{ site.baseurl }}/dist/css/bootstrap-theme.css" rel="stylesheet" id="bs-theme-stylesheet">
+  {% if site.github %}
+    <link href="data:text/css;charset=utf-8," data-href="{{ site.baseurl }}/dist/css/bootstrap-theme.min.css" rel="stylesheet" id="bs-theme-stylesheet">
+  {% else %}
+    <link href="data:text/css;charset=utf-8," data-href="{{ site.baseurl }}/dist/css/bootstrap-theme.css" rel="stylesheet" id="bs-theme-stylesheet">
+  {% endif %}
 {% endif %}
+
+{% if page.layout == "default" %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css">
 {% endif %}
 
 <!-- Stile für die Dokumentation -->
 {% if site.github %}
 <link href="{{ site.baseurl }}/assets/css/docs.min.css" rel="stylesheet">
 {% else %}
-<link href="{{ site.baseurl }}/assets/css/src/pygments-manni.css" rel="stylesheet">
-<link href="{{ site.baseurl }}/assets/css/src/docs.css" rel="stylesheet">
+<link href="{{ site.baseurl }}/assets/css/docs.css" rel="stylesheet">
 {% endif %}
 <!--[if lt IE 9]><script src="{{ site.baseurl }}/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-<script src="{{ site.baseurl }}/assets/js/ie-emulation-modes-warning.js"></script>
 
 <!-- Unterstützung für Media Queries und HTML5-Elemente in IE8 über HTML5 shim und Respond.js -->
 <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
 <!-- Favicons -->
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="{{ site.baseurl }}/apple-touch-icon.png">
+<link rel="icon" href="{{ site.baseurl }}/favicon.ico">

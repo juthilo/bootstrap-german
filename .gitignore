@@ -29,6 +29,8 @@ _site
 nbproject
 Thumbs.db
 
+*.lock
+
 # Komodo
 .komodotools
 *.komodoproject

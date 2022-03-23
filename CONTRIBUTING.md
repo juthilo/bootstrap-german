@@ -223,7 +223,7 @@ folgenden Prozess zu folgen:
    ```
 
 4. Committe deine Änderungen in logischen Stücken. Bitte befolge diese
-   [Richtlinien für Commit-Nachrichten](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
+   [Richtlinien für Commit-Nachrichten](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
    oder dein Code wird wahrscheinlich nicht in das Hauptprojekt eingebunden.
    Verwende gits [interaktiven Rebase-Modus](https://help.github.com/articles/interactive-rebase),
    um deine Commits aufzuräumen, bevor du sie veröffentlichst.
@@ -254,7 +254,7 @@ Projekteigentümern, deine Arbeit unter den Bedingungen der
 
 ### HTML
 
-[Befolge die Regeln aus dem Code Guide.](http://codeguide.co/#html)
+[Befolge die Regeln aus dem Code Guide.](https://codeguide.co/#html)
 
 - Verwende Tags und Elemente für einen HTML5-Doctype (z.B. selbst-schließende Tags)
 - Nutze CDNs und HTTPS für JS von Dritten, wenn möglich. Wir nutzen keine protokoll-unabhängigen URLs in diesem Fall, da diese nicht funktionieren, wenn die Seite lokal über `file://` angezeigt wird.
@@ -262,7 +262,7 @@ Projekteigentümern, deine Arbeit unter den Bedingungen der
 
 ### CSS
 
-[Befolge die Regeln aus dem Code Guide.](http://codeguide.co/#html)
+[Befolge die Regeln aus dem Code Guide.](https://codeguide.co/#html)
 
 - Wenn es nicht all zu umständlich ist, sollten Standard-Farbpaletten den [WCAG-Richtlinien für Farbkontrast](https://www.w3.org/TR/WCAG20/#visual-audio-contrast) folgen.
 - Abgesehen von seltenen Einzelfällen, solltest du die Standard-Stile für `:focus` (also z.B. `outline: none;`) nicht entfernen ohne sinnvolle Alternativen bereitzustellen. Lies [diesen Artikel des A11Y Projects](https://a11yproject.com/posts/never-remove-css-outlines/) für mehr Informationen.

@@ -5,7 +5,7 @@
   <h2>Navigation überspringen</h2>
   <p>Falls deine Navigation viele Links enthält und im DOM vor dem Hauptinhalt kommt, kannst du einen <code>Zum Hauptinhalt springen</code>-Link vor der Navigation einfügen (eine einfache Erklärung findest du in diesem <a href="https://a11yproject.com/posts/skip-nav-links/">A11Y Project-Artikel über Skip-Navigation-Links</a>). Die Klasse .sr-only wird den Link zum Überspringen verbergen und die Klasse .sr-only-focusable stellt sicher, dass der Link sichtbar wird, sobald der Fokus darauf liegt (für sehende Tastatur-Nutzer).</p>
   <div class="bs-callout bs-callout-danger" id="callout-skiplinks">
-    <p>Aufgrund von schon lange existierenden Bugs in Chrome (siehe <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=262171" title="Chromium bug tracker - Issue 262171: Focus should cycle from named anchor">Issue 262171 im Chromium Bug Tracker</a>) und Internet Explorer (siehe diesen Artikel über <a href="http://accessibleculture.org/articles/2010/05/in-page-links/">Links innerhalb der Seite und Fokus-Reihenfolge</a>) wirst du manuell sicherstellen müssen, dass das Ziel deines Skip-Links zumindest programmatisch fokussierbar ist, indem du <code>tabindex="-1"</code> hinzufügst.</p>
+    <p>Aufgrund von schon lange existierenden Bugs in Chrome (siehe <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=262171" title="Chromium bug tracker - Issue 262171: Focus should cycle from named anchor">Issue 262171 im Chromium Bug Tracker</a>) und Internet Explorer (siehe diesen Artikel über <a href="http://accessibleculture.org/articles/2010/05/in-page-links">Links innerhalb der Seite und Fokus-Reihenfolge</a>) wirst du manuell sicherstellen müssen, dass das Ziel deines Skip-Links zumindest programmatisch fokussierbar ist, indem du <code>tabindex="-1"</code> hinzufügst.</p>
     <p>Außerdem willst du evtl. ausdrücklich verhindern, dass der Fokus auf dem Zielelement visuell angezeigt wird (insbesondere, da Chrome aktuell den Fokus auf Elemente mit <code>tabindex="-1"</code> setzt, wenn diese mit der Maus angeklickt werden), und zwar mit <code>#content:focus { outline: none; }</code>.</p>
     <p>Beachte, dass dieser Bug auch andere Links innerhalb einer Seite betrifft und sie dadurch für Tastatur-Nutzer unbrauchbar macht. Überleg dir, ob du eine ähnliche "Lösung" für alle benannten Anchors/Fragment Identifiers, die als Linkziele agieren, hinzufügen willst.</p>
   </div>
@@ -30,7 +30,7 @@
   <ul>
     <li><a href="https://github.com/squizlabs/HTML_CodeSniffer">"HTML Codesniffer"-Bookmarklet, um Probleme mit Barrierefreiheit zu identifizieren</a></li>
     <li><a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en">Barrierefreiheit-Erweiterung für Chromes Entwickler-Tools</a></li>
-    <li><a href="https://www.tpgi.com/color-contrast-checker/">Colour Contrast Analyser</a>
+    <li><a href="https://www.tpgi.com/color-contrast-checker/">Colour Contrast Analyser</a></li>
     <li><a href="https://a11yproject.com/">The A11Y Project</a></li>
     <li><a href="https://developer.mozilla.org/de/docs/Web/Accessibility">MDN Barrierefreiheit-Dokumentation</a></li>
   </ul>

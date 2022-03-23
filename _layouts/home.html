@@ -1,11 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
   <head>
     <!-- Meta-Informationen, Seitentitel, CSS, Favicons, usw. -->
     {% include header.html %}
   </head>
   <body class="bs-docs-home">
-    <a id="skippy" class="sr-only sr-only-focusable" href="#content"><div class="container"><span class="skiplink-text">Zum Hauptinhalt springen</span></div></a>
+    {% include skippy.html %}
+    {% include v4.html %}
 
     <!-- Hauptnavigation -->
     {% include nav/main.html %}

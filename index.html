@@ -9,9 +9,9 @@ title: Bootstrap (deutsch) &middot; Das beliebteste anpassungsfähige und modern
     <span class="bs-docs-booticon bs-docs-booticon-lg bs-docs-booticon-outline">B</span>
     <p class="lead">Bootstrap ist das beliebteste Framework mit HTML, CSS und JS für die Entwicklung von anpassungsfähigen Projekten für das moderne Web.</p>
     <p class="lead">
-      <a href="los-gehts#download" class="btn btn-outline-inverse btn-lg">Bootstrap herunterladen</a>
+      <a href="{{ site.baseurl }}/los-gehts#download" class="btn btn-outline-inverse btn-lg">Bootstrap herunterladen</a>
     </p>
-    <p class="version">Aktuell v{{ site.current_version }}</p>
+    <p class="version">Dokumentation für v{{ site.current_version }}</p>
   </div>
 </main>
 
@@ -24,17 +24,17 @@ title: Bootstrap (deutsch) &middot; Das beliebteste anpassungsfähige und modern
 
     <div class="row">
       <div class="col-sm-4">
-        <img src="assets/img/sass-less.png" alt="Unterstützung für Sass und Less" class="img-responsive">
+        <img src="{{ site.baseurl }}/assets/img/sass-less.png" alt="Unterstützung für Sass und Less" class="img-responsive" width="1000" height="360">
         <h3>Präprozessoren</h3>
         <p>Bootstrap kommt mit purem, fertigem CSS, nutzt aber im Quellcode die zwei berühmtesten CSS-Präprozessoren, <a href="{{ site.baseurl }}/css/#less">Less</a> und <a href="{{ site.baseurl }}/css/#sass">Sass</a>. Leg mit vorkompiliertem CSS direkt los oder arbeite mit der Quelle und kompiliere dann selbst.</p>
       </div>
       <div class="col-sm-4">
-        <img src="assets/img/devices.png" alt="Anpassungsfähig auf allen Geräten" class="img-responsive">
+        <img src="{{ site.baseurl }}/assets/img/devices.png" alt="Anpassungsfähig auf allen Geräten" class="img-responsive" width="1000" height="360">
         <h3>Ein Framework, alle Geräte.</h3>
         <p>Bootstrap passt mit Hilfe von Media-Queries deine Websites und Anwendungen ohne doppelten Code jedem Gerät an&mdash;von Smartphones über Tablets bis hin zu Desktop-PCs.</p>
       </div>
       <div class="col-sm-4">
-        <img src="assets/img/components.png" alt="Komponenten" class="img-responsive">
+        <img src="{{ site.baseurl }}/assets/img/components.png" alt="Komponenten" class="img-responsive" width="1000" height="360">
         <h3>Jede Menge Funktionen</h3>
         <p>Mit Bootstrap liefern wir dir eine umfangreiche und ansehnliche Dokumentation für übliche HTML-Elemente, Dutzende besondere HTML- und CSS-Komponenten und tolle jQuery-Plugins.</p>
       </div>
@@ -49,6 +49,21 @@ title: Bootstrap (deutsch) &middot; Das beliebteste anpassungsfähige und modern
 
 <div class="bs-docs-featurette">
   <div class="container">
+    <h2 class="bs-docs-featurette-title">Offizielle Bootstrap Themes</h2>
+    <p class="lead">
+      Werte Bootstrap mit offiziellen hochwertigen Themes auf. Jedes Theme ist eine separate Sammlung von brandneuen Komponenten und Plugins in Ergänzung zu allem was Bootstrap zu bieten hat. Dazu gehört eine vollständige Dokumentation, Build-Tools und noch mehr.
+    </p>
+
+    <p class="lead">
+      <a href="{{ site.themes }}" class="btn btn-outline btn-lg">Themes erkunden</a>
+    </p>
+
+    <img class="img-responsive" src="{{ site.baseurl }}/assets/img/bs-themes.png" alt="Bootstrap Themes" width="1024" height="388">
+  </div>
+</div>
+
+<div class="bs-docs-featurette">
+  <div class="container">
     <h2 class="bs-docs-featurette-title">Gemacht mit Bootstrap.</h2>
     <p class="lead">Es gibt Millionen von großartigen Seiten online, die mit Bootstrap gemacht wurden. Lass dich von unserer wachsenden <a href="{{ site.baseurl }}/los-gehts/#examples">Beispiel-Sammlung</a> oder einigen unserer persönlichen Favoriten inspirieren und leg dann selbst los.</p>
 
@@ -56,9 +71,9 @@ title: Bootstrap (deutsch) &middot; Das beliebteste anpassungsfähige und modern
 
     <div class="row bs-docs-featured-sites">
     {% for showcase in site.data.showcase %}
-      <div class="col-xs-6 col-sm-3">
-        <a href="{{ showcase.expo_url }}" target="_blank" title="{{ showcase.name }}">
-          <img src="https://expo.getbootstrap.com/thumbs/{{ showcase.img }}-thumb.jpg" alt="{{ showcase.name }}" class="img-responsive">
+      <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+        <a href="{{ showcase.expo_url }}" rel="noopener" target="_blank" title="{{ showcase.name }}">
+          <img src="{{ site.baseurl }}/assets/img/expo-{{ showcase.img }}.jpg" alt="{{ showcase.name }}" class="img-responsive" width="800" height="600">
         </a>
       </div>
     {% endfor %}

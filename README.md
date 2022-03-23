@@ -17,6 +17,7 @@ Um direkt loszulegen, geh auf <https://holdirbootstrap.de/>!
 * [Mitmachen](#mitmachen)
 * [Community](#community)
 * [Versionen](#versionen)
+* [Dank](#dank)
 * [Erfinder](#erfinder)
 * [Copyright und Lizenz](#copyright-und-lizenz)
 
@@ -27,7 +28,7 @@ Es sind einige Optionen verfügbar, um direkt loszulegen:
 * [Neueste Version herunterladen](https://github.com/twbs/bootstrap/archive/v3.4.1.zip).
 * Repository klonen: `git clone https://github.com/twbs/bootstrap.git`.
 * Mit [Bower](https://bower.io) installieren: `bower install bootstrap`.
-* Mit [npm](https://www.npmjs.com) installieren: `npm install bootstrap`.
+* Mit [npm](https://www.npmjs.com) installieren: `npm install bootstrap@3`.
 * Mit [Meteor](https://www.meteor.com/) installieren: `meteor add twbs:bootstrap`.
 * Mit [Composer](https://getcomposer.org) installieren: `composer require twbs/bootstrap`.
 
@@ -43,9 +44,11 @@ bootstrap/
 │   ├── bootstrap.css
 │   ├── bootstrap.css.map
 │   ├── bootstrap.min.css
+│   ├── bootstrap.min.css.map
 │   ├── bootstrap-theme.css
 │   ├── bootstrap-theme.css.map
-│   └── bootstrap-theme.min.css
+│   ├── bootstrap-theme.min.css
+│   └── bootstrap-theme.min.css.map
 ├── js/
 │   ├── bootstrap.js
 │   └── bootstrap.min.js
@@ -140,4 +143,4 @@ Danke an [BrowserStack](https://www.browserstack.com/) für die Bereitstellung d
 
 ## Copyright und Lizenz
 
-Code und Dokumentation Copyright 2011-2019 Twitter, Inc. Code freigegeben unter [der MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE). Dokumentation freigegeben unter den Bedingungen von [Creative Commons](LICENSE).
+Code und Dokumentation Copyright 2011-2022 Twitter, Inc. Code freigegeben unter [der MIT-Lizenz](https://github.com/twbs/bootstrap/blob/master/LICENSE). Dokumentation freigegeben unter den Bedingungen von [Creative Commons](LICENSE).

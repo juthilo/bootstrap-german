@@ -119,34 +119,32 @@
 
   <h2 id="grid-example-basic">Beispiel: Übereinander, nebeneinander</h2>
   <p>Du brauchst nur ein paar <code>.col-md-*</code>-Klassen, um ein grundlegendes Raster zu erstellen, dessen Spalten auf Smartphones und Tablets (extra-klein bis klein) übereinander und dann ab mittleren Bildschirmgrößen auf Desktop-PCs nebeneinander angeordnet sind. Platziere die Rasterspalten einfach in irgendeiner <code>.row</code>.</p>
-  <div class="bs-docs-grid">
-    <div class="row show-grid">
-      <div class="col-md-1">.col-md-1</div>
-      <div class="col-md-1">.col-md-1</div>
-      <div class="col-md-1">.col-md-1</div>
-      <div class="col-md-1">.col-md-1</div>
-      <div class="col-md-1">.col-md-1</div>
-      <div class="col-md-1">.col-md-1</div>
-      <div class="col-md-1">.col-md-1</div>
-      <div class="col-md-1">.col-md-1</div>
-      <div class="col-md-1">.col-md-1</div>
-      <div class="col-md-1">.col-md-1</div>
-      <div class="col-md-1">.col-md-1</div>
-      <div class="col-md-1">.col-md-1</div>
-    </div>
-    <div class="row show-grid">
-      <div class="col-md-8">.col-md-8</div>
-      <div class="col-md-4">.col-md-4</div>
-    </div>
-    <div class="row show-grid">
-      <div class="col-md-4">.col-md-4</div>
-      <div class="col-md-4">.col-md-4</div>
-      <div class="col-md-4">.col-md-4</div>
-    </div>
-    <div class="row show-grid">
-      <div class="col-md-6">.col-md-6</div>
-      <div class="col-md-6">.col-md-6</div>
-    </div>
+  <div class="row show-grid">
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+  </div>
+  <div class="row show-grid">
+    <div class="col-md-8">.col-md-8</div>
+    <div class="col-md-4">.col-md-4</div>
+  </div>
+  <div class="row show-grid">
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4">.col-md-4</div>
+  </div>
+  <div class="row show-grid">
+    <div class="col-md-6">.col-md-6</div>
+    <div class="col-md-6">.col-md-6</div>
   </div>
 {% highlight html %}
 <div class="row">
@@ -190,20 +188,18 @@
 
   <h2 id="grid-example-mixed">Beispiel: Mobil und Desktop-PC</h2>
   <p>Du willst deine Spalten auf kleineren Geräten nicht einfach nur übereinander haben? Verwende die extra-kleinen und mittleren Geräte-Raster-Klassen, indem du <code>.col-xs-*</code> <code>.col-md-*</code> zu deinen Spalten hinzufügst. Schau dir das Beispiel unten an, um besser zu verstehen, wie das funktioniert.</p>
-  <div class="bs-docs-grid">
-    <div class="row show-grid">
-      <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
-      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-    </div>
-    <div class="row show-grid">
-      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-    </div>
-    <div class="row show-grid">
-      <div class="col-xs-6">.col-xs-6</div>
-      <div class="col-xs-6">.col-xs-6</div>
-    </div>
+  <div class="row show-grid">
+    <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  </div>
+  <div class="row show-grid">
+    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  </div>
+  <div class="row show-grid">
+    <div class="col-xs-6">.col-xs-6</div>
+    <div class="col-xs-6">.col-xs-6</div>
   </div>
 {% highlight html %}
 <!-- Stapel die Spalten auf mobilen Geräten, indem du eine über die ganze und eine über die halbe Breite spannst -->
@@ -228,18 +224,16 @@
 
   <h2 id="grid-example-mixed-complete">Beispiel: Mobil, Tablet und Desktop-PC</h2>
   <p>Bau das vorherige Beispiel weiter aus, indem du noch dynamischere und vielfältigere Layouts mit den Tablet-Klassen <code>.col-sm-*</code> erstellst.</p>
-  <div class="bs-docs-grid">
-    <div class="row show-grid">
-      <div class="col-xs-12 col-sm-6 col-md-8">.col-xs-12 .col-sm-6 .col-md-8</div>
-      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
-    </div>
-    <div class="row show-grid">
-      <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
-      <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
-      <!-- Optional: Setze die Floats der XS-Spalten zurück, falls ihr Inhalt nicht gleich hoch ist -->
-      <div class="clearfix visible-xs-block"></div>
-      <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
-    </div>
+  <div class="row show-grid">
+    <div class="col-xs-12 col-sm-6 col-md-8">.col-xs-12 .col-sm-6 .col-md-8</div>
+    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  </div>
+  <div class="row show-grid">
+    <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+    <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
+    <!-- Optional: Setze die Floats der XS-Spalten zurück, falls ihr Inhalt nicht gleich hoch ist -->
+    <div class="clearfix visible-xs-block"></div>
+    <div class="col-xs-6 col-sm-4">.col-xs-6 .col-sm-4</div>
   </div>
 {% highlight html %}
 <div class="row">
@@ -257,12 +251,10 @@
 
   <h2 id="grid-example-wrapping">Beispiel: Spaltenumbruch</h2>
   <p>Falls mehr als 12 Spalten in einer einzigen Zeile platziert werden, wird jede Gruppe mit Extra-Spalten als eine Einheit in eine neue Zeile rutschen.</p>
-  <div class="bs-docs-grid">
-    <div class="row show-grid">
-      <div class="col-xs-9">.col-xs-9</div>
-      <div class="col-xs-4">.col-xs-4<br>Da 9 + 4 = 13 &gt; 12, rutscht dieser 4 Spalten breite div als ganze Einheit in eine neue Zeile.</div>
-      <div class="col-xs-6">.col-xs-6<br>Folgende Spalten werden in der neuen Zeile fortgeführt.</div>
-    </div>
+  <div class="row show-grid">
+    <div class="col-xs-9">.col-xs-9</div>
+    <div class="col-xs-4">.col-xs-4<br>Da 9 + 4 = 13 &gt; 12, rutscht dieser 4 Spalten breite div als ganze Einheit in eine neue Zeile.</div>
+    <div class="col-xs-6">.col-xs-6<br>Folgende Spalten werden in der neuen Zeile fortgeführt.</div>
   </div>
 {% highlight html %}
 <div class="row">
@@ -274,21 +266,19 @@
 
   <h2 id="grid-responsive-resets">Responsive Spalten-Resets</h2>
   <p>Mit den vier Gliedern unseres Raster-Systems ist es fast unvermeidbar, dass du auf Probleme stößt, wenn bei bestimmten Umbruchpunkten deine Spalten nicht richtig positioniert werden, da eine höher ist als die andere. Um dies zu beheben, kannst du eine Kombination aus <code>.clearfix</code> und unseren <a href="#responsive-utilities">Responsiven Hiflsmitteln</a> verwenden.</p>
-  <div class="bs-docs-grid">
-    <div class="row show-grid">
-      <div class="col-xs-6 col-sm-3">
-        .col-xs-6 .col-sm-3
-        <br>
-        Veränder die Breite deines Browser-Fensters oder sieh dir das Beispiel auf deinem Smartphone an.
-      </div>
-      <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
-
-      <!-- Der clearfix wird nur für die benötigte Breite des Ansichtsfensters hinzugefügt -->
-      <div class="clearfix visible-xs-block"></div>
-
-      <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
-      <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+  <div class="row show-grid">
+    <div class="col-xs-6 col-sm-3">
+      .col-xs-6 .col-sm-3
+      <br>
+      Veränder die Breite deines Browser-Fensters oder sieh dir das Beispiel auf deinem Smartphone an.
     </div>
+    <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+
+    <!-- Der clearfix wird nur für die benötigte Breite des Ansichtsfensters hinzugefügt -->
+    <div class="clearfix visible-xs-block"></div>
+
+    <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
+    <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
   </div>
 {% highlight html %}
 <div class="row">
@@ -316,20 +306,50 @@
 {% endhighlight %}
 
 
+  <h2 id="grid-remove-gutters">Freiräume entfernen</h2>
+  <p>Mit der Klasse <code>.row-no-gutters</code> kannst du die Freiräume einer Reihe und ihrer Spalten entfernen.</p>
+  <div class="row row-no-gutters show-grid">
+    <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  </div>
+  <div class="row row-no-gutters show-grid">
+    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  </div>
+  <div class="row row-no-gutters show-grid">
+    <div class="col-xs-6">.col-xs-6</div>
+    <div class="col-xs-6">.col-xs-6</div>
+  </div>
+{% highlight html %}
+<div class="row row-no-gutters">
+  <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+</div>
+<div class="row row-no-gutters">
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+  <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+</div>
+<div class="row row-no-gutters">
+  <div class="col-xs-6">.col-xs-6</div>
+  <div class="col-xs-6">.col-xs-6</div>
+</div>
+{% endhighlight %}
+
+
   <h2 id="grid-offsetting">Spalten abrücken</h2>
   <p>Du kannst mit Hilfe der <code>.col-md-offset-*</code>-Klassen Spalten nach rechts verschieben. Diese Klassen vergrößern den linken Außenabstand einer Spalte um <code>*</code> Spalten. <code>.col-md-offset-4</code> verschiebt eine <code>.col-md-4</code>-Spalte zum Beispiel um vier Spalten nach rechts.</p>
-  <div class="bs-docs-grid">
-    <div class="row show-grid">
-      <div class="col-md-4">.col-md-4</div>
-      <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
-    </div>
-    <div class="row show-grid">
-      <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
-      <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
-    </div>
-    <div class="row show-grid">
-      <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
-    </div>
+  <div class="row show-grid">
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
+  </div>
+  <div class="row show-grid">
+    <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+    <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
+  </div>
+  <div class="row show-grid">
+    <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
   </div>
 {% highlight html %}
 <div class="row">
@@ -342,6 +362,18 @@
 </div>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+</div>
+{% endhighlight %}
+
+  <p>Du kannst Offsets von niedrigeren Grid-Bereichen mit den Klassen <code>.col-*-offset-0</code> überschreiben.</p>
+{% highlight html %}
+<div class="row">
+  <div class="col-xs-6 col-sm-4">
+  </div>
+  <div class="col-xs-6 col-sm-4">
+  </div>
+  <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0">
+  </div>
 </div>
 {% endhighlight %}
 

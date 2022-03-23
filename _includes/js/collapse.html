@@ -230,13 +230,13 @@ $('#meinKlappelement').collapse({
 {% endhighlight %}
 
   <h4><code>.collapse('toggle')</code></h4>
-  <p>Ändert den Status eines klappbaren Elements von sichtbar zu verborgen und umgekehrt.</p>
+  <p>Ändert den Status eines klappbaren Elements von sichtbar zu verborgen und umgekehrt. <strong>Die Funktion gibt schon an ihren Aufruf zurück bevor das klappbare Element tatsächlich sichtbar bzw. verborgen gemacht wurde</strong> (also bevor das Ereignis <code>shown.bs.collapse</code> bzw. <code>hidden.bs.collapse</code> stattfindet).</p>
 
   <h4><code>.collapse('show')</code></h4>
-  <p>Zeigt ein klappbares Element an.</p>
+  <p>Zeigt ein klappbares Element an. <strong>Die Funktion gibt schon an ihren Aufruf zurück bevor das klappbare Element tatsächlich sichtbar gemacht wurde</strong> (also bevor das Ereignis <code>shown.bs.collapse</code> stattfindet).</p>
 
   <h4><code>.collapse('hide')</code></h4>
-  <p>Verbirgt ein klappbares Element.</p>
+  <p>Verbirgt ein klappbares Element. <strong>Die Funktion gibt schon an ihren Aufruf zurück bevor das klappbare Element tatsächlich verborgen gemacht wurde</strong> (also bevor das Ereignis <code>hidden.bs.collapse</code> stattfindet).</p>
 
   <h3 id="collapse-events">Ereignisse</h3>
   <p>Bootstraps Collapse-Klassen legen einige Ereignisse offen, um sich in die Collapse-Funktionen einzuklinken.</p>

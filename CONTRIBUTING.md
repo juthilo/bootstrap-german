@@ -265,7 +265,7 @@ Projekteigentümern, deine Arbeit unter den Bedingungen der
 [Befolge die Regeln aus dem Code Guide.](https://codeguide.co/#html)
 
 - Wenn es nicht all zu umständlich ist, sollten Standard-Farbpaletten den [WCAG-Richtlinien für Farbkontrast](https://www.w3.org/TR/WCAG20/#visual-audio-contrast) folgen.
-- Abgesehen von seltenen Einzelfällen, solltest du die Standard-Stile für `:focus` (also z.B. `outline: none;`) nicht entfernen ohne sinnvolle Alternativen bereitzustellen. Lies [diesen Artikel des A11Y Projects](https://a11yproject.com/posts/never-remove-css-outlines/) für mehr Informationen.
+- Abgesehen von seltenen Einzelfällen, solltest du die Standard-Stile für `:focus` (also z.B. `outline: none;`) nicht entfernen ohne sinnvolle Alternativen bereitzustellen. Lies [diesen Artikel des A11Y Projects](https://a11yproject.com/posts/never-remove-css-outlines) für mehr Informationen.
 
 ### JS
 

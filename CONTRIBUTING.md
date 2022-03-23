@@ -32,16 +32,23 @@ Kanal für [Fehlermeldungen](#fehlermeldungen), [Funktionsvorschläge](#funktion
 und [das Einreichen von Pull Requests](#pull-requests). Beachte allerdings bitte die
 folgenden Einschränkungen:
 
-* Der Issue Tracker ist **nicht** für persönliche Hilfe-Anfragen geeignet.
-  Stack Overflow ([`twitter-boostrap-3`](https://stackoverflow.com/questions/tagged/twitter-bootstrap-3)-Label),
-  [Slack](https://bootstrap-slack.herokuapp.com) oder [IRC](README.md#community) sind bessere Orte, um Hilfe zu erhalten.
+* Bitte verwende den Issue Tracker **nicht** für persönliche Hilfe-Anfragen.
+  Stack Overflow ([`twitter-bootstrap-3`](https://stackoverflow.com/questions/tagged/twitter-bootstrap-3)-Label),
+  [Slack](https://bootstrap-slack.herokuapp.com/) oder [IRC](README.md#community) sind bessere Orte, um Hilfe zu erhalten.
 
-* **Beachte und respektiere** Andere in Diskussionen zu Issues und **vermeide**
-  einen unhöflichen Umgangston sowie Abschweifungen vom Thema.
+* Bitte **nicht** Issues trollen oder entgleisen lassen. Bleib beim Thema und respektiere andere Meinungen.
 
-* Bitte öffne **keine** Meldungen oder Pull Requests, die sich auf Code in
+* Bitte **nicht** Kommentare posten, die nur aus "+1" oder ":thumbsup:" bestehen. Nutze stattdessen
+  [GitHubs "reactions"](https://blog.github.com/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/).
+  Wir behalten uns vor, Kommentare zu löschen, die diese Regel missachten.
+
+* Bitte **nicht** Issues oder Pull Requests eröffnen, die sich auf Code in
   [`Normalize`](https://github.com/necolas/normalize.css) beziehen (reiche diese
   Beiträge stattdessen im zugehörigen Repository ein).
+  
+* Bitte **nicht** Issues eröffnen, die sich auf die offiziellen Themes auf <https://themes.getbootstrap.com/> 
+  beziehen. Schreib stattdessen eine Email mit Fragen oder Feedback zu diesen Themes 
+  an `themes AT getbootstrap DOT com`.
 
 
 ## Fehlermeldungen und Labels
@@ -72,7 +79,7 @@ hilfreich, also vielen Dank an dieser Stelle!
 
 ### Richtlinien für Fehlermeldungen:
 
-0. **Validiere und linte deinen Code** &mdash; [validiere dein HTML](http://html5.vaidator.nu)
+0. **Validiere und linte deinen Code** &mdash; [validiere dein HTML](https://html5.vaidator.nu/)
    und [linte dein HTML](https://github.com/twbs/bootlint), um sicherzustellen, dass dein
    Problem nicht von einem einfachen Fehler in deinem eigenen Code verursacht wird.
 
@@ -85,7 +92,7 @@ hilfreich, also vielen Dank an dieser Stelle!
 
 3. **Isoliere das Problem** &mdash; am besten ist ein [reduzierter Musterfall](https://css-tricks.com/reduced-test-cases/)
    und ein Live-Beispiel.
-   [Dieser JS Bin](http://jsbin.com/lefey/1/edit?html,output) ist eine hilfreiche Vorlage.
+   [Dieser JS Bin](https://jsbin.com/lefey/1/edit?html,output) ist eine hilfreiche Vorlage.
 
 
 Eine gute Fehlermeldung sollte nicht dazu führen, dass Andere nach mehr
@@ -100,7 +107,7 @@ möglich zu sein:
 
 All diese Informationen helfen Anderen dabei, potentielle Fehler im Code zu beseitigen.
 
-### Beispiel:
+Beispiel:
 
 > Kurzer, erklärender Titel einer Beispiel-Fehlermeldung
 
@@ -122,7 +129,7 @@ All diese Informationen helfen Anderen dabei, potentielle Fehler im Code zu bese
 ### Browser-Bugs melden
 
 Einige der Fehlermeldungen, die wir erhalten, beziehen sich auf Fehler, die von Bugs in den Browsern selbst und nicht von Bootstrap verursacht werden.
-Wenn angebracht, versuchen wir diese Upstream-Fehler an die relevanten Browser-Hersteller zu melden und dann an unserer [Pinnwand für Browser-Bugs](http://holdirbootstrap.de/browser-bugs/) aufzuführen und [sie im MDN zu dokumentieren](https://developer.mozilla.org/de/docs/Web).
+Wenn angebracht, versuchen wir diese Upstream-Fehler an die relevanten Browser-Hersteller zu melden und dann an unserer [Pinnwand für Browser-Bugs](https://holdirbootstrap.de/browser-bugs/) aufzuführen und [sie im MDN zu dokumentieren](https://developer.mozilla.org/de/docs/Web).
 
 | Hersteller    | Browser                      | Rendering Engine | Seite für Fehlermeldungen                                                             | Hinweise                                            |
 | ------------- | ---------------------------- | ---------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------- |
@@ -139,7 +146,13 @@ Wenn angebracht, versuchen wir diese Upstream-Fehler an die relevanten Browser-H
 
 ## Funktionsvorschläge
 
-Wir freuen uns, wenn du neue Funktionen vorschlägst. Nimm dir aber bitte einen
+Wir freuen uns, wenn du neue Funktionen vorschlägst. Bitte beachte aber, dass 
+diese sich **auf [Bootstrap v4](https://github.com/twbs/bootstrap/tree/v4-dev) 
+beziehen müssen,** da Bootstrap v3 im eingeschränkten Wartungsmodus ist und keine
+neuen Funktionen mehr erhält. So können wir uns auf Bootstrap v4 konzentrieren,
+die Zukunft des Frameworks.
+
+Nimm dir bitte, bevor du einen Funktionsvorschlag einreichst, einen
 Moment Zeit, um herauszufinden, ob deine Idee zu dem Umfang und den Zielen des
 Projekts passt. Es liegt ganz an *dir*, die Entwickler des Projekt mit guten
 Thesen von deiner vorgeschlagenen Funktion zu überzeugen. Bitte stelle so viele
@@ -157,14 +170,21 @@ enthalten.
 willst). Andernfalls wirst du viel Zeit mit etwas verbringen, das die Entwickler
 des Projekts vielleicht gar nicht einfügen wollen.
 
+Insbesondere **werden Pull Requests, die neue Funktionen zu Bootstrap v3
+hinzufügen, abgelehnt.** Bootstrap v3 ist im eingeschränkten Wartungsmodus und
+erhält keine neuen Funktionen mehr. So können wir uns auf Bootstrap v4
+konzentrieren, die Zukunft des Frameworks. Pull Requests, die neue Funktionen
+hinzufügen, sollten sich stattdessen auf
+[Bootstrap v4 (die `v4-dev` git branch)](https://github.com/twbs/bootstrap/tree/v4-dev)
+beziehen, wo sie willkommen sind und ganz normal in Betracht gezogen werden.
+
 Bitte halte dich an die [Code-Richtlinien](#code-richtlinien) dieses Projekt
 (Einrückung, Kommentare, usw.) und andere Anforderungen (z.B. Unit-Tests).
 
 **Bearbeite `bootstrap.css`, `bootstrap-theme.css` oder `bootstrap.js` niemals
 direkt!** Diese Dateien werden automatisch generiert. Du solltest stattdessen
 die Quelldateien in
-[`/bootstrap/less/`](https://github.com/twbs/bootstrap/tree/master/less)
-und/oder [`/bootstrap/js/`](https://github.com/twbs/bootstrap/tree/master/js)
+[`/bootstrap/less/`](https://github.com/twbs/bootstrap/tree/master/less), [`/bootstrap/scss/`](https://github.com/twbs/bootstrap/tree/v4-dev/scss) (für Bootstrap v4), und/oder [`/bootstrap/js/`](https://github.com/twbs/bootstrap/tree/master/js)
 bearbeiten.
 
 Genauso solltest du bei Beiträgen zu Bootstraps Dokumentation die Quelldateien im
@@ -202,7 +222,7 @@ folgenden Prozess zu folgen:
    git checkout -b <thema-branch-name>
    ```
 
-4. Committe deine Änderungen in logischen Stücken. Bitte befolge die
+4. Committe deine Änderungen in logischen Stücken. Bitte befolge diese
    [Richtlinien für Commit-Nachrichten](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
    oder dein Code wird wahrscheinlich nicht in das Hauptprojekt eingebunden.
    Verwende gits [interaktiven Rebase-Modus](https://help.github.com/articles/interactive-rebase),
@@ -230,15 +250,6 @@ Projekteigentümern, deine Arbeit unter den Bedingungen der
 [Creative Commons Attribution 3.0 Unported-Lizenz](LICENSE)
 (falls sie Dokumentations-Änderungen enthält) weiterzuverbreiten.
 
-### Pull Request Bots
-
-[@twbs-rorschach](https://github.com/twbs-rorschach) ist ein Bootstrap-Bot, der in unserem GitHub-Issue-Tracker herumhängt und automatisch alle Pull Requests auf einige übliche kleine Fehler überprüft. Es kann sein, dass Rorschach einen Kommentar bei deinem Pull Request hinterlässt und diesen dann schließt. Falls das passiert, behebe einfach die Probleme, die im Kommentar genannt werden (dieser sollte Links zu Detailinformationen zu den jeweiligen Problemen enthalten) und dann:
-
-* Pushe die überarbeitete Version der Branch deines Pull Requests und schreibe einen Kommentar bei dem Pull Request, in dem du sagst, dass du das Problem behoben hast. Jemand aus dem Bootstrap-Hauptteam wird dann deinen Pull Request wieder öffnen.
-* Oder du kannst einfach einen neuen Pull Request für deine überarbeitete Version öffnen.
-
-[@twbs-savage](https://github.com/twbs-savage) ist ein Bootstrap-Bot, der automatisch Tests in verschiedenen Browsern (via [Sauce](https://saucelabs.com) und Travis CI) bei JavaScript-Pull Requests durchführt. Savage hinterlässt einen Kommentar bei Pull Requests und sagt, ob JS-Browsertests erfolgreich waren oder fehlgeschlagen sind, mit einem Link zu den vollständigen Travis-Build-Details. Falls dein Pull Request durchfällt, überprüfe das Travis-Log, um zu sehen, welche Browser- und Betriebssystem-Kombinationen die Tests nicht erfolgreich ausführen konnten. Jeder Browser-Test im Travis-Log enthält einen Link zu einer Seite bei Sauce mit Details über den Test. Auf diesen Detail-Seiten kannst du einen Bildschirmmitschnitt von dem Testlauf anschauen, um genau zu sehen, welche Unit Tests fehlgeschlagen sind.
-
 ## Code-Richtlinien
 
 ### HTML
@@ -253,8 +264,8 @@ Projekteigentümern, deine Arbeit unter den Bedingungen der
 
 [Befolge die Regeln aus dem Code Guide.](http://codeguide.co/#html)
 
-- Wenn es nicht all zu umständlich ist, sollten Standard-Farbpaletten den [WCAG-Richtlinien für Farbkontrast](http://www.w3.org/TR/WCAG20/#visual-audio-contrast) folgen.
-- Abgesehen von seltenen Einzelfällen, solltest du die Standard-Stile für `:focus` (also z.B. `outline: none;`) nicht entfernen ohne sinnvolle Alternativen bereitzustellen. Lies [diesen Artikel des A11Y Projects](http://a11yproject.com/posts/never-remove-css-outlines/) für mehr Informationen.
+- Wenn es nicht all zu umständlich ist, sollten Standard-Farbpaletten den [WCAG-Richtlinien für Farbkontrast](https://www.w3.org/TR/WCAG20/#visual-audio-contrast) folgen.
+- Abgesehen von seltenen Einzelfällen, solltest du die Standard-Stile für `:focus` (also z.B. `outline: none;`) nicht entfernen ohne sinnvolle Alternativen bereitzustellen. Lies [diesen Artikel des A11Y Projects](https://a11yproject.com/posts/never-remove-css-outlines/) für mehr Informationen.
 
 ### JS
 
@@ -262,6 +273,7 @@ Projekteigentümern, deine Arbeit unter den Bedingungen der
 - 2 Leerzeichen (keine Tabs)
 - [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions_and_function_scope/Strict_mode)
 - "Attraktiv"
+- Verwende keine [jQuery event alias Methoden](https://github.com/jquery/jquery/blob/master/src/event/alias.js) (wie z.B. `$().focus()`). Nutze stattdessen [`$().trigger(eventType, ...)`](https://api.jquery.com/trigger/) oder [`$().on(eventType, ...)`](https://api.jquery.com/on/), je nachdem ob du ein Event auslösen oder abhören willst. (Beispiel: `$().trigger('focus')` oder `$().on('focus', function (event) { /* focus event behandeln */ })`) Wir machen das, um mit selbsterstellten Builds von jQuery kompatibel zu sein, in denen das Modul für event aliases nicht enthalten ist.
 
 ### Code-Stil überprüfen
 

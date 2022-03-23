@@ -3,7 +3,7 @@
   <p class="lead">Bootstrap folgt üblichen Web-Standards und kann&mdash;mit minimaler zusätzlicher Anstrengung&mdash;dazu verwendet werden, Seiten so zu gestalten, dass sie barrierefrei zugänglich für Personen sind, die <abbr title="Assistive Technologien" class="initialism">AT</abbr> verwenden.</p>
 
   <h2>Navigation überspringen</h2>
-  <p>Falls deine Navigation viele Links enthält und im DOM vor dem Hauptinhalt kommt, kannst du einen <code>Zum Hauptinhalt springen</code>-Link vor der Navigation einfügen (eine einfache Erklärung findest du in diesem <a href="http://a11yproject.com/posts/skip-nav-links/">A11Y Project-Artikel über Skip-Navigation-Links</a>). Die Klasse .sr-only wird den Link zum Überspringen verbergen und die Klasse .sr-only-focusable stellt sicher, dass der Link sichtbar wird, sobald der Fokus darauf liegt (für sehende Tastatur-Nutzer).</p>
+  <p>Falls deine Navigation viele Links enthält und im DOM vor dem Hauptinhalt kommt, kannst du einen <code>Zum Hauptinhalt springen</code>-Link vor der Navigation einfügen (eine einfache Erklärung findest du in diesem <a href="https://a11yproject.com/posts/skip-nav-links/">A11Y Project-Artikel über Skip-Navigation-Links</a>). Die Klasse .sr-only wird den Link zum Überspringen verbergen und die Klasse .sr-only-focusable stellt sicher, dass der Link sichtbar wird, sobald der Fokus darauf liegt (für sehende Tastatur-Nutzer).</p>
   <div class="bs-callout bs-callout-danger" id="callout-skiplinks">
     <p>Aufgrund von schon lange existierenden Bugs in Chrome (siehe <a href="https://code.google.com/p/chromium/issues/detail?id=262171" title="Chromium bug tracker - Issue 262171: Focus should cycle from named anchor">Issue 262171 im Chromium Bug Tracker</a>) und Internet Explorer (siehe diesen Artikel über <a href="http://accessibleculture.org/articles/2010/05/in-page-links/">Links innerhalb der Seite und Fokus-Reihenfolge</a>) wirst du manuell sicherstellen müssen, dass das Ziel deines Skip-Links zumindest programmatisch fokussierbar ist, indem du <code>tabindex="-1"</code> hinzufügst.</p>
     <p>Außerdem willst du evtl. ausdrücklich verhindern, dass der Fokus auf dem Zielelement visuell angezeigt wird (insbesondere, da Chrome aktuell den Fokus auf Elemente mit <code>tabindex="-1"</code> setzt, wenn diese mit der Maus angeklickt werden), und zwar mit <code>#content:focus { outline: none; }</code>.</p>
@@ -21,17 +21,17 @@
 
   <h2>Verschachtelte Überschriften</h2>
   <p>Wenn du verschiedene Überschriften (<code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code>) nacheinander und nebeneinander anordnest, sollte die Hauptüberschrift deines Dokuments eine <code>&lt;h1&gt;</code> sein. Nachfolgende Überschriften sollten dann logisch aus <code>&lt;h2&gt;</code> - <code>&lt;h6&gt;</code> bestehen, damit Screenreader ein Inhaltsverzeichnis für deine Seiten konstruieren können.</p>
-  <p>Lerne mehr darüber bei <a href="http://squizlabs.github.io/HTML_CodeSniffer/Standards/Section508/">HTML CodeSniffer</a> und <a href="http://accessibility.psu.edu/headings">Penn State's AccessAbility</a>.</p>
+  <p>Lerne mehr darüber bei <a href="https://squizlabs.github.io/HTML_CodeSniffer/Standards/Section508/">HTML CodeSniffer</a> und <a href="https://accessibility.psu.edu/headings">Penn State's AccessAbility</a>.</p>
 
   <h2>Farbkontrast</h2>
-  <p>Einige der Farbkombinationen, die zurzeit in Bootstrap verfügbar sind (wie die verschiedenen Klassen für <a href="{{ site.baseurl }}/css/#buttons">gestaltete Buttons</a>, einige der Code-Highlighting-Farben, die für <a href="{{ site.baseurl }}/css/#code-block">einfache Code-Blöcke</a> verwendet werden, die Hilfsklasse <code>.bg-primary</code> für <a href="{{ site.baseurl }}/css/#helper-classes-backgrounds">Kontext-Hintergründe</a>, und die Standard-Linkfarbe auf einem weißen Hintergrund) haben ein niedriges Kontrastverhältnis (unter dem <a href="http://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast">empfohlenen Verhältnis von 4.5:1</a>). Dies kann Probleme für Nutzer verursachen, die eingeschränkte Sehkraft haben oder farbenblind sind. Diese Standardfarben müssen evtl. angepasst werden, um ihren Kontrast und ihre Lesbarkeit zu erhöhen.</p>
+  <p>Einige der Farbkombinationen, die zurzeit in Bootstrap verfügbar sind (wie die verschiedenen Klassen für <a href="{{ site.baseurl }}/css/#buttons">gestaltete Buttons</a>, einige der Code-Highlighting-Farben, die für <a href="{{ site.baseurl }}/css/#code-block">einfache Code-Blöcke</a> verwendet werden, die Hilfsklasse <code>.bg-primary</code> für <a href="{{ site.baseurl }}/css/#helper-classes-backgrounds">Kontext-Hintergründe</a>, und die Standard-Linkfarbe auf einem weißen Hintergrund) haben ein niedriges Kontrastverhältnis (unter dem <a href="https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast">empfohlenen Verhältnis von 4.5:1</a>). Dies kann Probleme für Nutzer verursachen, die eingeschränkte Sehkraft haben oder farbenblind sind. Diese Standardfarben müssen evtl. angepasst werden, um ihren Kontrast und ihre Lesbarkeit zu erhöhen.</p>
 
   <h2>Zusätzliche Ressourcen</h2>
   <ul>
     <li><a href="https://github.com/squizlabs/HTML_CodeSniffer">"HTML Codesniffer"-Bookmarklet, um Probleme mit Barrierefreiheit zu identifizieren</a></li>
     <li><a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en">Barrierefreiheit-Erweiterung für Chromes Entwickler-Tools</a></li>
-    <li><a href="http://www.paciellogroup.com/resources/contrastanalyser/">Colour Contrast Analyser</a>
-    <li><a href="http://a11yproject.com/">The A11Y Project</a></li>
+    <li><a href="https://www.tpgi.com/color-contrast-checker/">Colour Contrast Analyser</a>
+    <li><a href="https://a11yproject.com/">The A11Y Project</a></li>
     <li><a href="https://developer.mozilla.org/de/docs/Barrierefreiheit">MDN Barrierefreiheit-Dokumentation</a></li>
   </ul>
 </div>

@@ -12,7 +12,7 @@
   browser: >
     Microsoft Edge
   summary: >
-    [Sticky Positioning](http://html5please.com/#position:sticky) aus CSS Positioned Layout Level 3 implementieren
+    [Sticky Positioning](https://html5please.com/#position:sticky) aus CSS Positioned Layout Level 3 implementieren
   upstream_bug: >
     UserVoice#6263621
   origin: >
@@ -82,7 +82,7 @@
   browser: >
     Chrome
   summary: >
-    [Sticky Positioning](http://html5please.com/#position:sticky) aus CSS Positioned Layout Level 3 implementieren
+    [Sticky Positioning](https://html5please.com/#position:sticky) aus CSS Positioned Layout Level 3 implementieren
   upstream_bug: >
     Chromium#231752
   origin: >

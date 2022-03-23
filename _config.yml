@@ -15,12 +15,14 @@ baseurl:          ..
 encoding:         UTF-8
 
 exclude:
+  - assets/less/
   - jade
   - src
   - vendor
 
 # Custom vars
 current_version:  3.4.1
+docs_version:     3.4
 repo:             https://github.com/twbs/bootstrap
 sass_repo:        https://github.com/twbs/bootstrap-sass
 
@@ -31,8 +33,13 @@ download:
 
 blog:             https://blog.getbootstrap.com
 expo:             https://expo.getbootstrap.com
+themes:           https://themes.getbootstrap.com
 
 cdn:
-  css:            https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css
-  css_theme:      https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css
-  js:             https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js
+  # See https://www.srihash.org for info on how to generate the hashes
+  css:            https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css
+  css_hash:       "sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+  css_theme:      https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css
+  css_theme_hash: "sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ"
+  js:             https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js
+  js_hash:        "sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"

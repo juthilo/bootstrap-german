@@ -315,7 +315,7 @@ $('#meinModal').on('shown.bs.modal', function () {
 {% endhighlight %}
 
   <h2 id="modals-related-target">Modal-Inhalt abhängig vom auslösenden Button variieren</h2>
-  <p>Du hast eine Reihe von Buttons, die alle das gleiche Modal auslösen, nur mit etwas anderen Inhalten? Verwende <code>event.relatedTarget</code> und <a href="https://developer.mozilla.org/de-DE/docs/Web/Guide/HTML/Using_data_attributes">HTML <code>data-*</code>-Attribute</a> (möglicherweise <a href="http://api.jquery.com/data/">via jQuery</a>), um den Inhalt des Modals abhängig davon, welcher Button geklickt wurde, zu ändern. Siehe die Dokumentation für Modal-Ereignisse für mehr Details zu <code>relatedTarget</code>.</p>
+  <p>Du hast eine Reihe von Buttons, die alle das gleiche Modal auslösen, nur mit etwas anderen Inhalten? Verwende <code>event.relatedTarget</code> und <a href="https://developer.mozilla.org/de-DE/docs/Web/Guide/HTML/Using_data_attributes">HTML <code>data-*</code>-Attribute</a> (möglicherweise <a href="https://api.jquery.com/data/">via jQuery</a>), um den Inhalt des Modals abhängig davon, welcher Button geklickt wurde, zu ändern. Siehe die Dokumentation für Modal-Ereignisse für mehr Details zu <code>relatedTarget</code>.</p>
   <div class="bs-example">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#beispielModal" data-whatever="@mdo">Modal für @mdo öffnen</button>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#beispielModal" data-whatever="@fat">Modal für @fat öffnen</button>
@@ -443,7 +443,7 @@ $('#beispielModal').on('show.bs.modal', function (event) {
          <td>Pfad</td>
          <td>false</td>
          <td>
-          <p><strong class="text-danger">Diese Option ist ab v3.3.0 als veraltet markiert und wird in v4 entfernt.</strong> Wir empfehlen stattdessen, mit Client-seitigen Vorlagen oder einem Framework zum Einbinden von Daten zu arbeiten oder <a href="http://api.jquery.com/load/">jQuery.load</a> selbst aufzurufen.</p>
+          <p><strong class="text-danger">Diese Option ist ab v3.3.0 als veraltet markiert und wird in v4 entfernt.</strong> Wir empfehlen stattdessen, mit Client-seitigen Vorlagen oder einem Framework zum Einbinden von Daten zu arbeiten oder <a href="https://api.jquery.com/load/">jQuery.load</a> selbst aufzurufen.</p>
           <p>Falls eine Remote-URL angegeben wird, wird über jQuerys <code>load</code>-Methode <strong>Inhalt von dort einmal geladen</strong> und in den div-Container <code>.modal-content</code> injiziert. Falls du die Data-API verwendest, kannst du auch das Attribut <code>href</code> nutzen, um die Remote-Quelle anzugeben. Hier ein Beispiel:</p>
 {% highlight html %}
 <a data-toggle="modal" href="remote.html" data-target="#modal">Klick mich an</a>

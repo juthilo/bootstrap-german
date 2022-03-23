@@ -98,7 +98,7 @@ $('#beispiel').tooltip(Optionen)
   </div>
   <div class="bs-callout bs-callout-warning" id="callout-tooltip-groups">
     <h4>Tooltips &amp; Popovers in Button-Gruppen und Input-Gruppen benötigen besondere Einstellung</h4>
-    <p>Wenn du Tooltips oder Popovers an Elementen in einer <code>.btn-group</code> oder <code>.input-group</code> verwendest, musst du die Option <code>container: 'body'</code> festlegen, um unerwünschte Nebeneffekte zu vermeiden (das Element könnte z.B. breiter werden und/oder seine abgerundeten Ecken verlieren, wenn der Tooltip oder das Popover ausgelöst wird).</p>
+    <p>Wenn du Tooltips oder Popovers an Elementen in einer <code>.btn-group</code>, <code>.input-group</code> oder innerhalb einer Tabelle (<code>&lt;td&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>) verwendest, musst du die Option <code>container: 'body'</code> festlegen, um unerwünschte Nebeneffekte zu vermeiden (das Element könnte z.B. breiter werden und/oder seine abgerundeten Ecken verlieren, wenn der Tooltip oder das Popover ausgelöst wird).</p>
   </div>
   <div class="bs-callout bs-callout-warning" id="callout-tooltip-hidden">
     <h4>Versuche nicht, Tooltips an verborgenen Elementen anzuzeigen</h4>
@@ -115,6 +115,11 @@ $('#beispiel').tooltip(Optionen)
 
   <h3 id="tooltips-options">Optionen</h3>
   <p>Optionen können über Data-Attribute oder JavaScript angegeben werden. Für Data-Attribute hängst du den Namen der Option einfach an <code>data-</code>, z.B. <code>data-animation=""</code>.</p>
+
+  <div class="bs-callout bs-callout-warning" id="callout-popover-disabled-options">
+    <p>Aus Sicherheitsgründen können die Optionen <code>sanitize</code>, <code>sanitizeFn</code> und <code>whiteList</code> nicht als Data-Attribute übergeben werden.</p>
+  </div>
+
   <div class="table-responsive">
     <table class="table table-bordered table-striped js-options-table">
       <thead>
@@ -169,7 +174,7 @@ $('#beispiel').tooltip(Optionen)
           <td>selector</td>
           <td>String</td>
           <td>false</td>
-          <td>Falls ein Selektor angegeben wird, werden Tooltip-Objekte an die angegebenen Ziele gebunden. In der Praxis wird dies verwendet, um Tooltips zu dynamischem HTML-Inhalt hinzufügen zu können. Siehe <a href="https://github.com/twbs/bootstrap/issues/4215">hier</a> und <a href="https://jsbin.com/zopod/1/edit">ein informatives Beispiel</a>.</td>
+          <td>Falls ein Selektor angegeben wird, werden Tooltip-Objekte an die angegebenen Ziele gebunden. In der Praxis wird dies verwendet, um Tooltips zu dynamischem HTML-Inhalt hinzufügen zu können (Support für <code>jQuery.on</code>). Siehe <a href="https://github.com/twbs/bootstrap/issues/4215">hier</a> und <a href="https://jsbin.com/zopod/1/edit">ein informatives Beispiel</a>.</td>
         </tr>
         <tr>
           <td>template</td>
@@ -205,6 +210,24 @@ $('#beispiel').tooltip(Optionen)
             <p>Behält den Tooltip innerhalb der Grenzen dieses Elements. Beispiel: <code>viewport: '#viewport'</code> oder <code>{ "selector": "#viewport", "padding": 0 }</code></p>
             <p>Wenn eine Funktion angegeben wird, wird diese mit dem auslösenden DOM Node als einziges Argument aufgerufen. Der <code>this</code>-Kontext wird auf die Tooltip-Instanz gesetzt.</p>
           </td>
+        </tr>
+        <tr>
+          <td>sanitize</td>
+          <td>Boolean</td>
+          <td>true</td>
+          <td>Sanitizer (de-)aktivieren. Falls dieser aktiviert ist, werden die Optionen <code>'template'</code>, <code>'content'</code> und <code>'title'</code> gesäubert.</td>
+        </tr>
+        <tr>
+          <td>whiteList</td>
+          <td>Object</td>
+          <td><a href="#js-sanitizer">Standardliste</a></td>
+          <td>Objekt mit erlaubten Elementen und Attributen</td>
+        </tr>
+        <tr>
+          <td>sanitizeFn</td>
+          <td>null | function</td>
+          <td>null</td>
+          <td>Hier kannst du deine eigene Funktion statt des eingebauten Sanitizers einbinden. Das kann nützlich sein, wenn du eine andere Bibliothek für die Säuberung von Eingaben verwenden willst.</td>
         </tr>
       </tbody>
     </table>

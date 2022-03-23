@@ -85,6 +85,11 @@
     <p>Die Klasse <code>.active</code> muss zu einem der Karussell-Elemente hinzugefügt werden. Das Karussell wird anderenfalls nicht sichtbar sein.</p>
   </div>
 
+  <div class="bs-callout bs-callout-info" id="callout-carousel-without-glyphicons">
+    <h4>Glyphicon-Icons werden nicht gebraucht</h4>
+    <p>Die Klassen <code>.glyphicon .glyphicon-chevron-left</code> und <code>.glyphicon .glyphicon-chevron-right</code> werden für diese Schaltflächen nicht unbedingt benötigt. Bootstrap stellt <code>.icon-prev</code> und <code>.icon-next</code> als einfache Unicode-Alternativen zur Verfügung.</p>
+  </div>
+
   <h3>Optionale Untertitel</h3>
   <p>Füge Untertitel zu deinen Folien ganz einfach mit <code>.carousel-caption</code> zu jedem <code>.item</code> hinzu. Darin kannst du fast alle optionalen HTML-Inhalte einfügen und alles wird automatisch ausgerichtet und formatiert.</p>
   <div class="bs-example" data-example-id="carousel-with-captions">
@@ -167,15 +172,15 @@ $('.karussell').carousel()
       <tbody>
        <tr>
          <td>interval</td>
-         <td>Nummer |false</td>
+         <td>Nummer | false</td>
          <td>5000</td>
          <td>Die Zeit in ms, die vergehen soll, bevor das nächste Objekt aufgerufen wird. Falls false angegeben wird, bewegt sich das Karussell nicht automatisch.</td>
        </tr>
        <tr>
          <td>pause</td>
-         <td>String</td>
+         <td>String | null</td>
          <td>"hover"</td>
-         <td>Pausiert die Drehung des Karussells bei mouseenter und setzt sie bei mouseleave fort.</td>
+         <td>Pausiert die Drehung des Karussells, wenn der Wert "hover" festgelegt wird, bei <code>mouseenter</code> und setzt sie bei <code>mouseleave</code> fort. Wird der Wert <code>null</code> festgelegt, pausiert das Karussell nicht.</td>
        </tr>
        <tr>
          <td>wrap</td>
@@ -185,7 +190,7 @@ $('.karussell').carousel()
        </tr>
        <tr>
          <td>keyboard</td>
-         <td>boolean</td>
+         <td>Boolean</td>
          <td>true</td>
          <td>Bestimmt, ob das Karussell auf Tastatureingaben reagieren soll.</td>
        </tr>

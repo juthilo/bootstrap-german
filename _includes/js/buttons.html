@@ -10,18 +10,18 @@
 
   <h2 id="buttons-stateful">Aussagekräftig</h2>
   <p>Füge <code>data-loading-text="Wird geladen..."</code> hinzu, um bei einem Button einen Lade-Zustand anzuzeigen.</p>
-  <p><strong class="text-danger">Diese Funktion ist ab v3.3.5 als veraltet markiert und wird in v4 entfernt.</strong></p>
+  <p><strong class="text-danger">Diese Funktion ist ab v3.3.5 als veraltet markiert und wurde in v4 entfernt.</strong></p>
   <div class="bs-callout bs-callout-info" id="callout-buttons-state-names">
     <h4>Nimm den Zustand, der dir gefällt!</h4>
     <p>Im Rahmen dieser Demonstration verwenden wir <code>data-loading-text</code> und <code>$().button('loading')</code>; das ist aber nicht der einzige Zustand, den du verwenden kannst. <a href="#buttons-methods">Sieh dir für mehr Informationen dazu die Dokumentation für <code>$().button(string)</code> weiter unten an</a>.</p>
   </div>
   <div class="bs-example">
-    <button type="button" id="loading-example-btn" data-loading-text="Wird geladen..." class="btn btn-primary" autocomplete="off">
+    <button type="button" id="loading-example-btn" data-loading-text="Wird geladen..." class="btn btn-primary">
       Ladezustand
     </button>
   </div><!-- /example -->
 {% highlight html %}
-<button type="button" id="meinButton" data-loading-text="Wird geladen..." class="btn btn-primary" autocomplete="off">
+<button type="button" id="meinButton" data-loading-text="Wird geladen..." class="btn btn-primary">
   Ladezustand
 </button>
 
@@ -41,12 +41,12 @@
     <p>Bei Buttons, die schon als gedrückt markiert sein sollen, musst du die Klasse <code>.active</code> und das Attribut <code>aria-pressed="true"</code> selbst zum <code>button</code> hinzufügen.</p>
   </div>
   <div class="bs-example">
-    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
       Einzelner Schalter
     </button>
   </div><!-- /example -->
 {% highlight html %}
-<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
   Einzelner Schalter
 </button>
 {% endhighlight %}
@@ -64,26 +64,26 @@
   <div class="bs-example" data-example-id="buttons-checkbox">
     <div class="btn-group" data-toggle="buttons">
       <label class="btn btn-primary active">
-        <input type="checkbox" checked autocomplete="off"> Checkbox 1 (vorausgewählt)
+        <input type="checkbox" checked> Checkbox 1 (vorausgewählt)
       </label>
       <label class="btn btn-primary">
-        <input type="checkbox" autocomplete="off"> Checkbox 2
+        <input type="checkbox"> Checkbox 2
       </label>
       <label class="btn btn-primary">
-        <input type="checkbox" autocomplete="off"> Checkbox 3
+        <input type="checkbox"> Checkbox 3
       </label>
     </div>
   </div><!-- /example -->
 {% highlight html %}
 <div class="btn-group" data-toggle="buttons">
   <label class="btn btn-primary active">
-    <input type="checkbox" autocomplete="off" checked> Checkbox 1 (vorausgewählt)
+    <input type="checkbox" checked> Checkbox 1 (vorausgewählt)
   </label>
   <label class="btn btn-primary">
-    <input type="checkbox" autocomplete="off"> Checkbox 2
+    <input type="checkbox"> Checkbox 2
   </label>
   <label class="btn btn-primary">
-    <input type="checkbox" autocomplete="off"> Checkbox 3
+    <input type="checkbox"> Checkbox 3
   </label>
 </div>
 {% endhighlight %}
@@ -91,26 +91,26 @@
   <div class="bs-example" data-example-id="buttons-radio">
     <div class="btn-group" data-toggle="buttons">
       <label class="btn btn-primary active">
-        <input type="radio" name="options" id="option1" autocomplete="off" checked> Radio-Button 1 (vorausgewählt)
+        <input type="radio" name="options" id="option1" checked> Radio-Button 1 (vorausgewählt)
       </label>
       <label class="btn btn-primary">
-        <input type="radio" name="options" id="option2" autocomplete="off"> Radio-Button 2
+        <input type="radio" name="options" id="option2"> Radio-Button 2
       </label>
       <label class="btn btn-primary">
-        <input type="radio" name="options" id="option3" autocomplete="off"> Radio-Button 3
+        <input type="radio" name="options" id="option3"> Radio-Button 3
       </label>
     </div>
   </div><!-- /example -->
 {% highlight html %}
 <div class="btn-group" data-toggle="buttons">
   <label class="btn btn-primary active">
-    <input type="radio" name="options" id="option1" autocomplete="off" checked> Radio-Button 1 (vorausgewählt)
+    <input type="radio" name="options" id="option1" checked> Radio-Button 1 (vorausgewählt)
   </label>
   <label class="btn btn-primary">
-    <input type="radio" name="options" id="option2" autocomplete="off"> Radio-Button 2
+    <input type="radio" name="options" id="option2"> Radio-Button 2
   </label>
   <label class="btn btn-primary">
-    <input type="radio" name="options" id="option3" autocomplete="off"> Radio-Button 3
+    <input type="radio" name="options" id="option3"> Radio-Button 3
   </label>
 </div>
 {% endhighlight %}

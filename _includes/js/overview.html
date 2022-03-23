@@ -70,6 +70,81 @@ $('#meinModal').on('show.bs.modal', function (e) {
 })
 {% endhighlight %}
 
+  <h2 id="js-sanitizer">Sanitizer</h2>
+
+  <p>Tooltips und Popovers nutzen unseren eingebauten Sanitizer, um HTML-akzeptierende Optionen vor der Verarbeitung zu säubern.</p>
+  <p>Die Standardliste mit erlaubten Eingaben (<code>whiteList</code>) ist:</p>
+
+{% highlight js %}
+var ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i
+var DefaultWhitelist = {
+  // Global attributes allowed on any supplied element below.
+  '*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN],
+  a: ['target', 'href', 'title', 'rel'],
+  area: [],
+  b: [],
+  br: [],
+  col: [],
+  code: [],
+  div: [],
+  em: [],
+  hr: [],
+  h1: [],
+  h2: [],
+  h3: [],
+  h4: [],
+  h5: [],
+  h6: [],
+  i: [],
+  img: ['src', 'alt', 'title', 'width', 'height'],
+  li: [],
+  ol: [],
+  p: [],
+  pre: [],
+  s: [],
+  small: [],
+  span: [],
+  sub: [],
+  sup: [],
+  strong: [],
+  u: [],
+  ul: []
+}
+{% endhighlight %}
+
+  <p>Wenn du zusätzliche Einträge zur <code>whiteList</code> hinzufügen willst, kannst du das so machen:</p>
+
+{% highlight js %}
+var myDefaultWhiteList = $.fn.tooltip.Constructor.DEFAULTS.whiteList
+
+// Um table Elemente zu erlauben
+myDefaultWhiteList.table = []
+
+// Um td Elemente inkl. data-option Attribut zu erlauben
+myDefaultWhiteList.td = ['data-option']
+
+// Du kannst auch deine eigene Regex pushen, um Attribute zu validieren.
+// Pass gut auf, dass deine Regex nicht zu lasch ist.
+var myCustomRegex = /^data-my-app-[\w-]+/
+myDefaultWhiteList['*'].push(myCustomRegex)
+{% endhighlight %}
+
+  <p>Falls du unseren Sanitizer umgehen willst, etwa weil du ein anderes Paket (z.B. <a href="https://www.npmjs.com/package/dompurify">DOMPurify</a>) dafür verwenden willst, musst du so vorgehen:</p>
+
+{% highlight js %}
+$('#yourTooltip').tooltip({
+  sanitizeFn: function (content) {
+    return DOMPurify.sanitize(content)
+  }
+})
+{% endhighlight %}
+
+  <div class="bs-callout bs-callout-danger" id="callout-sanitizer-no-createhtmldocument">
+    <h4>Browser ohne <code>document.implementation.createHTMLDocument</code></h4>
+    <p>Falls Browser wie Internet Explorer 8 <code>document.implementation.createHTMLDocument</code> nicht unterstützen, gibt der eingebaute Sanitizer das HTML wie eingegeben zurück.</p>
+    <p>Möchtest du auch in diesem Fall eine Säuberung der Eingabe durchführen willst, leg bitte <code>sanitizeFn</code> fest und nutze eine externe Bibliothek wie <a href="https://www.npmjs.com/package/dompurify">DOMPurify</a>.</p>
+  </div>
+
   <h2 id="js-version-nums">Versionsnummern</h2>
   <p>Die Version jedes der Bootstrap-jQuery-Plugins kann über die Eigenschaft <code>VERSION</code> des Plugin-Konstruktors abgerufen werden. Zum Beispiel beim Tooltip-Plugin:</p>
 {% highlight js %}

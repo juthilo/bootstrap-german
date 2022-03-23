@@ -28,8 +28,8 @@
   </div>
   <p class="muted">Aktuell v{{ site.current_version }}.</p>
 
-  <h2 id="download-cdn">Bootstrap-CDN</h2>
-  <p>Unsere Freunde bei <a href="https://www.stackpath.com/">StackPath</a> haben großzügigerweise CDN-Unterstützung für Bootstraps CSS und JavaScript zur Verfügung gestellt. Verwende einfach diese Links zum <a href="https://www.bootstrapcdn.com/">Bootstrap CDN</a>.</p>
+  <h2 id="download-cdn">BootstrapCDN</h2>
+  <p>Unsere Freunde bei <a href="https://www.stackpath.com/">StackPath</a> haben großzügigerweise CDN-Unterstützung für Bootstraps CSS und JavaScript zur Verfügung gestellt. Verwende einfach diese Links zum <a href="https://www.bootstrapcdn.com/">BootstrapCDN</a>.</p>
 {% highlight html %}
 <!-- Das neueste kompilierte und minimierte CSS -->
 <link rel="stylesheet" href="{{ site.cdn.css }}" integrity="{{ site.cdn.css_hash }}" crossorigin="anonymous">
@@ -43,11 +43,11 @@
 
   <h2 id="download-bower">Mit Bower installieren</h2>
   <p>Du kannst Bootstraps Less, CSS, JavaScript und Schriften auch mit Hilfe von <a href="https://bower.io">Bower</a> installieren und verwalten.</p>
-  {% highlight bash %}$ bower install bootstrap{% endhighlight %}
+  {% highlight bash %}bower install bootstrap{% endhighlight %}
 
   <h2 id="download-npm">Mit npm installieren</h2>
   <p>Du kannst Bootstrap auch mit Hilfe von <a href="https://www.npmjs.com">npm</a> installieren:</p>
-  {% highlight bash %}$ npm install bootstrap{% endhighlight %}
+  {% highlight bash %}npm install bootstrap@3{% endhighlight %}
   <p><code>require('bootstrap')</code> lädt Bootstraps jQuery-Plugins in das jQuery-Objekt. Das Modul <code>bootstrap</code> selbst exportiert nichts. Du kannst Bootstraps jQuery-Plugins individuell laden, indem du die <code>/js/*.js</code>-Dateien im obersten Verzeichnis des Pakets lädst.</p>
   <p>Bootstraps <code>package.json</code> enthält einige zusätzliche Metadaten unter den folgenden Schlüsseln:</p>
   <ul>
@@ -57,7 +57,7 @@
 
   <h2 id="download-composer">Mit Composer installieren</h2>
   <p>Du kannst Bootstraps Less, CSS, JavaScript und Schriften auch mit <a href="https://getcomposer.org">Composer</a> installieren und verwalten:</p>
-  {% highlight bash %}$ composer require twbs/bootstrap{% endhighlight %}
+  {% highlight bash %}composer require twbs/bootstrap{% endhighlight %}
 
   <h2 id="download-autoprefixer">Autoprefixer für Less/Sass benötigt</h2>
   <p>Bootstrap verwendet <a href="https://github.com/postcss/autoprefixer">Autoprefixer</a>, um mit den <a href="https://www.thoughtco.com/css-vendor-prefixes-3466867">CSS Vendor Präfixen</a> klarzukommen. Falls du Bootstrap von der Less/Sass-Quelle kompilieren möchtest und nicht unser Gruntfile verwendest, musst du Autoprefixer selbst in deinen Build-Vorgang integrieren. Falls du vorkompilierte Bootstrap-Dateien oder unser Gruntfile verwendest, musst du dir darüber keine Sorgen machen, da Autoprefixer dort bereits eingebunden ist.</p>

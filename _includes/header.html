@@ -20,9 +20,9 @@
 
 <!-- Bootstrap CSS -->
 {% if site.github %}
-<link href="{{ site.baseurl }}/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="{{ site.baseurl }}/dist/css/bootstrap.min.css?34101" rel="stylesheet">
 {% else %}
-<link href="{{ site.baseurl }}/dist/css/bootstrap.css" rel="stylesheet">
+<link href="{{ site.baseurl }}/dist/css/bootstrap.css?34101" rel="stylesheet">
 {% endif %}
 
 {% if page.slug == "css" or page.slug == "components" or page.slug == "js" %}
@@ -34,15 +34,11 @@
   {% endif %}
 {% endif %}
 
-{% if page.layout == "default" %}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css">
-{% endif %}
-
 <!-- Stile für die Dokumentation -->
 {% if site.github %}
-<link href="{{ site.baseurl }}/assets/css/docs.min.css" rel="stylesheet">
+<link href="{{ site.baseurl }}/assets/css/docs.min.css?34101" rel="stylesheet">
 {% else %}
-<link href="{{ site.baseurl }}/assets/css/docs.css" rel="stylesheet">
+<link href="{{ site.baseurl }}/assets/css/docs.css?34101" rel="stylesheet">
 {% endif %}
 <!--[if lt IE 9]><script src="{{ site.baseurl }}/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 

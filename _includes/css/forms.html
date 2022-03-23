@@ -256,7 +256,7 @@
 
   <h3>Optionsfelder</h3>
   <p>Felder zum Ankreuzen (checkbox) sind dazu da, eine oder mehr Optionen aus einer Liste auszuwählen, während man mit runden Optionsfeldern (radio) eine von mehrere Optionen auswählt.</p>
-  <p>Eine Checkbox oder ein Radio-Button mit dem Attribut <code>disabled</code> wird als deaktiviert gestaltet. Damit auch beim <code>&lt;label&gt;</code> für das entsprechende Feld ein "not-allowed"-Cursor angezeigt wird, wenn der Nutzer den Mauszeiger darüber hält, füge die Klasse <code>.disabled</code> zu deinen Elementen mit den Klassen <code>.radio</code>, <code>.radio-inline</code>, <code>.checkbox</code> oder <code>.checkbox-inline</code> oder zu einem <code>&lt;fieldset&gt;</code> hinzu.</p>
+  <p>Deaktivierte Checkboxes und Radios werden unterstützt, aber um einen "not-allowed"-Cursor anzuzeigen, wenn der Mauszeiger über dem <code>&lt;label&gt;</code> ist, musst du die Klasse <code>disabled</code> zu dem übergeordneten Element <code>.radio</code>, <code>.radio-inline</code>, <code>.checkbox</code> oder <code>.checkbox-inline</code> hinzufügen.</p>
   <h4>Standard (übereinander)</h4>
   <div class="bs-example" data-example-id="block-checkboxes-radios">
     <form>
@@ -609,6 +609,29 @@
 {% endhighlight %}
 
 
+  <h2 id="forms-help-text">Hilfe-Text</h2>
+  <p>Füge Textblöcke mit Hilfetexten für Formularfelder hinzu.</p>
+  <div class="bs-callout bs-callout-info" id="callout-help-text-accessibility">
+    <h4>Hilfe-Text mit Formularelementen assoziieren</h4>
+    <p>Hilfe-Text sollte mit dem Attribut <code>aria-describedby</code> ausdrücklich mit dem Formularelement assoziiert werden, auf das er sich bezieht. Dies stellt sicher, dass assistive Technologien wie Screenreader den Hilfe-Text vorlesen, wenn Nutzer das Element fokussieren oder hineingehen.</p>
+  </div>
+  <div class="bs-example" data-example-id="simple-help-text">
+    <form>
+      <div class="form-group">
+        <label for="eingabefeldHilfeText">Eingabefeld mit Hilfe-Text</label>
+        <input type="text" id="eingabefeldHilfeText" class="form-control" aria-describedby="hilfeText">
+      </div>
+      <span id="hilfeText" class="help-block">Ein Block mit hilfreichem Text, der mehr als eine Zeile lang sein darf und bei Bedarf umbricht.</span>
+    </form>
+  </div><!-- /.bs-example -->
+{% highlight html %}
+<label for="eingabefeldHilfeText">Eingabefeld mit Hilfe-Text</label>
+<input type="text" id="eingabefeldHilfeText" class="form-control" aria-describedby="hilfeText">
+...
+<span id="hilfeText" class="help-block">Ein Block mit hilfreichem Text, der mehr als eine Zeile lang sein darf und bei Bedarf umbricht.</span>
+{% endhighlight %}
+
+
     <h2 id="forms-control-validation">Formular-Überprüfung</h2>
   <p>Bootstrap beinhaltet Stile für Fehler-, Warnung- und Erfolg-Rückmeldungen bei Formularfeldern. Um sie zu verwenden, füge <code>.has-warning</code>, <code>.has-error</code> oder <code>.has-success</code> zum übergeordneten Element hinzu. Alle <code>.control-label</code>, <code>.form-control</code> und <code>.help-block</code> in diesem Element werden dann die Rückmeldungs-Stile erhalten.</p>
 
@@ -622,7 +645,8 @@
     <form>
       <div class="form-group has-success">
         <label class="control-label" for="eingabefeldErfolg1">Feld mit Erfolg</label>
-        <input type="text" class="form-control" id="eingabefeldErfolg1">
+        <input type="text" class="form-control" id="eingabefeldErfolg1" aria-describedby="hilfeBlock2">
+        <span id="hilfeBlock2" class="help-block">Ein Block mit hilfreichem Text, der mehr als eine Zeile lang sein darf und bei Bedarf umbricht.</span>
       </div>
       <div class="form-group has-warning">
         <label class="control-label" for="eingabefeldWarnung1">Feld mit Warnung</label>
@@ -661,7 +685,8 @@
 {% highlight html %}
 <div class="form-group has-success">
   <label class="control-label" for="eingabefeldErfolg1">Feld mit Erfolg</label>
-  <input type="text" class="form-control" id="eingabefeldErfolg1">
+  <input type="text" class="form-control" id="eingabefeldErfolg1" aria-describedby="hilfeBlock2">
+  <span id="hilfeBlock2" class="help-block">Ein Block mit hilfreichem Text, der mehr als eine Zeile lang sein darf und bei Bedarf umbricht.</span>
 </div>
 <div class="form-group has-warning">
   <label class="control-label" for="eingabefeldWarnung1">Feld mit Warnung</label>
@@ -999,27 +1024,5 @@
     <input type="text" class="form-control" placeholder=".col-xs-4">
   </div>
 </div>
-{% endhighlight %}
-
-  <h2 id="forms-help-text">Hilfe-Text</h2>
-  <p>Füge Textblöcke mit Hilfetexten für Formularfelder hinzu.</p>
-  <div class="bs-callout bs-callout-info" id="callout-help-text-accessibility">
-    <h4>Hilfe-Text mit Formularelementen assoziieren</h4>
-    <p>Hilfe-Text sollte mit dem Attribut <code>aria-describedby</code> ausdrücklich mit dem Formularelement assoziiert werden, auf das er sich bezieht. Dies stellt sicher, dass assistive Technologien wie Screenreader den Hilfe-Text vorlesen, wenn Nutzer das Element fokussieren oder hineingehen.</p>
-  </div>
-  <div class="bs-example" data-example-id="simple-help-text">
-    <form>
-      <div class="form-group">
-        <label for="eingabefeldHilfeText">Eingabefeld mit Hilfe-Text</label>
-        <input type="text" id="eingabefeldHilfeText" class="form-control" aria-describedby="hilfeText">
-      </div>
-      <span id="hilfeText" class="help-block">Ein Block mit hilfreichem Text, der mehr als eine Zeile lang sein darf und bei Bedarf umbricht.</span>
-    </form>
-  </div><!-- /.bs-example -->
-{% highlight html %}
-<label class="sr-only" for="eingabefeldHilfeText">Eingabefeld mit Hilfe-Text</label>
-<input type="text" id="eingabefeldHilfeText" class="form-control" aria-describedby="hilfeText">
-...
-<span id="hilfeText" class="help-block">Ein Block mit hilfreichem Text, der mehr als eine Zeile lang sein darf und bei Bedarf umbricht.</span>
 {% endhighlight %}
 </div>

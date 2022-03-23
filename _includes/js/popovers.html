@@ -20,7 +20,7 @@ $(function () {
   </div>
   <div class="bs-callout bs-callout-warning" id="callout-popover-groups">
     <h4>Tooltips &amp; Popovers in Button-Gruppen und Input-Gruppen benötigen besondere Einstellung</h4>
-    <p>Wenn du Tooltips oder Popovers an Elementen in einer <code>.btn-group</code> oder <code>.input-group</code> verwendest, musst du die Option <code>container: 'body'</code> festlegen, um unerwünschte Nebeneffekte zu vermeiden (das Element könnte z.B. breiter werden und/oder seine abgerundeten Ecken verlieren, wenn der Tooltip oder das Popover ausgelöst wird).</p>
+    <p>Wenn du Tooltips oder Popovers an Elementen in einer <code>.btn-group</code>, <code>.input-group</code> oder innerhalb einer Tabelle (<code>&lt;td&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>) verwendest, musst du die Option <code>container: 'body'</code> festlegen, um unerwünschte Nebeneffekte zu vermeiden (das Element könnte z.B. breiter werden und/oder seine abgerundeten Ecken verlieren, wenn der Tooltip oder das Popover ausgelöst wird).</p>
   </div>
   <div class="bs-callout bs-callout-warning" id="callout-popover-hidden">
     <h4>Versuche nicht, Popovers an verborgenen Elementen anzuzeigen</h4>
@@ -86,8 +86,8 @@ $(function () {
   <h4>Vier Richtungen</h4>
   <div class="bs-example popover-demo">
     <div class="bs-example-popovers">
-      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-        Popover links
+      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        Popover rechts
       </button>
       <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
         Popover oben
@@ -95,14 +95,14 @@ $(function () {
       <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
         Popover unten
       </button>
-      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-        Popover rechts
+      <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+        Popover links
       </button>
     </div>
   </div><!-- /example -->
 {% highlight html %}
-<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-  Popover links
+<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover rechts
 </button>
 
 <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
@@ -113,8 +113,8 @@ $(function () {
   Popover unten
 </button>
 
-<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-  Popover rechts
+<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover links
 </button>
 {% endhighlight %}
 
@@ -138,6 +138,11 @@ $(function () {
 
   <h3 id="popovers-options">Optionen</h3>
   <p>Optionen können über Data-Attribute oder JavaScript angegeben werden. Für Data-Attribute hängst du den Namen der Option einfach an <code>data-</code>, z.B. <code>data-animation=""</code>.</p>
+
+  <div class="bs-callout bs-callout-warning" id="callout-popover-disabled-options">
+    <p>Aus Sicherheitsgründen können die Optionen <code>sanitize</code>, <code>sanitizeFn</code> und <code>whiteList</code> nicht als Data-Attribute übergeben werden.</p>
+  </div>
+
   <div class="table-responsive">
     <table class="table table-bordered table-striped js-options-table js-options-table">
       <thead>
@@ -238,7 +243,25 @@ $(function () {
             <p>Hält das Popover innerhalb der Grenzen dieses Elements. Beispiel: <code>viewport: '#viewport'</code> oder <code>{ "selector": "#viewport", "padding": 0 }</code></p>
             <p>Wenn eine Funktion angegeben wird, wird diese mit dem auslösenden DOM Node als einziges Argument aufgerufen. Der <code>this</code>-Kontext wird auf die Popover-Instanz gesetzt.</p>
           </td>
-       </tr>
+        </tr>
+        <tr>
+          <td>sanitize</td>
+          <td>Boolean</td>
+          <td>true</td>
+          <td>Sanitizer (de-)aktivieren. Falls dieser aktiviert ist, werden die Optionen <code>'template'</code>, <code>'content'</code> und <code>'title'</code> gesäubert.</td>
+        </tr>
+        <tr>
+          <td>whiteList</td>
+          <td>Object</td>
+          <td><a href="#js-sanitizer">Standardliste</a></td>
+          <td>Objekt mit erlaubten Elementen und Attributen</td>
+        </tr>
+        <tr>
+          <td>sanitizeFn</td>
+          <td>null | function</td>
+          <td>null</td>
+          <td>Hier kannst du deine eigene Funktion statt des eingebauten Sanitizers einbinden. Das kann nützlich sein, wenn du eine andere Bibliothek für die Säuberung von Eingaben verwenden willst.</td>
+        </tr>
       </tbody>
     </table>
   </div><!-- /.table-responsive -->
@@ -247,7 +270,7 @@ $(function () {
     <p>Optionen für individuelle Popovers kannst du alternativ über Data-Attribute, wie oben erklärt, angeben.</p>
   </div>
 
-  <h3>Methoden</h3>
+  <h3 id="popovers-methods">Methoden</h3>
   <h4><code>$().popover(Optionen)</code></h4>
   <p>Initialisiert Popovers für eine Reihe von Elementen.</p>
 

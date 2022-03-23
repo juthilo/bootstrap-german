@@ -152,15 +152,13 @@
 {% endhighlight %}
   <p>Leider funktioniert das nicht, da auf Windows Phone 8-Geräten dann eine eher Desktop-mäßige Ansicht statt der schmalen "Smartphone"-Ansicht generiert wird. Um das zu umgehen musst du <strong>das folgende CSS und JavaScript verwenden, bis Microsoft dieses Problem behebt</strong>.</p>
 {% highlight scss %}
-@-webkit-viewport   { width: device-width; }
-@-moz-viewport      { width: device-width; }
 @-ms-viewport       { width: device-width; }
 @-o-viewport        { width: device-width; }
 @viewport           { width: device-width; }
 {% endhighlight %}
 
 {% highlight js %}
-// Copyright 2014-2015 Twitter, Inc.
+// Copyright 2014-2022 Twitter, Inc.
 // Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
   var msViewportStyle = document.createElement('style')
@@ -184,7 +182,9 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
 
   <h2 id="support-fixed-position-keyboards">Modals, Navbars und virtuelle Tastaturen</h2>
   <h3>Overflow und Scrolling</h3>
-  <p>Unterstützung für <code>overflow: hidden</code> beim <code>&lt;body&gt;</code> ist eher limitiert auf iOS und Android. Aufgrund dessen wird der <code>&lt;body&gt;</code> anfangen zu scrollen, wenn du über den Anfang oder das Ende eines Modals in einem Browser auf diesen Geräten hinausscrollst.</p>
+  <p>Unterstützung für <code>overflow: hidden</code> beim <code>&lt;body&gt;</code> ist eher limitiert auf iOS und Android. Aufgrund dessen wird der <code>&lt;body&gt;</code> anfangen zu scrollen, wenn du über den Anfang oder das Ende eines Modals in einem Browser auf diesen Geräten hinausscrollst. Siehe dazu auch <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=175502">Chrome Bug #175502</a> (behoben in Chrome v40) und <a href="https://bugs.webkit.org/show_bug.cgi?id=153852">WebKit Bug #153852</a>.</p>
+  <h3>Textfelder und Scrollen auf iOS</h3>
+  <p>Mit Stand von iOS 9.3 wird der Seiteninhalt unter einem Modal gescrollt, wenn der erste Touch einer Scrollgeste innerhalb der Grenzen eines <code>&lt;input&gt;</code>s mit Text oder einer <code>&lt;textarea&gt;</code> ist. Normalerweise soll in diesem Fall nur der Inhalt des Modals selbst gescrollt werden. Siehe dazu auch <a href="https://bugs.webkit.org/show_bug.cgi?id=153856">WebKit Bug #153856</a>.</p>
   <h3>Virtuelle Tastaturen</h3>
   <p>Wenn du Eingabefelder in einem Modal oder einer fixierten Navbar verwendest, solltest du beachten, dass iOS einen Anzeigefehler hat, wegen dem die Position von fixierten Elementen nicht aktualisiert wird, wenn sich die virtuelle Tastatur öffnet. Dies kannst du z.B. umgehen, indem du deine Elemente zu <code>position: absolute</code> änderst oder einen Timer auslöst, wenn ein Feld fokussiert wird, um die Position manuell zu korrigieren. Dies wird nicht von Bootstrap geregelt, sondern du musst selbst entscheiden, welche Lösung die beste für deine Anwendung ist.</p>
   <h3>Navbar-Dropdown-Menüs</h3>
@@ -194,17 +194,17 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
   <p>Zoomen auf Seiten kann in manchen Komponenten Anzeigefehler hervorbringen und das in Bootstrap genau so wie im restlichen Web. Abhängig vom Problem können wir es vielleicht beheben (suche zunächst und öffne dann ggf. einen Fehlerbericht auf GitHub). Im Zweifelsfall ignorieren wir diese Fehler aber häufig, weil sie oft keine einfache Lösung haben, sondern nur mit umständlichen Workarounds zu beheben sind.</p>
 
   <h2 id="support-sticky-hover-mobile"><code>:hover</code>/<code>:focus</code> auf mobilen Geräten</h2>
-  <p>Obwohl echtes "Hovering" auf den meisten Touchscreens nicht möglich ist, simulieren die meisten mobilen Browser Hovering-Support und machen <code>:hover</code> "klebrig". Anders gesagt, <code>:hover</code>-Stile werden angewendet, nachdem ein Element angetippt wird und erst wieder entfernt, nachdem der Nutzer auf ein anderes Element tippt. Das kann dazu führen, dass Bootstraps <code>:hover</code>-Status in solchen Browsern unerwünscht "steckenbleibt". Einige mobile Browser behandeln <code>:focus</code> auf ähnliche Weise. Es gibt zurzeit keinen einfachen Workaround für diese Probleme, abgesehen vom gänzlichen Entfernen dieser Stile.</p>
+  <p>Obwohl echtes "Hovering" auf den meisten Touchscreens nicht möglich ist, simulieren die meisten mobilen Browser Hovering-Support und machen <code>:hover</code> "klebrig". Anders gesagt, <code>:hover</code>-Stile werden angewendet, nachdem ein Element angetippt wird und erst wieder entfernt, nachdem der Nutzer auf ein anderes Element tippt. Das kann dazu führen, dass Bootstraps <code>:hover</code>-Status in solchen Browsern unerwünschterweise "steckenbleibt". Einige mobile Browser behandeln <code>:focus</code> auf ähnliche Weise. Es gibt zurzeit keinen einfachen Workaround für diese Probleme, abgesehen vom gänzlichen Entfernen dieser Stile.</p>
 
   <h2 id="support-printing">Drucken</h2>
   <p>Sogar in eigenen modernen Browsern kann es Probleme beim Drucken geben.</p>
-  <p>Insbesondere verwendet Chrome (ab v32 und unabhängig von Randeinstellungen) eine Anzeigefensterbreite, die weit unter der tatsächlichen Größe des Papiers liegt, wenn es beim Drucken darum geht, die Media-Queries zu aufzuschlüsseln. Dies kann dazu führen, dass beim Druck unerwartet Bootstraps extra-kleines Raster aktiviert wird. <a href="https://github.com/twbs/bootstrap/issues/12078">Siehe #12078 für mehr Details.</a> Vorschläge für den Umgang mit diesem Problem:</p>
+  <p>Insbesondere verwendet Chrome (ab v32 und unabhängig von Randeinstellungen) eine Anzeigefensterbreite, die weit unter der tatsächlichen Größe des Papiers liegt, wenn es beim Drucken darum geht, die Media-Queries zu aufzuschlüsseln. Dies kann dazu führen, dass beim Druck unerwartet Bootstraps extra-kleines Raster aktiviert wird. Siehe <a href="https://github.com/twbs/bootstrap/issues/12078">#12078</a> und <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=273306">Chrome Bug #273306</a> für mehr Details. Vorschläge für den Umgang mit diesem Problem:</p>
   <ul>
     <li>Lass dich auf das XS-Raster ein und stelle sicher, dass deine Seite darauf in Ordnung aussieht.</li>
     <li>Verändere die Werte der <code>@screen-*</code>-Less-Variablen, damit dein Druckerpapier größer als extra-klein eingeschätzt wird.</li>
     <li>Füge eigene Media-Queries hinzu, die die Umbruchpunkte des Rasters nur für den Druck verändern.</li>
   </ul>
-  <p>Außerdem veranlassen <code>.container</code> mit fester Breite Safari (Stand: v8.0) dazu, eine ungewöhnlich kleine Schriftgröße beim Drucken zu verwenden. Siehe <a href="https://github.com/twbs/bootstrap/issues/14868">#14868</a> für mehr Details. Ein potentieller Workaround hierfür ist, das folgende CSS hinzuzufügen:</p>
+  <p>Außerdem veranlassen <code>.container</code> mit fester Breite Safari (Stand: v8.0) dazu, eine ungewöhnlich kleine Schriftgröße beim Drucken zu verwenden. Siehe <a href="https://github.com/twbs/bootstrap/issues/14868">#14868</a> und <a href="https://bugs.webkit.org/show_bug.cgi?id=138192">WebKit Bug #138192</a> für mehr Details. Ein potentieller Workaround hierfür ist, das folgende CSS hinzuzufügen:</p>
 {% highlight css %}
 @media print {
   .container {

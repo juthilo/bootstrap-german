@@ -8,6 +8,11 @@
     <p>Verlaufsleisten verwenden CSS3-Übergänge und -Animationen, um einige ihrer Effekte umzusetzen. Diese Funktionen sind in Internet Explorer 9 und älter und in einigen älteren Versionen von Firefox nicht vorhanden. Opera 12 bietet keine Unterstützung für Animationen.</p>
   </div>
 
+  <div class="bs-callout bs-callout-info">
+    <h4 id="callout-progress-csp">Kompatibilität mit Content Security Policies (CSPs)</h4>
+    <p>Falls deine Webseite eine <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">Content Security Policy (CSP)</a> hat, die <code>style-src 'unsafe-inline'</code> nicht erlaubt, kannst du die Breite von Verlaufsleisten nicht über Inline-<code>style</code>-Attribute festlegen (wie in den Beispielen unten gezeigt). Um trotz strenger CSPs mit Verlaufsleisten arbeiten zu können, musst du mit etwas selbstgeschriebenem JavaScript (das <code>element.style.width</code> setzt) oder eigenen CSS-Klassen arbeiten.</p>
+  </div>
+
   <h2 id="progress-basic">Einfaches Beispiel</h2>
   <p>Standard-Verlaufsleiste.</p>
   <div class="bs-example" data-example-id="simple-progress-bar">

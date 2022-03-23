@@ -1,5 +1,25 @@
 -
   browser: >
+    Microsoft Edge
+  summary: >
+    Anzeigefehler in scrollbaren Modal-Fenstern
+  upstream_bug: >
+    Edge#9011176
+  origin: >
+    Bootstrap#20755
+
+-
+  browser: >
+    Microsoft Edge
+  summary: >
+    Das `title`-Tooltip des Browsers wird zusammen mit dem Bootstrap-Tooltip angezeigt, sobald die Tastatur ein Element fokussiert
+  upstream_bug: >
+    Edge#6793560
+  origin: >
+    Bootstrap#18692
+
+-
+  browser: >
     Internet Explorer 11
   summary: >
     Element behält <code>:hover</code>-Stile nachdem darüber hinweg gescrollt wurde
@@ -20,6 +40,56 @@
 
 -
   browser: >
+    Microsoft Edge
+  summary: >
+    `border-radius` im CSS verursacht manchmal, dass Linien in der `background-color` des übergeordneten Elements durchscheinen.
+  upstream_bug: >
+    Edge#3342037
+  origin: >
+    Bootstrap#16671
+
+-
+  browser: >
+    Microsoft Edge
+  summary: >
+    `background` wird bei `<tr>` nur auf die erste Zelle und nicht auf alle Zellen der Tabellenzeile angewandt
+  upstream_bug: >
+    Edge#5865620
+  origin: >
+    Bootstrap#18504
+
+-
+  browser: >
+    Microsoft Edge
+  summary: >
+    `@-ms-viewport{width: device-width;}` hat den Nebeneffekt, dass alle Scrollbars automatisch ausgeblendet werden
+  upstream_bug: >
+    Edge#7165383
+  origin: >
+    Bootstrap#18543
+
+-
+  browser: >
+    Microsoft Edge
+  summary: >
+    Hintergrundfarbe aus tieferen Ebenen scheint in einigen Fällen durch transparente Rahmengrenzen durch
+  upstream_bug: >
+    Edge#6274505
+  origin: >
+    Bootstrap#18228
+
+-
+  browser: >
+    Microsoft Edge
+  summary: >
+    Ein `mouseleave`-Event beim übergeordneten Element wird ausgelöst, wenn man den Mauszeiger über ein untergeordnetes SVG-Element hält
+  upstream_bug: >
+    Edge#7787318
+  origin: >
+    Bootstrap#19670
+
+-
+  browser: >
     Firefox
   summary: >
     `.table-bordered` mit leerem `<tbody>` hat keine Rahmengrenzen.
@@ -27,36 +97,6 @@
     Mozilla#1023761
   origin: >
     Bootstrap#13453
-
--
-  browser: >
-    Firefox
-  summary: >
-    `max-width: 100%;` funktioniert nicht innerhalb von Tabellen.
-  upstream_bug: >
-    Mozilla#975632
-  origin: >
-    Bootstrap#10690
-
--
-  browser: >
-    Firefox (Windows)
-  summary: >
-    Java-Applets, die Elementen untergeordnet sind, bei denen über `translate3d(0,0,0)` die Hardware-Beschleunigung erzwungen wurde, sind unsichtbar.
-  upstream_bug: >
-    Mozilla#1048279
-  origin: >
-    Bootstrap#14124
-
--
-  browser: >
-    Firefox
-  summary: >
-    Button-Elemente mit `width: 100%` werden in langen Tabellen abgeschnitten.
-  upstream_bug: >
-    Mozilla#1060131
-  origin: >
-    Bootstrap#14320
 
 -
   browser: >
@@ -70,6 +110,76 @@
 
 -
   browser: >
+    Firefox
+  summary: >
+    `focus`-Events sollten nicht beim `document`-Objekt ausgelöst werden
+  upstream_bug: >
+    Mozilla#1228802
+  origin: >
+    Bootstrap#18365
+
+-
+  browser: >
+    Firefox
+  summary: >
+    Eine breite Tabelle mit float wird nicht auf eine neue Zeile umgebrochen
+  upstream_bug: >
+    Mozilla#1277782
+  origin: >
+    Bootstrap#19839
+
+-
+  browser: >
+    Firefox
+  summary: >
+    Die Maus wird teilweise für `mouseenter`/`mouseleave` nicht innerhalb des Elements registriert, wenn sie sich innerhalb von SVG-Elementen befindet
+  upstream_bug: >
+    Mozilla#577785
+  origin: >
+    Bootstrap#19670
+
+-
+  browser: >
+    Firefox
+  summary: >
+    Ein Element mit `position: absolute`, das breiter als seine Spalte ist, wird nicht so wie in anderen Browsern gerendert
+  upstream_bug: >
+    Mozilla#1282363
+  origin: >
+    Bootstrap#20161
+
+-
+  browser: >
+    Firefox (Windows)
+  summary: >
+    Der rechte Rahmen von `<select>`-Menüs fehlt manchmal, wenn der Bildschirm eine ungewöhnliche Auflösung hat
+  upstream_bug: >
+    Mozilla#545685
+  origin: >
+    Bootstrap#15990
+
+-
+  browser: >
+    Firefox (OS X & Linux)
+  summary: >
+    Eine Badge in einem Tab sorgt manchmal dafür, dass der untere Rahmen sich nicht überschneidet wie vorgesehen
+  upstream_bug: >
+    Mozilla#1259972
+  origin: >
+    Bootstrap#19626
+
+-
+  browser: >
+    Chrome (Android)
+  summary: >
+    Wenn man ein `<input>` in einem scrollbaren Overlay antippt, wird es nicht in den sichtbaren Bereich gescrollt
+  upstream_bug: >
+    Chromium#595210
+  origin: >
+    Bootstrap#17338
+
+-
+  browser: >
     Chrome (OS X)
   summary: >
     Klicken über dem Vergrößern-Button von `<input type="number">` hebt den Verkleinern-Button hervor.
@@ -77,46 +187,6 @@
     Chromium#419108
   origin: >
     Hervorgegangen aus Bootstrap#8350 & Chromium#337668
-
--
-  browser: >
-    Chrome (OS X)
-  summary: >
-    Indikator für Hochstelltaste wird in `<input type="password">` mit `display: block` nicht angezeigt
-  upstream_bug: >
-    Chromium#460200
-  origin: >
-    Bootstrap#15832
-
--
-  browser: >
-    Chrome
-  summary: >
-    Fokussierungs-Umrandung einer Image-Map innerhalb eines Modals wird an der falschen Stelle angezeigt.
-  upstream_bug: >
-    Chromium#475128
-  origin: >
-    Bootstrap#16180
-
--
-  browser: >
-    Chrome
-  summary: >
-    `display: table;` innerhalb von `display: block;` schiebt andere Inhalte in neue Zeile.
-  upstream_bug: >
-    Chromium#309483
-  origin: >
-    Bootstrap#9950
-
--
-  browser: >
-    Chrome
-  summary: >
-    Falsche Anzeigefenster-Größe für Media-Queries beim Druck verwendet.
-  upstream_bug: >
-    Chromium#273306
-  origin: >
-    Bootstrap#12078
 
 -
   browser: >
@@ -142,11 +212,31 @@
   browser: >
     Chrome
   summary: >
-    `width: 1%` bei einer verschachtelten Tabellenzelle verursacht das unnötige Einnehmen von horizontalem Platz durch die Tabelle.
+    `table-cell`-Rahmen überlappen nicht, obwohl `margin-right: -1px` gesetzt ist
   upstream_bug: >
-    Chromium#427994
+    Chromium#534750
   origin: >
-    Bootstrap#16372
+    Bootstrap#17438, Bootstrap#14237
+
+-
+  browser: >
+    Chrome
+  summary: >
+    Ein Klick auf die Scrollbar in `<select multiple>` mit Optionen, die über die Anzeige hinausgehen, wählt die nächstgelegene `<option>` aus
+  upstream_bug: >
+    Chromium#597642
+  origin: >
+    Bootstrap#19810
+
+-
+  browser: >
+    Chrome
+  summary: >
+    `:hover` sollte auf für Touch optimierten Webseiten nicht sticky sein
+  upstream_bug: >
+    Chromium#370155
+  origin: >
+    Bootstrap#12832
 
 -
   browser: >
@@ -162,21 +252,23 @@
   browser: >
     Safari
   summary: >
-    `width: 1%` bei einer verschachtelten Tabellenzelle verursacht das unnötige Einnehmen von horizontalem Platz durch die Tabelle.
+    Safari
+  summary: >
+    `rem`-Einheiten in Media Queries sollten mit `font-size: initial` berechnet werden statt mit der `font-size` des obersten Elements
   upstream_bug: >
-    WebKit#144696, Safari#20839572
+    WebKit#156684
   origin: >
-    Bootstrap#16372
+    Bootstrap#17403
 
 -
   browser: >
     Safari (OS X)
   summary: >
-    Scroll-Leiste in `select[multiple]` mit Innenabstand verdeckt.
+    `px`, `em` und `rem` sollten sich in Media Queries beim Zoomen einer Seite alle gleich verhalten
   upstream_bug: >
-    WebKit#128489, Safari#19208483
+    WebKit#156687
   origin: >
-    Bootstrap#12536
+    Bootstrap#17403
 
 -
   browser: >
@@ -194,16 +286,6 @@
   browser: >
     Safari (OS X)
   summary: >
-    `display: table-cell;` in Media-Query verursacht Rendering-Fehler beim Ändern der Fenstergröße.
-  upstream_bug: >
-    WebKit#138167, Safari#18987206
-  origin: >
-    Bootstrap#9774
-
--
-  browser: >
-    Safari (OS X)
-  summary: >
     Kleine Schriftgröße beim Drucken von Webseiten mit `.container`n mit fester Breite.
   upstream_bug: >
     WebKit#138192, Safari#19435018
@@ -212,43 +294,13 @@
 
 -
   browser: >
-    Safari (OS X)
+    Safari (iPad)
   summary: >
-    Linearer Alpha-Verlauf hat dunkle Linie am Rand.
+    `<select>`-Menüs auf dem iPad sorgen dafür, dass Bereiche für Hit-Testing verschoben werden
   upstream_bug: >
-    WebKit#139803, Safari#19434933
+    WebKit#150079, Safari#23082521
   origin: >
-    Bootstrap#15205
-
--
-  browser: >
-    Safari (OS X)
-  summary: >
-    Indikator für Hochstelltaste wird in `<input type="password">` mit `display: block` nicht angezeigt
-  upstream_bug: >
-    WebKit#141804, Safari#19892433
-  origin: >
-    Bootstrap#15832
-
--
-  browser: >
-    Safari (OS X)
-  summary: >
-    Fokussierungs-Umrandung einer Image-Map innerhalb eines Modals wird an der falschen Stelle angezeigt.
-  upstream_bug: >
-    WebKit#143527
-  origin: >
-    Bootstrap#16180
-
--
-  browser: >
-    Safari (OS X)
-  summary: >
-    Unnötiger Zeilenumbruch bei `.navbar-brand`-Text ohne erkennbaren Grund
-  upstream_bug: >
-    WebKit#144990, Safari#20950962
-  origin: >
-    Bootstrap#15998
+    Bootstrap#14975
 
 -
   browser: >
@@ -274,8 +326,108 @@
   browser: >
     Safari (iOS)
   summary: >
+    Cursor kann nach dem Einfügen eines langen Texts in `<input type="text">` nicht zum Start verschoben werden
+  upstream_bug: >
+    WebKit#148061, Safari#22299624
+  origin: >
+    Bootstrap#16988
+
+-
+  browser: >
+    Safari (iOS)
+  summary: >
     `display: block` verursacht eine falsche vertikale Ausrichtung von Text in zeitlichen `<input>`s.
   upstream_bug: >
     WebKit#139848, Safari#19434878
   origin: >
     Bootstrap#11266, Bootstrap#13098
+
+-
+  browser: >
+    Safari (iOS)
+  summary: >
+    Wenn man `<body>` antippt, wird kein `click`-Event ausgelöst
+  upstream_bug: >
+    WebKit#151933
+  origin: >
+    Bootstrap#16028
+
+-
+  browser: >
+    Safari (iOS)
+  summary: >
+    `position:fixed` wird falsch positioniert, wenn die Tableiste in Safari auf iPhone 6S+ sichtbar ist
+  upstream_bug: >
+    WebKit#153056
+  origin: >
+    Bootstrap#18859
+
+-
+  browser: >
+    Safari (iOS)
+  summary: >
+    Tippt man in ein `<input>` innerhalb eines Elements mit `position:fixed`, scrollt Safari zum Anfang der Seite
+  upstream_bug: >
+    WebKit#153224, Safari#24235301
+  origin: >
+    Bootstrap#17497
+
+-
+  browser: >
+    Safari (iOS)
+  summary: >
+    `<body>` mit `overflow:hidden` kann auf iOS gescrollt werden
+  upstream_bug: >
+    WebKit#153852
+  origin: >
+    Bootstrap#14839
+
+-
+  browser: >
+    Safari (iOS)
+  summary: >
+    Eine Scrollgeste in einem Textfeld innerhalb eines Elements mit `position:fixed` scrollt manchmal `<body>` statt des scrollbaren übergeordneten Elements
+  upstream_bug: >
+    WebKit#153856
+  origin: >
+    Bootstrap#14839
+
+-
+  browser: >
+    Safari (iOS)
+  summary: >
+    Das Tippen von einem `<input>` in ein anderes innerhalb eines Overlays verursacht manchmal ein "Rütteln"/"Wackeln"
+  upstream_bug: >
+    WebKit#158276
+  origin: >
+    Bootstrap#19927
+
+-
+  browser: >
+    Safari (iOS)
+  summary: >
+    Modals mit `-webkit-overflow-scrolling: touch` werden nicht scrollbar, wenn sie durch nachträglich hinzugefügten Text länger werden
+  upstream_bug: >
+    WebKit#158342
+  origin: >
+    Bootstrap#17695
+
+-
+  browser: >
+    Safari (iOS)
+  summary: >
+    `:hover` sollte auf für Touch optimierten Webseiten nicht sticky sein
+  upstream_bug: >
+    WebKit#158517
+  origin: >
+    Bootstrap#12832
+
+-
+  browser: >
+    Safari (iPad Pro)
+  summary: >
+    Elemente unter einem mit `position: fixed` werden auf dem horizontal gehaltenen iPad Pro abgeschnitten gerendert
+  upstream_bug: >
+    WebKit#152637, Safari#24030853
+  origin: >
+    Bootstrap#18738

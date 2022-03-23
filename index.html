@@ -4,7 +4,7 @@ title: Bootstrap (deutsch) &middot; Das beliebteste anpassungsfähige und modern
 ---
 
 
-<main class="bs-docs-masthead" id="content" role="main" tabindex="-1">
+<main class="bs-docs-masthead" id="content" tabindex="-1">
   <div class="container">
     <span class="bs-docs-booticon bs-docs-booticon-lg bs-docs-booticon-outline">B</span>
     <p class="lead">Bootstrap ist das beliebteste Framework mit HTML, CSS und JS für die Entwicklung von anpassungsfähigen Projekten für das moderne Web.</p>
@@ -26,7 +26,7 @@ title: Bootstrap (deutsch) &middot; Das beliebteste anpassungsfähige und modern
       <div class="col-sm-4">
         <img src="assets/img/sass-less.png" alt="Unterstützung für Sass und Less" class="img-responsive">
         <h3>Präprozessoren</h3>
-        <p>Bootstrap kommt mit purem, fertigem CSS, nutzt aber im Quellcode die zwei berühmtesten CSS-Präprozessoren, <a href="../css/#less">Less</a> und <a href="../css/#sass">Sass</a>. Leg mit vorkompiliertem CSS direkt los oder arbeite mit der Quelle und kompiliere dann selbst.</p>
+        <p>Bootstrap kommt mit purem, fertigem CSS, nutzt aber im Quellcode die zwei berühmtesten CSS-Präprozessoren, <a href="{{ site.baseurl }}/css/#less">Less</a> und <a href="{{ site.baseurl }}/css/#sass">Sass</a>. Leg mit vorkompiliertem CSS direkt los oder arbeite mit der Quelle und kompiliere dann selbst.</p>
       </div>
       <div class="col-sm-4">
         <img src="assets/img/devices.png" alt="Anpassungsfähig auf allen Geräten" class="img-responsive">
@@ -50,7 +50,7 @@ title: Bootstrap (deutsch) &middot; Das beliebteste anpassungsfähige und modern
 <div class="bs-docs-featurette">
   <div class="container">
     <h2 class="bs-docs-featurette-title">Gemacht mit Bootstrap.</h2>
-    <p class="lead">Es gibt Millionen von großartigen Seiten online, die mit Bootstrap gemacht wurden. Lass dich von unserer wachsenden <a href="../los-gehts/#examples">Beispiel-Sammlung</a> oder einigen unserer persönlichen Favoriten inspirieren und leg dann selbst los.</p>
+    <p class="lead">Es gibt Millionen von großartigen Seiten online, die mit Bootstrap gemacht wurden. Lass dich von unserer wachsenden <a href="{{ site.baseurl }}/los-gehts/#examples">Beispiel-Sammlung</a> oder einigen unserer persönlichen Favoriten inspirieren und leg dann selbst los.</p>
 
     <hr class="half-rule">
 
@@ -58,7 +58,7 @@ title: Bootstrap (deutsch) &middot; Das beliebteste anpassungsfähige und modern
     {% for showcase in site.data.showcase %}
       <div class="col-xs-6 col-sm-3">
         <a href="{{ showcase.expo_url }}" target="_blank" title="{{ showcase.name }}">
-          <img src="http://expo.getbootstrap.com/thumbs/{{ showcase.img }}-thumb.jpg" alt="{{ showcase.name }}" class="img-responsive">
+          <img src="https://expo.getbootstrap.com/thumbs/{{ showcase.img }}-thumb.jpg" alt="{{ showcase.name }}" class="img-responsive">
         </a>
       </div>
     {% endfor %}

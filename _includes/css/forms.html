@@ -240,7 +240,7 @@
 {% endhighlight %}
   <div class="bs-callout bs-callout-info" id="callout-xref-input-group">
     <h4>Input-Gruppen</h4>
-    <p>Um Text oder Buttons vor und/oder nach irgendeinem text-basierten <code>&lt;input&gt;</code> hinzuzufügen, <a href="../komponenten/#input-groups">sieh dir doch mal Input-Gruppen an</a>.</p>
+    <p>Um Text oder Buttons vor und/oder nach irgendeinem text-basierten <code>&lt;input&gt;</code> hinzuzufügen, <a href="{{ site.baseurl }}/komponenten/#input-groups">sieh dir doch mal Input-Gruppen an</a>.</p>
   </div>
 
   <h3>Text-Fläche</h3>
@@ -615,7 +615,7 @@
   <div class="bs-callout bs-callout-warning" id="callout-form-validation-state-accessibility">
     <h4>Validierungsstatus an assistive Technologien und farbenblinde Nutzer vermitteln</h4>
     <p>Die Verwendung dieser Validierungsstile zur Bezeichnung des Status eines Formularelements führt nur zu einem visuellen, farbbasierten Hinweis, der Nutzern von assistiven Technologien - wie Screenreadern - oder farbenblinden Nutzern nicht vermittelt wird.</p>
-    <p>Sorge dafür, dass ein alternativer Hinweis auf den Status ebenfalls bereitgestellt wird. Zum Beispiel kannst du im Text des <code>&lt;label&gt;</code> des jeweiligen Formularelements selbst auf den Status hinweisen (wie im folgenden Beispiel), ein <a href="../components/#glyphicons">Glyphicon</a> (mit angemessenem alternativen Text innerhalb der Klasse <code>.sr-only</code> - siehe die <a href="../components/#glyphicons-examples">Glyphicon-Beispiele) hinzufügen, oder einen zusätzlichen <a href="#forms-help-text">Hilfetextblock</a> zur Verfügung stellen. Für assistive Technologien im Besonderen können ungültige Formularfelder ein Attribut <code>aria-invalid="true"</code> zugewiesen bekommen.</p>
+    <p>Sorge dafür, dass ein alternativer Hinweis auf den Status ebenfalls bereitgestellt wird. Zum Beispiel kannst du im Text des <code>&lt;label&gt;</code> des jeweiligen Formularelements selbst auf den Status hinweisen (wie im folgenden Beispiel), ein <a href="{{ site.baseurl }}/components/#glyphicons">Glyphicon</a> (mit angemessenem alternativen Text innerhalb der Klasse <code>.sr-only</code> - siehe die <a href="{{ site.baseurl }}/components/#glyphicons-examples">Glyphicon-Beispiele) hinzufügen, oder einen zusätzlichen <a href="#forms-help-text">Hilfetextblock</a> zur Verfügung stellen. Für assistive Technologien im Besonderen können ungültige Formularfelder ein Attribut <code>aria-invalid="true"</code> zugewiesen bekommen.</p>
   </div>
 
   <div class="bs-example" data-example-id="form-validation-states">
@@ -702,7 +702,7 @@
   <p><strong class="text-danger">Feedback-Icons funktionieren nur mit <code>&lt;input class="form-control"&gt;</code>-Elementen, in die man Text eingeben kann.</strong></p>
   <div class="bs-callout bs-callout-warning" id="callout-has-feedback-icon-positioning">
     <h4>Icons, Labels und Input-Gruppen</h4>
-    <p>Die Feedback-Icons müssen manuell positioniert werden, wenn du sie mit Feldern ohne Label oder mit <a href="../komponenten#input-groups">Input-Gruppen</a> mit einem Add-on auf der rechten Seite verwendest. Es wird aus Gründen der Barrierefreiheit dringend empfohlen, Labels für alle Felder anzugeben. Falls du die Anzeige von Labels verhindern möchtest, verberge sie mit der Klasse <code>sr-only</code>. Falls du wirklich keine Labels einfügen kannst, musst du den Wert für <code>top</code> beim Feedback-Icon anpassen. Ändere bei Input-Grupen den Standard <code>right: 0;</code> zu einem sinnvollen Pixel-Wert, abhängig von der Breite deines Add-ons.</p>
+    <p>Die Feedback-Icons müssen manuell positioniert werden, wenn du sie mit Feldern ohne Label oder mit <a href="{{ site.baseurl }}/komponenten#input-groups">Input-Gruppen</a> mit einem Add-on auf der rechten Seite verwendest. Es wird aus Gründen der Barrierefreiheit dringend empfohlen, Labels für alle Felder anzugeben. Falls du die Anzeige von Labels verhindern möchtest, verberge sie mit der Klasse <code>sr-only</code>. Falls du wirklich keine Labels einfügen kannst, musst du den Wert für <code>top</code> beim Feedback-Icon anpassen. Ändere bei Input-Grupen den Standard <code>right: 0;</code> zu einem sinnvollen Pixel-Wert, abhängig von der Breite deines Add-ons.</p>
   </div>
   <div class="bs-callout bs-callout-warning" id="callout-has-feedback-icon-accessibility">
     <h4>Bedeutung des Icons an assistive Technologien vermitteln</h4>

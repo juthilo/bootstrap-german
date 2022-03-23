@@ -10,14 +10,14 @@
     <p>Da Bootstrap nicht weiß, wie viel Platz die Inhalte in deiner Navbar brauchen, kannst du eventuell auf Probleme stoßen, weil der Inhalt in einer zweiten Zeile weitergeführt wird. Um dies zu beheben kannst du:</p>
     <ol type="a">
       <li>Die Anzahl oder Breite von Navbar-Einträgen reduzieren.</li>
-      <li>Einige Navbar-Einträge auf bestimmten Bildschirmgrößen über <a href="../css/#responsive-utilities">responsive Hilfsklassen</a> ausblenden.</li>
+      <li>Einige Navbar-Einträge auf bestimmten Bildschirmgrößen über <a href="{{ site.baseurl }}/css/#responsive-utilities">responsive Hilfsklassen</a> ausblenden.</li>
       <li>Den Punkt, an dem deine Navbar zwischen minimierter und horizontaler Ansicht wechselt, anpassen. Verändere die <code>@grid-float-breakpoint</code> Variable oder füge deine eigenen Media Queries hinzu.</li>
     </ol>
   </div>
   <div class="bs-callout bs-callout-danger" id="callout-navbar-js">
     <h4>Benötigt JavaScript-Plugin</h4>
     <p>Falls JavaScript deaktiviert ist und die Anzeige nicht breit genug für den horizontalen Modus der Navbar ist, wird es unmöglich sein, die Navbar auszuklappen und die Inhalte in <code>.navbar-collapse</code> anzusehen.</p>
-    <p>Für die responsive Navbar muss das <a href="../javascript/#collapse">Collapse-Plugin</a> in deiner Version von Bootstrap enthalten sein.</p>
+    <p>Für die responsive Navbar muss das <a href="{{ site.baseurl }}/javascript/#collapse">Collapse-Plugin</a> in deiner Version von Bootstrap enthalten sein.</p>
   </div>
   <div class="bs-callout bs-callout-info" id="callout-navbar-breakpoint">
     <h4>Punkt anpassen, an dem sich das Navbar-Layout verändert</h4>
@@ -60,7 +60,7 @@
               </ul>
             </li>
           </ul>
-          <form class="navbar-form navbar-left" role="search">
+          <form class="navbar-form navbar-left">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Suchen">
             </div>
@@ -115,7 +115,7 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
+      <form class="navbar-form navbar-left">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Suchen">
         </div>
@@ -182,7 +182,7 @@
           <a class="navbar-brand" href="#">Titel</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-          <form class="navbar-form navbar-left" role="search">
+          <form class="navbar-form navbar-left">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Suchen">
             </div>
@@ -193,7 +193,7 @@
     </nav>
   </div>
 {% highlight html %}
-<form class="navbar-form navbar-left" role="search">
+<form class="navbar-form navbar-left">
   <div class="form-group">
     <input type="text" class="form-control" placeholder="Suchen">
   </div>
@@ -203,7 +203,7 @@
 
   <div class="bs-callout bs-callout-warning" id="callout-navbar-mobile-caveats">
     <h4>Tücken auf mobilen Geräten</h4>
-    <p>Es kann zu Schwierigkeiten kommen, wenn Formularelemente in fixierten Elementen auf mobilen Geräten angezeigt werden sollen. Mehr Informationen findest du in <a href="../los-gehts/#support-fixed-position-keyboards">unseren Browser-Support-Dokumenten</a>.</p>
+    <p>Es kann zu Schwierigkeiten kommen, wenn Formularelemente in fixierten Elementen auf mobilen Geräten angezeigt werden sollen. Mehr Informationen findest du in <a href="{{ site.baseurl }}/los-gehts/#support-fixed-position-keyboards">unseren Browser-Support-Dokumenten</a>.</p>
   </div>
 
   <div class="bs-callout bs-callout-warning" id="callout-navbar-form-labels">
@@ -238,7 +238,7 @@
 
   <div class="bs-callout bs-callout-warning" id="callout-navbar-btn-context">
     <h4>Kontext-spezifische Verwendung</h4>
-    <p>Wie die normalen <a href="../css/#buttons">Button-Klassen</a> kann auch <code>.navbar-btn</code> bei <code>&lt;a&gt;</code> und <code>&lt;input&gt;</code> angewendet werden. Du solltest allerdings weder <code>.navbar-btn</code> noch die ganz normalen Button-Klassen jemals bei <code>&lt;a&gt;</code>-Elementen innerhalb von <code>.navbar-nav</code> verwenden.</p>
+    <p>Wie die normalen <a href="{{ site.baseurl }}/css/#buttons">Button-Klassen</a> kann auch <code>.navbar-btn</code> bei <code>&lt;a&gt;</code> und <code>&lt;input&gt;</code> angewendet werden. Du solltest allerdings weder <code>.navbar-btn</code> noch die ganz normalen Button-Klassen jemals bei <code>&lt;a&gt;</code>-Elementen innerhalb von <code>.navbar-nav</code> verwenden.</p>
   </div>
 
   <h2 id="navbar-text">Text</h2>

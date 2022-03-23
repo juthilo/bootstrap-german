@@ -1,7 +1,7 @@
 <div class="bs-docs-section">
   <h1 id="input-groups" class="page-header">Input-Gruppen</h1>
 
-  <p class="lead">Erweitere Formular-Felder, indem du Text oder Buttons vor, nach oder auf beiden Seiten von text-basierten Eingabefeldern (<code>&lt;input&gt;</code>s) hinzufügst. Verwende <code>.input-group</code> mit einem <code>.input-group-addon</code>, um Elemente bei einem einzelnen <code>.form-control</code> vor- bzw. nachzustellen.</p>
+  <p class="lead">Erweitere Formular-Felder, indem du Text oder Buttons vor, nach oder auf beiden Seiten von text-basierten Eingabefeldern (<code>&lt;input&gt;</code>s) hinzufügst. Verwende <code>.input-group</code> mit einem <code>.input-group-addon</code> oder <code>.input-group-btn</code>, um Elemente bei einem einzelnen <code>.form-control</code> vor- bzw. nachzustellen.</p>
 
   <div class="bs-callout bs-callout-danger" id="callout-inputgroup-text-input-only">
     <h4>Nur text-basierte <code>&lt;input&gt;</code>s</h4>
@@ -19,12 +19,12 @@
   <div class="bs-callout bs-callout-warning" id="callout-inputgroup-form-labels">
     <h4>Füge immer Labels hinzu</h4>
     <p>Screenreader werden Probleme mit deinen Formularen haben, wenn du nicht für jedes Feld ein Label einfügst. Du solltest für diese Input-Gruppen sicherstellen, dass zusätzliche Labels oder Funktionen an Assistive Technologien vermittelt werden.</p>
-    <p>Die genaue Technik, mit der du dies tust (<code>&lt;label&gt;</code>-Elemente, die mit der Klasse <code>.sr-only</code> verborgen werden oder die Verwendung der Attribute <code>aria-label</code>, <code>aria-labelledby</code>, <code>title</code> oder <code>placeholder</code>) und welche zusätzlichen Informationen du vermitteln musst, wird abhängig vom genauen Typ des Widgets, das du entwickelst, variieren. Die Beispiele in diesem Abschnitt stellen einige vorgeschlagene, fallspezifische Ansätze zur Verfügung.</p>
+    <p>Die genaue Technik, mit der du dies tust (sichtbare <code>&lt;label&gt;</code>-Elemente, die mit der Klasse <code>.sr-only</code> verborgen werden oder die Verwendung der Attribute <code>aria-label</code>, <code>aria-labelledby</code>, <code>title</code> oder <code>placeholder</code>) und welche zusätzlichen Informationen du vermitteln musst, wird abhängig vom genauen Typ des Widgets, das du entwickelst, variieren. Die Beispiele in diesem Abschnitt stellen einige vorgeschlagene, fallspezifische Ansätze zur Verfügung.</p>
   </div>
 
   <h2 id="input-groups-basic">Einfaches Beispiel</h2>
   <p>Platziere ein Add-on oder einen Button auf einer Seite eines Feldes. Du kannst auch jeweils eins auf beiden Seiten des Feldes platzieren.</p>
-  <p><strong class="text-danger">Mehrere Add-ons auf einer Seite werden nicht unterstützt.</strong></p>
+  <p><strong class="text-danger">Mehrere Add-ons auf einer Seite (<code>.input-group-addon</code> oder <code>.input-group-btn</code>) werden nicht unterstützt.</strong></p>
   <p><strong class="text-danger">Mehrere Eingabefelder in einer einzelnen Input-Gruppe werden nicht unterstützt.</strong></p>
   <form class="bs-example bs-example-form" data-example-id="simple-input-groups">
     <div class="input-group">
@@ -42,22 +42,34 @@
       <input type="text" class="form-control" aria-label="Summe (gerundet zum nächsten ganzen Euro)">
       <span class="input-group-addon">,00</span>
     </div>
+    <br>
+    <label for="basic-url">Deine Profil-URL</label>
+    <div class="input-group">
+      <span class="input-group-addon" id="einfaches-addon3">https://example.com/profil/</span>
+      <input type="text" class="form-control" id="basic-url" aria-describedby="einfaches-addon3">
+    </div>
   </form>
 {% highlight html %}
 <div class="input-group">
   <span class="input-group-addon" id="einfaches-addon1">@</span>
   <input type="text" class="form-control" placeholder="Benutzername" aria-describedby="einfaches-addon1">
 </div>
-<br>
+
 <div class="input-group">
   <input type="text" class="form-control" placeholder="Empfänger-Benutzername" aria-describedby="einfaches-addon2">
   <span class="input-group-addon" id="einfaches-addon2">@beispiel.de</span>
 </div>
-<br>
+
 <div class="input-group">
   <span class="input-group-addon">€</span>
   <input type="text" class="form-control" aria-label="Summe (gerundet zum nächsten ganzen Euro)">
   <span class="input-group-addon">,00</span>
+</div>
+
+<label for="basic-url">Deine Profil-URL</label>
+<div class="input-group">
+  <span class="input-group-addon" id="einfaches-addon3">https://example.com/profil/</span>
+  <input type="text" class="form-control" id="basic-url" aria-describedby="einfaches-addon3">
 </div>
 {% endhighlight %}
 
@@ -95,7 +107,6 @@
   <input type="text" class="form-control" placeholder="Benutzername" aria-describedby="groessen-addon3">
 </div>
 {% endhighlight %}
-
 
   <h2 id="input-groups-checkboxes-radios">Auswahlfelder-Add-ons</h2>
   <p>Platziere eine Checkbox (Häkchen-Auswahlfeld) oder einen Radio-Button (Auswahlfeld für eine Option von mehreren) statt Text im Add-on einer Input-Gruppe.</p>
@@ -139,7 +150,6 @@
   </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
 {% endhighlight %}
-
 
   <h2 id="input-groups-buttons">Button-Add-ons</h2>
   <p>Buttons in Input-Gruppen sind etwas anders und brauchen eine zusätzliche Ebene der Verschachtelung. Statt <code>.input-group-addon</code> musst du <code>.input-group-btn</code> verwenden, um die Buttons zu umschließen. Dies ist notwendig, da sonst Standard-Stile im Browser nicht überschrieben werden können.</p>
@@ -185,7 +195,6 @@
 {% endhighlight %}
 
   <h2 id="input-groups-buttons-dropdowns">Buttons mit Dropdowns</h2>
-  <p></p>
   <form class="bs-example bs-example-form" data-example-id="input-group-dropdowns">
     <div class="row">
       <div class="col-lg-6">
@@ -310,6 +319,46 @@
   <input type="text" class="form-control" aria-label="...">
   <div class="input-group-btn">
     <!-- Button und Dropdown-Menü -->
+  </div>
+</div>
+{% endhighlight %}
+
+  <h2 id="input-groups-buttons-multiple">Mehrere Buttons</h2>
+  <p>Du kannst zwar nur ein Add-on pro Seite verwenden, aber mehrere Buttons innerhalb einer einzelnen <code>.input-group-btn</code> funktionieren.</p>
+  <form class="bs-example bs-example-form" data-example-id="input-group-multiple-buttons">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default" aria-label="Fett"><span class="glyphicon glyphicon-bold"></span></button>
+            <button type="button" class="btn btn-default" aria-label="Kursiv"><span class="glyphicon glyphicon-italic"></span></button>
+          </div>
+          <input type="text" class="form-control" aria-label="Textfeld mit mehreren Buttons">
+        </div><!-- /.input-group -->
+      </div><!-- /.col-lg-6 -->
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input type="text" class="form-control" aria-label="Textfeld mit mehreren Buttons">
+          <div class="input-group-btn">
+            <button type="button" class="btn btn-default" aria-label="Hilfe"><span class="glyphicon glyphicon-question-sign"></span></button>
+            <button type="button" class="btn btn-default">Senden</button>
+          </div>
+        </div><!-- /.input-group -->
+      </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+  </form>
+{% highlight html %}
+<div class="input-group">
+  <div class="input-group-btn">
+    <!-- Buttons -->
+  </div>
+  <input type="text" class="form-control" aria-label="...">
+</div>
+
+<div class="input-group">
+  <input type="text" class="form-control" aria-label="...">
+  <div class="input-group-btn">
+    <!-- Buttons -->
   </div>
 </div>
 {% endhighlight %}

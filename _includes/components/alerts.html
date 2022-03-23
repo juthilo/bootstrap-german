@@ -4,11 +4,11 @@
   <p class="lead">Stelle mit den verschiedenen flexiblen Warnhinweisen Rückmeldungen mit Kontext für typische Benutzeraktionen zur Verfügung.</p>
 
   <h2 id="alerts-examples">Beispiele</h2>
-  <p>Verpacke Text und einen optionalen Schließen-Button in <code>.alert</code> und einer der vier Kontext-Klassen (z.B. <code>.alert-success</code>) für ganz einfache Warnhinweise.</p>
+  <p>Verpacke Text und einen optionalen Schließen-Button in <code>.alert</code> und eine der vier Kontext-Klassen (z.B. <code>.alert-success</code>) für ganz einfache Warnhinweise.</p>
 
   <div class="bs-callout bs-callout-info" id="callout-alerts-no-default">
     <h4>Keine Standard-Klasse</h4>
-    <p>Warnhinweise verfügen nicht über eine Standard-Klasse, sondern nur über die grundlegende und weitere zusätzliche Kontextklassen. Ein grauer Standard-Hinweis würde nicht zu viel Sinn machen, daher musst du einen Typ über die Kontextklasse angeben. Wähle aus success, info, warning oder danger.</p>
+    <p>Warnhinweise verfügen nicht über eine Standard-Klasse, sondern nur über die grundlegende und weitere zusätzliche Kontextklassen. Ein grauer Standard-Hinweis hat nicht so viel Sinn, daher musst du einen Typ über die Kontextklasse angeben. Wähle aus success, info, warning oder danger.</p>
   </div>
 
   <div class="bs-example" data-example-id="simple-alerts">
@@ -36,7 +36,7 @@
   <p>Baue einen Warnhinweis aus, indem du optional <code>.alert-dismissible</code> und einen Schließen-Button hinzufügst.</p>
   <div class="bs-callout bs-callout-info" id="callout-alerts-dismiss-plugin">
     <h4>Erfordert das JavaScript-Plugin für Warnhinweise</h4>
-    <p>Damit Warnhinweise ihren ganzen Funktionsumfang, inkl. der Möglichkeit, sie zu schließen, erhalten, musst du das <a href="../javascript/#alerts">JavaScript-Plugin für Warnhinweise</a> verwenden.</p>
+    <p>Damit Warnhinweise tatsächlich geschlossen werden können, musst du das <a href="{{ site.baseurl }}/javascript/#alerts">JavaScript-Plugin für Warnhinweise</a> verwenden.</p>
   </div>
   <div class="bs-example" data-example-id="dismissible-alert-css">
     <div class="alert alert-warning alert-dismissible" role="alert">
@@ -52,7 +52,7 @@
 {% endhighlight %}
 
   <div class="bs-callout bs-callout-warning" id="callout-alerts-dismiss-use-button">
-    <h4>Sorge für richtiges Verhalten auf allen Geräten</h4>
+    <h4>Richtiges Verhalten auf allen Geräten</h4>
     <p>Du solltest immer das <code>&lt;button&gt;</code>-Element mit dem <code>data-dismiss="alert"</code>-data-Attribut verwenden.</p>
   </div>
 

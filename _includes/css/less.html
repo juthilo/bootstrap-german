@@ -7,7 +7,7 @@
 
 
   <h2 id="less-bootstrap">Bootstrap kompilieren</h2>
-  <p>Bootstrap kann auf mindestens zwei Arten genutzt werden: mit dem kompilierten CSS oder mit den ursprünglichen Less-Dateien. Um die Less-Dateien zu kompilieren, <a href="../los-gehts/#grunt">lies unter Los geht's!</a> nach, wie du deine Entwicklungsumgebung für die notwendigen Befehle einrichten kannst.</p>
+  <p>Bootstrap kann auf mindestens zwei Arten genutzt werden: mit dem kompilierten CSS oder mit den ursprünglichen Less-Dateien. Um die Less-Dateien zu kompilieren, <a href="{{ site.baseurl }}/los-gehts/#grunt">lies unter Los geht's!</a> nach, wie du deine Entwicklungsumgebung für die notwendigen Befehle einrichten kannst.</p>
   <p>Andere, dritte Kompilierer funktionieren vielleicht mit Bootstrap, werden aber von unserem Hauptteam nicht unterstützt.</p>
 
   <h2 id="less-variables">Variablen</h2>
@@ -122,7 +122,7 @@ a {
   <h3 id="less-variables-icons">Icons</h3>
   <p>Zwei Variablen entscheiden, wo deine Icons sich befinden und wie ihre Dateien heißen.</p>
 {% highlight scss %}
-@icon-font-path:          "../fonts/";
+@icon-font-path:          "{{ site.baseurl }}/fonts/";
 @icon-font-name:          "glyphicons-halflings-regular";
 {% endhighlight %}
 

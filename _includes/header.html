@@ -21,28 +21,28 @@
 
 <!-- Bootstrap CSS -->
 {% if site.github %}
-<link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="{{ site.baseurl }}/dist/css/bootstrap.min.css" rel="stylesheet">
 {% else %}
-<link href="../dist/css/bootstrap.css" rel="stylesheet">
+<link href="{{ site.baseurl }}/dist/css/bootstrap.css" rel="stylesheet">
 {% endif %}
 {% if page.slug == "css" or page.slug == "components" or page.slug == "js" %}
   <!-- Optionales Bootstrap-Theme -->
 {% if site.github %}
-  <link href="data:text/css;charset=utf-8," data-href="../dist/css/bootstrap-theme.min.css" rel="stylesheet" id="bs-theme-stylesheet">
+  <link href="data:text/css;charset=utf-8," data-href="{{ site.baseurl }}/dist/css/bootstrap-theme.min.css" rel="stylesheet" id="bs-theme-stylesheet">
 {% else %}
-  <link href="data:text/css;charset=utf-8," data-href="../dist/css/bootstrap-theme.css" rel="stylesheet" id="bs-theme-stylesheet">
+  <link href="data:text/css;charset=utf-8," data-href="{{ site.baseurl }}/dist/css/bootstrap-theme.css" rel="stylesheet" id="bs-theme-stylesheet">
 {% endif %}
 {% endif %}
 
 <!-- Stile für die Dokumentation -->
 {% if site.github %}
-<link href="../assets/css/docs.min.css" rel="stylesheet">
+<link href="{{ site.baseurl }}/assets/css/docs.min.css" rel="stylesheet">
 {% else %}
-<link href="../assets/css/src/pygments-manni.css" rel="stylesheet">
-<link href="../assets/css/src/docs.css" rel="stylesheet">
+<link href="{{ site.baseurl }}/assets/css/src/pygments-manni.css" rel="stylesheet">
+<link href="{{ site.baseurl }}/assets/css/src/docs.css" rel="stylesheet">
 {% endif %}
-<!--[if lt IE 9]><script src="../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-<script src="../assets/js/ie-emulation-modes-warning.js"></script>
+<!--[if lt IE 9]><script src="{{ site.baseurl }}/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="{{ site.baseurl }}/assets/js/ie-emulation-modes-warning.js"></script>
 
 <!-- Unterstützung für Media Queries und HTML5-Elemente in IE8 über HTML5 shim und Respond.js -->
 <!--[if lt IE 9]>

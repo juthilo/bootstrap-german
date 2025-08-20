@@ -1,3 +1,6 @@
+# Projekt archiviert
+Aus Zeitgründen kann ich dieses Projekt schon lange nicht mehr pflegen. Daher schalte ich auch die deployte Webseite ab und archiviere dieses Repository.
+
 # [Bootstrap (deutsch)](https://holdirbootstrap.de/)
 [![Slack (englisch)](https://bootstrap-slack.herokuapp.com/badge.svg)](https://bootstrap-slack.herokuapp.com/)
 ![Bower-Version](https://img.shields.io/bower/v/bootstrap.svg?style=flat)
